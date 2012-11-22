@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2020D5B165E2D960057FCCD /* WNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D5A165E2D960057FCCD /* WNavigationController.m */; };
+		A2020D67165E41980057FCCD /* WCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D66165E41980057FCCD /* WCell.m */; };
+		A2020D6A165E4DC80057FCCD /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D69165E4DC80057FCCD /* Item.m */; };
+		A2677B00165E0AE900C1D630 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2677B02165E0AE900C1D630 /* Localizable.strings */; };
+		A2677B08165E0F0200C1D630 /* WHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B07165E0F0200C1D630 /* WHomeViewController.m */; };
+		A2677B0C165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B0B165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m */; };
+		A2677B0E165E125700C1D630 /* WHomeView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2677B0D165E125700C1D630 /* WHomeView_iPhone.xib */; };
+		A2677B12165E148000C1D630 /* UIViewController+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B11165E148000C1D630 /* UIViewController+Helpers.m */; };
 		A2C601381630485A00CB53B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601371630485A00CB53B3 /* UIKit.framework */; };
 		A2C6013A1630485A00CB53B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601391630485A00CB53B3 /* Foundation.framework */; };
 		A2C6013C1630485A00CB53B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C6013B1630485A00CB53B3 /* CoreGraphics.framework */; };
@@ -15,16 +23,14 @@
 		A2C6018C16304BAF00CB53B3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A2C6016E16304BAF00CB53B3 /* Default.png */; };
 		A2C6018D16304BAF00CB53B3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2C6016F16304BAF00CB53B3 /* Default@2x.png */; };
 		A2C6018E16304BAF00CB53B3 /* WDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C6017316304BAF00CB53B3 /* WDetailViewController.m */; };
-		A2C6018F16304BAF00CB53B3 /* WMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C6017516304BAF00CB53B3 /* WMasterViewController.m */; };
-		A2C6019016304BAF00CB53B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2C6017916304BAF00CB53B3 /* InfoPlist.strings */; };
+		A2C6018F16304BAF00CB53B3 /* WFolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C6017516304BAF00CB53B3 /* WFolderViewController.m */; };
 		A2C6019116304BAF00CB53B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C6017B16304BAF00CB53B3 /* main.m */; };
 		A2C6019216304BAF00CB53B3 /* WAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C6017D16304BAF00CB53B3 /* WAppDelegate.m */; };
-		A2C6019316304BAF00CB53B3 /* Woda-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2C6017E16304BAF00CB53B3 /* Woda-Info.plist */; };
 		A2C6019416304BAF00CB53B3 /* Woda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2C6018016304BAF00CB53B3 /* Woda.xcdatamodeld */; };
-		A2C6019516304BAF00CB53B3 /* WDetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018316304BAF00CB53B3 /* WDetailViewController_iPad.xib */; };
-		A2C6019616304BAF00CB53B3 /* WDetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018516304BAF00CB53B3 /* WDetailViewController_iPhone.xib */; };
-		A2C6019716304BAF00CB53B3 /* WMasterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018716304BAF00CB53B3 /* WMasterViewController_iPad.xib */; };
-		A2C6019816304BAF00CB53B3 /* WMasterViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018916304BAF00CB53B3 /* WMasterViewController_iPhone.xib */; };
+		A2C6019516304BAF00CB53B3 /* WDetailView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018316304BAF00CB53B3 /* WDetailView_iPad.xib */; };
+		A2C6019616304BAF00CB53B3 /* WDetailView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018516304BAF00CB53B3 /* WDetailView_iPhone.xib */; };
+		A2C6019716304BAF00CB53B3 /* WFolderView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018716304BAF00CB53B3 /* WFolderView_iPad.xib */; };
+		A2C6019816304BAF00CB53B3 /* WFolderView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018916304BAF00CB53B3 /* WFolderView_iPhone.xib */; };
 		A2DC44F61630546C00E152A6 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44EF1630546C00E152A6 /* Icon-72.png */; };
 		A2DC44F71630546C00E152A6 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F01630546C00E152A6 /* Icon-Small-50.png */; };
 		A2DC44F81630546C00E152A6 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F11630546C00E152A6 /* Icon-Small.png */; };
@@ -48,6 +54,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2020D59165E2D960057FCCD /* WNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNavigationController.h; sourceTree = "<group>"; };
+		A2020D5A165E2D960057FCCD /* WNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNavigationController.m; sourceTree = "<group>"; };
+		A2020D65165E41980057FCCD /* WCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCell.h; sourceTree = "<group>"; };
+		A2020D66165E41980057FCCD /* WCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCell.m; sourceTree = "<group>"; };
+		A2020D68165E4DC80057FCCD /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = Sources/Models/CoreData/Item.h; sourceTree = SOURCE_ROOT; };
+		A2020D69165E4DC80057FCCD /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = Sources/Models/CoreData/Item.m; sourceTree = SOURCE_ROOT; };
+		A2677B01165E0AE900C1D630 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2677B05165E0B5000C1D630 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2677B06165E0F0200C1D630 /* WHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHomeViewController.h; sourceTree = "<group>"; };
+		A2677B07165E0F0200C1D630 /* WHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHomeViewController.m; sourceTree = "<group>"; };
+		A2677B0A165E100000C1D630 /* NSManagedObjectContext-EasyFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext-EasyFetch.h"; sourceTree = "<group>"; };
+		A2677B0B165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext-EasyFetch.m"; sourceTree = "<group>"; };
+		A2677B0D165E125700C1D630 /* WHomeView_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHomeView_iPhone.xib; sourceTree = "<group>"; };
+		A2677B10165E148000C1D630 /* UIViewController+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Helpers.h"; sourceTree = "<group>"; };
+		A2677B11165E148000C1D630 /* UIViewController+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Helpers.m"; sourceTree = "<group>"; };
+		A2677B13165E14AB00C1D630 /* Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
 		A2C601331630485A00CB53B3 /* Woda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Woda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C601371630485A00CB53B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A2C601391630485A00CB53B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,19 +80,18 @@
 		A2C6016F16304BAF00CB53B3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A2C6017216304BAF00CB53B3 /* WDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDetailViewController.h; sourceTree = "<group>"; };
 		A2C6017316304BAF00CB53B3 /* WDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDetailViewController.m; sourceTree = "<group>"; };
-		A2C6017416304BAF00CB53B3 /* WMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMasterViewController.h; sourceTree = "<group>"; };
-		A2C6017516304BAF00CB53B3 /* WMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMasterViewController.m; sourceTree = "<group>"; };
-		A2C6017A16304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2C6017416304BAF00CB53B3 /* WFolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFolderViewController.h; sourceTree = "<group>"; };
+		A2C6017516304BAF00CB53B3 /* WFolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFolderViewController.m; sourceTree = "<group>"; };
 		A2C6017B16304BAF00CB53B3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A2C6017C16304BAF00CB53B3 /* WAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAppDelegate.h; sourceTree = "<group>"; };
 		A2C6017D16304BAF00CB53B3 /* WAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAppDelegate.m; sourceTree = "<group>"; };
 		A2C6017E16304BAF00CB53B3 /* Woda-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Woda-Info.plist"; sourceTree = "<group>"; };
 		A2C6017F16304BAF00CB53B3 /* Woda-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Woda-Prefix.pch"; sourceTree = "<group>"; };
 		A2C6018116304BAF00CB53B3 /* Woda.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Woda.xcdatamodel; sourceTree = "<group>"; };
-		A2C6018416304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WDetailViewController_iPad.xib; sourceTree = "<group>"; };
-		A2C6018616304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WDetailViewController_iPhone.xib; sourceTree = "<group>"; };
-		A2C6018816304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WMasterViewController_iPad.xib; sourceTree = "<group>"; };
-		A2C6018A16304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WMasterViewController_iPhone.xib; sourceTree = "<group>"; };
+		A2C6018416304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WDetailView_iPad.xib; sourceTree = "<group>"; };
+		A2C6018616304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WDetailView_iPhone.xib; sourceTree = "<group>"; };
+		A2C6018816304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WFolderView_iPad.xib; sourceTree = "<group>"; };
+		A2C6018A16304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WFolderView_iPhone.xib; sourceTree = "<group>"; };
 		A2DC44EF1630546C00E152A6 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = SOURCE_ROOT; };
 		A2DC44F01630546C00E152A6 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = SOURCE_ROOT; };
 		A2DC44F11630546C00E152A6 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = SOURCE_ROOT; };
@@ -119,6 +140,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2020D64165E41980057FCCD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A2020D65165E41980057FCCD /* WCell.h */,
+				A2020D66165E41980057FCCD /* WCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A2677B09165E100000C1D630 /* coredata-easyfetch */ = {
+			isa = PBXGroup;
+			children = (
+				A2677B0A165E100000C1D630 /* NSManagedObjectContext-EasyFetch.h */,
+				A2677B0B165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m */,
+			);
+			path = "coredata-easyfetch";
+			sourceTree = "<group>";
+		};
+		A2677B0F165E145E00C1D630 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A2677B13165E14AB00C1D630 /* Helpers.h */,
+				A2677B10165E148000C1D630 /* UIViewController+Helpers.h */,
+				A2677B11165E148000C1D630 /* UIViewController+Helpers.m */,
+			);
+			name = Helpers;
+			path = Sources/Librairies/Helpers;
+			sourceTree = SOURCE_ROOT;
+		};
 		A2C601281630485A00CB53B3 = {
 			isa = PBXGroup;
 			children = (
@@ -185,10 +235,14 @@
 		A2C6017116304BAF00CB53B3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A2677B06165E0F0200C1D630 /* WHomeViewController.h */,
+				A2677B07165E0F0200C1D630 /* WHomeViewController.m */,
+				A2C6017416304BAF00CB53B3 /* WFolderViewController.h */,
+				A2C6017516304BAF00CB53B3 /* WFolderViewController.m */,
 				A2C6017216304BAF00CB53B3 /* WDetailViewController.h */,
 				A2C6017316304BAF00CB53B3 /* WDetailViewController.m */,
-				A2C6017416304BAF00CB53B3 /* WMasterViewController.h */,
-				A2C6017516304BAF00CB53B3 /* WMasterViewController.m */,
+				A2020D59165E2D960057FCCD /* WNavigationController.h */,
+				A2020D5A165E2D960057FCCD /* WNavigationController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,6 +250,7 @@
 		A2C6017616304BAF00CB53B3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A2020D64165E41980057FCCD /* Cells */,
 				A2C6017716304BAF00CB53B3 /* CoreData */,
 			);
 			path = Models;
@@ -204,6 +259,8 @@
 		A2C6017716304BAF00CB53B3 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				A2020D68165E4DC80057FCCD /* Item.h */,
+				A2020D69165E4DC80057FCCD /* Item.m */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -216,8 +273,8 @@
 				A2C6017C16304BAF00CB53B3 /* WAppDelegate.h */,
 				A2C6017D16304BAF00CB53B3 /* WAppDelegate.m */,
 				A2C6018016304BAF00CB53B3 /* Woda.xcdatamodeld */,
-				A2C6017916304BAF00CB53B3 /* InfoPlist.strings */,
 				A2C6017E16304BAF00CB53B3 /* Woda-Info.plist */,
+				A2677B02165E0AE900C1D630 /* Localizable.strings */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -225,10 +282,11 @@
 		A2C6018216304BAF00CB53B3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A2C6018316304BAF00CB53B3 /* WDetailViewController_iPad.xib */,
-				A2C6018516304BAF00CB53B3 /* WDetailViewController_iPhone.xib */,
-				A2C6018716304BAF00CB53B3 /* WMasterViewController_iPad.xib */,
-				A2C6018916304BAF00CB53B3 /* WMasterViewController_iPhone.xib */,
+				A2677B0D165E125700C1D630 /* WHomeView_iPhone.xib */,
+				A2C6018716304BAF00CB53B3 /* WFolderView_iPad.xib */,
+				A2C6018916304BAF00CB53B3 /* WFolderView_iPhone.xib */,
+				A2C6018316304BAF00CB53B3 /* WDetailView_iPad.xib */,
+				A2C6018516304BAF00CB53B3 /* WDetailView_iPhone.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,6 +309,8 @@
 			isa = PBXGroup;
 			children = (
 				A2DC4504163064A100E152A6 /* AFNetworking */,
+				A2677B09165E100000C1D630 /* coredata-easyfetch */,
+				A2677B0F165E145E00C1D630 /* Helpers */,
 			);
 			path = Librairies;
 			sourceTree = "<group>";
@@ -319,6 +379,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				fr,
 			);
 			mainGroup = A2C601281630485A00CB53B3;
 			productRefGroup = A2C601341630485A00CB53B3 /* Products */;
@@ -338,12 +399,10 @@
 				A2C6018B16304BAF00CB53B3 /* Default-568h@2x.png in Resources */,
 				A2C6018C16304BAF00CB53B3 /* Default.png in Resources */,
 				A2C6018D16304BAF00CB53B3 /* Default@2x.png in Resources */,
-				A2C6019016304BAF00CB53B3 /* InfoPlist.strings in Resources */,
-				A2C6019316304BAF00CB53B3 /* Woda-Info.plist in Resources */,
-				A2C6019516304BAF00CB53B3 /* WDetailViewController_iPad.xib in Resources */,
-				A2C6019616304BAF00CB53B3 /* WDetailViewController_iPhone.xib in Resources */,
-				A2C6019716304BAF00CB53B3 /* WMasterViewController_iPad.xib in Resources */,
-				A2C6019816304BAF00CB53B3 /* WMasterViewController_iPhone.xib in Resources */,
+				A2C6019516304BAF00CB53B3 /* WDetailView_iPad.xib in Resources */,
+				A2C6019616304BAF00CB53B3 /* WDetailView_iPhone.xib in Resources */,
+				A2C6019716304BAF00CB53B3 /* WFolderView_iPad.xib in Resources */,
+				A2C6019816304BAF00CB53B3 /* WFolderView_iPhone.xib in Resources */,
 				A2DC44F61630546C00E152A6 /* Icon-72.png in Resources */,
 				A2DC44F71630546C00E152A6 /* Icon-Small-50.png in Resources */,
 				A2DC44F81630546C00E152A6 /* Icon-Small.png in Resources */,
@@ -354,6 +413,8 @@
 				A2DC450016305AEE00E152A6 /* Background-568h@2x.png in Resources */,
 				A2DC450116305AEE00E152A6 /* Background.png in Resources */,
 				A2DC450216305AEE00E152A6 /* Background@2x.png in Resources */,
+				A2677B00165E0AE900C1D630 /* Localizable.strings in Resources */,
+				A2677B0E165E125700C1D630 /* WHomeView_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2C6018E16304BAF00CB53B3 /* WDetailViewController.m in Sources */,
-				A2C6018F16304BAF00CB53B3 /* WMasterViewController.m in Sources */,
+				A2C6018F16304BAF00CB53B3 /* WFolderViewController.m in Sources */,
 				A2C6019116304BAF00CB53B3 /* main.m in Sources */,
 				A2C6019216304BAF00CB53B3 /* WAppDelegate.m in Sources */,
 				A2C6019416304BAF00CB53B3 /* Woda.xcdatamodeld in Sources */,
@@ -379,50 +440,57 @@
 				A2DC4521163064A100E152A6 /* AFURLConnectionOperation.m in Sources */,
 				A2DC4522163064A100E152A6 /* AFXMLRequestOperation.m in Sources */,
 				A2DC4523163064A100E152A6 /* UIImageView+AFNetworking.m in Sources */,
+				A2677B08165E0F0200C1D630 /* WHomeViewController.m in Sources */,
+				A2677B0C165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m in Sources */,
+				A2677B12165E148000C1D630 /* UIViewController+Helpers.m in Sources */,
+				A2020D5B165E2D960057FCCD /* WNavigationController.m in Sources */,
+				A2020D67165E41980057FCCD /* WCell.m in Sources */,
+				A2020D6A165E4DC80057FCCD /* Item.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A2C6017916304BAF00CB53B3 /* InfoPlist.strings */ = {
+		A2677B02165E0AE900C1D630 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A2C6017A16304BAF00CB53B3 /* en */,
+				A2677B01165E0AE900C1D630 /* en */,
+				A2677B05165E0B5000C1D630 /* fr */,
 			);
-			name = InfoPlist.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		A2C6018316304BAF00CB53B3 /* WDetailViewController_iPad.xib */ = {
+		A2C6018316304BAF00CB53B3 /* WDetailView_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A2C6018416304BAF00CB53B3 /* en */,
 			);
-			name = WDetailViewController_iPad.xib;
+			name = WDetailView_iPad.xib;
 			sourceTree = "<group>";
 		};
-		A2C6018516304BAF00CB53B3 /* WDetailViewController_iPhone.xib */ = {
+		A2C6018516304BAF00CB53B3 /* WDetailView_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A2C6018616304BAF00CB53B3 /* en */,
 			);
-			name = WDetailViewController_iPhone.xib;
+			name = WDetailView_iPhone.xib;
 			sourceTree = "<group>";
 		};
-		A2C6018716304BAF00CB53B3 /* WMasterViewController_iPad.xib */ = {
+		A2C6018716304BAF00CB53B3 /* WFolderView_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A2C6018816304BAF00CB53B3 /* en */,
 			);
-			name = WMasterViewController_iPad.xib;
+			name = WFolderView_iPad.xib;
 			sourceTree = "<group>";
 		};
-		A2C6018916304BAF00CB53B3 /* WMasterViewController_iPhone.xib */ = {
+		A2C6018916304BAF00CB53B3 /* WFolderView_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A2C6018A16304BAF00CB53B3 /* en */,
 			);
-			name = WMasterViewController_iPhone.xib;
+			name = WFolderView_iPhone.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

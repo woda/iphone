@@ -1,5 +1,5 @@
 //
-//  WMasterViewController.h
+//  WFolderViewController.h
 //  Woda
 //
 //  Created by Théo LUBERT on 10/18/12.
@@ -12,11 +12,14 @@
 
 #import <CoreData/CoreData.h>
 
-@interface WMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface WFolderViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate> {
+    UILabel    *noDataLabel;
+}
 
 @property (strong, nonatomic) WDetailViewController *detailViewController;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext    *managedObjectContext;
+
+@property (nonatomic, retain) IBOutlet UITableView      *tableView;
 
 @end

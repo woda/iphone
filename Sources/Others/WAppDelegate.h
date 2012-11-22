@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NSManagedObjectContext-EasyFetch.h"
+#import "WNavigationController.h"
 
-@interface WAppDelegate : UIResponder <UIApplicationDelegate>
+@interface WAppDelegate : UIResponder <CoreDataApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
@@ -19,7 +21,7 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
-@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) WNavigationController   *navigationController;
 
 @property (strong, nonatomic) UISplitViewController *splitViewController;
 

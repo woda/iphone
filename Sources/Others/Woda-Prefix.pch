@@ -3,6 +3,7 @@
 //
 
 #import <Availability.h>
+#import "Helpers.h"
 
 #ifndef __IPHONE_4_0
 #warning "This project uses features only available in iOS SDK 4.0 and later."
@@ -13,3 +14,7 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
 #endif
+
+#define NSLocal(s)      NSLocalizedString(s, nil)
+
+#define kFileUpdated    @"kFileUpdated"

@@ -55,9 +55,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+- (id)init {
+    self = [super initWithNibName:[self xibFullName:@"WDetailView"] bundle:nil];
     if (self) {
         self.title = NSLocalizedString(@"Detail", @"Detail");
     }

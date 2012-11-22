@@ -1,55 +1,69 @@
 //
-//  WMasterViewController.m
+//  WFolderViewController.m
 //  Woda
 //
 //  Created by Théo LUBERT on 10/18/12.
 //  Copyright (c) 2012 Woda. All rights reserved.
 //
 
-#import "WMasterViewController.h"
-
+#import <QuartzCore/QuartzCore.h>
+#import "NSManagedObjectContext-EasyFetch.h"
+#import "WFolderViewController.h"
 #import "WDetailViewController.h"
+#import "Item.h"
 
-@interface WMasterViewController ()
+@interface WFolderViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
-@implementation WMasterViewController
+@implementation WFolderViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+
+#pragma mark -
+#pragma mark Initialization methods
+
+- (id)init {
+    self = [super initWithNibName:[self xibFullName:@"WFolderView"] bundle:nil];
     if (self) {
         self.title = @"Woda";
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-            self.clearsSelectionOnViewWillAppear = NO;
             self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
         }
     }
     return self;
 }
 							
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    
-//    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Background-568h.png"]];
-//    [self.view insertSubview:background atIndex:0];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated {
+    [self initOverlay];
+    [self updateOverlay];
 }
 
-- (void)insertNewObject:(id)sender
-{
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration {
+    CGFloat w = noDataLabel.frame.size.width;
+    [noDataLabel setFrame:(CGRect) {
+        .origin = (CGPoint) {
+            .x = (_tableView.frame.size.width - w) / 2,
+            .y = (_tableView.frame.size.height - 18) / 2
+        },
+        .size = (CGSize) {
+            .width = w,
+            .height = 18
+        }
+    }];
+}
+
+
+#pragma mark -
+#pragma mark Test methods
+
+- (void)insertNewObject:(id)sender {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
@@ -57,12 +71,16 @@
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
     
-    if (arc4random_uniform(74) % 2) {
+    int n = arc4random_uniform(74) % 3;
+    if (n == 0) {
         [newManagedObject setValue:@"Woda.png" forKey:@"name"];
         [newManagedObject setValue:@"http://f.cl.ly/items/1F3K2X3J320V2U1u2q3s/logo.png" forKey:@"url"];
-    } else {
+    } else if (n == 1) {
         [newManagedObject setValue:@"Logo-old.png" forKey:@"name"];
         [newManagedObject setValue:@"http://f.cl.ly/items/2W0M143O030I432H3V3E/WodaGoutteFleche.png" forKey:@"url"];
+    } else {
+        [newManagedObject setValue:@"Secret directory" forKey:@"name"];
+        [newManagedObject setValue:[NSNumber numberWithBool:YES] forKey:@"isDirectory"];
     }
     
     // Save the context.
@@ -75,7 +93,70 @@
     }
 }
 
-#pragma mark - Table View
+
+#pragma mark -
+#pragma mark Overlay methods
+
+- (void)addVisualConstraints:(NSString*)constraintString forViews:(NSDictionary*)views {
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:constraintString
+                                                                      options:0
+                                                                      metrics:0
+                                                                        views:views]];
+}
+
+- (void)initOverlay {
+    if (noDataLabel == nil) {
+        NSString *text = NSLocal(@"NoDataLabel");
+        UIFont *font = [UIFont systemFontOfSize:10];
+        CGFloat w = [text sizeWithFont:font constrainedToSize:(CGSize) {
+            .width = _tableView.frame.size.width,
+            .height = 18
+        }].width + 16;
+        noDataLabel = [[UILabel alloc] initWithFrame:(CGRect) {
+            .origin = (CGPoint) {
+                .x = (_tableView.frame.size.width - w) / 2,
+                .y = (_tableView.frame.size.height - 18) / 2
+            },
+            .size = (CGSize) {
+                .width = w,
+                .height = 18
+            }
+        }];
+        [_tableView addSubview:noDataLabel];
+        
+        [noDataLabel setText:text];
+        [noDataLabel setFont:font];
+        [noDataLabel.layer setCornerRadius:4];
+        [noDataLabel setTextColor:[UIColor whiteColor]];
+        [noDataLabel setTextAlignment:NSTextAlignmentCenter];
+        [noDataLabel setBackgroundColor:[UIColor colorWithRed:(138.0/255.0)
+                                                        green:(186.0/255.0)
+                                                         blue:(225.0/255.0)
+                                                        alpha:0.7]];
+        
+        int n = [self tableView:self.tableView numberOfRowsInSection:0];
+        [noDataLabel setAlpha:((n > 0) ? 0.0 : 1.0)];
+    }
+}
+
+- (void)updateOverlay {
+    [UIView animateWithDuration:0.2 animations:^{
+        int n = [self tableView:self.tableView numberOfRowsInSection:0];
+        [noDataLabel setAlpha:((n > 0) ? 0.0 : 1.0)];
+    }];
+}
+
+
+
+#pragma mark -
+#pragma mark TableView methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat h = _tableView.frame.size.height / 4.0;
+    if ([self tableView:self.tableView numberOfRowsInSection:0] <= 0) {
+        [noDataLabel setAlpha:MAX(0.3, ((h - ABS(scrollView.contentOffset.y)) / h))];
+    }
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -106,10 +187,10 @@
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+//    Item *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+//    return ([object.isDirectory boolValue] == NO);
+    return (YES);
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -125,7 +206,9 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
-    }   
+        [[NSNotificationCenter defaultCenter] postNotificationName:kFileUpdated object:nil];
+    }
+    [self updateOverlay];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
@@ -136,19 +219,30 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-	    if (!self.detailViewController) {
-	        self.detailViewController = [[WDetailViewController alloc] initWithNibName:@"WDetailViewController_iPhone" bundle:nil];
-	    }
-        self.detailViewController.detailItem = object;
-        [self.navigationController pushViewController:self.detailViewController animated:YES];
+    Item *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    if ([[object isDirectory] boolValue]) {
+        WFolderViewController *c = [[WFolderViewController alloc] init];
+        [self.navigationController pushViewController:c animated:YES];
     } else {
-        self.detailViewController.detailItem = object;
+        [object setOpenedAt:[NSDate date]];
+        [[self fetchedResultsController].managedObjectContext save:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kFileUpdated object:nil];
+        
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            if (!self.detailViewController) {
+                self.detailViewController = [[WDetailViewController alloc] initWithNibName:@"WDetailViewController_iPhone" bundle:nil];
+            }
+            self.detailViewController.detailItem = object;
+            [self.navigationController pushViewController:self.detailViewController animated:YES];
+        } else {
+            self.detailViewController.detailItem = object;
+        }
     }
 }
 
-#pragma mark - Fetched results controller
+
+#pragma mark -
+#pragma mark Fetched results controller methods
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
@@ -158,7 +252,7 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Item" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Item" inManagedObjectContext:[NSManagedObjectContext shared:nil]];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
@@ -172,7 +266,7 @@
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[NSManagedObjectContext shared:nil] sectionNameKeyPath:nil cacheName:@"Master"];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
@@ -235,6 +329,7 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView endUpdates];
+    [self updateOverlay];
 }
 
 /*
@@ -249,8 +344,13 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    Item *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [[object valueForKey:@"name"] description];
+    if ([object.isDirectory boolValue]) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
 }
 
 @end

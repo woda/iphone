@@ -7,9 +7,8 @@
 //
 
 #import "WAppDelegate.h"
-
-#import "WMasterViewController.h"
-
+#import "WHomeViewController.h"
+#import "WFolderViewController.h"
 #import "WDetailViewController.h"
 
 @implementation WAppDelegate
@@ -21,30 +20,33 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window setBackgroundColor:[UIColor whiteColor]];
+    
+    [NSManagedObjectContext shared:self.managedObjectContext];
+    
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        WMasterViewController *masterViewController = [[WMasterViewController alloc] initWithNibName:@"WMasterViewController_iPhone" bundle:nil];
-        self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
-        self.window.rootViewController = self.navigationController;
-        masterViewController.managedObjectContext = self.managedObjectContext;
+        WHomeViewController *homeViewController = [[WHomeViewController alloc] init];
+        WFolderViewController *folderViewController = [[WFolderViewController alloc] init];
+        self.navigationController = [[WNavigationController alloc] initWithRootViewController:folderViewController];
+        homeViewController.navController = self.navigationController;
+        self.window.rootViewController = homeViewController;
     } else {
-        WMasterViewController *masterViewController = [[WMasterViewController alloc] initWithNibName:@"WMasterViewController_iPad" bundle:nil];
-        UINavigationController *masterNavigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+        WHomeViewController *homeViewController = [[WHomeViewController alloc] init];
+        UINavigationController *masterNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
         
-        WDetailViewController *detailViewController = [[WDetailViewController alloc] initWithNibName:@"WDetailViewController_iPad" bundle:nil];
+        WDetailViewController *detailViewController = [[WDetailViewController alloc] init];
         UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
-    	
-    	masterViewController.detailViewController = detailViewController;
         
         self.splitViewController = [[UISplitViewController alloc] init];
         self.splitViewController.delegate = detailViewController;
         self.splitViewController.viewControllers = @[masterNavigationController, detailNavigationController];
         
         self.window.rootViewController = self.splitViewController;
-        masterViewController.managedObjectContext = self.managedObjectContext;
     }
     
     [self.window makeKeyAndVisible];
+
     return YES;
 }
 
@@ -132,7 +134,7 @@
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:@{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES} error:&error]) {
         /*
          Replace this implementation with code to handle the error appropriately.
          
@@ -157,8 +159,15 @@
          
          */
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }    
+        
+        static Boolean failure = false;
+        if (failure) {
+            abort();
+        }
+        [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil];
+        failure = YES;
+        return ([self persistentStoreCoordinator]);
+    }
     
     return _persistentStoreCoordinator;
 }

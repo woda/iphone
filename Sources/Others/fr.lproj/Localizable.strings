@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Woda
+
+  Created by Théo LUBERT on 11/21/12.
+  Copyright (c) 2012 Woda. All rights reserved.
+*/
+
+
+// Home View
+"FolderLabel" = "Dossiers";
+"FolderDetailsLabel" = "Espace disponible:";
+"StarredLabel" = "Préféré";
+"RecentLabel" = "Récent";
+"OfflineLabel" = "Hors ligne";
+"Files" = "fichiers";
+"File" = "fichier";
+
+// Folder View
+"NoDataLabel" = "Aucun fichier";
