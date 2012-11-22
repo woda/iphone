@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import "Item.h"
 
 @class WDetailViewController;
 
-#import <CoreData/CoreData.h>
 
 @interface WFolderViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate> {
-    UILabel    *noDataLabel;
+    UILabel     *noDataLabel;
+    
+    Item        *_item;
 }
 
 @property (strong, nonatomic) WDetailViewController *detailViewController;
@@ -21,5 +24,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @property (nonatomic, retain) IBOutlet UITableView      *tableView;
+
+- (id)initWithItem:(Item *)item;
 
 @end

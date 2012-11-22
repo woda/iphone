@@ -115,17 +115,17 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
         case kFoldersCellIndex: {
-            UIViewController *c = [[WFolderViewController alloc] init];
+            UIViewController *c = [[WFolderViewController alloc] initWithItem:nil];
             [_navController setViewControllers:@[c] animated:NO];
             break;
         }
         case kStarredCellIndex: {
-            UIViewController *c = [[WFolderViewController alloc] init];
+            UIViewController *c = [[WFolderViewController alloc] initWithItem:nil];
             [_navController setViewControllers:@[c] animated:NO];
             break;
         }
         case kRecentCellIndex: {
-            UIViewController *c = [[WFolderViewController alloc] init];
+            UIViewController *c = [[WFolderViewController alloc] initWithItem:nil];
             [_navController setViewControllers:@[c] animated:NO];
             break;
         }

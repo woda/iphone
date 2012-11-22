@@ -27,7 +27,7 @@
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         WHomeViewController *homeViewController = [[WHomeViewController alloc] init];
-        WFolderViewController *folderViewController = [[WFolderViewController alloc] init];
+        WFolderViewController *folderViewController = [[WFolderViewController alloc] initWithItem:nil];
         self.navigationController = [[WNavigationController alloc] initWithRootViewController:folderViewController];
         homeViewController.navController = self.navigationController;
         self.window.rootViewController = homeViewController;

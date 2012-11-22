@@ -10,7 +10,6 @@
 #import "NSManagedObjectContext-EasyFetch.h"
 #import "WFolderViewController.h"
 #import "WDetailViewController.h"
-#import "Item.h"
 
 @interface WFolderViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -22,9 +21,10 @@
 #pragma mark -
 #pragma mark Initialization methods
 
-- (id)init {
+- (id)initWithItem:(Item *)item {
     self = [super initWithNibName:[self xibFullName:@"WFolderView"] bundle:nil];
     if (self) {
+        _item = item;
         self.title = @"Woda";
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
             self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
@@ -82,6 +82,7 @@
         [newManagedObject setValue:@"Secret directory" forKey:@"name"];
         [newManagedObject setValue:[NSNumber numberWithBool:YES] forKey:@"isDirectory"];
     }
+    [newManagedObject setValue:_item forKey:@"directory"];
     
     // Save the context.
     NSError *error = nil;
@@ -221,7 +222,7 @@
 {
     Item *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     if ([[object isDirectory] boolValue]) {
-        WFolderViewController *c = [[WFolderViewController alloc] init];
+        WFolderViewController *c = [[WFolderViewController alloc] initWithItem:object];
         [self.navigationController pushViewController:c animated:YES];
     } else {
         [object setOpenedAt:[NSDate date]];
@@ -254,6 +255,7 @@
     // Edit the entity name as appropriate.
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Item" inManagedObjectContext:[NSManagedObjectContext shared:nil]];
     [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"directory == %@", _item]];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
@@ -266,7 +268,7 @@
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[NSManagedObjectContext shared:nil] sectionNameKeyPath:nil cacheName:@"Master"];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[NSManagedObjectContext shared:nil] sectionNameKeyPath:nil cacheName:nil];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
