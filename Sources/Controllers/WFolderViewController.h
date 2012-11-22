@@ -15,17 +15,14 @@
 
 @interface WFolderViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate> {
     UILabel     *noDataLabel;
-    
-    Item        *_item;
 }
 
 @property (strong, nonatomic) WDetailViewController *detailViewController;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) NSPredicate               *predicate;
 
 @property (nonatomic, retain) IBOutlet UITableView      *tableView;
 @property (nonatomic, retain) IBOutlet UILabel          *countLabel;
-
-- (id)initWithItem:(Item *)item;
 
 @end

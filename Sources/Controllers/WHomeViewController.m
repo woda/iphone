@@ -7,7 +7,7 @@
 //
 
 #import "WHomeViewController.h"
-#import "WFolderViewController.h"
+#import "WDirectoryViewController.h"
 #import "NSManagedObjectContext-EasyFetch.h"
 
 @interface WHomeViewController ()
@@ -59,6 +59,7 @@
     }
     
     [_offlineLabel setText:NSLocal(@"OfflineLabel")];
+    [_offlineDetailsLabel setText:NSLocal(@"OfflineDetailsLabel")];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -115,17 +116,19 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
         case kFoldersCellIndex: {
-            UIViewController *c = [[WFolderViewController alloc] initWithItem:nil];
+            UIViewController *c = [[WDirectoryViewController alloc] initWithItem:nil];
             [_navController setViewControllers:@[c] animated:NO];
             break;
         }
         case kStarredCellIndex: {
-            UIViewController *c = [[WFolderViewController alloc] initWithItem:nil];
+            WFolderViewController *c = [[WFolderViewController alloc] init];
+            [c setPredicate:[NSPredicate predicateWithFormat:@"starred == YES"]];
             [_navController setViewControllers:@[c] animated:NO];
             break;
         }
         case kRecentCellIndex: {
-            UIViewController *c = [[WFolderViewController alloc] initWithItem:nil];
+            WFolderViewController *c = [[WFolderViewController alloc] init];
+            [c setPredicate:[NSPredicate predicateWithFormat:@"isDirectory == NO && openedAt != nil"]];
             [_navController setViewControllers:@[c] animated:NO];
             break;
         }

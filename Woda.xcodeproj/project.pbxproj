@@ -10,6 +10,7 @@
 		A2020D5B165E2D960057FCCD /* WNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D5A165E2D960057FCCD /* WNavigationController.m */; };
 		A2020D67165E41980057FCCD /* WCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D66165E41980057FCCD /* WCell.m */; };
 		A2020D6A165E4DC80057FCCD /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D69165E4DC80057FCCD /* Item.m */; };
+		A24FC761165E6DC5002E2C26 /* WDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24FC760165E6DC5002E2C26 /* WDirectoryViewController.m */; };
 		A2677B00165E0AE900C1D630 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2677B02165E0AE900C1D630 /* Localizable.strings */; };
 		A2677B08165E0F0200C1D630 /* WHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B07165E0F0200C1D630 /* WHomeViewController.m */; };
 		A2677B0C165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B0B165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m */; };
@@ -60,6 +61,8 @@
 		A2020D66165E41980057FCCD /* WCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCell.m; sourceTree = "<group>"; };
 		A2020D68165E4DC80057FCCD /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = Sources/Models/CoreData/Item.h; sourceTree = SOURCE_ROOT; };
 		A2020D69165E4DC80057FCCD /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = Sources/Models/CoreData/Item.m; sourceTree = SOURCE_ROOT; };
+		A24FC75F165E6DC5002E2C26 /* WDirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDirectoryViewController.h; sourceTree = "<group>"; };
+		A24FC760165E6DC5002E2C26 /* WDirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDirectoryViewController.m; sourceTree = "<group>"; };
 		A2677B01165E0AE900C1D630 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2677B05165E0B5000C1D630 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2677B06165E0F0200C1D630 /* WHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHomeViewController.h; sourceTree = "<group>"; };
@@ -239,6 +242,8 @@
 				A2677B07165E0F0200C1D630 /* WHomeViewController.m */,
 				A2C6017416304BAF00CB53B3 /* WFolderViewController.h */,
 				A2C6017516304BAF00CB53B3 /* WFolderViewController.m */,
+				A24FC75F165E6DC5002E2C26 /* WDirectoryViewController.h */,
+				A24FC760165E6DC5002E2C26 /* WDirectoryViewController.m */,
 				A2C6017216304BAF00CB53B3 /* WDetailViewController.h */,
 				A2C6017316304BAF00CB53B3 /* WDetailViewController.m */,
 				A2020D59165E2D960057FCCD /* WNavigationController.h */,
@@ -446,6 +451,7 @@
 				A2020D5B165E2D960057FCCD /* WNavigationController.m in Sources */,
 				A2020D67165E41980057FCCD /* WCell.m in Sources */,
 				A2020D6A165E4DC80057FCCD /* Item.m in Sources */,
+				A24FC761165E6DC5002E2C26 /* WDirectoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

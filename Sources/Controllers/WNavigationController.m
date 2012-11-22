@@ -74,6 +74,14 @@
     }];
 }
 
+- (void)swipe {
+    if (self.view.frame.origin.x > 0) {
+        [self swipeLeft:nil];
+    } else {
+        [self swipeRight:nil];
+    }
+}
+
 - (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated {
     [super setViewControllers:viewControllers animated:animated];
     

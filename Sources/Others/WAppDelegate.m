@@ -8,7 +8,7 @@
 
 #import "WAppDelegate.h"
 #import "WHomeViewController.h"
-#import "WFolderViewController.h"
+#import "WDirectoryViewController.h"
 #import "WDetailViewController.h"
 
 @implementation WAppDelegate
@@ -27,7 +27,7 @@
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         WHomeViewController *homeViewController = [[WHomeViewController alloc] init];
-        WFolderViewController *folderViewController = [[WFolderViewController alloc] initWithItem:nil];
+        WDirectoryViewController *folderViewController = [[WDirectoryViewController alloc] initWithItem:nil];
         self.navigationController = [[WNavigationController alloc] initWithRootViewController:folderViewController];
         homeViewController.navController = self.navigationController;
         self.window.rootViewController = homeViewController;

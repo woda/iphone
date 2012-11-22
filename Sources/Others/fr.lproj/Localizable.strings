@@ -13,6 +13,7 @@
 "StarredLabel" = "Préféré";
 "RecentLabel" = "Récent";
 "OfflineLabel" = "Hors ligne";
+"OfflineDetailsLabel" = "0.89€";
 "Files" = "fichiers";
 "File" = "fichier";
 

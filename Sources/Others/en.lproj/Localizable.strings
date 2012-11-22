@@ -13,6 +13,7 @@
 "StarredLabel" = "Starred";
 "RecentLabel" = "Recent";
 "OfflineLabel" = "Offline";
+"OfflineDetailsLabel" = "$0.99";
 "Files" = "files";
 "File" = "file";
 
