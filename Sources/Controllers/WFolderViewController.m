@@ -10,6 +10,7 @@
 #import "NSManagedObjectContext-EasyFetch.h"
 #import "WFolderViewController.h"
 #import "WDetailViewController.h"
+#import "WCell.h"
 
 @interface WFolderViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -141,10 +142,19 @@
 }
 
 - (void)updateOverlay {
+    int n = [self tableView:self.tableView numberOfRowsInSection:0];
     [UIView animateWithDuration:0.2 animations:^{
-        int n = [self tableView:self.tableView numberOfRowsInSection:0];
         [noDataLabel setAlpha:((n > 0) ? 0.0 : 1.0)];
+        [_countLabel setAlpha:((n <= 0) ? 0.0 : 1.0)];
     }];
+    
+    if (n <= 0) {
+        [_countLabel setText:NSLocal(@"NoDataLabel")];
+    } else if (n == 1) {
+        [_countLabel setText:[NSString stringWithFormat:@"%d %@", n, NSLocal(@"File")]];
+    } else {
+        [_countLabel setText:[NSString stringWithFormat:@"%d %@", n, NSLocal(@"Files")]];
+    }
 }
 
 
@@ -177,7 +187,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[WCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
@@ -218,8 +228,9 @@
     return NO;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     Item *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     if ([[object isDirectory] boolValue]) {
         WFolderViewController *c = [[WFolderViewController alloc] initWithItem:object];
@@ -328,31 +339,25 @@
     }
 }
 
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
     [self updateOverlay];
 }
 
-/*
-// Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
- 
- - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    // In the simplest, most efficient, case, reload the table view.
-    [self.tableView reloadData];
-}
- */
-
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Item *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"name"] description];
     if ([object.isDirectory boolValue]) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
+    cell.textLabel.text = [[object valueForKey:@"name"] description];
+    cell.textLabel.font = [UIFont boldSystemFontOfSize:15];
+    cell.textLabel.highlightedTextColor = [UIColor whiteColor];
+    cell.textLabel.textColor = [UIColor colorWithRed:(138.0/255.0)
+                                               green:(186.0/255.0)
+                                                blue:(225.0/255.0)
+                                               alpha:1.0];
 }
 
 @end

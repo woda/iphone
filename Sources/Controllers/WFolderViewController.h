@@ -24,6 +24,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @property (nonatomic, retain) IBOutlet UITableView      *tableView;
+@property (nonatomic, retain) IBOutlet UILabel          *countLabel;
 
 - (id)initWithItem:(Item *)item;
 

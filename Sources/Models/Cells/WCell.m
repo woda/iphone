@@ -19,7 +19,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [UIView animateWithDuration:((animated) ? 0.3 : 0.0) animations:^{
-        for (UIView *v in ((UIView *)[self.subviews lastObject]).subviews) {
+        for (UIView *v in self.contentView.subviews) {
             if ([v isKindOfClass:[UILabel class]]) {
                 [(UILabel *)v setHighlighted:selected];
             }
@@ -37,7 +37,7 @@
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
     [UIView animateWithDuration:((animated) ? 0.3 : 0.0) animations:^{
-        for (UIView *v in ((UIView *)[self.subviews lastObject]).subviews) {
+        for (UIView *v in self.contentView.subviews) {
             if ([v isKindOfClass:[UILabel class]]) {
                 [(UILabel *)v setHighlighted:highlighted ];
             }
