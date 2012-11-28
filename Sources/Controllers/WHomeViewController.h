@@ -22,6 +22,8 @@ enum kCellIndexes {
 
 @property (nonatomic, retain) IBOutlet UITableView      *tableView;
 
+@property (nonatomic, retain) IBOutlet UILabel          *versionLabel;
+
 @property (nonatomic, retain) IBOutlet UITableViewCell  *foldersCell;
 @property (nonatomic, retain) IBOutlet UILabel          *folderLabel;
 @property (nonatomic, retain) IBOutlet UILabel          *folderDetailsLabel;

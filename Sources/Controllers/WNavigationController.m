@@ -34,10 +34,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.view.layer setShadowColor:[UIColor blackColor].CGColor];
-    [self.view.layer setShadowOffset:CGSizeMake(-1, 0)];
-    [self.view.layer setShadowOpacity:0.5];
-    [self.view.layer setShadowRadius:1];
+//    [self.view.layer setShadowColor:[UIColor blackColor].CGColor];
+//    [self.view.layer setShadowOffset:CGSizeMake(-1, 0)];
+//    [self.view.layer setShadowOpacity:0.5];
+//    [self.view.layer setShadowRadius:1];
+    
+    UIImageView *shadow = [[UIImageView alloc] initWithFrame:(CGRect) {
+        .origin = (CGPoint) {
+            .x = -3,
+            .y = 20
+        },
+        .size = (CGSize) {
+            .width = 5,
+            .height = self.view.frame.size.height - 20
+        }
+    }];
+    [shadow setImage:[[UIImage imageNamed:@"shadow.png"] stretchableImageWithLeftCapWidth:0 topCapHeight:5]];
+    [self.view addSubview:shadow];
     
     [self.navigationBar setTintColor:[UIColor colorWithRed:(138.0/255.0)
                                                      green:(186.0/255.0)

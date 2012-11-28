@@ -208,7 +208,7 @@
         
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             if (!self.detailViewController) {
-                self.detailViewController = [[WDetailViewController alloc] initWithNibName:@"WDetailViewController_iPhone" bundle:nil];
+                self.detailViewController = [[WDetailViewController alloc] init];
             }
             self.detailViewController.detailItem = object;
             [self.navigationController pushViewController:self.detailViewController animated:YES];

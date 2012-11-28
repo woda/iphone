@@ -46,6 +46,11 @@
     }
     
     [self.window makeKeyAndVisible];
+    
+    [TestFlight takeOff:kTestFlightToken];
+#ifdef TESTING
+    [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
+#endif
 
     return YES;
 }

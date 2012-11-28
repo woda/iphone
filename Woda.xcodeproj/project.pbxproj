@@ -10,6 +10,8 @@
 		A2020D5B165E2D960057FCCD /* WNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D5A165E2D960057FCCD /* WNavigationController.m */; };
 		A2020D67165E41980057FCCD /* WCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D66165E41980057FCCD /* WCell.m */; };
 		A2020D6A165E4DC80057FCCD /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D69165E4DC80057FCCD /* Item.m */; };
+		A22D470016636A5D00B4B448 /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = A22D46FE16636A5D00B4B448 /* shadow.png */; };
+		A22D470116636A5D00B4B448 /* shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A22D46FF16636A5D00B4B448 /* shadow@2x.png */; };
 		A24FC761165E6DC5002E2C26 /* WDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24FC760165E6DC5002E2C26 /* WDirectoryViewController.m */; };
 		A2677B00165E0AE900C1D630 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2677B02165E0AE900C1D630 /* Localizable.strings */; };
 		A2677B08165E0F0200C1D630 /* WHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B07165E0F0200C1D630 /* WHomeViewController.m */; };
@@ -52,6 +54,10 @@
 		A2DC4521163064A100E152A6 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DC4515163064A100E152A6 /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A2DC4522163064A100E152A6 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DC4517163064A100E152A6 /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A2DC4523163064A100E152A6 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DC4519163064A100E152A6 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A2F62E7D166447DD00F9CB08 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F62E79166447DD00F9CB08 /* libTestFlight.a */; };
+		A2F62E7E166447DD00F9CB08 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A2F62E7A166447DD00F9CB08 /* README.md */; };
+		A2F62E7F166447DD00F9CB08 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = A2F62E7B166447DD00F9CB08 /* release_notes.md */; };
+		A2F62E8116647F8B00F9CB08 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F62E8016647F8B00F9CB08 /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +67,8 @@
 		A2020D66165E41980057FCCD /* WCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCell.m; sourceTree = "<group>"; };
 		A2020D68165E4DC80057FCCD /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = Sources/Models/CoreData/Item.h; sourceTree = SOURCE_ROOT; };
 		A2020D69165E4DC80057FCCD /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = Sources/Models/CoreData/Item.m; sourceTree = SOURCE_ROOT; };
+		A22D46FE16636A5D00B4B448 /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
+		A22D46FF16636A5D00B4B448 /* shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shadow@2x.png"; sourceTree = "<group>"; };
 		A24FC75F165E6DC5002E2C26 /* WDirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDirectoryViewController.h; sourceTree = "<group>"; };
 		A24FC760165E6DC5002E2C26 /* WDirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDirectoryViewController.m; sourceTree = "<group>"; };
 		A2677B01165E0AE900C1D630 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -126,6 +134,11 @@
 		A2DC4517163064A100E152A6 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		A2DC4518163064A100E152A6 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		A2DC4519163064A100E152A6 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		A2F62E79166447DD00F9CB08 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		A2F62E7A166447DD00F9CB08 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		A2F62E7B166447DD00F9CB08 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		A2F62E7C166447DD00F9CB08 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		A2F62E8016647F8B00F9CB08 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,10 +146,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2F62E8116647F8B00F9CB08 /* libz.dylib in Frameworks */,
 				A2C601381630485A00CB53B3 /* UIKit.framework in Frameworks */,
 				A2C6013A1630485A00CB53B3 /* Foundation.framework in Frameworks */,
 				A2C6013C1630485A00CB53B3 /* CoreGraphics.framework in Frameworks */,
 				A2C6013E1630485A00CB53B3 /* CoreData.framework in Frameworks */,
+				A2F62E7D166447DD00F9CB08 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +212,7 @@
 				A2C601391630485A00CB53B3 /* Foundation.framework */,
 				A2C6013B1630485A00CB53B3 /* CoreGraphics.framework */,
 				A2C6013D1630485A00CB53B3 /* CoreData.framework */,
+				A2F62E8016647F8B00F9CB08 /* libz.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,6 +228,8 @@
 		A2C6016C16304BAF00CB53B3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A22D46FE16636A5D00B4B448 /* shadow.png */,
+				A22D46FF16636A5D00B4B448 /* shadow@2x.png */,
 				A2DC44EE1630545D00E152A6 /* Icons */,
 				A2C6016D16304BAF00CB53B3 /* Default-568h@2x.png */,
 				A2C6016E16304BAF00CB53B3 /* Default.png */,
@@ -313,6 +331,7 @@
 		A2DC4503163064A100E152A6 /* Librairies */ = {
 			isa = PBXGroup;
 			children = (
+				A2F62E78166447DD00F9CB08 /* TestFlightSDK1.1 */,
 				A2DC4504163064A100E152A6 /* AFNetworking */,
 				A2677B09165E100000C1D630 /* coredata-easyfetch */,
 				A2677B0F165E145E00C1D630 /* Helpers */,
@@ -346,6 +365,17 @@
 				A2DC4519163064A100E152A6 /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		A2F62E78166447DD00F9CB08 /* TestFlightSDK1.1 */ = {
+			isa = PBXGroup;
+			children = (
+				A2F62E79166447DD00F9CB08 /* libTestFlight.a */,
+				A2F62E7A166447DD00F9CB08 /* README.md */,
+				A2F62E7B166447DD00F9CB08 /* release_notes.md */,
+				A2F62E7C166447DD00F9CB08 /* TestFlight.h */,
+			);
+			path = TestFlightSDK1.1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,6 +450,10 @@
 				A2DC450216305AEE00E152A6 /* Background@2x.png in Resources */,
 				A2677B00165E0AE900C1D630 /* Localizable.strings in Resources */,
 				A2677B0E165E125700C1D630 /* WHomeView_iPhone.xib in Resources */,
+				A22D470016636A5D00B4B448 /* shadow.png in Resources */,
+				A22D470116636A5D00B4B448 /* shadow@2x.png in Resources */,
+				A2F62E7E166447DD00F9CB08 /* README.md in Resources */,
+				A2F62E7F166447DD00F9CB08 /* release_notes.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +547,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_POSTPROCESSING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -527,6 +562,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -541,7 +577,8 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_POSTPROCESSING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -549,6 +586,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -561,6 +599,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sources/Others/Woda-Prefix.pch";
 				INFOPLIST_FILE = "Sources/Others/Woda-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK1.1\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "156AAD26-9C94-41C7-8C40-E5F4CDC90C32";
 				WRAPPER_EXTENSION = app;
@@ -574,6 +616,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sources/Others/Woda-Prefix.pch";
 				INFOPLIST_FILE = "Sources/Others/Woda-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK1.1\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "156AAD26-9C94-41C7-8C40-E5F4CDC90C32";
 				WRAPPER_EXTENSION = app;

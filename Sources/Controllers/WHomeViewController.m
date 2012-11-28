@@ -31,6 +31,8 @@
 - (void)updateLabels {
     NSManagedObjectContext *context = [NSManagedObjectContext shared:nil];
     
+    [_versionLabel setText:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
+    
     [_folderLabel setText:NSLocal(@"FolderLabel")];
     [_folderDetailsLabel setText:[NSString stringWithFormat:@"%@ %.2f / %.2fGB", NSLocal(@"FolderDetailsLabel"), 18.54, 30.0]];
     
