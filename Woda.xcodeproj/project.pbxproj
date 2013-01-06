@@ -16,7 +16,7 @@
 		A2677B00165E0AE900C1D630 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2677B02165E0AE900C1D630 /* Localizable.strings */; };
 		A2677B08165E0F0200C1D630 /* WHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B07165E0F0200C1D630 /* WHomeViewController.m */; };
 		A2677B0C165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B0B165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m */; };
-		A2677B0E165E125700C1D630 /* WHomeView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2677B0D165E125700C1D630 /* WHomeView_iPhone.xib */; };
+		A2677B0E165E125700C1D630 /* WHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2677B0D165E125700C1D630 /* WHomeView.xib */; };
 		A2677B12165E148000C1D630 /* UIViewController+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B11165E148000C1D630 /* UIViewController+Helpers.m */; };
 		A2C601381630485A00CB53B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601371630485A00CB53B3 /* UIKit.framework */; };
 		A2C6013A1630485A00CB53B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601391630485A00CB53B3 /* Foundation.framework */; };
@@ -77,7 +77,7 @@
 		A2677B07165E0F0200C1D630 /* WHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHomeViewController.m; sourceTree = "<group>"; };
 		A2677B0A165E100000C1D630 /* NSManagedObjectContext-EasyFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext-EasyFetch.h"; sourceTree = "<group>"; };
 		A2677B0B165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext-EasyFetch.m"; sourceTree = "<group>"; };
-		A2677B0D165E125700C1D630 /* WHomeView_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHomeView_iPhone.xib; sourceTree = "<group>"; };
+		A2677B0D165E125700C1D630 /* WHomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHomeView.xib; sourceTree = "<group>"; };
 		A2677B10165E148000C1D630 /* UIViewController+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Helpers.h"; sourceTree = "<group>"; };
 		A2677B11165E148000C1D630 /* UIViewController+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Helpers.m"; sourceTree = "<group>"; };
 		A2677B13165E14AB00C1D630 /* Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
@@ -305,7 +305,7 @@
 		A2C6018216304BAF00CB53B3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A2677B0D165E125700C1D630 /* WHomeView_iPhone.xib */,
+				A2677B0D165E125700C1D630 /* WHomeView.xib */,
 				A2C6018716304BAF00CB53B3 /* WFolderView_iPad.xib */,
 				A2C6018916304BAF00CB53B3 /* WFolderView_iPhone.xib */,
 				A2C6018316304BAF00CB53B3 /* WDetailView_iPad.xib */,
@@ -449,7 +449,7 @@
 				A2DC450116305AEE00E152A6 /* Background.png in Resources */,
 				A2DC450216305AEE00E152A6 /* Background@2x.png in Resources */,
 				A2677B00165E0AE900C1D630 /* Localizable.strings in Resources */,
-				A2677B0E165E125700C1D630 /* WHomeView_iPhone.xib in Resources */,
+				A2677B0E165E125700C1D630 /* WHomeView.xib in Resources */,
 				A22D470016636A5D00B4B448 /* shadow.png in Resources */,
 				A22D470116636A5D00B4B448 /* shadow@2x.png in Resources */,
 				A2F62E7E166447DD00F9CB08 /* README.md in Resources */,

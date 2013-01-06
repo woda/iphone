@@ -11,6 +11,9 @@
 @implementation UIViewController (Helpers)
 
 - (NSString *)xibFullName:(NSString *)name {
+    if ([[NSBundle mainBundle] pathForResource:name ofType:@"nib"] != nil) {
+        return (name);
+    }
     return ([NSString stringWithFormat:@"%@_%@", name, (([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? @"iPhone" : @"iPad")]);
 }
 
