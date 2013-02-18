@@ -22,7 +22,13 @@
 //
 //This will return a JSON representation of the user. This has the side effect of logging that user in.
 
-+ (void)createUser:(NSString *)login firstName:(NSString *)first_name lastName:(NSString *)last_name password:(NSString *)password email:(NSString *)email {
++ (void)createUser:(NSString *)login
+         firstName:(NSString *)first_name
+          lastName:(NSString *)last_name
+          password:(NSString *)password
+             email:(NSString *)email
+           success:(void (^)(id json))success
+           failure:(void (^)(id json))failure {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:first_name forKey:@"first_name"];
     [params setValue:last_name forKey:@"last_name"];
@@ -32,12 +38,12 @@
     [[WRequest client] putPath:[@"/users/{login}" stringByReplacingOccurrencesOfString:@"{login}" withString:login] parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
-            [WRequest displayError:(NSError *)json forOperation:operation];
+            failure([WRequest displayError:(NSError *)json forOperation:operation]);
         } else {
-            NSLog(@"User created: %@", json);
+            success(json);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [WRequest displayError:error forOperation:operation];
+        failure([WRequest displayError:error forOperation:operation]);
     }];
 }
 
@@ -49,7 +55,12 @@
 //
 //This will return a JSON representation of yourself.
 
-+ (void)updateUserWithFirstName:(NSString *)first_name lastName:(NSString *)last_name password:(NSString *)password email:(NSString *)email {
++ (void)updateUserWithFirstName:(NSString *)first_name
+                       lastName:(NSString *)last_name
+                       password:(NSString *)password
+                          email:(NSString *)email
+                        success:(void (^)(id json))success
+                        failure:(void (^)(id json))failure {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:first_name forKey:@"first_name"];
     [params setValue:last_name forKey:@"last_name"];
@@ -59,12 +70,12 @@
     [[WRequest client] postPath:@"/users" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
-            [WRequest displayError:(NSError *)json forOperation:operation];
+            failure([WRequest displayError:(NSError *)json forOperation:operation]);
         } else {
-            NSLog(@"User updated: %@", json);
+            success(json);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [WRequest displayError:error forOperation:operation];
+        failure([WRequest displayError:error forOperation:operation]);
     }];
 }
 
@@ -76,16 +87,16 @@
 //
 //This will return a JSON representation of yourself.
 
-+ (void)user {
++ (void)userSuccess:(void (^)(id json))success failure:(void (^)(id json))failure {
     [[WRequest client] getPath:@"/users" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
-            [WRequest displayError:(NSError *)json forOperation:operation];
+            failure([WRequest displayError:(NSError *)json forOperation:operation]);
         } else {
-            NSLog(@"User: %@", json);
+            success(json);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [WRequest displayError:error forOperation:operation];
+        failure([WRequest displayError:error forOperation:operation]);
     }];
 }
 
@@ -97,16 +108,16 @@
 //
 //This will return {"success": true} if the delete was successful.
 
-+ (void)deleteUser {
++ (void)deleteUserSuccess:(void (^)(id json))success failure:(void (^)(id json))failure {
     [[WRequest client] deletePath:@"/users" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
-            [WRequest displayError:(NSError *)json forOperation:operation];
+            failure([WRequest displayError:(NSError *)json forOperation:operation]);
         } else {
-            NSLog(@"User deleted: %@", json);
+            success(json);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [WRequest displayError:error forOperation:operation];
+        failure([WRequest displayError:error forOperation:operation]);
     }];
 }
 
@@ -121,19 +132,19 @@
 //
 //This will return a JSON representation of yourself.
 
-+ (void)login:(NSString *)login password:(NSString *)password {
++ (void)login:(NSString *)login password:(NSString *)password success:(void (^)(id json))success failure:(void (^)(id json))failure {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:password forKey:@"password"];
     
     [[WRequest client] postPath:[@"/users/{login}/login" stringByReplacingOccurrencesOfString:@"{login}" withString:login] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
-            [WRequest displayError:(NSError *)json forOperation:operation];
+            failure([WRequest displayError:(NSError *)json forOperation:operation]);
         } else {
-            NSLog(@"User logged succefully: %@", json);
+            success(json);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [WRequest displayError:error forOperation:operation];
+        failure([WRequest displayError:error forOperation:operation]);
     }];
 }
 
@@ -145,16 +156,16 @@
 //
 //This will return {"success": true}
 
-+ (void)logout {
++ (void)logoutSuccess:(void (^)(id json))success failure:(void (^)(id json))failure {
     [[WRequest client] getPath:@"/users/logout" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
-            [WRequest displayError:(NSError *)json forOperation:operation];
+            failure([WRequest displayError:(NSError *)json forOperation:operation]);
         } else {
-            NSLog(@"User logged out: %@", json);
+            success(json);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [WRequest displayError:error forOperation:operation];
+        failure([WRequest displayError:error forOperation:operation]);
     }];
 }
 

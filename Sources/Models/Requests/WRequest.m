@@ -9,7 +9,6 @@
 #import "WRequest.h"
 
 static AFHTTPClient *client = nil;
-#import "AFJSONUtilities.h"
 
 @implementation WRequest
 
@@ -20,23 +19,27 @@ static AFHTTPClient *client = nil;
     return (client);
 }
 
-+ (void)displayError:(NSError *)error forOperation:(AFHTTPRequestOperation *)operation {
-    NSLog(@"%@", error);
++ (id)displayError:(NSError *)error forOperation:(AFHTTPRequestOperation *)operation {
+//    NSLog(@"%@", error);
     id json = [WRequest JSONFromData:[operation responseData]];
-    if ([json isKindOfClass:[NSError class]]) {
+    if ((json == nil) || ([json isKindOfClass:[NSError class]])) {
         NSLog(@"Error: No json available");
-    } else {
-        NSLog(@"Error: %@", json);
+        return (nil);
     }
+//    NSLog(@"Error: %@", json);
+    return (json);
 }
 
 + (id)JSONFromData:(NSData *)data {
     NSError *error = nil;
-    id json = AFJSONDecode(data, &error);
-    if (error) {
-        return (error);
+    if ((data) && ([data length] > 0)) {
+        id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if (error) {
+            return (error);
+        }
+        return (json);
     }
-    return (json);
+    return (nil);
 }
 
 @end

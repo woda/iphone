@@ -15,7 +15,7 @@
 @interface WRequest : AFJSONRequestOperation
 
 + (AFHTTPClient *)client;
-+ (void)displayError:(NSError *)error forOperation:(AFHTTPRequestOperation *)operation;
++ (id)displayError:(NSError *)error forOperation:(AFHTTPRequestOperation *)operation;
 + (id)JSONFromData:(NSData *)data;
 
 @end
