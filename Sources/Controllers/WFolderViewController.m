@@ -43,22 +43,26 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
     [self initOverlay];
     [self updateOverlay];
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration {
-    CGFloat w = noDataLabel.frame.size.width;
-    [noDataLabel setFrame:(CGRect) {
-        .origin = (CGPoint) {
-            .x = (_tableView.frame.size.width - w) / 2,
-            .y = (_tableView.frame.size.height - 18) / 2
-        },
-        .size = (CGSize) {
-            .width = w,
-            .height = 18
-        }
+    [super willAnimateRotationToInterfaceOrientation:interfaceOrientation duration:duration];
+    
+    [self updateOverlay];
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    
+    [self.tableView setContentSize:(CGSize) {
+        .width = self.tableView.frame.size.width,
+        .height = self.tableView.contentSize.height
     }];
+    [self updateOverlay];
 }
 
 
@@ -103,13 +107,15 @@
                                                         alpha:0.7]];
         
         int n = [self tableView:self.tableView numberOfRowsInSection:0];
-        [noDataLabel setAlpha:((n > 0) ? 0.0 : 1.0)];
+        [UIView animateWithDuration:0.1 animations:^{
+            [noDataLabel setAlpha:((n > 0) ? 0.0 : 1.0)];
+        }];
     }
 }
 
 - (void)updateOverlay {
     int n = [self tableView:self.tableView numberOfRowsInSection:0];
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.1 animations:^{
         [noDataLabel setAlpha:((n > 0) ? 0.0 : 1.0)];
         [_countLabel setAlpha:((n <= 0) ? 0.0 : 1.0)];
     }];
@@ -121,6 +127,18 @@
     } else {
         [_countLabel setText:[NSString stringWithFormat:@"%d %@", n, NSLocal(@"Files")]];
     }
+    
+    CGFloat w = noDataLabel.frame.size.width;
+    [noDataLabel setFrame:(CGRect) {
+        .origin = (CGPoint) {
+            .x = (_tableView.frame.size.width - w) / 2,
+            .y = (_tableView.frame.size.height - 18) / 2
+        },
+        .size = (CGSize) {
+            .width = w,
+            .height = 18
+        }
+    }];
 }
 
 
@@ -206,15 +224,15 @@
         [[self fetchedResultsController].managedObjectContext save:nil];
         [[NSNotificationCenter defaultCenter] postNotificationName:kFileUpdated object:nil];
         
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+//        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             if (!self.detailViewController) {
                 self.detailViewController = [[WDetailViewController alloc] init];
             }
             self.detailViewController.detailItem = object;
             [self.navigationController pushViewController:self.detailViewController animated:YES];
-        } else {
-            self.detailViewController.detailItem = object;
-        }
+//        } else {
+//            self.detailViewController.detailItem = object;
+//        }
     }
 }
 

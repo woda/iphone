@@ -20,32 +20,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.window setBackgroundColor:[UIColor whiteColor]];
+    [self.window setBackgroundColor:[UIColor blackColor]];
     
     [NSManagedObjectContext shared:self.managedObjectContext];
     
-    // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        WHomeViewController *homeViewController = [[WHomeViewController alloc] init];
-        WDirectoryViewController *folderViewController = [[WDirectoryViewController alloc] initWithItem:nil];
-        self.navigationController = [[WNavigationController alloc] initWithRootViewController:folderViewController];
-        homeViewController.navController = self.navigationController;
-        self.window.rootViewController = homeViewController;
-    } else {
-        WHomeViewController *homeViewController = [[WHomeViewController alloc] init];
-        UINavigationController *masterNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
-        
-        WDetailViewController *detailViewController = [[WDetailViewController alloc] init];
-        UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
-        
-        self.splitViewController = [[UISplitViewController alloc] init];
-        self.splitViewController.delegate = detailViewController;
-        self.splitViewController.viewControllers = @[masterNavigationController, detailNavigationController];
-        
-        self.window.rootViewController = self.splitViewController;
-    }
-    
+    WDirectoryViewController *folderViewController = [[WDirectoryViewController alloc] initWithItem:nil];
+    self.navigationController = [[WNavigationController alloc] initWithRootViewController:folderViewController];
+    self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
+    
+    self.homeController = [[WHomeViewController alloc] init];
+    self.homeController.navController = self.navigationController;
+    [self.homeController viewWillAppear:NO];
+    [self.navigationController setHomeController:self.homeController];
     
     [TestFlight takeOff:kTestFlightToken];
 #ifdef TESTING

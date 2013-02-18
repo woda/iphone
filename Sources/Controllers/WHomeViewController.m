@@ -67,27 +67,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [_navController setOrigin:(CGPoint) {
-        .x = 240,
-        .y = -20
-    }];
-    [self.view addSubview:_navController.view];
-    
+    [self.view setFrame:[[UIScreen mainScreen] bounds]];
     [self updateLabels];
-}
-
-
-#pragma mark -
-#pragma mark Rotation methods
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    [_navController willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-}
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-    [_navController didRotateFromInterfaceOrientation:fromInterfaceOrientation];
 }
 
 
@@ -95,7 +76,7 @@
 #pragma mark TableView methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return (4);
+    return (kCellCount);
 }
 
 
@@ -125,7 +106,7 @@
         case kStarredCellIndex: {
             WFolderViewController *c = [[WFolderViewController alloc] init];
             [c setPredicate:[NSPredicate predicateWithFormat:@"starred == YES"]];
-            [_navController setViewControllers:@[c] animated:NO];
+            [_navController setViewControllers:@[c] animated:YES];
             break;
         }
         case kRecentCellIndex: {

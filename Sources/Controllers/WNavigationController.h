@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class WHomeViewController;
+
 @interface WNavigationController : UINavigationController
 
-@property (nonatomic, assign) CGPoint   origin;
+@property (nonatomic, retain) WHomeViewController   *homeController;
 
 @end

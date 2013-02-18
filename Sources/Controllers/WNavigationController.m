@@ -8,36 +8,23 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "WNavigationController.h"
+#import "WHomeViewController.h"
 
 @interface WNavigationController ()
+
+- (void)swipeLeftWithDuration:(NSTimeInterval)duration;
+- (void)swipeRightWithDuration:(NSTimeInterval)duration;
 
 @end
 
 @implementation WNavigationController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
-- (void)setOrigin:(CGPoint)origin {
-    _origin = origin;
-    [self.view setFrame:(CGRect) {
-        .origin = _origin,
-        .size = self.view.frame.size
-    }];
-}
+#pragma mark -
+#pragma mark Update methods
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    [self.view.layer setShadowColor:[UIColor blackColor].CGColor];
-//    [self.view.layer setShadowOffset:CGSizeMake(-1, 0)];
-//    [self.view.layer setShadowOpacity:0.5];
-//    [self.view.layer setShadowRadius:1];
     
     UIImageView *shadow = [[UIImageView alloc] initWithFrame:(CGRect) {
         .origin = (CGPoint) {
@@ -66,39 +53,83 @@
     [self.view addGestureRecognizer:swipe];
 }
 
-- (void)swipeLeft:(UISwipeGestureRecognizer *)gesture {
-    [UIView animateWithDuration:0.3 animations:^{
-        [self.view setFrame:(CGRect) {
-            .origin = (CGPoint) {
-                .x = 0,
-                .y = _origin.y
-            },
-            .size = self.view.frame.size
-        }];
-    }];
-}
-
-- (void)swipeRight:(UISwipeGestureRecognizer *)gesture {
-    [UIView animateWithDuration:0.3 animations:^{
-        [self.view setFrame:(CGRect) {
-            .origin = _origin,
-            .size = self.view.frame.size
-        }];
-    }];
-}
-
-- (void)swipe {
-    if (self.view.frame.origin.x > 0) {
-        [self swipeLeft:nil];
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    
+    UIView *v = [self.view.subviews objectAtIndex:1];
+    if (v.frame.origin.x > 0) {
+        [self swipeLeftWithDuration:duration];
     } else {
-        [self swipeRight:nil];
+        [self.homeController.view setHidden:YES];
     }
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    [self.homeController.view setHidden:NO];
 }
 
 - (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated {
     [super setViewControllers:viewControllers animated:animated];
     
-    [self swipeLeft:nil];
+    [self swipeLeftWithDuration:0.3];
+}
+
+- (void)setHomeController:(WHomeViewController *)homeController {
+    _homeController = homeController;
+    
+    [self.view insertSubview:self.homeController.view atIndex:0];
+}
+
+
+#pragma mark -
+#pragma mark Swipe methods
+
+- (void)swipeLeftWithDuration:(NSTimeInterval)duration {
+    [UIView animateWithDuration:duration animations:^{
+        for (int i=1, k=self.view.subviews.count; i<k; i++) {
+            UIView *v = [self.view.subviews objectAtIndex:i];
+            [v setFrame:(CGRect) {
+                .origin = (CGPoint) {
+                    .x = v.frame.origin.x - ((v.frame.origin.x > 0) ? 240 : 0),
+                    .y = v.frame.origin.y
+                },
+                .size = v.frame.size
+            }];
+        }
+    }];
+}
+
+- (void)swipeRightWithDuration:(NSTimeInterval)duration {
+    [UIView animateWithDuration:duration animations:^{
+        for (int i=1, k=self.view.subviews.count; i<k; i++) {
+            UIView *v = [self.view.subviews objectAtIndex:i];
+            [v setFrame:(CGRect) {
+                .origin = (CGPoint) {
+                    .x = v.frame.origin.x + ((v.frame.origin.x <= 0) ? 240 : 0),
+                    .y = v.frame.origin.y
+                },
+                .size = v.frame.size
+            }];
+        }
+    }];
+}
+
+- (void)swipeLeft:(UISwipeGestureRecognizer *)gesture {
+    [self swipeLeftWithDuration:0.3];
+}
+
+- (void)swipeRight:(UISwipeGestureRecognizer *)gesture {
+    [self swipeRightWithDuration:0.3];
+}
+
+- (void)swipe {
+    UIView *v = [self.view.subviews objectAtIndex:1];
+    if (v.frame.origin.x > 0) {
+        [self swipeLeftWithDuration:0.3];
+    } else {
+        [self swipeRightWithDuration:0.3];
+    }
 }
 
 @end

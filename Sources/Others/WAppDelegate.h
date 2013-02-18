@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NSManagedObjectContext-EasyFetch.h"
 #import "WNavigationController.h"
+#import "WHomeViewController.h"
 
 #define TESTING 1
 #define kTestFlightToken    @"80c36e4e359a9bc89cb2365e0b2a808f_MTU5NjM5MjAxMi0xMS0yNiAxODo1NjoyNC43MTU2NDA"
@@ -24,8 +25,9 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
-@property (strong, nonatomic) WNavigationController   *navigationController;
+@property (strong, nonatomic) WHomeViewController       *homeController;
+@property (strong, nonatomic) WNavigationController     *navigationController;
 
-@property (strong, nonatomic) UISplitViewController *splitViewController;
+@property (strong, nonatomic) UISplitViewController     *splitViewController;
 
 @end

@@ -12,6 +12,10 @@
 		A2020D6A165E4DC80057FCCD /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D69165E4DC80057FCCD /* Item.m */; };
 		A22D470016636A5D00B4B448 /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = A22D46FE16636A5D00B4B448 /* shadow.png */; };
 		A22D470116636A5D00B4B448 /* shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A22D46FF16636A5D00B4B448 /* shadow@2x.png */; };
+		A2411AC516D228500060EFF7 /* WRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411AC416D228500060EFF7 /* WRequest.m */; };
+		A2411ACA16D237F00060EFF7 /* WRequest+User.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411AC916D237F00060EFF7 /* WRequest+User.m */; };
+		A2411ACD16D23CF80060EFF7 /* WRequest+Sync.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411ACC16D23CF70060EFF7 /* WRequest+Sync.m */; };
+		A2411AD016D248AE0060EFF7 /* WRequest+Amazon.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411ACF16D248AD0060EFF7 /* WRequest+Amazon.m */; };
 		A24FC761165E6DC5002E2C26 /* WDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24FC760165E6DC5002E2C26 /* WDirectoryViewController.m */; };
 		A2677B00165E0AE900C1D630 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2677B02165E0AE900C1D630 /* Localizable.strings */; };
 		A2677B08165E0F0200C1D630 /* WHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B07165E0F0200C1D630 /* WHomeViewController.m */; };
@@ -30,10 +34,8 @@
 		A2C6019116304BAF00CB53B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C6017B16304BAF00CB53B3 /* main.m */; };
 		A2C6019216304BAF00CB53B3 /* WAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C6017D16304BAF00CB53B3 /* WAppDelegate.m */; };
 		A2C6019416304BAF00CB53B3 /* Woda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2C6018016304BAF00CB53B3 /* Woda.xcdatamodeld */; };
-		A2C6019516304BAF00CB53B3 /* WDetailView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018316304BAF00CB53B3 /* WDetailView_iPad.xib */; };
-		A2C6019616304BAF00CB53B3 /* WDetailView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018516304BAF00CB53B3 /* WDetailView_iPhone.xib */; };
-		A2C6019716304BAF00CB53B3 /* WFolderView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018716304BAF00CB53B3 /* WFolderView_iPad.xib */; };
-		A2C6019816304BAF00CB53B3 /* WFolderView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018916304BAF00CB53B3 /* WFolderView_iPhone.xib */; };
+		A2C6019616304BAF00CB53B3 /* WDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018516304BAF00CB53B3 /* WDetailView.xib */; };
+		A2C6019816304BAF00CB53B3 /* WFolderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018916304BAF00CB53B3 /* WFolderView.xib */; };
 		A2DC44F61630546C00E152A6 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44EF1630546C00E152A6 /* Icon-72.png */; };
 		A2DC44F71630546C00E152A6 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F01630546C00E152A6 /* Icon-Small-50.png */; };
 		A2DC44F81630546C00E152A6 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F11630546C00E152A6 /* Icon-Small.png */; };
@@ -69,6 +71,14 @@
 		A2020D69165E4DC80057FCCD /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = Sources/Models/CoreData/Item.m; sourceTree = SOURCE_ROOT; };
 		A22D46FE16636A5D00B4B448 /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
 		A22D46FF16636A5D00B4B448 /* shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shadow@2x.png"; sourceTree = "<group>"; };
+		A2411AC316D228500060EFF7 /* WRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRequest.h; path = Requests/WRequest.h; sourceTree = "<group>"; };
+		A2411AC416D228500060EFF7 /* WRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRequest.m; path = Requests/WRequest.m; sourceTree = "<group>"; };
+		A2411AC816D237F00060EFF7 /* WRequest+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WRequest+User.h"; sourceTree = "<group>"; };
+		A2411AC916D237F00060EFF7 /* WRequest+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WRequest+User.m"; sourceTree = "<group>"; };
+		A2411ACB16D23CF70060EFF7 /* WRequest+Sync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WRequest+Sync.h"; sourceTree = "<group>"; };
+		A2411ACC16D23CF70060EFF7 /* WRequest+Sync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WRequest+Sync.m"; sourceTree = "<group>"; };
+		A2411ACE16D248AC0060EFF7 /* WRequest+Amazon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WRequest+Amazon.h"; path = "Requests/WRequest+Amazon.h"; sourceTree = "<group>"; };
+		A2411ACF16D248AD0060EFF7 /* WRequest+Amazon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WRequest+Amazon.m"; path = "Requests/WRequest+Amazon.m"; sourceTree = "<group>"; };
 		A24FC75F165E6DC5002E2C26 /* WDirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDirectoryViewController.h; sourceTree = "<group>"; };
 		A24FC760165E6DC5002E2C26 /* WDirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDirectoryViewController.m; sourceTree = "<group>"; };
 		A2677B01165E0AE900C1D630 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -99,10 +109,8 @@
 		A2C6017E16304BAF00CB53B3 /* Woda-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Woda-Info.plist"; sourceTree = "<group>"; };
 		A2C6017F16304BAF00CB53B3 /* Woda-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Woda-Prefix.pch"; sourceTree = "<group>"; };
 		A2C6018116304BAF00CB53B3 /* Woda.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Woda.xcdatamodel; sourceTree = "<group>"; };
-		A2C6018416304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WDetailView_iPad.xib; sourceTree = "<group>"; };
-		A2C6018616304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WDetailView_iPhone.xib; sourceTree = "<group>"; };
-		A2C6018816304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WFolderView_iPad.xib; sourceTree = "<group>"; };
-		A2C6018A16304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WFolderView_iPhone.xib; sourceTree = "<group>"; };
+		A2C6018616304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WDetailView.xib; sourceTree = "<group>"; };
+		A2C6018A16304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WFolderView.xib; sourceTree = "<group>"; };
 		A2DC44EF1630546C00E152A6 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = SOURCE_ROOT; };
 		A2DC44F01630546C00E152A6 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = SOURCE_ROOT; };
 		A2DC44F11630546C00E152A6 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = SOURCE_ROOT; };
@@ -165,6 +173,21 @@
 				A2020D66165E41980057FCCD /* WCell.m */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A2411AC216D228230060EFF7 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				A2411AC316D228500060EFF7 /* WRequest.h */,
+				A2411AC416D228500060EFF7 /* WRequest.m */,
+				A2411AC816D237F00060EFF7 /* WRequest+User.h */,
+				A2411AC916D237F00060EFF7 /* WRequest+User.m */,
+				A2411ACB16D23CF70060EFF7 /* WRequest+Sync.h */,
+				A2411ACC16D23CF70060EFF7 /* WRequest+Sync.m */,
+				A2411ACE16D248AC0060EFF7 /* WRequest+Amazon.h */,
+				A2411ACF16D248AD0060EFF7 /* WRequest+Amazon.m */,
+			);
+			name = Requests;
 			sourceTree = "<group>";
 		};
 		A2677B09165E100000C1D630 /* coredata-easyfetch */ = {
@@ -273,6 +296,7 @@
 		A2C6017616304BAF00CB53B3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A2411AC216D228230060EFF7 /* Requests */,
 				A2020D64165E41980057FCCD /* Cells */,
 				A2C6017716304BAF00CB53B3 /* CoreData */,
 			);
@@ -306,10 +330,8 @@
 			isa = PBXGroup;
 			children = (
 				A2677B0D165E125700C1D630 /* WHomeView.xib */,
-				A2C6018716304BAF00CB53B3 /* WFolderView_iPad.xib */,
-				A2C6018916304BAF00CB53B3 /* WFolderView_iPhone.xib */,
-				A2C6018316304BAF00CB53B3 /* WDetailView_iPad.xib */,
-				A2C6018516304BAF00CB53B3 /* WDetailView_iPhone.xib */,
+				A2C6018916304BAF00CB53B3 /* WFolderView.xib */,
+				A2C6018516304BAF00CB53B3 /* WDetailView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -434,10 +456,8 @@
 				A2C6018B16304BAF00CB53B3 /* Default-568h@2x.png in Resources */,
 				A2C6018C16304BAF00CB53B3 /* Default.png in Resources */,
 				A2C6018D16304BAF00CB53B3 /* Default@2x.png in Resources */,
-				A2C6019516304BAF00CB53B3 /* WDetailView_iPad.xib in Resources */,
-				A2C6019616304BAF00CB53B3 /* WDetailView_iPhone.xib in Resources */,
-				A2C6019716304BAF00CB53B3 /* WFolderView_iPad.xib in Resources */,
-				A2C6019816304BAF00CB53B3 /* WFolderView_iPhone.xib in Resources */,
+				A2C6019616304BAF00CB53B3 /* WDetailView.xib in Resources */,
+				A2C6019816304BAF00CB53B3 /* WFolderView.xib in Resources */,
 				A2DC44F61630546C00E152A6 /* Icon-72.png in Resources */,
 				A2DC44F71630546C00E152A6 /* Icon-Small-50.png in Resources */,
 				A2DC44F81630546C00E152A6 /* Icon-Small.png in Resources */,
@@ -486,6 +506,10 @@
 				A2020D67165E41980057FCCD /* WCell.m in Sources */,
 				A2020D6A165E4DC80057FCCD /* Item.m in Sources */,
 				A24FC761165E6DC5002E2C26 /* WDirectoryViewController.m in Sources */,
+				A2411AC516D228500060EFF7 /* WRequest.m in Sources */,
+				A2411ACA16D237F00060EFF7 /* WRequest+User.m in Sources */,
+				A2411ACD16D23CF80060EFF7 /* WRequest+Sync.m in Sources */,
+				A2411AD016D248AE0060EFF7 /* WRequest+Amazon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,36 +525,20 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		A2C6018316304BAF00CB53B3 /* WDetailView_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A2C6018416304BAF00CB53B3 /* en */,
-			);
-			name = WDetailView_iPad.xib;
-			sourceTree = "<group>";
-		};
-		A2C6018516304BAF00CB53B3 /* WDetailView_iPhone.xib */ = {
+		A2C6018516304BAF00CB53B3 /* WDetailView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A2C6018616304BAF00CB53B3 /* en */,
 			);
-			name = WDetailView_iPhone.xib;
+			name = WDetailView.xib;
 			sourceTree = "<group>";
 		};
-		A2C6018716304BAF00CB53B3 /* WFolderView_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A2C6018816304BAF00CB53B3 /* en */,
-			);
-			name = WFolderView_iPad.xib;
-			sourceTree = "<group>";
-		};
-		A2C6018916304BAF00CB53B3 /* WFolderView_iPhone.xib */ = {
+		A2C6018916304BAF00CB53B3 /* WFolderView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A2C6018A16304BAF00CB53B3 /* en */,
 			);
-			name = WFolderView_iPhone.xib;
+			name = WFolderView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -596,6 +604,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Theo LUBERT (TW5A7XQFXB)";
+				DEPLOYMENT_POSTPROCESSING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sources/Others/Woda-Prefix.pch";
 				INFOPLIST_FILE = "Sources/Others/Woda-Info.plist";
@@ -613,6 +622,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Theo LUBERT (TW5A7XQFXB)";
+				DEPLOYMENT_POSTPROCESSING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sources/Others/Woda-Prefix.pch";
 				INFOPLIST_FILE = "Sources/Others/Woda-Info.plist";

@@ -13,8 +13,9 @@ enum kCellIndexes {
     kFoldersCellIndex = 0,
     kStarredCellIndex,
     kRecentCellIndex,
-    kOfflineCellIndex
-    };
+    kOfflineCellIndex,
+    kCellCount
+};
 
 @interface WHomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
