@@ -12,18 +12,10 @@
 		A2020D6A165E4DC80057FCCD /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D69165E4DC80057FCCD /* Item.m */; };
 		A22D470016636A5D00B4B448 /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = A22D46FE16636A5D00B4B448 /* shadow.png */; };
 		A22D470116636A5D00B4B448 /* shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A22D46FF16636A5D00B4B448 /* shadow@2x.png */; };
-		A2411AC516D228500060EFF7 /* WRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411AC416D228500060EFF7 /* WRequest.m */; };
-		A2411ACA16D237F00060EFF7 /* WRequest+User.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411AC916D237F00060EFF7 /* WRequest+User.m */; };
-		A2411ACD16D23CF80060EFF7 /* WRequest+Sync.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411ACC16D23CF70060EFF7 /* WRequest+Sync.m */; };
-		A2411AD016D248AE0060EFF7 /* WRequest+Amazon.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411ACF16D248AD0060EFF7 /* WRequest+Amazon.m */; };
 		A2411AD816D252890060EFF7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2411AD716D252890060EFF7 /* SenTestingKit.framework */; };
 		A2411AD916D252890060EFF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601371630485A00CB53B3 /* UIKit.framework */; };
 		A2411ADA16D252890060EFF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601391630485A00CB53B3 /* Foundation.framework */; };
 		A2411AE016D2528A0060EFF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2411ADE16D2528A0060EFF7 /* InfoPlist.strings */; };
-		A2411AE916D252B50060EFF7 /* WRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411AC416D228500060EFF7 /* WRequest.m */; };
-		A2411AEB16D252B50060EFF7 /* WRequest+User.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411AC916D237F00060EFF7 /* WRequest+User.m */; };
-		A2411AED16D252B50060EFF7 /* WRequest+Sync.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411ACC16D23CF70060EFF7 /* WRequest+Sync.m */; };
-		A2411AEF16D252B50060EFF7 /* WRequest+Amazon.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411ACF16D248AD0060EFF7 /* WRequest+Amazon.m */; };
 		A2411B3616D2544D0060EFF7 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B2416D2544D0060EFF7 /* AFHTTPClient.m */; };
 		A2411B3716D2544D0060EFF7 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B2416D2544D0060EFF7 /* AFHTTPClient.m */; };
 		A2411B3816D2544D0060EFF7 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B2616D2544D0060EFF7 /* AFHTTPRequestOperation.m */; };
@@ -47,6 +39,14 @@
 		A2411B4E16D256FE0060EFF7 /* WRequestUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B4D16D256FD0060EFF7 /* WRequestUserTests.m */; };
 		A2411B4F16D259CE0060EFF7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2411B4816D255C70060EFF7 /* MobileCoreServices.framework */; };
 		A2411B5016D259D30060EFF7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2411B4A16D255D10060EFF7 /* SystemConfiguration.framework */; };
+		A2411B5A16D26B460060EFF7 /* WRequest+Amazon.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5316D26B460060EFF7 /* WRequest+Amazon.m */; };
+		A2411B5B16D26B460060EFF7 /* WRequest+Amazon.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5316D26B460060EFF7 /* WRequest+Amazon.m */; };
+		A2411B5C16D26B460060EFF7 /* WRequest+Sync.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5516D26B460060EFF7 /* WRequest+Sync.m */; };
+		A2411B5D16D26B460060EFF7 /* WRequest+Sync.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5516D26B460060EFF7 /* WRequest+Sync.m */; };
+		A2411B5E16D26B460060EFF7 /* WRequest+User.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5716D26B460060EFF7 /* WRequest+User.m */; };
+		A2411B5F16D26B460060EFF7 /* WRequest+User.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5716D26B460060EFF7 /* WRequest+User.m */; };
+		A2411B6016D26B460060EFF7 /* WRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5916D26B460060EFF7 /* WRequest.m */; };
+		A2411B6116D26B460060EFF7 /* WRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5916D26B460060EFF7 /* WRequest.m */; };
 		A24FC761165E6DC5002E2C26 /* WDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24FC760165E6DC5002E2C26 /* WDirectoryViewController.m */; };
 		A2677B00165E0AE900C1D630 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2677B02165E0AE900C1D630 /* Localizable.strings */; };
 		A2677B08165E0F0200C1D630 /* WHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B07165E0F0200C1D630 /* WHomeViewController.m */; };
@@ -92,14 +92,6 @@
 		A2020D69165E4DC80057FCCD /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = Sources/Models/CoreData/Item.m; sourceTree = SOURCE_ROOT; };
 		A22D46FE16636A5D00B4B448 /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
 		A22D46FF16636A5D00B4B448 /* shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shadow@2x.png"; sourceTree = "<group>"; };
-		A2411AC316D228500060EFF7 /* WRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRequest.h; path = Requests/WRequest.h; sourceTree = "<group>"; };
-		A2411AC416D228500060EFF7 /* WRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRequest.m; path = Requests/WRequest.m; sourceTree = "<group>"; };
-		A2411AC816D237F00060EFF7 /* WRequest+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WRequest+User.h"; sourceTree = "<group>"; };
-		A2411AC916D237F00060EFF7 /* WRequest+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WRequest+User.m"; sourceTree = "<group>"; };
-		A2411ACB16D23CF70060EFF7 /* WRequest+Sync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WRequest+Sync.h"; sourceTree = "<group>"; };
-		A2411ACC16D23CF70060EFF7 /* WRequest+Sync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WRequest+Sync.m"; sourceTree = "<group>"; };
-		A2411ACE16D248AC0060EFF7 /* WRequest+Amazon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WRequest+Amazon.h"; path = "Requests/WRequest+Amazon.h"; sourceTree = "<group>"; };
-		A2411ACF16D248AD0060EFF7 /* WRequest+Amazon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "WRequest+Amazon.m"; path = "Requests/WRequest+Amazon.m"; sourceTree = "<group>"; };
 		A2411AD616D252880060EFF7 /* WodaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WodaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2411AD716D252890060EFF7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		A2411ADD16D2528A0060EFF7 /* WodaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WodaTests-Info.plist"; sourceTree = "<group>"; };
@@ -128,6 +120,14 @@
 		A2411B4A16D255D10060EFF7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A2411B4C16D256FD0060EFF7 /* WRequestUserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRequestUserTests.h; sourceTree = "<group>"; };
 		A2411B4D16D256FD0060EFF7 /* WRequestUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRequestUserTests.m; sourceTree = "<group>"; };
+		A2411B5216D26B460060EFF7 /* WRequest+Amazon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WRequest+Amazon.h"; sourceTree = "<group>"; };
+		A2411B5316D26B460060EFF7 /* WRequest+Amazon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WRequest+Amazon.m"; sourceTree = "<group>"; };
+		A2411B5416D26B460060EFF7 /* WRequest+Sync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WRequest+Sync.h"; sourceTree = "<group>"; };
+		A2411B5516D26B460060EFF7 /* WRequest+Sync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WRequest+Sync.m"; sourceTree = "<group>"; };
+		A2411B5616D26B460060EFF7 /* WRequest+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WRequest+User.h"; sourceTree = "<group>"; };
+		A2411B5716D26B460060EFF7 /* WRequest+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WRequest+User.m"; sourceTree = "<group>"; };
+		A2411B5816D26B460060EFF7 /* WRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRequest.h; sourceTree = "<group>"; };
+		A2411B5916D26B460060EFF7 /* WRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRequest.m; sourceTree = "<group>"; };
 		A24FC75F165E6DC5002E2C26 /* WDirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDirectoryViewController.h; sourceTree = "<group>"; };
 		A24FC760165E6DC5002E2C26 /* WDirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDirectoryViewController.m; sourceTree = "<group>"; };
 		A2677B01165E0AE900C1D630 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -217,21 +217,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		A2411AC216D228230060EFF7 /* Requests */ = {
-			isa = PBXGroup;
-			children = (
-				A2411AC316D228500060EFF7 /* WRequest.h */,
-				A2411AC416D228500060EFF7 /* WRequest.m */,
-				A2411AC816D237F00060EFF7 /* WRequest+User.h */,
-				A2411AC916D237F00060EFF7 /* WRequest+User.m */,
-				A2411ACB16D23CF70060EFF7 /* WRequest+Sync.h */,
-				A2411ACC16D23CF70060EFF7 /* WRequest+Sync.m */,
-				A2411ACE16D248AC0060EFF7 /* WRequest+Amazon.h */,
-				A2411ACF16D248AD0060EFF7 /* WRequest+Amazon.m */,
-			);
-			name = Requests;
-			sourceTree = "<group>";
-		};
 		A2411ADB16D252890060EFF7 /* WodaTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +261,21 @@
 				A2411B3516D2544D0060EFF7 /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		A2411B5116D26B460060EFF7 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				A2411B5216D26B460060EFF7 /* WRequest+Amazon.h */,
+				A2411B5316D26B460060EFF7 /* WRequest+Amazon.m */,
+				A2411B5416D26B460060EFF7 /* WRequest+Sync.h */,
+				A2411B5516D26B460060EFF7 /* WRequest+Sync.m */,
+				A2411B5616D26B460060EFF7 /* WRequest+User.h */,
+				A2411B5716D26B460060EFF7 /* WRequest+User.m */,
+				A2411B5816D26B460060EFF7 /* WRequest.h */,
+				A2411B5916D26B460060EFF7 /* WRequest.m */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		A2677B09165E100000C1D630 /* coredata-easyfetch */ = {
@@ -389,7 +389,7 @@
 		A2C6017616304BAF00CB53B3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A2411AC216D228230060EFF7 /* Requests */,
+				A2411B5116D26B460060EFF7 /* Requests */,
 				A2020D64165E41980057FCCD /* Cells */,
 				A2C6017716304BAF00CB53B3 /* CoreData */,
 			);
@@ -592,10 +592,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2411AE916D252B50060EFF7 /* WRequest.m in Sources */,
-				A2411AEB16D252B50060EFF7 /* WRequest+User.m in Sources */,
-				A2411AED16D252B50060EFF7 /* WRequest+Sync.m in Sources */,
-				A2411AEF16D252B50060EFF7 /* WRequest+Amazon.m in Sources */,
 				A2411B3716D2544D0060EFF7 /* AFHTTPClient.m in Sources */,
 				A2411B3916D2544D0060EFF7 /* AFHTTPRequestOperation.m in Sources */,
 				A2411B3B16D2544D0060EFF7 /* AFImageRequestOperation.m in Sources */,
@@ -606,6 +602,10 @@
 				A2411B4516D2544D0060EFF7 /* AFXMLRequestOperation.m in Sources */,
 				A2411B4716D2544D0060EFF7 /* UIImageView+AFNetworking.m in Sources */,
 				A2411B4E16D256FE0060EFF7 /* WRequestUserTests.m in Sources */,
+				A2411B5B16D26B460060EFF7 /* WRequest+Amazon.m in Sources */,
+				A2411B5D16D26B460060EFF7 /* WRequest+Sync.m in Sources */,
+				A2411B5F16D26B460060EFF7 /* WRequest+User.m in Sources */,
+				A2411B6116D26B460060EFF7 /* WRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,10 +625,6 @@
 				A2020D67165E41980057FCCD /* WCell.m in Sources */,
 				A2020D6A165E4DC80057FCCD /* Item.m in Sources */,
 				A24FC761165E6DC5002E2C26 /* WDirectoryViewController.m in Sources */,
-				A2411AC516D228500060EFF7 /* WRequest.m in Sources */,
-				A2411ACA16D237F00060EFF7 /* WRequest+User.m in Sources */,
-				A2411ACD16D23CF80060EFF7 /* WRequest+Sync.m in Sources */,
-				A2411AD016D248AE0060EFF7 /* WRequest+Amazon.m in Sources */,
 				A2411B3616D2544D0060EFF7 /* AFHTTPClient.m in Sources */,
 				A2411B3816D2544D0060EFF7 /* AFHTTPRequestOperation.m in Sources */,
 				A2411B3A16D2544D0060EFF7 /* AFImageRequestOperation.m in Sources */,
@@ -638,6 +634,10 @@
 				A2411B4216D2544D0060EFF7 /* AFURLConnectionOperation.m in Sources */,
 				A2411B4416D2544D0060EFF7 /* AFXMLRequestOperation.m in Sources */,
 				A2411B4616D2544D0060EFF7 /* UIImageView+AFNetworking.m in Sources */,
+				A2411B5A16D26B460060EFF7 /* WRequest+Amazon.m in Sources */,
+				A2411B5C16D26B460060EFF7 /* WRequest+Sync.m in Sources */,
+				A2411B5E16D26B460060EFF7 /* WRequest+User.m in Sources */,
+				A2411B6016D26B460060EFF7 /* WRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
