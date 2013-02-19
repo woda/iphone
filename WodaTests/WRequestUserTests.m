@@ -14,8 +14,8 @@
 
 
 - (void)verifyUserData:(NSDictionary *)json {
-    STAssertTrue([json isKindOfClass:[NSDictionary class]], @"JSON format invalid: %@", json);
-    if ([json isKindOfClass:[NSDictionary class]]) {
+    STAssertTrue(([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"login"]), @"JSON format invalid: %@", json);
+    if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"login"]) {
         STAssertEquals(_login, [json objectForKey:@"login"], @"login does not match");
         STAssertEquals(_firstName, [json objectForKey:@"first_name"], @"firstName does not match");
         STAssertEquals(_lastName, [json objectForKey:@"last_name"], @"lastName does not match");
