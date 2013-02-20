@@ -86,25 +86,25 @@
 #pragma mark TableView methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return (kCellCount);
+    return (kHomeCellCount);
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
-        case kFoldersCellIndex:
+        case kHomeFoldersCellIndex:
             return (_foldersCell);
-        case kStarredCellIndex:
+        case kHomeStarredCellIndex:
             return (_starredCell);
-        case kRecentCellIndex:
+        case kHomeRecentCellIndex:
             return (_recentCell);
-        case kOfflineCellIndex:
+        case kHomeOfflineCellIndex:
             return (_offlineCell);
-        case kBlankCellIndex:
+        case kHomeBlankCellIndex:
             return (_blankCell);
-        case kAccountCellIndex:
+        case kHomeAccountCellIndex:
             return (_accountCell);
-        case kLogoutCellIndex:
+        case kHomeLogoutCellIndex:
             return (_logoutCell);
         default:
             return nil;
@@ -115,35 +115,35 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UIViewController *login = [[_navController viewControllers] first];
     switch (indexPath.row) {
-        case kFoldersCellIndex: {
+        case kHomeFoldersCellIndex: {
             UIViewController *c = [[WDirectoryViewController alloc] initWithItem:nil];
             [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }
-        case kStarredCellIndex: {
+        case kHomeStarredCellIndex: {
             WFolderViewController *c = [[WFolderViewController alloc] init];
             [c setPredicate:[NSPredicate predicateWithFormat:@"starred == YES"]];
             [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }
-        case kRecentCellIndex: {
+        case kHomeRecentCellIndex: {
             WFolderViewController *c = [[WFolderViewController alloc] init];
             [c setPredicate:[NSPredicate predicateWithFormat:@"isDirectory == NO && openedAt != nil"]];
             [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }
-//        case kOfflineCellIndex: {
+//        case kHomeOfflineCellIndex: {
 //            UIViewController *c = [[WFolderViewController alloc] init];
 //            [self.navigationController pushViewController:c animated:YES];
 //            break;
 //        }
-//        case kBlankCellIndex: {
+//        case kHomeBlankCellIndex: {
 //            // Do nothing
 //        }
-//        case kAccountCellIndex: {
+//        case kHomeAccountCellIndex: {
 //            // Do nothing
 //        }
-        case kLogoutCellIndex: {
+        case kHomeLogoutCellIndex: {
             [WUser logout];
             
             [self.navController swipeLeft];

@@ -9,15 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "WNavigationController.h"
 
-enum kCellIndexes {
-    kFoldersCellIndex = 0,
-    kStarredCellIndex,
-    kRecentCellIndex,
-    kOfflineCellIndex,
-    kBlankCellIndex,
-    kAccountCellIndex,
-    kLogoutCellIndex,
-    kCellCount
+enum kHomeCellIndexes {
+    kHomeFoldersCellIndex = 0,
+    kHomeStarredCellIndex,
+    kHomeRecentCellIndex,
+    kHomeOfflineCellIndex,
+    kHomeBlankCellIndex,
+    kHomeAccountCellIndex,
+    kHomeLogoutCellIndex,
+    kHomeCellCount
 };
 
 @interface WHomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>

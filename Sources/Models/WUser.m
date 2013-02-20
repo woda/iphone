@@ -37,6 +37,29 @@ static WUser *current = nil;
     (void)[[WUser alloc] initWithLogin:login andPassword:password];
 }
 
++ (void)signup:(NSString *)login
+     firstName:(NSString *)first_name
+      lastName:(NSString *)last_name
+      password:(NSString *)password
+         email:(NSString *)email
+{
+    current = [[WUser alloc] init];
+    [current setLogin:login];
+    [current setStatus:Connecting];
+    
+    [WRequest createUser:login firstName:first_name lastName:last_name password:password email:email success:^(id json) {
+        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+        [userDefault setValue:login forKey:kUserLoginKey];
+        [userDefault setValue:password forKey:kUserPasswordKey];
+        
+        [current updateUserInfo:json];
+        [current setStatus:Connected];
+    } failure:^(id json) {
+        NSLog(@"Sign up error: %@", json);
+        [current setStatus:NotConnected];
+    }];
+}
+
 
 #pragma mark - Initialization methods
 

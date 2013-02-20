@@ -32,5 +32,10 @@ typedef enum {
 + (void)logout;
 + (WUser *)current;
 + (void)connectWithLogin:(NSString *)login andPassword:(NSString *)password;
++ (void)signup:(NSString *)login
+     firstName:(NSString *)first_name
+      lastName:(NSString *)last_name
+      password:(NSString *)password
+         email:(NSString *)email;
 
 @end

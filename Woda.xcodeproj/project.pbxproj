@@ -59,6 +59,7 @@
 		A2A0669816D48D2E00D08D8D /* WFolderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A0669616D48D2E00D08D8D /* WFolderView.xib */; };
 		A2A0669A16D48D4900D08D8D /* WUserLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A0669916D48D4900D08D8D /* WUserLoginView.xib */; };
 		A2A0669D16D4CBBF00D08D8D /* NSArray+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0669C16D4CBBF00D08D8D /* NSArray+Shortcuts.m */; };
+		A2A0669F16D4D92500D08D8D /* WUserSignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A0669E16D4D92400D08D8D /* WUserSignUpView.xib */; };
 		A2C601381630485A00CB53B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601371630485A00CB53B3 /* UIKit.framework */; };
 		A2C6013A1630485A00CB53B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601391630485A00CB53B3 /* Foundation.framework */; };
 		A2C6013C1630485A00CB53B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C6013B1630485A00CB53B3 /* CoreGraphics.framework */; };
@@ -155,6 +156,7 @@
 		A2A0669916D48D4900D08D8D /* WUserLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WUserLoginView.xib; sourceTree = "<group>"; };
 		A2A0669B16D4CBBF00D08D8D /* NSArray+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Shortcuts.h"; sourceTree = "<group>"; };
 		A2A0669C16D4CBBF00D08D8D /* NSArray+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Shortcuts.m"; sourceTree = "<group>"; };
+		A2A0669E16D4D92400D08D8D /* WUserSignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WUserSignUpView.xib; sourceTree = "<group>"; };
 		A2C601331630485A00CB53B3 /* Woda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Woda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C601371630485A00CB53B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A2C601391630485A00CB53B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -456,6 +458,7 @@
 				A2A0669616D48D2E00D08D8D /* WFolderView.xib */,
 				A2C6018516304BAF00CB53B3 /* WDetailView.xib */,
 				A2A0669916D48D4900D08D8D /* WUserLoginView.xib */,
+				A2A0669E16D4D92400D08D8D /* WUserSignUpView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				A2F62E7F166447DD00F9CB08 /* release_notes.md in Resources */,
 				A2A0669816D48D2E00D08D8D /* WFolderView.xib in Resources */,
 				A2A0669A16D48D4900D08D8D /* WUserLoginView.xib in Resources */,
+				A2A0669F16D4D92500D08D8D /* WUserSignUpView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
