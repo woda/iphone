@@ -136,7 +136,7 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:password forKey:@"password"];
     
-    [[WRequest client] postPath:[@"/users/{login}/login" stringByReplacingOccurrencesOfString:@"{login}" withString:login] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[WRequest client] postPath:[@"/users/{login}/login" stringByReplacingOccurrencesOfString:@"{login}" withString:login] parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:(NSError *)json forOperation:operation]);

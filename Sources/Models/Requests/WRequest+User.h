@@ -8,6 +8,8 @@
 
 #import "WRequest.h"
 
+#define kInvalidEmail   @"email_invalid"
+
 @interface WRequest (User)
 
 + (void)createUser:(NSString *)login

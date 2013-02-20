@@ -16,21 +16,21 @@
 - (void)verifyUserData:(NSDictionary *)json {
     STAssertTrue(([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"login"]), @"JSON format invalid: %@", json);
     if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"login"]) {
-        STAssertEquals(_login, [json objectForKey:@"login"], @"login does not match");
-        STAssertEquals(_firstName, [json objectForKey:@"first_name"], @"firstName does not match");
-        STAssertEquals(_lastName, [json objectForKey:@"last_name"], @"lastName does not match");
-        STAssertEquals(_email, [json objectForKey:@"email"], @"email does not match");
+        STAssertEqualObjects(_login, [json objectForKey:@"login"], @"login does not match");
+        STAssertEqualObjects(_firstName, [json objectForKey:@"first_name"], @"firstName does not match");
+        STAssertEqualObjects(_lastName, [json objectForKey:@"last_name"], @"lastName does not match");
+        STAssertEqualObjects(_email, [json objectForKey:@"email"], @"email does not match");
     }
 }
 
 - (void)setUp {
     [super setUp];
     
-    _login = @"test1";
-    _firstName = @"1";
+    _login = @"test5";
+    _firstName = @"5";
     _lastName = @"test";
     _password = @"password";
-    _email = @"none";
+    _email = @"test5@woda.com";
 }
 
 - (void)tearDown {
@@ -138,9 +138,27 @@
 - (void)test07UpdateEmail {
     [self test02Login];
     
+    // Invalid email
     kInitWait;
     
-    _email = @"test@woda.com";
+    _email = @"none";
+    [WRequest updateUserWithFirstName:nil lastName:nil password:nil email:_email success:^(NSDictionary *json) {
+        STAssertTrue(([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"error"]), @"JSON format invalid: %@", json);
+        if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"login"]) {
+            STAssertEqualObjects(kInvalidEmail, [json objectForKey:@"error"], @"email is supposed to be invalid");
+        }
+        kStopWait;
+    } failure:^(id json) {
+        STFail(@"Error: %@", json);
+        kStopWait;
+    }];
+    
+    kWait;
+    
+    // Vaild email
+    kStartWait;
+    
+    _email = @"no-reply@woda.com";
     [WRequest updateUserWithFirstName:nil lastName:nil password:nil email:_email success:^(NSDictionary *json) {
         [self verifyUserData:json];
         kStopWait;
