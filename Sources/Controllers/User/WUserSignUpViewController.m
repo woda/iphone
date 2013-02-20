@@ -8,6 +8,7 @@
 
 #import "WUserSignUpViewController.h"
 #import "WDirectoryViewController.h"
+#import "NSArray+Shortcuts.h"
 #import "WUser.h"
 
 @interface WUserSignUpViewController ()
@@ -83,9 +84,10 @@
 - (void)userStatusChanged:(NSNotification *)notification {
     switch ([[WUser current] status]) {
         case Connected: {
+            UIViewController *login = [[self.navigationController viewControllers] first];
             [self.navigationController setNavigationBarHidden:NO animated:NO];
             WDirectoryViewController *folderViewController = [[WDirectoryViewController alloc] initWithItem:nil];
-            [self.navigationController pushViewController:folderViewController animated:YES];
+            [self.navigationController setViewControllers:@[login, folderViewController] animated:YES];
             break;
         }
         case Connecting:
