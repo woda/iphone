@@ -14,6 +14,9 @@ enum kCellIndexes {
     kStarredCellIndex,
     kRecentCellIndex,
     kOfflineCellIndex,
+    kBlankCellIndex,
+    kAccountCellIndex,
+    kLogoutCellIndex,
     kCellCount
 };
 
@@ -40,5 +43,14 @@ enum kCellIndexes {
 @property (nonatomic, retain) IBOutlet UITableViewCell  *offlineCell;
 @property (nonatomic, retain) IBOutlet UILabel          *offlineLabel;
 @property (nonatomic, retain) IBOutlet UILabel          *offlineDetailsLabel;
+
+@property (nonatomic, retain) IBOutlet UITableViewCell  *blankCell;
+
+@property (nonatomic, retain) IBOutlet UITableViewCell  *accountCell;
+@property (nonatomic, retain) IBOutlet UILabel          *accountLabel;
+@property (nonatomic, retain) IBOutlet UILabel          *accountDetailsLabel;
+
+@property (nonatomic, retain) IBOutlet UITableViewCell  *logoutCell;
+@property (nonatomic, retain) IBOutlet UILabel          *logoutLabel;
 
 @end

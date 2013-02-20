@@ -53,6 +53,12 @@
 		A2677B0C165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B0B165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m */; };
 		A2677B0E165E125700C1D630 /* WHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2677B0D165E125700C1D630 /* WHomeView.xib */; };
 		A2677B12165E148000C1D630 /* UIViewController+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B11165E148000C1D630 /* UIViewController+Helpers.m */; };
+		A2A0668F16D475C400D08D8D /* WUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0668E16D475C400D08D8D /* WUserLoginViewController.m */; };
+		A2A0669216D4766900D08D8D /* WUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0669116D4766900D08D8D /* WUser.m */; };
+		A2A0669516D47EF800D08D8D /* WUserSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0669416D47EF800D08D8D /* WUserSignUpViewController.m */; };
+		A2A0669816D48D2E00D08D8D /* WFolderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A0669616D48D2E00D08D8D /* WFolderView.xib */; };
+		A2A0669A16D48D4900D08D8D /* WUserLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A0669916D48D4900D08D8D /* WUserLoginView.xib */; };
+		A2A0669D16D4CBBF00D08D8D /* NSArray+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0669C16D4CBBF00D08D8D /* NSArray+Shortcuts.m */; };
 		A2C601381630485A00CB53B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601371630485A00CB53B3 /* UIKit.framework */; };
 		A2C6013A1630485A00CB53B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601391630485A00CB53B3 /* Foundation.framework */; };
 		A2C6013C1630485A00CB53B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C6013B1630485A00CB53B3 /* CoreGraphics.framework */; };
@@ -66,7 +72,6 @@
 		A2C6019216304BAF00CB53B3 /* WAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C6017D16304BAF00CB53B3 /* WAppDelegate.m */; };
 		A2C6019416304BAF00CB53B3 /* Woda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2C6018016304BAF00CB53B3 /* Woda.xcdatamodeld */; };
 		A2C6019616304BAF00CB53B3 /* WDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018516304BAF00CB53B3 /* WDetailView.xib */; };
-		A2C6019816304BAF00CB53B3 /* WFolderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018916304BAF00CB53B3 /* WFolderView.xib */; };
 		A2DC44F61630546C00E152A6 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44EF1630546C00E152A6 /* Icon-72.png */; };
 		A2DC44F71630546C00E152A6 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F01630546C00E152A6 /* Icon-Small-50.png */; };
 		A2DC44F81630546C00E152A6 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F11630546C00E152A6 /* Icon-Small.png */; };
@@ -140,6 +145,16 @@
 		A2677B10165E148000C1D630 /* UIViewController+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Helpers.h"; sourceTree = "<group>"; };
 		A2677B11165E148000C1D630 /* UIViewController+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Helpers.m"; sourceTree = "<group>"; };
 		A2677B13165E14AB00C1D630 /* Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
+		A2A0668D16D475C400D08D8D /* WUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUserLoginViewController.h; sourceTree = "<group>"; };
+		A2A0668E16D475C400D08D8D /* WUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUserLoginViewController.m; sourceTree = "<group>"; };
+		A2A0669016D4766900D08D8D /* WUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUser.h; sourceTree = "<group>"; };
+		A2A0669116D4766900D08D8D /* WUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUser.m; sourceTree = "<group>"; };
+		A2A0669316D47EF800D08D8D /* WUserSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUserSignUpViewController.h; sourceTree = "<group>"; };
+		A2A0669416D47EF800D08D8D /* WUserSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUserSignUpViewController.m; sourceTree = "<group>"; };
+		A2A0669716D48D2E00D08D8D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WFolderView.xib; sourceTree = "<group>"; };
+		A2A0669916D48D4900D08D8D /* WUserLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WUserLoginView.xib; sourceTree = "<group>"; };
+		A2A0669B16D4CBBF00D08D8D /* NSArray+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Shortcuts.h"; sourceTree = "<group>"; };
+		A2A0669C16D4CBBF00D08D8D /* NSArray+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Shortcuts.m"; sourceTree = "<group>"; };
 		A2C601331630485A00CB53B3 /* Woda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Woda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C601371630485A00CB53B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A2C601391630485A00CB53B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -159,7 +174,6 @@
 		A2C6017F16304BAF00CB53B3 /* Woda-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Woda-Prefix.pch"; sourceTree = "<group>"; };
 		A2C6018116304BAF00CB53B3 /* Woda.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Woda.xcdatamodel; sourceTree = "<group>"; };
 		A2C6018616304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WDetailView.xib; sourceTree = "<group>"; };
-		A2C6018A16304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WFolderView.xib; sourceTree = "<group>"; };
 		A2DC44EF1630546C00E152A6 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = SOURCE_ROOT; };
 		A2DC44F01630546C00E152A6 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = SOURCE_ROOT; };
 		A2DC44F11630546C00E152A6 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = SOURCE_ROOT; };
@@ -293,10 +307,23 @@
 				A2677B13165E14AB00C1D630 /* Helpers.h */,
 				A2677B10165E148000C1D630 /* UIViewController+Helpers.h */,
 				A2677B11165E148000C1D630 /* UIViewController+Helpers.m */,
+				A2A0669B16D4CBBF00D08D8D /* NSArray+Shortcuts.h */,
+				A2A0669C16D4CBBF00D08D8D /* NSArray+Shortcuts.m */,
 			);
 			name = Helpers;
 			path = Sources/Librairies/Helpers;
 			sourceTree = SOURCE_ROOT;
+		};
+		A2A0668C16D475AB00D08D8D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				A2A0668D16D475C400D08D8D /* WUserLoginViewController.h */,
+				A2A0668E16D475C400D08D8D /* WUserLoginViewController.m */,
+				A2A0669316D47EF800D08D8D /* WUserSignUpViewController.h */,
+				A2A0669416D47EF800D08D8D /* WUserSignUpViewController.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
 		};
 		A2C601281630485A00CB53B3 = {
 			isa = PBXGroup;
@@ -372,6 +399,7 @@
 		A2C6017116304BAF00CB53B3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A2A0668C16D475AB00D08D8D /* User */,
 				A2677B06165E0F0200C1D630 /* WHomeViewController.h */,
 				A2677B07165E0F0200C1D630 /* WHomeViewController.m */,
 				A2C6017416304BAF00CB53B3 /* WFolderViewController.h */,
@@ -389,6 +417,8 @@
 		A2C6017616304BAF00CB53B3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A2A0669016D4766900D08D8D /* WUser.h */,
+				A2A0669116D4766900D08D8D /* WUser.m */,
 				A2411B5116D26B460060EFF7 /* Requests */,
 				A2020D64165E41980057FCCD /* Cells */,
 				A2C6017716304BAF00CB53B3 /* CoreData */,
@@ -423,8 +453,9 @@
 			isa = PBXGroup;
 			children = (
 				A2677B0D165E125700C1D630 /* WHomeView.xib */,
-				A2C6018916304BAF00CB53B3 /* WFolderView.xib */,
+				A2A0669616D48D2E00D08D8D /* WFolderView.xib */,
 				A2C6018516304BAF00CB53B3 /* WDetailView.xib */,
+				A2A0669916D48D4900D08D8D /* WUserLoginView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -549,7 +580,6 @@
 				A2C6018C16304BAF00CB53B3 /* Default.png in Resources */,
 				A2C6018D16304BAF00CB53B3 /* Default@2x.png in Resources */,
 				A2C6019616304BAF00CB53B3 /* WDetailView.xib in Resources */,
-				A2C6019816304BAF00CB53B3 /* WFolderView.xib in Resources */,
 				A2DC44F61630546C00E152A6 /* Icon-72.png in Resources */,
 				A2DC44F71630546C00E152A6 /* Icon-Small-50.png in Resources */,
 				A2DC44F81630546C00E152A6 /* Icon-Small.png in Resources */,
@@ -566,6 +596,8 @@
 				A22D470116636A5D00B4B448 /* shadow@2x.png in Resources */,
 				A2F62E7E166447DD00F9CB08 /* README.md in Resources */,
 				A2F62E7F166447DD00F9CB08 /* release_notes.md in Resources */,
+				A2A0669816D48D2E00D08D8D /* WFolderView.xib in Resources */,
+				A2A0669A16D48D4900D08D8D /* WUserLoginView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +670,10 @@
 				A2411B5C16D26B460060EFF7 /* WRequest+Sync.m in Sources */,
 				A2411B5E16D26B460060EFF7 /* WRequest+User.m in Sources */,
 				A2411B6016D26B460060EFF7 /* WRequest.m in Sources */,
+				A2A0668F16D475C400D08D8D /* WUserLoginViewController.m in Sources */,
+				A2A0669216D4766900D08D8D /* WUser.m in Sources */,
+				A2A0669516D47EF800D08D8D /* WUserSignUpViewController.m in Sources */,
+				A2A0669D16D4CBBF00D08D8D /* NSArray+Shortcuts.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,20 +697,20 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		A2A0669616D48D2E00D08D8D /* WFolderView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2A0669716D48D2E00D08D8D /* en */,
+			);
+			name = WFolderView.xib;
+			sourceTree = "<group>";
+		};
 		A2C6018516304BAF00CB53B3 /* WDetailView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A2C6018616304BAF00CB53B3 /* en */,
 			);
 			name = WDetailView.xib;
-			sourceTree = "<group>";
-		};
-		A2C6018916304BAF00CB53B3 /* WFolderView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A2C6018A16304BAF00CB53B3 /* en */,
-			);
-			name = WFolderView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -821,6 +857,7 @@
 				A2411AE716D2528A0060EFF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A2C6012D1630485A00CB53B3 /* Build configuration list for PBXProject "Woda" */ = {
 			isa = XCConfigurationList;

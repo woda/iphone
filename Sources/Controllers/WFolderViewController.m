@@ -36,7 +36,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    if (self.navigationController.viewControllers.count <= 1) {
+    if (self.navigationController.viewControllers.count <= 2) {
         UIBarButtonItem *listButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self.navigationController action:@selector(swipe)];
         self.navigationItem.leftBarButtonItem = listButton;
     }

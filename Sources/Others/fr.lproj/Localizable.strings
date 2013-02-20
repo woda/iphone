@@ -6,6 +6,17 @@
   Copyright (c) 2012 Woda. All rights reserved.
 */
 
+// User
+"UsernameFieldPlaceholder" = "Pseudo";
+"FirstNameFieldPlaceholder" = "Prénom";
+"LastNameFieldPlaceholder" = "Nom de famille";
+"EmailFieldPlaceholder" = "Adresse email";
+"PasswordFieldPlaceholder" = "Mot de passe";
+"SignUpButtonTitle" = "S'inscrire";
+"LoginButtonTitle" = "Se connecter";
+"CreateUserButtonTitle" = "Continuer";
+
+"ConnectingText" = "Connexion";
 
 // Home View
 "FolderLabel" = "Dossiers";
@@ -14,6 +25,9 @@
 "RecentLabel" = "Récent";
 "OfflineLabel" = "Hors ligne";
 "OfflineDetailsLabel" = "0.89€";
+"AccountLabel" = "Compte";
+"AccountDetailsLabel" = "Connecté en tant que ";
+"LogoutLabel" = "Se déconnecter";
 "Files" = "fichiers";
 "File" = "fichier";
 

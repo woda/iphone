@@ -8,8 +8,9 @@
 
 #import "WAppDelegate.h"
 #import "WHomeViewController.h"
-#import "WDirectoryViewController.h"
-#import "WDetailViewController.h"
+//#import "WDirectoryViewController.h"
+//#import "WDetailViewController.h"
+#import "WUserLoginViewController.h"
 
 @implementation WAppDelegate
 
@@ -24,8 +25,8 @@
     
     [NSManagedObjectContext shared:self.managedObjectContext];
     
-    WDirectoryViewController *folderViewController = [[WDirectoryViewController alloc] initWithItem:nil];
-    self.navigationController = [[WNavigationController alloc] initWithRootViewController:folderViewController];
+    WUserLoginViewController *loginViewController = [[WUserLoginViewController alloc] init];
+    self.navigationController = [[WNavigationController alloc] initWithRootViewController:loginViewController];
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     

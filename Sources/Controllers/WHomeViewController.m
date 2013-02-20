@@ -9,6 +9,8 @@
 #import "WHomeViewController.h"
 #import "WDirectoryViewController.h"
 #import "NSManagedObjectContext-EasyFetch.h"
+#import "NSArray+Shortcuts.h"
+#import "WUser.h"
 
 @interface WHomeViewController ()
 
@@ -24,6 +26,7 @@
     self = [super initWithNibName:[self xibFullName:@"WHomeView"] bundle:nil];
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabels) name:kFileUpdated object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabels) name:kUserStatusChanged object:nil];
     }
     return self;
 }
@@ -62,6 +65,13 @@
     
     [_offlineLabel setText:NSLocal(@"OfflineLabel")];
     [_offlineDetailsLabel setText:NSLocal(@"OfflineDetailsLabel")];
+    
+    if ([[WUser current] status] == Connected) {
+        [_accountLabel setText:NSLocal(@"AccountLabel")];
+        [_accountDetailsLabel setText:[NSLocal(@"AccountDetailsLabel") stringByAppendingString:[[WUser current] login]]];
+        
+        [_logoutLabel setText:NSLocal(@"LogoutLabel")];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -90,6 +100,12 @@
             return (_recentCell);
         case kOfflineCellIndex:
             return (_offlineCell);
+        case kBlankCellIndex:
+            return (_blankCell);
+        case kAccountCellIndex:
+            return (_accountCell);
+        case kLogoutCellIndex:
+            return (_logoutCell);
         default:
             return nil;
     }
@@ -97,22 +113,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UIViewController *login = [[_navController viewControllers] first];
     switch (indexPath.row) {
         case kFoldersCellIndex: {
             UIViewController *c = [[WDirectoryViewController alloc] initWithItem:nil];
-            [_navController setViewControllers:@[c] animated:NO];
+            [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }
         case kStarredCellIndex: {
             WFolderViewController *c = [[WFolderViewController alloc] init];
             [c setPredicate:[NSPredicate predicateWithFormat:@"starred == YES"]];
-            [_navController setViewControllers:@[c] animated:YES];
+            [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }
         case kRecentCellIndex: {
             WFolderViewController *c = [[WFolderViewController alloc] init];
             [c setPredicate:[NSPredicate predicateWithFormat:@"isDirectory == NO && openedAt != nil"]];
-            [_navController setViewControllers:@[c] animated:NO];
+            [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }
 //        case kOfflineCellIndex: {
@@ -120,6 +137,18 @@
 //            [self.navigationController pushViewController:c animated:YES];
 //            break;
 //        }
+//        case kBlankCellIndex: {
+//            // Do nothing
+//        }
+//        case kAccountCellIndex: {
+//            // Do nothing
+//        }
+        case kLogoutCellIndex: {
+            [WUser logout];
+            
+            [self.navController swipeLeft];
+            [_navController setViewControllers:@[login] animated:NO];
+        }
         default:
             break;
     }

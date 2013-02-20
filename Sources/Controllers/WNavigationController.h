@@ -14,4 +14,7 @@
 
 @property (nonatomic, retain) WHomeViewController   *homeController;
 
+- (void)swipe;
+- (void)swipeLeft;
+
 @end
