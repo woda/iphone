@@ -18,6 +18,7 @@ static WUser *current = nil;
 
 + (void)logout {
     [WRequest logoutSuccess:^(id json) {
+        NSLog(@"Logout successful: %@", json);
         [[WUser current] setStatus:NotConnected];
     } failure:^(id json) {
         NSLog(@"Logout error: %@", json);
@@ -48,6 +49,8 @@ static WUser *current = nil;
     [current setStatus:Connecting];
     
     [WRequest createUser:login firstName:first_name lastName:last_name password:password email:email success:^(id json) {
+        NSLog(@"Sign up successful: %@", json);
+        
         NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
         [userDefault setValue:login forKey:kUserLoginKey];
         [userDefault setValue:password forKey:kUserPasswordKey];
@@ -69,6 +72,8 @@ static WUser *current = nil;
         [self setLogin:login];
         [self setStatus:Connecting];
         [WRequest login:[self login] password:password success:^(id json) {
+            NSLog(@"Login successful: %@", json);
+            
             NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
             [userDefault setValue:_login forKey:kUserLoginKey];
             [userDefault setValue:password forKey:kUserPasswordKey];
