@@ -1,0 +1,9 @@
+digraph "/Volumes/UserData/Dev/woda-iphone/Sources/Librairies/coredata-easyfetch" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_033e8ea12b7e481dd4143fe4abc46420 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Librairies" fontname="Helvetica", fontsize="10", URL="dir_033e8ea12b7e481dd4143fe4abc46420.html"]
+  dir_7e5ae108ec8b3ffbdaeffec6a59889fb [shape=box, label="coredata-easyfetch", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_7e5ae108ec8b3ffbdaeffec6a59889fb.html"];
+  }
+}

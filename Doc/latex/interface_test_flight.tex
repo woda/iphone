@@ -1,0 +1,135 @@
+\hypertarget{interface_test_flight}{\section{Test\-Flight Class Reference}
+\label{interface_test_flight}\index{Test\-Flight@{Test\-Flight}}
+}
+
+
+{\ttfamily \#import $<$Test\-Flight.\-h$>$}
+
+Inheritance diagram for Test\-Flight\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_test_flight}
+\end{center}
+\end{figure}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{interface_test_flight_a03922e1d4f8860fea67219f23397d9e2}{add\-Custom\-Environment\-Information\-:for\-Key\-:}
+\item 
+(void) + \hyperlink{interface_test_flight_adc50b15219724a73019464acf2ded651}{take\-Off\-:}
+\item 
+(void) + \hyperlink{interface_test_flight_aeab53bbf35f81495258709461070db7a}{set\-Options\-:}
+\item 
+(void) + \hyperlink{interface_test_flight_aa28c2468cdd8d8ba3a1f363f98bd292f}{pass\-Checkpoint\-:}
+\item 
+(void) + \hyperlink{interface_test_flight_a30045419140b0039ccb55ab6c1c39c9c}{open\-Feedback\-View}
+\item 
+(void) + \hyperlink{interface_test_flight_a672f3f6f97f61fce42980f75f8a955c9}{submit\-Feedback\-:}
+\item 
+(void) + \hyperlink{interface_test_flight_acc85f4afac29e1f5087eb9606f011411}{set\-Device\-Identifier\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{interface_test_flight}{Test\-Flight} object All methods are class level 
+
+\subsection{Method Documentation}
+\hypertarget{interface_test_flight_a03922e1d4f8860fea67219f23397d9e2}{\index{Test\-Flight@{Test\-Flight}!add\-Custom\-Environment\-Information\-:for\-Key\-:@{add\-Custom\-Environment\-Information\-:for\-Key\-:}}
+\index{add\-Custom\-Environment\-Information\-:for\-Key\-:@{add\-Custom\-Environment\-Information\-:for\-Key\-:}!TestFlight@{Test\-Flight}}
+\subsubsection[{add\-Custom\-Environment\-Information\-:for\-Key\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) add\-Custom\-Environment\-Information\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{information}
+\item[{forKey:(N\-S\-String $\ast$)}]{key}
+\end{DoxyParamCaption}
+}}\label{interface_test_flight_a03922e1d4f8860fea67219f23397d9e2}
+Add custom environment information If you want to track custom information such as a user name from your application you can add it here
+
+
+\begin{DoxyParams}{Parameters}
+{\em information} & A string containing the environment you are storing \\
+\hline
+{\em key} & The key to store the information with \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_test_flight_a30045419140b0039ccb55ab6c1c39c9c}{\index{Test\-Flight@{Test\-Flight}!open\-Feedback\-View@{open\-Feedback\-View}}
+\index{open\-Feedback\-View@{open\-Feedback\-View}!TestFlight@{Test\-Flight}}
+\subsubsection[{open\-Feedback\-View}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) open\-Feedback\-View 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_test_flight_a30045419140b0039ccb55ab6c1c39c9c}
+Opens a feedback window that is not attached to a checkpoint \hypertarget{interface_test_flight_aa28c2468cdd8d8ba3a1f363f98bd292f}{\index{Test\-Flight@{Test\-Flight}!pass\-Checkpoint\-:@{pass\-Checkpoint\-:}}
+\index{pass\-Checkpoint\-:@{pass\-Checkpoint\-:}!TestFlight@{Test\-Flight}}
+\subsubsection[{pass\-Checkpoint\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) pass\-Checkpoint\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{checkpoint\-Name}
+\end{DoxyParamCaption}
+}}\label{interface_test_flight_aa28c2468cdd8d8ba3a1f363f98bd292f}
+Track when a user has passed a checkpoint after the flight has taken off. Eg. passed level 1, posted high score
+
+
+\begin{DoxyParams}{Parameters}
+{\em checkpoint\-Name} & The name of the checkpoint, this should be a static string \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_test_flight_acc85f4afac29e1f5087eb9606f011411}{\index{Test\-Flight@{Test\-Flight}!set\-Device\-Identifier\-:@{set\-Device\-Identifier\-:}}
+\index{set\-Device\-Identifier\-:@{set\-Device\-Identifier\-:}!TestFlight@{Test\-Flight}}
+\subsubsection[{set\-Device\-Identifier\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Device\-Identifier\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{device\-Identifer}
+\end{DoxyParamCaption}
+}}\label{interface_test_flight_acc85f4afac29e1f5087eb9606f011411}
+Sets the Device Identifier. The S\-D\-K no longer obtains the device unique identifier. This method should only be used during testing so that you can identify a testers test data with them. If you do not provide the identifier you will still see all session data, with checkpoints and logs, but the data will be anonymized. It is recommended that you only use this method during testing. We also recommended that you wrap this method with a pre-\/processor directive that is only active for non-\/app store builds. \#ifndef R\-E\-L\-E\-A\-S\-E \mbox{[}\hyperlink{interface_test_flight}{Test\-Flight} set\-Device\-Identifier\-:\mbox{[}\mbox{[}U\-I\-Device current\-Device\mbox{]} unique\-Identifier\mbox{]}\mbox{]}; \#endif
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\-Identifer} & The current devices device identifier \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_test_flight_aeab53bbf35f81495258709461070db7a}{\index{Test\-Flight@{Test\-Flight}!set\-Options\-:@{set\-Options\-:}}
+\index{set\-Options\-:@{set\-Options\-:}!TestFlight@{Test\-Flight}}
+\subsubsection[{set\-Options\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Options\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Dictionary $\ast$)}]{options}
+\end{DoxyParamCaption}
+}}\label{interface_test_flight_aeab53bbf35f81495258709461070db7a}
+Sets custom options
+
+
+\begin{DoxyParams}{Parameters}
+{\em options} & N\-S\-Dictionary containing the options you want to set available options are described below\\
+\hline
+\end{DoxyParams}
+Option Accepted Values Description reinstall\-Crash\-Handlers \mbox{[} N\-S\-Number number\-With\-Bool\-:Y\-E\-S \mbox{]} Reinstalls crash handlers, to be used if a third party library installs crash handlers overtop of the \hyperlink{interface_test_flight}{Test\-Flight} Crash Handlers log\-To\-Console \mbox{[} N\-S\-Number number\-With\-Bool\-:Y\-E\-S \mbox{]} Y\-E\-S -\/ default, sends log statements to Apple System Log and \hyperlink{interface_test_flight}{Test\-Flight} log N\-O -\/ sends log statements to \hyperlink{interface_test_flight}{Test\-Flight} log only log\-To\-S\-T\-D\-E\-R\-R \mbox{[} N\-S\-Number number\-With\-Bool\-:Y\-E\-S \mbox{]} Y\-E\-S -\/ default, sends log statements to S\-T\-D\-E\-R\-R when debugger is attached N\-O -\/ sends log statements to \hyperlink{interface_test_flight}{Test\-Flight} log only send\-Log\-Only\-On\-Crash \mbox{[} N\-S\-Number number\-With\-Bool\-:Y\-E\-S \mbox{]} N\-O -\/ default, sends logs to \hyperlink{interface_test_flight}{Test\-Flight} at the end of every session Y\-E\-S -\/ sends logs statements to \hyperlink{interface_test_flight}{Test\-Flight} only if there was a crash attach\-Backtrace\-To\-Feedback \mbox{[} N\-S\-Number number\-With\-Bool\-:Y\-E\-S \mbox{]} N\-O -\/ default, feedback is sent exactly as the user enters it Y\-E\-S -\/ attaches the current backtrace, with symbols, to the feedback. disable\-In\-App\-Updates \mbox{[} N\-S\-Number number\-With\-Bool\-:Y\-E\-S \mbox{]} N\-O -\/ default, in application updates are allowed Y\-E\-S -\/ the in application update screen will not be displayed \hypertarget{interface_test_flight_a672f3f6f97f61fce42980f75f8a955c9}{\index{Test\-Flight@{Test\-Flight}!submit\-Feedback\-:@{submit\-Feedback\-:}}
+\index{submit\-Feedback\-:@{submit\-Feedback\-:}!TestFlight@{Test\-Flight}}
+\subsubsection[{submit\-Feedback\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) submit\-Feedback\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{feedback}
+\end{DoxyParamCaption}
+}}\label{interface_test_flight_a672f3f6f97f61fce42980f75f8a955c9}
+Submits custom feedback to the site. Sends the data in feedback to the site. This is to be used as the method to submit feedback from custom feedback forms.
+
+
+\begin{DoxyParams}{Parameters}
+{\em feedback} & Your users feedback, method does nothing if feedback is nil \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_test_flight_adc50b15219724a73019464acf2ded651}{\index{Test\-Flight@{Test\-Flight}!take\-Off\-:@{take\-Off\-:}}
+\index{take\-Off\-:@{take\-Off\-:}!TestFlight@{Test\-Flight}}
+\subsubsection[{take\-Off\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) take\-Off\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{team\-Token}
+\end{DoxyParamCaption}
+}}\label{interface_test_flight_adc50b15219724a73019464acf2ded651}
+Starts a \hyperlink{interface_test_flight}{Test\-Flight} session
+
+
+\begin{DoxyParams}{Parameters}
+{\em team\-Token} & Will be your team token obtained from \href{https://testflightapp.com/dashboard/team/edit/}{\tt https\-://testflightapp.\-com/dashboard/team/edit/} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-Test\-Flight\-S\-D\-K1.\-1/\hyperlink{_test_flight_8h}{Test\-Flight.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,34 @@
+digraph "/Volumes/UserData/Dev/woda-iphone/Sources/Controllers/WHomeViewController.m"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/Volumes/UserData/Dev\l/woda-iphone/Sources\l/Controllers/WHomeViewController.m",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="WHomeViewController.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_w_home_view_controller_8h.html"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="UIKit/UIKit.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="WNavigationController.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_w_navigation_controller_8h.html"];
+  Node4 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="WDirectoryViewController.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_w_directory_view_controller_8h.html"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="WFolderViewController.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_w_folder_view_controller_8h.html"];
+  Node6 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="CoreData/CoreData.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Item.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_item_8h.html"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Foundation/Foundation.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node8 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="NSManagedObjectContext\l-EasyFetch.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_n_s_managed_object_context-_easy_fetch_8h.html"];
+  Node10 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="NSArray+Shortcuts.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_n_s_array_09_shortcuts_8h.html"];
+  Node11 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="WUser.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_w_user_8h.html"];
+  Node12 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

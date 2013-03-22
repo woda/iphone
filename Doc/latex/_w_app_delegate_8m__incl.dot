@@ -1,0 +1,25 @@
+digraph "/Volumes/UserData/Dev/woda-iphone/Sources/Others/WAppDelegate.m"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/Volumes/UserData/Dev\l/woda-iphone/Sources\l/Others/WAppDelegate.m",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="WAppDelegate.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_w_app_delegate_8h.html"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="UIKit/UIKit.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="NSManagedObjectContext\l-EasyFetch.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_n_s_managed_object_context-_easy_fetch_8h.html"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="CoreData/CoreData.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="WNavigationController.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_w_navigation_controller_8h.html"];
+  Node6 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="WHomeViewController.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_w_home_view_controller_8h.html"];
+  Node7 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="WUserLoginViewController.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_w_user_login_view_controller_8h.html"];
+  Node8 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+}

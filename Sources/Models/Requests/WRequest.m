@@ -22,9 +22,13 @@ static AFHTTPClient *client = nil;
 + (id)displayError:(NSError *)error forOperation:(AFHTTPRequestOperation *)operation {
 //    NSLog(@"%@", error);
     id json = [WRequest JSONFromData:[operation responseData]];
-    if ((json == nil) || ([json isKindOfClass:[NSError class]])) {
+    if ([json isKindOfClass:[NSError class]]) {
+        NSLog(@"Error: Json parsing failed");
+        return ([(NSError *)json localizedDescription]);
+    }
+    if (json == nil) {
         NSLog(@"Error: No json available");
-        return (nil);
+        return ([error localizedDescription]);
     }
 //    NSLog(@"Error: %@", json);
     return (json);

@@ -1,0 +1,185 @@
+\hypertarget{interface_a_f_h_t_t_p_request_operation}{\section{A\-F\-H\-T\-T\-P\-Request\-Operation Class Reference}
+\label{interface_a_f_h_t_t_p_request_operation}\index{A\-F\-H\-T\-T\-P\-Request\-Operation@{A\-F\-H\-T\-T\-P\-Request\-Operation}}
+}
+
+
+{\ttfamily \#import $<$A\-F\-H\-T\-T\-P\-Request\-Operation.\-h$>$}
+
+Inheritance diagram for A\-F\-H\-T\-T\-P\-Request\-Operation\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.414634cm]{interface_a_f_h_t_t_p_request_operation}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{Indent}{\bf Setting Completion Block Success / Failure Callbacks}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_a_f_h_t_t_p_request_operation_a2b9008e6fb9fc14bf7052b26cdfad80c}{set\-Completion\-Block\-With\-Success\-:failure\-:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Class Methods}
+\begin{Indent}{\bf Managing Acceptable H\-T\-T\-P Status Codes \& Content Types}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(N\-S\-Index\-Set $\ast$) + \hyperlink{interface_a_f_h_t_t_p_request_operation_a7fedad9727925d5bd723f8ad677b5ade}{acceptable\-Status\-Codes}
+\item 
+(void) + \hyperlink{interface_a_f_h_t_t_p_request_operation_a6dcbb7ca30906416ae8848cce05d209b}{add\-Acceptable\-Status\-Codes\-:}
+\item 
+(N\-S\-Set $\ast$) + \hyperlink{interface_a_f_h_t_t_p_request_operation_af4cb7def98220fc0d412f3d934c1f916}{acceptable\-Content\-Types}
+\item 
+(void) + \hyperlink{interface_a_f_h_t_t_p_request_operation_a1b80d7d851a3b135e44629e04a0ca72e}{add\-Acceptable\-Content\-Types\-:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Determining Whether A Request Can Be Processed}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(B\-O\-O\-L) + \hyperlink{interface_a_f_h_t_t_p_request_operation_a926e52cb83df877f80565e7f0bdcda92}{can\-Process\-Request\-:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\begin{Indent}{\bf Getting H\-T\-T\-P U\-R\-L Connection Information}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+N\-S\-H\-T\-T\-P\-U\-R\-L\-Response $\ast$ \hyperlink{interface_a_f_h_t_t_p_request_operation_a7a6e0248cffbdfa767d79e864fc1e730}{response}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Managing And Checking For Acceptable H\-T\-T\-P Responses}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+B\-O\-O\-L \hyperlink{interface_a_f_h_t_t_p_request_operation_a2535d0fb4cf31762e8da4d72b5b38884}{has\-Acceptable\-Status\-Code}
+\item 
+B\-O\-O\-L \hyperlink{interface_a_f_h_t_t_p_request_operation_aac3fa89cf863383420c3249f4039cdfa}{has\-Acceptable\-Content\-Type}
+\item 
+dispatch\-\_\-queue\-\_\-t \hyperlink{interface_a_f_h_t_t_p_request_operation_a54c7b52a48c9347ebe1782efd35a7709}{success\-Callback\-Queue}
+\item 
+dispatch\-\_\-queue\-\_\-t \hyperlink{interface_a_f_h_t_t_p_request_operation_af6b19034ba394439b4b66f662051149a}{failure\-Callback\-Queue}
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+{\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} is a subclass of {\ttfamily \hyperlink{interface_a_f_u_r_l_connection_operation}{A\-F\-U\-R\-L\-Connection\-Operation}} for requests using the H\-T\-T\-P or H\-T\-T\-P\-S protocols. It encapsulates the concept of acceptable status codes and content types, which determine the success or failure of a request. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_a_f_h_t_t_p_request_operation_af4cb7def98220fc0d412f3d934c1f916}{\index{A\-F\-H\-T\-T\-P\-Request\-Operation@{A\-F\-H\-T\-T\-P\-Request\-Operation}!acceptable\-Content\-Types@{acceptable\-Content\-Types}}
+\index{acceptable\-Content\-Types@{acceptable\-Content\-Types}!AFHTTPRequestOperation@{A\-F\-H\-T\-T\-P\-Request\-Operation}}
+\subsubsection[{acceptable\-Content\-Types}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-Set $\ast$) acceptable\-Content\-Types 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_request_operation_af4cb7def98220fc0d412f3d934c1f916}
+Returns an {\ttfamily N\-S\-Set} object containing the acceptable M\-I\-M\-E types. When non-\/{\ttfamily nil}, the operation will set the {\ttfamily error} property to an error in {\ttfamily A\-F\-Error\-Domain}. See \href{http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17}{\tt http\-://www.\-w3.\-org/\-Protocols/rfc2616/rfc2616-\/sec14.\-html\#sec14.\-17}
+
+By default, this is {\ttfamily nil}. \hypertarget{interface_a_f_h_t_t_p_request_operation_a7fedad9727925d5bd723f8ad677b5ade}{\index{A\-F\-H\-T\-T\-P\-Request\-Operation@{A\-F\-H\-T\-T\-P\-Request\-Operation}!acceptable\-Status\-Codes@{acceptable\-Status\-Codes}}
+\index{acceptable\-Status\-Codes@{acceptable\-Status\-Codes}!AFHTTPRequestOperation@{A\-F\-H\-T\-T\-P\-Request\-Operation}}
+\subsubsection[{acceptable\-Status\-Codes}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-Index\-Set $\ast$) acceptable\-Status\-Codes 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_request_operation_a7fedad9727925d5bd723f8ad677b5ade}
+Returns an {\ttfamily N\-S\-Index\-Set} object containing the ranges of acceptable H\-T\-T\-P status codes. When non-\/{\ttfamily nil}, the operation will set the {\ttfamily error} property to an error in {\ttfamily A\-F\-Error\-Domain}. See \href{http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html}{\tt http\-://www.\-w3.\-org/\-Protocols/rfc2616/rfc2616-\/sec10.\-html}
+
+By default, this is the range 200 to 299, inclusive. \hypertarget{interface_a_f_h_t_t_p_request_operation_a1b80d7d851a3b135e44629e04a0ca72e}{\index{A\-F\-H\-T\-T\-P\-Request\-Operation@{A\-F\-H\-T\-T\-P\-Request\-Operation}!add\-Acceptable\-Content\-Types\-:@{add\-Acceptable\-Content\-Types\-:}}
+\index{add\-Acceptable\-Content\-Types\-:@{add\-Acceptable\-Content\-Types\-:}!AFHTTPRequestOperation@{A\-F\-H\-T\-T\-P\-Request\-Operation}}
+\subsubsection[{add\-Acceptable\-Content\-Types\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) add\-Acceptable\-Content\-Types\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Set $\ast$)}]{content\-Types}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_request_operation_a1b80d7d851a3b135e44629e04a0ca72e}
+Adds content types to the set of acceptable M\-I\-M\-E types returned by {\ttfamily +acceptable\-Content\-Types} in subsequent calls by this class and its descendants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em content\-Types} & The content types to be added to the set of acceptable M\-I\-M\-E types \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_a_f_h_t_t_p_request_operation_a6dcbb7ca30906416ae8848cce05d209b}{\index{A\-F\-H\-T\-T\-P\-Request\-Operation@{A\-F\-H\-T\-T\-P\-Request\-Operation}!add\-Acceptable\-Status\-Codes\-:@{add\-Acceptable\-Status\-Codes\-:}}
+\index{add\-Acceptable\-Status\-Codes\-:@{add\-Acceptable\-Status\-Codes\-:}!AFHTTPRequestOperation@{A\-F\-H\-T\-T\-P\-Request\-Operation}}
+\subsubsection[{add\-Acceptable\-Status\-Codes\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) add\-Acceptable\-Status\-Codes\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Index\-Set $\ast$)}]{status\-Codes}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_request_operation_a6dcbb7ca30906416ae8848cce05d209b}
+Adds status codes to the set of acceptable H\-T\-T\-P status codes returned by {\ttfamily +acceptable\-Status\-Codes} in subsequent calls by this class and its descendants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em status\-Codes} & The status codes to be added to the set of acceptable H\-T\-T\-P status codes \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_a_f_h_t_t_p_request_operation_a926e52cb83df877f80565e7f0bdcda92}{\index{A\-F\-H\-T\-T\-P\-Request\-Operation@{A\-F\-H\-T\-T\-P\-Request\-Operation}!can\-Process\-Request\-:@{can\-Process\-Request\-:}}
+\index{can\-Process\-Request\-:@{can\-Process\-Request\-:}!AFHTTPRequestOperation@{A\-F\-H\-T\-T\-P\-Request\-Operation}}
+\subsubsection[{can\-Process\-Request\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (B\-O\-O\-L) can\-Process\-Request\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L\-Request $\ast$)}]{url\-Request}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_request_operation_a926e52cb83df877f80565e7f0bdcda92}
+A Boolean value determining whether or not the class can process the specified request. For example, {\ttfamily \hyperlink{interface_a_f_j_s_o_n_request_operation}{A\-F\-J\-S\-O\-N\-Request\-Operation}} may check to make sure the content type was {\ttfamily application/json} or the U\-R\-L path extension was {\ttfamily .json}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em url\-Request} & The request that is determined to be supported or not supported for this class. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_a_f_h_t_t_p_request_operation_a2b9008e6fb9fc14bf7052b26cdfad80c}{\index{A\-F\-H\-T\-T\-P\-Request\-Operation@{A\-F\-H\-T\-T\-P\-Request\-Operation}!set\-Completion\-Block\-With\-Success\-:failure\-:@{set\-Completion\-Block\-With\-Success\-:failure\-:}}
+\index{set\-Completion\-Block\-With\-Success\-:failure\-:@{set\-Completion\-Block\-With\-Success\-:failure\-:}!AFHTTPRequestOperation@{A\-F\-H\-T\-T\-P\-Request\-Operation}}
+\subsubsection[{set\-Completion\-Block\-With\-Success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Completion\-Block\-With\-Success\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$operation, id response\-Object)}]{success}
+\item[{failure:({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$operation, N\-S\-Error $\ast${\bf error})}]{failure}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_request_operation_a2b9008e6fb9fc14bf7052b26cdfad80c}
+Sets the {\ttfamily completion\-Block} property with a block that executes either the specified success or failure block, depending on the state of the request on completion. If {\ttfamily error} returns a value, which can be caused by an unacceptable status code or content type, then {\ttfamily failure} is executed. Otherwise, {\ttfamily success} is executed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em success} & The block to be executed on the completion of a successful request. This block has no return value and takes two arguments\-: the receiver operation and the object constructed from the response data of the request. \\
+\hline
+{\em failure} & The block to be executed on the completion of an unsuccessful request. This block has no return value and takes two arguments\-: the receiver operation and the error that occurred during the request.\\
+\hline
+\end{DoxyParams}
+This method should be overridden in subclasses in order to specify the response object passed into the success block. 
+
+\subsection{Property Documentation}
+\hypertarget{interface_a_f_h_t_t_p_request_operation_af6b19034ba394439b4b66f662051149a}{\index{A\-F\-H\-T\-T\-P\-Request\-Operation@{A\-F\-H\-T\-T\-P\-Request\-Operation}!failure\-Callback\-Queue@{failure\-Callback\-Queue}}
+\index{failure\-Callback\-Queue@{failure\-Callback\-Queue}!AFHTTPRequestOperation@{A\-F\-H\-T\-T\-P\-Request\-Operation}}
+\subsubsection[{failure\-Callback\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (dispatch\-\_\-queue\-\_\-t) failure\-Callback\-Queue\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_a_f_h_t_t_p_request_operation_af6b19034ba394439b4b66f662051149a}
+The callback dispatch queue on failure. If {\ttfamily N\-U\-L\-L} (default), the main queue is used. \hypertarget{interface_a_f_h_t_t_p_request_operation_aac3fa89cf863383420c3249f4039cdfa}{\index{A\-F\-H\-T\-T\-P\-Request\-Operation@{A\-F\-H\-T\-T\-P\-Request\-Operation}!has\-Acceptable\-Content\-Type@{has\-Acceptable\-Content\-Type}}
+\index{has\-Acceptable\-Content\-Type@{has\-Acceptable\-Content\-Type}!AFHTTPRequestOperation@{A\-F\-H\-T\-T\-P\-Request\-Operation}}
+\subsubsection[{has\-Acceptable\-Content\-Type}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) has\-Acceptable\-Content\-Type\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_a_f_h_t_t_p_request_operation_aac3fa89cf863383420c3249f4039cdfa}
+A Boolean value that corresponds to whether the M\-I\-M\-E type of the response is among the specified set of acceptable content types. Returns {\ttfamily Y\-E\-S} if {\ttfamily acceptable\-Content\-Types} is {\ttfamily nil}. \hypertarget{interface_a_f_h_t_t_p_request_operation_a2535d0fb4cf31762e8da4d72b5b38884}{\index{A\-F\-H\-T\-T\-P\-Request\-Operation@{A\-F\-H\-T\-T\-P\-Request\-Operation}!has\-Acceptable\-Status\-Code@{has\-Acceptable\-Status\-Code}}
+\index{has\-Acceptable\-Status\-Code@{has\-Acceptable\-Status\-Code}!AFHTTPRequestOperation@{A\-F\-H\-T\-T\-P\-Request\-Operation}}
+\subsubsection[{has\-Acceptable\-Status\-Code}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) has\-Acceptable\-Status\-Code\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_a_f_h_t_t_p_request_operation_a2535d0fb4cf31762e8da4d72b5b38884}
+A Boolean value that corresponds to whether the status code of the response is within the specified set of acceptable status codes. Returns {\ttfamily Y\-E\-S} if {\ttfamily acceptable\-Status\-Codes} is {\ttfamily nil}. \hypertarget{interface_a_f_h_t_t_p_request_operation_a7a6e0248cffbdfa767d79e864fc1e730}{\index{A\-F\-H\-T\-T\-P\-Request\-Operation@{A\-F\-H\-T\-T\-P\-Request\-Operation}!response@{response}}
+\index{response@{response}!AFHTTPRequestOperation@{A\-F\-H\-T\-T\-P\-Request\-Operation}}
+\subsubsection[{response}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-H\-T\-T\-P\-U\-R\-L\-Response$\ast$) response\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_a_f_h_t_t_p_request_operation_a7a6e0248cffbdfa767d79e864fc1e730}
+The last H\-T\-T\-P response received by the operation's connection. \hypertarget{interface_a_f_h_t_t_p_request_operation_a54c7b52a48c9347ebe1782efd35a7709}{\index{A\-F\-H\-T\-T\-P\-Request\-Operation@{A\-F\-H\-T\-T\-P\-Request\-Operation}!success\-Callback\-Queue@{success\-Callback\-Queue}}
+\index{success\-Callback\-Queue@{success\-Callback\-Queue}!AFHTTPRequestOperation@{A\-F\-H\-T\-T\-P\-Request\-Operation}}
+\subsubsection[{success\-Callback\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (dispatch\-\_\-queue\-\_\-t) success\-Callback\-Queue\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_a_f_h_t_t_p_request_operation_a54c7b52a48c9347ebe1782efd35a7709}
+The callback dispatch queue on success. If {\ttfamily N\-U\-L\-L} (default), the main queue is used. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\hyperlink{_a_f_h_t_t_p_request_operation_8h}{A\-F\-H\-T\-T\-P\-Request\-Operation.\-h}\item 
+/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\hyperlink{_a_f_h_t_t_p_request_operation_8m}{A\-F\-H\-T\-T\-P\-Request\-Operation.\-m}\end{DoxyCompactItemize}

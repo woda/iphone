@@ -1,0 +1,131 @@
+\hypertarget{_a_f_u_r_l_connection_operation_8m}{\section{/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\-A\-F\-U\-R\-L\-Connection\-Operation.m File Reference}
+\label{_a_f_u_r_l_connection_operation_8m}\index{/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\-A\-F\-U\-R\-L\-Connection\-Operation.\-m@{/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\-A\-F\-U\-R\-L\-Connection\-Operation.\-m}}
+}
+{\ttfamily \#import \char`\"{}A\-F\-U\-R\-L\-Connection\-Operation.\-h\char`\"{}}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef signed short \hyperlink{_a_f_u_r_l_connection_operation_8m_a51bbe4980aae3bad31c2b5de2b9563d4}{A\-F\-Operation\-State}
+\item 
+typedef id \hyperlink{_a_f_u_r_l_connection_operation_8m_ae158f01d5331666b5ea61d9708f696bd}{A\-F\-Background\-Task\-Identifier}
+\item 
+typedef void($^\wedge$ \hyperlink{_a_f_u_r_l_connection_operation_8m_a8522dd3ddf39be65563f1225357677d0}{A\-F\-U\-R\-L\-Connection\-Operation\-Progress\-Block} )(N\-S\-U\-Integer bytes, long long total\-Bytes, long long total\-Bytes\-Expected)
+\item 
+typedef B\-O\-O\-L($^\wedge$ \hyperlink{_a_f_u_r_l_connection_operation_8m_a62b1ba26e702f499e35acbfb0535a47b}{A\-F\-U\-R\-L\-Connection\-Operation\-Authentication\-Against\-Protection\-Space\-Block} )(N\-S\-U\-R\-L\-Connection $\ast$connection, N\-S\-U\-R\-L\-Protection\-Space $\ast$protection\-Space)
+\item 
+typedef void($^\wedge$ \hyperlink{_a_f_u_r_l_connection_operation_8m_a2cea16107d055ba51251e0b5161e12b7}{A\-F\-U\-R\-L\-Connection\-Operation\-Authentication\-Challenge\-Block} )(N\-S\-U\-R\-L\-Connection $\ast$connection, N\-S\-U\-R\-L\-Authentication\-Challenge $\ast$challenge)
+\item 
+typedef N\-S\-Cached\-U\-R\-L\-Response $\ast$($^\wedge$ \hyperlink{_a_f_u_r_l_connection_operation_8m_a326c476a5efb11eda5ee64ee17976bd4}{A\-F\-U\-R\-L\-Connection\-Operation\-Cache\-Response\-Block} )(N\-S\-U\-R\-L\-Connection $\ast$connection, N\-S\-Cached\-U\-R\-L\-Response $\ast$cached\-Response)
+\item 
+typedef N\-S\-U\-R\-L\-Request $\ast$($^\wedge$ \hyperlink{_a_f_u_r_l_connection_operation_8m_aba804ce20535fafc20d17239873d8a94}{A\-F\-U\-R\-L\-Connection\-Operation\-Redirect\-Response\-Block} )(N\-S\-U\-R\-L\-Connection $\ast$connection, N\-S\-U\-R\-L\-Request $\ast$request, N\-S\-U\-R\-L\-Response $\ast$redirect\-Response)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_a_f_u_r_l_connection_operation_8m_a184ed9ed152b5fc4778f936593ac8906}{\-\_\-\-A\-F\-Operation\-State} \{ \hyperlink{_a_f_u_r_l_connection_operation_8m_a184ed9ed152b5fc4778f936593ac8906a1269f3fcc5a32164beb62fde2ebbb780}{A\-F\-Operation\-Paused\-State} = -\/1, 
+\hyperlink{_a_f_u_r_l_connection_operation_8m_a184ed9ed152b5fc4778f936593ac8906ab324c764a0ed998992dfbb5feda175aa}{A\-F\-Operation\-Ready\-State} = 1, 
+\hyperlink{_a_f_u_r_l_connection_operation_8m_a184ed9ed152b5fc4778f936593ac8906ab55288743f8ae6bac2d56411a13767d1}{A\-F\-Operation\-Executing\-State} = 2, 
+\hyperlink{_a_f_u_r_l_connection_operation_8m_a184ed9ed152b5fc4778f936593ac8906a8caadc26a25ad3c4e1c8d07bd5f92e29}{A\-F\-Operation\-Finished\-State} = 3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-String $\ast$const \hyperlink{_a_f_u_r_l_connection_operation_8m_a8008e6a94dd696d059e3cd52f0e2e960}{A\-F\-Networking\-Error\-Domain} = @\char`\"{}A\-F\-Networking\-Error\-Domain\char`\"{}
+\item 
+N\-S\-String $\ast$const \hyperlink{_a_f_u_r_l_connection_operation_8m_a8705927d22e9b91b769373eaa09bad1a}{A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Request\-Error\-Key} = @\char`\"{}A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Request\-Error\-Key\char`\"{}
+\item 
+N\-S\-String $\ast$const \hyperlink{_a_f_u_r_l_connection_operation_8m_a5c2c8d0ff30179e1cf05f3cb9f51fd83}{A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Response\-Error\-Key} = @\char`\"{}A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Response\-Error\-Key\char`\"{}
+\item 
+N\-S\-String $\ast$const \hyperlink{_a_f_u_r_l_connection_operation_8m_a5bbcc1affc58acaa394f985de87f1826}{A\-F\-Networking\-Operation\-Did\-Start\-Notification} = @\char`\"{}com.\-alamofire.\-networking.\-operation.\-start\char`\"{}
+\item 
+N\-S\-String $\ast$const \hyperlink{_a_f_u_r_l_connection_operation_8m_a87986e63f852391d49ef2d28f0af76a7}{A\-F\-Networking\-Operation\-Did\-Finish\-Notification} = @\char`\"{}com.\-alamofire.\-networking.\-operation.\-finish\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_a_f_u_r_l_connection_operation_8m_ae158f01d5331666b5ea61d9708f696bd}{\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!A\-F\-Background\-Task\-Identifier@{A\-F\-Background\-Task\-Identifier}}
+\index{A\-F\-Background\-Task\-Identifier@{A\-F\-Background\-Task\-Identifier}!AFURLConnectionOperation.m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}
+\subsubsection[{A\-F\-Background\-Task\-Identifier}]{\setlength{\rightskip}{0pt plus 5cm}typedef id {\bf A\-F\-Background\-Task\-Identifier}}}\label{_a_f_u_r_l_connection_operation_8m_ae158f01d5331666b5ea61d9708f696bd}
+\hypertarget{_a_f_u_r_l_connection_operation_8m_a51bbe4980aae3bad31c2b5de2b9563d4}{\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!A\-F\-Operation\-State@{A\-F\-Operation\-State}}
+\index{A\-F\-Operation\-State@{A\-F\-Operation\-State}!AFURLConnectionOperation.m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}
+\subsubsection[{A\-F\-Operation\-State}]{\setlength{\rightskip}{0pt plus 5cm}typedef signed short {\bf A\-F\-Operation\-State}}}\label{_a_f_u_r_l_connection_operation_8m_a51bbe4980aae3bad31c2b5de2b9563d4}
+\hypertarget{_a_f_u_r_l_connection_operation_8m_a62b1ba26e702f499e35acbfb0535a47b}{\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!A\-F\-U\-R\-L\-Connection\-Operation\-Authentication\-Against\-Protection\-Space\-Block@{A\-F\-U\-R\-L\-Connection\-Operation\-Authentication\-Against\-Protection\-Space\-Block}}
+\index{A\-F\-U\-R\-L\-Connection\-Operation\-Authentication\-Against\-Protection\-Space\-Block@{A\-F\-U\-R\-L\-Connection\-Operation\-Authentication\-Against\-Protection\-Space\-Block}!AFURLConnectionOperation.m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}
+\subsubsection[{A\-F\-U\-R\-L\-Connection\-Operation\-Authentication\-Against\-Protection\-Space\-Block}]{\setlength{\rightskip}{0pt plus 5cm}typedef B\-O\-O\-L($^\wedge$ A\-F\-U\-R\-L\-Connection\-Operation\-Authentication\-Against\-Protection\-Space\-Block)(N\-S\-U\-R\-L\-Connection $\ast$connection, N\-S\-U\-R\-L\-Protection\-Space $\ast$protection\-Space)}}\label{_a_f_u_r_l_connection_operation_8m_a62b1ba26e702f499e35acbfb0535a47b}
+\hypertarget{_a_f_u_r_l_connection_operation_8m_a2cea16107d055ba51251e0b5161e12b7}{\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!A\-F\-U\-R\-L\-Connection\-Operation\-Authentication\-Challenge\-Block@{A\-F\-U\-R\-L\-Connection\-Operation\-Authentication\-Challenge\-Block}}
+\index{A\-F\-U\-R\-L\-Connection\-Operation\-Authentication\-Challenge\-Block@{A\-F\-U\-R\-L\-Connection\-Operation\-Authentication\-Challenge\-Block}!AFURLConnectionOperation.m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}
+\subsubsection[{A\-F\-U\-R\-L\-Connection\-Operation\-Authentication\-Challenge\-Block}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($^\wedge$ A\-F\-U\-R\-L\-Connection\-Operation\-Authentication\-Challenge\-Block)(N\-S\-U\-R\-L\-Connection $\ast$connection, N\-S\-U\-R\-L\-Authentication\-Challenge $\ast$challenge)}}\label{_a_f_u_r_l_connection_operation_8m_a2cea16107d055ba51251e0b5161e12b7}
+\hypertarget{_a_f_u_r_l_connection_operation_8m_a326c476a5efb11eda5ee64ee17976bd4}{\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!A\-F\-U\-R\-L\-Connection\-Operation\-Cache\-Response\-Block@{A\-F\-U\-R\-L\-Connection\-Operation\-Cache\-Response\-Block}}
+\index{A\-F\-U\-R\-L\-Connection\-Operation\-Cache\-Response\-Block@{A\-F\-U\-R\-L\-Connection\-Operation\-Cache\-Response\-Block}!AFURLConnectionOperation.m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}
+\subsubsection[{A\-F\-U\-R\-L\-Connection\-Operation\-Cache\-Response\-Block}]{\setlength{\rightskip}{0pt plus 5cm}typedef N\-S\-Cached\-U\-R\-L\-Response$\ast$($^\wedge$ A\-F\-U\-R\-L\-Connection\-Operation\-Cache\-Response\-Block)(N\-S\-U\-R\-L\-Connection $\ast$connection, N\-S\-Cached\-U\-R\-L\-Response $\ast$cached\-Response)}}\label{_a_f_u_r_l_connection_operation_8m_a326c476a5efb11eda5ee64ee17976bd4}
+\hypertarget{_a_f_u_r_l_connection_operation_8m_a8522dd3ddf39be65563f1225357677d0}{\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!A\-F\-U\-R\-L\-Connection\-Operation\-Progress\-Block@{A\-F\-U\-R\-L\-Connection\-Operation\-Progress\-Block}}
+\index{A\-F\-U\-R\-L\-Connection\-Operation\-Progress\-Block@{A\-F\-U\-R\-L\-Connection\-Operation\-Progress\-Block}!AFURLConnectionOperation.m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}
+\subsubsection[{A\-F\-U\-R\-L\-Connection\-Operation\-Progress\-Block}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($^\wedge$ A\-F\-U\-R\-L\-Connection\-Operation\-Progress\-Block)(N\-S\-U\-Integer bytes, long long total\-Bytes, long long total\-Bytes\-Expected)}}\label{_a_f_u_r_l_connection_operation_8m_a8522dd3ddf39be65563f1225357677d0}
+\hypertarget{_a_f_u_r_l_connection_operation_8m_aba804ce20535fafc20d17239873d8a94}{\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!A\-F\-U\-R\-L\-Connection\-Operation\-Redirect\-Response\-Block@{A\-F\-U\-R\-L\-Connection\-Operation\-Redirect\-Response\-Block}}
+\index{A\-F\-U\-R\-L\-Connection\-Operation\-Redirect\-Response\-Block@{A\-F\-U\-R\-L\-Connection\-Operation\-Redirect\-Response\-Block}!AFURLConnectionOperation.m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}
+\subsubsection[{A\-F\-U\-R\-L\-Connection\-Operation\-Redirect\-Response\-Block}]{\setlength{\rightskip}{0pt plus 5cm}typedef N\-S\-U\-R\-L\-Request$\ast$($^\wedge$ A\-F\-U\-R\-L\-Connection\-Operation\-Redirect\-Response\-Block)(N\-S\-U\-R\-L\-Connection $\ast$connection, N\-S\-U\-R\-L\-Request $\ast$request, N\-S\-U\-R\-L\-Response $\ast$redirect\-Response)}}\label{_a_f_u_r_l_connection_operation_8m_aba804ce20535fafc20d17239873d8a94}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_a_f_u_r_l_connection_operation_8m_a184ed9ed152b5fc4778f936593ac8906}{\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!\-\_\-\-A\-F\-Operation\-State@{\-\_\-\-A\-F\-Operation\-State}}
+\index{\-\_\-\-A\-F\-Operation\-State@{\-\_\-\-A\-F\-Operation\-State}!AFURLConnectionOperation.m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}
+\subsubsection[{\-\_\-\-A\-F\-Operation\-State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-\_\-\-A\-F\-Operation\-State}}}\label{_a_f_u_r_l_connection_operation_8m_a184ed9ed152b5fc4778f936593ac8906}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\-F\-Operation\-Paused\-State@{A\-F\-Operation\-Paused\-State}!A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!A\-F\-Operation\-Paused\-State@{A\-F\-Operation\-Paused\-State}}\item[{\em 
+\hypertarget{_a_f_u_r_l_connection_operation_8m_a184ed9ed152b5fc4778f936593ac8906a1269f3fcc5a32164beb62fde2ebbb780}{A\-F\-Operation\-Paused\-State}\label{_a_f_u_r_l_connection_operation_8m_a184ed9ed152b5fc4778f936593ac8906a1269f3fcc5a32164beb62fde2ebbb780}
+}]\index{A\-F\-Operation\-Ready\-State@{A\-F\-Operation\-Ready\-State}!A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!A\-F\-Operation\-Ready\-State@{A\-F\-Operation\-Ready\-State}}\item[{\em 
+\hypertarget{_a_f_u_r_l_connection_operation_8m_a184ed9ed152b5fc4778f936593ac8906ab324c764a0ed998992dfbb5feda175aa}{A\-F\-Operation\-Ready\-State}\label{_a_f_u_r_l_connection_operation_8m_a184ed9ed152b5fc4778f936593ac8906ab324c764a0ed998992dfbb5feda175aa}
+}]\index{A\-F\-Operation\-Executing\-State@{A\-F\-Operation\-Executing\-State}!A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!A\-F\-Operation\-Executing\-State@{A\-F\-Operation\-Executing\-State}}\item[{\em 
+\hypertarget{_a_f_u_r_l_connection_operation_8m_a184ed9ed152b5fc4778f936593ac8906ab55288743f8ae6bac2d56411a13767d1}{A\-F\-Operation\-Executing\-State}\label{_a_f_u_r_l_connection_operation_8m_a184ed9ed152b5fc4778f936593ac8906ab55288743f8ae6bac2d56411a13767d1}
+}]\index{A\-F\-Operation\-Finished\-State@{A\-F\-Operation\-Finished\-State}!A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!A\-F\-Operation\-Finished\-State@{A\-F\-Operation\-Finished\-State}}\item[{\em 
+\hypertarget{_a_f_u_r_l_connection_operation_8m_a184ed9ed152b5fc4778f936593ac8906a8caadc26a25ad3c4e1c8d07bd5f92e29}{A\-F\-Operation\-Finished\-State}\label{_a_f_u_r_l_connection_operation_8m_a184ed9ed152b5fc4778f936593ac8906a8caadc26a25ad3c4e1c8d07bd5f92e29}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_a_f_u_r_l_connection_operation_8m_a8008e6a94dd696d059e3cd52f0e2e960}{\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!A\-F\-Networking\-Error\-Domain@{A\-F\-Networking\-Error\-Domain}}
+\index{A\-F\-Networking\-Error\-Domain@{A\-F\-Networking\-Error\-Domain}!AFURLConnectionOperation.m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}
+\subsubsection[{A\-F\-Networking\-Error\-Domain}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const A\-F\-Networking\-Error\-Domain = @\char`\"{}A\-F\-Networking\-Error\-Domain\char`\"{}}}\label{_a_f_u_r_l_connection_operation_8m_a8008e6a94dd696d059e3cd52f0e2e960}
+\subsubsection*{User info dictionary keys}
+
+These keys may exist in the user info dictionary, in addition to those defined for N\-S\-Error.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily N\-S\-String $\ast$ const A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Request\-Error\-Key}
+\item {\ttfamily N\-S\-String $\ast$ const A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Response\-Error\-Key}
+\end{DoxyItemize}
+
+\paragraph*{Constants}
+
+{\ttfamily A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Request\-Error\-Key} The corresponding value is an {\ttfamily N\-S\-U\-R\-L\-Request} containing the request of the operation associated with an error. This key is only present in the {\ttfamily A\-F\-Networking\-Error\-Domain}.
+
+{\ttfamily A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Response\-Error\-Key} The corresponding value is an {\ttfamily N\-S\-U\-R\-L\-Response} containing the response of the operation associated with an error. This key is only present in the {\ttfamily A\-F\-Networking\-Error\-Domain}.
+
+\subsubsection*{Error Domains}
+
+The following error domain is predefined.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily N\-S\-String $\ast$ const A\-F\-Networking\-Error\-Domain}
+\end{DoxyItemize}
+
+\paragraph*{Constants}
+
+{\ttfamily A\-F\-Networking\-Error\-Domain} A\-F\-Networking errors. Error codes for {\ttfamily A\-F\-Networking\-Error\-Domain} correspond to codes in {\ttfamily N\-S\-U\-R\-L\-Error\-Domain}. \hypertarget{_a_f_u_r_l_connection_operation_8m_a87986e63f852391d49ef2d28f0af76a7}{\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!A\-F\-Networking\-Operation\-Did\-Finish\-Notification@{A\-F\-Networking\-Operation\-Did\-Finish\-Notification}}
+\index{A\-F\-Networking\-Operation\-Did\-Finish\-Notification@{A\-F\-Networking\-Operation\-Did\-Finish\-Notification}!AFURLConnectionOperation.m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}
+\subsubsection[{A\-F\-Networking\-Operation\-Did\-Finish\-Notification}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const A\-F\-Networking\-Operation\-Did\-Finish\-Notification = @\char`\"{}com.\-alamofire.\-networking.\-operation.\-finish\char`\"{}}}\label{_a_f_u_r_l_connection_operation_8m_a87986e63f852391d49ef2d28f0af76a7}
+Posted when an operation finishes. \hypertarget{_a_f_u_r_l_connection_operation_8m_a5bbcc1affc58acaa394f985de87f1826}{\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!A\-F\-Networking\-Operation\-Did\-Start\-Notification@{A\-F\-Networking\-Operation\-Did\-Start\-Notification}}
+\index{A\-F\-Networking\-Operation\-Did\-Start\-Notification@{A\-F\-Networking\-Operation\-Did\-Start\-Notification}!AFURLConnectionOperation.m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}
+\subsubsection[{A\-F\-Networking\-Operation\-Did\-Start\-Notification}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const A\-F\-Networking\-Operation\-Did\-Start\-Notification = @\char`\"{}com.\-alamofire.\-networking.\-operation.\-start\char`\"{}}}\label{_a_f_u_r_l_connection_operation_8m_a5bbcc1affc58acaa394f985de87f1826}
+Posted when an operation begins executing. \hypertarget{_a_f_u_r_l_connection_operation_8m_a8705927d22e9b91b769373eaa09bad1a}{\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Request\-Error\-Key@{A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Request\-Error\-Key}}
+\index{A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Request\-Error\-Key@{A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Request\-Error\-Key}!AFURLConnectionOperation.m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}
+\subsubsection[{A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Request\-Error\-Key}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Request\-Error\-Key = @\char`\"{}A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Request\-Error\-Key\char`\"{}}}\label{_a_f_u_r_l_connection_operation_8m_a8705927d22e9b91b769373eaa09bad1a}
+\hypertarget{_a_f_u_r_l_connection_operation_8m_a5c2c8d0ff30179e1cf05f3cb9f51fd83}{\index{A\-F\-U\-R\-L\-Connection\-Operation.\-m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}!A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Response\-Error\-Key@{A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Response\-Error\-Key}}
+\index{A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Response\-Error\-Key@{A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Response\-Error\-Key}!AFURLConnectionOperation.m@{A\-F\-U\-R\-L\-Connection\-Operation.\-m}}
+\subsubsection[{A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Response\-Error\-Key}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Response\-Error\-Key = @\char`\"{}A\-F\-Networking\-Operation\-Failing\-U\-R\-L\-Response\-Error\-Key\char`\"{}}}\label{_a_f_u_r_l_connection_operation_8m_a5c2c8d0ff30179e1cf05f3cb9f51fd83}

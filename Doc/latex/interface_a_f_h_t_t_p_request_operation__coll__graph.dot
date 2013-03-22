@@ -1,0 +1,16 @@
+digraph "AFHTTPRequestOperation"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="AFHTTPRequestOperation",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="AFURLConnectionOperation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_a_f_u_r_l_connection_operation.html"];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="NSOperation",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node4 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="\<NSURLConnectionDelegate\>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node5 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="\<NSCoding\>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node6 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="\<NSCopying\>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

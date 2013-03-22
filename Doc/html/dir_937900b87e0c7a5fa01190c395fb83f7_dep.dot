@@ -1,0 +1,18 @@
+digraph "/Volumes/UserData/Dev/woda-iphone/Sources" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_937900b87e0c7a5fa01190c395fb83f7 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_937900b87e0c7a5fa01190c395fb83f7.html"];
+    dir_937900b87e0c7a5fa01190c395fb83f7 [shape=plaintext label="Sources"];
+    dir_53feabe67c6ba82acd580761c3952546 [shape=box label="Controllers" color="red" fillcolor="white" style="filled" URL="dir_53feabe67c6ba82acd580761c3952546.html"];
+    dir_033e8ea12b7e481dd4143fe4abc46420 [shape=box label="Librairies" color="red" fillcolor="white" style="filled" URL="dir_033e8ea12b7e481dd4143fe4abc46420.html"];
+    dir_85bcaa6c393378bb59e2d27ab4b775eb [shape=box label="Models" color="red" fillcolor="white" style="filled" URL="dir_85bcaa6c393378bb59e2d27ab4b775eb.html"];
+    dir_4db124d7fb5c24c714b58eac3e924335 [shape=box label="Others" color="black" fillcolor="white" style="filled" URL="dir_4db124d7fb5c24c714b58eac3e924335.html"];
+  }
+  dir_53feabe67c6ba82acd580761c3952546->dir_85bcaa6c393378bb59e2d27ab4b775eb [headlabel="5", labeldistance=1.5 headhref="dir_000001_000008.html"];
+  dir_53feabe67c6ba82acd580761c3952546->dir_033e8ea12b7e481dd4143fe4abc46420 [headlabel="6", labeldistance=1.5 headhref="dir_000001_000003.html"];
+  dir_85bcaa6c393378bb59e2d27ab4b775eb->dir_033e8ea12b7e481dd4143fe4abc46420 [headlabel="2", labeldistance=1.5 headhref="dir_000008_000003.html"];
+  dir_4db124d7fb5c24c714b58eac3e924335->dir_53feabe67c6ba82acd580761c3952546 [headlabel="4", labeldistance=1.5 headhref="dir_000012_000001.html"];
+  dir_4db124d7fb5c24c714b58eac3e924335->dir_033e8ea12b7e481dd4143fe4abc46420 [headlabel="1", labeldistance=1.5 headhref="dir_000012_000003.html"];
+}

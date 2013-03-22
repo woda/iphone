@@ -17,20 +17,20 @@
     STAssertTrue(([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"login"]), @"JSON format invalid: %@", json);
     if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"login"]) {
         STAssertEqualObjects(_login, [json objectForKey:@"login"], @"login does not match");
-        STAssertEqualObjects(_firstName, [json objectForKey:@"first_name"], @"firstName does not match");
-        STAssertEqualObjects(_lastName, [json objectForKey:@"last_name"], @"lastName does not match");
-        STAssertEqualObjects(_email, [json objectForKey:@"email"], @"email does not match");
+        STAssertEqualObjects([json objectForKey:@"first_name"], _firstName, @"firstName does not match");
+        STAssertEqualObjects([json objectForKey:@"last_name"], _lastName, @"lastName does not match");
+        STAssertEqualObjects([json objectForKey:@"email"], _email, @"email does not match");
     }
 }
 
 - (void)setUp {
     [super setUp];
     
-    _login = @"test8";
-    _firstName = @"8";
+    _login = @"test";
+    _firstName = @"unit";
     _lastName = @"test";
     _password = @"password";
-    _email = @"test8@woda.com";
+    _email = @"test@woda.com";
 }
 
 - (void)tearDown {
@@ -117,7 +117,7 @@
 //    
 //    kWait;
 //}
-//
+
 //- (void)test06UpdatePassword {
 //    [self test02Login];
 //    

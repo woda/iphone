@@ -1,0 +1,18 @@
+digraph "/Volumes/UserData/Dev/woda-iphone/Sources/Models" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_937900b87e0c7a5fa01190c395fb83f7 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Sources" fontname="Helvetica", fontsize="10", URL="dir_937900b87e0c7a5fa01190c395fb83f7.html"]
+  subgraph clusterdir_85bcaa6c393378bb59e2d27ab4b775eb {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_85bcaa6c393378bb59e2d27ab4b775eb.html"];
+    dir_85bcaa6c393378bb59e2d27ab4b775eb [shape=plaintext label="Models"];
+    dir_4922988b4a8666dec8ee2dbe17f5ee39 [shape=box label="Cells" color="black" fillcolor="white" style="filled" URL="dir_4922988b4a8666dec8ee2dbe17f5ee39.html"];
+    dir_1724cbc850a6b9b8aa89780cce0755b8 [shape=box label="CoreData" color="black" fillcolor="white" style="filled" URL="dir_1724cbc850a6b9b8aa89780cce0755b8.html"];
+    dir_40d8720392dd0602ad0e90f7dfeb88c8 [shape=box label="Requests" color="black" fillcolor="white" style="filled" URL="dir_40d8720392dd0602ad0e90f7dfeb88c8.html"];
+  }
+  }
+  dir_033e8ea12b7e481dd4143fe4abc46420 [shape=box label="Librairies" fillcolor="white" style="filled" color="red" URL="dir_033e8ea12b7e481dd4143fe4abc46420.html"];
+  dir_40d8720392dd0602ad0e90f7dfeb88c8->dir_033e8ea12b7e481dd4143fe4abc46420 [headlabel="2", labeldistance=1.5 headhref="dir_000011_000003.html"];
+  dir_85bcaa6c393378bb59e2d27ab4b775eb->dir_40d8720392dd0602ad0e90f7dfeb88c8 [headlabel="1", labeldistance=1.5 headhref="dir_000008_000011.html"];
+}

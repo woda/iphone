@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['savecontext',['saveContext',['../interface_w_app_delegate.html#ae178edd8502c2e8cb6f281024a17dc97',1,'WAppDelegate']]],
+  ['setauthenticationagainstprotectionspaceblock_3a',['setAuthenticationAgainstProtectionSpaceBlock:',['../interface_a_f_u_r_l_connection_operation.html#a91554001cb29dd13b087aa378356b1c6',1,'AFURLConnectionOperation']]],
+  ['setauthenticationchallengeblock_3a',['setAuthenticationChallengeBlock:',['../interface_a_f_u_r_l_connection_operation.html#a38421e5d1f082c9034662ffa254c5ea2',1,'AFURLConnectionOperation']]],
+  ['setauthorizationheaderwithtoken_3a',['setAuthorizationHeaderWithToken:',['../interface_a_f_h_t_t_p_client.html#a30e898cb9969298a697f8e5e2dc385c8',1,'AFHTTPClient']]],
+  ['setauthorizationheaderwithusername_3apassword_3a',['setAuthorizationHeaderWithUsername:password:',['../interface_a_f_h_t_t_p_client.html#ad3e1972bc4b591e9341edccc124053ba',1,'AFHTTPClient']]],
+  ['setcacheresponseblock_3a',['setCacheResponseBlock:',['../interface_a_f_u_r_l_connection_operation.html#af1ec45d46071ee3b69b15e0c64d1ddf8',1,'AFURLConnectionOperation']]],
+  ['setcompletionblockwithsuccess_3afailure_3a',['setCompletionBlockWithSuccess:failure:',['../interface_a_f_h_t_t_p_request_operation.html#a2b9008e6fb9fc14bf7052b26cdfad80c',1,'AFHTTPRequestOperation']]],
+  ['setdefaultcredential_3a',['setDefaultCredential:',['../interface_a_f_h_t_t_p_client.html#aed7326d6b61996a8c78160bdd4d272c9',1,'AFHTTPClient']]],
+  ['setdefaultheader_3avalue_3a',['setDefaultHeader:value:',['../interface_a_f_h_t_t_p_client.html#a6403fa104936b8d8e4caa39f48210bc3',1,'AFHTTPClient']]],
+  ['setdeviceidentifier_3a',['setDeviceIdentifier:',['../interface_test_flight.html#acc85f4afac29e1f5087eb9606f011411',1,'TestFlight']]],
+  ['setdownloadprogressblock_3a',['setDownloadProgressBlock:',['../interface_a_f_u_r_l_connection_operation.html#af6b5bdceaac703f661a872b7c11b9efa',1,'AFURLConnectionOperation']]],
+  ['setinitialandfinalboundaries',['setInitialAndFinalBoundaries',['../interface_a_f_multipart_body_stream.html#acb7e1157e8d26b767eb6eff0f950d21f',1,'AFMultipartBodyStream']]],
+  ['setoptions_3a',['setOptions:',['../interface_test_flight.html#aeab53bbf35f81495258709461070db7a',1,'TestFlight']]],
+  ['setredirectresponseblock_3a',['setRedirectResponseBlock:',['../interface_a_f_u_r_l_connection_operation.html#a6ff7ed6adca2d294e546c381ce6d2648',1,'AFURLConnectionOperation']]],
+  ['setuploadprogressblock_3a',['setUploadProgressBlock:',['../interface_a_f_u_r_l_connection_operation.html#a8ef860f783f3742b7ee114d0b90bf369',1,'AFURLConnectionOperation']]],
+  ['shared_3a',['shared:',['../category_n_s_managed_object_context_07_easy_fetch_08.html#a8fb4c89a50ada2c0b907159b7b16ae6c',1,'NSManagedObjectContext(EasyFetch)']]],
+  ['signup_3a',['signup:',['../interface_w_user_login_view_controller.html#a5c01378e68eedd923bc7954f9b2fa536',1,'WUserLoginViewController']]],
+  ['signup_3afirstname_3alastname_3apassword_3aemail_3a',['signup:firstName:lastName:password:email:',['../interface_w_user.html#aa4e75794216c587e5905bf96b4848f44',1,'WUser']]],
+  ['submit_3a',['submit:',['../interface_w_user_login_view_controller.html#a59719dbcd701d0088018c62051de798a',1,'WUserLoginViewController::submit:()'],['../interface_w_user_sign_up_view_controller.html#ae89165ad53d78c7d25bd6230c927fec1',1,'WUserSignUpViewController::submit:()']]],
+  ['submitfeedback_3a',['submitFeedback:',['../interface_test_flight.html#a672f3f6f97f61fce42980f75f8a955c9',1,'TestFlight']]],
+  ['swipe',['swipe',['../interface_w_navigation_controller.html#a9316530a4ab4d259922d5158e3a3906e',1,'WNavigationController']]],
+  ['swipeleft',['swipeLeft',['../interface_w_navigation_controller.html#ad510fe4870b1ab502c1495342d027719',1,'WNavigationController']]],
+  ['swipeleftwithduration_3a',['swipeLeftWithDuration:',['../category_w_navigation_controller_07_08.html#a6da1ef5021e85282943b642a80bae766',1,'WNavigationController()']]],
+  ['swiperightwithduration_3a',['swipeRightWithDuration:',['../category_w_navigation_controller_07_08.html#a6205ec86ab826a32e61b0774817099e2',1,'WNavigationController()']]]
+];

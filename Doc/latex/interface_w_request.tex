@@ -1,0 +1,203 @@
+\hypertarget{interface_w_request}{\section{W\-Request Class Reference}
+\label{interface_w_request}\index{W\-Request@{W\-Request}}
+}
+
+
+{\ttfamily \#import $<$W\-Request.\-h$>$}
+
+Inheritance diagram for W\-Request\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.723404cm]{interface_w_request}
+\end{center}
+\end{figure}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client} $\ast$) + \hyperlink{interface_w_request_aeb64be717a74de162b4504b3fcd2ec54}{client}
+\item 
+(id) + \hyperlink{interface_w_request_a9357742571c1ca423c27d4ceef2ef0e4}{display\-Error\-:for\-Operation\-:}
+\item 
+(id) + \hyperlink{interface_w_request_ab46d7c29a0c52a7d305c0965eb6d82ea}{J\-S\-O\-N\-From\-Data\-:}
+\item 
+(void) + \hyperlink{interface_w_request_aba737df426a4c675193abeef2f8aca91}{add\-File\-:with\-Data\-:}
+\item 
+(void) + \hyperlink{interface_w_request_a273228af7e52c73d0201e3a9fb161b76}{remove\-File\-:}
+\item 
+(void) + \hyperlink{interface_w_request_a5a9316b6ca67b92fffca5e47d283fc49}{update\-File\-:with\-Data\-:}
+\item 
+(void) + \hyperlink{interface_w_request_acf1a3b70bd96ea54cc9db905bbbc4c2e}{get\-File\-:}
+\item 
+(void) + \hyperlink{interface_w_request_a676c38fde57d2f6d6d75927f220e9f4f}{create\-User\-:first\-Name\-:last\-Name\-:password\-:email\-:success\-:failure\-:}
+\item 
+(void) + \hyperlink{interface_w_request_ae384a94e5842dcc05d87a35c7d485bc1}{update\-User\-With\-First\-Name\-:last\-Name\-:password\-:email\-:success\-:failure\-:}
+\item 
+(void) + \hyperlink{interface_w_request_ad4e64a826bae67b6d8ae922583a9f781}{user\-Success\-:failure\-:}
+\item 
+(void) + \hyperlink{interface_w_request_a852fffeb2c740551c1d07be57b6729e4}{delete\-User\-Success\-:failure\-:}
+\item 
+(void) + \hyperlink{interface_w_request_aef5a097ed530f9aa8e56d8d26a4e958e}{login\-:password\-:success\-:failure\-:}
+\item 
+(void) + \hyperlink{interface_w_request_a67f15d943515e3ff89ccf20ccd49ee5a}{logout\-Success\-:failure\-:}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_w_request_aba737df426a4c675193abeef2f8aca91}{\index{W\-Request@{W\-Request}!add\-File\-:with\-Data\-:@{add\-File\-:with\-Data\-:}}
+\index{add\-File\-:with\-Data\-:@{add\-File\-:with\-Data\-:}!WRequest@{W\-Request}}
+\subsubsection[{add\-File\-:with\-Data\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) add\-File\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{filename}
+\item[{withData:(N\-S\-Data $\ast$)}]{data}
+\end{DoxyParamCaption}
+}}\label{interface_w_request_aba737df426a4c675193abeef2f8aca91}
+
+
+Provided by category \hyperlink{category_w_request_07_sync_08_aba737df426a4c675193abeef2f8aca91}{W\-Request(\-Sync)}.
+
+\hypertarget{interface_w_request_aeb64be717a74de162b4504b3fcd2ec54}{\index{W\-Request@{W\-Request}!client@{client}}
+\index{client@{client}!WRequest@{W\-Request}}
+\subsubsection[{client}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf A\-F\-H\-T\-T\-P\-Client} $\ast$) client 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_w_request_aeb64be717a74de162b4504b3fcd2ec54}
+\hypertarget{interface_w_request_a676c38fde57d2f6d6d75927f220e9f4f}{\index{W\-Request@{W\-Request}!create\-User\-:first\-Name\-:last\-Name\-:password\-:email\-:success\-:failure\-:@{create\-User\-:first\-Name\-:last\-Name\-:password\-:email\-:success\-:failure\-:}}
+\index{create\-User\-:first\-Name\-:last\-Name\-:password\-:email\-:success\-:failure\-:@{create\-User\-:first\-Name\-:last\-Name\-:password\-:email\-:success\-:failure\-:}!WRequest@{W\-Request}}
+\subsubsection[{create\-User\-:first\-Name\-:last\-Name\-:password\-:email\-:success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) create\-User\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{login}
+\item[{firstName:(N\-S\-String $\ast$)}]{first\-\_\-name}
+\item[{lastName:(N\-S\-String $\ast$)}]{last\-\_\-name}
+\item[{password:(N\-S\-String $\ast$)}]{password}
+\item[{email:(N\-S\-String $\ast$)}]{email}
+\item[{success:(id json)}]{success}
+\item[{failure:(id json)}]{failure}
+\end{DoxyParamCaption}
+}}\label{interface_w_request_a676c38fde57d2f6d6d75927f220e9f4f}
+
+
+Provided by category \hyperlink{category_w_request_07_user_08_a676c38fde57d2f6d6d75927f220e9f4f}{W\-Request(\-User)}.
+
+\hypertarget{interface_w_request_a852fffeb2c740551c1d07be57b6729e4}{\index{W\-Request@{W\-Request}!delete\-User\-Success\-:failure\-:@{delete\-User\-Success\-:failure\-:}}
+\index{delete\-User\-Success\-:failure\-:@{delete\-User\-Success\-:failure\-:}!WRequest@{W\-Request}}
+\subsubsection[{delete\-User\-Success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) delete\-User\-Success\-: 
+\begin{DoxyParamCaption}
+\item[{(id json)}]{success}
+\item[{failure:(id json)}]{failure}
+\end{DoxyParamCaption}
+}}\label{interface_w_request_a852fffeb2c740551c1d07be57b6729e4}
+
+
+Provided by category \hyperlink{category_w_request_07_user_08_a852fffeb2c740551c1d07be57b6729e4}{W\-Request(\-User)}.
+
+\hypertarget{interface_w_request_a9357742571c1ca423c27d4ceef2ef0e4}{\index{W\-Request@{W\-Request}!display\-Error\-:for\-Operation\-:@{display\-Error\-:for\-Operation\-:}}
+\index{display\-Error\-:for\-Operation\-:@{display\-Error\-:for\-Operation\-:}!WRequest@{W\-Request}}
+\subsubsection[{display\-Error\-:for\-Operation\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (id) display\-Error\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Error $\ast$)}]{error}
+\item[{forOperation:({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$)}]{operation}
+\end{DoxyParamCaption}
+}}\label{interface_w_request_a9357742571c1ca423c27d4ceef2ef0e4}
+\hypertarget{interface_w_request_acf1a3b70bd96ea54cc9db905bbbc4c2e}{\index{W\-Request@{W\-Request}!get\-File\-:@{get\-File\-:}}
+\index{get\-File\-:@{get\-File\-:}!WRequest@{W\-Request}}
+\subsubsection[{get\-File\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) get\-File\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{filename}
+\end{DoxyParamCaption}
+}}\label{interface_w_request_acf1a3b70bd96ea54cc9db905bbbc4c2e}
+
+
+Provided by category \hyperlink{category_w_request_07_sync_08_acf1a3b70bd96ea54cc9db905bbbc4c2e}{W\-Request(\-Sync)}.
+
+\hypertarget{interface_w_request_ab46d7c29a0c52a7d305c0965eb6d82ea}{\index{W\-Request@{W\-Request}!J\-S\-O\-N\-From\-Data\-:@{J\-S\-O\-N\-From\-Data\-:}}
+\index{J\-S\-O\-N\-From\-Data\-:@{J\-S\-O\-N\-From\-Data\-:}!WRequest@{W\-Request}}
+\subsubsection[{J\-S\-O\-N\-From\-Data\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (id) J\-S\-O\-N\-From\-Data\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Data $\ast$)}]{data}
+\end{DoxyParamCaption}
+}}\label{interface_w_request_ab46d7c29a0c52a7d305c0965eb6d82ea}
+\hypertarget{interface_w_request_aef5a097ed530f9aa8e56d8d26a4e958e}{\index{W\-Request@{W\-Request}!login\-:password\-:success\-:failure\-:@{login\-:password\-:success\-:failure\-:}}
+\index{login\-:password\-:success\-:failure\-:@{login\-:password\-:success\-:failure\-:}!WRequest@{W\-Request}}
+\subsubsection[{login\-:password\-:success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) login\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{login}
+\item[{password:(N\-S\-String $\ast$)}]{password}
+\item[{success:(id json)}]{success}
+\item[{failure:(id json)}]{failure}
+\end{DoxyParamCaption}
+}}\label{interface_w_request_aef5a097ed530f9aa8e56d8d26a4e958e}
+
+
+Provided by category \hyperlink{category_w_request_07_user_08_aef5a097ed530f9aa8e56d8d26a4e958e}{W\-Request(\-User)}.
+
+\hypertarget{interface_w_request_a67f15d943515e3ff89ccf20ccd49ee5a}{\index{W\-Request@{W\-Request}!logout\-Success\-:failure\-:@{logout\-Success\-:failure\-:}}
+\index{logout\-Success\-:failure\-:@{logout\-Success\-:failure\-:}!WRequest@{W\-Request}}
+\subsubsection[{logout\-Success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) logout\-Success\-: 
+\begin{DoxyParamCaption}
+\item[{(id json)}]{success}
+\item[{failure:(id json)}]{failure}
+\end{DoxyParamCaption}
+}}\label{interface_w_request_a67f15d943515e3ff89ccf20ccd49ee5a}
+
+
+Provided by category \hyperlink{category_w_request_07_user_08_a67f15d943515e3ff89ccf20ccd49ee5a}{W\-Request(\-User)}.
+
+\hypertarget{interface_w_request_a273228af7e52c73d0201e3a9fb161b76}{\index{W\-Request@{W\-Request}!remove\-File\-:@{remove\-File\-:}}
+\index{remove\-File\-:@{remove\-File\-:}!WRequest@{W\-Request}}
+\subsubsection[{remove\-File\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) remove\-File\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{filename}
+\end{DoxyParamCaption}
+}}\label{interface_w_request_a273228af7e52c73d0201e3a9fb161b76}
+
+
+Provided by category \hyperlink{category_w_request_07_sync_08_a273228af7e52c73d0201e3a9fb161b76}{W\-Request(\-Sync)}.
+
+\hypertarget{interface_w_request_a5a9316b6ca67b92fffca5e47d283fc49}{\index{W\-Request@{W\-Request}!update\-File\-:with\-Data\-:@{update\-File\-:with\-Data\-:}}
+\index{update\-File\-:with\-Data\-:@{update\-File\-:with\-Data\-:}!WRequest@{W\-Request}}
+\subsubsection[{update\-File\-:with\-Data\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) update\-File\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{filename}
+\item[{withData:(N\-S\-Data $\ast$)}]{data}
+\end{DoxyParamCaption}
+}}\label{interface_w_request_a5a9316b6ca67b92fffca5e47d283fc49}
+
+
+Provided by category \hyperlink{category_w_request_07_sync_08_a5a9316b6ca67b92fffca5e47d283fc49}{W\-Request(\-Sync)}.
+
+\hypertarget{interface_w_request_ae384a94e5842dcc05d87a35c7d485bc1}{\index{W\-Request@{W\-Request}!update\-User\-With\-First\-Name\-:last\-Name\-:password\-:email\-:success\-:failure\-:@{update\-User\-With\-First\-Name\-:last\-Name\-:password\-:email\-:success\-:failure\-:}}
+\index{update\-User\-With\-First\-Name\-:last\-Name\-:password\-:email\-:success\-:failure\-:@{update\-User\-With\-First\-Name\-:last\-Name\-:password\-:email\-:success\-:failure\-:}!WRequest@{W\-Request}}
+\subsubsection[{update\-User\-With\-First\-Name\-:last\-Name\-:password\-:email\-:success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) update\-User\-With\-First\-Name\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{first\-\_\-name}
+\item[{lastName:(N\-S\-String $\ast$)}]{last\-\_\-name}
+\item[{password:(N\-S\-String $\ast$)}]{password}
+\item[{email:(N\-S\-String $\ast$)}]{email}
+\item[{success:(id json)}]{success}
+\item[{failure:(id json)}]{failure}
+\end{DoxyParamCaption}
+}}\label{interface_w_request_ae384a94e5842dcc05d87a35c7d485bc1}
+
+
+Provided by category \hyperlink{category_w_request_07_user_08_ae384a94e5842dcc05d87a35c7d485bc1}{W\-Request(\-User)}.
+
+\hypertarget{interface_w_request_ad4e64a826bae67b6d8ae922583a9f781}{\index{W\-Request@{W\-Request}!user\-Success\-:failure\-:@{user\-Success\-:failure\-:}}
+\index{user\-Success\-:failure\-:@{user\-Success\-:failure\-:}!WRequest@{W\-Request}}
+\subsubsection[{user\-Success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) user\-Success\-: 
+\begin{DoxyParamCaption}
+\item[{(id json)}]{success}
+\item[{failure:(id json)}]{failure}
+\end{DoxyParamCaption}
+}}\label{interface_w_request_ad4e64a826bae67b6d8ae922583a9f781}
+
+
+Provided by category \hyperlink{category_w_request_07_user_08_ad4e64a826bae67b6d8ae922583a9f781}{W\-Request(\-User)}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Models/\-Requests/\hyperlink{_w_request_8h}{W\-Request.\-h}\item 
+/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Models/\-Requests/\hyperlink{_w_request_8m}{W\-Request.\-m}\end{DoxyCompactItemize}

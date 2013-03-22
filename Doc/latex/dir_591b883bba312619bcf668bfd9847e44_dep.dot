@@ -1,0 +1,9 @@
+digraph "/Volumes/UserData/Dev/woda-iphone/Sources/Librairies/AFNetworking" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_033e8ea12b7e481dd4143fe4abc46420 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Librairies" fontname="Helvetica", fontsize="10", URL="dir_033e8ea12b7e481dd4143fe4abc46420.html"]
+  dir_591b883bba312619bcf668bfd9847e44 [shape=box, label="AFNetworking", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_591b883bba312619bcf668bfd9847e44.html"];
+  }
+}

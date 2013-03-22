@@ -1,0 +1,81 @@
+\hypertarget{interface_a_f_x_m_l_request_operation}{\section{A\-F\-X\-M\-L\-Request\-Operation Class Reference}
+\label{interface_a_f_x_m_l_request_operation}\index{A\-F\-X\-M\-L\-Request\-Operation@{A\-F\-X\-M\-L\-Request\-Operation}}
+}
+
+
+{\ttfamily \#import $<$A\-F\-X\-M\-L\-Request\-Operation.\-h$>$}
+
+Inheritance diagram for A\-F\-X\-M\-L\-Request\-Operation\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.978724cm]{interface_a_f_x_m_l_request_operation}
+\end{center}
+\end{figure}
+\subsection*{Getting Response Data}
+\label{_amgrp340ce32ae113767db7eae51a3f1bb98f}%
+
+
+ 
+
+ \begin{DoxyCompactItemize}
+\item 
+N\-S\-X\-M\-L\-Parser $\ast$ \hyperlink{interface_a_f_x_m_l_request_operation_ac30bf93cf79e7859bd62e480f320af55}{response\-X\-M\-L\-Parser}
+\item 
+(instancetype) + \hyperlink{interface_a_f_x_m_l_request_operation_ae0e16d81ab1dc97ebb489132f9708387}{X\-M\-L\-Parser\-Request\-Operation\-With\-Request\-:success\-:failure\-:}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+{\ttfamily \hyperlink{interface_a_f_x_m_l_request_operation}{A\-F\-X\-M\-L\-Request\-Operation}} is a subclass of {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} for downloading and working with X\-M\-L response data.
+
+\subsubsection*{Acceptable Content Types}
+
+By default, {\ttfamily \hyperlink{interface_a_f_x_m_l_request_operation}{A\-F\-X\-M\-L\-Request\-Operation}} accepts the following M\-I\-M\-E types, which includes the official standard, {\ttfamily application/xml}, as well as other commonly-\/used types\-:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily application/xml}
+\item {\ttfamily text/xml}
+\end{DoxyItemize}
+
+\subsubsection*{Use With \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client}}
+
+When {\ttfamily \hyperlink{interface_a_f_x_m_l_request_operation}{A\-F\-X\-M\-L\-Request\-Operation}} is registered with {\ttfamily \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client}}, the response object in the success callback of {\ttfamily H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure\-:} will be an instance of {\ttfamily N\-S\-X\-M\-L\-Parser}. On platforms that support {\ttfamily N\-S\-X\-M\-L\-Document}, you have the option to ignore the response object, and simply use the {\ttfamily response\-X\-M\-L\-Document} property of the operation argument of the callback. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_a_f_x_m_l_request_operation_ae0e16d81ab1dc97ebb489132f9708387}{\index{A\-F\-X\-M\-L\-Request\-Operation@{A\-F\-X\-M\-L\-Request\-Operation}!X\-M\-L\-Parser\-Request\-Operation\-With\-Request\-:success\-:failure\-:@{X\-M\-L\-Parser\-Request\-Operation\-With\-Request\-:success\-:failure\-:}}
+\index{X\-M\-L\-Parser\-Request\-Operation\-With\-Request\-:success\-:failure\-:@{X\-M\-L\-Parser\-Request\-Operation\-With\-Request\-:success\-:failure\-:}!AFXMLRequestOperation@{A\-F\-X\-M\-L\-Request\-Operation}}
+\subsubsection[{X\-M\-L\-Parser\-Request\-Operation\-With\-Request\-:success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) X\-M\-L\-Parser\-Request\-Operation\-With\-Request\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L\-Request $\ast$)}]{url\-Request}
+\item[{success:(N\-S\-U\-R\-L\-Request $\ast${\bf request}, N\-S\-H\-T\-T\-P\-U\-R\-L\-Response $\ast${\bf response}, N\-S\-X\-M\-L\-Parser $\ast$X\-M\-L\-Parser)}]{success}
+\item[{failure:(N\-S\-U\-R\-L\-Request $\ast${\bf request}, N\-S\-H\-T\-T\-P\-U\-R\-L\-Response $\ast${\bf response}, N\-S\-Error $\ast${\bf error}, N\-S\-X\-M\-L\-Parser $\ast$X\-M\-L\-Parser)}]{failure}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_x_m_l_request_operation_ae0e16d81ab1dc97ebb489132f9708387}
+Creates and returns an {\ttfamily \hyperlink{interface_a_f_x_m_l_request_operation}{A\-F\-X\-M\-L\-Request\-Operation}} object and sets the specified success and failure callbacks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em url\-Request} & The request object to be loaded asynchronously during execution of the operation \\
+\hline
+{\em success} & A block object to be executed when the operation finishes successfully. This block has no return value and takes three arguments\-: the request sent from the client, the response received from the server, and the X\-M\-L parser constructed with the response data of request. \\
+\hline
+{\em failure} & A block object to be executed when the operation finishes unsuccessfully. This block has no return value and takes three arguments\-: the request sent from the client, the response received from the server, and the error describing the network error that occurred.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new X\-M\-L request operation 
+\end{DoxyReturn}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_a_f_x_m_l_request_operation_ac30bf93cf79e7859bd62e480f320af55}{\index{A\-F\-X\-M\-L\-Request\-Operation@{A\-F\-X\-M\-L\-Request\-Operation}!response\-X\-M\-L\-Parser@{response\-X\-M\-L\-Parser}}
+\index{response\-X\-M\-L\-Parser@{response\-X\-M\-L\-Parser}!AFXMLRequestOperation@{A\-F\-X\-M\-L\-Request\-Operation}}
+\subsubsection[{response\-X\-M\-L\-Parser}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-X\-M\-L\-Parser $\ast$) response\-X\-M\-L\-Parser\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_a_f_x_m_l_request_operation_ac30bf93cf79e7859bd62e480f320af55}
+An {\ttfamily N\-S\-X\-M\-L\-Parser} object constructed from the response data. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\hyperlink{_a_f_x_m_l_request_operation_8h}{A\-F\-X\-M\-L\-Request\-Operation.\-h}\item 
+/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\hyperlink{_a_f_x_m_l_request_operation_8m}{A\-F\-X\-M\-L\-Request\-Operation.\-m}\end{DoxyCompactItemize}

@@ -1,0 +1,14 @@
+digraph "/Volumes/UserData/Dev/woda-iphone/Sources/Models/WUser.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/Volumes/UserData/Dev\l/woda-iphone/Sources\l/Models/WUser.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="/Volumes/UserData/Dev\l/woda-iphone/Sources\l/Controllers/User/WUserLogin\lViewController.m",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_w_user_login_view_controller_8m.html"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="/Volumes/UserData/Dev\l/woda-iphone/Sources\l/Controllers/User/WUserSignUp\lViewController.m",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_w_user_sign_up_view_controller_8m.html"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="/Volumes/UserData/Dev\l/woda-iphone/Sources\l/Controllers/WHomeViewController.m",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_w_home_view_controller_8m.html"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="/Volumes/UserData/Dev\l/woda-iphone/Sources\l/Models/WUser.m",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_w_user_8m.html"];
+}

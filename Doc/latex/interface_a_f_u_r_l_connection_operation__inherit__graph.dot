@@ -1,0 +1,27 @@
+digraph "AFURLConnectionOperation"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="AFURLConnectionOperation",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="NSOperation",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="\<NSURLConnectionDelegate\>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node4 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="\<NSCoding\>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node5 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="\<NSCopying\>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="AFHTTPRequestOperation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_a_f_h_t_t_p_request_operation.html"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="AFImageRequestOperation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_a_f_image_request_operation.html"];
+  Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="AFJSONRequestOperation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_a_f_j_s_o_n_request_operation.html"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="WRequest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_w_request.html"];
+  Node6 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="AFPropertyListRequestOperation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_a_f_property_list_request_operation.html"];
+  Node6 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="AFXMLRequestOperation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_a_f_x_m_l_request_operation.html"];
+}

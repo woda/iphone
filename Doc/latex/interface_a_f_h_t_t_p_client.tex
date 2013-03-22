@@ -1,0 +1,616 @@
+\hypertarget{interface_a_f_h_t_t_p_client}{\section{A\-F\-H\-T\-T\-P\-Client Class Reference}
+\label{interface_a_f_h_t_t_p_client}\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}}
+}
+
+
+{\ttfamily \#import $<$A\-F\-H\-T\-T\-P\-Client.\-h$>$}
+
+Inheritance diagram for A\-F\-H\-T\-T\-P\-Client\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_a_f_h_t_t_p_client}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{Indent}{\bf Managing H\-T\-T\-P Operations}\par
+{\em Sets a callback to be executed when the network availability of the {\ttfamily base\-U\-R\-L} host changes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & A block object to be executed when the network availability of the {\ttfamily base\-U\-R\-L} host changes.. This block has no return value and takes a single argument which represents the various reachability states from the device to the {\ttfamily base\-U\-R\-L}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+This method requires the {\ttfamily System\-Configuration} framework. Add it in the active target's \char`\"{}\-Link Binary With Library\char`\"{} build phase, and add {\ttfamily \#import $<$System\-Configuration/\-System\-Configuration.\-h$>$} to the header prefix of the project ({\ttfamily Prefix.\-pch}).-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 
+
+ 
+\end{DoxyWarning}
+}\begin{DoxyCompactItemize}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_a_f_h_t_t_p_client_a526af9c644f5b52ff4466e86ba735a67}{register\-H\-T\-T\-P\-Operation\-Class\-:}
+\item 
+(void) -\/ \hyperlink{interface_a_f_h_t_t_p_client_a2807a7c60e79b87008edc7543423729c}{unregister\-H\-T\-T\-P\-Operation\-Class\-:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Managing H\-T\-T\-P Header Values}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(N\-S\-String $\ast$) -\/ \hyperlink{interface_a_f_h_t_t_p_client_afd596d06d5f3c1fa1e257f1b8f852f88}{default\-Value\-For\-Header\-:}
+\item 
+(void) -\/ \hyperlink{interface_a_f_h_t_t_p_client_a6403fa104936b8d8e4caa39f48210bc3}{set\-Default\-Header\-:value\-:}
+\item 
+(void) -\/ \hyperlink{interface_a_f_h_t_t_p_client_ad3e1972bc4b591e9341edccc124053ba}{set\-Authorization\-Header\-With\-Username\-:password\-:}
+\item 
+(void) -\/ \hyperlink{interface_a_f_h_t_t_p_client_a30e898cb9969298a697f8e5e2dc385c8}{set\-Authorization\-Header\-With\-Token\-:}
+\item 
+(void) -\/ \hyperlink{interface_a_f_h_t_t_p_client_ac2fbe84b1f891c8bff87cba444efd68a}{clear\-Authorization\-Header}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Managing U\-R\-L Credentials}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_a_f_h_t_t_p_client_aed7326d6b61996a8c78160bdd4d272c9}{set\-Default\-Credential\-:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Creating Request Objects}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(N\-S\-Mutable\-U\-R\-L\-Request $\ast$) -\/ \hyperlink{interface_a_f_h_t_t_p_client_a67c6123e5bc7c1f60270accb38d6db49}{request\-With\-Method\-:path\-:parameters\-:}
+\item 
+(N\-S\-Mutable\-U\-R\-L\-Request $\ast$) -\/ \hyperlink{interface_a_f_h_t_t_p_client_ad1f8c3559b94a95d72e29e5e9f4b1a8d}{multipart\-Form\-Request\-With\-Method\-:path\-:parameters\-:constructing\-Body\-With\-Block\-:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Creating H\-T\-T\-P Operations}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$) -\/ \hyperlink{interface_a_f_h_t_t_p_client_a27c1fa330c1d30917bbb99a1dece8c53}{H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure\-:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Managing Enqueued H\-T\-T\-P Operations}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_a_f_h_t_t_p_client_a6fcc6d3d97bfe620a6a689232509c23b}{enqueue\-H\-T\-T\-P\-Request\-Operation\-:}
+\item 
+(void) -\/ \hyperlink{interface_a_f_h_t_t_p_client_aed0be021f4ecbe61d58eb6fe76fea3c6}{cancel\-All\-H\-T\-T\-P\-Operations\-With\-Method\-:path\-:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Batching H\-T\-T\-P Request Operations}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_a_f_h_t_t_p_client_a48cd4d116df1c59803fcdc940c81bdb5}{enqueue\-Batch\-Of\-H\-T\-T\-P\-Request\-Operations\-With\-Requests\-:progress\-Block\-:completion\-Block\-:}
+\item 
+(void) -\/ \hyperlink{interface_a_f_h_t_t_p_client_a88a299f95a905c0965efa304b41592f6}{enqueue\-Batch\-Of\-H\-T\-T\-P\-Request\-Operations\-:progress\-Block\-:completion\-Block\-:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Making H\-T\-T\-P Requests}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_a_f_h_t_t_p_client_a42c73e3951312bed6a19e296b84605f2}{get\-Path\-:parameters\-:success\-:failure\-:}
+\item 
+(void) -\/ \hyperlink{interface_a_f_h_t_t_p_client_ab36149260e547f38ef32d21bdd39d18f}{post\-Path\-:parameters\-:success\-:failure\-:}
+\item 
+(void) -\/ \hyperlink{interface_a_f_h_t_t_p_client_a1e9b528834603c0113b090f222906674}{put\-Path\-:parameters\-:success\-:failure\-:}
+\item 
+(void) -\/ \hyperlink{interface_a_f_h_t_t_p_client_a51eb3cefc76d9e9fc46959779099e965}{delete\-Path\-:parameters\-:success\-:failure\-:}
+\item 
+(void) -\/ \hyperlink{interface_a_f_h_t_t_p_client_ab2ef370382a47e4072d81ca937bec469}{patch\-Path\-:parameters\-:success\-:failure\-:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\begin{Indent}{\bf Accessing H\-T\-T\-P Client Properties}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+N\-S\-U\-R\-L $\ast$ \hyperlink{interface_a_f_h_t_t_p_client_a10347c37bd9c3d7739edee9cfa0bbd4e}{base\-U\-R\-L}
+\item 
+N\-S\-String\-Encoding \hyperlink{interface_a_f_h_t_t_p_client_a77951c40c6ec24f1c041544a105245c8}{string\-Encoding}
+\item 
+\hyperlink{_a_f_h_t_t_p_client_8h_a0a1fc2aa2881237fa65e82e1db8adebf}{A\-F\-H\-T\-T\-P\-Client\-Parameter\-Encoding} \hyperlink{interface_a_f_h_t_t_p_client_a696a776a0dce80bf3b848b3599ff8e6c}{parameter\-Encoding}
+\item 
+N\-S\-Operation\-Queue $\ast$ \hyperlink{interface_a_f_h_t_t_p_client_a95c209c8af8f8b631463be6a4abf3eac}{operation\-Queue}
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Creating and Initializing H\-T\-T\-P Clients}
+\label{_amgrp73a7335449da7adff927a7dcf1e747d6}%
+The reachability status from the device to the current {\ttfamily base\-U\-R\-L} of the {\ttfamily \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client}}.
+
+\begin{DoxyWarning}{Warning}
+This property requires the {\ttfamily System\-Configuration} framework. Add it in the active target's \char`\"{}\-Link Binary With Library\char`\"{} build phase, and add {\ttfamily \#import $<$System\-Configuration/\-System\-Configuration.\-h$>$} to the header prefix of the project ({\ttfamily Prefix.\-pch}).-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 
+
+ 
+\end{DoxyWarning}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) + \hyperlink{interface_a_f_h_t_t_p_client_a9418ae99000eebfa48721b441ce4c0d8}{client\-With\-Base\-U\-R\-L\-:}
+\item 
+(id) -\/ \hyperlink{interface_a_f_h_t_t_p_client_ab64334f06c3de683a7c67dc980d0c920}{init\-With\-Base\-U\-R\-L\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_a_f_h_t_t_p_client_aed0be021f4ecbe61d58eb6fe76fea3c6}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!cancel\-All\-H\-T\-T\-P\-Operations\-With\-Method\-:path\-:@{cancel\-All\-H\-T\-T\-P\-Operations\-With\-Method\-:path\-:}}
+\index{cancel\-All\-H\-T\-T\-P\-Operations\-With\-Method\-:path\-:@{cancel\-All\-H\-T\-T\-P\-Operations\-With\-Method\-:path\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{cancel\-All\-H\-T\-T\-P\-Operations\-With\-Method\-:path\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) cancel\-All\-H\-T\-T\-P\-Operations\-With\-Method\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{method}
+\item[{path:(N\-S\-String $\ast$)}]{path}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_aed0be021f4ecbe61d58eb6fe76fea3c6}
+Cancels all operations in the H\-T\-T\-P client's operation queue whose U\-R\-Ls match the specified H\-T\-T\-P method and path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em method} & The H\-T\-T\-P method to match for the cancelled requests, such as {\ttfamily G\-E\-T}, {\ttfamily P\-O\-S\-T}, {\ttfamily P\-U\-T}, or {\ttfamily D\-E\-L\-E\-T\-E}. If {\ttfamily nil}, all request operations with U\-R\-Ls matching the path will be cancelled. \\
+\hline
+{\em path} & The path appended to the H\-T\-T\-P client base U\-R\-L to match against the cancelled requests. If {\ttfamily nil}, no path will be appended to the base U\-R\-L.\\
+\hline
+\end{DoxyParams}
+This method only cancels {\ttfamily A\-F\-H\-T\-T\-P\-Request\-Operations} whose request U\-R\-L matches the H\-T\-T\-P client base U\-R\-L with the path appended. For complete control over the lifecycle of enqueued operations, you can access the {\ttfamily operation\-Queue} property directly, which allows you to, for instance, cancel operations filtered by a predicate, or simply use {\ttfamily -\/cancel\-All\-Requests}. Note that the operation queue may include non-\/\-H\-T\-T\-P operations, so be sure to check the type before attempting to directly introspect an operation's {\ttfamily request} property. \hypertarget{interface_a_f_h_t_t_p_client_ac2fbe84b1f891c8bff87cba444efd68a}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!clear\-Authorization\-Header@{clear\-Authorization\-Header}}
+\index{clear\-Authorization\-Header@{clear\-Authorization\-Header}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{clear\-Authorization\-Header}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) clear\-Authorization\-Header 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_ac2fbe84b1f891c8bff87cba444efd68a}
+Clears any existing value for the \char`\"{}\-Authorization\char`\"{} H\-T\-T\-P header. \hypertarget{interface_a_f_h_t_t_p_client_a9418ae99000eebfa48721b441ce4c0d8}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!client\-With\-Base\-U\-R\-L\-:@{client\-With\-Base\-U\-R\-L\-:}}
+\index{client\-With\-Base\-U\-R\-L\-:@{client\-With\-Base\-U\-R\-L\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{client\-With\-Base\-U\-R\-L\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) client\-With\-Base\-U\-R\-L\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L $\ast$)}]{url}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_a9418ae99000eebfa48721b441ce4c0d8}
+Creates and initializes an {\ttfamily \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client}} object with the specified base U\-R\-L.
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The base U\-R\-L for the H\-T\-T\-P client. This argument must not be {\ttfamily nil}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly-\/initialized H\-T\-T\-P client 
+\end{DoxyReturn}
+\hypertarget{interface_a_f_h_t_t_p_client_afd596d06d5f3c1fa1e257f1b8f852f88}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!default\-Value\-For\-Header\-:@{default\-Value\-For\-Header\-:}}
+\index{default\-Value\-For\-Header\-:@{default\-Value\-For\-Header\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{default\-Value\-For\-Header\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String $\ast$) default\-Value\-For\-Header\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{header}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_afd596d06d5f3c1fa1e257f1b8f852f88}
+Returns the value for the H\-T\-T\-P headers set in request objects created by the H\-T\-T\-P client.
+
+
+\begin{DoxyParams}{Parameters}
+{\em header} & The H\-T\-T\-P header to return the default value for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The default value for the H\-T\-T\-P header, or {\ttfamily nil} if unspecified 
+\end{DoxyReturn}
+\hypertarget{interface_a_f_h_t_t_p_client_a51eb3cefc76d9e9fc46959779099e965}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!delete\-Path\-:parameters\-:success\-:failure\-:@{delete\-Path\-:parameters\-:success\-:failure\-:}}
+\index{delete\-Path\-:parameters\-:success\-:failure\-:@{delete\-Path\-:parameters\-:success\-:failure\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{delete\-Path\-:parameters\-:success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) delete\-Path\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{path}
+\item[{parameters:(N\-S\-Dictionary $\ast$)}]{parameters}
+\item[{success:({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$operation, id response\-Object)}]{success}
+\item[{failure:({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$operation, N\-S\-Error $\ast$error)}]{failure}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_a51eb3cefc76d9e9fc46959779099e965}
+Creates an {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} with a {\ttfamily D\-E\-L\-E\-T\-E} request, and enqueues it to the H\-T\-T\-P client's operation queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to be appended to the H\-T\-T\-P client's base U\-R\-L and used as the request U\-R\-L. \\
+\hline
+{\em parameters} & The parameters to be encoded and appended as the query string for the request U\-R\-L. \\
+\hline
+{\em success} & A block object to be executed when the request operation finishes successfully. This block has no return value and takes two arguments\-: the created request operation and the object created from the response data of request. \\
+\hline
+{\em failure} & A block object to be executed when the request operation finishes unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data. This block has no return value and takes two arguments\-:, the created request operation and the {\ttfamily N\-S\-Error} object describing the network or parsing error that occurred.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+-\/\-H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure\-: 
+\end{DoxySeeAlso}
+\hypertarget{interface_a_f_h_t_t_p_client_a88a299f95a905c0965efa304b41592f6}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!enqueue\-Batch\-Of\-H\-T\-T\-P\-Request\-Operations\-:progress\-Block\-:completion\-Block\-:@{enqueue\-Batch\-Of\-H\-T\-T\-P\-Request\-Operations\-:progress\-Block\-:completion\-Block\-:}}
+\index{enqueue\-Batch\-Of\-H\-T\-T\-P\-Request\-Operations\-:progress\-Block\-:completion\-Block\-:@{enqueue\-Batch\-Of\-H\-T\-T\-P\-Request\-Operations\-:progress\-Block\-:completion\-Block\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{enqueue\-Batch\-Of\-H\-T\-T\-P\-Request\-Operations\-:progress\-Block\-:completion\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) enqueue\-Batch\-Of\-H\-T\-T\-P\-Request\-Operations\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Array $\ast$)}]{operations}
+\item[{progressBlock:(N\-S\-U\-Integer number\-Of\-Finished\-Operations, N\-S\-U\-Integer total\-Number\-Of\-Operations)}]{progress\-Block}
+\item[{completionBlock:(N\-S\-Array $\ast$operations)}]{completion\-Block}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_a88a299f95a905c0965efa304b41592f6}
+Enqueues the specified request operations into a batch. When each request operation finishes, the specified progress block is executed, until all of the request operations have finished, at which point the completion block also executes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em operations} & The request operations used to be batched and enqueued. \\
+\hline
+{\em progress\-Block} & A block object to be executed upon the completion of each request operation in the batch. This block has no return value and takes two arguments\-: the number of operations that have already finished execution, and the total number of operations. \\
+\hline
+{\em completion\-Block} & A block object to be executed upon the completion of all of the request operations in the batch. This block has no return value and takes a single argument\-: the batched request operations. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_a_f_h_t_t_p_client_a48cd4d116df1c59803fcdc940c81bdb5}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!enqueue\-Batch\-Of\-H\-T\-T\-P\-Request\-Operations\-With\-Requests\-:progress\-Block\-:completion\-Block\-:@{enqueue\-Batch\-Of\-H\-T\-T\-P\-Request\-Operations\-With\-Requests\-:progress\-Block\-:completion\-Block\-:}}
+\index{enqueue\-Batch\-Of\-H\-T\-T\-P\-Request\-Operations\-With\-Requests\-:progress\-Block\-:completion\-Block\-:@{enqueue\-Batch\-Of\-H\-T\-T\-P\-Request\-Operations\-With\-Requests\-:progress\-Block\-:completion\-Block\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{enqueue\-Batch\-Of\-H\-T\-T\-P\-Request\-Operations\-With\-Requests\-:progress\-Block\-:completion\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) enqueue\-Batch\-Of\-H\-T\-T\-P\-Request\-Operations\-With\-Requests\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Array $\ast$)}]{url\-Requests}
+\item[{progressBlock:(N\-S\-U\-Integer number\-Of\-Finished\-Operations, N\-S\-U\-Integer total\-Number\-Of\-Operations)}]{progress\-Block}
+\item[{completionBlock:(N\-S\-Array $\ast$operations)}]{completion\-Block}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_a48cd4d116df1c59803fcdc940c81bdb5}
+Creates and enqueues an {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} to the H\-T\-T\-P client's operation queue for each specified request object into a batch. When each request operation finishes, the specified progress block is executed, until all of the request operations have finished, at which point the completion block also executes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em url\-Requests} & The {\ttfamily N\-S\-U\-R\-L\-Request} objects used to create and enqueue operations. \\
+\hline
+{\em progress\-Block} & A block object to be executed upon the completion of each request operation in the batch. This block has no return value and takes two arguments\-: the number of operations that have already finished execution, and the total number of operations. \\
+\hline
+{\em completion\-Block} & A block object to be executed upon the completion of all of the request operations in the batch. This block has no return value and takes a single argument\-: the batched request operations.\\
+\hline
+\end{DoxyParams}
+Operations are created by passing the specified {\ttfamily N\-S\-U\-R\-L\-Request} objects in {\ttfamily requests}, using {\ttfamily -\/\-H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure\-:}, with {\ttfamily nil} for both the {\ttfamily success} and {\ttfamily failure} parameters. \hypertarget{interface_a_f_h_t_t_p_client_a6fcc6d3d97bfe620a6a689232509c23b}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!enqueue\-H\-T\-T\-P\-Request\-Operation\-:@{enqueue\-H\-T\-T\-P\-Request\-Operation\-:}}
+\index{enqueue\-H\-T\-T\-P\-Request\-Operation\-:@{enqueue\-H\-T\-T\-P\-Request\-Operation\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{enqueue\-H\-T\-T\-P\-Request\-Operation\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) enqueue\-H\-T\-T\-P\-Request\-Operation\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$)}]{operation}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_a6fcc6d3d97bfe620a6a689232509c23b}
+Enqueues an {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} to the H\-T\-T\-P client's operation queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em operation} & The H\-T\-T\-P request operation to be enqueued. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_a_f_h_t_t_p_client_a42c73e3951312bed6a19e296b84605f2}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!get\-Path\-:parameters\-:success\-:failure\-:@{get\-Path\-:parameters\-:success\-:failure\-:}}
+\index{get\-Path\-:parameters\-:success\-:failure\-:@{get\-Path\-:parameters\-:success\-:failure\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{get\-Path\-:parameters\-:success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) get\-Path\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{path}
+\item[{parameters:(N\-S\-Dictionary $\ast$)}]{parameters}
+\item[{success:({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$operation, id response\-Object)}]{success}
+\item[{failure:({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$operation, N\-S\-Error $\ast$error)}]{failure}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_a42c73e3951312bed6a19e296b84605f2}
+Creates an {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} with a {\ttfamily G\-E\-T} request, and enqueues it to the H\-T\-T\-P client's operation queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to be appended to the H\-T\-T\-P client's base U\-R\-L and used as the request U\-R\-L. \\
+\hline
+{\em parameters} & The parameters to be encoded and appended as the query string for the request U\-R\-L. \\
+\hline
+{\em success} & A block object to be executed when the request operation finishes successfully. This block has no return value and takes two arguments\-: the created request operation and the object created from the response data of request. \\
+\hline
+{\em failure} & A block object to be executed when the request operation finishes unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data. This block has no return value and takes two arguments\-:, the created request operation and the {\ttfamily N\-S\-Error} object describing the network or parsing error that occurred.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+-\/\-H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure\-: 
+\end{DoxySeeAlso}
+\hypertarget{interface_a_f_h_t_t_p_client_a27c1fa330c1d30917bbb99a1dece8c53}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure\-:@{H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure\-:}}
+\index{H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure\-:@{H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$) H\-T\-T\-P\-Request\-Operation\-With\-Request\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L\-Request $\ast$)}]{url\-Request}
+\item[{success:({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$operation, id response\-Object)}]{success}
+\item[{failure:({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$operation, N\-S\-Error $\ast$error)}]{failure}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_a27c1fa330c1d30917bbb99a1dece8c53}
+Creates an {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}}.
+
+In order to determine what kind of operation is created, each registered subclass conforming to the {\ttfamily \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client}} protocol is consulted (in reverse order of when they were specified) to see if it can handle the specific request. The first class to return {\ttfamily Y\-E\-S} when sent a {\ttfamily can\-Process\-Request\-:} message is used to generate an operation using {\ttfamily H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure\-:}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em url\-Request} & The request object to be loaded asynchronously during execution of the operation. \\
+\hline
+{\em success} & A block object to be executed when the request operation finishes successfully. This block has no return value and takes two arguments\-: the created request operation and the object created from the response data of request. \\
+\hline
+{\em failure} & A block object to be executed when the request operation finishes unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data. This block has no return value and takes two arguments\-:, the created request operation and the {\ttfamily N\-S\-Error} object describing the network or parsing error that occurred. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_a_f_h_t_t_p_client_ab64334f06c3de683a7c67dc980d0c920}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!init\-With\-Base\-U\-R\-L\-:@{init\-With\-Base\-U\-R\-L\-:}}
+\index{init\-With\-Base\-U\-R\-L\-:@{init\-With\-Base\-U\-R\-L\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{init\-With\-Base\-U\-R\-L\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init\-With\-Base\-U\-R\-L\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L $\ast$)}]{url}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_ab64334f06c3de683a7c67dc980d0c920}
+Initializes an {\ttfamily \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client}} object with the specified base U\-R\-L.
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The base U\-R\-L for the H\-T\-T\-P client. This argument must not be {\ttfamily nil}.\\
+\hline
+\end{DoxyParams}
+This is the designated initializer.
+
+\begin{DoxyReturn}{Returns}
+The newly-\/initialized H\-T\-T\-P client 
+\end{DoxyReturn}
+\hypertarget{interface_a_f_h_t_t_p_client_ad1f8c3559b94a95d72e29e5e9f4b1a8d}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!multipart\-Form\-Request\-With\-Method\-:path\-:parameters\-:constructing\-Body\-With\-Block\-:@{multipart\-Form\-Request\-With\-Method\-:path\-:parameters\-:constructing\-Body\-With\-Block\-:}}
+\index{multipart\-Form\-Request\-With\-Method\-:path\-:parameters\-:constructing\-Body\-With\-Block\-:@{multipart\-Form\-Request\-With\-Method\-:path\-:parameters\-:constructing\-Body\-With\-Block\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{multipart\-Form\-Request\-With\-Method\-:path\-:parameters\-:constructing\-Body\-With\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Mutable\-U\-R\-L\-Request $\ast$) multipart\-Form\-Request\-With\-Method\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{method}
+\item[{path:(N\-S\-String $\ast$)}]{path}
+\item[{parameters:(N\-S\-Dictionary $\ast$)}]{parameters}
+\item[{constructingBodyWithBlock:(id $<${\bf A\-F\-Multipart\-Form\-Data}$>$ form\-Data)}]{block}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_ad1f8c3559b94a95d72e29e5e9f4b1a8d}
+Creates an {\ttfamily N\-S\-Mutable\-U\-R\-L\-Request} object with the specified H\-T\-T\-P method and path, and constructs a {\ttfamily multipart/form-\/data} H\-T\-T\-P body, using the specified parameters and multipart form data block. See \href{http://www.w3.org/TR/html4/interact/forms.html#h-17.13.4.2}{\tt http\-://www.\-w3.\-org/\-T\-R/html4/interact/forms.\-html\#h-\/17.\-13.\-4.\-2}
+
+
+\begin{DoxyParams}{Parameters}
+{\em method} & The H\-T\-T\-P method for the request. This parameter must not be {\ttfamily G\-E\-T} or {\ttfamily H\-E\-A\-D}, or {\ttfamily nil}. \\
+\hline
+{\em path} & The path to be appended to the H\-T\-T\-P client's base U\-R\-L and used as the request U\-R\-L. \\
+\hline
+{\em parameters} & The parameters to be encoded and set in the request H\-T\-T\-P body. \\
+\hline
+{\em block} & A block that takes a single argument and appends data to the H\-T\-T\-P body. The block argument is an object adopting the {\ttfamily \hyperlink{protocol_a_f_multipart_form_data-p}{A\-F\-Multipart\-Form\-Data}} protocol. This can be used to upload files, encode H\-T\-T\-P body as J\-S\-O\-N or X\-M\-L, or specify multiple values for the same parameter, as one might for array values.\\
+\hline
+\end{DoxyParams}
+Multipart form requests are automatically streamed, reading files directly from disk along with in-\/memory data in a single H\-T\-T\-P body. The resulting {\ttfamily N\-S\-Mutable\-U\-R\-L\-Request} object has an {\ttfamily H\-T\-T\-P\-Body\-Stream} property, so refrain from setting {\ttfamily H\-T\-T\-P\-Body\-Stream} or {\ttfamily H\-T\-T\-P\-Body} on this request object, as it will clear out the multipart form body stream.
+
+\begin{DoxyReturn}{Returns}
+An {\ttfamily N\-S\-Mutable\-U\-R\-L\-Request} object 
+\end{DoxyReturn}
+\hypertarget{interface_a_f_h_t_t_p_client_ab2ef370382a47e4072d81ca937bec469}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!patch\-Path\-:parameters\-:success\-:failure\-:@{patch\-Path\-:parameters\-:success\-:failure\-:}}
+\index{patch\-Path\-:parameters\-:success\-:failure\-:@{patch\-Path\-:parameters\-:success\-:failure\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{patch\-Path\-:parameters\-:success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) patch\-Path\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{path}
+\item[{parameters:(N\-S\-Dictionary $\ast$)}]{parameters}
+\item[{success:({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$operation, id response\-Object)}]{success}
+\item[{failure:({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$operation, N\-S\-Error $\ast$error)}]{failure}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_ab2ef370382a47e4072d81ca937bec469}
+Creates an {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} with a {\ttfamily P\-A\-T\-C\-H} request, and enqueues it to the H\-T\-T\-P client's operation queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to be appended to the H\-T\-T\-P client's base U\-R\-L and used as the request U\-R\-L. \\
+\hline
+{\em parameters} & The parameters to be encoded and set in the request H\-T\-T\-P body. \\
+\hline
+{\em success} & A block object to be executed when the request operation finishes successfully. This block has no return value and takes two arguments\-: the created request operation and the object created from the response data of request. \\
+\hline
+{\em failure} & A block object to be executed when the request operation finishes unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data. This block has no return value and takes two arguments\-:, the created request operation and the {\ttfamily N\-S\-Error} object describing the network or parsing error that occurred.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+-\/\-H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure\-: 
+\end{DoxySeeAlso}
+\hypertarget{interface_a_f_h_t_t_p_client_ab36149260e547f38ef32d21bdd39d18f}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!post\-Path\-:parameters\-:success\-:failure\-:@{post\-Path\-:parameters\-:success\-:failure\-:}}
+\index{post\-Path\-:parameters\-:success\-:failure\-:@{post\-Path\-:parameters\-:success\-:failure\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{post\-Path\-:parameters\-:success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) post\-Path\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{path}
+\item[{parameters:(N\-S\-Dictionary $\ast$)}]{parameters}
+\item[{success:({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$operation, id response\-Object)}]{success}
+\item[{failure:({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$operation, N\-S\-Error $\ast$error)}]{failure}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_ab36149260e547f38ef32d21bdd39d18f}
+Creates an {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} with a {\ttfamily P\-O\-S\-T} request, and enqueues it to the H\-T\-T\-P client's operation queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to be appended to the H\-T\-T\-P client's base U\-R\-L and used as the request U\-R\-L. \\
+\hline
+{\em parameters} & The parameters to be encoded and set in the request H\-T\-T\-P body. \\
+\hline
+{\em success} & A block object to be executed when the request operation finishes successfully. This block has no return value and takes two arguments\-: the created request operation and the object created from the response data of request. \\
+\hline
+{\em failure} & A block object to be executed when the request operation finishes unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data. This block has no return value and takes two arguments\-:, the created request operation and the {\ttfamily N\-S\-Error} object describing the network or parsing error that occurred.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+-\/\-H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure\-: 
+\end{DoxySeeAlso}
+\hypertarget{interface_a_f_h_t_t_p_client_a1e9b528834603c0113b090f222906674}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!put\-Path\-:parameters\-:success\-:failure\-:@{put\-Path\-:parameters\-:success\-:failure\-:}}
+\index{put\-Path\-:parameters\-:success\-:failure\-:@{put\-Path\-:parameters\-:success\-:failure\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{put\-Path\-:parameters\-:success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) put\-Path\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{path}
+\item[{parameters:(N\-S\-Dictionary $\ast$)}]{parameters}
+\item[{success:({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$operation, id response\-Object)}]{success}
+\item[{failure:({\bf A\-F\-H\-T\-T\-P\-Request\-Operation} $\ast$operation, N\-S\-Error $\ast$error)}]{failure}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_a1e9b528834603c0113b090f222906674}
+Creates an {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} with a {\ttfamily P\-U\-T} request, and enqueues it to the H\-T\-T\-P client's operation queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to be appended to the H\-T\-T\-P client's base U\-R\-L and used as the request U\-R\-L. \\
+\hline
+{\em parameters} & The parameters to be encoded and set in the request H\-T\-T\-P body. \\
+\hline
+{\em success} & A block object to be executed when the request operation finishes successfully. This block has no return value and takes two arguments\-: the created request operation and the object created from the response data of request. \\
+\hline
+{\em failure} & A block object to be executed when the request operation finishes unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data. This block has no return value and takes two arguments\-:, the created request operation and the {\ttfamily N\-S\-Error} object describing the network or parsing error that occurred.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+-\/\-H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure\-: 
+\end{DoxySeeAlso}
+\hypertarget{interface_a_f_h_t_t_p_client_a526af9c644f5b52ff4466e86ba735a67}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!register\-H\-T\-T\-P\-Operation\-Class\-:@{register\-H\-T\-T\-P\-Operation\-Class\-:}}
+\index{register\-H\-T\-T\-P\-Operation\-Class\-:@{register\-H\-T\-T\-P\-Operation\-Class\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{register\-H\-T\-T\-P\-Operation\-Class\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) register\-H\-T\-T\-P\-Operation\-Class\-: 
+\begin{DoxyParamCaption}
+\item[{(Class)}]{operation\-Class}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_a526af9c644f5b52ff4466e86ba735a67}
+Attempts to register a subclass of {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}}, adding it to a chain to automatically generate request operations from a U\-R\-L request.
+
+
+\begin{DoxyParams}{Parameters}
+{\em operation\-Class} & The subclass of {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} to register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily Y\-E\-S} if the registration is successful, {\ttfamily N\-O} otherwise. The only failure condition is if {\ttfamily operation\-Class} is not a subclass of {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}}.
+\end{DoxyReturn}
+When {\ttfamily enqueue\-H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure} is invoked, each registered class is consulted in turn to see if it can handle the specific request. The first class to return {\ttfamily Y\-E\-S} when sent a {\ttfamily can\-Process\-Request\-:} message is used to create an operation using {\ttfamily init\-With\-U\-R\-L\-Request\-:} and do {\ttfamily set\-Completion\-Block\-With\-Success\-:failure\-:}. There is no guarantee that all registered classes will be consulted. Classes are consulted in the reverse order of their registration. Attempting to register an already-\/registered class will move it to the top of the list. \hypertarget{interface_a_f_h_t_t_p_client_a67c6123e5bc7c1f60270accb38d6db49}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!request\-With\-Method\-:path\-:parameters\-:@{request\-With\-Method\-:path\-:parameters\-:}}
+\index{request\-With\-Method\-:path\-:parameters\-:@{request\-With\-Method\-:path\-:parameters\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{request\-With\-Method\-:path\-:parameters\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Mutable\-U\-R\-L\-Request $\ast$) request\-With\-Method\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{method}
+\item[{path:(N\-S\-String $\ast$)}]{path}
+\item[{parameters:(N\-S\-Dictionary $\ast$)}]{parameters}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_a67c6123e5bc7c1f60270accb38d6db49}
+Creates an {\ttfamily N\-S\-Mutable\-U\-R\-L\-Request} object with the specified H\-T\-T\-P method and path.
+
+If the H\-T\-T\-P method is {\ttfamily G\-E\-T}, {\ttfamily H\-E\-A\-D}, or {\ttfamily D\-E\-L\-E\-T\-E}, the parameters will be used to construct a url-\/encoded query string that is appended to the request's U\-R\-L. Otherwise, the parameters will be encoded according to the value of the {\ttfamily parameter\-Encoding} property, and set as the request body.
+
+
+\begin{DoxyParams}{Parameters}
+{\em method} & The H\-T\-T\-P method for the request, such as {\ttfamily G\-E\-T}, {\ttfamily P\-O\-S\-T}, {\ttfamily P\-U\-T}, or {\ttfamily D\-E\-L\-E\-T\-E}. This parameter must not be {\ttfamily nil}. \\
+\hline
+{\em path} & The path to be appended to the H\-T\-T\-P client's base U\-R\-L and used as the request U\-R\-L. If {\ttfamily nil}, no path will be appended to the base U\-R\-L. \\
+\hline
+{\em parameters} & The parameters to be either set as a query string for {\ttfamily G\-E\-T} requests, or the request H\-T\-T\-P body.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An {\ttfamily N\-S\-Mutable\-U\-R\-L\-Request} object 
+\end{DoxyReturn}
+\hypertarget{interface_a_f_h_t_t_p_client_a30e898cb9969298a697f8e5e2dc385c8}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!set\-Authorization\-Header\-With\-Token\-:@{set\-Authorization\-Header\-With\-Token\-:}}
+\index{set\-Authorization\-Header\-With\-Token\-:@{set\-Authorization\-Header\-With\-Token\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{set\-Authorization\-Header\-With\-Token\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Authorization\-Header\-With\-Token\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{token}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_a30e898cb9969298a697f8e5e2dc385c8}
+Sets the \char`\"{}\-Authorization\char`\"{} H\-T\-T\-P header set in request objects made by the H\-T\-T\-P client to a token-\/based authentication value, such as an O\-Auth access token. This overwrites any existing value for this header.
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & The authentication token \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_a_f_h_t_t_p_client_ad3e1972bc4b591e9341edccc124053ba}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!set\-Authorization\-Header\-With\-Username\-:password\-:@{set\-Authorization\-Header\-With\-Username\-:password\-:}}
+\index{set\-Authorization\-Header\-With\-Username\-:password\-:@{set\-Authorization\-Header\-With\-Username\-:password\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{set\-Authorization\-Header\-With\-Username\-:password\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Authorization\-Header\-With\-Username\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{username}
+\item[{password:(N\-S\-String $\ast$)}]{password}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_ad3e1972bc4b591e9341edccc124053ba}
+Sets the \char`\"{}\-Authorization\char`\"{} H\-T\-T\-P header set in request objects made by the H\-T\-T\-P client to a basic authentication value with Base64-\/encoded username and password. This overwrites any existing value for this header.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The H\-T\-T\-P basic auth username \\
+\hline
+{\em password} & The H\-T\-T\-P basic auth password \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_a_f_h_t_t_p_client_aed7326d6b61996a8c78160bdd4d272c9}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!set\-Default\-Credential\-:@{set\-Default\-Credential\-:}}
+\index{set\-Default\-Credential\-:@{set\-Default\-Credential\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{set\-Default\-Credential\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Default\-Credential\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L\-Credential $\ast$)}]{credential}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_aed7326d6b61996a8c78160bdd4d272c9}
+Set the default U\-R\-L credential to be set for request operations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em credential} & The U\-R\-L credential \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_a_f_h_t_t_p_client_a6403fa104936b8d8e4caa39f48210bc3}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!set\-Default\-Header\-:value\-:@{set\-Default\-Header\-:value\-:}}
+\index{set\-Default\-Header\-:value\-:@{set\-Default\-Header\-:value\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{set\-Default\-Header\-:value\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Default\-Header\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{header}
+\item[{value:(N\-S\-String $\ast$)}]{value}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_a6403fa104936b8d8e4caa39f48210bc3}
+Sets the value for the H\-T\-T\-P headers set in request objects made by the H\-T\-T\-P client. If {\ttfamily nil}, removes the existing value for that header.
+
+
+\begin{DoxyParams}{Parameters}
+{\em header} & The H\-T\-T\-P header to set a default value for \\
+\hline
+{\em value} & The value set as default for the specified header, or `nil \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_a_f_h_t_t_p_client_a2807a7c60e79b87008edc7543423729c}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!unregister\-H\-T\-T\-P\-Operation\-Class\-:@{unregister\-H\-T\-T\-P\-Operation\-Class\-:}}
+\index{unregister\-H\-T\-T\-P\-Operation\-Class\-:@{unregister\-H\-T\-T\-P\-Operation\-Class\-:}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{unregister\-H\-T\-T\-P\-Operation\-Class\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) unregister\-H\-T\-T\-P\-Operation\-Class\-: 
+\begin{DoxyParamCaption}
+\item[{(Class)}]{operation\-Class}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_h_t_t_p_client_a2807a7c60e79b87008edc7543423729c}
+Unregisters the specified subclass of {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} from the chain of classes consulted when {\ttfamily -\/request\-With\-Method\-:path\-:parameters} is called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em operation\-Class} & The subclass of {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} to register \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_a_f_h_t_t_p_client_a10347c37bd9c3d7739edee9cfa0bbd4e}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!base\-U\-R\-L@{base\-U\-R\-L}}
+\index{base\-U\-R\-L@{base\-U\-R\-L}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{base\-U\-R\-L}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-R\-L$\ast$) base\-U\-R\-L\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_a_f_h_t_t_p_client_a10347c37bd9c3d7739edee9cfa0bbd4e}
+The url used as the base for paths specified in methods such as {\ttfamily get\-Path\-:parameters\-:success\-:failure} \hypertarget{interface_a_f_h_t_t_p_client_a95c209c8af8f8b631463be6a4abf3eac}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!operation\-Queue@{operation\-Queue}}
+\index{operation\-Queue@{operation\-Queue}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{operation\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Operation\-Queue$\ast$) operation\-Queue\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_a_f_h_t_t_p_client_a95c209c8af8f8b631463be6a4abf3eac}
+The operation queue which manages operations enqueued by the H\-T\-T\-P client. \hypertarget{interface_a_f_h_t_t_p_client_a696a776a0dce80bf3b848b3599ff8e6c}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!parameter\-Encoding@{parameter\-Encoding}}
+\index{parameter\-Encoding@{parameter\-Encoding}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{parameter\-Encoding}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf A\-F\-H\-T\-T\-P\-Client\-Parameter\-Encoding}) parameter\-Encoding\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_a_f_h_t_t_p_client_a696a776a0dce80bf3b848b3599ff8e6c}
+The {\ttfamily A\-F\-H\-T\-T\-P\-Client\-Parameter\-Encoding} value corresponding to how parameters are encoded into a request body. This is {\ttfamily A\-F\-Form\-U\-R\-L\-Parameter\-Encoding} by default.
+
+\begin{DoxyWarning}{Warning}
+Some nested parameter structures, such as a keyed array of hashes containing inconsistent keys (i.\-e. {\ttfamily @\char`\"{}\char`\"{}\-: @\mbox{[}@\char`\"{}a\char`\"{} \-: @(1)\},@\char`\"{}b\char`\"{} \-: @(2)\}\mbox{]}\}}), cannot be unambiguously represented in query strings. It is strongly recommended that an unambiguous encoding, such as {\ttfamily A\-F\-J\-S\-O\-N\-Parameter\-Encoding}, is used when posting complicated or nondeterministic parameter structures. 
+\end{DoxyWarning}
+\hypertarget{interface_a_f_h_t_t_p_client_a77951c40c6ec24f1c041544a105245c8}{\index{A\-F\-H\-T\-T\-P\-Client@{A\-F\-H\-T\-T\-P\-Client}!string\-Encoding@{string\-Encoding}}
+\index{string\-Encoding@{string\-Encoding}!AFHTTPClient@{A\-F\-H\-T\-T\-P\-Client}}
+\subsubsection[{string\-Encoding}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String\-Encoding) string\-Encoding\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_a_f_h_t_t_p_client_a77951c40c6ec24f1c041544a105245c8}
+The string encoding used in constructing url requests. This is {\ttfamily N\-S\-U\-T\-F8\-String\-Encoding} by default. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\hyperlink{_a_f_h_t_t_p_client_8h}{A\-F\-H\-T\-T\-P\-Client.\-h}\item 
+/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\hyperlink{_a_f_h_t_t_p_client_8m}{A\-F\-H\-T\-T\-P\-Client.\-m}\end{DoxyCompactItemize}

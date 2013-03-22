@@ -1,0 +1,391 @@
+\hypertarget{interface_a_f_u_r_l_connection_operation}{\section{A\-F\-U\-R\-L\-Connection\-Operation Class Reference}
+\label{interface_a_f_u_r_l_connection_operation}\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+}
+
+
+{\ttfamily \#import $<$A\-F\-U\-R\-L\-Connection\-Operation.\-h$>$}
+
+Inheritance diagram for A\-F\-U\-R\-L\-Connection\-Operation\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.414634cm]{interface_a_f_u_r_l_connection_operation}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{Indent}{\bf Initializing an A\-F\-U\-R\-L\-Connection\-Operation Object}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_a_f_u_r_l_connection_operation_a53e968ee60883356c24cfd0a6c9f47c8}{init\-With\-Request\-:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Pausing / Resuming Requests}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_a_f_u_r_l_connection_operation_a7f895d00bdf837f67b959a3bf1bc37a2}{pause}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_a_f_u_r_l_connection_operation_a7fbb0a649a549bf21234c02c556c61f9}{is\-Paused}
+\item 
+(void) -\/ \hyperlink{interface_a_f_u_r_l_connection_operation_ae67c1478ba17af4426ca7152251da473}{resume}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Setting Progress Callbacks}\par
+{\em Specifies that the operation should continue execution after the app has entered the background, and the expiration handler for that background task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handler} & A handler to be called shortly before the application’s remaining background time reaches 0. The handler is wrapped in a block that cancels the operation, and cleans up and marks the end of execution, unlike the {\ttfamily handler} parameter in {\ttfamily U\-I\-Application -\/begin\-Background\-Task\-With\-Expiration\-Handler\-:}, which expects this to be done in the handler itself. The handler is called synchronously on the main thread, thus blocking the application’s suspension momentarily while the application is notified.-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 
+
+ \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_a_f_u_r_l_connection_operation_a8ef860f783f3742b7ee114d0b90bf369}{set\-Upload\-Progress\-Block\-:}
+\item 
+(void) -\/ \hyperlink{interface_a_f_u_r_l_connection_operation_af6b5bdceaac703f661a872b7c11b9efa}{set\-Download\-Progress\-Block\-:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Setting N\-S\-U\-R\-L\-Connection Delegate Callbacks}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_a_f_u_r_l_connection_operation_a91554001cb29dd13b087aa378356b1c6}{set\-Authentication\-Against\-Protection\-Space\-Block\-:}
+\item 
+(void) -\/ \hyperlink{interface_a_f_u_r_l_connection_operation_a38421e5d1f082c9034662ffa254c5ea2}{set\-Authentication\-Challenge\-Block\-:}
+\item 
+(void) -\/ \hyperlink{interface_a_f_u_r_l_connection_operation_a6ff7ed6adca2d294e546c381ce6d2648}{set\-Redirect\-Response\-Block\-:}
+\item 
+(void) -\/ \hyperlink{interface_a_f_u_r_l_connection_operation_af1ec45d46071ee3b69b15e0c64d1ddf8}{set\-Cache\-Response\-Block\-:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\begin{Indent}{\bf Accessing Run Loop Modes}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+N\-S\-Set $\ast$ \hyperlink{interface_a_f_u_r_l_connection_operation_ac8a33d7fdd6314e92600318a79d60193}{run\-Loop\-Modes}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Getting U\-R\-L Connection Information}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+N\-S\-U\-R\-L\-Request $\ast$ \hyperlink{interface_a_f_u_r_l_connection_operation_a5c453587e9d26f9e3ce3ac1e3c294d61}{request}
+\item 
+N\-S\-U\-R\-L\-Response $\ast$ \hyperlink{interface_a_f_u_r_l_connection_operation_ac7d24cbe5ff6720b0d5f330c840cb434}{response}
+\item 
+N\-S\-Error $\ast$ \hyperlink{interface_a_f_u_r_l_connection_operation_a68b600bc05847243902758f5565353ed}{error}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Getting Response Data}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+N\-S\-Data $\ast$ \hyperlink{interface_a_f_u_r_l_connection_operation_aee9d9fd0cd4ff4cea1dd9f564ea487ef}{response\-Data}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_a_f_u_r_l_connection_operation_a152e08b127469e9528f48ff18cb8f383}{response\-String}
+\item 
+N\-S\-String\-Encoding \hyperlink{interface_a_f_u_r_l_connection_operation_a341868219e52e8f1a2a39f012ee6d6a4}{response\-String\-Encoding}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Managing U\-R\-L Credentials}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+B\-O\-O\-L \hyperlink{interface_a_f_u_r_l_connection_operation_a48bd01b0c9afd1f5234d01d28e3764e7}{should\-Use\-Credential\-Storage}
+\item 
+N\-S\-U\-R\-L\-Credential $\ast$ \hyperlink{interface_a_f_u_r_l_connection_operation_a3117677d8c96460f0bd1b4d3b13b6da8}{credential}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Accessing Streams}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+N\-S\-Input\-Stream $\ast$ \hyperlink{interface_a_f_u_r_l_connection_operation_a2a8f5ad38fa0f464f0104f9e46cf4043}{input\-Stream}
+\item 
+N\-S\-Output\-Stream $\ast$ \hyperlink{interface_a_f_u_r_l_connection_operation_a369c54f83f2edaae3a726e6cde799fb8}{output\-Stream}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Managing Request Operation Information}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+N\-S\-Dictionary $\ast$ \hyperlink{interface_a_f_u_r_l_connection_operation_a9e684ec568c6dd79497ef36b84511d15}{user\-Info}
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+{\ttfamily \hyperlink{interface_a_f_u_r_l_connection_operation}{A\-F\-U\-R\-L\-Connection\-Operation}} is a subclass of {\ttfamily N\-S\-Operation} that implements {\ttfamily N\-S\-U\-R\-L\-Connection} delegate methods.
+
+\subsubsection*{Subclassing Notes}
+
+This is the base class of all network request operations. You may wish to create your own subclass in order to implement additional {\ttfamily N\-S\-U\-R\-L\-Connection} delegate methods (see \char`\"{}$<$tt$>$\-N\-S\-U\-R\-L\-Connection$<$/tt$>$ Delegate Methods\char`\"{} below), or to provide additional properties and/or class constructors.
+
+If you are creating a subclass that communicates over the H\-T\-T\-P or H\-T\-T\-P\-S protocols, you may want to consider subclassing {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} instead, as it supports specifying acceptable content types or status codes.
+
+\subsubsection*{N\-S\-U\-R\-L\-Connection Delegate Methods}
+
+{\ttfamily \hyperlink{interface_a_f_u_r_l_connection_operation}{A\-F\-U\-R\-L\-Connection\-Operation}} implements the following {\ttfamily N\-S\-U\-R\-L\-Connection} delegate methods\-:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily connection\-:did\-Receive\-Response\-:}
+\item {\ttfamily connection\-:did\-Receive\-Data\-:}
+\item {\ttfamily connection\-Did\-Finish\-Loading\-:}
+\item {\ttfamily connection\-:did\-Fail\-With\-Error\-:}
+\item {\ttfamily connection\-:did\-Send\-Body\-Data\-:total\-Bytes\-Written\-:total\-Bytes\-Expected\-To\-Write\-:}
+\item {\ttfamily connection\-:will\-Cache\-Response\-:}
+\item {\ttfamily connection\-:can\-Authenticate\-Against\-Protection\-Space\-:}
+\item {\ttfamily connection\-:did\-Receive\-Authentication\-Challenge\-:}
+\item {\ttfamily connection\-Should\-Use\-Credential\-Storage\-:}
+\item {\ttfamily connection\-:need\-New\-Body\-Stream\-:}
+\end{DoxyItemize}
+
+If any of these methods are overridden in a subclass, they {\itshape must} call the {\ttfamily super} implementation first.
+
+\subsubsection*{Class Constructors}
+
+Class constructors, or methods that return an unowned instance, are the preferred way for subclasses to encapsulate any particular logic for handling the setup or parsing of response data. For instance, {\ttfamily \hyperlink{interface_a_f_j_s_o_n_request_operation}{A\-F\-J\-S\-O\-N\-Request\-Operation}} provides {\ttfamily J\-S\-O\-N\-Request\-Operation\-With\-Request\-:success\-:failure\-:}, which takes block arguments, whose parameter on for a successful request is the J\-S\-O\-N object initialized from the {\ttfamily response data}.
+
+\subsubsection*{Callbacks and Completion Blocks}
+
+The built-\/in {\ttfamily completion\-Block} provided by {\ttfamily N\-S\-Operation} allows for custom behavior to be executed after the request finishes. It is a common pattern for class constructors in subclasses to take callback block parameters, and execute them conditionally in the body of its {\ttfamily completion\-Block}. Make sure to handle cancelled operations appropriately when setting a {\ttfamily completion\-Block} (i.\-e. returning early before parsing response data). See the implementation of any of the {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} subclasses for an example of this.
+
+Subclasses are strongly discouraged from overriding {\ttfamily set\-Completion\-Block\-:}, as {\ttfamily \hyperlink{interface_a_f_u_r_l_connection_operation}{A\-F\-U\-R\-L\-Connection\-Operation}}'s implementation includes a workaround to mitigate retain cycles, and what Apple rather ominously refers to as \href{http://developer.apple.com/library/ios/#technotes/tn2109/}{\tt \char`\"{}\-The Deallocation Problem\char`\"{}}.
+
+\subsubsection*{\hyperlink{class_n_s_coding-p}{N\-S\-Coding} \& \hyperlink{class_n_s_copying-p}{N\-S\-Copying} Conformance}
+
+{\ttfamily \hyperlink{interface_a_f_u_r_l_connection_operation}{A\-F\-U\-R\-L\-Connection\-Operation}} conforms to the {\ttfamily \hyperlink{class_n_s_coding-p}{N\-S\-Coding}} and {\ttfamily \hyperlink{class_n_s_copying-p}{N\-S\-Copying}} protocols, allowing operations to be archived to disk, and copied in memory, respectively. However, because of the intrinsic limitations of capturing the exact state of an operation at a particular moment, there are some important caveats to keep in mind\-:
+
+\paragraph*{\hyperlink{class_n_s_coding-p}{N\-S\-Coding} Caveats}
+
+
+\begin{DoxyItemize}
+\item Encoded operations do not include any block or stream properties. Be sure to set {\ttfamily completion\-Block}, {\ttfamily output\-Stream}, and any callback blocks as necessary when using {\ttfamily -\/init\-With\-Coder\-:} or {\ttfamily N\-S\-Keyed\-Unarchiver}.
+\item Operations are paused on {\ttfamily encode\-With\-Coder\-:}. If the operation was encoded while paused or still executing, its archived state will return {\ttfamily Y\-E\-S} for {\ttfamily is\-Ready}. Otherwise, the state of an operation when encoding will remain unchanged.
+\end{DoxyItemize}
+
+\paragraph*{\hyperlink{class_n_s_copying-p}{N\-S\-Copying} Caveats}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily -\/copy} and {\ttfamily -\/copy\-With\-Zone\-:} return a new operation with the {\ttfamily N\-S\-U\-R\-L\-Request} of the original. So rather than an exact copy of the operation at that particular instant, the copying mechanism returns a completely new instance, which can be useful for retrying operations.
+\item A copy of an operation will not include the {\ttfamily output\-Stream} of the original.
+\item Operation copies do not include {\ttfamily completion\-Block}. {\ttfamily completion\-Block} often strongly captures a reference to {\ttfamily self}, which would otherwise have the unintuitive side-\/effect of pointing to the {\itshape original} operation when copied. 
+\end{DoxyItemize}
+
+\subsection{Method Documentation}
+\hypertarget{interface_a_f_u_r_l_connection_operation_a53e968ee60883356c24cfd0a6c9f47c8}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!init\-With\-Request\-:@{init\-With\-Request\-:}}
+\index{init\-With\-Request\-:@{init\-With\-Request\-:}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{init\-With\-Request\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init\-With\-Request\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L\-Request $\ast$)}]{url\-Request}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_u_r_l_connection_operation_a53e968ee60883356c24cfd0a6c9f47c8}
+Initializes and returns a newly allocated operation object with a url connection configured with the specified url request.
+
+
+\begin{DoxyParams}{Parameters}
+{\em url\-Request} & The request object to be used by the operation connection.\\
+\hline
+\end{DoxyParams}
+This is the designated initializer. \hypertarget{interface_a_f_u_r_l_connection_operation_a7fbb0a649a549bf21234c02c556c61f9}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!is\-Paused@{is\-Paused}}
+\index{is\-Paused@{is\-Paused}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{is\-Paused}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) is\-Paused 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_u_r_l_connection_operation_a7fbb0a649a549bf21234c02c556c61f9}
+Whether the request operation is currently paused.
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily Y\-E\-S} if the operation is currently paused, otherwise {\ttfamily N\-O}. 
+\end{DoxyReturn}
+\hypertarget{interface_a_f_u_r_l_connection_operation_a7f895d00bdf837f67b959a3bf1bc37a2}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!pause@{pause}}
+\index{pause@{pause}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) pause 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_u_r_l_connection_operation_a7f895d00bdf837f67b959a3bf1bc37a2}
+Pauses the execution of the request operation.
+
+A paused operation returns {\ttfamily N\-O} for {\ttfamily -\/is\-Ready}, {\ttfamily -\/is\-Executing}, and {\ttfamily -\/is\-Finished}. As such, it will remain in an {\ttfamily N\-S\-Operation\-Queue} until it is either cancelled or resumed. Pausing a finished, cancelled, or paused operation has no effect. \hypertarget{interface_a_f_u_r_l_connection_operation_ae67c1478ba17af4426ca7152251da473}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!resume@{resume}}
+\index{resume@{resume}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{resume}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) resume 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_u_r_l_connection_operation_ae67c1478ba17af4426ca7152251da473}
+Resumes the execution of the paused request operation.
+
+Pause/\-Resume behavior varies depending on the underlying implementation for the operation class. In its base implementation, resuming a paused requests restarts the original request. However, since H\-T\-T\-P defines a specification for how to request a specific content range, {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} will resume downloading the request from where it left off, instead of restarting the original request. \hypertarget{interface_a_f_u_r_l_connection_operation_a91554001cb29dd13b087aa378356b1c6}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!set\-Authentication\-Against\-Protection\-Space\-Block\-:@{set\-Authentication\-Against\-Protection\-Space\-Block\-:}}
+\index{set\-Authentication\-Against\-Protection\-Space\-Block\-:@{set\-Authentication\-Against\-Protection\-Space\-Block\-:}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{set\-Authentication\-Against\-Protection\-Space\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Authentication\-Against\-Protection\-Space\-Block\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L\-Connection $\ast$)}]{connection}
+\item[{(N\-S\-U\-R\-L\-Protection\-Space $\ast$protection\-Space)}]{block}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_u_r_l_connection_operation_a91554001cb29dd13b087aa378356b1c6}
+Sets a block to be executed to determine whether the connection should be able to respond to a protection space's form of authentication, as handled by the {\ttfamily \hyperlink{class_n_s_u_r_l_connection_delegate-p}{N\-S\-U\-R\-L\-Connection\-Delegate}} method {\ttfamily connection\-:can\-Authenticate\-Against\-Protection\-Space\-:}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & A block object to be executed to determine whether the connection should be able to respond to a protection space's form of authentication. The block has a {\ttfamily B\-O\-O\-L} return type and takes two arguments\-: the U\-R\-L connection object, and the protection space to authenticate against.\\
+\hline
+\end{DoxyParams}
+If {\ttfamily \-\_\-\-A\-F\-N\-E\-T\-W\-O\-R\-K\-I\-N\-G\-\_\-\-A\-L\-L\-O\-W\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-S\-L\-\_\-\-C\-E\-R\-T\-I\-F\-I\-C\-A\-T\-E\-S\-\_\-} is defined, {\ttfamily connection\-:can\-Authenticate\-Against\-Protection\-Space\-:} will accept invalid S\-S\-L certificates, returning {\ttfamily Y\-E\-S} if the protection space authentication method is {\ttfamily N\-S\-U\-R\-L\-Authentication\-Method\-Server\-Trust}. \hypertarget{interface_a_f_u_r_l_connection_operation_a38421e5d1f082c9034662ffa254c5ea2}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!set\-Authentication\-Challenge\-Block\-:@{set\-Authentication\-Challenge\-Block\-:}}
+\index{set\-Authentication\-Challenge\-Block\-:@{set\-Authentication\-Challenge\-Block\-:}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{set\-Authentication\-Challenge\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Authentication\-Challenge\-Block\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L\-Connection $\ast$connection, N\-S\-U\-R\-L\-Authentication\-Challenge $\ast$challenge)}]{block}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_u_r_l_connection_operation_a38421e5d1f082c9034662ffa254c5ea2}
+Sets a block to be executed when the connection must authenticate a challenge in order to download its request, as handled by the {\ttfamily \hyperlink{class_n_s_u_r_l_connection_delegate-p}{N\-S\-U\-R\-L\-Connection\-Delegate}} method {\ttfamily connection\-:did\-Receive\-Authentication\-Challenge\-:}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & A block object to be executed when the connection must authenticate a challenge in order to download its request. The block has no return type and takes two arguments\-: the U\-R\-L connection object, and the challenge that must be authenticated.\\
+\hline
+\end{DoxyParams}
+If {\ttfamily \-\_\-\-A\-F\-N\-E\-T\-W\-O\-R\-K\-I\-N\-G\-\_\-\-A\-L\-L\-O\-W\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-S\-L\-\_\-\-C\-E\-R\-T\-I\-F\-I\-C\-A\-T\-E\-S\-\_\-} is defined, {\ttfamily connection\-:did\-Receive\-Authentication\-Challenge\-:} will attempt to have the challenge sender use credentials with invalid S\-S\-L certificates. \hypertarget{interface_a_f_u_r_l_connection_operation_af1ec45d46071ee3b69b15e0c64d1ddf8}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!set\-Cache\-Response\-Block\-:@{set\-Cache\-Response\-Block\-:}}
+\index{set\-Cache\-Response\-Block\-:@{set\-Cache\-Response\-Block\-:}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{set\-Cache\-Response\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Cache\-Response\-Block\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L\-Connection $\ast$connection, N\-S\-Cached\-U\-R\-L\-Response $\ast$cached\-Response)}]{block}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_u_r_l_connection_operation_af1ec45d46071ee3b69b15e0c64d1ddf8}
+Sets a block to be executed to modify the response a connection will cache, if any, as handled by the {\ttfamily \hyperlink{class_n_s_u_r_l_connection_delegate-p}{N\-S\-U\-R\-L\-Connection\-Delegate}} method {\ttfamily connection\-:will\-Cache\-Response\-:}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & A block object to be executed to determine what response a connection will cache, if any. The block returns an {\ttfamily N\-S\-Cached\-U\-R\-L\-Response} object, the cached response to store in memory or {\ttfamily nil} to prevent the response from being cached, and takes two arguments\-: the U\-R\-L connection object, and the cached response provided for the request. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_a_f_u_r_l_connection_operation_af6b5bdceaac703f661a872b7c11b9efa}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!set\-Download\-Progress\-Block\-:@{set\-Download\-Progress\-Block\-:}}
+\index{set\-Download\-Progress\-Block\-:@{set\-Download\-Progress\-Block\-:}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{set\-Download\-Progress\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Download\-Progress\-Block\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-Integer bytes\-Read, long long total\-Bytes\-Read, long long total\-Bytes\-Expected\-To\-Read)}]{block}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_u_r_l_connection_operation_af6b5bdceaac703f661a872b7c11b9efa}
+Sets a callback to be called when an undetermined number of bytes have been downloaded from the server.
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & A block object to be called when an undetermined number of bytes have been downloaded from the server. This block has no return value and takes three arguments\-: the number of bytes read since the last time the download progress block was called, the total bytes read, and the total bytes expected to be read during the request, as initially determined by the expected content size of the {\ttfamily N\-S\-H\-T\-T\-P\-U\-R\-L\-Response} object. This block may be called multiple times, and will execute on the main thread. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_a_f_u_r_l_connection_operation_a6ff7ed6adca2d294e546c381ce6d2648}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!set\-Redirect\-Response\-Block\-:@{set\-Redirect\-Response\-Block\-:}}
+\index{set\-Redirect\-Response\-Block\-:@{set\-Redirect\-Response\-Block\-:}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{set\-Redirect\-Response\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Redirect\-Response\-Block\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L\-Connection $\ast$connection, N\-S\-U\-R\-L\-Request $\ast${\bf request}, N\-S\-U\-R\-L\-Response $\ast$redirect\-Response)}]{block}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_u_r_l_connection_operation_a6ff7ed6adca2d294e546c381ce6d2648}
+Sets a block to be executed when the server redirects the request from one U\-R\-L to another U\-R\-L, or when the request U\-R\-L changed by the {\ttfamily N\-S\-U\-R\-L\-Protocol} subclass handling the request in order to standardize its format, as handled by the {\ttfamily \hyperlink{class_n_s_u_r_l_connection_delegate-p}{N\-S\-U\-R\-L\-Connection\-Delegate}} method {\ttfamily connection\-:will\-Send\-Request\-:redirect\-Response\-:}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & A block object to be executed when the request U\-R\-L was changed. The block returns an {\ttfamily N\-S\-U\-R\-L\-Request} object, the U\-R\-L request to redirect, and takes three arguments\-: the U\-R\-L connection object, the the proposed redirected request, and the U\-R\-L response that caused the redirect. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_a_f_u_r_l_connection_operation_a8ef860f783f3742b7ee114d0b90bf369}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!set\-Upload\-Progress\-Block\-:@{set\-Upload\-Progress\-Block\-:}}
+\index{set\-Upload\-Progress\-Block\-:@{set\-Upload\-Progress\-Block\-:}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{set\-Upload\-Progress\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Upload\-Progress\-Block\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-Integer bytes\-Written, long long total\-Bytes\-Written, long long total\-Bytes\-Expected\-To\-Write)}]{block}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_u_r_l_connection_operation_a8ef860f783f3742b7ee114d0b90bf369}
+Sets a callback to be called when an undetermined number of bytes have been uploaded to the server.
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & A block object to be called when an undetermined number of bytes have been uploaded to the server. This block has no return value and takes three arguments\-: the number of bytes written since the last time the upload progress block was called, the total bytes written, and the total bytes expected to be written during the request, as initially determined by the length of the H\-T\-T\-P body. This block may be called multiple times, and will execute on the main thread. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_a_f_u_r_l_connection_operation_a3117677d8c96460f0bd1b4d3b13b6da8}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!credential@{credential}}
+\index{credential@{credential}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{credential}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-R\-L\-Credential$\ast$) credential\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_a_f_u_r_l_connection_operation_a3117677d8c96460f0bd1b4d3b13b6da8}
+The credential used for authentication challenges in {\ttfamily -\/connection\-:did\-Receive\-Authentication\-Challenge\-:}.
+
+This will be overridden by any shared credentials that exist for the username or password of the request U\-R\-L, if present. \hypertarget{interface_a_f_u_r_l_connection_operation_a68b600bc05847243902758f5565353ed}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!error@{error}}
+\index{error@{error}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Error$\ast$) error\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_a_f_u_r_l_connection_operation_a68b600bc05847243902758f5565353ed}
+The error, if any, that occurred in the lifecycle of the request. \hypertarget{interface_a_f_u_r_l_connection_operation_a2a8f5ad38fa0f464f0104f9e46cf4043}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!input\-Stream@{input\-Stream}}
+\index{input\-Stream@{input\-Stream}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{input\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Input\-Stream $\ast$) input\-Stream\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_a_f_u_r_l_connection_operation_a2a8f5ad38fa0f464f0104f9e46cf4043}
+The input stream used to read data to be sent during the request.
+
+This property acts as a proxy to the {\ttfamily H\-T\-T\-P\-Body\-Stream} property of {\ttfamily request}. \hypertarget{interface_a_f_u_r_l_connection_operation_a369c54f83f2edaae3a726e6cde799fb8}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!output\-Stream@{output\-Stream}}
+\index{output\-Stream@{output\-Stream}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{output\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Output\-Stream$\ast$) output\-Stream\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_a_f_u_r_l_connection_operation_a369c54f83f2edaae3a726e6cde799fb8}
+The output stream that is used to write data received until the request is finished.
+
+By default, data is accumulated into a buffer that is stored into {\ttfamily response\-Data} upon completion of the request. When {\ttfamily output\-Stream} is set, the data will not be accumulated into an internal buffer, and as a result, the {\ttfamily response\-Data} property of the completed request will be {\ttfamily nil}. The output stream will be scheduled in the network thread runloop upon being set. \hypertarget{interface_a_f_u_r_l_connection_operation_a5c453587e9d26f9e3ce3ac1e3c294d61}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!request@{request}}
+\index{request@{request}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{request}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-R\-L\-Request$\ast$) request\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_a_f_u_r_l_connection_operation_a5c453587e9d26f9e3ce3ac1e3c294d61}
+The request used by the operation's connection. \hypertarget{interface_a_f_u_r_l_connection_operation_ac7d24cbe5ff6720b0d5f330c840cb434}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!response@{response}}
+\index{response@{response}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{response}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-R\-L\-Response$\ast$) response\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_a_f_u_r_l_connection_operation_ac7d24cbe5ff6720b0d5f330c840cb434}
+The last response received by the operation's connection. \hypertarget{interface_a_f_u_r_l_connection_operation_aee9d9fd0cd4ff4cea1dd9f564ea487ef}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!response\-Data@{response\-Data}}
+\index{response\-Data@{response\-Data}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{response\-Data}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Data$\ast$) response\-Data\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_a_f_u_r_l_connection_operation_aee9d9fd0cd4ff4cea1dd9f564ea487ef}
+The data received during the request. \hypertarget{interface_a_f_u_r_l_connection_operation_a152e08b127469e9528f48ff18cb8f383}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!response\-String@{response\-String}}
+\index{response\-String@{response\-String}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{response\-String}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String $\ast$) response\-String\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_a_f_u_r_l_connection_operation_a152e08b127469e9528f48ff18cb8f383}
+The string representation of the response data. \hypertarget{interface_a_f_u_r_l_connection_operation_a341868219e52e8f1a2a39f012ee6d6a4}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!response\-String\-Encoding@{response\-String\-Encoding}}
+\index{response\-String\-Encoding@{response\-String\-Encoding}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{response\-String\-Encoding}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String\-Encoding) response\-String\-Encoding\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_a_f_u_r_l_connection_operation_a341868219e52e8f1a2a39f012ee6d6a4}
+The string encoding of the response.
+
+If the response does not specify a valid string encoding, {\ttfamily response\-String\-Encoding} will return {\ttfamily N\-S\-U\-T\-F8\-String\-Encoding}. \hypertarget{interface_a_f_u_r_l_connection_operation_ac8a33d7fdd6314e92600318a79d60193}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!run\-Loop\-Modes@{run\-Loop\-Modes}}
+\index{run\-Loop\-Modes@{run\-Loop\-Modes}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{run\-Loop\-Modes}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Set$\ast$) run\-Loop\-Modes\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_a_f_u_r_l_connection_operation_ac8a33d7fdd6314e92600318a79d60193}
+The run loop modes in which the operation will run on the network thread. By default, this is a single-\/member set containing {\ttfamily N\-S\-Run\-Loop\-Common\-Modes}. \hypertarget{interface_a_f_u_r_l_connection_operation_a48bd01b0c9afd1f5234d01d28e3764e7}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!should\-Use\-Credential\-Storage@{should\-Use\-Credential\-Storage}}
+\index{should\-Use\-Credential\-Storage@{should\-Use\-Credential\-Storage}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{should\-Use\-Credential\-Storage}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) should\-Use\-Credential\-Storage\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_a_f_u_r_l_connection_operation_a48bd01b0c9afd1f5234d01d28e3764e7}
+Whether the U\-R\-L connection should consult the credential storage for authenticating the connection. {\ttfamily Y\-E\-S} by default.
+
+This is the value that is returned in the {\ttfamily \hyperlink{class_n_s_u_r_l_connection_delegate-p}{N\-S\-U\-R\-L\-Connection\-Delegate}} method {\ttfamily -\/connection\-Should\-Use\-Credential\-Storage\-:}. \hypertarget{interface_a_f_u_r_l_connection_operation_a9e684ec568c6dd79497ef36b84511d15}{\index{A\-F\-U\-R\-L\-Connection\-Operation@{A\-F\-U\-R\-L\-Connection\-Operation}!user\-Info@{user\-Info}}
+\index{user\-Info@{user\-Info}!AFURLConnectionOperation@{A\-F\-U\-R\-L\-Connection\-Operation}}
+\subsubsection[{user\-Info}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Dictionary$\ast$) user\-Info\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_a_f_u_r_l_connection_operation_a9e684ec568c6dd79497ef36b84511d15}
+The user info dictionary for the receiver. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\hyperlink{_a_f_u_r_l_connection_operation_8h}{A\-F\-U\-R\-L\-Connection\-Operation.\-h}\item 
+/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\hyperlink{_a_f_u_r_l_connection_operation_8m}{A\-F\-U\-R\-L\-Connection\-Operation.\-m}\end{DoxyCompactItemize}

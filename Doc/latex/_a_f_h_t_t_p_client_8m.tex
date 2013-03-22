@@ -1,0 +1,134 @@
+\hypertarget{_a_f_h_t_t_p_client_8m}{\section{/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\-A\-F\-H\-T\-T\-P\-Client.m File Reference}
+\label{_a_f_h_t_t_p_client_8m}\index{/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\-A\-F\-H\-T\-T\-P\-Client.\-m@{/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\-A\-F\-H\-T\-T\-P\-Client.\-m}}
+}
+{\ttfamily \#import $<$Foundation/\-Foundation.\-h$>$}\\*
+{\ttfamily \#import \char`\"{}A\-F\-H\-T\-T\-P\-Client.\-h\char`\"{}}\\*
+{\ttfamily \#import \char`\"{}A\-F\-H\-T\-T\-P\-Request\-Operation.\-h\char`\"{}}\\*
+{\ttfamily \#import $<$Availability.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{interface_a_f_query_string_pair}{A\-F\-Query\-String\-Pair}
+\item 
+class \hyperlink{interface_a_f_streaming_multipart_form_data}{A\-F\-Streaming\-Multipart\-Form\-Data}
+\item 
+class \hyperlink{interface_a_f_h_t_t_p_body_part}{A\-F\-H\-T\-T\-P\-Body\-Part}
+\item 
+class \hyperlink{interface_a_f_multipart_body_stream}{A\-F\-Multipart\-Body\-Stream}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef id \hyperlink{_a_f_h_t_t_p_client_8m_abbe374f4909bd24eb84f5b339428edb9}{A\-F\-Network\-Reachability\-Ref}
+\item 
+typedef void($^\wedge$ \hyperlink{_a_f_h_t_t_p_client_8m_ac1edf608d56400f1d464774b3ca278ef}{A\-F\-Completion\-Block} )(void)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_a_f_h_t_t_p_client_8m_a30fbec9b9b3c7c657b209a49c5a3b80f}{A\-F\-H\-T\-T\-P\-Body\-Part\-Read\-Phase} \{ \hyperlink{_a_f_h_t_t_p_client_8m_a30fbec9b9b3c7c657b209a49c5a3b80fa1b661d4b1c86ab640c06395783ad4ba9}{A\-F\-Encapsulation\-Boundary\-Phase} = 1, 
+\hyperlink{_a_f_h_t_t_p_client_8m_a30fbec9b9b3c7c657b209a49c5a3b80faab840613232a997a44fc2ff6f1bdb541}{A\-F\-Header\-Phase} = 2, 
+\hyperlink{_a_f_h_t_t_p_client_8m_a30fbec9b9b3c7c657b209a49c5a3b80fa7d1ebfa183e566ea190723d4bb219182}{A\-F\-Body\-Phase} = 3, 
+\hyperlink{_a_f_h_t_t_p_client_8m_a30fbec9b9b3c7c657b209a49c5a3b80fad0ae03294b107daf7074ad32bcec48ab}{A\-F\-Final\-Boundary\-Phase} = 4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-Array $\ast$ \hyperlink{_a_f_h_t_t_p_client_8m_aa84fa2b5ebb7f8be9dbcf63b6b761f32}{A\-F\-Query\-String\-Pairs\-From\-Dictionary} (N\-S\-Dictionary $\ast$dictionary)
+\item 
+N\-S\-Array $\ast$ \hyperlink{_a_f_h_t_t_p_client_8m_a0da18e9028c7c5b4f6c44cfb1a43cf8b}{A\-F\-Query\-String\-Pairs\-From\-Key\-And\-Value} (N\-S\-String $\ast$key, id value)
+\item 
+N\-S\-String $\ast$ \hyperlink{_a_f_h_t_t_p_client_8m_a892b62942760006e1c9e38f8cdcbb7df}{A\-F\-Query\-String\-From\-Parameters\-With\-Encoding} (N\-S\-Dictionary $\ast$parameters, N\-S\-String\-Encoding string\-Encoding)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-U\-Integer const \hyperlink{_a_f_h_t_t_p_client_8m_a70f11937c3691e848bf7939857b4f463}{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Packet\-Size} = 1024 $\ast$ 16
+\item 
+N\-S\-Time\-Interval const \hyperlink{_a_f_h_t_t_p_client_8m_afaaeeb05c066fa5ed0001b647fcd77fc}{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Delay} = 0.\-2
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_a_f_h_t_t_p_client_8m_ac1edf608d56400f1d464774b3ca278ef}{\index{A\-F\-H\-T\-T\-P\-Client.\-m@{A\-F\-H\-T\-T\-P\-Client.\-m}!A\-F\-Completion\-Block@{A\-F\-Completion\-Block}}
+\index{A\-F\-Completion\-Block@{A\-F\-Completion\-Block}!AFHTTPClient.m@{A\-F\-H\-T\-T\-P\-Client.\-m}}
+\subsubsection[{A\-F\-Completion\-Block}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($^\wedge$ A\-F\-Completion\-Block)(void)}}\label{_a_f_h_t_t_p_client_8m_ac1edf608d56400f1d464774b3ca278ef}
+\hypertarget{_a_f_h_t_t_p_client_8m_abbe374f4909bd24eb84f5b339428edb9}{\index{A\-F\-H\-T\-T\-P\-Client.\-m@{A\-F\-H\-T\-T\-P\-Client.\-m}!A\-F\-Network\-Reachability\-Ref@{A\-F\-Network\-Reachability\-Ref}}
+\index{A\-F\-Network\-Reachability\-Ref@{A\-F\-Network\-Reachability\-Ref}!AFHTTPClient.m@{A\-F\-H\-T\-T\-P\-Client.\-m}}
+\subsubsection[{A\-F\-Network\-Reachability\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}typedef id {\bf A\-F\-Network\-Reachability\-Ref}}}\label{_a_f_h_t_t_p_client_8m_abbe374f4909bd24eb84f5b339428edb9}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_a_f_h_t_t_p_client_8m_a30fbec9b9b3c7c657b209a49c5a3b80f}{\index{A\-F\-H\-T\-T\-P\-Client.\-m@{A\-F\-H\-T\-T\-P\-Client.\-m}!A\-F\-H\-T\-T\-P\-Body\-Part\-Read\-Phase@{A\-F\-H\-T\-T\-P\-Body\-Part\-Read\-Phase}}
+\index{A\-F\-H\-T\-T\-P\-Body\-Part\-Read\-Phase@{A\-F\-H\-T\-T\-P\-Body\-Part\-Read\-Phase}!AFHTTPClient.m@{A\-F\-H\-T\-T\-P\-Client.\-m}}
+\subsubsection[{A\-F\-H\-T\-T\-P\-Body\-Part\-Read\-Phase}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\-F\-H\-T\-T\-P\-Body\-Part\-Read\-Phase}}}\label{_a_f_h_t_t_p_client_8m_a30fbec9b9b3c7c657b209a49c5a3b80f}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\-F\-Encapsulation\-Boundary\-Phase@{A\-F\-Encapsulation\-Boundary\-Phase}!A\-F\-H\-T\-T\-P\-Client.\-m@{A\-F\-H\-T\-T\-P\-Client.\-m}}\index{A\-F\-H\-T\-T\-P\-Client.\-m@{A\-F\-H\-T\-T\-P\-Client.\-m}!A\-F\-Encapsulation\-Boundary\-Phase@{A\-F\-Encapsulation\-Boundary\-Phase}}\item[{\em 
+\hypertarget{_a_f_h_t_t_p_client_8m_a30fbec9b9b3c7c657b209a49c5a3b80fa1b661d4b1c86ab640c06395783ad4ba9}{A\-F\-Encapsulation\-Boundary\-Phase}\label{_a_f_h_t_t_p_client_8m_a30fbec9b9b3c7c657b209a49c5a3b80fa1b661d4b1c86ab640c06395783ad4ba9}
+}]\index{A\-F\-Header\-Phase@{A\-F\-Header\-Phase}!A\-F\-H\-T\-T\-P\-Client.\-m@{A\-F\-H\-T\-T\-P\-Client.\-m}}\index{A\-F\-H\-T\-T\-P\-Client.\-m@{A\-F\-H\-T\-T\-P\-Client.\-m}!A\-F\-Header\-Phase@{A\-F\-Header\-Phase}}\item[{\em 
+\hypertarget{_a_f_h_t_t_p_client_8m_a30fbec9b9b3c7c657b209a49c5a3b80faab840613232a997a44fc2ff6f1bdb541}{A\-F\-Header\-Phase}\label{_a_f_h_t_t_p_client_8m_a30fbec9b9b3c7c657b209a49c5a3b80faab840613232a997a44fc2ff6f1bdb541}
+}]\index{A\-F\-Body\-Phase@{A\-F\-Body\-Phase}!A\-F\-H\-T\-T\-P\-Client.\-m@{A\-F\-H\-T\-T\-P\-Client.\-m}}\index{A\-F\-H\-T\-T\-P\-Client.\-m@{A\-F\-H\-T\-T\-P\-Client.\-m}!A\-F\-Body\-Phase@{A\-F\-Body\-Phase}}\item[{\em 
+\hypertarget{_a_f_h_t_t_p_client_8m_a30fbec9b9b3c7c657b209a49c5a3b80fa7d1ebfa183e566ea190723d4bb219182}{A\-F\-Body\-Phase}\label{_a_f_h_t_t_p_client_8m_a30fbec9b9b3c7c657b209a49c5a3b80fa7d1ebfa183e566ea190723d4bb219182}
+}]\index{A\-F\-Final\-Boundary\-Phase@{A\-F\-Final\-Boundary\-Phase}!A\-F\-H\-T\-T\-P\-Client.\-m@{A\-F\-H\-T\-T\-P\-Client.\-m}}\index{A\-F\-H\-T\-T\-P\-Client.\-m@{A\-F\-H\-T\-T\-P\-Client.\-m}!A\-F\-Final\-Boundary\-Phase@{A\-F\-Final\-Boundary\-Phase}}\item[{\em 
+\hypertarget{_a_f_h_t_t_p_client_8m_a30fbec9b9b3c7c657b209a49c5a3b80fad0ae03294b107daf7074ad32bcec48ab}{A\-F\-Final\-Boundary\-Phase}\label{_a_f_h_t_t_p_client_8m_a30fbec9b9b3c7c657b209a49c5a3b80fad0ae03294b107daf7074ad32bcec48ab}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{_a_f_h_t_t_p_client_8m_a892b62942760006e1c9e38f8cdcbb7df}{\index{A\-F\-H\-T\-T\-P\-Client.\-m@{A\-F\-H\-T\-T\-P\-Client.\-m}!A\-F\-Query\-String\-From\-Parameters\-With\-Encoding@{A\-F\-Query\-String\-From\-Parameters\-With\-Encoding}}
+\index{A\-F\-Query\-String\-From\-Parameters\-With\-Encoding@{A\-F\-Query\-String\-From\-Parameters\-With\-Encoding}!AFHTTPClient.m@{A\-F\-H\-T\-T\-P\-Client.\-m}}
+\subsubsection[{A\-F\-Query\-String\-From\-Parameters\-With\-Encoding}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ A\-F\-Query\-String\-From\-Parameters\-With\-Encoding (
+\begin{DoxyParamCaption}
+\item[{N\-S\-Dictionary $\ast$}]{parameters, }
+\item[{N\-S\-String\-Encoding}]{encoding}
+\end{DoxyParamCaption}
+)}}\label{_a_f_h_t_t_p_client_8m_a892b62942760006e1c9e38f8cdcbb7df}
+Returns a query string constructed by a set of parameters, using the specified encoding.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & The parameters used to construct the query string \\
+\hline
+{\em encoding} & The encoding to use in constructing the query string. If you are uncertain of the correct encoding, you should use U\-T\-F-\/8 ({\ttfamily N\-S\-U\-T\-F8\-String\-Encoding}), which is the encoding designated by R\-F\-C 3986 as the correct encoding for use in U\-R\-Ls.\\
+\hline
+\end{DoxyParams}
+Query strings are constructed by collecting each key-\/value pair, percent escaping a string representation of the key-\/value pair, and then joining the pairs with \char`\"{}\&\char`\"{}.
+
+If a query string pair has a an {\ttfamily N\-S\-Array} for its value, each member of the array will be represented in the format {\ttfamily field\mbox{[}\mbox{]}=value1\&field\mbox{[}\mbox{]}value2}. Otherwise, the pair will be formatted as \char`\"{}field=value\char`\"{}. String representations of both keys and values are derived using the {\ttfamily -\/description} method. The constructed query string does not include the ? character used to delimit the query component.
+
+\begin{DoxyReturn}{Returns}
+A percent-\/escaped query string 
+\end{DoxyReturn}
+\hypertarget{_a_f_h_t_t_p_client_8m_aa84fa2b5ebb7f8be9dbcf63b6b761f32}{\index{A\-F\-H\-T\-T\-P\-Client.\-m@{A\-F\-H\-T\-T\-P\-Client.\-m}!A\-F\-Query\-String\-Pairs\-From\-Dictionary@{A\-F\-Query\-String\-Pairs\-From\-Dictionary}}
+\index{A\-F\-Query\-String\-Pairs\-From\-Dictionary@{A\-F\-Query\-String\-Pairs\-From\-Dictionary}!AFHTTPClient.m@{A\-F\-H\-T\-T\-P\-Client.\-m}}
+\subsubsection[{A\-F\-Query\-String\-Pairs\-From\-Dictionary}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-Array $\ast$ A\-F\-Query\-String\-Pairs\-From\-Dictionary (
+\begin{DoxyParamCaption}
+\item[{N\-S\-Dictionary $\ast$}]{dictionary}
+\end{DoxyParamCaption}
+)}}\label{_a_f_h_t_t_p_client_8m_aa84fa2b5ebb7f8be9dbcf63b6b761f32}
+\hypertarget{_a_f_h_t_t_p_client_8m_a0da18e9028c7c5b4f6c44cfb1a43cf8b}{\index{A\-F\-H\-T\-T\-P\-Client.\-m@{A\-F\-H\-T\-T\-P\-Client.\-m}!A\-F\-Query\-String\-Pairs\-From\-Key\-And\-Value@{A\-F\-Query\-String\-Pairs\-From\-Key\-And\-Value}}
+\index{A\-F\-Query\-String\-Pairs\-From\-Key\-And\-Value@{A\-F\-Query\-String\-Pairs\-From\-Key\-And\-Value}!AFHTTPClient.m@{A\-F\-H\-T\-T\-P\-Client.\-m}}
+\subsubsection[{A\-F\-Query\-String\-Pairs\-From\-Key\-And\-Value}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-Array $\ast$ A\-F\-Query\-String\-Pairs\-From\-Key\-And\-Value (
+\begin{DoxyParamCaption}
+\item[{N\-S\-String $\ast$}]{key, }
+\item[{id}]{value}
+\end{DoxyParamCaption}
+)}}\label{_a_f_h_t_t_p_client_8m_a0da18e9028c7c5b4f6c44cfb1a43cf8b}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_a_f_h_t_t_p_client_8m_afaaeeb05c066fa5ed0001b647fcd77fc}{\index{A\-F\-H\-T\-T\-P\-Client.\-m@{A\-F\-H\-T\-T\-P\-Client.\-m}!k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Delay@{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Delay}}
+\index{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Delay@{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Delay}!AFHTTPClient.m@{A\-F\-H\-T\-T\-P\-Client.\-m}}
+\subsubsection[{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Delay}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-Time\-Interval const k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Delay = 0.\-2}}\label{_a_f_h_t_t_p_client_8m_afaaeeb05c066fa5ed0001b647fcd77fc}
+\hypertarget{_a_f_h_t_t_p_client_8m_a70f11937c3691e848bf7939857b4f463}{\index{A\-F\-H\-T\-T\-P\-Client.\-m@{A\-F\-H\-T\-T\-P\-Client.\-m}!k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Packet\-Size@{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Packet\-Size}}
+\index{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Packet\-Size@{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Packet\-Size}!AFHTTPClient.m@{A\-F\-H\-T\-T\-P\-Client.\-m}}
+\subsubsection[{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Packet\-Size}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-U\-Integer const k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Packet\-Size = 1024 $\ast$ 16}}\label{_a_f_h_t_t_p_client_8m_a70f11937c3691e848bf7939857b4f463}
+Posted when network reachability changes. This notification assigns no notification object. The {\ttfamily user\-Info} dictionary contains an {\ttfamily N\-S\-Number} object under the {\ttfamily A\-F\-Networking\-Reachability\-Notification\-Status\-Item} key, representing the {\ttfamily A\-F\-Network\-Reachability\-Status} value for the current network reachability.
+
+\begin{DoxyWarning}{Warning}
+In order for network reachability to be monitored, include the {\ttfamily System\-Configuration} framework in the active target's \char`\"{}\-Link Binary With Library\char`\"{} build phase, and add {\ttfamily \#import $<$System\-Configuration/\-System\-Configuration.\-h$>$} to the header prefix of the project ({\ttfamily Prefix.\-pch}). 
+\end{DoxyWarning}

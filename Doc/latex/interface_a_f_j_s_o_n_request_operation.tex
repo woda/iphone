@@ -1,0 +1,97 @@
+\hypertarget{interface_a_f_j_s_o_n_request_operation}{\section{A\-F\-J\-S\-O\-N\-Request\-Operation Class Reference}
+\label{interface_a_f_j_s_o_n_request_operation}\index{A\-F\-J\-S\-O\-N\-Request\-Operation@{A\-F\-J\-S\-O\-N\-Request\-Operation}}
+}
+
+
+{\ttfamily \#import $<$A\-F\-J\-S\-O\-N\-Request\-Operation.\-h$>$}
+
+Inheritance diagram for A\-F\-J\-S\-O\-N\-Request\-Operation\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.723404cm]{interface_a_f_j_s_o_n_request_operation}
+\end{center}
+\end{figure}
+\subsection*{Class Methods}
+\begin{Indent}{\bf Creating Request Operations}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(instancetype) + \hyperlink{interface_a_f_j_s_o_n_request_operation_a89042addd43aacda57f24036359bdb09}{J\-S\-O\-N\-Request\-Operation\-With\-Request\-:success\-:failure\-:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Properties}
+\begin{Indent}{\bf Getting Response Data}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+id \hyperlink{interface_a_f_j_s_o_n_request_operation_a1bc9c9b08f780373ace7eb34b1ae8149}{response\-J\-S\-O\-N}
+\item 
+N\-S\-J\-S\-O\-N\-Reading\-Options \hyperlink{interface_a_f_j_s_o_n_request_operation_a18f86ed904ccb70223a950ae5449a45b}{J\-S\-O\-N\-Reading\-Options}
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+{\ttfamily \hyperlink{interface_a_f_j_s_o_n_request_operation}{A\-F\-J\-S\-O\-N\-Request\-Operation}} is a subclass of {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} for downloading and working with J\-S\-O\-N response data.
+
+\subsubsection*{Acceptable Content Types}
+
+By default, {\ttfamily \hyperlink{interface_a_f_j_s_o_n_request_operation}{A\-F\-J\-S\-O\-N\-Request\-Operation}} accepts the following M\-I\-M\-E types, which includes the official standard, {\ttfamily application/json}, as well as other commonly-\/used types\-:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily application/json}
+\item {\ttfamily text/json}
+\end{DoxyItemize}
+
+\begin{DoxyWarning}{Warning}
+J\-S\-O\-N parsing will use the built-\/in {\ttfamily N\-S\-J\-S\-O\-N\-Serialization} class. 
+\end{DoxyWarning}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_a_f_j_s_o_n_request_operation_a89042addd43aacda57f24036359bdb09}{\index{A\-F\-J\-S\-O\-N\-Request\-Operation@{A\-F\-J\-S\-O\-N\-Request\-Operation}!J\-S\-O\-N\-Request\-Operation\-With\-Request\-:success\-:failure\-:@{J\-S\-O\-N\-Request\-Operation\-With\-Request\-:success\-:failure\-:}}
+\index{J\-S\-O\-N\-Request\-Operation\-With\-Request\-:success\-:failure\-:@{J\-S\-O\-N\-Request\-Operation\-With\-Request\-:success\-:failure\-:}!AFJSONRequestOperation@{A\-F\-J\-S\-O\-N\-Request\-Operation}}
+\subsubsection[{J\-S\-O\-N\-Request\-Operation\-With\-Request\-:success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) J\-S\-O\-N\-Request\-Operation\-With\-Request\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L\-Request $\ast$)}]{url\-Request}
+\item[{success:(N\-S\-U\-R\-L\-Request $\ast${\bf request}, N\-S\-H\-T\-T\-P\-U\-R\-L\-Response $\ast${\bf response}, id J\-S\-O\-N)}]{success}
+\item[{failure:(N\-S\-U\-R\-L\-Request $\ast${\bf request}, N\-S\-H\-T\-T\-P\-U\-R\-L\-Response $\ast${\bf response}, N\-S\-Error $\ast${\bf error}, id J\-S\-O\-N)}]{failure}
+\end{DoxyParamCaption}
+}}\label{interface_a_f_j_s_o_n_request_operation_a89042addd43aacda57f24036359bdb09}
+Creates and returns an {\ttfamily \hyperlink{interface_a_f_j_s_o_n_request_operation}{A\-F\-J\-S\-O\-N\-Request\-Operation}} object and sets the specified success and failure callbacks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em url\-Request} & The request object to be loaded asynchronously during execution of the operation \\
+\hline
+{\em success} & A block object to be executed when the operation finishes successfully. This block has no return value and takes three arguments\-: the request sent from the client, the response received from the server, and the J\-S\-O\-N object created from the response data of request. \\
+\hline
+{\em failure} & A block object to be executed when the operation finishes unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data as J\-S\-O\-N. This block has no return value and takes three arguments\-: the request sent from the client, the response received from the server, and the error describing the network or parsing error that occurred.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new J\-S\-O\-N request operation 
+\end{DoxyReturn}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_a_f_j_s_o_n_request_operation_a18f86ed904ccb70223a950ae5449a45b}{\index{A\-F\-J\-S\-O\-N\-Request\-Operation@{A\-F\-J\-S\-O\-N\-Request\-Operation}!J\-S\-O\-N\-Reading\-Options@{J\-S\-O\-N\-Reading\-Options}}
+\index{J\-S\-O\-N\-Reading\-Options@{J\-S\-O\-N\-Reading\-Options}!AFJSONRequestOperation@{A\-F\-J\-S\-O\-N\-Request\-Operation}}
+\subsubsection[{J\-S\-O\-N\-Reading\-Options}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-J\-S\-O\-N\-Reading\-Options) J\-S\-O\-N\-Reading\-Options\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_a_f_j_s_o_n_request_operation_a18f86ed904ccb70223a950ae5449a45b}
+Options for reading the response J\-S\-O\-N data and creating the Foundation objects. For possible values, see the {\ttfamily N\-S\-J\-S\-O\-N\-Serialization} documentation section \char`\"{}\-N\-S\-J\-S\-O\-N\-Reading\-Options\char`\"{}. \hypertarget{interface_a_f_j_s_o_n_request_operation_a1bc9c9b08f780373ace7eb34b1ae8149}{\index{A\-F\-J\-S\-O\-N\-Request\-Operation@{A\-F\-J\-S\-O\-N\-Request\-Operation}!response\-J\-S\-O\-N@{response\-J\-S\-O\-N}}
+\index{response\-J\-S\-O\-N@{response\-J\-S\-O\-N}!AFJSONRequestOperation@{A\-F\-J\-S\-O\-N\-Request\-Operation}}
+\subsubsection[{response\-J\-S\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) response\-J\-S\-O\-N\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_a_f_j_s_o_n_request_operation_a1bc9c9b08f780373ace7eb34b1ae8149}
+A J\-S\-O\-N object constructed from the response data. If an error occurs while parsing, {\ttfamily nil} will be returned, and the {\ttfamily error} property will be set to the error. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\hyperlink{_a_f_j_s_o_n_request_operation_8h}{A\-F\-J\-S\-O\-N\-Request\-Operation.\-h}\item 
+/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\hyperlink{_a_f_j_s_o_n_request_operation_8m}{A\-F\-J\-S\-O\-N\-Request\-Operation.\-m}\end{DoxyCompactItemize}

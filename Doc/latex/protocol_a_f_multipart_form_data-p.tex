@@ -1,0 +1,134 @@
+\hypertarget{protocol_a_f_multipart_form_data-p}{\section{$<$A\-F\-Multipart\-Form\-Data$>$ Protocol Reference}
+\label{protocol_a_f_multipart_form_data-p}\index{$<$\-A\-F\-Multipart\-Form\-Data$>$@{$<$\-A\-F\-Multipart\-Form\-Data$>$}}
+}
+
+
+{\ttfamily \#import $<$A\-F\-H\-T\-T\-P\-Client.\-h$>$}
+
+Inheritance diagram for $<$A\-F\-Multipart\-Form\-Data$>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{protocol_a_f_multipart_form_data-p}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{protocol_a_f_multipart_form_data-p_a85eb0e9d04e80e720223434f6fd9230c}{append\-Part\-With\-File\-U\-R\-L\-:name\-:error\-:}
+\item 
+(void) -\/ \hyperlink{protocol_a_f_multipart_form_data-p_a4a65904d2372503bace2e45549a9d088}{append\-Part\-With\-File\-Data\-:name\-:file\-Name\-:mime\-Type\-:}
+\item 
+(void) -\/ \hyperlink{protocol_a_f_multipart_form_data-p_a0bc8ad1aa207469b218d2957245177b3}{append\-Part\-With\-Form\-Data\-:name\-:}
+\item 
+(void) -\/ \hyperlink{protocol_a_f_multipart_form_data-p_a09265f88e7b4ac0abab873a1105487a3}{append\-Part\-With\-Headers\-:body\-:}
+\item 
+(void) -\/ \hyperlink{protocol_a_f_multipart_form_data-p_ad8bf94a09638cf8147dda98472b1c42d}{throttle\-Bandwidth\-With\-Packet\-Size\-:delay\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The {\ttfamily \hyperlink{protocol_a_f_multipart_form_data-p}{A\-F\-Multipart\-Form\-Data}} protocol defines the methods supported by the parameter in the block argument of {\ttfamily \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client} -\/multipart\-Form\-Request\-With\-Method\-:path\-:parameters\-:constructing\-Body\-With\-Block\-:}. 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_a_f_multipart_form_data-p_a4a65904d2372503bace2e45549a9d088}{\index{A\-F\-Multipart\-Form\-Data-\/p@{A\-F\-Multipart\-Form\-Data-\/p}!append\-Part\-With\-File\-Data\-:name\-:file\-Name\-:mime\-Type\-:@{append\-Part\-With\-File\-Data\-:name\-:file\-Name\-:mime\-Type\-:}}
+\index{append\-Part\-With\-File\-Data\-:name\-:file\-Name\-:mime\-Type\-:@{append\-Part\-With\-File\-Data\-:name\-:file\-Name\-:mime\-Type\-:}!AFMultipartFormData-p@{A\-F\-Multipart\-Form\-Data-\/p}}
+\subsubsection[{append\-Part\-With\-File\-Data\-:name\-:file\-Name\-:mime\-Type\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) append\-Part\-With\-File\-Data\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Data $\ast$)}]{data}
+\item[{name:(N\-S\-String $\ast$)}]{name}
+\item[{fileName:(N\-S\-String $\ast$)}]{file\-Name}
+\item[{mimeType:(N\-S\-String $\ast$)}]{mime\-Type}
+\end{DoxyParamCaption}
+}}\label{protocol_a_f_multipart_form_data-p_a4a65904d2372503bace2e45549a9d088}
+Appends the H\-T\-T\-P header {\ttfamily Content-\/\-Disposition\-: file; filename=\#\{filename\}; name=\#\{name\}"} and {\ttfamily Content-\/\-Type\-: \#\{mime\-Type\}}, followed by the encoded file data and the multipart form boundary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be encoded and appended to the form data. \\
+\hline
+{\em name} & The name to be associated with the specified data. This parameter must not be {\ttfamily nil}. \\
+\hline
+{\em file\-Name} & The filename to be associated with the specified data. This parameter must not be {\ttfamily nil}. \\
+\hline
+{\em mime\-Type} & The M\-I\-M\-E type of the specified data. (For example, the M\-I\-M\-E type for a J\-P\-E\-G image is image/jpeg.) For a list of valid M\-I\-M\-E types, see \href{http://www.iana.org/assignments/media-types/}{\tt http\-://www.\-iana.\-org/assignments/media-\/types/}. This parameter must not be {\ttfamily nil}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_a_f_multipart_form_data-p_a85eb0e9d04e80e720223434f6fd9230c}{\index{A\-F\-Multipart\-Form\-Data-\/p@{A\-F\-Multipart\-Form\-Data-\/p}!append\-Part\-With\-File\-U\-R\-L\-:name\-:error\-:@{append\-Part\-With\-File\-U\-R\-L\-:name\-:error\-:}}
+\index{append\-Part\-With\-File\-U\-R\-L\-:name\-:error\-:@{append\-Part\-With\-File\-U\-R\-L\-:name\-:error\-:}!AFMultipartFormData-p@{A\-F\-Multipart\-Form\-Data-\/p}}
+\subsubsection[{append\-Part\-With\-File\-U\-R\-L\-:name\-:error\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) append\-Part\-With\-File\-U\-R\-L\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L $\ast$)}]{file\-U\-R\-L}
+\item[{name:(N\-S\-String $\ast$)}]{name}
+\item[{error:(N\-S\-Error $\ast$\-\_\-\-\_\-autoreleasing $\ast$)}]{error}
+\end{DoxyParamCaption}
+}}\label{protocol_a_f_multipart_form_data-p_a85eb0e9d04e80e720223434f6fd9230c}
+Appends the H\-T\-T\-P header {\ttfamily Content-\/\-Disposition\-: file; filename=\#\{generated filename\}; name=\#\{name\}"} and {\ttfamily Content-\/\-Type\-: \#\{generated mime\-Type\}}, followed by the encoded file data and the multipart form boundary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-U\-R\-L} & The U\-R\-L corresponding to the file whose content will be appended to the form. This parameter must not be {\ttfamily nil}. \\
+\hline
+{\em name} & The name to be associated with the specified data. This parameter must not be {\ttfamily nil}. \\
+\hline
+{\em error} & If an error occurs, upon return contains an {\ttfamily N\-S\-Error} object that describes the problem.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily Y\-E\-S} if the file data was successfully appended, otherwise {\ttfamily N\-O}.
+\end{DoxyReturn}
+The filename and M\-I\-M\-E type for this data in the form will be automatically generated, using {\ttfamily N\-S\-U\-R\-L\-Response} {\ttfamily -\/suggested\-Filename} and {\ttfamily -\/\-M\-I\-M\-E\-Type}, respectively. \hypertarget{protocol_a_f_multipart_form_data-p_a0bc8ad1aa207469b218d2957245177b3}{\index{A\-F\-Multipart\-Form\-Data-\/p@{A\-F\-Multipart\-Form\-Data-\/p}!append\-Part\-With\-Form\-Data\-:name\-:@{append\-Part\-With\-Form\-Data\-:name\-:}}
+\index{append\-Part\-With\-Form\-Data\-:name\-:@{append\-Part\-With\-Form\-Data\-:name\-:}!AFMultipartFormData-p@{A\-F\-Multipart\-Form\-Data-\/p}}
+\subsubsection[{append\-Part\-With\-Form\-Data\-:name\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) append\-Part\-With\-Form\-Data\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Data $\ast$)}]{data}
+\item[{name:(N\-S\-String $\ast$)}]{name}
+\end{DoxyParamCaption}
+}}\label{protocol_a_f_multipart_form_data-p_a0bc8ad1aa207469b218d2957245177b3}
+Appends the H\-T\-T\-P headers {\ttfamily Content-\/\-Disposition\-: form-\/data; name=\#\{name\}"}, followed by the encoded data and the multipart form boundary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be encoded and appended to the form data. \\
+\hline
+{\em name} & The name to be associated with the specified data. This parameter must not be {\ttfamily nil}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_a_f_multipart_form_data-p_a09265f88e7b4ac0abab873a1105487a3}{\index{A\-F\-Multipart\-Form\-Data-\/p@{A\-F\-Multipart\-Form\-Data-\/p}!append\-Part\-With\-Headers\-:body\-:@{append\-Part\-With\-Headers\-:body\-:}}
+\index{append\-Part\-With\-Headers\-:body\-:@{append\-Part\-With\-Headers\-:body\-:}!AFMultipartFormData-p@{A\-F\-Multipart\-Form\-Data-\/p}}
+\subsubsection[{append\-Part\-With\-Headers\-:body\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) append\-Part\-With\-Headers\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Dictionary $\ast$)}]{headers}
+\item[{body:(N\-S\-Data $\ast$)}]{body}
+\end{DoxyParamCaption}
+}}\label{protocol_a_f_multipart_form_data-p_a09265f88e7b4ac0abab873a1105487a3}
+Appends H\-T\-T\-P headers, followed by the encoded data and the multipart form boundary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em headers} & The H\-T\-T\-P headers to be appended to the form data. \\
+\hline
+{\em body} & The data to be encoded and appended to the form data. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_a_f_multipart_form_data-p_ad8bf94a09638cf8147dda98472b1c42d}{\index{A\-F\-Multipart\-Form\-Data-\/p@{A\-F\-Multipart\-Form\-Data-\/p}!throttle\-Bandwidth\-With\-Packet\-Size\-:delay\-:@{throttle\-Bandwidth\-With\-Packet\-Size\-:delay\-:}}
+\index{throttle\-Bandwidth\-With\-Packet\-Size\-:delay\-:@{throttle\-Bandwidth\-With\-Packet\-Size\-:delay\-:}!AFMultipartFormData-p@{A\-F\-Multipart\-Form\-Data-\/p}}
+\subsubsection[{throttle\-Bandwidth\-With\-Packet\-Size\-:delay\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) throttle\-Bandwidth\-With\-Packet\-Size\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-Integer)}]{number\-Of\-Bytes}
+\item[{delay:(N\-S\-Time\-Interval)}]{delay}
+\end{DoxyParamCaption}
+}}\label{protocol_a_f_multipart_form_data-p_ad8bf94a09638cf8147dda98472b1c42d}
+Throttles request bandwidth by limiting the packet size and adding a delay for each chunk read from the upload stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\-Of\-Bytes} & Maximum packet size, in number of bytes. The default packet size for an input stream is 32kb. \\
+\hline
+{\em delay} & Duration of delay each time a packet is read. By default, no delay is set.\\
+\hline
+\end{DoxyParams}
+When uploading over a 3\-G or E\-D\-G\-E connection, requests may fail with \char`\"{}request body stream exhausted\char`\"{}. Setting a maximum packet size and delay according to the recommended values ({\ttfamily k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Packet\-Size} and {\ttfamily k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Delay}) lowers the risk of the input stream exceeding its allocated bandwidth. Unfortunately, as of i\-O\-S 6, there is no definite way to distinguish between a 3\-G, E\-D\-G\-E, or L\-T\-E connection. As such, it is not recommended that you throttle bandwidth based solely on network reachability. Instead, you should consider checking for the \char`\"{}request body stream exhausted\char`\"{} in a failure block, and then retrying the request with throttled bandwidth. 
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\hyperlink{_a_f_h_t_t_p_client_8h}{A\-F\-H\-T\-T\-P\-Client.\-h}\end{DoxyCompactItemize}

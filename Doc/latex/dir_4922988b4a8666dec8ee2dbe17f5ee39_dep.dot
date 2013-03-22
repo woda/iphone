@@ -1,0 +1,9 @@
+digraph "/Volumes/UserData/Dev/woda-iphone/Sources/Models/Cells" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_85bcaa6c393378bb59e2d27ab4b775eb {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Models" fontname="Helvetica", fontsize="10", URL="dir_85bcaa6c393378bb59e2d27ab4b775eb.html"]
+  dir_4922988b4a8666dec8ee2dbe17f5ee39 [shape=box, label="Cells", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_4922988b4a8666dec8ee2dbe17f5ee39.html"];
+  }
+}

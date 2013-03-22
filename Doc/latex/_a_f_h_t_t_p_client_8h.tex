@@ -1,0 +1,180 @@
+\hypertarget{_a_f_h_t_t_p_client_8h}{\section{/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\-A\-F\-H\-T\-T\-P\-Client.h File Reference}
+\label{_a_f_h_t_t_p_client_8h}\index{/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\-A\-F\-H\-T\-T\-P\-Client.\-h@{/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Librairies/\-A\-F\-Networking/\-A\-F\-H\-T\-T\-P\-Client.\-h}}
+}
+{\ttfamily \#import $<$Foundation/\-Foundation.\-h$>$}\\*
+{\ttfamily \#import $<$Availability.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client}
+\item 
+protocol \hyperlink{protocol_a_f_multipart_form_data-p}{$<$\-A\-F\-Multipart\-Form\-Data$>$}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_a_f_h_t_t_p_client_8h_a0a1fc2aa2881237fa65e82e1db8adebf}{A\-F\-H\-T\-T\-P\-Client\-Parameter\-Encoding} \{ \hyperlink{_a_f_h_t_t_p_client_8h_a0a1fc2aa2881237fa65e82e1db8adebfad6005247624c56a7d4cdfa3625ba08a2}{A\-F\-Form\-U\-R\-L\-Parameter\-Encoding}, 
+\hyperlink{_a_f_h_t_t_p_client_8h_a0a1fc2aa2881237fa65e82e1db8adebfa5d6ba75108010d9b8bfa3c043909a99c}{A\-F\-J\-S\-O\-N\-Parameter\-Encoding}, 
+\hyperlink{_a_f_h_t_t_p_client_8h_a0a1fc2aa2881237fa65e82e1db8adebfa4546c1f54c29429e7336daebf027b18e}{A\-F\-Property\-List\-Parameter\-Encoding}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}{\bf Functions}\par
+{\em \paragraph*{Network Reachability}
+
+The following constants are provided by {\ttfamily \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client}} as possible network reachability statuses.
+
+enum \{ A\-F\-Network\-Reachability\-Status\-Unknown, A\-F\-Network\-Reachability\-Status\-Not\-Reachable, A\-F\-Network\-Reachability\-Status\-Reachable\-Via\-W\-W\-A\-N, A\-F\-Network\-Reachability\-Status\-Reachable\-Via\-Wi\-Fi, \}
+
+{\ttfamily A\-F\-Network\-Reachability\-Status\-Unknown} The {\ttfamily base\-U\-R\-L} host reachability is not known.
+
+{\ttfamily A\-F\-Network\-Reachability\-Status\-Not\-Reachable} The {\ttfamily base\-U\-R\-L} host cannot be reached.
+
+{\ttfamily A\-F\-Network\-Reachability\-Status\-Reachable\-Via\-W\-W\-A\-N} The {\ttfamily base\-U\-R\-L} host can be reached via a cellular connection, such as E\-D\-G\-E or G\-P\-R\-S.
+
+{\ttfamily A\-F\-Network\-Reachability\-Status\-Reachable\-Via\-Wi\-Fi} The {\ttfamily base\-U\-R\-L} host can be reached via a Wi-\/\-Fi connection.
+
+\paragraph*{Keys for Notification User\-Info Dictionary}
+
+Strings that are used as keys in a {\ttfamily user\-Info} dictionary in a network reachability status change notification.
+
+{\ttfamily A\-F\-Networking\-Reachability\-Notification\-Status\-Item} A key in the user\-Info dictionary in a {\ttfamily A\-F\-Networking\-Reachability\-Did\-Change\-Notification} notification. The corresponding value is an {\ttfamily N\-S\-Number} object representing the {\ttfamily A\-F\-Network\-Reachability\-Status} value for the current reachability status.
+
+\paragraph*{Parameter Encoding}
+
+The following constants are provided by {\ttfamily \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client}} as possible methods for serializing parameters into query string or message body values.
+
+enum \{ A\-F\-Form\-U\-R\-L\-Parameter\-Encoding, A\-F\-J\-S\-O\-N\-Parameter\-Encoding, A\-F\-Property\-List\-Parameter\-Encoding, \}
+
+{\ttfamily A\-F\-Form\-U\-R\-L\-Parameter\-Encoding} Parameters are encoded into field/key pairs in the U\-R\-L query string for {\ttfamily G\-E\-T} {\ttfamily H\-E\-A\-D} and {\ttfamily D\-E\-L\-E\-T\-E} requests, and in the message body otherwise. Dictionary keys are sorted with the {\ttfamily case\-Insensitive\-Compare\-:} selector of their description, in order to mitigate the possibility of ambiguous query strings being generated non-\/deterministically. See the warning for the {\ttfamily parameter\-Encoding} property for additional information.
+
+{\ttfamily A\-F\-J\-S\-O\-N\-Parameter\-Encoding} Parameters are encoded into J\-S\-O\-N in the message body.
+
+{\ttfamily A\-F\-Property\-List\-Parameter\-Encoding} Parameters are encoded into a property list in the message body.-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 
+
+ }\begin{DoxyCompactItemize}
+\item 
+N\-S\-String $\ast$ \hyperlink{_a_f_h_t_t_p_client_8h_a23d48ef482c3794af74ec1984fda45ac}{A\-F\-Query\-String\-From\-Parameters\-With\-Encoding} (N\-S\-Dictionary $\ast$parameters, N\-S\-String\-Encoding encoding)
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Variables}
+\begin{Indent}{\bf Notifications}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+N\-S\-U\-Integer const \hyperlink{_a_f_h_t_t_p_client_8h_a70f11937c3691e848bf7939857b4f463}{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Packet\-Size}
+\item 
+N\-S\-Time\-Interval const \hyperlink{_a_f_h_t_t_p_client_8h_afaaeeb05c066fa5ed0001b647fcd77fc}{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Delay}
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_a_f_h_t_t_p_client_8h_a0a1fc2aa2881237fa65e82e1db8adebf}{\index{A\-F\-H\-T\-T\-P\-Client.\-h@{A\-F\-H\-T\-T\-P\-Client.\-h}!A\-F\-H\-T\-T\-P\-Client\-Parameter\-Encoding@{A\-F\-H\-T\-T\-P\-Client\-Parameter\-Encoding}}
+\index{A\-F\-H\-T\-T\-P\-Client\-Parameter\-Encoding@{A\-F\-H\-T\-T\-P\-Client\-Parameter\-Encoding}!AFHTTPClient.h@{A\-F\-H\-T\-T\-P\-Client.\-h}}
+\subsubsection[{A\-F\-H\-T\-T\-P\-Client\-Parameter\-Encoding}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\-F\-H\-T\-T\-P\-Client\-Parameter\-Encoding}}}\label{_a_f_h_t_t_p_client_8h_a0a1fc2aa2881237fa65e82e1db8adebf}
+{\ttfamily \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client}} captures the common patterns of communicating with an web application over H\-T\-T\-P. It encapsulates information like base U\-R\-L, authorization credentials, and H\-T\-T\-P headers, and uses them to construct and manage the execution of H\-T\-T\-P request operations.
+
+\subsubsection*{Automatic Content Parsing}
+
+Instances of {\ttfamily \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client}} may specify which types of requests it expects and should handle by registering H\-T\-T\-P operation classes for automatic parsing. Registered classes will determine whether they can handle a particular request, and then construct a request operation accordingly in {\ttfamily enqueue\-H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure}.
+
+\subsubsection*{Subclassing Notes}
+
+In most cases, one should create an {\ttfamily \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client}} subclass for each website or web application that your application communicates with. It is often useful, also, to define a class method that returns a singleton shared H\-T\-T\-P client in each subclass, that persists authentication credentials and other configuration across the entire application.
+
+\subsubsection*{Methods to Override}
+
+To change the behavior of all url request construction for an {\ttfamily \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client}} subclass, override {\ttfamily request\-With\-Method\-:path\-:parameters}.
+
+To change the behavior of all request operation construction for an {\ttfamily \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client}} subclass, override {\ttfamily H\-T\-T\-P\-Request\-Operation\-With\-Request\-:success\-:failure}.
+
+\subsubsection*{Default Headers}
+
+By default, {\ttfamily \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client}} sets the following H\-T\-T\-P headers\-:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily Accept-\/\-Language\-: (comma-\/delimited preferred languages), en-\/us;q=0.\-8}
+\item {\ttfamily User-\/\-Agent\-: (generated user agent)}
+\end{DoxyItemize}
+
+You can override these H\-T\-T\-P headers or define new ones using {\ttfamily set\-Default\-Header\-:value\-:}.
+
+\subsubsection*{U\-R\-L Construction Using Relative Paths}
+
+Both {\ttfamily -\/request\-With\-Method\-:path\-:parameters\-:} and {\ttfamily -\/multipart\-Form\-Request\-With\-Method\-:path\-:parameters\-:constructing\-Body\-With\-Block\-:} construct U\-R\-Ls from the path relative to the {\ttfamily -\/base\-U\-R\-L}, using {\ttfamily N\-S\-U\-R\-L +\-U\-R\-L\-With\-String\-:relative\-To\-U\-R\-L\-:}. Below are a few examples of how {\ttfamily base\-U\-R\-L} and relative paths interact\-:
+
+N\-S\-U\-R\-L $\ast$base\-U\-R\-L = \mbox{[}N\-S\-U\-R\-L U\-R\-L\-With\-String\-:"\href{http://example.com/v1/}{\tt http\-://example.\-com/v1/}\char`\"{}\mbox{]};
+   \mbox{[}\-N\-S\-U\-R\-L U\-R\-L\-With\-String\-:@\char`\"{}foo\char`\"{} relative\-To\-U\-R\-L\-:base\-U\-R\-L\mbox{]};                  // http\-://example.\-com/v1/foo
+   \mbox{[}\-N\-S\-U\-R\-L U\-R\-L\-With\-String\-:@\char`\"{}foo?bar=baz\char`\"{} relative\-To\-U\-R\-L\-:base\-U\-R\-L\mbox{]};          // http\-://example.\-com/v1/foo?bar=baz
+   \mbox{[}\-N\-S\-U\-R\-L U\-R\-L\-With\-String\-:@\char`\"{}/foo\char`\"{} relative\-To\-U\-R\-L\-:base\-U\-R\-L\mbox{]};                 // http\-://example.\-com/foo
+   \mbox{[}\-N\-S\-U\-R\-L U\-R\-L\-With\-String\-:@\char`\"{}foo/\char`\"{} relative\-To\-U\-R\-L\-:base\-U\-R\-L\mbox{]};                 // http\-://example.\-com/v1/foo
+   \mbox{[}\-N\-S\-U\-R\-L U\-R\-L\-With\-String\-:@\char`\"{}/foo/\char`\"{} relative\-To\-U\-R\-L\-:base\-U\-R\-L\mbox{]};                // http\-://example.\-com/foo/
+   \mbox{[}\-N\-S\-U\-R\-L U\-R\-L\-With\-String\-:@\char`\"{}\href{http://example2.com/}{\tt http\-://example2.\-com/}" relative\-To\-U\-R\-L\-:base\-U\-R\-L\mbox{]}; // \href{http://example2.com/}{\tt http\-://example2.\-com/}
+
+Also important to note is that a trailing slash will be added to any {\ttfamily base\-U\-R\-L} without one, which would otherwise cause unexpected behavior when constructing U\-R\-Ls using paths without a leading slash.
+
+\subsubsection*{\hyperlink{class_n_s_coding-p}{N\-S\-Coding} / \hyperlink{class_n_s_copying-p}{N\-S\-Copying} Conformance}
+
+{\ttfamily \hyperlink{interface_a_f_h_t_t_p_client}{A\-F\-H\-T\-T\-P\-Client}} conforms to the {\ttfamily \hyperlink{class_n_s_coding-p}{N\-S\-Coding}} and {\ttfamily \hyperlink{class_n_s_copying-p}{N\-S\-Copying}} protocols, allowing operations to be archived to disk, and copied in memory, respectively. There are a few minor caveats to keep in mind, however\-:
+
+
+\begin{DoxyItemize}
+\item Archives and copies of H\-T\-T\-P clients will be initialized with an empty operation queue.
+\item \hyperlink{class_n_s_coding-p}{N\-S\-Coding} cannot serialize / deserialize block properties, so an archive of an H\-T\-T\-P client will not include any reachability callback block that may be set. 
+\end{DoxyItemize}\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\-F\-Form\-U\-R\-L\-Parameter\-Encoding@{A\-F\-Form\-U\-R\-L\-Parameter\-Encoding}!A\-F\-H\-T\-T\-P\-Client.\-h@{A\-F\-H\-T\-T\-P\-Client.\-h}}\index{A\-F\-H\-T\-T\-P\-Client.\-h@{A\-F\-H\-T\-T\-P\-Client.\-h}!A\-F\-Form\-U\-R\-L\-Parameter\-Encoding@{A\-F\-Form\-U\-R\-L\-Parameter\-Encoding}}\item[{\em 
+\hypertarget{_a_f_h_t_t_p_client_8h_a0a1fc2aa2881237fa65e82e1db8adebfad6005247624c56a7d4cdfa3625ba08a2}{A\-F\-Form\-U\-R\-L\-Parameter\-Encoding}\label{_a_f_h_t_t_p_client_8h_a0a1fc2aa2881237fa65e82e1db8adebfad6005247624c56a7d4cdfa3625ba08a2}
+}]\index{A\-F\-J\-S\-O\-N\-Parameter\-Encoding@{A\-F\-J\-S\-O\-N\-Parameter\-Encoding}!A\-F\-H\-T\-T\-P\-Client.\-h@{A\-F\-H\-T\-T\-P\-Client.\-h}}\index{A\-F\-H\-T\-T\-P\-Client.\-h@{A\-F\-H\-T\-T\-P\-Client.\-h}!A\-F\-J\-S\-O\-N\-Parameter\-Encoding@{A\-F\-J\-S\-O\-N\-Parameter\-Encoding}}\item[{\em 
+\hypertarget{_a_f_h_t_t_p_client_8h_a0a1fc2aa2881237fa65e82e1db8adebfa5d6ba75108010d9b8bfa3c043909a99c}{A\-F\-J\-S\-O\-N\-Parameter\-Encoding}\label{_a_f_h_t_t_p_client_8h_a0a1fc2aa2881237fa65e82e1db8adebfa5d6ba75108010d9b8bfa3c043909a99c}
+}]\index{A\-F\-Property\-List\-Parameter\-Encoding@{A\-F\-Property\-List\-Parameter\-Encoding}!A\-F\-H\-T\-T\-P\-Client.\-h@{A\-F\-H\-T\-T\-P\-Client.\-h}}\index{A\-F\-H\-T\-T\-P\-Client.\-h@{A\-F\-H\-T\-T\-P\-Client.\-h}!A\-F\-Property\-List\-Parameter\-Encoding@{A\-F\-Property\-List\-Parameter\-Encoding}}\item[{\em 
+\hypertarget{_a_f_h_t_t_p_client_8h_a0a1fc2aa2881237fa65e82e1db8adebfa4546c1f54c29429e7336daebf027b18e}{A\-F\-Property\-List\-Parameter\-Encoding}\label{_a_f_h_t_t_p_client_8h_a0a1fc2aa2881237fa65e82e1db8adebfa4546c1f54c29429e7336daebf027b18e}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{_a_f_h_t_t_p_client_8h_a23d48ef482c3794af74ec1984fda45ac}{\index{A\-F\-H\-T\-T\-P\-Client.\-h@{A\-F\-H\-T\-T\-P\-Client.\-h}!A\-F\-Query\-String\-From\-Parameters\-With\-Encoding@{A\-F\-Query\-String\-From\-Parameters\-With\-Encoding}}
+\index{A\-F\-Query\-String\-From\-Parameters\-With\-Encoding@{A\-F\-Query\-String\-From\-Parameters\-With\-Encoding}!AFHTTPClient.h@{A\-F\-H\-T\-T\-P\-Client.\-h}}
+\subsubsection[{A\-F\-Query\-String\-From\-Parameters\-With\-Encoding}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ A\-F\-Query\-String\-From\-Parameters\-With\-Encoding (
+\begin{DoxyParamCaption}
+\item[{N\-S\-Dictionary $\ast$}]{parameters, }
+\item[{N\-S\-String\-Encoding}]{encoding}
+\end{DoxyParamCaption}
+)}}\label{_a_f_h_t_t_p_client_8h_a23d48ef482c3794af74ec1984fda45ac}
+Returns a query string constructed by a set of parameters, using the specified encoding.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & The parameters used to construct the query string \\
+\hline
+{\em encoding} & The encoding to use in constructing the query string. If you are uncertain of the correct encoding, you should use U\-T\-F-\/8 ({\ttfamily N\-S\-U\-T\-F8\-String\-Encoding}), which is the encoding designated by R\-F\-C 3986 as the correct encoding for use in U\-R\-Ls.\\
+\hline
+\end{DoxyParams}
+Query strings are constructed by collecting each key-\/value pair, percent escaping a string representation of the key-\/value pair, and then joining the pairs with \char`\"{}\&\char`\"{}.
+
+If a query string pair has a an {\ttfamily N\-S\-Array} for its value, each member of the array will be represented in the format {\ttfamily field\mbox{[}\mbox{]}=value1\&field\mbox{[}\mbox{]}value2}. Otherwise, the pair will be formatted as \char`\"{}field=value\char`\"{}. String representations of both keys and values are derived using the {\ttfamily -\/description} method. The constructed query string does not include the ? character used to delimit the query component.
+
+\begin{DoxyReturn}{Returns}
+A percent-\/escaped query string 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_a_f_h_t_t_p_client_8h_afaaeeb05c066fa5ed0001b647fcd77fc}{\index{A\-F\-H\-T\-T\-P\-Client.\-h@{A\-F\-H\-T\-T\-P\-Client.\-h}!k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Delay@{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Delay}}
+\index{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Delay@{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Delay}!AFHTTPClient.h@{A\-F\-H\-T\-T\-P\-Client.\-h}}
+\subsubsection[{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Delay}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-Time\-Interval const k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Delay}}\label{_a_f_h_t_t_p_client_8h_afaaeeb05c066fa5ed0001b647fcd77fc}
+\hypertarget{_a_f_h_t_t_p_client_8h_a70f11937c3691e848bf7939857b4f463}{\index{A\-F\-H\-T\-T\-P\-Client.\-h@{A\-F\-H\-T\-T\-P\-Client.\-h}!k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Packet\-Size@{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Packet\-Size}}
+\index{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Packet\-Size@{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Packet\-Size}!AFHTTPClient.h@{A\-F\-H\-T\-T\-P\-Client.\-h}}
+\subsubsection[{k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Packet\-Size}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-U\-Integer const k\-A\-F\-Upload\-Stream3\-G\-Suggested\-Packet\-Size}}\label{_a_f_h_t_t_p_client_8h_a70f11937c3691e848bf7939857b4f463}
+Posted when network reachability changes. This notification assigns no notification object. The {\ttfamily user\-Info} dictionary contains an {\ttfamily N\-S\-Number} object under the {\ttfamily A\-F\-Networking\-Reachability\-Notification\-Status\-Item} key, representing the {\ttfamily A\-F\-Network\-Reachability\-Status} value for the current network reachability.
+
+\begin{DoxyWarning}{Warning}
+In order for network reachability to be monitored, include the {\ttfamily System\-Configuration} framework in the active target's \char`\"{}\-Link Binary With Library\char`\"{} build phase, and add {\ttfamily \#import $<$System\-Configuration/\-System\-Configuration.\-h$>$} to the header prefix of the project ({\ttfamily Prefix.\-pch}). 
+\end{DoxyWarning}
