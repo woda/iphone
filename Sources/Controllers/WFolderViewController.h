@@ -8,19 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import <QuickLook/QuickLook.h>
 #import "Item.h"
 
 @class WDetailViewController;
 
 
-@interface WFolderViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate> {
+@interface WFolderViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, QLPreviewControllerDataSource, QLPreviewControllerDelegate> {
     UILabel     *noDataLabel;
 }
 
 @property (strong, nonatomic) WDetailViewController *detailViewController;
+@property (strong, nonatomic) QLPreviewController   *previewController;
+@property (strong, nonatomic) NSString              *fileUrl;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSPredicate               *predicate;
+
+@property (nonatomic, retain) NSMutableDictionary       *files;
 
 @property (nonatomic, retain) IBOutlet UITableView      *tableView;
 @property (nonatomic, retain) IBOutlet UILabel          *countLabel;

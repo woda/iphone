@@ -7,7 +7,7 @@
 //
 
 #import "Item.h"
-#import "Item.h"
+#import <QuickLook/QuickLook.h>
 
 
 @implementation Item
@@ -19,5 +19,9 @@
 @dynamic starred;
 @dynamic files;
 @dynamic directory;
+
+- (Boolean)quickLookAvailable {
+    return ([QLPreviewController canPreviewItem:[NSURL URLWithString:self.url]]);
+}
 
 @end

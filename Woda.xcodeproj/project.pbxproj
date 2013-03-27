@@ -55,6 +55,7 @@
 		A2677B12165E148000C1D630 /* UIViewController+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B11165E148000C1D630 /* UIViewController+Helpers.m */; };
 		A29C73631702F757003E39BA /* WAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A29C73621702F757003E39BA /* WAccountViewController.m */; };
 		A29C73651702FCD8003E39BA /* WAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29C73641702FCD8003E39BA /* WAccountView.xib */; };
+		A29C736717030675003E39BA /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A29C736617030675003E39BA /* QuickLook.framework */; };
 		A2A0668F16D475C400D08D8D /* WUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0668E16D475C400D08D8D /* WUserLoginViewController.m */; };
 		A2A0669216D4766900D08D8D /* WUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0669116D4766900D08D8D /* WUser.m */; };
 		A2A0669516D47EF800D08D8D /* WUserSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0669416D47EF800D08D8D /* WUserSignUpViewController.m */; };
@@ -151,6 +152,7 @@
 		A29C73611702F757003E39BA /* WAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAccountViewController.h; sourceTree = "<group>"; };
 		A29C73621702F757003E39BA /* WAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAccountViewController.m; sourceTree = "<group>"; };
 		A29C73641702FCD8003E39BA /* WAccountView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WAccountView.xib; sourceTree = "<group>"; };
+		A29C736617030675003E39BA /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		A2A0668D16D475C400D08D8D /* WUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUserLoginViewController.h; sourceTree = "<group>"; };
 		A2A0668E16D475C400D08D8D /* WUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUserLoginViewController.m; sourceTree = "<group>"; };
 		A2A0669016D4766900D08D8D /* WUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUser.h; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A29C736717030675003E39BA /* QuickLook.framework in Frameworks */,
 				A2411B4B16D255D10060EFF7 /* SystemConfiguration.framework in Frameworks */,
 				A2411B4916D255C80060EFF7 /* MobileCoreServices.framework in Frameworks */,
 				A2F62E8116647F8B00F9CB08 /* libz.dylib in Frameworks */,
@@ -355,6 +358,7 @@
 		A2C601361630485A00CB53B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A29C736617030675003E39BA /* QuickLook.framework */,
 				A2411B4A16D255D10060EFF7 /* SystemConfiguration.framework */,
 				A2411B4816D255C70060EFF7 /* MobileCoreServices.framework */,
 				A2C601371630485A00CB53B3 /* UIKit.framework */,

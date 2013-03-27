@@ -46,18 +46,28 @@
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
     
-    int n = arc4random_uniform(74) % 3;
+    static int n = 0;
     if (n == 0) {
         [newManagedObject setValue:@"Woda.png" forKey:@"name"];
         [newManagedObject setValue:@"http://f.cl.ly/items/1F3K2X3J320V2U1u2q3s/logo.png" forKey:@"url"];
     } else if (n == 1) {
         [newManagedObject setValue:@"Logo-old.png" forKey:@"name"];
         [newManagedObject setValue:@"http://f.cl.ly/items/2W0M143O030I432H3V3E/WodaGoutteFleche.png" forKey:@"url"];
+    } else if (n == 2) {
+        [newManagedObject setValue:@"2014_TD1_EN_Woda.pdf" forKey:@"name"];
+        [newManagedObject setValue:@"http://f.cl.ly/items/1N1o0N1b311s01081L1p/2014_TD1_EN_Woda.pdf" forKey:@"url"];
+    } else if (n == 3) {
+        [newManagedObject setValue:@"2014_50M_wodacloud.txt" forKey:@"name"];
+        [newManagedObject setValue:@"http://f.cl.ly/items/2d472Z052o1Z1Z3z0R19/2014_50M_wodacloud.txt" forKey:@"url"];
+    } else if (n == 4) {
+        [newManagedObject setValue:@"Communication-Woda-V1.1.docx" forKey:@"name"];
+        [newManagedObject setValue:@"http://cl.ly/030Y1j3S2P47/Communication-Woda-V1.1.docx" forKey:@"url"];
     } else {
         [newManagedObject setValue:@"Secret directory" forKey:@"name"];
         [newManagedObject setValue:[NSNumber numberWithBool:YES] forKey:@"isDirectory"];
     }
     [newManagedObject setValue:_item forKey:@"directory"];
+    n = (n + 1) % 6;
     
     // Save the context.
     NSError *error = nil;

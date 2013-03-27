@@ -28,5 +28,6 @@
 - (void)removeFilesObject:(Item *)value;
 - (void)addFiles:(NSSet *)values;
 - (void)removeFiles:(NSSet *)values;
+- (Boolean)quickLookAvailable;
 
 @end

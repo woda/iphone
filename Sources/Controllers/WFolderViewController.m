@@ -8,6 +8,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "NSManagedObjectContext-EasyFetch.h"
+#import "AFHTTPRequestOperation.h"
 #import "WDirectoryViewController.h"
 #import "WDetailViewController.h"
 #import "WCell.h"
@@ -219,6 +220,15 @@
     if ([[object isDirectory] boolValue]) {
         WDirectoryViewController *c = [[WDirectoryViewController alloc] initWithItem:object];
         [self.navigationController pushViewController:c animated:YES];
+    } else if ([object quickLookAvailable]) {
+        if (_previewController == nil) {
+            _previewController = [[QLPreviewController alloc] init];
+            _previewController.delegate = self;
+            _previewController.dataSource = self;
+        }
+        _fileUrl = object.url;
+        [_previewController reloadData];
+        [self.navigationController pushViewController:_previewController animated:YES];
     } else {
         [object setOpenedAt:[NSDate date]];
         [[self fetchedResultsController].managedObjectContext save:nil];
@@ -342,6 +352,47 @@
                                                green:(186.0/255.0)
                                                 blue:(225.0/255.0)
                                                alpha:1.0];
+}
+
+
+#pragma mark -
+#pragma mark QuickLook controller methods
+
+- (NSInteger)numberOfPreviewItemsInPreviewController:(QLPreviewController *)controller {
+    return (1);
+}
+
+- (void)downloadFile:(NSString *)url {
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:[[NSUUID UUID] UUIDString]];
+    path = [path stringByAppendingPathExtension:[[url componentsSeparatedByString:@"."] lastObject]];
+    operation.outputStream = [NSOutputStream outputStreamToFileAtPath:path append:NO];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Successfully downloaded file to %@", path);
+        [_files setObject:path forKey:url];
+        [_previewController reloadData];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+    [operation start];
+}
+
+- (id<QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index {
+    if (_files == nil) {
+        _files = [NSMutableDictionary new];
+    }
+    
+    NSString *localUrl = [_files objectForKey:_fileUrl];
+    if (localUrl) {
+        return ([NSURL fileURLWithPath:localUrl]);
+    }
+    [self downloadFile:_fileUrl];
+    return ([NSURL URLWithString:_fileUrl]);
 }
 
 @end
