@@ -26,7 +26,7 @@
 - (void)setUp {
     [super setUp];
     
-    _login = @"test";
+    _login = @"test"; // Never test1 please (login used for dev)
     _firstName = @"unit";
     _lastName = @"test";
     _password = @"password";
