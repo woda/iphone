@@ -37,5 +37,9 @@ typedef enum {
       lastName:(NSString *)last_name
       password:(NSString *)password
          email:(NSString *)email;
++ (void)editWithFirstName:(NSString *)first_name
+                 lastName:(NSString *)last_name
+                 password:(NSString *)password
+                    email:(NSString *)email;
 
 @end

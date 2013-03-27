@@ -53,6 +53,8 @@
 		A2677B0C165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B0B165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m */; };
 		A2677B0E165E125700C1D630 /* WHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2677B0D165E125700C1D630 /* WHomeView.xib */; };
 		A2677B12165E148000C1D630 /* UIViewController+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B11165E148000C1D630 /* UIViewController+Helpers.m */; };
+		A29C73631702F757003E39BA /* WAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A29C73621702F757003E39BA /* WAccountViewController.m */; };
+		A29C73651702FCD8003E39BA /* WAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29C73641702FCD8003E39BA /* WAccountView.xib */; };
 		A2A0668F16D475C400D08D8D /* WUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0668E16D475C400D08D8D /* WUserLoginViewController.m */; };
 		A2A0669216D4766900D08D8D /* WUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0669116D4766900D08D8D /* WUser.m */; };
 		A2A0669516D47EF800D08D8D /* WUserSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0669416D47EF800D08D8D /* WUserSignUpViewController.m */; };
@@ -146,6 +148,9 @@
 		A2677B10165E148000C1D630 /* UIViewController+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Helpers.h"; sourceTree = "<group>"; };
 		A2677B11165E148000C1D630 /* UIViewController+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Helpers.m"; sourceTree = "<group>"; };
 		A2677B13165E14AB00C1D630 /* Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
+		A29C73611702F757003E39BA /* WAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAccountViewController.h; sourceTree = "<group>"; };
+		A29C73621702F757003E39BA /* WAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAccountViewController.m; sourceTree = "<group>"; };
+		A29C73641702FCD8003E39BA /* WAccountView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WAccountView.xib; sourceTree = "<group>"; };
 		A2A0668D16D475C400D08D8D /* WUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUserLoginViewController.h; sourceTree = "<group>"; };
 		A2A0668E16D475C400D08D8D /* WUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUserLoginViewController.m; sourceTree = "<group>"; };
 		A2A0669016D4766900D08D8D /* WUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUser.h; sourceTree = "<group>"; };
@@ -402,6 +407,8 @@
 			isa = PBXGroup;
 			children = (
 				A2A0668C16D475AB00D08D8D /* User */,
+				A2020D59165E2D960057FCCD /* WNavigationController.h */,
+				A2020D5A165E2D960057FCCD /* WNavigationController.m */,
 				A2677B06165E0F0200C1D630 /* WHomeViewController.h */,
 				A2677B07165E0F0200C1D630 /* WHomeViewController.m */,
 				A2C6017416304BAF00CB53B3 /* WFolderViewController.h */,
@@ -410,8 +417,8 @@
 				A24FC760165E6DC5002E2C26 /* WDirectoryViewController.m */,
 				A2C6017216304BAF00CB53B3 /* WDetailViewController.h */,
 				A2C6017316304BAF00CB53B3 /* WDetailViewController.m */,
-				A2020D59165E2D960057FCCD /* WNavigationController.h */,
-				A2020D5A165E2D960057FCCD /* WNavigationController.m */,
+				A29C73611702F757003E39BA /* WAccountViewController.h */,
+				A29C73621702F757003E39BA /* WAccountViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -459,6 +466,7 @@
 				A2C6018516304BAF00CB53B3 /* WDetailView.xib */,
 				A2A0669916D48D4900D08D8D /* WUserLoginView.xib */,
 				A2A0669E16D4D92400D08D8D /* WUserSignUpView.xib */,
+				A29C73641702FCD8003E39BA /* WAccountView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -602,6 +610,7 @@
 				A2A0669816D48D2E00D08D8D /* WFolderView.xib in Resources */,
 				A2A0669A16D48D4900D08D8D /* WUserLoginView.xib in Resources */,
 				A2A0669F16D4D92500D08D8D /* WUserSignUpView.xib in Resources */,
+				A29C73651702FCD8003E39BA /* WAccountView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +687,7 @@
 				A2A0669216D4766900D08D8D /* WUser.m in Sources */,
 				A2A0669516D47EF800D08D8D /* WUserSignUpViewController.m in Sources */,
 				A2A0669D16D4CBBF00D08D8D /* NSArray+Shortcuts.m in Sources */,
+				A29C73631702F757003E39BA /* WAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

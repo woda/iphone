@@ -47,6 +47,10 @@ enum kSignUpCellIndexes {
 
 @property (nonatomic, retain) UITextField               *focusedTextField;
 
+- (void)updateLabels;
+- (BOOL)validEmail:(NSString *)emailString;
+- (void)showProcessingView:(Boolean)show animated:(Boolean)animated;
+
 - (IBAction)cancel:(id)sender;
 - (IBAction)submit:(id)sender;
 

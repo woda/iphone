@@ -63,6 +63,30 @@ static WUser *current = nil;
     }];
 }
 
+- (void)editWithFirstName:(NSString *)first_name
+                 lastName:(NSString *)last_name
+                 password:(NSString *)password
+                    email:(NSString *)email
+{
+    _firstName = first_name;
+    _lastName = last_name;
+    _email = email;
+    
+    [WRequest updateUserWithFirstName:_firstName lastName:_lastName password:password email:_email success:^(id json) {
+        NSLog(@"Edit successful: %@", json);
+    } failure:^(id json) {
+        NSLog(@"Edit error: %@", json);
+    }];
+}
+
++ (void)editWithFirstName:(NSString *)first_name
+                 lastName:(NSString *)last_name
+                 password:(NSString *)password
+                    email:(NSString *)email
+{
+    [[WUser current] editWithFirstName:first_name lastName:last_name password:password email:email];
+}
+
 
 #pragma mark - Initialization methods
 

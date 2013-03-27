@@ -16,6 +16,7 @@
 "LoginButtonTitle" = "Se connecter";
 "CancelButtonTitle" = "Annuler";
 "CreateUserButtonTitle" = "Continuer";
+"EditUserButtonTitle" = "Modifier";
 
 "ConnectingText" = "Connexion";
 
