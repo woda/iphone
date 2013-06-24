@@ -10,9 +10,27 @@
 
 @interface WRequest (Sync)
 
-+ (void)addFile:(NSString *)filename withData:(NSData *)data;
-+ (void)removeFile:(NSString *)filename;
-+ (void)updateFile:(NSString *)filename withData:(NSData *)data;
-+ (void)getFile:(NSString *)filename;
++ (void)addFile:(NSString *)filename
+       withData:(NSData *)data
+        success:(void (^)(id json))success
+        failure:(void (^)(id error))failure;
+
++ (void)updateFile:(NSString *)filename
+          withPart:(NSData *)part
+            number:(NSNumber *)number
+           success:(void (^)(id json))success
+           failure:(void (^)(id error))failure;
+
++ (void)comfirmUpload:(NSString *)filename
+              success:(void (^)(id json))success
+              failure:(void (^)(id json))failure;
+
++ (void)removeFile:(NSString *)filename
+           success:(void (^)(id json))success
+           failure:(void (^)(id error))failure;
+
++ (void)getFile:(NSString *)filename
+        success:(void (^)(id json))success
+        failure:(void (^)(id json))failure;
 
 @end

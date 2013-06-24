@@ -24,6 +24,7 @@ static AFHTTPClient *client = nil;
     id json = [WRequest JSONFromData:[operation responseData]];
     if ([json isKindOfClass:[NSError class]]) {
         NSLog(@"Error: Json parsing failed");
+        NSLog(@" Info: %@",[operation responseString]);
         return ([(NSError *)json localizedDescription]);
     }
     if (json == nil) {
