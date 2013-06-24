@@ -183,9 +183,12 @@
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:json forOperation:operation]);
-        } else {
+        } else if ([[json objectForKey:@"success"] boolValue]) {
             NSLog(@"File deleted: %@", json);
             success(json);
+        } else {
+            NSLog(@"File not deleted: %@", json);
+            failure(json);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure([WRequest displayError:error forOperation:operation]);
