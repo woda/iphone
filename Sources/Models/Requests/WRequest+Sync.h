@@ -23,14 +23,19 @@
 
 + (void)comfirmUpload:(NSString *)filename
               success:(void (^)(id json))success
-              failure:(void (^)(id json))failure;
+              failure:(void (^)(id error))failure;
 
 + (void)removeFile:(NSString *)filename
            success:(void (^)(id json))success
            failure:(void (^)(id error))failure;
 
++ (void)updateFile:(NSString *)filename
+          withData:(NSData *)data
+           success:(void (^)(id json))success
+           failure:(void (^)(id error))failure;
+
 + (void)getFile:(NSString *)filename
         success:(void (^)(id json))success
-        failure:(void (^)(id json))failure;
+        failure:(void (^)(id error))failure;
 
 @end

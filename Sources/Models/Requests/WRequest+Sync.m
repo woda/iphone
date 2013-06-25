@@ -39,13 +39,16 @@
 + (void)addFile:(NSString *)filename
        withData:(NSData *)data
         success:(void (^)(id json))success
-        failure:(void (^)(id json))failure
+        failure:(void (^)(id error))failure
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:[WRequest sha256hash:data] forKey:@"content_hash"];
     [params setValue:[NSNumber numberWithInteger:[data length]] forKey:@"size"];
     
-    [[WRequest client] putPath:[@"/sync/{filename}" stringByReplacingOccurrencesOfString:@"{filename}" withString:filename] parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSString *path = @"/sync/{filename}";
+    path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
+    
+    [[WRequest client] putPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:(NSError *)json forOperation:operation]);
@@ -108,7 +111,7 @@
           withData:(NSData *)data
            success:(void (^)(id json))success
            loading:(void (^)(id json))loading
-           failure:(void (^)(id json))failure
+           failure:(void (^)(id error))failure
 {
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     NSOperation *dependency = nil;
@@ -127,7 +130,9 @@
         if (dependency) {
             [o addDependency:dependency];
         }
-        [q addOperation:o];
+        if (![dependency isCancelled]) {
+            [q addOperation:o];
+        }
     }
     NSBlockOperation *o = [NSBlockOperation blockOperationWithBlock:^{
         [WRequest comfirmUpload:filename success:success failure:failure];
@@ -135,7 +140,9 @@
     if (dependency) {
         [o addDependency:dependency];
     }
-    [q addOperation:o];
+    if (![dependency isCancelled]) {
+        [q addOperation:o];
+    }
 }
 
 
@@ -146,7 +153,7 @@
 
 + (void)comfirmUpload:(NSString *)filename
               success:(void (^)(id json))success
-              failure:(void (^)(id json))failure
+              failure:(void (^)(id error))failure
 {
     NSString *path = @"/successsync/{filename}";
     path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
@@ -174,7 +181,7 @@
 
 + (void)removeFile:(NSString *)filename
            success:(void (^)(id json))success
-           failure:(void (^)(id json))failure
+           failure:(void (^)(id error))failure
 {
     NSString *path = @"/sync/{filename}";
     path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
@@ -195,31 +202,96 @@
     }];
 }
 
-
-//Getting a file
-//
-//To get a file, use a GET request on:
+//Changing a file
+//To modify a file, use a POST request on:
 //https://{base}:3000/sync/{filename}
 //
-//This will return {"url": <the url of the file>, key: <AES256 key>, iv: <AES256 iv>}.
-//You should be able to use the url of the file directly, but note that this url is only valid for 1 hour.
-//If you are using crypto, decrypt using the AES256 info (of course this has to be implemented in the end).
+//This is just a delete followed by an add, so it will return the same values as add can, but it can also have the same errors delete can.
 
-+ (void)getFile:(NSString *)filename
-        success:(void (^)(id json))success
-        failure:(void (^)(id json))failure
++ (void)updateFile:(NSString *)filename
+          withData:(NSData *)data
+           success:(void (^)(id json))success
+           failure:(void (^)(id error))failure
 {
-    [[WRequest client] getPath:[@"/sync/{filename}" stringByReplacingOccurrencesOfString:@"{filename}" withString:filename] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:[WRequest sha256hash:data] forKey:@"content_hash"];
+    [params setValue:[NSNumber numberWithInteger:[data length]] forKey:@"size"];
+    
+    NSString *path = @"/sync/{filename}";
+    path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
+    
+    [[WRequest client] postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:(NSError *)json forOperation:operation]);
+        } else if ([[json objectForKey:@"success"] boolValue]) {
+            NSLog(@"File created: %@", json);
+            if ([[json objectForKey:@"need_upload"] boolValue]) {
+                // Start uploading the file
+                NSLog(@"File upload not implemented");
+                success(json);
+            }
         } else {
-            NSLog(@"File info: %@", json);
-            success(json);
+            NSLog(@"File not created: %@", json);
+            failure(json);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure([WRequest displayError:error forOperation:operation]);
     }];
+}
+
+
+//Getting a file
+//To get a file, use a GET request on:
+//https://{base}:3000/partsync/{numero_de_partie}/{filename}
+//
+//This will return the unencrypted part of the file.
+
++ (void)getFile:(NSString *)filename
+     partNumber:(NSNumber *)part
+        success:(void (^)(NSData *data, NSNumber *partNumber))success
+        failure:(void (^)(id error))failure
+{
+    NSString *path = @"/partsync/{numero_de_partie}/{filename}";
+    path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
+    path = [path stringByReplacingOccurrencesOfString:@"{numero_de_partie}" withString:[part stringValue]];
+    
+    [[WRequest client]  getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        success(responseObject, part);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failure([WRequest displayError:error forOperation:operation]);
+    }];
+}
+
++ (void)getFile:(NSString *)filename
+          parts:(NSInteger)parts
+        success:(void (^)(NSData *file))success
+        loading:(void (^)(double pourcentage))loading
+        failure:(void (^)(id error))failure
+{
+    NSOperationQueue *q = [[NSOperationQueue alloc] init];
+    NSOperation *dependency = nil;
+    NSMutableData *file = [NSMutableData new];
+    for (int i=0; i<parts; i++) {
+        NSBlockOperation *o = [NSBlockOperation blockOperationWithBlock:^{
+            [WRequest getFile:filename partNumber:@(i) success:^(NSData *data, NSNumber *partNumber) {
+                [file appendData:data];
+                loading([partNumber doubleValue] / (double)parts);
+                if ([partNumber integerValue] >= parts) {
+                    success(file);
+                }
+            } failure:^(id error) {
+                [q cancelAllOperations];
+                failure(error);
+            }];
+        }];
+        if (dependency) {
+            [o addDependency:dependency];
+        }
+        if (![dependency isCancelled]) {
+            [q addOperation:o];
+        }
+    }
 }
 
 @end
