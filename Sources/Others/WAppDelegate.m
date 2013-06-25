@@ -11,6 +11,7 @@
 //#import "WDirectoryViewController.h"
 //#import "WDetailViewController.h"
 #import "WUserLoginViewController.h"
+#import "AFHTTPRequestOperationLogger.h"
 
 @implementation WAppDelegate
 
@@ -39,6 +40,8 @@
 #ifdef TESTING
     [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
 #endif
+    
+    [[AFHTTPRequestOperationLogger sharedLogger] startLogging];
 
     return YES;
 }

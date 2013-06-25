@@ -7,8 +7,9 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "WRequestTests.h"
 
-@interface WRequestUserTests : SenTestCase
+@interface WRequestUserTests : WRequestTests
 
 @property (nonatomic, retain) NSString *login;
 @property (nonatomic, retain) NSString *firstName;

@@ -53,6 +53,9 @@
 		A2677B0E165E125700C1D630 /* WHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2677B0D165E125700C1D630 /* WHomeView.xib */; };
 		A2677B12165E148000C1D630 /* UIViewController+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B11165E148000C1D630 /* UIViewController+Helpers.m */; };
 		A299C66C177A31B0000B4F88 /* WRequestUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B4D16D256FD0060EFF7 /* WRequestUserTests.m */; };
+		A299C673177A3C35000B4F88 /* AFHTTPRequestOperationLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A299C66F177A3C35000B4F88 /* AFHTTPRequestOperationLogger.m */; };
+		A299C677177A3CCB000B4F88 /* AFHTTPRequestOperationLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A299C66F177A3C35000B4F88 /* AFHTTPRequestOperationLogger.m */; };
+		A299C67A177A40B8000B4F88 /* WRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A299C679177A40B8000B4F88 /* WRequestTests.m */; };
 		A29C73631702F757003E39BA /* WAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A29C73621702F757003E39BA /* WAccountViewController.m */; };
 		A29C73651702FCD8003E39BA /* WAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29C73641702FCD8003E39BA /* WAccountView.xib */; };
 		A29C736717030675003E39BA /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A29C736617030675003E39BA /* QuickLook.framework */; };
@@ -151,6 +154,10 @@
 		A2677B10165E148000C1D630 /* UIViewController+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Helpers.h"; sourceTree = "<group>"; };
 		A2677B11165E148000C1D630 /* UIViewController+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Helpers.m"; sourceTree = "<group>"; };
 		A2677B13165E14AB00C1D630 /* Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
+		A299C66E177A3C35000B4F88 /* AFHTTPRequestOperationLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationLogger.h; sourceTree = "<group>"; };
+		A299C66F177A3C35000B4F88 /* AFHTTPRequestOperationLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationLogger.m; sourceTree = "<group>"; };
+		A299C678177A40B8000B4F88 /* WRequestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRequestTests.h; sourceTree = "<group>"; };
+		A299C679177A40B8000B4F88 /* WRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRequestTests.m; sourceTree = "<group>"; };
 		A29C73611702F757003E39BA /* WAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAccountViewController.h; sourceTree = "<group>"; };
 		A29C73621702F757003E39BA /* WAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAccountViewController.m; sourceTree = "<group>"; };
 		A29C73641702FCD8003E39BA /* WAccountView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WAccountView.xib; sourceTree = "<group>"; };
@@ -253,6 +260,8 @@
 				A2411B4D16D256FD0060EFF7 /* WRequestUserTests.m */,
 				A2F7C61D1779431C0034D327 /* WRequestSyncTests.h */,
 				A2F7C61E1779431C0034D327 /* WRequestSyncTests.m */,
+				A299C678177A40B8000B4F88 /* WRequestTests.h */,
+				A299C679177A40B8000B4F88 /* WRequestTests.m */,
 			);
 			path = WodaTests;
 			sourceTree = "<group>";
@@ -329,6 +338,15 @@
 			name = Helpers;
 			path = Sources/Librairies/Helpers;
 			sourceTree = SOURCE_ROOT;
+		};
+		A299C66D177A3C35000B4F88 /* AFHTTPRequestOperationLogger */ = {
+			isa = PBXGroup;
+			children = (
+				A299C66E177A3C35000B4F88 /* AFHTTPRequestOperationLogger.h */,
+				A299C66F177A3C35000B4F88 /* AFHTTPRequestOperationLogger.m */,
+			);
+			path = AFHTTPRequestOperationLogger;
+			sourceTree = "<group>";
 		};
 		A2A0668C16D475AB00D08D8D /* User */ = {
 			isa = PBXGroup;
@@ -498,6 +516,7 @@
 		A2DC4503163064A100E152A6 /* Librairies */ = {
 			isa = PBXGroup;
 			children = (
+				A299C66D177A3C35000B4F88 /* AFHTTPRequestOperationLogger */,
 				A2411B2216D2544D0060EFF7 /* AFNetworking */,
 				A2F62E78166447DD00F9CB08 /* TestFlightSDK1.1 */,
 				A2677B09165E100000C1D630 /* coredata-easyfetch */,
@@ -663,6 +682,8 @@
 				A2411B6116D26B460060EFF7 /* WRequest.m in Sources */,
 				A2F7C61F1779431C0034D327 /* WRequestSyncTests.m in Sources */,
 				A299C66C177A31B0000B4F88 /* WRequestUserTests.m in Sources */,
+				A299C677177A3CCB000B4F88 /* AFHTTPRequestOperationLogger.m in Sources */,
+				A299C67A177A40B8000B4F88 /* WRequestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,6 +721,7 @@
 				A2A0669516D47EF800D08D8D /* WUserSignUpViewController.m in Sources */,
 				A2A0669D16D4CBBF00D08D8D /* NSArray+Shortcuts.m in Sources */,
 				A29C73631702F757003E39BA /* WAccountViewController.m in Sources */,
+				A299C673177A3C35000B4F88 /* AFHTTPRequestOperationLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

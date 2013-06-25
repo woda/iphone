@@ -11,8 +11,3 @@
 #define _AFNETWORKING_ALLOW_INVALID_SSL_CERTIFICATES_
 #endif
 
-
-#define kInitWait       dispatch_semaphore_t semaphore = dispatch_semaphore_create(0)
-#define kStartWait      semaphore = dispatch_semaphore_create(0)
-#define kStopWait       dispatch_semaphore_signal(semaphore)
-#define kWait           while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW))  [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]]
