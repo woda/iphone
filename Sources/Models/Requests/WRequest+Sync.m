@@ -39,6 +39,7 @@
 + (void)addFile:(NSString *)filename
        withData:(NSData *)data
         success:(void (^)(id json))success
+        loading:(void (^)(double pourcentage))loading
         failure:(void (^)(id error))failure
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -53,10 +54,21 @@
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:(NSError *)json forOperation:operation]);
         } else if ([[json objectForKey:@"success"] boolValue]) {
-            NSLog(@"File created: %@", json);
+            NSLog(@"File created");
             if ([[json objectForKey:@"need_upload"] boolValue]) {
-                // Start uploading the file
-                NSLog(@"File upload not implemented");
+                NSNumber *partSize = [json objectForKey:@"part_size"];
+                if ([partSize integerValue] <= 0) {
+                    NSLog(@"Warning: 'part_size' info is missing in json: %@", json);
+                    partSize = @5000000; // 5ko
+                }
+                [WRequest uploadFile:filename partSize:partSize withData:data success:^(id json) {
+                    success(json);
+                } loading:^(double pourcentage) {
+                    loading(pourcentage);
+                } failure:^(id error) {
+                    failure([WRequest displayError:error forOperation:operation]);
+                }];
+            } else {
                 success(json);
             }
         } else {
@@ -80,14 +92,19 @@
 //The part number should be a number from 0 to the number of parts needed to store the file.
 ///!\ There is no checking done on this right now, so do it well.
 
-+ (void)updateFile:(NSString *)filename
++ (void)uploadFile:(NSString *)filename
           withPart:(NSData *)part
             number:(NSNumber *)number
-           success:(void (^)(id json))success
+           success:(void (^)(NSNumber *partNumber))success
            failure:(void (^)(id error))failure
 {
+    NSString *partFormated = [part description];
+    partFormated = [partFormated stringByReplacingOccurrencesOfString:@"<" withString:@""];
+    partFormated = [partFormated stringByReplacingOccurrencesOfString:@" " withString:@""];
+    partFormated = [partFormated stringByReplacingOccurrencesOfString:@">" withString:@""];
+    
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setValue:part forKey:@"data"];
+    [params setValue:partFormated forKey:@"data"];
     
     NSString *path = @"/partsync/{part_number}/{filename}";
     path = [path stringByReplacingOccurrencesOfString:@"{part_number}" withString:[number stringValue]];
@@ -99,29 +116,31 @@
             failure([WRequest displayError:(NSError *)json forOperation:operation]);
         } else {
             NSLog(@"File part.%@ updated: %@", number, json);
-            success(json);
+            success(number);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure([WRequest displayError:error forOperation:operation]);
     }];
 }
 
-+ (void)updateFile:(NSString *)filename
-          partSize:(NSInteger)partSize
++ (void)uploadFile:(NSString *)filename
+          partSize:(NSNumber *)partSize
           withData:(NSData *)data
            success:(void (^)(id json))success
-           loading:(void (^)(id json))loading
+           loading:(void (^)(double pourcentage))loading
            failure:(void (^)(id error))failure
 {
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     NSOperation *dependency = nil;
-    for (int i=0, k=(data.length / partSize); i<k; i++) {
-        NSData *d = [data subdataWithRange:NSMakeRange((i * partSize), MIN(partSize, (data.length - (i * partSize))))];
+    NSLog(@"data size: %dko", (data.length / 1024));
+    NSLog(@"    parts: %d", 1+(data.length / [partSize integerValue]));
+    for (int i=0, k=1+(data.length / [partSize integerValue]); i<k; i++) {
+        NSData *d = [data subdataWithRange:NSMakeRange((i * [partSize integerValue]), MIN([partSize integerValue], (data.length - (i * [partSize integerValue]))))];
         
         
         NSBlockOperation *o = [NSBlockOperation blockOperationWithBlock:^{
-            [WRequest updateFile:filename withPart:d number:@(i) success:^(id json) {
-                loading(json);
+            [WRequest uploadFile:filename withPart:d number:@(i) success:^(NSNumber *partNumber) {
+                loading([partNumber doubleValue] / (double)(data.length / [partSize integerValue]));
             } failure:^(id error) {
                 [q cancelAllOperations];
                 failure(error);
@@ -211,6 +230,7 @@
 + (void)updateFile:(NSString *)filename
           withData:(NSData *)data
            success:(void (^)(id json))success
+           loading:(void (^)(double pourcentage))loading
            failure:(void (^)(id error))failure
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -227,8 +247,14 @@
         } else if ([[json objectForKey:@"success"] boolValue]) {
             NSLog(@"File created: %@", json);
             if ([[json objectForKey:@"need_upload"] boolValue]) {
-                // Start uploading the file
-                NSLog(@"File upload not implemented");
+                [WRequest uploadFile:filename partSize:[json objectForKey:@"part_size"] withData:data success:^(id json) {
+                    success(json);
+                } loading:^(double pourcentage) {
+                    loading(pourcentage);
+                } failure:^(id error) {
+                    failure([WRequest displayError:error forOperation:operation]);
+                }];
+            } else {
                 success(json);
             }
         } else {
@@ -264,20 +290,25 @@
 }
 
 + (void)getFile:(NSString *)filename
-          parts:(NSInteger)parts
+          parts:(NSNumber *)parts
         success:(void (^)(NSData *file))success
         loading:(void (^)(double pourcentage))loading
         failure:(void (^)(id error))failure
 {
+    if (parts == nil) {
+        NSLog(@"Warning: Number of parts info is missing in json");
+        parts = @1;
+    }
+    
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     NSOperation *dependency = nil;
     NSMutableData *file = [NSMutableData new];
-    for (int i=0; i<parts; i++) {
+    for (int i=0; i<[parts integerValue]; i++) {
         NSBlockOperation *o = [NSBlockOperation blockOperationWithBlock:^{
             [WRequest getFile:filename partNumber:@(i) success:^(NSData *data, NSNumber *partNumber) {
                 [file appendData:data];
-                loading([partNumber doubleValue] / (double)parts);
-                if ([partNumber integerValue] >= parts) {
+                loading([partNumber doubleValue] / [parts  doubleValue]);
+                if ([partNumber integerValue] >= [parts  integerValue]) {
                     success(file);
                 }
             } failure:^(id error) {

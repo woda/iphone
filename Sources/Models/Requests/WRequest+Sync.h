@@ -13,12 +13,20 @@
 + (void)addFile:(NSString *)filename
        withData:(NSData *)data
         success:(void (^)(id json))success
+        loading:(void (^)(double pourcentage))loading
         failure:(void (^)(id error))failure;
 
-+ (void)updateFile:(NSString *)filename
++ (void)uploadFile:(NSString *)filename
           withPart:(NSData *)part
             number:(NSNumber *)number
+           success:(void (^)(NSNumber *partNumber))success
+           failure:(void (^)(id error))failure;
+
++ (void)uploadFile:(NSString *)filename
+          partSize:(NSNumber *)partSize
+          withData:(NSData *)data
            success:(void (^)(id json))success
+           loading:(void (^)(double pourcentage))loading
            failure:(void (^)(id error))failure;
 
 + (void)comfirmUpload:(NSString *)filename
@@ -32,10 +40,18 @@
 + (void)updateFile:(NSString *)filename
           withData:(NSData *)data
            success:(void (^)(id json))success
+           loading:(void (^)(double pourcentage))loading
            failure:(void (^)(id error))failure;
 
 + (void)getFile:(NSString *)filename
-        success:(void (^)(id json))success
+     partNumber:(NSNumber *)part
+        success:(void (^)(NSData *data, NSNumber *partNumber))success
+        failure:(void (^)(id error))failure;
+
++ (void)getFile:(NSString *)filename
+          parts:(NSNumber *)parts
+        success:(void (^)(NSData *file))success
+        loading:(void (^)(double pourcentage))loading
         failure:(void (^)(id error))failure;
 
 @end

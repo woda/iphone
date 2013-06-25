@@ -36,7 +36,6 @@
 		A2411B4716D2544D0060EFF7 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B3516D2544D0060EFF7 /* UIImageView+AFNetworking.m */; };
 		A2411B4916D255C80060EFF7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2411B4816D255C70060EFF7 /* MobileCoreServices.framework */; };
 		A2411B4B16D255D10060EFF7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2411B4A16D255D10060EFF7 /* SystemConfiguration.framework */; };
-		A2411B4E16D256FE0060EFF7 /* WRequestUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B4D16D256FD0060EFF7 /* WRequestUserTests.m */; };
 		A2411B4F16D259CE0060EFF7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2411B4816D255C70060EFF7 /* MobileCoreServices.framework */; };
 		A2411B5016D259D30060EFF7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2411B4A16D255D10060EFF7 /* SystemConfiguration.framework */; };
 		A2411B5A16D26B460060EFF7 /* WRequest+Amazon.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5316D26B460060EFF7 /* WRequest+Amazon.m */; };
@@ -53,6 +52,7 @@
 		A2677B0C165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B0B165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m */; };
 		A2677B0E165E125700C1D630 /* WHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2677B0D165E125700C1D630 /* WHomeView.xib */; };
 		A2677B12165E148000C1D630 /* UIViewController+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B11165E148000C1D630 /* UIViewController+Helpers.m */; };
+		A299C66C177A31B0000B4F88 /* WRequestUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B4D16D256FD0060EFF7 /* WRequestUserTests.m */; };
 		A29C73631702F757003E39BA /* WAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A29C73621702F757003E39BA /* WAccountViewController.m */; };
 		A29C73651702FCD8003E39BA /* WAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29C73641702FCD8003E39BA /* WAccountView.xib */; };
 		A29C736717030675003E39BA /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A29C736617030675003E39BA /* QuickLook.framework */; };
@@ -90,6 +90,8 @@
 		A2F62E7E166447DD00F9CB08 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A2F62E7A166447DD00F9CB08 /* README.md */; };
 		A2F62E7F166447DD00F9CB08 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = A2F62E7B166447DD00F9CB08 /* release_notes.md */; };
 		A2F62E8116647F8B00F9CB08 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F62E8016647F8B00F9CB08 /* libz.dylib */; };
+		A2F7C61F1779431C0034D327 /* WRequestSyncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F7C61E1779431C0034D327 /* WRequestSyncTests.m */; };
+		A2F7C620177954C30034D327 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F51630546C00E152A6 /* iTunesArtwork.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -198,6 +200,8 @@
 		A2F62E7B166447DD00F9CB08 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
 		A2F62E7C166447DD00F9CB08 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		A2F62E8016647F8B00F9CB08 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		A2F7C61D1779431C0034D327 /* WRequestSyncTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRequestSyncTests.h; sourceTree = "<group>"; };
+		A2F7C61E1779431C0034D327 /* WRequestSyncTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRequestSyncTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +251,8 @@
 				A2411ADC16D2528A0060EFF7 /* Supporting Files */,
 				A2411B4C16D256FD0060EFF7 /* WRequestUserTests.h */,
 				A2411B4D16D256FD0060EFF7 /* WRequestUserTests.m */,
+				A2F7C61D1779431C0034D327 /* WRequestSyncTests.h */,
+				A2F7C61E1779431C0034D327 /* WRequestSyncTests.m */,
 			);
 			path = WodaTests;
 			sourceTree = "<group>";
@@ -583,6 +589,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2F7C620177954C30034D327 /* iTunesArtwork.png in Resources */,
 				A2411AE016D2528A0060EFF7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -650,11 +657,12 @@
 				A2411B4316D2544D0060EFF7 /* AFURLConnectionOperation.m in Sources */,
 				A2411B4516D2544D0060EFF7 /* AFXMLRequestOperation.m in Sources */,
 				A2411B4716D2544D0060EFF7 /* UIImageView+AFNetworking.m in Sources */,
-				A2411B4E16D256FE0060EFF7 /* WRequestUserTests.m in Sources */,
 				A2411B5B16D26B460060EFF7 /* WRequest+Amazon.m in Sources */,
 				A2411B5D16D26B460060EFF7 /* WRequest+Sync.m in Sources */,
 				A2411B5F16D26B460060EFF7 /* WRequest+User.m in Sources */,
 				A2411B6116D26B460060EFF7 /* WRequest.m in Sources */,
+				A2F7C61F1779431C0034D327 /* WRequestSyncTests.m in Sources */,
+				A299C66C177A31B0000B4F88 /* WRequestUserTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
