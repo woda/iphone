@@ -8,6 +8,7 @@
 
 #import "WRequest.h"
 
+
 static AFHTTPClient *client = nil;
 
 @implementation WRequest
@@ -21,10 +22,11 @@ static AFHTTPClient *client = nil;
 
 + (id)displayError:(NSError *)error forOperation:(AFHTTPRequestOperation *)operation {
 //    NSLog(@"%@", error);
+    
     id json = [WRequest JSONFromData:[operation responseData]];
     if ([json isKindOfClass:[NSError class]]) {
         NSLog(@"Error: Json parsing failed");
-        NSLog(@" Info: %@",[operation responseString]);
+//        NSLog(@" Info: %@",[operation responseString]);
         return ([(NSError *)json localizedDescription]);
     }
     if (json == nil) {

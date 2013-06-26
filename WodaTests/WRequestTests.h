@@ -7,6 +7,8 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "DDTTYLogger.h"
+#import "AFHTTPRequestOperationLogger.h"
 
 #define kInitWait       dispatch_semaphore_t semaphore = dispatch_semaphore_create(0)
 #define kStartWait      semaphore = dispatch_semaphore_create(0)

@@ -25,6 +25,7 @@
 
 - (void)setUp {
     [super setUp];
+//    [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelDebug];
     
     _login = @"test"; // Never test1 please (login used for dev)
     _firstName = @"unit";
@@ -117,7 +118,7 @@
 //    
 //    kWait;
 //}
-
+//
 //- (void)test06UpdatePassword {
 //    [self test02Login];
 //    

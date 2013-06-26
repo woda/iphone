@@ -54,25 +54,25 @@
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:(NSError *)json forOperation:operation]);
         } else if ([[json objectForKey:@"success"] boolValue]) {
-            NSLog(@"File created");
+            DDLogInfo(@"File created");
             if ([[json objectForKey:@"need_upload"] boolValue]) {
                 NSNumber *partSize = [json objectForKey:@"part_size"];
                 if ([partSize integerValue] <= 0) {
-                    NSLog(@"Warning: 'part_size' info is missing in json: %@", json);
-                    partSize = @5000000; // 5ko
+                    DDLogWarn(@"Warning: 'part_size' info is missing in json: %@", json);
+                    partSize = @(5*1024*1024); // 5ko
                 }
                 [WRequest uploadFile:filename partSize:partSize withData:data success:^(id json) {
                     success(json);
                 } loading:^(double pourcentage) {
                     loading(pourcentage);
                 } failure:^(id error) {
-                    failure([WRequest displayError:error forOperation:operation]);
+                    failure(error);
                 }];
             } else {
                 success(json);
             }
         } else {
-            NSLog(@"File not created: %@", json);
+            DDLogInfo(@"File not created: %@", json);
             failure(json);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -92,35 +92,41 @@
 //The part number should be a number from 0 to the number of parts needed to store the file.
 ///!\ There is no checking done on this right now, so do it well.
 
-+ (void)uploadFile:(NSString *)filename
-          withPart:(NSData *)part
-            number:(NSNumber *)number
-           success:(void (^)(NSNumber *partNumber))success
-           failure:(void (^)(id error))failure
++ (NSOperation *)uploadFile:(NSString *)filename
+                   withPart:(NSData *)part
+                     number:(NSNumber *)partNumber
+                    success:(void (^)(NSNumber *partNumber))success
+                    loading:(void (^)(NSNumber *partNumber, double pourcentage))loading
+                    failure:(void (^)(id error))failure
 {
-    NSString *partFormated = [part description];
-    partFormated = [partFormated stringByReplacingOccurrencesOfString:@"<" withString:@""];
-    partFormated = [partFormated stringByReplacingOccurrencesOfString:@" " withString:@""];
-    partFormated = [partFormated stringByReplacingOccurrencesOfString:@">" withString:@""];
-    
+    NSString *partFormated = [[NSString alloc] initWithBytes:part.bytes length:part.length encoding:NSASCIIStringEncoding];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:partFormated forKey:@"data"];
     
     NSString *path = @"/partsync/{part_number}/{filename}";
-    path = [path stringByReplacingOccurrencesOfString:@"{part_number}" withString:[number stringValue]];
+    path = [path stringByReplacingOccurrencesOfString:@"{part_number}" withString:[partNumber stringValue]];
     path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
     
-    [[WRequest client] putPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSURLRequest *request = [[WRequest client] requestWithMethod:@"PUT" path:path parameters:params];
+    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [op setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+        loading(partNumber, (double)totalBytesWritten / (double)totalBytesExpectedToWrite);
+    }];
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:(NSError *)json forOperation:operation]);
+        } else if ([[json objectForKey:@"success"] boolValue]) {
+            DDLogInfo(@"File part.%@ updated: %@", partNumber, json);
+            success(partNumber);
         } else {
-            NSLog(@"File part.%@ updated: %@", number, json);
-            success(number);
+            DDLogError(@"File part.%@ not updated: %@", partNumber, json);
+            failure(json);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure([WRequest displayError:error forOperation:operation]);
     }];
+    return (op);
 }
 
 + (void)uploadFile:(NSString *)filename
@@ -132,24 +138,23 @@
 {
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     NSOperation *dependency = nil;
-    NSLog(@"data size: %dko", (data.length / 1024));
-    NSLog(@"    parts: %d", 1+(data.length / [partSize integerValue]));
-    for (int i=0, k=1+(data.length / [partSize integerValue]); i<k; i++) {
+    NSInteger parts = 1+(data.length / [partSize integerValue]);
+    for (int i=0, k=parts; i<k; i++) {
         NSData *d = [data subdataWithRange:NSMakeRange((i * [partSize integerValue]), MIN([partSize integerValue], (data.length - (i * [partSize integerValue]))))];
         
-        
-        NSBlockOperation *o = [NSBlockOperation blockOperationWithBlock:^{
-            [WRequest uploadFile:filename withPart:d number:@(i) success:^(NSNumber *partNumber) {
-                loading([partNumber doubleValue] / (double)(data.length / [partSize integerValue]));
-            } failure:^(id error) {
-                [q cancelAllOperations];
-                failure(error);
-            }];
+        NSOperation *o = [WRequest uploadFile:filename withPart:d number:@(i) success:^(NSNumber *partNumber) {
+//            loading(([partNumber doubleValue] + 1.0) / (double)parts);
+        } loading:^(NSNumber *partNumber, double pourcentage) {
+            loading(([partNumber doubleValue] + pourcentage) / (double)parts);
+        } failure:^(id error) {
+            [q cancelAllOperations];
+            failure(error);
         }];
         if (dependency) {
             [o addDependency:dependency];
         }
         if (![dependency isCancelled]) {
+            dependency = o;
             [q addOperation:o];
         }
     }
@@ -181,9 +186,12 @@
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else {
-            NSLog(@"File fully updated: %@", json);
+        } else if ([[json objectForKey:@"success"] boolValue]) {
+            DDLogInfo(@"File upload complete: %@", json);
             success(json);
+        } else {
+            DDLogError(@"File upload not complete: %@", json);
+            failure(json);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure([WRequest displayError:error forOperation:operation]);
@@ -210,10 +218,10 @@
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:json forOperation:operation]);
         } else if ([[json objectForKey:@"success"] boolValue]) {
-            NSLog(@"File deleted: %@", json);
+            DDLogInfo(@"File deleted: %@", json);
             success(json);
         } else {
-            NSLog(@"File not deleted: %@", json);
+            DDLogError(@"File not deleted: %@", json);
             failure(json);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -245,20 +253,20 @@
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:(NSError *)json forOperation:operation]);
         } else if ([[json objectForKey:@"success"] boolValue]) {
-            NSLog(@"File created: %@", json);
+            DDLogInfo(@"File created: %@", json);
             if ([[json objectForKey:@"need_upload"] boolValue]) {
                 [WRequest uploadFile:filename partSize:[json objectForKey:@"part_size"] withData:data success:^(id json) {
                     success(json);
                 } loading:^(double pourcentage) {
                     loading(pourcentage);
                 } failure:^(id error) {
-                    failure([WRequest displayError:error forOperation:operation]);
+                    failure(error);
                 }];
             } else {
                 success(json);
             }
         } else {
-            NSLog(@"File not created: %@", json);
+            DDLogError(@"File not created: %@", json);
             failure(json);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -273,20 +281,27 @@
 //
 //This will return the unencrypted part of the file.
 
-+ (void)getFile:(NSString *)filename
-     partNumber:(NSNumber *)part
-        success:(void (^)(NSData *data, NSNumber *partNumber))success
-        failure:(void (^)(id error))failure
++ (NSOperation *)getFile:(NSString *)filename
+              partNumber:(NSNumber *)partNumber
+                 success:(void (^)(NSData *data, NSNumber *partNumber))success
+                 loading:(void (^)(NSNumber *partNumber, double pourcentage))loading
+                 failure:(void (^)(id error))failure
 {
     NSString *path = @"/partsync/{numero_de_partie}/{filename}";
     path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
-    path = [path stringByReplacingOccurrencesOfString:@"{numero_de_partie}" withString:[part stringValue]];
+    path = [path stringByReplacingOccurrencesOfString:@"{numero_de_partie}" withString:[partNumber stringValue]];
     
-    [[WRequest client]  getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        success(responseObject, part);
+    NSURLRequest *request = [[WRequest client] requestWithMethod:@"GET" path:path parameters:nil];
+    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [op setDownloadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+        loading(partNumber, (double)totalBytesWritten / (double)totalBytesExpectedToWrite);
+    }];
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        success(operation.responseData, partNumber);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure([WRequest displayError:error forOperation:operation]);
     }];
+    return (op);
 }
 
 + (void)getFile:(NSString *)filename
@@ -296,7 +311,7 @@
         failure:(void (^)(id error))failure
 {
     if (parts == nil) {
-        NSLog(@"Warning: Number of parts info is missing in json");
+        DDLogWarn(@"Warning: Number of parts info is missing in json");
         parts = @1;
     }
     
@@ -304,22 +319,24 @@
     NSOperation *dependency = nil;
     NSMutableData *file = [NSMutableData new];
     for (int i=0; i<[parts integerValue]; i++) {
-        NSBlockOperation *o = [NSBlockOperation blockOperationWithBlock:^{
-            [WRequest getFile:filename partNumber:@(i) success:^(NSData *data, NSNumber *partNumber) {
-                [file appendData:data];
-                loading([partNumber doubleValue] / [parts  doubleValue]);
-                if ([partNumber integerValue] >= [parts  integerValue]) {
-                    success(file);
-                }
-            } failure:^(id error) {
-                [q cancelAllOperations];
-                failure(error);
-            }];
+        NSOperation *o = [WRequest getFile:filename partNumber:@(i) success:^(NSData *data, NSNumber *partNumber) {
+            [file appendData:data];
+//            DDLogInfo(@"File part n.%d downloaded out of %@ parts", [partNumber integerValue]+1, parts);
+//            loading(([partNumber doubleValue] + 1.0) / [parts doubleValue]);
+            if ([partNumber integerValue]+1 >= [parts  integerValue]) {
+                success(file);
+            }
+        } loading:^(NSNumber *partNumber, double pourcentage) {
+            loading(([partNumber doubleValue] + pourcentage) / [parts doubleValue]);
+        } failure:^(id error) {
+            [q cancelAllOperations];
+            failure(error);
         }];
         if (dependency) {
             [o addDependency:dependency];
         }
         if (![dependency isCancelled]) {
+            dependency = o;
             [q addOperation:o];
         }
     }
