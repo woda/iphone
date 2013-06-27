@@ -80,13 +80,10 @@
 - (void)test01AddFile {
     kInitWait;
     
-//    NSString *filename = @"Default-568h@2x.png";
     NSString *filename = [_filename stringByAppendingFormat:@".%@", _fileExtension];
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     NSString *filePath = [bundle pathForResource:_filename ofType:_fileExtension];
-    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
-    NSData *file = UIImagePNGRepresentation(image);
-//    NSData *file = [NSData dataWithContentsOfFile:filePath];
+    NSData *file = [NSData dataWithContentsOfFile:filePath];
     
 //    [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelDebug];
 //    [[AFHTTPRequestOperationLogger sharedLogger] stopLogging];
@@ -110,9 +107,7 @@
     NSString *filename = [_filename stringByAppendingFormat:@".%@", _fileExtension];
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     NSString *filePath = [bundle pathForResource:_filename ofType:_fileExtension];
-    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
-    NSData *file = UIImagePNGRepresentation(image);
-//    NSData *file = [NSData dataWithContentsOfFile:filePath];
+    NSData *file = [NSData dataWithContentsOfFile:filePath];
     
 //    [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelDebug];
 //    [[AFHTTPRequestOperationLogger sharedLogger] stopLogging];
@@ -120,8 +115,6 @@
         
         NSLog(@"+ file (%dBytes): %@...", file.length, [[file description] substringWithRange:NSMakeRange(0, 40)]);
         NSLog(@"  data (%dBytes): %@...", data.length, [[data description] substringWithRange:NSMakeRange(0, 40)]);
-//        NSLog(@"+ file: %@", file);
-//        NSLog(@"  data: %@", data);
         
         STAssertEqualObjects([WRequest sha256hash:file], [WRequest sha256hash:data], @"Hashes should correspond");
         kStopWait;

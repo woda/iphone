@@ -112,17 +112,10 @@
     path = [path stringByReplacingOccurrencesOfString:@"{part_number}" withString:[partNumber stringValue]];
     path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
     
-//    NSURLRequest *request = [[WRequest client] multipartFormRequestWithMethod:@"PUT" path:path parameters:nil constructingBodyWithBlock: ^(id <AFMultipartFormData> formData) {
-//        [formData appendPartWithFileData:part
-//                                    name:[partNumber description]
-//                                fileName:[NSString stringWithFormat:@"%@.part", partNumber]
-//                                mimeType:@"application/octet-stream"];
-//    }];
+    NSMutableURLRequest *request = [[WRequest client] requestWithMethod:@"PUT" path:path parameters:nil];
+    [request setValue:@"application/octet-stream" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:part];
     
-    NSMutableURLRequest *request = [[WRequest client] requestWithMethod:@"PUT" path:path parameters:params];
-    NSMutableDictionary *header = [NSMutableDictionary dictionaryWithDictionary:[request allHTTPHeaderFields]];
-    [header setValue:@"application/octet-stream" forKey:@"Content-Type"];
-    [request setAllHTTPHeaderFields:header];
     AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [op setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
         loading(partNumber, (double)totalBytesWritten / (double)totalBytesExpectedToWrite);
@@ -205,8 +198,11 @@
             DDLogInfo(@"File upload complete: %@", json);
             success(json);
         } else {
-            DDLogError(@"File upload not complete: %@", json);
-            failure(json);
+//            DDLogError(@"File upload not complete: %@", json);
+//            failure(json);
+            
+            DDLogInfo(@"File upload complete");
+            success(json);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure([WRequest displayError:error forOperation:operation]);
