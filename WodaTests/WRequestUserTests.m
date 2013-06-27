@@ -85,91 +85,137 @@
     kWait;
 }
 
-//- (void)test04UpdateFirstName {
-//    [self test02Login];
-//    
-//    kInitWait;
-//    
-//    _firstName = @"foo";
-//    [WRequest updateUserWithFirstName:_firstName lastName:nil password:nil email:nil success:^(NSDictionary *json) {
-//        [self verifyUserData:json];
-//        kStopWait;
-//    } failure:^(id json) {
-//        STFail(@"Error: %@", json);
-//        kStopWait;
-//    }];
-//    
-//    kWait;
-//}
-//
-//- (void)test05UpdateLastName {
-//    [self test02Login];
-//    
-//    kInitWait;
-//    
-//    _lastName = @"bar";
-//    [WRequest updateUserWithFirstName:nil lastName:_lastName password:nil email:nil success:^(NSDictionary *json) {
-//        [self verifyUserData:json];
-//        kStopWait;
-//    } failure:^(id json) {
-//        STFail(@"Error: %@", json);
-//        kStopWait;
-//    }];
-//    
-//    kWait;
-//}
-//
-//- (void)test06UpdatePassword {
-//    [self test02Login];
-//    
-//    kInitWait;
-//    
-//    _password = @"new_password";
-//    [WRequest updateUserWithFirstName:nil lastName:nil password:_password email:nil success:^(NSDictionary *json) {
-//        [self verifyUserData:json];
-//        kStopWait;
-//    } failure:^(id json) {
-//        STFail(@"Error: %@", json);
-//        kStopWait;
-//    }];
-//    
-//    kWait;
-//}
-//
-//- (void)test07UpdateEmail {
-//    [self test02Login];
-//    
-//    // Invalid email
-//    kInitWait;
-//    
-//    _email = @"none";
-//    [WRequest updateUserWithFirstName:nil lastName:nil password:nil email:_email success:^(NSDictionary *json) {
-//        STAssertTrue(([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"error"]), @"JSON format invalid: %@", json);
-//        if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"login"]) {
-//            STAssertEqualObjects(kInvalidEmail, [json objectForKey:@"error"], @"email is supposed to be invalid");
-//        }
-//        kStopWait;
-//    } failure:^(id json) {
-//        STFail(@"Error: %@", json);
-//        kStopWait;
-//    }];
-//    
-//    kWait;
-//    
-//    // Vaild email
-//    kStartWait;
-//    
-//    _email = @"no-reply@woda.com";
-//    [WRequest updateUserWithFirstName:nil lastName:nil password:nil email:_email success:^(NSDictionary *json) {
-//        [self verifyUserData:json];
-//        kStopWait;
-//    } failure:^(id json) {
-//        STFail(@"Error: %@", json);
-//        kStopWait;
-//    }];
-//    
-//    kWait;
-//}
+- (void)test04UpdateFirstName {
+    [self test02Login];
+    
+    kInitWait;
+    
+    _firstName = @"foo";
+    [WRequest updateUserWithFirstName:_firstName lastName:nil password:nil email:nil success:^(NSDictionary *json) {
+        [self verifyUserData:json];
+        kStopWait;
+    } failure:^(id json) {
+        STFail(@"Error: %@", json);
+        kStopWait;
+    }];
+    
+    kWait;
+    kStartWait;
+    _firstName = @"unit";
+    [WRequest updateUserWithFirstName:_firstName lastName:nil password:nil email:nil success:^(NSDictionary *json) {
+        [self verifyUserData:json];
+        kStopWait;
+    } failure:^(id json) {
+        STFail(@"Error: %@", json);
+        kStopWait;
+    }];
+    
+    kWait;
+}
+
+- (void)test05UpdateLastName {
+    [self test02Login];
+    
+    kInitWait;
+    
+    _lastName = @"bar";
+    [WRequest updateUserWithFirstName:nil lastName:_lastName password:nil email:nil success:^(NSDictionary *json) {
+        [self verifyUserData:json];
+        kStopWait;
+    } failure:^(id json) {
+        STFail(@"Error: %@", json);
+        kStopWait;
+    }];
+    
+    kWait;
+    kStartWait;
+    _lastName = @"test";
+    [WRequest updateUserWithFirstName:nil lastName:_lastName password:nil email:nil success:^(NSDictionary *json) {
+        [self verifyUserData:json];
+        kStopWait;
+    } failure:^(id json) {
+        STFail(@"Error: %@", json);
+        kStopWait;
+    }];
+    
+    kWait;
+}
+
+- (void)test06UpdatePassword {
+    [self test02Login];
+    
+    kInitWait;
+    
+    _password = @"new_password";
+    [WRequest updateUserWithFirstName:nil lastName:nil password:_password email:nil success:^(NSDictionary *json) {
+        [self verifyUserData:json];
+        kStopWait;
+    } failure:^(id json) {
+        STFail(@"Error: %@", json);
+        kStopWait;
+    }];
+    
+    kWait;
+    [self test08Logout];
+    [self test02Login];
+    
+    kStartWait;
+    _password = @"password";
+    [WRequest updateUserWithFirstName:nil lastName:nil password:_password email:nil success:^(NSDictionary *json) {
+        [self verifyUserData:json];
+        kStopWait;
+    } failure:^(id json) {
+        STFail(@"Error: %@", json);
+        kStopWait;
+    }];
+    
+    kWait;
+}
+
+- (void)test07UpdateEmail {
+    [self test02Login];
+    
+    // Invalid email
+    kInitWait;
+    
+    _email = @"none";
+    [WRequest updateUserWithFirstName:nil lastName:nil password:nil email:_email success:^(NSDictionary *json) {
+        STAssertTrue(([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"error"]), @"JSON format invalid: %@", json);
+        if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"login"]) {
+            STAssertEqualObjects(kInvalidEmail, [json objectForKey:@"error"], @"email is supposed to be invalid");
+        }
+        kStopWait;
+    } failure:^(id json) {
+        STFail(@"Error: %@", json);
+        kStopWait;
+    }];
+    
+    kWait;
+    
+    // Vaild email
+    kStartWait;
+    _email = @"no-reply@woda.com";
+    [WRequest updateUserWithFirstName:nil lastName:nil password:nil email:_email success:^(NSDictionary *json) {
+        [self verifyUserData:json];
+        kStopWait;
+    } failure:^(id json) {
+        STFail(@"Error: %@", json);
+        kStopWait;
+    }];
+    
+    kWait;
+    kStartWait;
+    _email = @"test@woda.com";
+    [WRequest updateUserWithFirstName:nil lastName:nil password:nil email:_email success:^(NSDictionary *json) {
+        [self verifyUserData:json];
+        kStopWait;
+    } failure:^(id json) {
+        STFail(@"Error: %@", json);
+        kStopWait;
+    }];
+    
+    kWait;
+}
 
 - (void)test08Logout {
     [self test02Login];

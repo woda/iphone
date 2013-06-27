@@ -18,6 +18,7 @@
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
     [[AFHTTPRequestOperationLogger sharedLogger] startLogging];
     [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelInfo];
+//    [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelDebug];
 }
 
 - (void)tearDown {

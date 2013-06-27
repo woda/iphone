@@ -33,6 +33,9 @@
 - (void)setUp {
     [super setUp];
     
+    _filename = @"Default-568h@2x";
+    _fileExtension = @"png";
+    
     _login = @"userSyncTest"; // Never test1 please (login used for dev)
     _password = @"password";
     
@@ -77,12 +80,15 @@
 - (void)test01AddFile {
     kInitWait;
     
-    NSString *filename = @"Default-568h@2x.png";
+//    NSString *filename = @"Default-568h@2x.png";
+    NSString *filename = [_filename stringByAppendingFormat:@".%@", _fileExtension];
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    NSString *imagePath = [bundle pathForResource:@"Default-568h@2x" ofType:@"png"];
-    UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
+    NSString *filePath = [bundle pathForResource:_filename ofType:_fileExtension];
+    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
     NSData *file = UIImagePNGRepresentation(image);
+//    NSData *file = [NSData dataWithContentsOfFile:filePath];
     
+//    [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelDebug];
 //    [[AFHTTPRequestOperationLogger sharedLogger] stopLogging];
     [WRequest addFile:filename withData:file success:^(id json) {
         STAssertTrue(([json isKindOfClass:[NSDictionary class]]), @"JSON format invalid: %@", json);
@@ -101,19 +107,23 @@
 - (void)test02GetFile {
     kInitWait;
     
-    NSString *filename = @"Default-568h@2x.png";
+    NSString *filename = [_filename stringByAppendingFormat:@".%@", _fileExtension];
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    NSString *imagePath = [bundle pathForResource:@"Default-568h@2x" ofType:@"png"];
-    UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
+    NSString *filePath = [bundle pathForResource:_filename ofType:_fileExtension];
+    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
     NSData *file = UIImagePNGRepresentation(image);
+//    NSData *file = [NSData dataWithContentsOfFile:filePath];
     
+//    [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelDebug];
 //    [[AFHTTPRequestOperationLogger sharedLogger] stopLogging];
     [WRequest getFile:filename parts:_parts success:^(NSData *data) {
         
-        NSLog(@"+ file: %@...", [[file description] substringWithRange:NSMakeRange(0, 18)]);
-        NSLog(@"  data: %@...", [[data description] substringWithRange:NSMakeRange(0, 18)]);
+        NSLog(@"+ file (%dBytes): %@...", file.length, [[file description] substringWithRange:NSMakeRange(0, 40)]);
+        NSLog(@"  data (%dBytes): %@...", data.length, [[data description] substringWithRange:NSMakeRange(0, 40)]);
+//        NSLog(@"+ file: %@", file);
+//        NSLog(@"  data: %@", data);
         
-//        STAssertEqualObjects([WRequest sha256hash:file], [WRequest sha256hash:data], @"Hashes should correspond");
+        STAssertEqualObjects([WRequest sha256hash:file], [WRequest sha256hash:data], @"Hashes should correspond");
         kStopWait;
     } loading:^(double pourcentage) {
         NSLog(@"Downloading \"%@\": %.0f%%", filename, pourcentage * 100);
@@ -128,7 +138,7 @@
 - (void)test03RemoveFile {
     kInitWait;
     
-    NSString *filename = @"Default-568h@2x.png";
+    NSString *filename = [_filename stringByAppendingFormat:@".%@", _fileExtension];
     [WRequest removeFile:filename success:^(id error) {
         kStopWait;
     } failure:^(id error) {

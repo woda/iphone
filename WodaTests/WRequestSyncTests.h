@@ -11,6 +11,9 @@
 
 @interface WRequestSyncTests : WRequestTests
 
+@property (nonatomic, retain) NSString *filename;
+@property (nonatomic, retain) NSString *fileExtension;
+
 @property (nonatomic, retain) NSString *login;
 @property (nonatomic, retain) NSString *password;
 

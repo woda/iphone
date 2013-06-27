@@ -45,6 +45,7 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:[WRequest sha256hash:data] forKey:@"content_hash"];
     [params setValue:[NSNumber numberWithInteger:[data length]] forKey:@"size"];
+    NSLog(@"params: %@", params);
     
     NSString *path = @"/sync/{filename}";
     path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
@@ -99,7 +100,11 @@
                     loading:(void (^)(NSNumber *partNumber, double pourcentage))loading
                     failure:(void (^)(id error))failure
 {
-    NSString *partFormated = [[NSString alloc] initWithBytes:part.bytes length:part.length encoding:NSASCIIStringEncoding];
+    NSString *partFormated = [[NSString alloc] initWithBytes:part.bytes length:part.length encoding:NSISOLatin1StringEncoding];
+    NSLog(@"partFormated: %@", [partFormated substringWithRange:NSMakeRange(0, 10)]);
+//    NSData *d = [partFormated dataUsingEncoding:NSISOLatin1StringEncoding];
+//    NSLog(@"        data: %@", [[d description] substringWithRange:NSMakeRange(0, 40)]);
+    
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:partFormated forKey:@"data"];
     
@@ -107,7 +112,17 @@
     path = [path stringByReplacingOccurrencesOfString:@"{part_number}" withString:[partNumber stringValue]];
     path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
     
-    NSURLRequest *request = [[WRequest client] requestWithMethod:@"PUT" path:path parameters:params];
+//    NSURLRequest *request = [[WRequest client] multipartFormRequestWithMethod:@"PUT" path:path parameters:nil constructingBodyWithBlock: ^(id <AFMultipartFormData> formData) {
+//        [formData appendPartWithFileData:part
+//                                    name:[partNumber description]
+//                                fileName:[NSString stringWithFormat:@"%@.part", partNumber]
+//                                mimeType:@"application/octet-stream"];
+//    }];
+    
+    NSMutableURLRequest *request = [[WRequest client] requestWithMethod:@"PUT" path:path parameters:params];
+    NSMutableDictionary *header = [NSMutableDictionary dictionaryWithDictionary:[request allHTTPHeaderFields]];
+    [header setValue:@"application/octet-stream" forKey:@"Content-Type"];
+    [request setAllHTTPHeaderFields:header];
     AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [op setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
         loading(partNumber, (double)totalBytesWritten / (double)totalBytesExpectedToWrite);
