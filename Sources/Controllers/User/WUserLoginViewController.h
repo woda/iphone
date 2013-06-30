@@ -10,7 +10,7 @@
 
 @interface WUserLoginViewController : UIViewController <UITextFieldDelegate>
 
-@property (nonatomic, retain) IBOutlet UIImageView  *logoView;
+@property (nonatomic, retain) IBOutlet UIView       *logoView;
 
 @property (nonatomic, retain) IBOutlet UIView       *formView;
 @property (nonatomic, retain) IBOutlet UILabel      *titleLabel;

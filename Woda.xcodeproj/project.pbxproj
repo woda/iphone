@@ -127,6 +127,7 @@
 		A239199117801F380017264F /* upload_green_refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A239192317801F380017264F /* upload_green_refresh@2x.png */; };
 		A239199217801F380017264F /* upload_grey_check.png in Resources */ = {isa = PBXBuildFile; fileRef = A239192417801F380017264F /* upload_grey_check.png */; };
 		A239199317801F380017264F /* upload_grey_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A239192517801F380017264F /* upload_grey_check@2x.png */; };
+		A23919951780DAA40017264F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23919941780DAA40017264F /* QuartzCore.framework */; };
 		A2411AD816D252890060EFF7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2411AD716D252890060EFF7 /* SenTestingKit.framework */; };
 		A2411AD916D252890060EFF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601371630485A00CB53B3 /* UIKit.framework */; };
 		A2411ADA16D252890060EFF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601391630485A00CB53B3 /* Foundation.framework */; };
@@ -341,6 +342,7 @@
 		A239192317801F380017264F /* upload_green_refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upload_green_refresh@2x.png"; sourceTree = "<group>"; };
 		A239192417801F380017264F /* upload_grey_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upload_grey_check.png; sourceTree = "<group>"; };
 		A239192517801F380017264F /* upload_grey_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upload_grey_check@2x.png"; sourceTree = "<group>"; };
+		A23919941780DAA40017264F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A2411AD616D252880060EFF7 /* WodaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WodaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2411AD716D252890060EFF7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		A2411ADD16D2528A0060EFF7 /* WodaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WodaTests-Info.plist"; sourceTree = "<group>"; };
@@ -473,6 +475,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A23919951780DAA40017264F /* QuartzCore.framework in Frameworks */,
 				A29C736717030675003E39BA /* QuickLook.framework in Frameworks */,
 				A2411B4B16D255D10060EFF7 /* SystemConfiguration.framework in Frameworks */,
 				A2411B4916D255C80060EFF7 /* MobileCoreServices.framework in Frameworks */,
@@ -832,6 +835,7 @@
 		A2C601361630485A00CB53B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A23919941780DAA40017264F /* QuartzCore.framework */,
 				A29C736617030675003E39BA /* QuickLook.framework */,
 				A2411B4A16D255D10060EFF7 /* SystemConfiguration.framework */,
 				A2411B4816D255C70060EFF7 /* MobileCoreServices.framework */,

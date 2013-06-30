@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Woda. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "WUserLoginViewController.h"
 #import "WDirectoryViewController.h"
 #import "WRequest.h"
@@ -43,6 +44,23 @@
     [_formView setUserInteractionEnabled:!show];
 }
 
+- (void)animateLaunch {
+    static Boolean firstLaunch = YES;
+    if (firstLaunch) {
+        NSInteger offset = ((self.view.frame.size.height - _logoView.frame.size.height) / 2) - _logoView.frame.origin.y;
+        _logoView.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, offset);
+        _formView.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, _formView.frame.size.height);
+        _formView.alpha = 0;
+        
+        [UIView animateWithDuration:0.7 animations:^{
+            _formView.transform = CGAffineTransformIdentity;
+            _formView.alpha = 1;
+            _logoView.transform = CGAffineTransformIdentity;
+        }];
+        firstLaunch = NO;
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -52,6 +70,8 @@
     [self updateLabels];
     [self showConnectingView:([[WUser current] status] == Connecting) animated:NO];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userStatusChanged:) name:kUserStatusChanged object:nil];
+    
+    [self animateLaunch];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
