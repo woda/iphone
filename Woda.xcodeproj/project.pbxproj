@@ -12,6 +12,11 @@
 		A2020D6A165E4DC80057FCCD /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D69165E4DC80057FCCD /* Item.m */; };
 		A22D470016636A5D00B4B448 /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = A22D46FE16636A5D00B4B448 /* shadow.png */; };
 		A22D470116636A5D00B4B448 /* shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A22D46FF16636A5D00B4B448 /* shadow@2x.png */; };
+		A2391833178010550017264F /* WRequest+List.m in Sources */ = {isa = PBXBuildFile; fileRef = A2391832178010550017264F /* WRequest+List.m */; };
+		A2391836178014930017264F /* WRequestListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2391835178014930017264F /* WRequestListTests.m */; };
+		A2391837178015CB0017264F /* WRequest+List.m in Sources */ = {isa = PBXBuildFile; fileRef = A2391832178010550017264F /* WRequest+List.m */; };
+		A239183817801A4F0017264F /* WRequestSyncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F7C61E1779431C0034D327 /* WRequestSyncTests.m */; };
+		A239183917801A520017264F /* WRequestUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B4D16D256FD0060EFF7 /* WRequestUserTests.m */; };
 		A2411AD816D252890060EFF7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2411AD716D252890060EFF7 /* SenTestingKit.framework */; };
 		A2411AD916D252890060EFF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601371630485A00CB53B3 /* UIKit.framework */; };
 		A2411ADA16D252890060EFF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601391630485A00CB53B3 /* Foundation.framework */; };
@@ -76,8 +81,6 @@
 		A2A0669A16D48D4900D08D8D /* WUserLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A0669916D48D4900D08D8D /* WUserLoginView.xib */; };
 		A2A0669D16D4CBBF00D08D8D /* NSArray+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0669C16D4CBBF00D08D8D /* NSArray+Shortcuts.m */; };
 		A2A0669F16D4D92500D08D8D /* WUserSignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A0669E16D4D92400D08D8D /* WUserSignUpView.xib */; };
-		A2A27C83177AA7CF001FD1E5 /* WRequestUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B4D16D256FD0060EFF7 /* WRequestUserTests.m */; };
-		A2A27C84177AADE7001FD1E5 /* WRequestSyncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F7C61E1779431C0034D327 /* WRequestSyncTests.m */; };
 		A2A27C85177AAE59001FD1E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2C6016D16304BAF00CB53B3 /* Default-568h@2x.png */; };
 		A2C601381630485A00CB53B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601371630485A00CB53B3 /* UIKit.framework */; };
 		A2C6013A1630485A00CB53B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601391630485A00CB53B3 /* Foundation.framework */; };
@@ -118,6 +121,10 @@
 		A2020D69165E4DC80057FCCD /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = Sources/Models/CoreData/Item.m; sourceTree = SOURCE_ROOT; };
 		A22D46FE16636A5D00B4B448 /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
 		A22D46FF16636A5D00B4B448 /* shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shadow@2x.png"; sourceTree = "<group>"; };
+		A2391831178010540017264F /* WRequest+List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WRequest+List.h"; sourceTree = "<group>"; };
+		A2391832178010550017264F /* WRequest+List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WRequest+List.m"; sourceTree = "<group>"; };
+		A2391834178014930017264F /* WRequestListTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRequestListTests.h; sourceTree = "<group>"; };
+		A2391835178014930017264F /* WRequestListTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRequestListTests.m; sourceTree = "<group>"; };
 		A2411AD616D252880060EFF7 /* WodaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WodaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2411AD716D252890060EFF7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		A2411ADD16D2528A0060EFF7 /* WodaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WodaTests-Info.plist"; sourceTree = "<group>"; };
@@ -288,6 +295,8 @@
 				A2411B4D16D256FD0060EFF7 /* WRequestUserTests.m */,
 				A2F7C61D1779431C0034D327 /* WRequestSyncTests.h */,
 				A2F7C61E1779431C0034D327 /* WRequestSyncTests.m */,
+				A2391834178014930017264F /* WRequestListTests.h */,
+				A2391835178014930017264F /* WRequestListTests.m */,
 				A299C678177A40B8000B4F88 /* WRequestTests.h */,
 				A299C679177A40B8000B4F88 /* WRequestTests.m */,
 			);
@@ -339,6 +348,8 @@
 				A2411B5516D26B460060EFF7 /* WRequest+Sync.m */,
 				A2411B5616D26B460060EFF7 /* WRequest+User.h */,
 				A2411B5716D26B460060EFF7 /* WRequest+User.m */,
+				A2391831178010540017264F /* WRequest+List.h */,
+				A2391832178010550017264F /* WRequest+List.m */,
 				A2411B5816D26B460060EFF7 /* WRequest.h */,
 				A2411B5916D26B460060EFF7 /* WRequest.m */,
 			);
@@ -745,8 +756,10 @@
 				A2411B6116D26B460060EFF7 /* WRequest.m in Sources */,
 				A299C677177A3CCB000B4F88 /* AFHTTPRequestOperationLogger.m in Sources */,
 				A299C67A177A40B8000B4F88 /* WRequestTests.m in Sources */,
-				A2A27C83177AA7CF001FD1E5 /* WRequestUserTests.m in Sources */,
-				A2A27C84177AADE7001FD1E5 /* WRequestSyncTests.m in Sources */,
+				A2391836178014930017264F /* WRequestListTests.m in Sources */,
+				A2391837178015CB0017264F /* WRequest+List.m in Sources */,
+				A239183817801A4F0017264F /* WRequestSyncTests.m in Sources */,
+				A239183917801A520017264F /* WRequestUserTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,6 +805,7 @@
 				A299C690177A4725000B4F88 /* DDTTYLogger.m in Sources */,
 				A299C691177A4725000B4F88 /* ContextFilterLogFormatter.m in Sources */,
 				A299C692177A4725000B4F88 /* DispatchQueueLogFormatter.m in Sources */,
+				A2391833178010550017264F /* WRequest+List.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

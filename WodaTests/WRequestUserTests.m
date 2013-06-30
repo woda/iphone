@@ -27,11 +27,11 @@
     [super setUp];
 //    [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelDebug];
     
-    _login = @"test"; // Never test1 please (login used for dev)
+    _login = @"userUserTest"; // Never test1 please (login used for dev)
     _firstName = @"unit";
     _lastName = @"test";
     _password = @"password";
-    _email = @"test@woda.com";
+    _email = @"userUserTest@woda.com";
 }
 
 - (void)tearDown {
@@ -205,7 +205,7 @@
     
     kWait;
     kStartWait;
-    _email = @"test@woda.com";
+    _email = @"userUserTest@woda.com";
     [WRequest updateUserWithFirstName:nil lastName:nil password:nil email:_email success:^(NSDictionary *json) {
         [self verifyUserData:json];
         kStopWait;
