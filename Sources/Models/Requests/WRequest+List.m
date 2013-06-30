@@ -39,7 +39,7 @@
 + (void)lastUpdatedFilesWithSuccess:(void (^)(id json))success
                             failure:(void (^)(id error))failure
 {
-    [[WRequest client] getPath:@"/users/files/recents" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[WRequest client] getPath:@"/users/recents" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:(NSError *)json forOperation:operation]);
@@ -56,7 +56,7 @@
 + (void)lastFavoriteFilesWithSuccess:(void (^)(id json))success
                              failure:(void (^)(id error))failure
 {
-    [[WRequest client] getPath:@"/users/files/favorites" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[WRequest client] getPath:@"/users/favorites" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:(NSError *)json forOperation:operation]);
@@ -74,16 +74,20 @@
                    success:(void (^)(id json))success
                    failure:(void (^)(id error))failure
 {
-    NSString *path = [@"/users/files/favorites/{id}" stringByReplacingOccurrencesOfString:@"{id}" withString:[idNumber description]];
+    NSString *path = [@"/users/favorites/{id}" stringByReplacingOccurrencesOfString:@"{id}" withString:[idNumber description]];
     
     [[WRequest client] postPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"error"]) {
-            failure(json);
+        } else if ([json isKindOfClass:[NSDictionary class]]) {
+            if ([json objectForKey:@"error"]) {
+                failure(json);
+            } else {
+                success(json);
+            }
         } else {
-            success(json);
+            failure(json);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure([WRequest displayError:error forOperation:operation]);

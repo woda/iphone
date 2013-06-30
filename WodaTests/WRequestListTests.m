@@ -192,14 +192,15 @@
     
     [WRequest lastUpdatedFilesWithSuccess:^(NSArray *list) {
         NSNumber *idNumber = [[list lastObject] objectForKey:@"id"];
-        [WRequest markFileAsFavorite:idNumber success:^(NSArray *list) {
-            STAssertEqualObjects([[list lastObject] objectForKey:@"id"], idNumber, @"File should be found in favorites");
+        [WRequest markFileAsFavorite:idNumber success:^(NSDictionary *json) {
+            STAssertTrue([[json objectForKey:@"favorite"] boolValue], @"File should be found in favorites");
             kStopWait;
         } failure:^(id error) {
             STFail(@"Error: %@", error);
             kStopWait;
         }];
     } failure:^(id error) {
+        STAssertTrue([error isKindOfClass:[NSDictionary class]], @"Should return an dictionary");
         STFail(@"Error: %@", error);
         kStopWait;
     }];
@@ -212,16 +213,15 @@
     
     [WRequest lastUpdatedFilesWithSuccess:^(NSArray *list) {
         NSNumber *idNumber = [[list lastObject] objectForKey:@"id"];
-        [WRequest unmarkFileAsFavorite:idNumber success:^(NSArray *list) {
-            for (NSDictionary *file in list) {
-                STAssertFalse([[file objectForKey:@"id"] isEqual:idNumber], @"File should not be found in favorites");
-            }
+        [WRequest unmarkFileAsFavorite:idNumber success:^(NSDictionary *json) {
+            STAssertFalse([[json objectForKey:@"favorite"] boolValue], @"File should not be found in favorites");
             kStopWait;
         } failure:^(id error) {
             STFail(@"Error: %@", error);
             kStopWait;
         }];
     } failure:^(id error) {
+        STAssertTrue([error isKindOfClass:[NSDictionary class]], @"Should return an dictionary");
         STFail(@"Error: %@", error);
         kStopWait;
     }];
