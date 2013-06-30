@@ -181,16 +181,12 @@
 		A299C695177A4B9A000B4F88 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = A299C683177A4725000B4F88 /* DDLog.m */; };
 		A299C697177A4B9A000B4F88 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A299C685177A4725000B4F88 /* DDTTYLogger.m */; };
 		A299C698177A4D6A000B4F88 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C6013B1630485A00CB53B3 /* CoreGraphics.framework */; };
-		A29C73631702F757003E39BA /* WAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A29C73621702F757003E39BA /* WAccountViewController.m */; };
-		A29C73651702FCD8003E39BA /* WAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29C73641702FCD8003E39BA /* WAccountView.xib */; };
 		A29C736717030675003E39BA /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A29C736617030675003E39BA /* QuickLook.framework */; };
 		A2A0668F16D475C400D08D8D /* WUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0668E16D475C400D08D8D /* WUserLoginViewController.m */; };
 		A2A0669216D4766900D08D8D /* WUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0669116D4766900D08D8D /* WUser.m */; };
-		A2A0669516D47EF800D08D8D /* WUserSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0669416D47EF800D08D8D /* WUserSignUpViewController.m */; };
 		A2A0669816D48D2E00D08D8D /* WFolderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A0669616D48D2E00D08D8D /* WFolderView.xib */; };
 		A2A0669A16D48D4900D08D8D /* WUserLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A0669916D48D4900D08D8D /* WUserLoginView.xib */; };
 		A2A0669D16D4CBBF00D08D8D /* NSArray+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0669C16D4CBBF00D08D8D /* NSArray+Shortcuts.m */; };
-		A2A0669F16D4D92500D08D8D /* WUserSignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A0669E16D4D92400D08D8D /* WUserSignUpView.xib */; };
 		A2A27C85177AAE59001FD1E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2C6016D16304BAF00CB53B3 /* Default-568h@2x.png */; };
 		A2C601381630485A00CB53B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601371630485A00CB53B3 /* UIKit.framework */; };
 		A2C6013A1630485A00CB53B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601391630485A00CB53B3 /* Foundation.framework */; };
@@ -412,21 +408,15 @@
 		A299C689177A4725000B4F88 /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
 		A299C68A177A4725000B4F88 /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
 		A299C68B177A4725000B4F88 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		A29C73611702F757003E39BA /* WAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAccountViewController.h; sourceTree = "<group>"; };
-		A29C73621702F757003E39BA /* WAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAccountViewController.m; sourceTree = "<group>"; };
-		A29C73641702FCD8003E39BA /* WAccountView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WAccountView.xib; sourceTree = "<group>"; };
 		A29C736617030675003E39BA /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		A2A0668D16D475C400D08D8D /* WUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUserLoginViewController.h; sourceTree = "<group>"; };
 		A2A0668E16D475C400D08D8D /* WUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUserLoginViewController.m; sourceTree = "<group>"; };
 		A2A0669016D4766900D08D8D /* WUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUser.h; sourceTree = "<group>"; };
 		A2A0669116D4766900D08D8D /* WUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUser.m; sourceTree = "<group>"; };
-		A2A0669316D47EF800D08D8D /* WUserSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUserSignUpViewController.h; sourceTree = "<group>"; };
-		A2A0669416D47EF800D08D8D /* WUserSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUserSignUpViewController.m; sourceTree = "<group>"; };
 		A2A0669716D48D2E00D08D8D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WFolderView.xib; sourceTree = "<group>"; };
 		A2A0669916D48D4900D08D8D /* WUserLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WUserLoginView.xib; sourceTree = "<group>"; };
 		A2A0669B16D4CBBF00D08D8D /* NSArray+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Shortcuts.h"; sourceTree = "<group>"; };
 		A2A0669C16D4CBBF00D08D8D /* NSArray+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Shortcuts.m"; sourceTree = "<group>"; };
-		A2A0669E16D4D92400D08D8D /* WUserSignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WUserSignUpView.xib; sourceTree = "<group>"; };
 		A2C601331630485A00CB53B3 /* Woda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Woda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C601371630485A00CB53B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A2C601391630485A00CB53B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -815,8 +805,6 @@
 			children = (
 				A2A0668D16D475C400D08D8D /* WUserLoginViewController.h */,
 				A2A0668E16D475C400D08D8D /* WUserLoginViewController.m */,
-				A2A0669316D47EF800D08D8D /* WUserSignUpViewController.h */,
-				A2A0669416D47EF800D08D8D /* WUserSignUpViewController.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -908,8 +896,6 @@
 				A24FC760165E6DC5002E2C26 /* WDirectoryViewController.m */,
 				A2C6017216304BAF00CB53B3 /* WDetailViewController.h */,
 				A2C6017316304BAF00CB53B3 /* WDetailViewController.m */,
-				A29C73611702F757003E39BA /* WAccountViewController.h */,
-				A29C73621702F757003E39BA /* WAccountViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -956,8 +942,6 @@
 				A2A0669616D48D2E00D08D8D /* WFolderView.xib */,
 				A2C6018516304BAF00CB53B3 /* WDetailView.xib */,
 				A2A0669916D48D4900D08D8D /* WUserLoginView.xib */,
-				A2A0669E16D4D92400D08D8D /* WUserSignUpView.xib */,
-				A29C73641702FCD8003E39BA /* WAccountView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1104,8 +1088,6 @@
 				A2F62E7F166447DD00F9CB08 /* release_notes.md in Resources */,
 				A2A0669816D48D2E00D08D8D /* WFolderView.xib in Resources */,
 				A2A0669A16D48D4900D08D8D /* WUserLoginView.xib in Resources */,
-				A2A0669F16D4D92500D08D8D /* WUserSignUpView.xib in Resources */,
-				A29C73651702FCD8003E39BA /* WAccountView.xib in Resources */,
 				A299C693177A4725000B4F88 /* README.txt in Resources */,
 				A239192617801F380017264F /* action_button_background.png in Resources */,
 				A239192717801F380017264F /* action_button_background@2x.png in Resources */,
@@ -1298,9 +1280,7 @@
 				A2411B6016D26B460060EFF7 /* WRequest.m in Sources */,
 				A2A0668F16D475C400D08D8D /* WUserLoginViewController.m in Sources */,
 				A2A0669216D4766900D08D8D /* WUser.m in Sources */,
-				A2A0669516D47EF800D08D8D /* WUserSignUpViewController.m in Sources */,
 				A2A0669D16D4CBBF00D08D8D /* NSArray+Shortcuts.m in Sources */,
-				A29C73631702F757003E39BA /* WAccountViewController.m in Sources */,
 				A299C673177A3C35000B4F88 /* AFHTTPRequestOperationLogger.m in Sources */,
 				A299C68C177A4725000B4F88 /* DDAbstractDatabaseLogger.m in Sources */,
 				A299C68D177A4725000B4F88 /* DDASLLogger.m in Sources */,

@@ -7,18 +7,13 @@
 */
 
 // User
-"UsernameFieldPlaceholder" = "Username";
-"FirstNameFieldPlaceholder" = "First name";
-"LastNameFieldPlaceholder" = "Last name";
+"ServerFieldPlaceholder" = "Server address";
+"UsernameFieldPlaceholder" = "Username or email";
 "EmailFieldPlaceholder" = "Email address";
 "PasswordFieldPlaceholder" = "Password";
-"SignUpButtonTitle" = "Sign up";
+"ForgotPasswordButtonTitle" = "forgot password?";
 "LoginButtonTitle" = "Log in";
 "CancelButtonTitle" = "Cancel";
-"CreateUserButtonTitle" = "Continue";
-"EditUserButtonTitle" = "Modify";
-
-"ConnectingText" = "Connection";
 
 // Home View
 "FolderLabel" = "Folders";

@@ -7,18 +7,13 @@
 */
 
 // User
-"UsernameFieldPlaceholder" = "Pseudo";
-"FirstNameFieldPlaceholder" = "Prénom";
-"LastNameFieldPlaceholder" = "Nom de famille";
+"ServerFieldPlaceholder" = "Adresse du serveur";
+"UsernameFieldPlaceholder" = "Pseudo ou email";
 "EmailFieldPlaceholder" = "Adresse email";
 "PasswordFieldPlaceholder" = "Mot de passe";
-"SignUpButtonTitle" = "S'inscrire";
+"ForgotPasswordButtonTitle" = "mot de passe oublié?";
 "LoginButtonTitle" = "Se connecter";
 "CancelButtonTitle" = "Annuler";
-"CreateUserButtonTitle" = "Continuer";
-"EditUserButtonTitle" = "Modifier";
-
-"ConnectingText" = "Connexion";
 
 // Home View
 "FolderLabel" = "Dossiers";

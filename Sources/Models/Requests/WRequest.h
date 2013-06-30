@@ -20,6 +20,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @interface WRequest : AFHTTPRequestOperation
 
++ (AFHTTPClient *)setBaseUrl:(NSString *)url;
 + (AFHTTPClient *)client;
 + (id)displayError:(NSError *)error forOperation:(AFHTTPRequestOperation *)operation;
 + (id)JSONFromData:(NSData *)data;

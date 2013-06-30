@@ -15,7 +15,6 @@ enum kHomeCellIndexes {
     kHomeRecentCellIndex,
     kHomeOfflineCellIndex,
     kHomeBlankCellIndex,
-    kHomeAccountCellIndex,
     kHomeLogoutCellIndex,
     kHomeCellCount
 };

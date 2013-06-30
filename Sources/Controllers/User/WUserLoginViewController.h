@@ -10,17 +10,20 @@
 
 @interface WUserLoginViewController : UIViewController <UITextFieldDelegate>
 
-@property (nonatomic, retain) IBOutlet UIView       *connectingView;
-@property (nonatomic, retain) IBOutlet UILabel      *connectingLabel;
+@property (nonatomic, retain) IBOutlet UIImageView  *logoView;
 
-@property (nonatomic, retain) IBOutlet UIView       *loginView;
+@property (nonatomic, retain) IBOutlet UIView       *formView;
+@property (nonatomic, retain) IBOutlet UILabel      *titleLabel;
+@property (nonatomic, retain) IBOutlet UITextField  *serverField;
 @property (nonatomic, retain) IBOutlet UITextField  *usernameField;
 @property (nonatomic, retain) IBOutlet UITextField  *passwordField;
 
-@property (nonatomic, retain) IBOutlet UIButton     *signupButton;
+@property (nonatomic, retain) IBOutlet UIButton     *forgotPasswordButton;
 @property (nonatomic, retain) IBOutlet UIButton     *submitButton;
 
-- (IBAction)signup:(id)sender;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView  *connectingIndicator;
+
 - (IBAction)submit:(id)sender;
+- (IBAction)forgotPassword:(id)sender;
 
 @end

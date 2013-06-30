@@ -13,6 +13,11 @@ static AFHTTPClient *client = nil;
 
 @implementation WRequest
 
++ (AFHTTPClient *)setBaseUrl:(NSString *)url {
+    client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:url]];
+    return (client);
+}
+
 + (AFHTTPClient *)client {
     if (client == nil) {
         client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:kBaseURL]];

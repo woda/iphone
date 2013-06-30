@@ -7,8 +7,8 @@
 //
 
 #import "WUserLoginViewController.h"
-#import "WUserSignUpViewController.h"
 #import "WDirectoryViewController.h"
+#import "WRequest.h"
 #import "WUser.h"
 
 @interface WUserLoginViewController ()
@@ -21,27 +21,26 @@
 #pragma mark - View lifecycle methods
 
 - (void)updateLabels {
-    [_connectingLabel setText:NSLocal(@"ConnectingText")];
-    
+//    [_serverField setText:nil];
+    [_serverField setPlaceholder:NSLocal(@"ServerFieldPlaceholder")];
 //    [_usernameField setText:nil];
     [_usernameField setPlaceholder:NSLocal(@"UsernameFieldPlaceholder")];
 //    [_passwordField setText:nil];
     [_passwordField setPlaceholder:NSLocal(@"PasswordFieldPlaceholder")];
     
+    [_forgotPasswordButton setTitle:NSLocal(@"ForgotPasswordButtonTitle") forState:UIControlStateNormal];
     [_submitButton setTitle:NSLocal(@"LoginButtonTitle") forState:UIControlStateNormal];
-    [_signupButton setTitle:NSLocal(@"SignUpButtonTitle") forState:UIControlStateNormal];
 }
 
 - (void)showConnectingView:(Boolean)show animated:(Boolean)animated {
-    [UIView animateWithDuration:((animated) ? 0.3 : 0.0) animations:^{
-        if (show) {
-            [_connectingView setAlpha:1.0];
-            [_loginView setAlpha:0.0];
-        } else {
-            [_connectingView setAlpha:0.0];
-            [_loginView setAlpha:1.0];
-        }
-    }];
+    if (show) {
+        [_connectingIndicator startAnimating];
+        [_submitButton setTitle:@"" forState:UIControlStateNormal];
+    } else {
+        [_connectingIndicator stopAnimating];
+        [_submitButton setTitle:NSLocal(@"LoginButtonTitle") forState:UIControlStateNormal];
+    }
+    [_formView setUserInteractionEnabled:!show];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -90,14 +89,14 @@
     [super keyboardWillShow:notification];
     
     NSDictionary* info = [notification userInfo];
-//    CGSize size = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    CGSize size = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     NSTimeInterval duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
     [UIView animateWithDuration:duration animations:^{
-        [_loginView setFrame:(CGRect) {
+        [self.view setFrame:(CGRect) {
             .origin.x = 0,
-            .origin.y = -50, // -(size.height / 2),
-            .size = _loginView.frame.size
+            .origin.y = -size.height,
+            .size = self.view.frame.size
         }];
     }];
 }
@@ -109,10 +108,10 @@
     NSTimeInterval duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
     [UIView animateWithDuration:duration animations:^{
-        [_loginView setFrame:(CGRect) {
+        [self.view setFrame:(CGRect) {
             .origin.x = 0,
             .origin.y = 0,
-            .size = _loginView.frame.size
+            .size = self.view.frame.size
         }];
     }];
 }
@@ -121,7 +120,9 @@
 #pragma mark - TextField delegates methods
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField == _usernameField) {
+    if (textField == _serverField) {
+        [_usernameField becomeFirstResponder];
+    } else if (textField == _usernameField) {
         [_passwordField becomeFirstResponder];
     } else {
         [textField resignFirstResponder];
@@ -133,20 +134,22 @@
 
 #pragma mark - Action methods
 
-- (IBAction)signup:(id)sender {
-    [_usernameField resignFirstResponder];
-    [_passwordField resignFirstResponder];
-    
-    WUserSignUpViewController *signupViewController = [[WUserSignUpViewController alloc] init];
-    [self.navigationController pushViewController:signupViewController animated:YES];
-}
-
 - (IBAction)submit:(id)sender {
+    [_serverField resignFirstResponder];
     [_usernameField resignFirstResponder];
     [_passwordField resignFirstResponder];
     
+    NSString *url = [_serverField text];
+    if ([url rangeOfString:@"http"].location == NSNotFound) {
+        url = [@"https://" stringByAppendingString:url];
+    }
+    [WRequest setBaseUrl:url];
     [self showConnectingView:YES animated:YES];
     [WUser connectWithLogin:[_usernameField text] andPassword:[_passwordField text]];
+}
+
+- (IBAction)forgotPassword:(id)sender {
+    // do nothing
 }
 
 @end

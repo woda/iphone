@@ -8,7 +8,6 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "WUserLoginViewController.h"
-#import "WAccountViewController.h"
 #import "WNavigationController.h"
 #import "WHomeViewController.h"
 #import "NSArray+Shortcuts.h"
@@ -94,42 +93,38 @@
 
 - (void)swipeLeftWithDuration:(NSTimeInterval)duration {
     UIViewController *lastController = [[self viewControllers] last];
-    if ([lastController isKindOfClass:[WAccountViewController class]]
-        || (!([lastController isKindOfClass:[WUserLoginViewController class]])
-            && (![lastController isKindOfClass:[WUserSignUpViewController class]]))) {
-            [UIView animateWithDuration:duration animations:^{
-                for (int i=1, k=self.view.subviews.count; i<k; i++) {
-                    UIView *v = [self.view.subviews objectAtIndex:i];
-                    [v setFrame:(CGRect) {
-                        .origin = (CGPoint) {
-                            .x = v.frame.origin.x - ((v.frame.origin.x > 0) ? 240 : 0),
-                            .y = v.frame.origin.y
-                        },
-                        .size = v.frame.size
-                    }];
-                }
-            }];
-        }
+    if (![lastController isKindOfClass:[WUserLoginViewController class]]) {
+        [UIView animateWithDuration:duration animations:^{
+            for (int i=1, k=self.view.subviews.count; i<k; i++) {
+                UIView *v = [self.view.subviews objectAtIndex:i];
+                [v setFrame:(CGRect) {
+                    .origin = (CGPoint) {
+                        .x = v.frame.origin.x - ((v.frame.origin.x > 0) ? 240 : 0),
+                        .y = v.frame.origin.y
+                    },
+                    .size = v.frame.size
+                }];
+            }
+        }];
+    }
 }
 
 - (void)swipeRightWithDuration:(NSTimeInterval)duration {
     UIViewController *lastController = [[self viewControllers] last];
-    if ([lastController isKindOfClass:[WAccountViewController class]]
-        || (!([lastController isKindOfClass:[WUserLoginViewController class]])
-            && (![lastController isKindOfClass:[WUserSignUpViewController class]]))) {
-            [UIView animateWithDuration:duration animations:^{
-                for (int i=1, k=self.view.subviews.count; i<k; i++) {
-                    UIView *v = [self.view.subviews objectAtIndex:i];
-                    [v setFrame:(CGRect) {
-                        .origin = (CGPoint) {
-                            .x = v.frame.origin.x + ((v.frame.origin.x <= 0) ? 240 : 0),
-                            .y = v.frame.origin.y
-                        },
-                        .size = v.frame.size
-                    }];
-                }
-            }];
-        }
+    if (![lastController isKindOfClass:[WUserLoginViewController class]]) {
+        [UIView animateWithDuration:duration animations:^{
+            for (int i=1, k=self.view.subviews.count; i<k; i++) {
+                UIView *v = [self.view.subviews objectAtIndex:i];
+                [v setFrame:(CGRect) {
+                    .origin = (CGPoint) {
+                        .x = v.frame.origin.x + ((v.frame.origin.x <= 0) ? 240 : 0),
+                        .y = v.frame.origin.y
+                    },
+                    .size = v.frame.size
+                }];
+            }
+        }];
+    }
 }
 
 - (void)swipeLeft:(UISwipeGestureRecognizer *)gesture {

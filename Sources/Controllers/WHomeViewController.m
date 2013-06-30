@@ -8,7 +8,6 @@
 
 #import "WHomeViewController.h"
 #import "WDirectoryViewController.h"
-#import "WAccountViewController.h"
 #import "NSManagedObjectContext-EasyFetch.h"
 #import "NSArray+Shortcuts.h"
 #import "WUser.h"
@@ -103,8 +102,6 @@
             return (_offlineCell);
         case kHomeBlankCellIndex:
             return (_blankCell);
-        case kHomeAccountCellIndex:
-            return (_accountCell);
         case kHomeLogoutCellIndex:
             return (_logoutCell);
         default:
@@ -141,11 +138,6 @@
 //        case kHomeBlankCellIndex: {
 //            // Do nothing
 //        }
-        case kHomeAccountCellIndex: {
-            WAccountViewController *c = [[WAccountViewController alloc] init];
-            [_navController setViewControllers:@[login, c] animated:NO];
-            break;
-        }
         case kHomeLogoutCellIndex: {
             [WUser logout];
             
