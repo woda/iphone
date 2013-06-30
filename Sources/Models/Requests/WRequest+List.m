@@ -20,10 +20,10 @@
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else if ([json objectForKey:@"error"]) {
-            failure(json);
-        } else {
+        } else if ([json isKindOfClass:[NSDictionary class]] && [[json objectForKey:@"success"] boolValue]) {
             success(json);
+        } else {
+            failure(json);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure([WRequest displayError:error forOperation:operation]);
@@ -43,7 +43,7 @@
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else if ([json objectForKey:@"error"]) {
+        } else if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"error"]) {
             failure(json);
         } else {
             success(json);
@@ -60,7 +60,7 @@
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else if ([json objectForKey:@"error"]) {
+        } else if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"error"]) {
             failure(json);
         } else {
             success(json);
@@ -80,7 +80,7 @@
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else if ([json objectForKey:@"error"]) {
+        } else if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"error"]) {
             failure(json);
         } else {
             success(json);
