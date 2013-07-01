@@ -32,46 +32,7 @@
 }
 
 - (void)updateLabels {
-    NSManagedObjectContext *context = [NSManagedObjectContext shared:nil];
-    
-    [_versionLabel setText:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
-    
-    [_folderLabel setText:NSLocal(@"FolderLabel")];
-    [_folderDetailsLabel setText:[NSString stringWithFormat:@"%@ %.2f / %.2fGB", NSLocal(@"FolderDetailsLabel"), 18.54, 30.0]];
-    
-    [_starredLabel setText:NSLocal(@"StarredLabel")];
-    NSFetchRequest *req = [[NSFetchRequest alloc] initWithEntityName:@"Item"];
-    [req setPredicate:[NSPredicate predicateWithFormat:@"starred == YES"]];
-    int n = [context countForFetchRequest:req error:nil];
-    if (n <= 0) {
-        [_starredDetailsLabel setText:NSLocal(@"NoDataLabel")];
-    } else if (n == 1) {
-        [_starredDetailsLabel setText:[NSString stringWithFormat:@"%d %@", n, NSLocal(@"File")]];
-    } else {
-        [_starredDetailsLabel setText:[NSString stringWithFormat:@"%d %@", n, NSLocal(@"Files")]];
-    }
-    
-    [_recentLabel setText:NSLocal(@"RecentLabel")];
-    req = [[NSFetchRequest alloc] initWithEntityName:@"Item"];
-    [req setPredicate:[NSPredicate predicateWithFormat:@"isDirectory == NO && openedAt != nil"]];
-    n = [context countForFetchRequest:req error:nil];
-    if (n <= 0) {
-        [_recentDetailsLabel setText:NSLocal(@"NoDataLabel")];
-    } else if (n == 1) {
-        [_recentDetailsLabel setText:[NSString stringWithFormat:@"%d %@", n, NSLocal(@"File")]];
-    } else {
-        [_recentDetailsLabel setText:[NSString stringWithFormat:@"%d %@", n, NSLocal(@"Files")]];
-    }
-    
-    [_offlineLabel setText:NSLocal(@"OfflineLabel")];
-    [_offlineDetailsLabel setText:NSLocal(@"OfflineDetailsLabel")];
-    
-    if ([[WUser current] status] == Connected) {
-        [_accountLabel setText:NSLocal(@"AccountLabel")];
-        [_accountDetailsLabel setText:[NSLocal(@"AccountDetailsLabel") stringByAppendingString:[[WUser current] login]]];
-        
-        [_logoutLabel setText:NSLocal(@"LogoutLabel")];
-    }
+    // do nothing
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -89,28 +50,37 @@
     return (kHomeCellCount);
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == kHomeSettingsCellIndex) {
+            return MAX(75.0, (tableView.frame.size.height - (55 * kHomeSettingsCellIndex)));
+    }
+    return (55);
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
         case kHomeFoldersCellIndex:
             return (_foldersCell);
-        case kHomeStarredCellIndex:
-            return (_starredCell);
-        case kHomeRecentCellIndex:
-            return (_recentCell);
+        case kHomeFavoritesCellIndex:
+            return (_favoritesCell);
+        case kHomeRecentsCellIndex:
+            return (_recentsCell);
+        case kHomeUploadCellIndex:
+            return (_uploadCell);
         case kHomeOfflineCellIndex:
             return (_offlineCell);
-        case kHomeBlankCellIndex:
-            return (_blankCell);
-        case kHomeLogoutCellIndex:
-            return (_logoutCell);
+        case kHomeSharedCellIndex:
+            return (_sharedCell);
+        case kHomePublicCellIndex:
+            return (_publicCell);
+        case kHomeSettingsCellIndex:
+            return (_settingsCell);
         default:
             return nil;
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UIViewController *login = [[_navController viewControllers] first];
     switch (indexPath.row) {
         case kHomeFoldersCellIndex: {
@@ -118,27 +88,7 @@
             [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }
-        case kHomeStarredCellIndex: {
-            WFolderViewController *c = [[WFolderViewController alloc] init];
-            [c setPredicate:[NSPredicate predicateWithFormat:@"starred == YES"]];
-            [_navController setViewControllers:@[login, c] animated:NO];
-            break;
-        }
-        case kHomeRecentCellIndex: {
-            WFolderViewController *c = [[WFolderViewController alloc] init];
-            [c setPredicate:[NSPredicate predicateWithFormat:@"isDirectory == NO && openedAt != nil"]];
-            [_navController setViewControllers:@[login, c] animated:NO];
-            break;
-        }
-//        case kHomeOfflineCellIndex: {
-//            UIViewController *c = [[WFolderViewController alloc] init];
-//            [self.navigationController pushViewController:c animated:YES];
-//            break;
-//        }
-//        case kHomeBlankCellIndex: {
-//            // Do nothing
-//        }
-        case kHomeLogoutCellIndex: {
+        case kHomeSettingsCellIndex: {
             [WUser logout];
             
             [self.navController swipeLeft];

@@ -84,7 +84,17 @@
 - (void)setHomeController:(WHomeViewController *)homeController {
     _homeController = homeController;
     
-    [self.view insertSubview:self.homeController.view atIndex:0];
+    [_homeController.view setFrame:(CGRect) {
+        .origin = (CGPoint) {
+            .x = 0,
+            .y = 20
+        },
+        .size = (CGSize) {
+            .width = self.view.frame.size.width,
+            .height = self.view.frame.size.height - 20
+        }
+    }];
+    [self.view insertSubview:_homeController.view atIndex:0];
 }
 
 
@@ -99,7 +109,7 @@
                 UIView *v = [self.view.subviews objectAtIndex:i];
                 [v setFrame:(CGRect) {
                     .origin = (CGPoint) {
-                        .x = v.frame.origin.x - ((v.frame.origin.x > 0) ? 240 : 0),
+                        .x = v.frame.origin.x - ((v.frame.origin.x > 0) ? self.homeController.tableView.frame.size.width : 0),
                         .y = v.frame.origin.y
                     },
                     .size = v.frame.size
@@ -117,7 +127,7 @@
                 UIView *v = [self.view.subviews objectAtIndex:i];
                 [v setFrame:(CGRect) {
                     .origin = (CGPoint) {
-                        .x = v.frame.origin.x + ((v.frame.origin.x <= 0) ? 240 : 0),
+                        .x = v.frame.origin.x + ((v.frame.origin.x <= 0) ? self.homeController.tableView.frame.size.width : 0),
                         .y = v.frame.origin.y
                     },
                     .size = v.frame.size

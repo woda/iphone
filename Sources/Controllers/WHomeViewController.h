@@ -11,11 +11,13 @@
 
 enum kHomeCellIndexes {
     kHomeFoldersCellIndex = 0,
-    kHomeStarredCellIndex,
-    kHomeRecentCellIndex,
+    kHomeFavoritesCellIndex,
+    kHomeRecentsCellIndex,
+    kHomeUploadCellIndex,
     kHomeOfflineCellIndex,
-    kHomeBlankCellIndex,
-    kHomeLogoutCellIndex,
+    kHomeSharedCellIndex,
+    kHomePublicCellIndex,
+    kHomeSettingsCellIndex,
     kHomeCellCount
 };
 
@@ -25,31 +27,20 @@ enum kHomeCellIndexes {
 
 @property (nonatomic, retain) IBOutlet UITableView      *tableView;
 
-@property (nonatomic, retain) IBOutlet UILabel          *versionLabel;
-
 @property (nonatomic, retain) IBOutlet UITableViewCell  *foldersCell;
-@property (nonatomic, retain) IBOutlet UILabel          *folderLabel;
-@property (nonatomic, retain) IBOutlet UILabel          *folderDetailsLabel;
 
-@property (nonatomic, retain) IBOutlet UITableViewCell  *starredCell;
-@property (nonatomic, retain) IBOutlet UILabel          *starredLabel;
-@property (nonatomic, retain) IBOutlet UILabel          *starredDetailsLabel;
+@property (nonatomic, retain) IBOutlet UITableViewCell  *favoritesCell;
 
-@property (nonatomic, retain) IBOutlet UITableViewCell  *recentCell;
-@property (nonatomic, retain) IBOutlet UILabel          *recentLabel;
-@property (nonatomic, retain) IBOutlet UILabel          *recentDetailsLabel;
+@property (nonatomic, retain) IBOutlet UITableViewCell  *recentsCell;
+
+@property (nonatomic, retain) IBOutlet UITableViewCell  *uploadCell;
 
 @property (nonatomic, retain) IBOutlet UITableViewCell  *offlineCell;
-@property (nonatomic, retain) IBOutlet UILabel          *offlineLabel;
-@property (nonatomic, retain) IBOutlet UILabel          *offlineDetailsLabel;
 
-@property (nonatomic, retain) IBOutlet UITableViewCell  *blankCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell  *sharedCell;
 
-@property (nonatomic, retain) IBOutlet UITableViewCell  *accountCell;
-@property (nonatomic, retain) IBOutlet UILabel          *accountLabel;
-@property (nonatomic, retain) IBOutlet UILabel          *accountDetailsLabel;
+@property (nonatomic, retain) IBOutlet UITableViewCell  *publicCell;
 
-@property (nonatomic, retain) IBOutlet UITableViewCell  *logoutCell;
-@property (nonatomic, retain) IBOutlet UILabel          *logoutLabel;
+@property (nonatomic, retain) IBOutlet UITableViewCell  *settingsCell;
 
 @end

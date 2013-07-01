@@ -10,6 +10,7 @@
 		A2020D5B165E2D960057FCCD /* WNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D5A165E2D960057FCCD /* WNavigationController.m */; };
 		A2020D67165E41980057FCCD /* WCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D66165E41980057FCCD /* WCell.m */; };
 		A2020D6A165E4DC80057FCCD /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D69165E4DC80057FCCD /* Item.m */; };
+		A21E708C17810E0E005170E5 /* WMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A21E708B17810E0E005170E5 /* WMenuCell.m */; };
 		A22D470016636A5D00B4B448 /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = A22D46FE16636A5D00B4B448 /* shadow.png */; };
 		A22D470116636A5D00B4B448 /* shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A22D46FF16636A5D00B4B448 /* shadow@2x.png */; };
 		A2391833178010550017264F /* WRequest+List.m in Sources */ = {isa = PBXBuildFile; fileRef = A2391832178010550017264F /* WRequest+List.m */; };
@@ -226,6 +227,8 @@
 		A2020D66165E41980057FCCD /* WCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCell.m; sourceTree = "<group>"; };
 		A2020D68165E4DC80057FCCD /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = Sources/Models/CoreData/Item.h; sourceTree = SOURCE_ROOT; };
 		A2020D69165E4DC80057FCCD /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = Sources/Models/CoreData/Item.m; sourceTree = SOURCE_ROOT; };
+		A21E708A17810E0E005170E5 /* WMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMenuCell.h; sourceTree = "<group>"; };
+		A21E708B17810E0E005170E5 /* WMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMenuCell.m; sourceTree = "<group>"; };
 		A22D46FE16636A5D00B4B448 /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
 		A22D46FF16636A5D00B4B448 /* shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shadow@2x.png"; sourceTree = "<group>"; };
 		A2391831178010540017264F /* WRequest+List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WRequest+List.h"; sourceTree = "<group>"; };
@@ -496,6 +499,8 @@
 			children = (
 				A2020D65165E41980057FCCD /* WCell.h */,
 				A2020D66165E41980057FCCD /* WCell.m */,
+				A21E708A17810E0E005170E5 /* WMenuCell.h */,
+				A21E708B17810E0E005170E5 /* WMenuCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1294,6 +1299,7 @@
 				A299C691177A4725000B4F88 /* ContextFilterLogFormatter.m in Sources */,
 				A299C692177A4725000B4F88 /* DispatchQueueLogFormatter.m in Sources */,
 				A2391833178010550017264F /* WRequest+List.m in Sources */,
+				A21E708C17810E0E005170E5 /* WMenuCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
