@@ -190,6 +190,14 @@
 		A2A0669A16D48D4900D08D8D /* WUserLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A0669916D48D4900D08D8D /* WUserLoginView.xib */; };
 		A2A0669D16D4CBBF00D08D8D /* NSArray+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0669C16D4CBBF00D08D8D /* NSArray+Shortcuts.m */; };
 		A2A27C85177AAE59001FD1E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2C6016D16304BAF00CB53B3 /* Default-568h@2x.png */; };
+		A2A330481782CD5200C6F62E /* WRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A330471782CD5200C6F62E /* WRootViewController.m */; };
+		A2A3304B1782CE1300C6F62E /* WFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A3304A1782CE1300C6F62E /* WFavoritesViewController.m */; };
+		A2A3304E1782CFC800C6F62E /* WRecentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A3304D1782CFC700C6F62E /* WRecentsViewController.m */; };
+		A2A330511782D03B00C6F62E /* WUploadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A330501782D03B00C6F62E /* WUploadingViewController.m */; };
+		A2A330541782D04E00C6F62E /* WOfflineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A330531782D04D00C6F62E /* WOfflineViewController.m */; };
+		A2A3305A1782D06D00C6F62E /* WPublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A330591782D06C00C6F62E /* WPublicViewController.m */; };
+		A2A3305D1782D08500C6F62E /* WSharedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A3305C1782D08500C6F62E /* WSharedViewController.m */; };
+		A2A330601782D09A00C6F62E /* WSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A3305F1782D09A00C6F62E /* WSettingViewController.m */; };
 		A2C601381630485A00CB53B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601371630485A00CB53B3 /* UIKit.framework */; };
 		A2C6013A1630485A00CB53B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601391630485A00CB53B3 /* Foundation.framework */; };
 		A2C6013C1630485A00CB53B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C6013B1630485A00CB53B3 /* CoreGraphics.framework */; };
@@ -422,6 +430,22 @@
 		A2A0669916D48D4900D08D8D /* WUserLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WUserLoginView.xib; sourceTree = "<group>"; };
 		A2A0669B16D4CBBF00D08D8D /* NSArray+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Shortcuts.h"; sourceTree = "<group>"; };
 		A2A0669C16D4CBBF00D08D8D /* NSArray+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Shortcuts.m"; sourceTree = "<group>"; };
+		A2A330461782CD5200C6F62E /* WRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRootViewController.h; path = MenuPages/WRootViewController.h; sourceTree = "<group>"; };
+		A2A330471782CD5200C6F62E /* WRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRootViewController.m; path = MenuPages/WRootViewController.m; sourceTree = "<group>"; };
+		A2A330491782CE1300C6F62E /* WFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WFavoritesViewController.h; path = MenuPages/WFavoritesViewController.h; sourceTree = "<group>"; };
+		A2A3304A1782CE1300C6F62E /* WFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WFavoritesViewController.m; path = MenuPages/WFavoritesViewController.m; sourceTree = "<group>"; };
+		A2A3304C1782CFC700C6F62E /* WRecentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRecentsViewController.h; path = MenuPages/WRecentsViewController.h; sourceTree = "<group>"; };
+		A2A3304D1782CFC700C6F62E /* WRecentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRecentsViewController.m; path = MenuPages/WRecentsViewController.m; sourceTree = "<group>"; };
+		A2A3304F1782D03B00C6F62E /* WUploadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUploadingViewController.h; path = MenuPages/WUploadingViewController.h; sourceTree = "<group>"; };
+		A2A330501782D03B00C6F62E /* WUploadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUploadingViewController.m; path = MenuPages/WUploadingViewController.m; sourceTree = "<group>"; };
+		A2A330521782D04D00C6F62E /* WOfflineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WOfflineViewController.h; path = MenuPages/WOfflineViewController.h; sourceTree = "<group>"; };
+		A2A330531782D04D00C6F62E /* WOfflineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOfflineViewController.m; path = MenuPages/WOfflineViewController.m; sourceTree = "<group>"; };
+		A2A330581782D06B00C6F62E /* WPublicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPublicViewController.h; path = MenuPages/WPublicViewController.h; sourceTree = "<group>"; };
+		A2A330591782D06C00C6F62E /* WPublicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPublicViewController.m; path = MenuPages/WPublicViewController.m; sourceTree = "<group>"; };
+		A2A3305B1782D08400C6F62E /* WSharedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSharedViewController.h; path = MenuPages/WSharedViewController.h; sourceTree = "<group>"; };
+		A2A3305C1782D08500C6F62E /* WSharedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSharedViewController.m; path = MenuPages/WSharedViewController.m; sourceTree = "<group>"; };
+		A2A3305E1782D09900C6F62E /* WSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSettingViewController.h; path = MenuPages/WSettingViewController.h; sourceTree = "<group>"; };
+		A2A3305F1782D09A00C6F62E /* WSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSettingViewController.m; path = MenuPages/WSettingViewController.m; sourceTree = "<group>"; };
 		A2C601331630485A00CB53B3 /* Woda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Woda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C601371630485A00CB53B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A2C601391630485A00CB53B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -817,6 +841,29 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		A2A330451782CD1A00C6F62E /* Menu pages */ = {
+			isa = PBXGroup;
+			children = (
+				A2A330461782CD5200C6F62E /* WRootViewController.h */,
+				A2A330471782CD5200C6F62E /* WRootViewController.m */,
+				A2A330491782CE1300C6F62E /* WFavoritesViewController.h */,
+				A2A3304A1782CE1300C6F62E /* WFavoritesViewController.m */,
+				A2A3304C1782CFC700C6F62E /* WRecentsViewController.h */,
+				A2A3304D1782CFC700C6F62E /* WRecentsViewController.m */,
+				A2A3304F1782D03B00C6F62E /* WUploadingViewController.h */,
+				A2A330501782D03B00C6F62E /* WUploadingViewController.m */,
+				A2A330521782D04D00C6F62E /* WOfflineViewController.h */,
+				A2A330531782D04D00C6F62E /* WOfflineViewController.m */,
+				A2A3305B1782D08400C6F62E /* WSharedViewController.h */,
+				A2A3305C1782D08500C6F62E /* WSharedViewController.m */,
+				A2A330581782D06B00C6F62E /* WPublicViewController.h */,
+				A2A330591782D06C00C6F62E /* WPublicViewController.m */,
+				A2A3305E1782D09900C6F62E /* WSettingViewController.h */,
+				A2A3305F1782D09A00C6F62E /* WSettingViewController.m */,
+			);
+			name = "Menu pages";
+			sourceTree = "<group>";
+		};
 		A2C601281630485A00CB53B3 = {
 			isa = PBXGroup;
 			children = (
@@ -903,6 +950,7 @@
 				A2C6017516304BAF00CB53B3 /* WFolderViewController.m */,
 				A24FC75F165E6DC5002E2C26 /* WDirectoryViewController.h */,
 				A24FC760165E6DC5002E2C26 /* WDirectoryViewController.m */,
+				A2A330451782CD1A00C6F62E /* Menu pages */,
 				A2C6017216304BAF00CB53B3 /* WDetailViewController.h */,
 				A2C6017316304BAF00CB53B3 /* WDetailViewController.m */,
 			);
@@ -1300,6 +1348,14 @@
 				A299C692177A4725000B4F88 /* DispatchQueueLogFormatter.m in Sources */,
 				A2391833178010550017264F /* WRequest+List.m in Sources */,
 				A21E708C17810E0E005170E5 /* WMenuCell.m in Sources */,
+				A2A330481782CD5200C6F62E /* WRootViewController.m in Sources */,
+				A2A3304B1782CE1300C6F62E /* WFavoritesViewController.m in Sources */,
+				A2A3304E1782CFC800C6F62E /* WRecentsViewController.m in Sources */,
+				A2A330511782D03B00C6F62E /* WUploadingViewController.m in Sources */,
+				A2A330541782D04E00C6F62E /* WOfflineViewController.m in Sources */,
+				A2A3305A1782D06D00C6F62E /* WPublicViewController.m in Sources */,
+				A2A3305D1782D08500C6F62E /* WSharedViewController.m in Sources */,
+				A2A330601782D09A00C6F62E /* WSettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

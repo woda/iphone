@@ -7,10 +7,17 @@
 //
 
 #import "WHomeViewController.h"
-#import "WDirectoryViewController.h"
 #import "NSManagedObjectContext-EasyFetch.h"
 #import "NSArray+Shortcuts.h"
 #import "WUser.h"
+#import "WRootViewController.h"
+#import "WFavoritesViewController.h"
+#import "WRecentsViewController.h"
+#import "WUploadingViewController.h"
+#import "WOfflineViewController.h"
+#import "WSharedViewController.h"
+#import "WPublicViewController.h"
+#import "WSettingViewController.h"
 
 @interface WHomeViewController ()
 
@@ -40,6 +47,47 @@
     
     [self.view setFrame:[[UIScreen mainScreen] bounds]];
     [self updateLabels];
+}
+
+- (void)setSelected:(HomeCellIndex)index {
+    [_foldersCell setSelected:NO];
+    [_favoritesCell setSelected:NO];
+    [_recentsCell setSelected:NO];
+    [_uploadCell setSelected:NO];
+    [_offlineCell setSelected:NO];
+    [_sharedCell setSelected:NO];
+    [_publicCell setSelected:NO];
+    [_settingsCell setSelected:NO];
+    [_foldersCell setSelected:NO];
+    switch (index) {
+        case kHomeFoldersCellIndex:
+            [_foldersCell setSelected:YES];
+            break;
+        case kHomeFavoritesCellIndex:
+            [_favoritesCell setSelected:YES];
+            break;
+        case kHomeRecentsCellIndex:
+            [_recentsCell setSelected:YES];
+            break;
+        case kHomeUploadCellIndex:
+            [_uploadCell setSelected:YES];
+            break;
+        case kHomeOfflineCellIndex:
+            [_offlineCell setSelected:YES];
+            break;
+        case kHomeSharedCellIndex:
+            [_sharedCell setSelected:YES];
+            break;
+        case kHomePublicCellIndex:
+            [_publicCell setSelected:YES];
+            break;
+        case kHomeSettingsCellIndex:
+            [_settingsCell setSelected:YES];
+            break;
+        default:
+            [_foldersCell setSelected:YES];
+            break;
+    }
 }
 
 
@@ -84,7 +132,37 @@
     UIViewController *login = [[_navController viewControllers] first];
     switch (indexPath.row) {
         case kHomeFoldersCellIndex: {
-            UIViewController *c = [[WDirectoryViewController alloc] initWithItem:nil];
+            UIViewController *c = [[WRootViewController alloc] initWithItem:nil];
+            [_navController setViewControllers:@[login, c] animated:NO];
+            break;
+        }
+        case kHomeFavoritesCellIndex: {
+            UIViewController *c = [[WFavoritesViewController alloc] initWithItem:nil];
+            [_navController setViewControllers:@[login, c] animated:NO];
+            break;
+        }
+        case kHomeRecentsCellIndex: {
+            UIViewController *c = [[WRecentsViewController alloc] initWithItem:nil];
+            [_navController setViewControllers:@[login, c] animated:NO];
+            break;
+        }
+        case kHomeUploadCellIndex: {
+            UIViewController *c = [[WUploadingViewController alloc] initWithItem:nil];
+            [_navController setViewControllers:@[login, c] animated:NO];
+            break;
+        }
+        case kHomeOfflineCellIndex: {
+            UIViewController *c = [[WOfflineViewController alloc] initWithItem:nil];
+            [_navController setViewControllers:@[login, c] animated:NO];
+            break;
+        }
+        case kHomeSharedCellIndex: {
+            UIViewController *c = [[WSharedViewController alloc] initWithItem:nil];
+            [_navController setViewControllers:@[login, c] animated:NO];
+            break;
+        }
+        case kHomePublicCellIndex: {
+            UIViewController *c = [[WPublicViewController alloc] initWithItem:nil];
             [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }

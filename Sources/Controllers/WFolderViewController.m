@@ -47,7 +47,7 @@
             .bottom = 0,
             .right = 0
         }];
-        [button addTarget:self.navigationController action:@selector(swipeLeft) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self.navigationController action:@selector(swipe) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem *listButton = [[UIBarButtonItem alloc] initWithCustomView:button];
         self.navigationItem.leftBarButtonItem = listButton;
     }

@@ -39,7 +39,7 @@
         .bottom = 0,
         .right = 10
     }];
-    [button addTarget:self action:@selector(insertNewObject) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(insertNewObject:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = addButton;
 }

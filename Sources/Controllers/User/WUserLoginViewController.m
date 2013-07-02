@@ -9,6 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "WUserLoginViewController.h"
 #import "WDirectoryViewController.h"
+#import "WHomeViewController.h"
 #import "WRequest.h"
 #import "WUser.h"
 
@@ -87,6 +88,7 @@
             [self.navigationController setNavigationBarHidden:NO animated:NO];
             WDirectoryViewController *folderViewController = [[WDirectoryViewController alloc] initWithItem:nil];
             [self.navigationController pushViewController:folderViewController animated:YES];
+            [((WNavigationController *)self.navigationController).homeController setSelected:kHomeFoldersCellIndex];
             break;
         }
         case Connecting:

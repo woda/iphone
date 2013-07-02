@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WNavigationController.h"
 
-enum kHomeCellIndexes {
+typedef enum kHomeCellIndexes {
     kHomeFoldersCellIndex = 0,
     kHomeFavoritesCellIndex,
     kHomeRecentsCellIndex,
@@ -19,7 +19,7 @@ enum kHomeCellIndexes {
     kHomePublicCellIndex,
     kHomeSettingsCellIndex,
     kHomeCellCount
-};
+}   HomeCellIndex;
 
 @interface WHomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
@@ -42,5 +42,7 @@ enum kHomeCellIndexes {
 @property (nonatomic, retain) IBOutlet UITableViewCell  *publicCell;
 
 @property (nonatomic, retain) IBOutlet UITableViewCell  *settingsCell;
+
+- (void)setSelected:(HomeCellIndex)index;
 
 @end
