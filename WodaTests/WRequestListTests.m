@@ -53,7 +53,7 @@
     }];
     
     kWait;
-//    [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelDebug];
+    [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelDebug];
 }
 
 - (void)test01EmptyListFiles {

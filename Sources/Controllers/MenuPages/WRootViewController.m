@@ -18,6 +18,29 @@
 #pragma mark -
 #pragma mark Initialization methods
 
+- (id)initWithPath:(NSString *)path andData:(NSDictionary *)data {
+    self = [super init];
+    if (self) {
+        _path = path;
+        _data = data;
+        
+        void (^success)(NSDictionary *) = ^(NSDictionary *json) {
+            _data = json;
+            DDLogWarn(@"data: %@", _data);
+            [self.tableView reloadData];
+        };
+        void (^failure)(id) = ^(NSDictionary *error) {
+            DDLogError(@"Failure while listing files: %@", error);
+        };
+        if (_path == nil) {
+            [WRequest listAllFilesWithSuccess:success failure:failure];
+        } else if (_data == nil) {
+            [WRequest listFilesInDir:_path success:success failure:failure];
+        }
+    }
+    return self;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -37,16 +60,16 @@
         .bottom = 0,
         .right = 10
     }];
-    [button addTarget:self action:@selector(insertNewObject:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(addFile:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = addButton;
 }
 
 
 #pragma mark -
-#pragma mark Test methods
+#pragma mark Upload methods
 
-- (void)insertNewObject:(id)sender {
+- (void)addFile:(id)sender {
     // do nothing
 }
 

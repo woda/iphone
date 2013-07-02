@@ -131,37 +131,37 @@
     UIViewController *login = [[_navController viewControllers] first];
     switch (indexPath.row) {
         case kHomeFoldersCellIndex: {
-            UIViewController *c = [[WRootViewController alloc] initWithPath:nil];
+            UIViewController *c = [[WRootViewController alloc] initWithPath:nil andData:nil];
             [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }
         case kHomeFavoritesCellIndex: {
-            UIViewController *c = [[WFavoritesViewController alloc] initWithPath:nil];
+            UIViewController *c = [[WFavoritesViewController alloc] init];
             [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }
         case kHomeRecentsCellIndex: {
-            UIViewController *c = [[WRecentsViewController alloc] initWithPath:nil];
+            UIViewController *c = [[WRecentsViewController alloc] init];
             [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }
         case kHomeUploadCellIndex: {
-            UIViewController *c = [[WUploadingViewController alloc] initWithPath:nil];
+            UIViewController *c = [[WUploadingViewController alloc] init];
             [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }
         case kHomeOfflineCellIndex: {
-            UIViewController *c = [[WOfflineViewController alloc] initWithPath:nil];
+            UIViewController *c = [[WOfflineViewController alloc] init];
             [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }
         case kHomeSharedCellIndex: {
-            UIViewController *c = [[WSharedViewController alloc] initWithPath:nil];
+            UIViewController *c = [[WSharedViewController alloc] init];
             [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }
         case kHomePublicCellIndex: {
-            UIViewController *c = [[WPublicViewController alloc] initWithPath:nil];
+            UIViewController *c = [[WPublicViewController alloc] init];
             [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }

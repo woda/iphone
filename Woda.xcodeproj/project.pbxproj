@@ -163,7 +163,7 @@
 		A2411B5F16D26B460060EFF7 /* WRequest+User.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5716D26B460060EFF7 /* WRequest+User.m */; };
 		A2411B6016D26B460060EFF7 /* WRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5916D26B460060EFF7 /* WRequest.m */; };
 		A2411B6116D26B460060EFF7 /* WRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5916D26B460060EFF7 /* WRequest.m */; };
-		A24FC761165E6DC5002E2C26 /* WFolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24FC760165E6DC5002E2C26 /* WFolderViewController.m */; };
+		A24FC761165E6DC5002E2C26 /* WListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24FC760165E6DC5002E2C26 /* WListViewController.m */; };
 		A2677B00165E0AE900C1D630 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2677B02165E0AE900C1D630 /* Localizable.strings */; };
 		A2677B08165E0F0200C1D630 /* WHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B07165E0F0200C1D630 /* WHomeViewController.m */; };
 		A2677B0C165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B0B165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m */; };
@@ -392,8 +392,8 @@
 		A2411B5716D26B460060EFF7 /* WRequest+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WRequest+User.m"; sourceTree = "<group>"; };
 		A2411B5816D26B460060EFF7 /* WRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRequest.h; sourceTree = "<group>"; };
 		A2411B5916D26B460060EFF7 /* WRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRequest.m; sourceTree = "<group>"; };
-		A24FC75F165E6DC5002E2C26 /* WFolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFolderViewController.h; sourceTree = "<group>"; };
-		A24FC760165E6DC5002E2C26 /* WFolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFolderViewController.m; sourceTree = "<group>"; };
+		A24FC75F165E6DC5002E2C26 /* WListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WListViewController.h; sourceTree = "<group>"; };
+		A24FC760165E6DC5002E2C26 /* WListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WListViewController.m; sourceTree = "<group>"; };
 		A2677B01165E0AE900C1D630 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2677B05165E0B5000C1D630 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2677B06165E0F0200C1D630 /* WHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHomeViewController.h; sourceTree = "<group>"; };
@@ -853,8 +853,8 @@
 			children = (
 				A2C6017416304BAF00CB53B3 /* WMenuPageViewController.h */,
 				A2C6017516304BAF00CB53B3 /* WMenuPageViewController.m */,
-				A24FC75F165E6DC5002E2C26 /* WFolderViewController.h */,
-				A24FC760165E6DC5002E2C26 /* WFolderViewController.m */,
+				A24FC75F165E6DC5002E2C26 /* WListViewController.h */,
+				A24FC760165E6DC5002E2C26 /* WListViewController.m */,
 				A2A330461782CD5200C6F62E /* WRootViewController.h */,
 				A2A330471782CD5200C6F62E /* WRootViewController.m */,
 				A2A330491782CE1300C6F62E /* WFavoritesViewController.h */,
@@ -1330,7 +1330,7 @@
 				A2020D5B165E2D960057FCCD /* WNavigationController.m in Sources */,
 				A2020D67165E41980057FCCD /* WCell.m in Sources */,
 				A2020D6A165E4DC80057FCCD /* Item.m in Sources */,
-				A24FC761165E6DC5002E2C26 /* WFolderViewController.m in Sources */,
+				A24FC761165E6DC5002E2C26 /* WListViewController.m in Sources */,
 				A2411B3616D2544D0060EFF7 /* AFHTTPClient.m in Sources */,
 				A2411B3816D2544D0060EFF7 /* AFHTTPRequestOperation.m in Sources */,
 				A2411B3A16D2544D0060EFF7 /* AFImageRequestOperation.m in Sources */,

@@ -86,7 +86,7 @@
     switch ([[WUser current] status]) {
         case Connected: {
             [self.navigationController setNavigationBarHidden:NO animated:NO];
-            WFolderViewController *folderViewController = [[WRootViewController alloc] initWithPath:nil];
+            WListViewController *folderViewController = [[WRootViewController alloc] initWithPath:nil andData:nil];
             [self.navigationController pushViewController:folderViewController animated:YES];
             [((WNavigationController *)self.navigationController).homeController setSelected:kHomeFoldersCellIndex];
             break;

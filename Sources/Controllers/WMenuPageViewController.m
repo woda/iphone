@@ -9,7 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "NSManagedObjectContext-EasyFetch.h"
 #import "AFHTTPRequestOperation.h"
-#import "WFolderViewController.h"
+#import "WListViewController.h"
 #import "WDetailViewController.h"
 #import "WCell.h"
 

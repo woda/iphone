@@ -6,8 +6,12 @@
 //  Copyright (c) 2013 Woda. All rights reserved.
 //
 
-#import "WFolderViewController.h"
+#import "WListViewController.h"
 
-@interface WRootViewController : WFolderViewController
+@interface WRootViewController : WListViewController {
+    NSString        *_path;
+}
+
+- (id)initWithPath:(NSString *)path andData:(NSDictionary *)data;
 
 @end
