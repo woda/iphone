@@ -1,5 +1,5 @@
 //
-//  WFolderViewController.m
+//  WMenuPageViewController.m
 //  Woda
 //
 //  Created by Théo LUBERT on 10/18/12.
@@ -9,7 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "NSManagedObjectContext-EasyFetch.h"
 #import "AFHTTPRequestOperation.h"
-#import "WDirectoryViewController.h"
+#import "WFolderViewController.h"
 #import "WDetailViewController.h"
 #import "WCell.h"
 
@@ -26,10 +26,12 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    self.title = @"Woda";
+    
     if (self.navigationController.viewControllers.count <= 2) {
         UIButton *button = [[UIButton alloc] init];
         [button setImage:[UIImage imageNamed:@"navbar_white_menu.png"] forState:UIControlStateNormal];
-        [button setBounds:CGRectMake(0, 0, 32, 15)];
+        [button setBounds:CGRectMake(0, 0, 35, 18)];
         [button setImageEdgeInsets:(UIEdgeInsets) {
             .top = 0,
             .left = 10,
@@ -48,7 +50,6 @@
     [self initOverlay];
     [self updateOverlay];
     
-    self.title = @"Woda";
     [((WNavigationController *)self.navigationController).homeController setSelected:self.homeCellIndex];
 }
 
@@ -61,10 +62,6 @@
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
     
-//    [self.tableView setContentSize:(CGSize) {
-//        .width = self.tableView.frame.size.width,
-//        .height = self.tableView.contentSize.height
-//    }];
     [self updateOverlay];
 }
 

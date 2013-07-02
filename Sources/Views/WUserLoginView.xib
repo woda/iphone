@@ -241,7 +241,7 @@
 										<bool key="IBUIClipsSubviews">YES</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<int key="IBUIContentVerticalAlignment">0</int>
-										<string key="IBUIText">userListTest</string>
+										<string key="IBUIText">test1</string>
 										<string key="IBUIPlaceholder">Username or email</string>
 										<object class="NSColor" key="IBUITextColor">
 											<int key="NSColorSpace">1</int>
@@ -413,6 +413,7 @@
 								<string key="NSFrame">{{150, 268}, {20, 20}}</string>
 								<reference key="NSSuperview" ref="975482058"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>

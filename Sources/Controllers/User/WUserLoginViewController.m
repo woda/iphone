@@ -8,7 +8,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "WUserLoginViewController.h"
-#import "WDirectoryViewController.h"
+#import "WRootViewController.h"
 #import "WHomeViewController.h"
 #import "WRequest.h"
 #import "WUser.h"
@@ -86,7 +86,7 @@
     switch ([[WUser current] status]) {
         case Connected: {
             [self.navigationController setNavigationBarHidden:NO animated:NO];
-            WDirectoryViewController *folderViewController = [[WDirectoryViewController alloc] initWithItem:nil];
+            WFolderViewController *folderViewController = [[WRootViewController alloc] initWithPath:nil];
             [self.navigationController pushViewController:folderViewController animated:YES];
             [((WNavigationController *)self.navigationController).homeController setSelected:kHomeFoldersCellIndex];
             break;

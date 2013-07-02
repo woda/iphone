@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Woda. All rights reserved.
 //
 
-#import "WDirectoryViewController.h"
+#import "WFolderViewController.h"
 
-@interface WSharedViewController : WDirectoryViewController
+@interface WSharedViewController : WFolderViewController
 
 @end

@@ -47,6 +47,25 @@
     [self.tableView insertSubview:bg atIndex:0];
 }
 
+- (double)appSizeInMegaBytes {
+    NSFileManager *_manager = [NSFileManager defaultManager];
+    NSArray *_documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *_documentsDirectory = [_documentPaths objectAtIndex:0];
+    NSArray *_documentsFileList;
+    NSEnumerator *_documentsEnumerator;
+    NSString *_documentFilePath;
+    double _documentsFolderSize = 0;
+    
+    _documentsFileList = [_manager subpathsAtPath:_documentsDirectory];
+    _documentsEnumerator = [_documentsFileList objectEnumerator];
+    while (_documentFilePath = [_documentsEnumerator nextObject]) {
+        NSDictionary *_documentFileAttributes = [_manager attributesOfItemAtPath:[_documentsDirectory stringByAppendingPathComponent:_documentFilePath] error:nil];
+        _documentsFolderSize += [[_documentFileAttributes objectForKey:NSFileSize] doubleValue];
+    }
+    
+    return _documentsFolderSize / (1024.0*1024.0);
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -56,7 +75,8 @@
     [self.serverLabel setText:[[[WRequest client] baseURL] relativeString]];
     [self.nameLabel setText:[[[[WUser current] firstName] capitalizedString] stringByAppendingFormat:@" %@", [[[WUser current] lastName] capitalizedString]]];
     [self.emailLabel setText:[[WUser current] email]];
-    [self.memoryLabel setText:@"Unknown memory use"];
+//    [self.memoryLabel setText:@"Unknown memory use"];
+    [self.memoryLabel setText:[NSString stringWithFormat:@"%.2fMB used", [self appSizeInMegaBytes]]];
     [self.versionLabel setText:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
 }
 

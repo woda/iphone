@@ -163,7 +163,7 @@
 		A2411B5F16D26B460060EFF7 /* WRequest+User.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5716D26B460060EFF7 /* WRequest+User.m */; };
 		A2411B6016D26B460060EFF7 /* WRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5916D26B460060EFF7 /* WRequest.m */; };
 		A2411B6116D26B460060EFF7 /* WRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5916D26B460060EFF7 /* WRequest.m */; };
-		A24FC761165E6DC5002E2C26 /* WDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24FC760165E6DC5002E2C26 /* WDirectoryViewController.m */; };
+		A24FC761165E6DC5002E2C26 /* WFolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24FC760165E6DC5002E2C26 /* WFolderViewController.m */; };
 		A2677B00165E0AE900C1D630 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2677B02165E0AE900C1D630 /* Localizable.strings */; };
 		A2677B08165E0F0200C1D630 /* WHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B07165E0F0200C1D630 /* WHomeViewController.m */; };
 		A2677B0C165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B0B165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m */; };
@@ -222,6 +222,7 @@
 		A2DC450216305AEE00E152A6 /* Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44FF16305AED00E152A6 /* Background@2x.png */; };
 		A2E8C589178355B500F0BEF0 /* WSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E8C588178355B500F0BEF0 /* WSettingsView.xib */; };
 		A2E8C58C178364DE00F0BEF0 /* NSObject+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E8C58B178364DE00F0BEF0 /* NSObject+Blocks.m */; };
+		A2E8C58E1783719100F0BEF0 /* WFolderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E8C58D1783719100F0BEF0 /* WFolderView.xib */; };
 		A2F62E7D166447DD00F9CB08 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F62E79166447DD00F9CB08 /* libTestFlight.a */; };
 		A2F62E7E166447DD00F9CB08 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A2F62E7A166447DD00F9CB08 /* README.md */; };
 		A2F62E7F166447DD00F9CB08 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = A2F62E7B166447DD00F9CB08 /* release_notes.md */; };
@@ -391,8 +392,8 @@
 		A2411B5716D26B460060EFF7 /* WRequest+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WRequest+User.m"; sourceTree = "<group>"; };
 		A2411B5816D26B460060EFF7 /* WRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRequest.h; sourceTree = "<group>"; };
 		A2411B5916D26B460060EFF7 /* WRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRequest.m; sourceTree = "<group>"; };
-		A24FC75F165E6DC5002E2C26 /* WDirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDirectoryViewController.h; sourceTree = "<group>"; };
-		A24FC760165E6DC5002E2C26 /* WDirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDirectoryViewController.m; sourceTree = "<group>"; };
+		A24FC75F165E6DC5002E2C26 /* WFolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFolderViewController.h; sourceTree = "<group>"; };
+		A24FC760165E6DC5002E2C26 /* WFolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFolderViewController.m; sourceTree = "<group>"; };
 		A2677B01165E0AE900C1D630 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2677B05165E0B5000C1D630 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2677B06165E0F0200C1D630 /* WHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHomeViewController.h; sourceTree = "<group>"; };
@@ -478,6 +479,7 @@
 		A2E8C588178355B500F0BEF0 /* WSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WSettingsView.xib; sourceTree = "<group>"; };
 		A2E8C58A178364DE00F0BEF0 /* NSObject+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Blocks.h"; sourceTree = "<group>"; };
 		A2E8C58B178364DE00F0BEF0 /* NSObject+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Blocks.m"; sourceTree = "<group>"; };
+		A2E8C58D1783719100F0BEF0 /* WFolderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WFolderView.xib; sourceTree = "<group>"; };
 		A2F62E79166447DD00F9CB08 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		A2F62E7A166447DD00F9CB08 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		A2F62E7B166447DD00F9CB08 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
@@ -851,8 +853,8 @@
 			children = (
 				A2C6017416304BAF00CB53B3 /* WMenuPageViewController.h */,
 				A2C6017516304BAF00CB53B3 /* WMenuPageViewController.m */,
-				A24FC75F165E6DC5002E2C26 /* WDirectoryViewController.h */,
-				A24FC760165E6DC5002E2C26 /* WDirectoryViewController.m */,
+				A24FC75F165E6DC5002E2C26 /* WFolderViewController.h */,
+				A24FC760165E6DC5002E2C26 /* WFolderViewController.m */,
 				A2A330461782CD5200C6F62E /* WRootViewController.h */,
 				A2A330471782CD5200C6F62E /* WRootViewController.m */,
 				A2A330491782CE1300C6F62E /* WFavoritesViewController.h */,
@@ -1003,6 +1005,7 @@
 				A2677B0D165E125700C1D630 /* WHomeView.xib */,
 				A2C6018516304BAF00CB53B3 /* WDetailView.xib */,
 				A2A0669916D48D4900D08D8D /* WUserLoginView.xib */,
+				A2E8C58D1783719100F0BEF0 /* WFolderView.xib */,
 				A2E8C588178355B500F0BEF0 /* WSettingsView.xib */,
 			);
 			path = Views;
@@ -1261,6 +1264,7 @@
 				A239199217801F380017264F /* upload_grey_check.png in Resources */,
 				A239199317801F380017264F /* upload_grey_check@2x.png in Resources */,
 				A2E8C589178355B500F0BEF0 /* WSettingsView.xib in Resources */,
+				A2E8C58E1783719100F0BEF0 /* WFolderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1326,7 +1330,7 @@
 				A2020D5B165E2D960057FCCD /* WNavigationController.m in Sources */,
 				A2020D67165E41980057FCCD /* WCell.m in Sources */,
 				A2020D6A165E4DC80057FCCD /* Item.m in Sources */,
-				A24FC761165E6DC5002E2C26 /* WDirectoryViewController.m in Sources */,
+				A24FC761165E6DC5002E2C26 /* WFolderViewController.m in Sources */,
 				A2411B3616D2544D0060EFF7 /* AFHTTPClient.m in Sources */,
 				A2411B3816D2544D0060EFF7 /* AFHTTPRequestOperation.m in Sources */,
 				A2411B3A16D2544D0060EFF7 /* AFImageRequestOperation.m in Sources */,

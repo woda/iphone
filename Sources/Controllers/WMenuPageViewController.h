@@ -1,5 +1,5 @@
 //
-//  WFolderViewController.h
+//  WMenuPageViewController.h
 //  Woda
 //
 //  Created by Théo LUBERT on 10/18/12.
@@ -15,7 +15,6 @@
 
 
 @interface WMenuPageViewController : UIViewController {// <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, QLPreviewControllerDataSource, QLPreviewControllerDelegate> {
-//    UILabel     *noDataLabel;
 }
 
 @property (assign) HomeCellIndex    homeCellIndex;
@@ -23,13 +22,5 @@
 //@property (strong, nonatomic) WDetailViewController *detailViewController;
 //@property (strong, nonatomic) QLPreviewController   *previewController;
 //@property (strong, nonatomic) NSString              *fileUrl;
-
-//@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-//@property (nonatomic, retain) NSPredicate               *predicate;
-
-//@property (nonatomic, retain) NSMutableDictionary       *files;
-
-//@property (nonatomic, retain) IBOutlet UITableView      *tableView;
-//@property (nonatomic, retain) IBOutlet UILabel          *countLabel;
 
 @end

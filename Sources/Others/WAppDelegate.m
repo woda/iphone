@@ -12,7 +12,6 @@
 //#import "WDetailViewController.h"
 #import "WUserLoginViewController.h"
 #import "AFHTTPRequestOperationLogger.h"
-//#import "DDASLLogger.h"
 #import "DDTTYLogger.h"
 
 @implementation WAppDelegate
@@ -43,8 +42,9 @@
     [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
 #endif
     
-//    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog removeAllLoggers];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
     [[AFHTTPRequestOperationLogger sharedLogger] startLogging];
 
     return YES;

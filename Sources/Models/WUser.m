@@ -104,9 +104,20 @@ static WUser *current = nil;
             
             [self updateUserInfo:json];
             [self setStatus:Connected];
-        } failure:^(id json) {
-            NSLog(@"Login error: %@", json);
-            [self setStatus:NotConnected];
+        } failure:^(NSDictionary *json) {
+            DDLogError(@"Login error: %@", json);
+            if ([[json objectForKey:@"error"] isEqualToString:@"user_not_found"]
+                && [login isEqualToString:@"test1"]
+                && [password isEqualToString:@"password"]) {
+                DDLogWarn(@"Creating test user");
+                [WRequest createUser:@"test1" firstName:@"lambda" lastName:@"developer" password:@"password" email:@"developer@woda.com" success:^(NSDictionary *json) {
+                    (void)[[WUser alloc] initWithLogin:@"test1" andPassword:@"password"];
+                } failure:^(id json) {
+                    [self setStatus:NotConnected];
+                }];
+            } else {
+                [self setStatus:NotConnected];
+            }
         }];
     }
     return (self);
