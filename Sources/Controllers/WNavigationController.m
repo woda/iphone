@@ -41,10 +41,9 @@
     [shadow setImage:[[UIImage imageNamed:@"shadow.png"] stretchableImageWithLeftCapWidth:0 topCapHeight:5]];
     [self.view addSubview:shadow];
     
-    [self.navigationBar setTintColor:[UIColor colorWithRed:(138.0/255.0)
-                                                     green:(186.0/255.0)
-                                                      blue:(225.0/255.0)
-                                                     alpha:1.0]];
+    UIColor *tintColor = [UIColor colorWithRed:(71.0/255.0) green:(134.0/255.0) blue:(255.0/255.0) alpha:1.0];
+    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundColor:tintColor];
     
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeft:)];
     [swipe setDirection:UISwipeGestureRecognizerDirectionLeft];

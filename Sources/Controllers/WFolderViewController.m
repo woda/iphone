@@ -38,7 +38,17 @@
     [super viewWillAppear:animated];
     
     if (self.navigationController.viewControllers.count <= 2) {
-        UIBarButtonItem *listButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self.navigationController action:@selector(swipe)];
+        UIButton *button = [[UIButton alloc] init];
+        [button setImage:[UIImage imageNamed:@"navbar_white_menu.png"] forState:UIControlStateNormal];
+        [button setBounds:CGRectMake(0, 0, 33, 15)];
+        [button setImageEdgeInsets:(UIEdgeInsets) {
+            .top = 0,
+            .left = 10,
+            .bottom = 0,
+            .right = 0
+        }];
+        [button addTarget:self.navigationController action:@selector(swipeLeft) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *listButton = [[UIBarButtonItem alloc] initWithCustomView:button];
         self.navigationItem.leftBarButtonItem = listButton;
     }
 }
