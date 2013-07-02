@@ -1,5 +1,5 @@
 //
-//  WRootViewController.h
+//  WFolderViewController.h
 //  Woda
 //
 //  Created by Théo LUBERT on 7/2/13.
@@ -8,7 +8,7 @@
 
 #import "WListViewController.h"
 
-@interface WRootViewController : WListViewController {
+@interface WFolderViewController : WListViewController {
     NSString        *_path;
 }
 

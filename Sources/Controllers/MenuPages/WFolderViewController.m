@@ -1,18 +1,18 @@
 //
-//  WRootViewController.m
+//  WFolderViewController.m
 //  Woda
 //
 //  Created by Théo LUBERT on 7/2/13.
 //  Copyright (c) 2013 Woda. All rights reserved.
 //
 
-#import "WRootViewController.h"
+#import "WFolderViewController.h"
 
-@interface WRootViewController ()
+@interface WFolderViewController ()
 
 @end
 
-@implementation WRootViewController
+@implementation WFolderViewController
 
 
 #pragma mark -

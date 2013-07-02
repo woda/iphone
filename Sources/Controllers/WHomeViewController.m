@@ -9,7 +9,7 @@
 #import "WHomeViewController.h"
 #import "NSManagedObjectContext-EasyFetch.h"
 #import "WUser.h"
-#import "WRootViewController.h"
+#import "WFolderViewController.h"
 #import "WFavoritesViewController.h"
 #import "WRecentsViewController.h"
 #import "WUploadingViewController.h"
@@ -131,7 +131,7 @@
     UIViewController *login = [[_navController viewControllers] first];
     switch (indexPath.row) {
         case kHomeFoldersCellIndex: {
-            UIViewController *c = [[WRootViewController alloc] initWithPath:nil andData:nil];
+            UIViewController *c = [[WFolderViewController alloc] initWithPath:nil andData:nil];
             [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }
