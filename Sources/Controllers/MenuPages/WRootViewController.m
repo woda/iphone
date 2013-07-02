@@ -22,7 +22,7 @@
     [super viewWillAppear:animated];
     
     self.title = @"Woda";
-    self.homeCellIndex = kHomePublicCellIndex;
+    self.homeCellIndex = kHomeFoldersCellIndex;
 }
 
 @end

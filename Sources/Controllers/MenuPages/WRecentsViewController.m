@@ -22,7 +22,7 @@
     [super viewWillAppear:animated];
     
     self.title = @"Recents";
-    self.homeCellIndex = kHomePublicCellIndex;
+    self.homeCellIndex = kHomeRecentsCellIndex;
 }
 
 @end

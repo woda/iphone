@@ -22,7 +22,7 @@
     [super viewWillAppear:animated];
     
     self.title = @"Favorites";
-    self.homeCellIndex = kHomePublicCellIndex;
+    self.homeCellIndex = kHomeFavoritesCellIndex;
 }
 
 @end

@@ -22,7 +22,7 @@
     [super viewWillAppear:animated];
     
     self.title = @"Offline";
-    self.homeCellIndex = kHomePublicCellIndex;
+    self.homeCellIndex = kHomeOfflineCellIndex;
 }
 
 @end

@@ -47,7 +47,7 @@
     [self.tableView insertSubview:bg atIndex:0];
 }
 
-- (double)appSizeInMegaBytes {
+- (double)appSize {
     NSFileManager *_manager = [NSFileManager defaultManager];
     NSArray *_documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *_documentsDirectory = [_documentPaths objectAtIndex:0];
@@ -56,14 +56,19 @@
     NSString *_documentFilePath;
     double _documentsFolderSize = 0;
     
+    NSError *error = nil;
     _documentsFileList = [_manager subpathsAtPath:_documentsDirectory];
     _documentsEnumerator = [_documentsFileList objectEnumerator];
     while (_documentFilePath = [_documentsEnumerator nextObject]) {
-        NSDictionary *_documentFileAttributes = [_manager attributesOfItemAtPath:[_documentsDirectory stringByAppendingPathComponent:_documentFilePath] error:nil];
+        NSDictionary *_documentFileAttributes = [_manager attributesOfItemAtPath:[_documentsDirectory stringByAppendingPathComponent:_documentFilePath] error:&error];
+        if (error) {
+            DDLogError(@"Failure occurred while computing app size: %@", [error localizedDescription]);
+            return (-1);
+        }
         _documentsFolderSize += [[_documentFileAttributes objectForKey:NSFileSize] doubleValue];
     }
     
-    return _documentsFolderSize / (1024.0*1024.0);
+    return _documentsFolderSize;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -75,9 +80,20 @@
     [self.serverLabel setText:[[[WRequest client] baseURL] relativeString]];
     [self.nameLabel setText:[[[[WUser current] firstName] capitalizedString] stringByAppendingFormat:@" %@", [[[WUser current] lastName] capitalizedString]]];
     [self.emailLabel setText:[[WUser current] email]];
-//    [self.memoryLabel setText:@"Unknown memory use"];
-    [self.memoryLabel setText:[NSString stringWithFormat:@"%.2fMB used", [self appSizeInMegaBytes]]];
     [self.versionLabel setText:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
+    
+    double appSize = [self appSize];
+    NSString *text = @"Unknown memory use";
+    if (appSize > (1024.0*1024.0*1024.0)) {
+        text = [NSString stringWithFormat:@"%.1f GB used", (appSize / (1024.0*1024.0*1024.0))];
+    } else if (appSize > (1024.0*1024.0)) {
+        text = [NSString stringWithFormat:@"%.1f MB used", (appSize / (1024.0*1024.0))];
+    } else if (appSize > 1024.0) {
+        text = [NSString stringWithFormat:@"%.1f kB used", (appSize / 1024.0)];
+    } else if (appSize >= 0) {
+        text = [NSString stringWithFormat:@"%.1f Bytes used", appSize];
+    }
+    [self.memoryLabel setText:text];
 }
 
 

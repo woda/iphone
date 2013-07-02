@@ -22,7 +22,7 @@
     [super viewWillAppear:animated];
     
     self.title = @"Uploading";
-    self.homeCellIndex = kHomePublicCellIndex;
+    self.homeCellIndex = kHomeUploadCellIndex;
 }
 
 @end

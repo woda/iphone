@@ -22,7 +22,7 @@
     [super viewWillAppear:animated];
     
     self.title = @"Shared";
-    self.homeCellIndex = kHomePublicCellIndex;
+    self.homeCellIndex = kHomeSharedCellIndex;
 }
 
 @end
