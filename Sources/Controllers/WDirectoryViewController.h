@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Woda. All rights reserved.
 //
 
-#import "WFolderViewController.h"
+#import "WMenuPageViewController.h"
 
-@interface WDirectoryViewController : WFolderViewController {
+@interface WDirectoryViewController : WMenuPageViewController {
     Item        *_item;
 }
 

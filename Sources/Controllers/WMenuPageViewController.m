@@ -13,18 +13,18 @@
 #import "WDetailViewController.h"
 #import "WCell.h"
 
-@interface WFolderViewController ()
+@interface WMenuPageViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
-@implementation WFolderViewController
+@implementation WMenuPageViewController
 
 
 #pragma mark -
 #pragma mark Initialization methods
 
 - (id)init {
-    self = [super initWithNibName:[self xibFullName:@"WFolderView"] bundle:nil];
+    self = [super initWithNibName:[self xibFullName:@"WMenuPageView"] bundle:nil];
     if (self) {
         self.title = @"Woda";
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {

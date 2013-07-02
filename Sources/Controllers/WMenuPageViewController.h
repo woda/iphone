@@ -14,7 +14,7 @@
 @class WDetailViewController;
 
 
-@interface WFolderViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, QLPreviewControllerDataSource, QLPreviewControllerDelegate> {
+@interface WMenuPageViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, QLPreviewControllerDataSource, QLPreviewControllerDelegate> {
     UILabel     *noDataLabel;
 }
 
