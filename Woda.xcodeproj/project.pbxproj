@@ -197,6 +197,9 @@
 		A2A3305A1782D06D00C6F62E /* WPublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A330591782D06C00C6F62E /* WPublicViewController.m */; };
 		A2A3305D1782D08500C6F62E /* WSharedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A3305C1782D08500C6F62E /* WSharedViewController.m */; };
 		A2A330601782D09A00C6F62E /* WSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A3305F1782D09A00C6F62E /* WSettingViewController.m */; };
+		A2C170C517838A1D00EAB93E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C170C117838A1D00EAB93E /* libTestFlight.a */; };
+		A2C170C617838A1D00EAB93E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A2C170C217838A1D00EAB93E /* README.md */; };
+		A2C170C717838A1D00EAB93E /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = A2C170C317838A1D00EAB93E /* release_notes.md */; };
 		A2C601381630485A00CB53B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601371630485A00CB53B3 /* UIKit.framework */; };
 		A2C6013A1630485A00CB53B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601391630485A00CB53B3 /* Foundation.framework */; };
 		A2C6013C1630485A00CB53B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C6013B1630485A00CB53B3 /* CoreGraphics.framework */; };
@@ -223,9 +226,6 @@
 		A2E8C589178355B500F0BEF0 /* WSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E8C588178355B500F0BEF0 /* WSettingsView.xib */; };
 		A2E8C58C178364DE00F0BEF0 /* NSObject+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E8C58B178364DE00F0BEF0 /* NSObject+Blocks.m */; };
 		A2E8C58E1783719100F0BEF0 /* WFolderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E8C58D1783719100F0BEF0 /* WFolderView.xib */; };
-		A2F62E7D166447DD00F9CB08 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F62E79166447DD00F9CB08 /* libTestFlight.a */; };
-		A2F62E7E166447DD00F9CB08 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A2F62E7A166447DD00F9CB08 /* README.md */; };
-		A2F62E7F166447DD00F9CB08 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = A2F62E7B166447DD00F9CB08 /* release_notes.md */; };
 		A2F62E8116647F8B00F9CB08 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F62E8016647F8B00F9CB08 /* libz.dylib */; };
 		A2F7C620177954C30034D327 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F51630546C00E152A6 /* iTunesArtwork.png */; };
 /* End PBXBuildFile section */
@@ -447,6 +447,10 @@
 		A2A3305C1782D08500C6F62E /* WSharedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSharedViewController.m; path = MenuPages/WSharedViewController.m; sourceTree = "<group>"; };
 		A2A3305E1782D09900C6F62E /* WSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSettingViewController.h; path = MenuPages/WSettingViewController.h; sourceTree = "<group>"; };
 		A2A3305F1782D09A00C6F62E /* WSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSettingViewController.m; path = MenuPages/WSettingViewController.m; sourceTree = "<group>"; };
+		A2C170C117838A1D00EAB93E /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		A2C170C217838A1D00EAB93E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		A2C170C317838A1D00EAB93E /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		A2C170C417838A1D00EAB93E /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		A2C601331630485A00CB53B3 /* Woda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Woda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C601371630485A00CB53B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A2C601391630485A00CB53B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -480,10 +484,6 @@
 		A2E8C58A178364DE00F0BEF0 /* NSObject+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Blocks.h"; sourceTree = "<group>"; };
 		A2E8C58B178364DE00F0BEF0 /* NSObject+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Blocks.m"; sourceTree = "<group>"; };
 		A2E8C58D1783719100F0BEF0 /* WFolderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WFolderView.xib; sourceTree = "<group>"; };
-		A2F62E79166447DD00F9CB08 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
-		A2F62E7A166447DD00F9CB08 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		A2F62E7B166447DD00F9CB08 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
-		A2F62E7C166447DD00F9CB08 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		A2F62E8016647F8B00F9CB08 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A2F7C61D1779431C0034D327 /* WRequestSyncTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRequestSyncTests.h; sourceTree = "<group>"; };
 		A2F7C61E1779431C0034D327 /* WRequestSyncTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRequestSyncTests.m; sourceTree = "<group>"; };
@@ -516,7 +516,7 @@
 				A2C6013A1630485A00CB53B3 /* Foundation.framework in Frameworks */,
 				A2C6013C1630485A00CB53B3 /* CoreGraphics.framework in Frameworks */,
 				A2C6013E1630485A00CB53B3 /* CoreData.framework in Frameworks */,
-				A2F62E7D166447DD00F9CB08 /* libTestFlight.a in Frameworks */,
+				A2C170C517838A1D00EAB93E /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -875,6 +875,17 @@
 			name = "Menu pages";
 			sourceTree = "<group>";
 		};
+		A2C170C017838A1D00EAB93E /* TestFlightSDK */ = {
+			isa = PBXGroup;
+			children = (
+				A2C170C117838A1D00EAB93E /* libTestFlight.a */,
+				A2C170C217838A1D00EAB93E /* README.md */,
+				A2C170C317838A1D00EAB93E /* release_notes.md */,
+				A2C170C417838A1D00EAB93E /* TestFlight.h */,
+			);
+			path = TestFlightSDK;
+			sourceTree = "<group>";
+		};
 		A2C601281630485A00CB53B3 = {
 			isa = PBXGroup;
 			children = (
@@ -1028,25 +1039,14 @@
 		A2DC4503163064A100E152A6 /* Librairies */ = {
 			isa = PBXGroup;
 			children = (
+				A2C170C017838A1D00EAB93E /* TestFlightSDK */,
 				A299C67B177A4725000B4F88 /* Lumberjack */,
 				A299C66D177A3C35000B4F88 /* AFHTTPRequestOperationLogger */,
 				A2411B2216D2544D0060EFF7 /* AFNetworking */,
-				A2F62E78166447DD00F9CB08 /* TestFlightSDK1.1 */,
 				A2677B09165E100000C1D630 /* coredata-easyfetch */,
 				A2677B0F165E145E00C1D630 /* Helpers */,
 			);
 			path = Librairies;
-			sourceTree = "<group>";
-		};
-		A2F62E78166447DD00F9CB08 /* TestFlightSDK1.1 */ = {
-			isa = PBXGroup;
-			children = (
-				A2F62E79166447DD00F9CB08 /* libTestFlight.a */,
-				A2F62E7A166447DD00F9CB08 /* README.md */,
-				A2F62E7B166447DD00F9CB08 /* release_notes.md */,
-				A2F62E7C166447DD00F9CB08 /* TestFlight.h */,
-			);
-			path = TestFlightSDK1.1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1149,8 +1149,6 @@
 				A2677B0E165E125700C1D630 /* WHomeView.xib in Resources */,
 				A22D470016636A5D00B4B448 /* shadow.png in Resources */,
 				A22D470116636A5D00B4B448 /* shadow@2x.png in Resources */,
-				A2F62E7E166447DD00F9CB08 /* README.md in Resources */,
-				A2F62E7F166447DD00F9CB08 /* release_notes.md in Resources */,
 				A2A0669A16D48D4900D08D8D /* WUserLoginView.xib in Resources */,
 				A299C693177A4725000B4F88 /* README.txt in Resources */,
 				A239192617801F380017264F /* action_button_background.png in Resources */,
@@ -1265,6 +1263,8 @@
 				A239199317801F380017264F /* upload_grey_check@2x.png in Resources */,
 				A2E8C589178355B500F0BEF0 /* WSettingsView.xib in Resources */,
 				A2E8C58E1783719100F0BEF0 /* WFolderView.xib in Resources */,
+				A2C170C617838A1D00EAB93E /* README.md in Resources */,
+				A2C170C717838A1D00EAB93E /* release_notes.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1506,6 +1506,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK1.1\"",
+					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "D2737EB1-E20E-41FC-94FE-E3B15C6CF13C";
@@ -1524,6 +1525,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK1.1\"",
+					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "D2737EB1-E20E-41FC-94FE-E3B15C6CF13C";
