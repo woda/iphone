@@ -9,25 +9,27 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import <QuickLook/QuickLook.h>
-#import "Item.h"
+#import "WHomeViewController.h"
 
 @class WDetailViewController;
 
 
-@interface WMenuPageViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, QLPreviewControllerDataSource, QLPreviewControllerDelegate> {
-    UILabel     *noDataLabel;
+@interface WMenuPageViewController : UIViewController {// <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, QLPreviewControllerDataSource, QLPreviewControllerDelegate> {
+//    UILabel     *noDataLabel;
 }
 
-@property (strong, nonatomic) WDetailViewController *detailViewController;
-@property (strong, nonatomic) QLPreviewController   *previewController;
-@property (strong, nonatomic) NSString              *fileUrl;
+@property (assign) HomeCellIndex    homeCellIndex;
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, retain) NSPredicate               *predicate;
+//@property (strong, nonatomic) WDetailViewController *detailViewController;
+//@property (strong, nonatomic) QLPreviewController   *previewController;
+//@property (strong, nonatomic) NSString              *fileUrl;
 
-@property (nonatomic, retain) NSMutableDictionary       *files;
+//@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+//@property (nonatomic, retain) NSPredicate               *predicate;
 
-@property (nonatomic, retain) IBOutlet UITableView      *tableView;
-@property (nonatomic, retain) IBOutlet UILabel          *countLabel;
+//@property (nonatomic, retain) NSMutableDictionary       *files;
+
+//@property (nonatomic, retain) IBOutlet UITableView      *tableView;
+//@property (nonatomic, retain) IBOutlet UILabel          *countLabel;
 
 @end

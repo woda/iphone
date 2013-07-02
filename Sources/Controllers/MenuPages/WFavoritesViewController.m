@@ -7,7 +7,6 @@
 //
 
 #import "WFavoritesViewController.h"
-#import "WHomeViewController.h"
 
 @interface WFavoritesViewController ()
 
@@ -23,12 +22,7 @@
     [super viewWillAppear:animated];
     
     self.title = @"Favorites";
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [((WNavigationController *)self.navigationController).homeController setSelected:kHomeFavoritesCellIndex];
+    self.homeCellIndex = kHomePublicCellIndex;
 }
 
 @end

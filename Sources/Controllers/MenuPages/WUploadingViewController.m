@@ -7,7 +7,6 @@
 //
 
 #import "WUploadingViewController.h"
-#import "WHomeViewController.h"
 
 @interface WUploadingViewController ()
 
@@ -23,12 +22,7 @@
     [super viewWillAppear:animated];
     
     self.title = @"Uploading";
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [((WNavigationController *)self.navigationController).homeController setSelected:kHomeUploadCellIndex];
+    self.homeCellIndex = kHomePublicCellIndex;
 }
 
 @end

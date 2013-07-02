@@ -7,7 +7,6 @@
 //
 
 #import "WRootViewController.h"
-#import "WHomeViewController.h"
 
 @interface WRootViewController ()
 
@@ -23,12 +22,7 @@
     [super viewWillAppear:animated];
     
     self.title = @"Woda";
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [((WNavigationController *)self.navigationController).homeController setSelected:kHomeFoldersCellIndex];
+    self.homeCellIndex = kHomePublicCellIndex;
 }
 
 @end

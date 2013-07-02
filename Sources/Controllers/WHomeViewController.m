@@ -8,7 +8,6 @@
 
 #import "WHomeViewController.h"
 #import "NSManagedObjectContext-EasyFetch.h"
-#import "NSArray+Shortcuts.h"
 #import "WUser.h"
 #import "WRootViewController.h"
 #import "WFavoritesViewController.h"
@@ -167,10 +166,8 @@
             break;
         }
         case kHomeSettingsCellIndex: {
-            [WUser logout];
-            
-            [self.navController swipeLeft];
-            [_navController setViewControllers:@[login] animated:NO];
+            UIViewController *c = [[WSettingViewController alloc] init];
+            [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }
         default:

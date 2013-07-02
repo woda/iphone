@@ -6,8 +6,29 @@
 //  Copyright (c) 2013 Woda. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WMenuPageViewController.h"
 
-@interface WSettingViewController : UIViewController
+typedef enum kSettingCellIndexes {
+    kSettingHelpCellIndex = 0,
+    kSettingFeedbackCellIndex,
+    kSettingLegalNoticeCellIndex,
+    kSettingLogoutIndex,
+    kSettingCellCount
+}   SettingCellIndex;
+
+@interface WSettingViewController : WMenuPageViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, retain) IBOutlet UITableView      *tableView;
+
+@property (nonatomic, retain) IBOutlet UILabel          *serverLabel;
+@property (nonatomic, retain) IBOutlet UILabel          *nameLabel;
+@property (nonatomic, retain) IBOutlet UILabel          *emailLabel;
+@property (nonatomic, retain) IBOutlet UILabel          *memoryLabel;
+@property (nonatomic, retain) IBOutlet UILabel          *versionLabel;
+
+@property (nonatomic, retain) IBOutlet UITableViewCell  *helpCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell  *feedbackCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell  *noticeCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell  *logoutCell;
 
 @end

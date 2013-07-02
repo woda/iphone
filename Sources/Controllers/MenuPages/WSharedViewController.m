@@ -7,7 +7,6 @@
 //
 
 #import "WSharedViewController.h"
-#import "WHomeViewController.h"
 
 @interface WSharedViewController ()
 
@@ -23,12 +22,7 @@
     [super viewWillAppear:animated];
     
     self.title = @"Shared";
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [((WNavigationController *)self.navigationController).homeController setSelected:kHomeSharedCellIndex];
+    self.homeCellIndex = kHomePublicCellIndex;
 }
 
 @end

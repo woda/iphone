@@ -7,7 +7,6 @@
 //
 
 #import "WRecentsViewController.h"
-#import "WHomeViewController.h"
 
 @interface WRecentsViewController ()
 
@@ -23,12 +22,7 @@
     [super viewWillAppear:animated];
     
     self.title = @"Recents";
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [((WNavigationController *)self.navigationController).homeController setSelected:kHomeRecentsCellIndex];
+    self.homeCellIndex = kHomePublicCellIndex;
 }
 
 @end

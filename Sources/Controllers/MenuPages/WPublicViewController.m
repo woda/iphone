@@ -7,7 +7,6 @@
 //
 
 #import "WPublicViewController.h"
-#import "WHomeViewController.h"
 
 @interface WPublicViewController ()
 
@@ -23,12 +22,7 @@
     [super viewWillAppear:animated];
     
     self.title = @"Public";
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [((WNavigationController *)self.navigationController).homeController setSelected:kHomePublicCellIndex];
+    self.homeCellIndex = kHomePublicCellIndex;
 }
 
 @end

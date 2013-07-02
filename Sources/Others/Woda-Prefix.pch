@@ -18,6 +18,8 @@
     #import <MobileCoreServices/MobileCoreServices.h>
 
     #import "TestFlight.h"
+
+    #import "Helpers.h"
 #endif
 
 //#ifdef DEBUG

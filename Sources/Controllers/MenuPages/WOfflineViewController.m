@@ -7,7 +7,6 @@
 //
 
 #import "WOfflineViewController.h"
-#import "WHomeViewController.h"
 
 @interface WOfflineViewController ()
 
@@ -23,12 +22,7 @@
     [super viewWillAppear:animated];
     
     self.title = @"Offline";
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [((WNavigationController *)self.navigationController).homeController setSelected:kHomeOfflineCellIndex];
+    self.homeCellIndex = kHomePublicCellIndex;
 }
 
 @end

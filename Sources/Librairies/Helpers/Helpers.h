@@ -10,5 +10,7 @@
 #define Woda_Helpers_h
 
 #import "UIViewController+Helpers.h"
+#import "NSArray+Shortcuts.h"
+#import "NSObject+Blocks.h"
 
 #endif

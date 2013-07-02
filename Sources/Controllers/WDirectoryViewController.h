@@ -7,6 +7,7 @@
 //
 
 #import "WMenuPageViewController.h"
+#import "Item.h"
 
 @interface WDirectoryViewController : WMenuPageViewController {
     Item        *_item;
