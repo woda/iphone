@@ -21,7 +21,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.title = @"Recents";
+    self.title = NSLocal(@"RecentsPageTitle");
     self.homeCellIndex = kHomeRecentsCellIndex;
 }
 

@@ -21,7 +21,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.title = @"Offline";
+    self.title = NSLocal(@"OfflinePageTitle");
     self.homeCellIndex = kHomeOfflineCellIndex;
 }
 

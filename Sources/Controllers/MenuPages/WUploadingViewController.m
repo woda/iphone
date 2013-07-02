@@ -21,7 +21,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.title = @"Uploading";
+    self.title = NSLocal(@"UploadsPageTitle");
     self.homeCellIndex = kHomeUploadCellIndex;
 }
 

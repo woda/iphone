@@ -74,7 +74,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.title = @"Settings";
+    self.title = NSLocal(@"SettingsPageTitle");
     self.homeCellIndex = kHomeSettingsCellIndex;
     
     [self.serverLabel setText:[[[WRequest client] baseURL] relativeString]];

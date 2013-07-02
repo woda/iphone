@@ -28,5 +28,27 @@
 "Files" = "files";
 "File" = "file";
 
-// Folder View
+// Folder Page
+"RootPageTitle" = "Woda";
 "NoDataLabel" = "No file";
+
+// Favorites Page
+"FavoritesPageTitle" = "Favorites";
+
+// Recents Page
+"RecentsPageTitle" = "Recents";
+
+// Uploads Page
+"UploadsPageTitle" = "Uploads";
+
+// Offline Page
+"OfflinePageTitle" = "Offline files";
+
+// Shared Page
+"SharedPageTitle" = "Shared by me";
+
+// Public Page
+"PublicPageTitle" = "Public files";
+
+// Settings Page
+"SettingsPageTitle" = "Settings";

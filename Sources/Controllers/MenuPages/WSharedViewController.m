@@ -21,7 +21,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.title = @"Shared";
+    self.title = NSLocal(@"SharedPageTitle");
     self.homeCellIndex = kHomeSharedCellIndex;
 }
 

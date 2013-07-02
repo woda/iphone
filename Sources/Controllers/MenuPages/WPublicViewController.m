@@ -21,7 +21,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.title = @"Public";
+    self.title = NSLocal(@"PublicPageTitle");
     self.homeCellIndex = kHomePublicCellIndex;
 }
 

@@ -21,7 +21,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.title = @"Favorites";
+    self.title = NSLocal(@"FavoritesPageTitle");
     self.homeCellIndex = kHomeFavoritesCellIndex;
 }
 
