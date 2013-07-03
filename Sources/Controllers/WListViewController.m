@@ -30,7 +30,11 @@
 
 - (void)updateFooter {
     [self.countLabel setText:[NSString stringWithFormat:@"%d files, %d folders", [[_data objectForKey:@"files"] count], [[_data objectForKey:@"folders"] count]]];
-    [self.updatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [NSDate date:[_data objectForKey:@"last_update"] fromFormat:@"YYYY-MM-dd'T'HH:mm:ssZZZZ" toFormat:@"MM/dd/YYYY' at 'HH:mm"]]];
+    if ([self.data objectForKey:@"last_update"]) {
+        [self.updatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [NSDate date:[self.data objectForKey:@"last_update"] fromFormat:@"YYYY-MM-dd'T'HH:mm:ssZZZZ" toFormat:@"MM/dd/YYYY' at 'HH:mm"]]];
+    } else {
+        [self.updatedLabel setText:@""];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
