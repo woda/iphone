@@ -40,7 +40,7 @@
  */
 
 #define TESTING 1
-#define kTestFlightToken    @"80c36e4e359a9bc89cb2365e0b2a808f_MTU5NjM5MjAxMi0xMS0yNiAxODo1NjoyNC43MTU2NDA"
+#define kTestFlightToken    @"9aa51a93-c57b-4aca-8783-75ba5609e739"
 
 @interface WAppDelegate : UIResponder <CoreDataApplicationDelegate>
 
