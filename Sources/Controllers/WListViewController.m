@@ -29,7 +29,10 @@
 }
 
 - (void)updateFooter {
-    [self.countLabel setText:[NSString stringWithFormat:@"%d files, %d folders", [[_data objectForKey:@"files"] count], [[_data objectForKey:@"folders"] count]]];
+    NSInteger folders = [[self.data objectForKey:@"folders"] count];
+    NSInteger files = [[self.data objectForKey:@"files"] count];
+    [self.countLabel setText:[NSString stringWithFormat:@"%d files, %d folders", files, folders]];
+    
     if ([self.data objectForKey:@"last_update"]) {
         [self.updatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [NSDate date:[self.data objectForKey:@"last_update"] fromFormat:@"YYYY-MM-dd'T'HH:mm:ssZZZZ" toFormat:@"MM/dd/YYYY' at 'HH:mm"]]];
     } else {
@@ -45,6 +48,9 @@
 }
 
 - (void)setData:(NSDictionary *)data {
+    if ([data isKindOfClass:[NSArray class]]) {
+        data = [NSDictionary dictionaryWithObject:data forKey:@"files"];
+    }
     _data = data;
     
     [self updateFooter];

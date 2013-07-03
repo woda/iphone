@@ -36,7 +36,7 @@
     [WRequest listFilesInDir:@"" success:success failure:failure];
 }
 
-+ (void)lastUpdatedFilesWithSuccess:(void (^)(id json))success
++ (void)listUpdatedFilesWithSuccess:(void (^)(id json))success
                             failure:(void (^)(id error))failure
 {
     [[WRequest client] getPath:@"/users/recents" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -53,7 +53,7 @@
     }];
 }
 
-+ (void)lastFavoriteFilesWithSuccess:(void (^)(id json))success
++ (void)listFavoriteFilesWithSuccess:(void (^)(id json))success
                              failure:(void (^)(id error))failure
 {
     [[WRequest client] getPath:@"/users/favorites" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {

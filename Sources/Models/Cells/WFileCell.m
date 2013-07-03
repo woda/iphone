@@ -20,6 +20,7 @@
 
 - (void)setFile:(NSDictionary *)file {
     [self.title setText:[file objectForKey:@"name"]];
+    [self.star setHidden:![[file objectForKey:@"favorite"] boolValue]];
 }
 
 - (void)displaySeparator:(Boolean)display {

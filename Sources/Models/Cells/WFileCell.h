@@ -13,6 +13,7 @@
 @property (nonatomic, retain) IBOutlet UIView       *background;
 @property (nonatomic, retain) IBOutlet UIView       *separator;
 @property (nonatomic, retain) IBOutlet UIImageView  *icon;
+@property (nonatomic, retain) IBOutlet UIImageView  *star;
 @property (nonatomic, retain) IBOutlet UILabel      *title;
 
 - (void)setFile:(NSDictionary *)file;

@@ -17,10 +17,10 @@
 + (void)listAllFilesWithSuccess:(void (^)(id json))success
                         failure:(void (^)(id error))failure;
 
-+ (void)lastUpdatedFilesWithSuccess:(void (^)(id json))success
++ (void)listUpdatedFilesWithSuccess:(void (^)(id json))success
                             failure:(void (^)(id error))failure;
 
-+ (void)lastFavoriteFilesWithSuccess:(void (^)(id json))success
++ (void)listFavoriteFilesWithSuccess:(void (^)(id json))success
                              failure:(void (^)(id error))failure;
 
 + (void)markFileAsFavorite:(NSNumber *)idNumber

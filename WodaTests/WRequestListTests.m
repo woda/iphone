@@ -75,7 +75,7 @@
 - (void)test02EmptyRecentFiles {
     kInitWait;
     
-    [WRequest lastUpdatedFilesWithSuccess:^(NSArray *list) {
+    [WRequest listUpdatedFilesWithSuccess:^(NSArray *list) {
         NSLog(@"list: %@", list);
         STAssertTrue([list isKindOfClass:[NSArray class]], @"Should return an array");
         STAssertTrue([list count] == 0, @"Should be empty");
@@ -91,7 +91,7 @@
 - (void)test03EmptyFavoriteFiles {
     kInitWait;
     
-    [WRequest lastFavoriteFilesWithSuccess:^(NSArray *list) {
+    [WRequest listFavoriteFilesWithSuccess:^(NSArray *list) {
         NSLog(@"list: %@", list);
         STAssertTrue([list isKindOfClass:[NSArray class]], @"Should return an array");
         STAssertTrue([list count] == 0, @"Should be empty");
@@ -158,7 +158,7 @@
 - (void)test06RecentFiles {
     kInitWait;
     
-    [WRequest lastUpdatedFilesWithSuccess:^(NSArray *list) {
+    [WRequest listUpdatedFilesWithSuccess:^(NSArray *list) {
         NSLog(@"list: %@", list);
         STAssertTrue([list isKindOfClass:[NSArray class]], @"Should return an array");
         STAssertTrue([list count] > 0, @"Should contain a file");
@@ -174,7 +174,7 @@
 - (void)test07FavoriteFiles {
     kInitWait;
     
-    [WRequest lastFavoriteFilesWithSuccess:^(NSArray *list) {
+    [WRequest listFavoriteFilesWithSuccess:^(NSArray *list) {
         NSLog(@"list: %@", list);
         STAssertTrue([list isKindOfClass:[NSArray class]], @"Should return an array");
         STAssertTrue([list count] == 0, @"Should be empty");
@@ -190,7 +190,7 @@
 - (void)test08MarkAsFavorite {
     kInitWait;
     
-    [WRequest lastUpdatedFilesWithSuccess:^(NSArray *list) {
+    [WRequest listUpdatedFilesWithSuccess:^(NSArray *list) {
         NSNumber *idNumber = [[list lastObject] objectForKey:@"id"];
         [WRequest markFileAsFavorite:idNumber success:^(NSDictionary *json) {
             STAssertTrue([[json objectForKey:@"favorite"] boolValue], @"File should be found in favorites");
@@ -211,7 +211,7 @@
 - (void)test09UnmarkAsFavorite {
     kInitWait;
     
-    [WRequest lastUpdatedFilesWithSuccess:^(NSArray *list) {
+    [WRequest listUpdatedFilesWithSuccess:^(NSArray *list) {
         NSNumber *idNumber = [[list lastObject] objectForKey:@"id"];
         [WRequest unmarkFileAsFavorite:idNumber success:^(NSDictionary *json) {
             STAssertFalse([[json objectForKey:@"favorite"] boolValue], @"File should not be found in favorites");

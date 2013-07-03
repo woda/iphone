@@ -71,20 +71,28 @@
 - (void)addFile:(id)sender {
     // do nothing
     
-    NSString *_filename = @"Icon-72";
-    NSString *_fileExtension = @"png";
-    NSString *filename = [_filename stringByAppendingFormat:@".%@", _fileExtension];
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    NSString *filePath = [bundle pathForResource:_filename ofType:_fileExtension];
-    NSData *file = [NSData dataWithContentsOfFile:filePath];
-    
-    [WRequest addFile:filename withData:file success:^(id json) {
-        DDLogWarn(@"json: %@", json);
-    } loading:^(double pourcentage) {
-        NSLog(@"Loading \"%@\": %.0f%%", filename, pourcentage * 100);
-    } failure:^(id error) {
-        DDLogWarn(@"error: %@", error);
-    }];
+    NSDictionary *file = [[self.data objectForKey:@"files"] first];
+    if ([[file objectForKey:@"favorite"]  boolValue]) {
+        [WRequest unmarkFileAsFavorite:[file objectForKey:@"id"] success:^(id json) {
+            [WRequest listAllFilesWithSuccess:^(NSDictionary *json) {
+                self.data = json;
+            } failure:^(NSDictionary *error) {
+                DDLogError(@"Failure while listing files: %@", error);
+            }];
+        } failure:^(id error) {
+            DDLogError(@"Failure while marking file as favorite: %@", error);
+        }];
+    } else {
+        [WRequest markFileAsFavorite:[file objectForKey:@"id"] success:^(id json) {
+            [WRequest listAllFilesWithSuccess:^(NSDictionary *json) {
+                self.data = json;
+            } failure:^(NSDictionary *error) {
+                DDLogError(@"Failure while listing files: %@", error);
+            }];
+        } failure:^(id error) {
+            DDLogError(@"Failure while marking file as favorite: %@", error);
+        }];
+    }
 }
 
 @end
