@@ -18,9 +18,42 @@
     return (@"WFileCell");
 }
 
+- (Boolean)isFileAnImage:(NSString *)type {
+    NSArray *types = [@".png,.jpg,.jpeg" componentsSeparatedByString:@","];
+    return ([types indexOfObject:[type lowercaseString]] != NSNotFound);
+}
+
+- (Boolean)isFileADocument:(NSString *)type {
+    NSArray *types = [@".txt,.doc,.pdf" componentsSeparatedByString:@","];
+    return ([types indexOfObject:[type lowercaseString]] != NSNotFound);
+}
+
+- (Boolean)isFileAMusic:(NSString *)type {
+    NSArray *types = [@".mp3" componentsSeparatedByString:@","];
+    return ([types indexOfObject:[type lowercaseString]] != NSNotFound);
+}
+
+- (Boolean)isFileAVideo:(NSString *)type {
+    NSArray *types = [@".mpeg" componentsSeparatedByString:@","];
+    return ([types indexOfObject:[type lowercaseString]] != NSNotFound);
+}
+
 - (void)setFile:(NSDictionary *)file {
     [self.title setText:[file objectForKey:@"name"]];
     [self.star setHidden:![[file objectForKey:@"favorite"] boolValue]];
+    
+    NSString *type = [file objectForKey:@"type"];
+    if ([self isFileAnImage:type]) {
+        [self.icon setImage:[UIImage imageNamed:@"list_icon_picture.png"]];
+    } else if ([self isFileADocument:type]) {
+        [self.icon setImage:[UIImage imageNamed:@"list_icon_document.png"]];
+    } else if ([self isFileAMusic:type]) {
+        [self.icon setImage:[UIImage imageNamed:@"list_icon_music.png"]];
+    } else if ([self isFileAVideo:type]) {
+        [self.icon setImage:[UIImage imageNamed:@"list_icon_movie.png"]];
+    } else {
+        [self.icon setImage:[UIImage imageNamed:@"list_icon_document.png"]];
+    }
 }
 
 - (void)displaySeparator:(Boolean)display {
