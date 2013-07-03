@@ -9,10 +9,18 @@
 #import "WMenuPageViewController.h"
 #import "WRequest+List.h"
 
-@interface WListViewController : WMenuPageViewController <UITableViewDataSource, UITableViewDelegate> {
-    NSDictionary    *_data;
-}
+@interface WListViewController : WMenuPageViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, retain) IBOutlet UITableView  *tableView;
+@property (nonatomic, retain) IBOutlet UITableView      *tableView;
+
+@property (nonatomic, retain) IBOutlet UITableViewCell  *foldersHeaderCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell  *filesHeaderCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell  *noFileCell;
+
+@property (nonatomic, retain) IBOutlet UIView           *footerView;
+@property (nonatomic, retain) IBOutlet UILabel          *countLabel;
+@property (nonatomic, retain) IBOutlet UILabel          *updatedLabel;
+
+@property (nonatomic, retain) NSDictionary    *data;
 
 @end

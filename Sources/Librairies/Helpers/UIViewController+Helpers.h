@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol XibCellDelegate <NSObject>
+
++ (NSString *)xibName;
++ (NSString *)reuseIdentifier;
+
+@end
+
 @interface UIViewController (Helpers)
+
++ (NSString *)xibFullName:(NSString *)name;
++ (UITableViewCell *)cellOfClass:(Class<XibCellDelegate>)className;
 
 - (NSString *)xibFullName:(NSString *)name;
 

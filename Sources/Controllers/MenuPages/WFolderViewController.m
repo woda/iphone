@@ -7,6 +7,7 @@
 //
 
 #import "WFolderViewController.h"
+#import "WRequest+Sync.h"
 
 @interface WFolderViewController ()
 
@@ -21,20 +22,18 @@
 - (id)initWithPath:(NSString *)path andData:(NSDictionary *)data {
     self = [super init];
     if (self) {
-        _path = path;
-        _data = data;
+        self.path = path;
+        self.data = data;
         
         void (^success)(NSDictionary *) = ^(NSDictionary *json) {
-            _data = json;
-            DDLogWarn(@"data: %@", _data);
-            [self.tableView reloadData];
+            self.data = json;
         };
         void (^failure)(id) = ^(NSDictionary *error) {
             DDLogError(@"Failure while listing files: %@", error);
         };
         if (_path == nil) {
             [WRequest listAllFilesWithSuccess:success failure:failure];
-        } else if (_data == nil) {
+        } else if (self.data == nil) {
             [WRequest listFilesInDir:_path success:success failure:failure];
         }
     }
@@ -71,6 +70,21 @@
 
 - (void)addFile:(id)sender {
     // do nothing
+    
+    NSString *_filename = @"Icon-72";
+    NSString *_fileExtension = @"png";
+    NSString *filename = [_filename stringByAppendingFormat:@".%@", _fileExtension];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString *filePath = [bundle pathForResource:_filename ofType:_fileExtension];
+    NSData *file = [NSData dataWithContentsOfFile:filePath];
+    
+    [WRequest addFile:filename withData:file success:^(id json) {
+        DDLogWarn(@"json: %@", json);
+    } loading:^(double pourcentage) {
+        NSLog(@"Loading \"%@\": %.0f%%", filename, pourcentage * 100);
+    } failure:^(id error) {
+        DDLogWarn(@"error: %@", error);
+    }];
 }
 
 @end

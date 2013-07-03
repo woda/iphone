@@ -8,9 +8,9 @@
 
 #import "WListViewController.h"
 
-@interface WFolderViewController : WListViewController {
-    NSString        *_path;
-}
+@interface WFolderViewController : WListViewController
+
+@property (nonatomic, retain) NSString    *path;
 
 - (id)initWithPath:(NSString *)path andData:(NSDictionary *)data;
 

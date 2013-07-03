@@ -7,6 +7,8 @@
 //
 
 #import "WListViewController.h"
+#import "WFolderCell.h"
+#import "WFileCell.h"
 
 @interface WListViewController ()
 
@@ -19,58 +21,106 @@
 #pragma mark Initialization methods
 
 - (id)init {
-    self = [super initWithNibName:[self xibFullName:@"WFolderView"] bundle:nil];
+    self = [super initWithNibName:[self xibFullName:@"WListView"] bundle:nil];
     if (self) {
         _data = nil;
     }
     return self;
 }
 
+- (void)updateFooter {
+    [self.countLabel setText:[NSString stringWithFormat:@"%d files, %d folders", [[_data objectForKey:@"files"] count], [[_data objectForKey:@"folders"] count]]];
+    [self.updatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [NSDate date:[_data objectForKey:@"last_update"] fromFormat:@"YYYY-MM-dd'T'HH:mm:ssZZZZ" toFormat:@"MM/dd/YYYY' at 'HH:mm"]]];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView setTableFooterView:self.footerView];
+    [self updateFooter];
+}
+
+- (void)setData:(NSDictionary *)data {
+    _data = data;
+    
+    [self updateFooter];
+    
+    DDLogWarn(@"data: %@", _data);
+    [self.tableView reloadData];
+}
+
 
 #pragma mark -
 #pragma mark TableView methods
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return (2);
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return (MAX(1, [[_data objectForKey:@"folders"] count]));
+    NSInteger rows = 0;
+    if ([[_data objectForKey:@"folders"] count]) {
+        rows += 1 + [[_data objectForKey:@"folders"] count];
     }
-    return (MAX(1, [[_data objectForKey:@"files"] count]));
+    rows += 1 + MAX(1, [[_data objectForKey:@"files"] count]);
+    return (rows);
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    if (section == 0) {
-        return (@"Folders");
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger idx = indexPath.row;
+    if ([[_data objectForKey:@"folders"] count]) {
+        if (idx == 0) {
+            return (_foldersHeaderCell.frame.size.height);
+        }
+        idx -= 1 + [[_data objectForKey:@"folders"] count];
     }
-    return (@"Files");
+    if (idx == 0) {
+        return (_filesHeaderCell.frame.size.height);
+    }
+    return (44);
+}
+
+- (UITableViewCell *)folderCellForIndex:(NSInteger)idx {
+    if (idx) {
+        idx--;
+        NSString *reuseIdentifier = [WFolderCell reuseIdentifier];
+        UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+        if (cell == nil) {
+            cell = [UIViewController cellOfClass:[WFolderCell class]];
+        }
+        [(WFolderCell *)cell setFolder:[[_data objectForKey:@"folders"] objectAtIndex:idx]];
+        [(WFolderCell *)cell displaySeparator:(idx < ([[_data objectForKey:@"folders"] count] - 1))];
+        return (cell);
+    }
+    return (_foldersHeaderCell);
+}
+
+- (UITableViewCell *)fileCellForIndex:(NSInteger)idx {
+    if (idx) {
+        idx--;
+        if ([[_data objectForKey:@"files"] count]) {
+            NSString *reuseIdentifier = [WFileCell reuseIdentifier];
+            UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+            if (cell == nil) {
+                cell = [UIViewController cellOfClass:[WFileCell class]];
+            }
+            if ([[_data objectForKey:@"files"] count]) {
+                [(WFileCell *)cell setFile:[[_data objectForKey:@"files"] objectAtIndex:idx]];
+                [(WFileCell *)cell displaySeparator:(idx < ([[_data objectForKey:@"files"] count] - 1))];
+                return (cell);
+            }
+        } else {
+            return (_noFileCell);
+        }
+    }
+    return (_filesHeaderCell);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *reuseIdentifier = @"fileCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
-    }
-    NSDictionary *file = nil;
-    if (indexPath.section == 0) {
-        if ([[_data objectForKey:@"folders"] count]) {
-            file = [[_data objectForKey:@"folders"] objectAtIndex:indexPath.row];
-            [cell.textLabel setText:[file objectForKey:@"name"]];
-        } else {
-            [cell.textLabel setText:@"No folders"];
+    NSInteger idx = indexPath.row;
+    if ([[_data objectForKey:@"folders"] count]) {
+        if (idx <= [[_data objectForKey:@"folders"] count]) {
+            return ([self folderCellForIndex:idx]);
         }
-    } else {
-        if ([[_data objectForKey:@"files"] count]) {
-            file = [[_data objectForKey:@"files"] objectAtIndex:indexPath.row];
-            [cell.textLabel setText:[file objectForKey:@"name"]];
-        } else {
-            [cell.textLabel setText:@"No files"];
-        }
+        idx -= 1 + [[_data objectForKey:@"folders"] count];
     }
-    return (cell);
+    return ([self fileCellForIndex:idx]);
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

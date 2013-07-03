@@ -10,11 +10,22 @@
 
 @implementation UIViewController (Helpers)
 
-- (NSString *)xibFullName:(NSString *)name {
++ (NSString *)xibFullName:(NSString *)name {
     if ([[NSBundle mainBundle] pathForResource:name ofType:@"nib"] != nil) {
         return (name);
     }
     return ([NSString stringWithFormat:@"%@_%@", name, (([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? @"iPhone" : @"iPad")]);
+}
+
++ (UITableViewCell *)cellOfClass:(Class<XibCellDelegate>)className {
+    UIViewController *controller = [[UIViewController alloc] initWithNibName:[UIViewController xibFullName:[className xibName]] bundle:nil];
+    [controller loadView];
+    UITableViewCell *cell = (UITableViewCell *)controller.view;
+    return (cell);
+}
+
+- (NSString *)xibFullName:(NSString *)name {
+    return ([UIViewController xibFullName:name]);
 }
 
 - (void)registerForKeyboardNotifications {

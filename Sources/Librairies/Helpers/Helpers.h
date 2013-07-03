@@ -12,5 +12,6 @@
 #import "UIViewController+Helpers.h"
 #import "NSArray+Shortcuts.h"
 #import "NSObject+Blocks.h"
+#import "NSDate+Format.h"
 
 #endif

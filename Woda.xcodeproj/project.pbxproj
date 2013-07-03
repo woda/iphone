@@ -200,6 +200,11 @@
 		A2C170C517838A1D00EAB93E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C170C117838A1D00EAB93E /* libTestFlight.a */; };
 		A2C170C617838A1D00EAB93E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A2C170C217838A1D00EAB93E /* README.md */; };
 		A2C170C717838A1D00EAB93E /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = A2C170C317838A1D00EAB93E /* release_notes.md */; };
+		A2C170CA1783A2AF00EAB93E /* WFolderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C170C91783A2AE00EAB93E /* WFolderCell.m */; };
+		A2C170CD1783A2BD00EAB93E /* WFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C170CC1783A2BC00EAB93E /* WFileCell.m */; };
+		A2C170CF1783A66D00EAB93E /* WFolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C170CE1783A66D00EAB93E /* WFolderCell.xib */; };
+		A2C170D11783A67A00EAB93E /* WFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C170D01783A67A00EAB93E /* WFileCell.xib */; };
+		A2C170D41783B88500EAB93E /* NSDate+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C170D31783B88500EAB93E /* NSDate+Format.m */; };
 		A2C601381630485A00CB53B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601371630485A00CB53B3 /* UIKit.framework */; };
 		A2C6013A1630485A00CB53B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601391630485A00CB53B3 /* Foundation.framework */; };
 		A2C6013C1630485A00CB53B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C6013B1630485A00CB53B3 /* CoreGraphics.framework */; };
@@ -225,7 +230,7 @@
 		A2DC450216305AEE00E152A6 /* Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44FF16305AED00E152A6 /* Background@2x.png */; };
 		A2E8C589178355B500F0BEF0 /* WSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E8C588178355B500F0BEF0 /* WSettingsView.xib */; };
 		A2E8C58C178364DE00F0BEF0 /* NSObject+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E8C58B178364DE00F0BEF0 /* NSObject+Blocks.m */; };
-		A2E8C58E1783719100F0BEF0 /* WFolderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E8C58D1783719100F0BEF0 /* WFolderView.xib */; };
+		A2E8C58E1783719100F0BEF0 /* WListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E8C58D1783719100F0BEF0 /* WListView.xib */; };
 		A2F62E8116647F8B00F9CB08 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F62E8016647F8B00F9CB08 /* libz.dylib */; };
 		A2F7C620177954C30034D327 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F51630546C00E152A6 /* iTunesArtwork.png */; };
 /* End PBXBuildFile section */
@@ -451,6 +456,14 @@
 		A2C170C217838A1D00EAB93E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		A2C170C317838A1D00EAB93E /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
 		A2C170C417838A1D00EAB93E /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		A2C170C81783A2AE00EAB93E /* WFolderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFolderCell.h; sourceTree = "<group>"; };
+		A2C170C91783A2AE00EAB93E /* WFolderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFolderCell.m; sourceTree = "<group>"; };
+		A2C170CB1783A2BC00EAB93E /* WFileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFileCell.h; sourceTree = "<group>"; };
+		A2C170CC1783A2BC00EAB93E /* WFileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFileCell.m; sourceTree = "<group>"; };
+		A2C170CE1783A66D00EAB93E /* WFolderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WFolderCell.xib; sourceTree = "<group>"; };
+		A2C170D01783A67A00EAB93E /* WFileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WFileCell.xib; sourceTree = "<group>"; };
+		A2C170D21783B88400EAB93E /* NSDate+Format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Format.h"; sourceTree = "<group>"; };
+		A2C170D31783B88500EAB93E /* NSDate+Format.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Format.m"; sourceTree = "<group>"; };
 		A2C601331630485A00CB53B3 /* Woda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Woda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C601371630485A00CB53B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A2C601391630485A00CB53B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -483,7 +496,7 @@
 		A2E8C588178355B500F0BEF0 /* WSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WSettingsView.xib; sourceTree = "<group>"; };
 		A2E8C58A178364DE00F0BEF0 /* NSObject+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Blocks.h"; sourceTree = "<group>"; };
 		A2E8C58B178364DE00F0BEF0 /* NSObject+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Blocks.m"; sourceTree = "<group>"; };
-		A2E8C58D1783719100F0BEF0 /* WFolderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WFolderView.xib; sourceTree = "<group>"; };
+		A2E8C58D1783719100F0BEF0 /* WListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WListView.xib; sourceTree = "<group>"; };
 		A2F62E8016647F8B00F9CB08 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A2F7C61D1779431C0034D327 /* WRequestSyncTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRequestSyncTests.h; sourceTree = "<group>"; };
 		A2F7C61E1779431C0034D327 /* WRequestSyncTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRequestSyncTests.m; sourceTree = "<group>"; };
@@ -530,6 +543,10 @@
 				A2020D66165E41980057FCCD /* WCell.m */,
 				A21E708A17810E0E005170E5 /* WMenuCell.h */,
 				A21E708B17810E0E005170E5 /* WMenuCell.m */,
+				A2C170C81783A2AE00EAB93E /* WFolderCell.h */,
+				A2C170C91783A2AE00EAB93E /* WFolderCell.m */,
+				A2C170CB1783A2BC00EAB93E /* WFileCell.h */,
+				A2C170CC1783A2BC00EAB93E /* WFileCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -789,6 +806,8 @@
 			isa = PBXGroup;
 			children = (
 				A2677B13165E14AB00C1D630 /* Helpers.h */,
+				A2C170D21783B88400EAB93E /* NSDate+Format.h */,
+				A2C170D31783B88500EAB93E /* NSDate+Format.m */,
 				A2677B10165E148000C1D630 /* UIViewController+Helpers.h */,
 				A2677B11165E148000C1D630 /* UIViewController+Helpers.m */,
 				A2A0669B16D4CBBF00D08D8D /* NSArray+Shortcuts.h */,
@@ -1016,8 +1035,10 @@
 				A2677B0D165E125700C1D630 /* WHomeView.xib */,
 				A2C6018516304BAF00CB53B3 /* WDetailView.xib */,
 				A2A0669916D48D4900D08D8D /* WUserLoginView.xib */,
-				A2E8C58D1783719100F0BEF0 /* WFolderView.xib */,
+				A2E8C58D1783719100F0BEF0 /* WListView.xib */,
 				A2E8C588178355B500F0BEF0 /* WSettingsView.xib */,
+				A2C170CE1783A66D00EAB93E /* WFolderCell.xib */,
+				A2C170D01783A67A00EAB93E /* WFileCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1262,9 +1283,11 @@
 				A239199217801F380017264F /* upload_grey_check.png in Resources */,
 				A239199317801F380017264F /* upload_grey_check@2x.png in Resources */,
 				A2E8C589178355B500F0BEF0 /* WSettingsView.xib in Resources */,
-				A2E8C58E1783719100F0BEF0 /* WFolderView.xib in Resources */,
+				A2E8C58E1783719100F0BEF0 /* WListView.xib in Resources */,
 				A2C170C617838A1D00EAB93E /* README.md in Resources */,
 				A2C170C717838A1D00EAB93E /* release_notes.md in Resources */,
+				A2C170CF1783A66D00EAB93E /* WFolderCell.xib in Resources */,
+				A2C170D11783A67A00EAB93E /* WFileCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1366,6 +1389,9 @@
 				A2A3305D1782D08500C6F62E /* WSharedViewController.m in Sources */,
 				A2A330601782D09A00C6F62E /* WSettingViewController.m in Sources */,
 				A2E8C58C178364DE00F0BEF0 /* NSObject+Blocks.m in Sources */,
+				A2C170CA1783A2AF00EAB93E /* WFolderCell.m in Sources */,
+				A2C170CD1783A2BD00EAB93E /* WFileCell.m in Sources */,
+				A2C170D41783B88500EAB93E /* NSDate+Format.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
