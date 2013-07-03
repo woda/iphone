@@ -34,7 +34,7 @@
     [self.countLabel setText:[NSString stringWithFormat:@"%d files, %d folders", files, folders]];
     
     if ([self.data objectForKey:@"last_update"]) {
-        [self.updatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [NSDate date:[self.data objectForKey:@"last_update"] fromFormat:@"YYYY-MM-dd'T'HH:mm:ssZZZZ" toFormat:@"MM/dd/YYYY' at 'HH:mm"]]];
+        [self.updatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [NSDate date:[self.data objectForKey:@"last_update"] fromFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ" toFormat:@"MM/dd/yyyy' at 'hh:mm a"]]];
     } else {
         [self.updatedLabel setText:@""];
     }
@@ -45,6 +45,11 @@
     
     [self.tableView setTableFooterView:self.footerView];
     [self updateFooter];
+    
+    if (self.data == nil) {
+        [self.tableView setAlpha:0.0];
+        [self.loading startAnimating];
+    }
 }
 
 - (void)setData:(NSDictionary *)data {
@@ -55,8 +60,18 @@
     
     [self updateFooter];
     
+    if (self.data) {
+        [self.loading stopAnimating];
+    }
+    
     DDLogWarn(@"data: %@", _data);
     [self.tableView reloadData];
+    
+    if (self.tableView.alpha == 0.0) {
+        [UIView animateWithDuration:0.3 animations:^{
+            [self.tableView setAlpha:1.0];
+        }];
+    }
 }
 
 

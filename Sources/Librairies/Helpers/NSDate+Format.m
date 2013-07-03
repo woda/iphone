@@ -14,10 +14,12 @@
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:inputFormat];
     NSDate *date = [df dateFromString:input];
+    NSLog(@"date: %@", date);
     
     df = [[NSDateFormatter alloc] init];
     [df setDateFormat:outputFormat];
-    [df setTimeZone:[NSTimeZone systemTimeZone]];
+    [df setAMSymbol:@"AM"];
+    [df setPMSymbol:@"PM"];
     NSString *dateString = [df stringFromDate:date];
     
     return (dateString);

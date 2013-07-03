@@ -13,6 +13,8 @@
 
 @property (nonatomic, retain) IBOutlet UITableView      *tableView;
 
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView  *loading;
+
 @property (nonatomic, retain) IBOutlet UITableViewCell  *foldersHeaderCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell  *filesHeaderCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell  *noFileCell;
