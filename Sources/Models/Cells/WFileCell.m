@@ -7,6 +7,7 @@
 //
 
 #import "WFileCell.h"
+#import "WRequest+Sync.h"
 
 @implementation WFileCell
 
@@ -39,6 +40,7 @@
 }
 
 - (void)setFile:(NSDictionary *)file {
+    self.path = [file objectForKey:@"name"];
     [self.title setText:[file objectForKey:@"name"]];
     [self.star setHidden:![[file objectForKey:@"favorite"] boolValue]];
     
@@ -78,6 +80,30 @@
     } else {
         [self.background setBackgroundColor:[UIColor whiteColor]];
     }
+}
+
+
+#pragma mark - Actions methods
+
+- (IBAction)showOptions:(UISwipeGestureRecognizer *)gesture {
+    if (gesture.direction == UISwipeGestureRecognizerDirectionLeft) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.deleteButton.alpha = 1.0;
+        }];
+    } else {
+        [UIView animateWithDuration:0.3
+ animations:^{
+            self.deleteButton.alpha = 0.0;
+        }];
+    }
+}
+
+- (IBAction)delete:(id)sender {
+    [WRequest removeFile:self.path success:^(id json) {
+        // do noyhing
+    } failure:^(id error) {
+        DDLogError(@"Failure while removing '%@'", self.path);
+    }];
 }
 
 @end
