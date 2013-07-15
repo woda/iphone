@@ -14,7 +14,6 @@
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:inputFormat];
     NSDate *date = [df dateFromString:input];
-    NSLog(@"date: %@", date);
     
     df = [[NSDateFormatter alloc] init];
     [df setDateFormat:outputFormat];

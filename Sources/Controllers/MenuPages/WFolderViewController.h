@@ -7,8 +7,9 @@
 //
 
 #import "WListViewController.h"
+#import "WUploadManager.h"
 
-@interface WFolderViewController : WListViewController
+@interface WFolderViewController : WListViewController <WUploadManagerPickerDelegate>
 
 @property (nonatomic, retain) NSString    *path;
 

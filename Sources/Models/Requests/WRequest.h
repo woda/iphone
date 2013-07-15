@@ -8,7 +8,6 @@
 
 #import "AFJSONRequestOperation.h"
 #import "AFHTTPClient.h"
-#import "DDTTYLogger.h"
 
 //#define kBaseURL    @"https://127.0.0.1:3000"
 #define kBaseURL    @"https://woda-server.com:3000"

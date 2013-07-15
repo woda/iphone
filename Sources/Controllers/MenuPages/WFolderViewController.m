@@ -7,6 +7,7 @@
 //
 
 #import "WFolderViewController.h"
+#import "WUploadManager+Picker.h"
 #import "WRequest+Sync.h"
 
 @interface WFolderViewController ()
@@ -69,30 +70,38 @@
 #pragma mark Upload methods
 
 - (void)addFile:(id)sender {
-    // do nothing
+    [WUploadManager presentPickerInController:self];
     
-    NSDictionary *file = [[self.data objectForKey:@"files"] first];
-    if ([[file objectForKey:@"favorite"]  boolValue]) {
-        [WRequest unmarkFileAsFavorite:[file objectForKey:@"id"] success:^(id json) {
-            [WRequest listAllFilesWithSuccess:^(NSDictionary *json) {
-                self.data = json;
-            } failure:^(NSDictionary *error) {
-                DDLogError(@"Failure while listing files: %@", error);
-            }];
-        } failure:^(id error) {
-            DDLogError(@"Failure while marking file as favorite: %@", error);
-        }];
-    } else {
-        [WRequest markFileAsFavorite:[file objectForKey:@"id"] success:^(id json) {
-            [WRequest listAllFilesWithSuccess:^(NSDictionary *json) {
-                self.data = json;
-            } failure:^(NSDictionary *error) {
-                DDLogError(@"Failure while listing files: %@", error);
-            }];
-        } failure:^(id error) {
-            DDLogError(@"Failure while marking file as favorite: %@", error);
-        }];
-    }
+//    NSDictionary *file = [[self.data objectForKey:@"files"] first];
+//    if ([[file objectForKey:@"favorite"]  boolValue]) {
+//        [WRequest unmarkFileAsFavorite:[file objectForKey:@"id"] success:^(id json) {
+//            [WRequest listAllFilesWithSuccess:^(NSDictionary *json) {
+//                self.data = json;
+//            } failure:^(NSDictionary *error) {
+//                DDLogError(@"Failure while listing files: %@", error);
+//            }];
+//        } failure:^(id error) {
+//            DDLogError(@"Failure while marking file as favorite: %@", error);
+//        }];
+//    } else {
+//        [WRequest markFileAsFavorite:[file objectForKey:@"id"] success:^(id json) {
+//            [WRequest listAllFilesWithSuccess:^(NSDictionary *json) {
+//                self.data = json;
+//            } failure:^(NSDictionary *error) {
+//                DDLogError(@"Failure while listing files: %@", error);
+//            }];
+//        } failure:^(id error) {
+//            DDLogError(@"Failure while marking file as favorite: %@", error);
+//        }];
+//    }
+}
+
+- (void)imagePickerDismissed:(UIImagePickerController *)picker {
+    [WRequest listAllFilesWithSuccess:^(NSDictionary *json) {
+        self.data = json;
+    } failure:^(NSDictionary *error) {
+        DDLogError(@"Failure while listing files: %@", error);
+    }];
 }
 
 @end

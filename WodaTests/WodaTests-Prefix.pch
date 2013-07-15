@@ -8,6 +8,8 @@
 
     #import <SystemConfiguration/SystemConfiguration.h>
     #import <MobileCoreServices/MobileCoreServices.h>
+
+    #import "DDTTYLogger.h"
 #endif
 
 #ifdef DEBUG

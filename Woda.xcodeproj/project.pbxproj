@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A2020D5B165E2D960057FCCD /* WNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D5A165E2D960057FCCD /* WNavigationController.m */; };
 		A2020D67165E41980057FCCD /* WCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D66165E41980057FCCD /* WCell.m */; };
-		A2020D6A165E4DC80057FCCD /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D69165E4DC80057FCCD /* Item.m */; };
 		A21E708C17810E0E005170E5 /* WMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A21E708B17810E0E005170E5 /* WMenuCell.m */; };
 		A22D470016636A5D00B4B448 /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = A22D46FE16636A5D00B4B448 /* shadow.png */; };
 		A22D470116636A5D00B4B448 /* shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A22D46FF16636A5D00B4B448 /* shadow@2x.png */; };
@@ -163,6 +162,7 @@
 		A2411B5F16D26B460060EFF7 /* WRequest+User.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5716D26B460060EFF7 /* WRequest+User.m */; };
 		A2411B6016D26B460060EFF7 /* WRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5916D26B460060EFF7 /* WRequest.m */; };
 		A2411B6116D26B460060EFF7 /* WRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5916D26B460060EFF7 /* WRequest.m */; };
+		A245D0AA179363EA0075CB11 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A245D0A9179363EA0075CB11 /* AssetsLibrary.framework */; };
 		A24FC761165E6DC5002E2C26 /* WListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24FC760165E6DC5002E2C26 /* WListViewController.m */; };
 		A2677B00165E0AE900C1D630 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2677B02165E0AE900C1D630 /* Localizable.strings */; };
 		A2677B08165E0F0200C1D630 /* WHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B07165E0F0200C1D630 /* WHomeViewController.m */; };
@@ -205,6 +205,9 @@
 		A2C170CF1783A66D00EAB93E /* WFolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C170CE1783A66D00EAB93E /* WFolderCell.xib */; };
 		A2C170D11783A67A00EAB93E /* WFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C170D01783A67A00EAB93E /* WFileCell.xib */; };
 		A2C170D41783B88500EAB93E /* NSDate+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C170D31783B88500EAB93E /* NSDate+Format.m */; };
+		A2C170D71784DEA900EAB93E /* WUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C170D61784DEA800EAB93E /* WUploadManager.m */; };
+		A2C170DA1784E00E00EAB93E /* WUploadManager+Picker.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C170D91784E00D00EAB93E /* WUploadManager+Picker.m */; };
+		A2C170DE1784E04E00EAB93E /* WPicturePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C170DD1784E04E00EAB93E /* WPicturePickerViewController.m */; };
 		A2C601381630485A00CB53B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601371630485A00CB53B3 /* UIKit.framework */; };
 		A2C6013A1630485A00CB53B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C601391630485A00CB53B3 /* Foundation.framework */; };
 		A2C6013C1630485A00CB53B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C6013B1630485A00CB53B3 /* CoreGraphics.framework */; };
@@ -240,8 +243,6 @@
 		A2020D5A165E2D960057FCCD /* WNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNavigationController.m; sourceTree = "<group>"; };
 		A2020D65165E41980057FCCD /* WCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCell.h; sourceTree = "<group>"; };
 		A2020D66165E41980057FCCD /* WCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCell.m; sourceTree = "<group>"; };
-		A2020D68165E4DC80057FCCD /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = Sources/Models/CoreData/Item.h; sourceTree = SOURCE_ROOT; };
-		A2020D69165E4DC80057FCCD /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = Sources/Models/CoreData/Item.m; sourceTree = SOURCE_ROOT; };
 		A21E708A17810E0E005170E5 /* WMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMenuCell.h; sourceTree = "<group>"; };
 		A21E708B17810E0E005170E5 /* WMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMenuCell.m; sourceTree = "<group>"; };
 		A22D46FE16636A5D00B4B448 /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
@@ -397,6 +398,7 @@
 		A2411B5716D26B460060EFF7 /* WRequest+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WRequest+User.m"; sourceTree = "<group>"; };
 		A2411B5816D26B460060EFF7 /* WRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRequest.h; sourceTree = "<group>"; };
 		A2411B5916D26B460060EFF7 /* WRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRequest.m; sourceTree = "<group>"; };
+		A245D0A9179363EA0075CB11 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		A24FC75F165E6DC5002E2C26 /* WListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WListViewController.h; sourceTree = "<group>"; };
 		A24FC760165E6DC5002E2C26 /* WListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WListViewController.m; sourceTree = "<group>"; };
 		A2677B01165E0AE900C1D630 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -464,6 +466,12 @@
 		A2C170D01783A67A00EAB93E /* WFileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WFileCell.xib; sourceTree = "<group>"; };
 		A2C170D21783B88400EAB93E /* NSDate+Format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Format.h"; sourceTree = "<group>"; };
 		A2C170D31783B88500EAB93E /* NSDate+Format.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Format.m"; sourceTree = "<group>"; };
+		A2C170D51784DEA700EAB93E /* WUploadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUploadManager.h; sourceTree = "<group>"; };
+		A2C170D61784DEA800EAB93E /* WUploadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUploadManager.m; sourceTree = "<group>"; };
+		A2C170D81784E00C00EAB93E /* WUploadManager+Picker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WUploadManager+Picker.h"; sourceTree = "<group>"; };
+		A2C170D91784E00D00EAB93E /* WUploadManager+Picker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WUploadManager+Picker.m"; sourceTree = "<group>"; };
+		A2C170DC1784E04E00EAB93E /* WPicturePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPicturePickerViewController.h; sourceTree = "<group>"; };
+		A2C170DD1784E04E00EAB93E /* WPicturePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPicturePickerViewController.m; sourceTree = "<group>"; };
 		A2C601331630485A00CB53B3 /* Woda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Woda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C601371630485A00CB53B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A2C601391630485A00CB53B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -520,6 +528,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A245D0AA179363EA0075CB11 /* AssetsLibrary.framework in Frameworks */,
 				A23919951780DAA40017264F /* QuartzCore.framework in Frameworks */,
 				A29C736717030675003E39BA /* QuickLook.framework in Frameworks */,
 				A2411B4B16D255D10060EFF7 /* SystemConfiguration.framework in Frameworks */,
@@ -905,6 +914,19 @@
 			path = TestFlightSDK;
 			sourceTree = "<group>";
 		};
+		A2C170DB1784E01700EAB93E /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				A2C170D51784DEA700EAB93E /* WUploadManager.h */,
+				A2C170D61784DEA800EAB93E /* WUploadManager.m */,
+				A2C170D81784E00C00EAB93E /* WUploadManager+Picker.h */,
+				A2C170D91784E00D00EAB93E /* WUploadManager+Picker.m */,
+				A2C170DC1784E04E00EAB93E /* WPicturePickerViewController.h */,
+				A2C170DD1784E04E00EAB93E /* WPicturePickerViewController.m */,
+			);
+			name = Upload;
+			sourceTree = "<group>";
+		};
 		A2C601281630485A00CB53B3 = {
 			isa = PBXGroup;
 			children = (
@@ -928,6 +950,7 @@
 		A2C601361630485A00CB53B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A245D0A9179363EA0075CB11 /* AssetsLibrary.framework */,
 				A23919941780DAA40017264F /* QuartzCore.framework */,
 				A29C736617030675003E39BA /* QuickLook.framework */,
 				A2411B4A16D255D10060EFF7 /* SystemConfiguration.framework */,
@@ -999,20 +1022,11 @@
 			children = (
 				A2A0669016D4766900D08D8D /* WUser.h */,
 				A2A0669116D4766900D08D8D /* WUser.m */,
+				A2C170DB1784E01700EAB93E /* Upload */,
 				A2411B5116D26B460060EFF7 /* Requests */,
 				A2020D64165E41980057FCCD /* Cells */,
-				A2C6017716304BAF00CB53B3 /* CoreData */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		A2C6017716304BAF00CB53B3 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				A2020D68165E4DC80057FCCD /* Item.h */,
-				A2020D69165E4DC80057FCCD /* Item.m */,
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		A2C6017816304BAF00CB53B3 /* Others */ = {
@@ -1352,7 +1366,6 @@
 				A2677B12165E148000C1D630 /* UIViewController+Helpers.m in Sources */,
 				A2020D5B165E2D960057FCCD /* WNavigationController.m in Sources */,
 				A2020D67165E41980057FCCD /* WCell.m in Sources */,
-				A2020D6A165E4DC80057FCCD /* Item.m in Sources */,
 				A24FC761165E6DC5002E2C26 /* WListViewController.m in Sources */,
 				A2411B3616D2544D0060EFF7 /* AFHTTPClient.m in Sources */,
 				A2411B3816D2544D0060EFF7 /* AFHTTPRequestOperation.m in Sources */,
@@ -1392,6 +1405,9 @@
 				A2C170CA1783A2AF00EAB93E /* WFolderCell.m in Sources */,
 				A2C170CD1783A2BD00EAB93E /* WFileCell.m in Sources */,
 				A2C170D41783B88500EAB93E /* NSDate+Format.m in Sources */,
+				A2C170D71784DEA900EAB93E /* WUploadManager.m in Sources */,
+				A2C170DA1784E00E00EAB93E /* WUploadManager+Picker.m in Sources */,
+				A2C170DE1784E04E00EAB93E /* WPicturePickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

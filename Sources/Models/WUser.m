@@ -26,11 +26,11 @@ static WUser *current = nil;
 }
 
 + (WUser *)current {
-//    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-//    if ((current == nil) && ([userDefault valueForKey:kUserLoginKey])) {
-//        current = [[WUser alloc] initWithLogin:[userDefault valueForKey:kUserLoginKey]
-//                                   andPassword:[userDefault valueForKey:kUserPasswordKey]];
-//    }
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    if ((current == nil) && ([userDefault valueForKey:kUserLoginKey])) {
+        current = [[WUser alloc] initWithLogin:[userDefault valueForKey:kUserLoginKey]
+                                   andPassword:[userDefault valueForKey:kUserPasswordKey]];
+    }
     return (current);
 }
 

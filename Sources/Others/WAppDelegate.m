@@ -12,7 +12,6 @@
 //#import "WDetailViewController.h"
 #import "WUserLoginViewController.h"
 #import "AFHTTPRequestOperationLogger.h"
-#import "DDTTYLogger.h"
 
 @implementation WAppDelegate
 

@@ -19,6 +19,7 @@
 
     #import "TestFlight.h"
 
+    #import "DDTTYLogger.h"
     #import "Helpers.h"
 #endif
 
