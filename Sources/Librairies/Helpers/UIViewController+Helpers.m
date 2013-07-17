@@ -21,6 +21,15 @@
     UIViewController *controller = [[UIViewController alloc] initWithNibName:[UIViewController xibFullName:[className xibName]] bundle:nil];
     [controller loadView];
     UITableViewCell *cell = (UITableViewCell *)controller.view;
+    [cell prepareForReuse];
+    return (cell);
+}
+
++ (UICollectionViewCell *)collectionCellOfClass:(Class<XibCellDelegate>)className {
+    UIViewController *controller = [[UIViewController alloc] initWithNibName:[UIViewController xibFullName:[className xibName]] bundle:nil];
+    [controller loadView];
+    UICollectionViewCell *cell = (UICollectionViewCell *)controller.view;
+    [cell prepareForReuse];
     return (cell);
 }
 

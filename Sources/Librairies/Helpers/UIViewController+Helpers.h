@@ -19,6 +19,7 @@
 
 + (NSString *)xibFullName:(NSString *)name;
 + (UITableViewCell *)cellOfClass:(Class<XibCellDelegate>)className;
++ (UICollectionViewCell *)collectionCellOfClass:(Class<XibCellDelegate>)className;
 
 - (NSString *)xibFullName:(NSString *)name;
 

@@ -8,6 +8,22 @@
 
 #import "WListViewController.h"
 
-@interface WUploadingViewController : WListViewController
+@interface WUploadingViewController : WMenuPageViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+
+@property (nonatomic, retain) IBOutlet UICollectionView *collectionView;
+
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView  *loading;
+
+@property (nonatomic, retain) IBOutlet UITableViewCell  *foldersHeaderCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell  *filesHeaderCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell  *noFileCell;
+
+@property (nonatomic, retain) IBOutlet UIView           *headerView;
+
+@property (nonatomic, retain) IBOutlet UIView           *footerView;
+@property (nonatomic, retain) IBOutlet UILabel          *countLabel;
+@property (nonatomic, retain) IBOutlet UILabel          *updatedLabel;
+
+@property (nonatomic, retain) NSMutableArray            *data;
 
 @end

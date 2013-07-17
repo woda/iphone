@@ -48,6 +48,7 @@ static char const * const delegateKey = "delegate";
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    NSLog(@"Picker return: %@", info);
     [self uploadFile:UIImagePNGRepresentation([info objectForKey:@"UIImagePickerControllerOriginalImage"])
                 name:nil
            mediaType:[info objectForKey:@"UIImagePickerControllerMediaType"]

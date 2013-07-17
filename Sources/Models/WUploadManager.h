@@ -8,11 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
+#define kUploadList             @"kUploadList"
+#define kUploadListLastUpdate   @"kUploadListLastUpdate"
+#define kUploadFileName         @"kUploadFileName"
+#define kUploadMediaType        @"kUploadMediaType"
+#define kUploadThumbnail        @"kUploadThumbnail"
+#define kUploadAssetURL         @"kUploadAssetURL"
+#define kUploadNotificationName @"kUploadNotificationName"
+#define kUploadDate             @"kUploadDate"
+#define kUploadProgress         @"kUploadProgress"
+#define kUploadNeedsUpload      @"kUploadNeedsUpload"
+
+
 @protocol WUploadManagerPickerDelegate;
 
 @interface WUploadManager : NSObject
 
 + (WUploadManager *)shared;
++ (NSDictionary *)uploadList;
 
 - (void)uploadFile:(NSData *)file name:(NSString *)name mediaType:(NSString *)mediaType assetURL:(NSURL *)url;
 
