@@ -41,12 +41,38 @@
 
 #pragma mark - Data related methods
 
+- (NSArray *)filesForPeriod:(NSString *)period inFiles:(NSMutableArray *)files {
+    NSMutableArray *today = [[NSMutableArray alloc] init];
+    NSArray *array = [files copy];
+    for (NSDictionary *file in array) {
+        if ([[file[kUploadDate] toFormat:@"yyyy-MM-dd"] hasPrefix:period]) {
+            [today addObject:file];
+            [files removeObject:file];
+        }
+    }
+    return (today);
+}
+
 - (void)reloadData {
-    self.data = [NSMutableArray array];
-    [self.data addObject:[NSMutableArray array]];
-    [self.data[0] addObjectsFromArray:[[[WUploadManager uploadList] allValues] sortedArrayUsingComparator:^NSComparisonResult(NSDictionary *info1, NSDictionary *info2) {
+    NSMutableArray *files = [NSMutableArray arrayWithArray:[[[WUploadManager uploadList] allValues] sortedArrayUsingComparator:^NSComparisonResult(NSDictionary *info1, NSDictionary *info2) {
         return ([info2[kUploadDate] compare:info1[kUploadDate]]);
     }]];
+    
+    self.data = [NSMutableArray array];
+    
+    // Today
+    NSString *period = [[NSDate date] toFormat:@"yyyy-MM-dd"];
+    NSArray *filesInPeriod = [self filesForPeriod:period inFiles:files];
+    NSLog(@"%@", @{@"period": period, @"info": filesInPeriod});
+    [self.data addObject:@{@"period": period, @"info": filesInPeriod}];
+    
+    // By month
+    while (files.count > 0) {
+        period = [(NSDate *)files[0][kUploadDate] toFormat:@"yyyy-MM"];
+        filesInPeriod = [self filesForPeriod:period inFiles:files];
+        NSLog(@"%@", @{@"period": period, @"info": filesInPeriod});
+        [self.data addObject:@{@"period": period, @"info": filesInPeriod}];
+    }
 }
 
 
@@ -57,7 +83,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return (((NSArray *)self.data[section]).count);
+    return (((NSArray *)self.data[section][@"info"]).count);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -66,7 +92,7 @@
     if (cell == nil) {
         cell = [UIViewController collectionCellOfClass:[WUploadFileCell class]];
     }
-    [(WUploadFileCell *)cell setInfo:self.data[indexPath.section][indexPath.row]];
+    [(WUploadFileCell *)cell setInfo:self.data[indexPath.section][@"info"][indexPath.row]];
     return (cell);
 }
 

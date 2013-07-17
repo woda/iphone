@@ -24,4 +24,14 @@
     return (dateString);
 }
 
+- (NSString *)toFormat:(NSString *)outputFormat {
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:outputFormat];
+    [df setAMSymbol:@"AM"];
+    [df setPMSymbol:@"PM"];
+    NSString *dateString = [df stringFromDate:self];
+    
+    return (dateString);
+}
+
 @end

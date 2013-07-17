@@ -12,4 +12,6 @@
 
 + (NSString *)date:(NSString *)input fromFormat:(NSString *)inputFormat toFormat:(NSString *)outputFormat;
 
+- (NSString *)toFormat:(NSString *)outputFormat;
+
 @end
