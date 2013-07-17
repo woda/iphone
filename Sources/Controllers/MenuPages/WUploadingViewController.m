@@ -63,14 +63,12 @@
     // Today
     NSString *period = [[NSDate date] toFormat:@"yyyy-MM-dd"];
     NSArray *filesInPeriod = [self filesForPeriod:period inFiles:files];
-    NSLog(@"%@", @{@"period": period, @"info": filesInPeriod});
     [self.data addObject:@{@"period": period, @"info": filesInPeriod}];
     
     // By month
     while (files.count > 0) {
         period = [(NSDate *)files[0][kUploadDate] toFormat:@"yyyy-MM"];
         filesInPeriod = [self filesForPeriod:period inFiles:files];
-        NSLog(@"%@", @{@"period": period, @"info": filesInPeriod});
         [self.data addObject:@{@"period": period, @"info": filesInPeriod}];
     }
 }
