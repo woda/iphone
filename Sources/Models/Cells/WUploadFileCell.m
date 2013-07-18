@@ -37,7 +37,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     
     [self.overlayView setHidden:YES];
     
-    [self.checkView setImage:[UIImage imageNamed:@"upload_grey_check.png"]];
+    [self.checkView setImage:[UIImage imageNamed:@"upload_grey_dot.png"]];
     [self.checkView setHidden:NO];
 }
 
