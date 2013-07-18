@@ -44,12 +44,10 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 - (void)willMoveToSuperview:(UIView *)newSuperview {
     [super willMoveToSuperview:newSuperview];
 
-    // border radius
-    [self.thumbnailView.layer setCornerRadius:3];
     [self.progressBarView.layer setCornerRadius:1];
     [self.progressView.layer setCornerRadius:1];
     
-    // border
+    [self.thumbnailView.layer setCornerRadius:3];
     [self.thumbnailView.layer setBorderColor:[UIColor colorWithWhite:1.0 alpha:0.2].CGColor];
     [self.thumbnailView.layer setBorderWidth:1];
 }

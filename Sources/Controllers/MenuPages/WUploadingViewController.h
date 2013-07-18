@@ -19,6 +19,10 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell  *noFileCell;
 
 @property (nonatomic, retain) IBOutlet UICollectionReusableView *headerView;
+@property (nonatomic, retain) IBOutlet UIImageView      *stateImageView;
+@property (nonatomic, retain) IBOutlet UILabel          *stateLabel;
+@property (nonatomic, retain) IBOutlet UIView           *progressBarView;
+@property (nonatomic, retain) IBOutlet UIView           *progressView;
 @property (nonatomic, retain) IBOutlet UILabel          *firstSectionLabel;
 
 @property (nonatomic, retain) IBOutlet UICollectionReusableView *footerView;

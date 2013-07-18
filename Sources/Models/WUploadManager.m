@@ -122,10 +122,12 @@ static WUploadManager *shared = nil;
                 [blockSelf updateFileInUploadList:info];
                 [[NSNotificationCenter defaultCenter] postNotificationName:info[kUploadNotificationName] object:nil userInfo:info];
             } loading:^(double pourcentage) {
-                info[kUploadProgress] = @(pourcentage * 100);
-                [blockSelf updateFileInUploadList:info];
-                DDLogInfo(@"Uploading '%@': %d%%", [info objectForKey:kUploadFileName], (int)(pourcentage * 100));
-                [[NSNotificationCenter defaultCenter] postNotificationName:info[kUploadNotificationName] object:nil userInfo:info];
+                if ((int)(pourcentage * 100) != [info[kUploadProgress] integerValue]) {
+                    info[kUploadProgress] = @(pourcentage * 100);
+                    [blockSelf updateFileInUploadList:info];
+                    DDLogInfo(@"Uploading '%@': %@%%", [info objectForKey:kUploadFileName], info[kUploadProgress]);
+                    [[NSNotificationCenter defaultCenter] postNotificationName:info[kUploadNotificationName] object:nil userInfo:info];
+                }
             } failure:^(id error) {
                 info[kUploadNeedsUpload] = @NO;
                 [blockSelf updateFileInUploadList:info];

@@ -40,6 +40,9 @@
 
 // Uploads Page
 "UploadsPageTitle" = "Uploads";
+"Today" = "Today";
+"Yesterday" = "Yesterday";
+"UpToDate" = "Up to date";
 
 // Offline Page
 "OfflinePageTitle" = "Offline files";

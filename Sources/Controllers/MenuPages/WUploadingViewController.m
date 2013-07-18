@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Woda. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "WUploadingViewController.h"
 #import "WUploadManager.h"
 #import "WUploadFileCell.h"
@@ -13,6 +14,8 @@
 
 
 @interface WUploadingViewController ()
+
+@property NSMutableDictionary *uploadingFiles;
 
 @end
 
@@ -26,18 +29,23 @@
     self = [super initWithNibName:[self xibFullName:@"WUploadListView"] bundle:nil];
     if (self) {
         self.data = nil;
+        self.uploadingFiles = [NSMutableDictionary dictionary];
     }
     return self;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self.collectionView registerClass:[WUploadFileCell class] forCellWithReuseIdentifier:[WUploadFileCell reuseIdentifier]];
-//    [self.collectionView registerClass:[WUploadSectionHeader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[WUploadSectionHeader reuseIdentifier]];
-    
     [self.collectionView registerNib:[UINib nibWithNibName:[UIViewController xibFullName:[WUploadFileCell xibName]] bundle:nil] forCellWithReuseIdentifier:[WUploadFileCell reuseIdentifier]];
     [self.collectionView registerNib:[UINib nibWithNibName:[UIViewController xibFullName:[WUploadSectionHeader xibName]] bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[WUploadSectionHeader reuseIdentifier]];
+    
+    [self.progressBarView.layer setCornerRadius:1];
+    [self.progressView.layer setCornerRadius:1];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -49,8 +57,131 @@
     [self reloadData];
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    
+    [self infoChanged:nil];
+}
+
 
 #pragma mark - Data related methods
+
+- (void)updateStateView {
+    [self.stateLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:14]];
+    CGSize textSize = [self.stateLabel.text sizeWithFont:self.stateLabel.font constrainedToSize:CGSizeMake(200, 20)];
+    [self.stateLabel setFrame:(CGRect) {
+        .origin = (CGPoint) {
+            .x = (self.stateLabel.superview.frame.size.width - textSize.width) / 2,
+            .y = 3
+        },
+        .size = textSize
+    }];
+    
+    [self.stateImageView setFrame:(CGRect) {
+        .origin = (CGPoint) {
+            .x = self.stateLabel.frame.origin.x - textSize.height - 7,
+            .y = self.stateLabel.frame.origin.y
+        },
+        .size = (CGSize) {
+            .width = textSize.height,
+            .height = textSize.height
+        }
+    }];
+    
+    [self.progressBarView setFrame:(CGRect) {
+        .origin = (CGPoint) {
+            .x = (self.progressBarView.superview.frame.size.width - self.progressBarView.frame.size.width) / 2,
+            .y = self.stateLabel.frame.origin.y + self.stateLabel.frame.size.height + 4
+        },
+        .size = self.progressBarView.frame.size
+    }];
+    
+    NSInteger h = self.headerView.frame.size.height;
+    [self.headerView setFrame:(CGRect) {
+        .origin = self.headerView.frame.origin,
+        .size = (CGSize) {
+            .width = self.headerView.frame.size.width,
+            .height = ((self.progressBarView.hidden) ? 47 : 60)
+        }
+    }];
+    if (h != self.headerView.frame.size.height) {
+        [self.collectionView reloadData];
+    }
+}
+
+- (void)upToDate {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.uploadingFiles removeAllObjects];
+    
+    // display 'up to date'
+    NSLog(@"Up to date");
+    
+    [self.stateLabel setText:NSLocal(@"UpToDate")];
+    [self.stateLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:14]];
+    [self.stateImageView setImage:[UIImage imageNamed:@"upload_grey_check.png"]];
+    [self.stateImageView.layer removeAnimationForKey:@"rotationAnimation"];
+    [self.progressBarView setHidden:YES];
+    
+    [self updateStateView];
+}
+
+- (void) runSpinAnimationOnView:(UIView*)view duration:(CGFloat)duration rotations:(CGFloat)rotations repeat:(float)repeat; {
+    CABasicAnimation* rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 /* full rotation*/ * rotations * duration ];
+    rotationAnimation.duration = duration;
+    rotationAnimation.cumulative = YES;
+    rotationAnimation.repeatCount = repeat;
+    
+    if ([view.layer animationForKey:@"rotationAnimation"] == nil) {
+        [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    }
+}
+
+- (void)uploading:(NSInteger)count completed:(NSInteger)completed progress:(NSInteger)progress {
+    // display progress bar
+    NSLog(@"Uploading %d / %d (%d%%)", completed, self.uploadingFiles.count, progress);
+    
+    [self.stateLabel setText:[NSString stringWithFormat:@"%d / %d", completed, self.uploadingFiles.count]];
+    [self.stateLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:18]];
+    [self.stateImageView setImage:[UIImage imageNamed:@"upload_green_refresh.png"]];
+    [self runSpinAnimationOnView:self.stateImageView duration:1 rotations:1 repeat:10000000000];
+    [self.progressBarView setHidden:NO];
+    
+    [self updateStateView];
+    
+    [self.progressView setFrame:(CGRect) {
+        .origin = (CGPoint) {
+            .x = 1,
+            .y = 1
+        },
+        .size = (CGSize) {
+            .width = (self.progressBarView.frame.size.width - 2) * progress / 100,
+            .height = (self.progressBarView.frame.size.height - 2)
+        }
+    }];
+}
+
+- (void)infoChanged:(NSNotification *)notif {
+    if (notif) {
+        NSDictionary *file = notif.userInfo;
+        self.uploadingFiles[file[kUploadFileName]] = file;
+    }
+    Boolean allUploaded = YES;
+    NSInteger uploaded = 0;
+    NSInteger progress = 0;
+    for (NSDictionary *file in [self.uploadingFiles allValues]) {
+        allUploaded &= [file[kUploadNeedsUpload] boolValue];
+        uploaded += ([file[kUploadNeedsUpload] boolValue] ? 0 : 1);
+        progress += [file[kUploadProgress] integerValue];
+    }
+    if (allUploaded) {
+        [self upToDate];
+    } else {
+        progress /= self.uploadingFiles.count;
+        [self uploading:self.uploadingFiles.count completed:uploaded progress:progress];
+    }
+}
 
 - (NSArray *)filesForPeriod:(NSString *)period inFiles:(NSMutableArray *)files {
     NSMutableArray *today = [[NSMutableArray alloc] init];
@@ -59,10 +190,19 @@
         if ([[file[kUploadDate] toFormat:@"yyyy-MM-dd"] hasPrefix:period]) {
             [today addObject:file];
             [files removeObject:file];
+            
+            if ([file[kUploadNeedsUpload] boolValue]) {
+                self.uploadingFiles[file[kUploadFileName]] = file;
+                NSString *notifName = file[kUploadNotificationName];
+                if (notifName) {
+                    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(infoChanged:) name:notifName object:nil];
+                }
+            }
         }
     }
     return (today);
 }
+
 
 - (void)reloadData {
     NSMutableArray *files = [[[[WUploadManager uploadList] allValues] sortedArrayUsingComparator:^NSComparisonResult(NSDictionary *info1, NSDictionary *info2) {
@@ -78,6 +218,7 @@
     
     
     self.data = [NSMutableArray array];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     // Today
     NSString *period = [[NSDate date] toFormat:@"yyyy-MM-dd"];
@@ -92,6 +233,8 @@
         filesInPeriod = [self filesForPeriod:period inFiles:files];
         [self.data addObject:@{@"period": period, @"info": filesInPeriod}];
     }
+    
+    [self infoChanged:nil];
 }
 
 
