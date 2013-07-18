@@ -18,9 +18,10 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell  *filesHeaderCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell  *noFileCell;
 
-@property (nonatomic, retain) IBOutlet UIView           *headerView;
+@property (nonatomic, retain) IBOutlet UICollectionReusableView *headerView;
+@property (nonatomic, retain) IBOutlet UILabel          *firstSectionLabel;
 
-@property (nonatomic, retain) IBOutlet UIView           *footerView;
+@property (nonatomic, retain) IBOutlet UICollectionReusableView *footerView;
 @property (nonatomic, retain) IBOutlet UILabel          *countLabel;
 @property (nonatomic, retain) IBOutlet UILabel          *updatedLabel;
 

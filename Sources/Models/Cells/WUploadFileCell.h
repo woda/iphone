@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WUploadFileCell : UICollectionViewCell <XibCellDelegate>
+@interface WUploadFileCell : UICollectionViewCell <XibViewDelegate>
 
 @property (nonatomic, retain) IBOutlet UIImageView  *thumbnailView;
 @property (nonatomic, retain) IBOutlet UIImageView  *checkView;

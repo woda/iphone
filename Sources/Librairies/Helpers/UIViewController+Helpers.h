@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol XibCellDelegate <NSObject>
+@protocol XibViewDelegate <NSObject>
 
 + (NSString *)xibName;
 + (NSString *)reuseIdentifier;
@@ -18,8 +18,9 @@
 @interface UIViewController (Helpers)
 
 + (NSString *)xibFullName:(NSString *)name;
-+ (UITableViewCell *)cellOfClass:(Class<XibCellDelegate>)className;
-+ (UICollectionViewCell *)collectionCellOfClass:(Class<XibCellDelegate>)className;
++ (UITableViewCell *)cellOfClass:(Class<XibViewDelegate>)className;
++ (UICollectionViewCell *)collectionCellOfClass:(Class<XibViewDelegate>)className;
++ (UICollectionReusableView *)collectionReusableOfClass:(Class<XibViewDelegate>)className;
 
 - (NSString *)xibFullName:(NSString *)name;
 

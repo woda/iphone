@@ -93,7 +93,7 @@ static WUploadManager *shared = nil;
     __block WUploadManager *blockSelf = self;
     __block NSString *fileName = name;
     __block NSString *thumbnail = nil;
-    NSDate *date = [NSDate dateWithTimeInterval:-(2*30*24*3600) sinceDate:[NSDate date]];
+    NSDate *date = [NSDate dateWithTimeInterval:-(24*3600) sinceDate:[NSDate date]];//[NSDate date];
     
     void (^addFile)(ALAsset *) = ^(ALAsset *asset) {
         DDLogWarn(@"Asset: %@", asset);

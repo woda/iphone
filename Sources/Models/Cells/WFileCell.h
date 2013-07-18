@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WFileCell : UITableViewCell <XibCellDelegate>
+@interface WFileCell : UITableViewCell <XibViewDelegate>
 
 @property (nonatomic, retain) NSString              *path;
 

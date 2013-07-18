@@ -102,7 +102,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 //}
 
 - (void)setInfo:(NSDictionary *)info {
-    DDLogVerbose(@"Info: %@", info);
+    [self prepareForReuse];
     
     Boolean uploaded = ![info[kUploadNeedsUpload] boolValue];
     NSInteger progress = [info[kUploadProgress] integerValue];

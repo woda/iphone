@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A2020D5B165E2D960057FCCD /* WNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D5A165E2D960057FCCD /* WNavigationController.m */; };
 		A2020D67165E41980057FCCD /* WCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D66165E41980057FCCD /* WCell.m */; };
+		A210269D17974ABB00A17532 /* WUploadSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A210269C17974ABB00A17532 /* WUploadSectionHeader.m */; };
+		A210269F17976DCD00A17532 /* WUploadSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = A210269E17976DCD00A17532 /* WUploadSectionHeader.xib */; };
 		A21E708C17810E0E005170E5 /* WMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A21E708B17810E0E005170E5 /* WMenuCell.m */; };
 		A22D470016636A5D00B4B448 /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = A22D46FE16636A5D00B4B448 /* shadow.png */; };
 		A22D470116636A5D00B4B448 /* shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A22D46FF16636A5D00B4B448 /* shadow@2x.png */; };
@@ -246,6 +248,9 @@
 		A2020D5A165E2D960057FCCD /* WNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNavigationController.m; sourceTree = "<group>"; };
 		A2020D65165E41980057FCCD /* WCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCell.h; sourceTree = "<group>"; };
 		A2020D66165E41980057FCCD /* WCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCell.m; sourceTree = "<group>"; };
+		A210269B17974ABB00A17532 /* WUploadSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUploadSectionHeader.h; sourceTree = "<group>"; };
+		A210269C17974ABB00A17532 /* WUploadSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUploadSectionHeader.m; sourceTree = "<group>"; };
+		A210269E17976DCD00A17532 /* WUploadSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WUploadSectionHeader.xib; sourceTree = "<group>"; };
 		A21E708A17810E0E005170E5 /* WMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMenuCell.h; sourceTree = "<group>"; };
 		A21E708B17810E0E005170E5 /* WMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMenuCell.m; sourceTree = "<group>"; };
 		A22D46FE16636A5D00B4B448 /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
@@ -565,6 +570,8 @@
 				A2C170CC1783A2BC00EAB93E /* WFileCell.m */,
 				A279289017938E190011CEB5 /* WUploadFileCell.h */,
 				A279289117938E190011CEB5 /* WUploadFileCell.m */,
+				A210269B17974ABB00A17532 /* WUploadSectionHeader.h */,
+				A210269C17974ABB00A17532 /* WUploadSectionHeader.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1064,6 +1071,7 @@
 				A2C170CE1783A66D00EAB93E /* WFolderCell.xib */,
 				A2C170D01783A67A00EAB93E /* WFileCell.xib */,
 				A279289317938E2B0011CEB5 /* WUploadFileCell.xib */,
+				A210269E17976DCD00A17532 /* WUploadSectionHeader.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1315,6 +1323,7 @@
 				A2C170D11783A67A00EAB93E /* WFileCell.xib in Resources */,
 				A279288F179381A20011CEB5 /* WUploadListView.xib in Resources */,
 				A279289417938E2B0011CEB5 /* WUploadFileCell.xib in Resources */,
+				A210269F17976DCD00A17532 /* WUploadSectionHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1422,6 +1431,7 @@
 				A2C170DA1784E00E00EAB93E /* WUploadManager+Picker.m in Sources */,
 				A2C170DE1784E04E00EAB93E /* WPicturePickerViewController.m in Sources */,
 				A279289217938E190011CEB5 /* WUploadFileCell.m in Sources */,
+				A210269D17974ABB00A17532 /* WUploadSectionHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

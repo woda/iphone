@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WFolderCell : UITableViewCell <XibCellDelegate>
+@interface WFolderCell : UITableViewCell <XibViewDelegate>
 
 @property (nonatomic, retain) IBOutlet UIView   *background;
 @property (nonatomic, retain) IBOutlet UIView   *separator;

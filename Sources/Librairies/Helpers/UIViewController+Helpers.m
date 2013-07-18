@@ -17,7 +17,7 @@
     return ([NSString stringWithFormat:@"%@_%@", name, (([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? @"iPhone" : @"iPad")]);
 }
 
-+ (UITableViewCell *)cellOfClass:(Class<XibCellDelegate>)className {
++ (UITableViewCell *)cellOfClass:(Class<XibViewDelegate>)className {
     UIViewController *controller = [[UIViewController alloc] initWithNibName:[UIViewController xibFullName:[className xibName]] bundle:nil];
     [controller loadView];
     UITableViewCell *cell = (UITableViewCell *)controller.view;
@@ -25,12 +25,20 @@
     return (cell);
 }
 
-+ (UICollectionViewCell *)collectionCellOfClass:(Class<XibCellDelegate>)className {
++ (UICollectionViewCell *)collectionCellOfClass:(Class<XibViewDelegate>)className {
     UIViewController *controller = [[UIViewController alloc] initWithNibName:[UIViewController xibFullName:[className xibName]] bundle:nil];
     [controller loadView];
     UICollectionViewCell *cell = (UICollectionViewCell *)controller.view;
     [cell prepareForReuse];
     return (cell);
+}
+
++ (UICollectionReusableView *)collectionReusableOfClass:(Class<XibViewDelegate>)className {
+    UIViewController *controller = [[UIViewController alloc] initWithNibName:[UIViewController xibFullName:[className xibName]] bundle:nil];
+    [controller loadView];
+    UICollectionReusableView *reusable = (UICollectionReusableView *)controller.view;
+    [reusable prepareForReuse];
+    return (reusable);
 }
 
 - (NSString *)xibFullName:(NSString *)name {
