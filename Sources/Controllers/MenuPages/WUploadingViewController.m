@@ -15,7 +15,8 @@
 
 @interface WUploadingViewController ()
 
-@property NSMutableDictionary *uploadingFiles;
+@property NSMutableDictionary   *uploadingFiles;
+@property NSInteger             status;
 
 @end
 
@@ -41,6 +42,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.status = -1;
+    
     [self.collectionView registerNib:[UINib nibWithNibName:[UIViewController xibFullName:[WUploadFileCell xibName]] bundle:nil] forCellWithReuseIdentifier:[WUploadFileCell reuseIdentifier]];
     [self.collectionView registerNib:[UINib nibWithNibName:[UIViewController xibFullName:[WUploadSectionHeader xibName]] bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[WUploadSectionHeader reuseIdentifier]];
     
@@ -60,6 +63,7 @@
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
     
+    self.status = -1;
     [self infoChanged:nil];
 }
 
@@ -67,45 +71,48 @@
 #pragma mark - Data related methods
 
 - (void)updateStateView {
-    [self.stateLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:14]];
-    CGSize textSize = [self.stateLabel.text sizeWithFont:self.stateLabel.font constrainedToSize:CGSizeMake(200, 20)];
-    [self.stateLabel setFrame:(CGRect) {
-        .origin = (CGPoint) {
-            .x = (self.stateLabel.superview.frame.size.width - textSize.width) / 2,
-            .y = 3
-        },
-        .size = textSize
-    }];
-    
-    [self.stateImageView setFrame:(CGRect) {
-        .origin = (CGPoint) {
-            .x = self.stateLabel.frame.origin.x - textSize.height - 7,
-            .y = self.stateLabel.frame.origin.y
-        },
-        .size = (CGSize) {
-            .width = textSize.height,
-            .height = textSize.height
+    if ((self.status == -1) || (self.status ^ self.progressBarView.hidden)) {
+        CGSize textSize = [self.stateLabel.text sizeWithFont:self.stateLabel.font constrainedToSize:CGSizeMake(200, 20)];
+        [self.stateLabel setFrame:(CGRect) {
+            .origin = (CGPoint) {
+                .x = (self.stateLabel.superview.frame.size.width - textSize.width) / 2,
+                .y = 3
+            },
+            .size = textSize
+        }];
+        
+        [self.stateImageView setFrame:(CGRect) {
+            .origin = (CGPoint) {
+                .x = self.stateLabel.frame.origin.x - textSize.height - 7,
+                .y = self.stateLabel.frame.origin.y
+            },
+            .size = (CGSize) {
+                .width = textSize.height,
+                .height = textSize.height
+            }
+        }];
+        
+        [self.progressBarView setFrame:(CGRect) {
+            .origin = (CGPoint) {
+                .x = (self.progressBarView.superview.frame.size.width - self.progressBarView.frame.size.width) / 2,
+                .y = self.stateLabel.frame.origin.y + self.stateLabel.frame.size.height + 4
+            },
+            .size = self.progressBarView.frame.size
+        }];
+        
+        NSInteger h = self.headerView.frame.size.height;
+        [self.headerView setFrame:(CGRect) {
+            .origin = self.headerView.frame.origin,
+            .size = (CGSize) {
+                .width = self.headerView.frame.size.width,
+                .height = ((self.progressBarView.hidden) ? 47 : 60)
+            }
+        }];
+        if (h != self.headerView.frame.size.height) {
+            [self.collectionView reloadData];
         }
-    }];
-    
-    [self.progressBarView setFrame:(CGRect) {
-        .origin = (CGPoint) {
-            .x = (self.progressBarView.superview.frame.size.width - self.progressBarView.frame.size.width) / 2,
-            .y = self.stateLabel.frame.origin.y + self.stateLabel.frame.size.height + 4
-        },
-        .size = self.progressBarView.frame.size
-    }];
-    
-    NSInteger h = self.headerView.frame.size.height;
-    [self.headerView setFrame:(CGRect) {
-        .origin = self.headerView.frame.origin,
-        .size = (CGSize) {
-            .width = self.headerView.frame.size.width,
-            .height = ((self.progressBarView.hidden) ? 47 : 60)
-        }
-    }];
-    if (h != self.headerView.frame.size.height) {
-        [self.collectionView reloadData];
+        
+        self.status = self.progressBarView.hidden;
     }
 }
 
@@ -171,7 +178,7 @@
     NSInteger uploaded = 0;
     NSInteger progress = 0;
     for (NSDictionary *file in [self.uploadingFiles allValues]) {
-        allUploaded &= [file[kUploadNeedsUpload] boolValue];
+        allUploaded &= ![file[kUploadNeedsUpload] boolValue];
         uploaded += ([file[kUploadNeedsUpload] boolValue] ? 0 : 1);
         progress += [file[kUploadProgress] integerValue];
     }
