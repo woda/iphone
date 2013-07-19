@@ -585,6 +585,13 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		A20DBB8B1799570D00C25E7D /* Offline */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Offline;
+			sourceTree = "<group>";
+		};
 		A23918B017801F370017264F /* cut */ = {
 			isa = PBXGroup;
 			children = (
@@ -1048,6 +1055,7 @@
 			children = (
 				A2A0669016D4766900D08D8D /* WUser.h */,
 				A2A0669116D4766900D08D8D /* WUser.m */,
+				A20DBB8B1799570D00C25E7D /* Offline */,
 				A2C170DB1784E01700EAB93E /* Upload */,
 				A2411B5116D26B460060EFF7 /* Requests */,
 				A2020D64165E41980057FCCD /* Cells */,

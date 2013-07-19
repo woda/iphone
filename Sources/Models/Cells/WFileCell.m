@@ -7,7 +7,14 @@
 //
 
 #import "WFileCell.h"
+#import "WRequest+List.h"
 #import "WRequest+Sync.h"
+
+@interface WFileCell ()
+
+@property (nonatomic, retain) NSDictionary  *info;
+
+@end
 
 @implementation WFileCell
 
@@ -40,6 +47,9 @@
 }
 
 - (void)setFile:(NSDictionary *)file {
+    self.info = file;
+    
+    self.favoriteButton.alpha = 0.0;
     self.deleteButton.alpha = 0.0;
     
     self.path = [file objectForKey:@"name"];
@@ -90,12 +100,29 @@
 - (IBAction)showOptions:(UISwipeGestureRecognizer *)gesture {
     if (gesture.direction == UISwipeGestureRecognizerDirectionLeft) {
         [UIView animateWithDuration:0.3 animations:^{
+            self.favoriteButton.alpha = 1.0;
             self.deleteButton.alpha = 1.0;
         }];
     } else {
-        [UIView animateWithDuration:0.3
- animations:^{
+        [UIView animateWithDuration:0.3 animations:^{
+            self.favoriteButton.alpha = 0.0;
             self.deleteButton.alpha = 0.0;
+        }];
+    }
+}
+
+- (IBAction)putFileInFavorites:(id)sender {
+    if ([self.info[@"favorite"] boolValue]) {
+        [WRequest unmarkFileAsFavorite:self.info[@"id"] success:^(id json) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kFileMarkedNotificationName object:nil];
+        } failure:^(id error) {
+            DDLogError(@"Failure while marking '%@'", self.path);
+        }];
+    } else {
+        [WRequest markFileAsFavorite:self.info[@"id"] success:^(id json) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kFileMarkedNotificationName object:nil];
+        } failure:^(id error) {
+            DDLogError(@"Failure while marking '%@'", self.path);
         }];
     }
 }

@@ -17,12 +17,14 @@
 @property (nonatomic, retain) IBOutlet UIImageView  *icon;
 @property (nonatomic, retain) IBOutlet UIImageView  *star;
 @property (nonatomic, retain) IBOutlet UILabel      *title;
+@property (nonatomic, retain) IBOutlet UIButton     *favoriteButton;
 @property (nonatomic, retain) IBOutlet UIButton     *deleteButton;
 
 - (void)setFile:(NSDictionary *)file;
 - (void)displaySeparator:(Boolean)display;
 
 - (IBAction)showOptions:(id)sender;
+- (IBAction)putFileInFavorites:(id)sender;
 - (IBAction)deleteFile:(id)sender;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "WListViewController.h"
 #import "WDownloadingViewController.h"
+#import "WRequest.h"
 #import "WFolderCell.h"
 #import "WFileCell.h"
 
@@ -20,6 +21,10 @@
 
 #pragma mark -
 #pragma mark Initialization methods
+
+- (void)reload {
+    [self doesNotRecognizeSelector:@selector(reload)];
+}
 
 - (id)init {
     self = [super initWithNibName:[self xibFullName:@"WListView"] bundle:nil];
@@ -51,6 +56,17 @@
         [self.tableView setAlpha:0.0];
         [self.loading startAnimating];
     }
+    
+    [self reload];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:kFileMarkedNotificationName object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:kFileDeletedNotificationName object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)setData:(NSDictionary *)data {
@@ -161,8 +177,10 @@
         idx--;
         if ([[_data objectForKey:@"files"] count]) {
             NSDictionary *file = [[_data objectForKey:@"files"] objectAtIndex:idx];
-            WDownloadingViewController *c = [[WDownloadingViewController alloc] initWithFile:file];
-            [self.navigationController pushViewController:c animated:YES];
+            if (file[@"size"] && file[@"part_size"]) {
+                WDownloadingViewController *c = [[WDownloadingViewController alloc] initWithFile:file];
+                [self.navigationController pushViewController:c animated:YES];
+            }
         }
     }
 }

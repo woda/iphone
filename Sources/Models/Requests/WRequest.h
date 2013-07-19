@@ -15,6 +15,10 @@
 //#define kBaseURL    @"http://httpbin.org/put"
 
 
+#define kFileDeletedNotificationName    @"kFileDeletedNotificationName"
+#define kFileMarkedNotificationName     @"kFileMarkedNotificationName"
+
+
 static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @interface WRequest : AFHTTPRequestOperation

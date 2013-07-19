@@ -48,16 +48,6 @@
     
     self.title = NSLocal(@"RootPageTitle");
     self.homeCellIndex = kHomeFoldersCellIndex;
-    
-    [self reload];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:kFileDeletedNotificationName object:nil];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad {
