@@ -110,8 +110,6 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 - (void)setInfo:(NSDictionary *)info {
     [self prepareForReuse];
     
-    DDLogInfo(@"info: %@", info);
-    
     Boolean uploaded = ![info[kUploadNeedsUpload] boolValue];
     NSInteger progress = [info[kUploadProgress] integerValue];
     NSString *thumbnailPath = info[kUploadThumbnail];
