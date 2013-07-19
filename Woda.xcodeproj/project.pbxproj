@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A2020D5B165E2D960057FCCD /* WNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D5A165E2D960057FCCD /* WNavigationController.m */; };
 		A2020D67165E41980057FCCD /* WCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D66165E41980057FCCD /* WCell.m */; };
+		A20DBB8E1799575800C25E7D /* WOfflineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A20DBB8D1799575800C25E7D /* WOfflineManager.m */; };
 		A210269D17974ABB00A17532 /* WUploadSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A210269C17974ABB00A17532 /* WUploadSectionHeader.m */; };
 		A210269F17976DCD00A17532 /* WUploadSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = A210269E17976DCD00A17532 /* WUploadSectionHeader.xib */; };
 		A21026A21797842C00A17532 /* upload_grey_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = A21026A01797842C00A17532 /* upload_grey_dot.png */; };
@@ -252,6 +253,8 @@
 		A2020D5A165E2D960057FCCD /* WNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNavigationController.m; sourceTree = "<group>"; };
 		A2020D65165E41980057FCCD /* WCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCell.h; sourceTree = "<group>"; };
 		A2020D66165E41980057FCCD /* WCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCell.m; sourceTree = "<group>"; };
+		A20DBB8C1799575800C25E7D /* WOfflineManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOfflineManager.h; sourceTree = "<group>"; };
+		A20DBB8D1799575800C25E7D /* WOfflineManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOfflineManager.m; sourceTree = "<group>"; };
 		A210269B17974ABB00A17532 /* WUploadSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUploadSectionHeader.h; sourceTree = "<group>"; };
 		A210269C17974ABB00A17532 /* WUploadSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUploadSectionHeader.m; sourceTree = "<group>"; };
 		A210269E17976DCD00A17532 /* WUploadSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WUploadSectionHeader.xib; sourceTree = "<group>"; };
@@ -588,6 +591,8 @@
 		A20DBB8B1799570D00C25E7D /* Offline */ = {
 			isa = PBXGroup;
 			children = (
+				A20DBB8C1799575800C25E7D /* WOfflineManager.h */,
+				A20DBB8D1799575800C25E7D /* WOfflineManager.m */,
 			);
 			name = Offline;
 			sourceTree = "<group>";
@@ -1466,6 +1471,7 @@
 				A210269D17974ABB00A17532 /* WUploadSectionHeader.m in Sources */,
 				A2CAF06C17991B7A002A599D /* WDownloadingViewController.m in Sources */,
 				A2CAF074179938F1002A599D /* WImagePreviewViewController.m in Sources */,
+				A20DBB8E1799575800C25E7D /* WOfflineManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

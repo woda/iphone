@@ -8,6 +8,7 @@
 
 #import "WDownloadingViewController.h"
 #import "WImagePreviewViewController.h"
+#import "WOfflineManager.h"
 #import "WRequest+Sync.h"
 
 @interface WDownloadingViewController ()
@@ -66,6 +67,7 @@
             [stack addObject:c];
             [self.navigationController setViewControllers:stack animated:YES];
         }
+        [[WOfflineManager shared] saveFile:file withType:self.info[@"type"] forId:self.info[@"id"]];
     } loading:^(double pourcentage) {
         [self.progressView setFrame:(CGRect) {
             .origin = CGPointZero,

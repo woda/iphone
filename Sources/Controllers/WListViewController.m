@@ -8,6 +8,8 @@
 
 #import "WListViewController.h"
 #import "WDownloadingViewController.h"
+#import "WImagePreviewViewController.h"
+#import "WOfflineManager.h"
 #import "WRequest.h"
 #import "WFolderCell.h"
 #import "WFileCell.h"
@@ -163,6 +165,11 @@
     return ([self fileCellForIndex:idx]);
 }
 
+- (Boolean)isFileAnImage:(NSString *)type {
+    NSArray *types = [@"public.image,.png,.jpg,.jpeg" componentsSeparatedByString:@","];
+    return ([types indexOfObject:[type lowercaseString]] != NSNotFound);
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
@@ -178,8 +185,17 @@
         if ([[_data objectForKey:@"files"] count]) {
             NSDictionary *file = [[_data objectForKey:@"files"] objectAtIndex:idx];
             if (file[@"size"] && file[@"part_size"]) {
-                WDownloadingViewController *c = [[WDownloadingViewController alloc] initWithFile:file];
-                [self.navigationController pushViewController:c animated:YES];
+                NSData *data = [WOfflineManager fileForId:file[@"id"]];
+                if (data) {
+                    NSString *type = file[@"type"];
+                    if ([self isFileAnImage:type]) {
+                        WImagePreviewViewController *c = [[WImagePreviewViewController alloc] initWithImage:[UIImage imageWithData:data]];
+                        [self.navigationController pushViewController:c animated:YES];
+                    }
+                } else {
+                    WDownloadingViewController *c = [[WDownloadingViewController alloc] initWithFile:file];
+                    [self.navigationController pushViewController:c animated:YES];
+                }
             }
         }
     }
