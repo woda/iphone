@@ -9,6 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "WUserLoginViewController.h"
 #import "WNavigationController.h"
+#import "WMenuPageViewController.h"
 #import "WHomeViewController.h"
 #import "NSArray+Shortcuts.h"
 
@@ -102,7 +103,8 @@
 
 - (void)swipeLeftWithDuration:(NSTimeInterval)duration {
     UIViewController *lastController = [[self viewControllers] last];
-    if (![lastController isKindOfClass:[WUserLoginViewController class]]) {
+    if (![lastController isKindOfClass:[WUserLoginViewController class]]
+        && [lastController isKindOfClass:[WMenuPageViewController class]]) {
         [UIView animateWithDuration:duration animations:^{
             for (int i=1, k=self.view.subviews.count; i<k; i++) {
                 UIView *v = [self.view.subviews objectAtIndex:i];
@@ -120,7 +122,8 @@
 
 - (void)swipeRightWithDuration:(NSTimeInterval)duration {
     UIViewController *lastController = [[self viewControllers] last];
-    if (![lastController isKindOfClass:[WUserLoginViewController class]]) {
+    if (![lastController isKindOfClass:[WUserLoginViewController class]]
+        && [lastController isKindOfClass:[WMenuPageViewController class]]) {
         [UIView animateWithDuration:duration animations:^{
             for (int i=1, k=self.view.subviews.count; i<k; i++) {
                 UIView *v = [self.view.subviews objectAtIndex:i];

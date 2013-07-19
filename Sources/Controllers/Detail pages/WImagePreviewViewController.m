@@ -42,17 +42,20 @@
     
     NSLog(@"image size: %@", NSStringFromCGSize(self.image.size));
     CGFloat r = self.image.size.width / self.image.size.height;
+    CGFloat minScale = MIN((self.scrollView.frame.size.width / self.image.size.width), (self.scrollView.frame.size.height / self.image.size.height));
+    NSLog(@"ratio: %f", r);
+    NSLog(@"minScale: %f", minScale);
     CGSize s = (CGSize) {
-        .width = (r > 1) ? self.image.size.width : self.scrollView.frame.size.width * r,
-        .height = (r < 1) ? self.image.size.height : self.scrollView.frame.size.height * r,
+        .width = (r > 1) ? self.image.size.width : self.scrollView.frame.size.width / minScale,
+        .height = (r < 1) ? self.image.size.height : self.scrollView.frame.size.height / minScale,
     };
+    NSLog(@"image size: %@", NSStringFromCGSize(s));
     [self.scrollView setContentSize:s];
     [self.imageView setImage:self.image];
     [self.imageView setFrame:(CGRect) {
         .origin = CGPointZero,
         .size = s
     }];
-    CGFloat minScale = MAX(0.0, MIN((self.scrollView.frame.size.width / self.image.size.width), (self.scrollView.frame.size.height / self.image.size.height)));
     [self.scrollView setMaximumZoomScale:2.0];
     [self.scrollView setMinimumZoomScale:minScale];
     [self.scrollView setZoomScale:minScale];
