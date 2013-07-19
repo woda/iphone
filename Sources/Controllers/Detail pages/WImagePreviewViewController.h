@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WImagePreviewViewController : UIViewController
+@interface WImagePreviewViewController : UIViewController <UIScrollViewDelegate>
 
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) IBOutlet UIImageView  *imageView;
 @property (nonatomic, retain) IBOutlet UIView       *controlsView;
 
