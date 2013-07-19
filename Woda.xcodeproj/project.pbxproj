@@ -222,12 +222,14 @@
 		A2C6018B16304BAF00CB53B3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2C6016D16304BAF00CB53B3 /* Default-568h@2x.png */; };
 		A2C6018C16304BAF00CB53B3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A2C6016E16304BAF00CB53B3 /* Default.png */; };
 		A2C6018D16304BAF00CB53B3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2C6016F16304BAF00CB53B3 /* Default@2x.png */; };
-		A2C6018E16304BAF00CB53B3 /* WDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C6017316304BAF00CB53B3 /* WDetailViewController.m */; };
 		A2C6018F16304BAF00CB53B3 /* WMenuPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C6017516304BAF00CB53B3 /* WMenuPageViewController.m */; };
 		A2C6019116304BAF00CB53B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C6017B16304BAF00CB53B3 /* main.m */; };
 		A2C6019216304BAF00CB53B3 /* WAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C6017D16304BAF00CB53B3 /* WAppDelegate.m */; };
 		A2C6019416304BAF00CB53B3 /* Woda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2C6018016304BAF00CB53B3 /* Woda.xcdatamodeld */; };
 		A2C6019616304BAF00CB53B3 /* WDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018516304BAF00CB53B3 /* WDetailView.xib */; };
+		A2CAF06C17991B7A002A599D /* WDownloadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2CAF06B17991B7A002A599D /* WDownloadingViewController.m */; };
+		A2CAF06F17991B97002A599D /* WDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2CAF06E17991B97002A599D /* WDetailViewController.m */; };
+		A2CAF07117991BB0002A599D /* WDownloadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CAF07017991BB0002A599D /* WDownloadingView.xib */; };
 		A2DC44F61630546C00E152A6 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44EF1630546C00E152A6 /* Icon-72.png */; };
 		A2DC44F71630546C00E152A6 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F01630546C00E152A6 /* Icon-Small-50.png */; };
 		A2DC44F81630546C00E152A6 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F11630546C00E152A6 /* Icon-Small.png */; };
@@ -496,8 +498,6 @@
 		A2C6016D16304BAF00CB53B3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A2C6016E16304BAF00CB53B3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		A2C6016F16304BAF00CB53B3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		A2C6017216304BAF00CB53B3 /* WDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDetailViewController.h; sourceTree = "<group>"; };
-		A2C6017316304BAF00CB53B3 /* WDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDetailViewController.m; sourceTree = "<group>"; };
 		A2C6017416304BAF00CB53B3 /* WMenuPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMenuPageViewController.h; sourceTree = "<group>"; };
 		A2C6017516304BAF00CB53B3 /* WMenuPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMenuPageViewController.m; sourceTree = "<group>"; };
 		A2C6017B16304BAF00CB53B3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -507,6 +507,11 @@
 		A2C6017F16304BAF00CB53B3 /* Woda-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Woda-Prefix.pch"; sourceTree = "<group>"; };
 		A2C6018116304BAF00CB53B3 /* Woda.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Woda.xcdatamodel; sourceTree = "<group>"; };
 		A2C6018616304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WDetailView.xib; sourceTree = "<group>"; };
+		A2CAF06A17991B7A002A599D /* WDownloadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDownloadingViewController.h; path = "Detail pages/WDownloadingViewController.h"; sourceTree = "<group>"; };
+		A2CAF06B17991B7A002A599D /* WDownloadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDownloadingViewController.m; path = "Detail pages/WDownloadingViewController.m"; sourceTree = "<group>"; };
+		A2CAF06D17991B97002A599D /* WDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDetailViewController.h; path = "Detail pages/WDetailViewController.h"; sourceTree = "<group>"; };
+		A2CAF06E17991B97002A599D /* WDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDetailViewController.m; path = "Detail pages/WDetailViewController.m"; sourceTree = "<group>"; };
+		A2CAF07017991BB0002A599D /* WDownloadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDownloadingView.xib; sourceTree = "<group>"; };
 		A2DC44EF1630546C00E152A6 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = SOURCE_ROOT; };
 		A2DC44F01630546C00E152A6 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = SOURCE_ROOT; };
 		A2DC44F11630546C00E152A6 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = SOURCE_ROOT; };
@@ -1033,8 +1038,7 @@
 				A2677B07165E0F0200C1D630 /* WHomeViewController.m */,
 				A2A0668C16D475AB00D08D8D /* User */,
 				A2A330451782CD1A00C6F62E /* Menu pages */,
-				A2C6017216304BAF00CB53B3 /* WDetailViewController.h */,
-				A2C6017316304BAF00CB53B3 /* WDetailViewController.m */,
+				A2CAF06917991AF3002A599D /* Detail pages */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1078,8 +1082,20 @@
 				A2C170D01783A67A00EAB93E /* WFileCell.xib */,
 				A279289317938E2B0011CEB5 /* WUploadFileCell.xib */,
 				A210269E17976DCD00A17532 /* WUploadSectionHeader.xib */,
+				A2CAF07017991BB0002A599D /* WDownloadingView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A2CAF06917991AF3002A599D /* Detail pages */ = {
+			isa = PBXGroup;
+			children = (
+				A2CAF06A17991B7A002A599D /* WDownloadingViewController.h */,
+				A2CAF06B17991B7A002A599D /* WDownloadingViewController.m */,
+				A2CAF06D17991B97002A599D /* WDetailViewController.h */,
+				A2CAF06E17991B97002A599D /* WDetailViewController.m */,
+			);
+			name = "Detail pages";
 			sourceTree = "<group>";
 		};
 		A2DC44EE1630545D00E152A6 /* Icons */ = {
@@ -1332,6 +1348,7 @@
 				A210269F17976DCD00A17532 /* WUploadSectionHeader.xib in Resources */,
 				A21026A21797842C00A17532 /* upload_grey_dot.png in Resources */,
 				A21026A31797842C00A17532 /* upload_grey_dot@2x.png in Resources */,
+				A2CAF07117991BB0002A599D /* WDownloadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1386,7 +1403,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2C6018E16304BAF00CB53B3 /* WDetailViewController.m in Sources */,
 				A2C6018F16304BAF00CB53B3 /* WMenuPageViewController.m in Sources */,
 				A2C6019116304BAF00CB53B3 /* main.m in Sources */,
 				A2C6019216304BAF00CB53B3 /* WAppDelegate.m in Sources */,
@@ -1440,6 +1456,8 @@
 				A2C170DE1784E04E00EAB93E /* WPicturePickerViewController.m in Sources */,
 				A279289217938E190011CEB5 /* WUploadFileCell.m in Sources */,
 				A210269D17974ABB00A17532 /* WUploadSectionHeader.m in Sources */,
+				A2CAF06C17991B7A002A599D /* WDownloadingViewController.m in Sources */,
+				A2CAF06F17991B97002A599D /* WDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

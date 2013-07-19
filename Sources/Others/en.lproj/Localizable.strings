@@ -55,3 +55,8 @@
 
 // Settings Page
 "SettingsPageTitle" = "Settings";
+
+// Downloading Pages
+"Loading" = "Loading";
+"LoadingOf" = "Loading";
+"UnableToLoading" = "Unable to loading";

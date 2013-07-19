@@ -7,6 +7,7 @@
 //
 
 #import "WListViewController.h"
+#import "WDownloadingViewController.h"
 #import "WFolderCell.h"
 #import "WFileCell.h"
 
@@ -125,11 +126,9 @@
             if (cell == nil) {
                 cell = [UIViewController cellOfClass:[WFileCell class]];
             }
-            if ([[_data objectForKey:@"files"] count]) {
-                [(WFileCell *)cell setFile:[[_data objectForKey:@"files"] objectAtIndex:idx]];
-                [(WFileCell *)cell displaySeparator:(idx < ([[_data objectForKey:@"files"] count] - 1))];
-                return (cell);
-            }
+            [(WFileCell *)cell setFile:[[_data objectForKey:@"files"] objectAtIndex:idx]];
+            [(WFileCell *)cell displaySeparator:(idx < ([[_data objectForKey:@"files"] count] - 1))];
+            return (cell);
         } else {
             return (_noFileCell);
         }
@@ -150,6 +149,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSInteger idx = indexPath.row;
+    if ([[_data objectForKey:@"folders"] count]) {
+        if (idx <= [[_data objectForKey:@"folders"] count]) {
+            return ;
+        }
+        idx -= 1 + [[_data objectForKey:@"folders"] count];
+    }
+    if (idx) {
+        idx--;
+        if ([[_data objectForKey:@"files"] count]) {
+            NSDictionary *file = [[_data objectForKey:@"files"] objectAtIndex:idx];
+            WDownloadingViewController *c = [[WDownloadingViewController alloc] initWithFile:file];
+            [self.navigationController pushViewController:c animated:YES];
+        }
+    }
 }
 
 @end

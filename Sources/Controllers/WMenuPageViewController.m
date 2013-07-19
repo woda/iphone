@@ -41,6 +41,19 @@
         [button addTarget:self.navigationController action:@selector(swipe) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem *listButton = [[UIBarButtonItem alloc] initWithCustomView:button];
         self.navigationItem.leftBarButtonItem = listButton;
+    } else {
+        UIButton *button = [[UIButton alloc] init];
+        [button setImage:[UIImage imageNamed:@"navbar_left_white_arrow.png"] forState:UIControlStateNormal];
+        [button setBounds:CGRectMake(0, 0, 35, 18)];
+        [button setImageEdgeInsets:(UIEdgeInsets) {
+            .top = 0,
+            .left = 10,
+            .bottom = 0,
+            .right = 0
+        }];
+        [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *listButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+        self.navigationItem.leftBarButtonItem = listButton;
     }
 }
 

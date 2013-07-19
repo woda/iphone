@@ -55,3 +55,8 @@
 
 // Settings Page
 "SettingsPageTitle" = "Préferences";
+
+// Downloading Pages
+"Loading" = "Téléchargement";
+"LoadingOf" = "Téléchargement de";
+"UnableToLoading" = "Impossible de télécharger";

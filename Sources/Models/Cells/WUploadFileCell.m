@@ -39,6 +39,14 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     
     [self.checkView setImage:[UIImage imageNamed:@"upload_grey_dot.png"]];
     [self.checkView setHidden:NO];
+    
+    [self.progressView setFrame:(CGRect) {
+        .origin = CGPointZero,
+        .size = (CGSize) {
+            .width = 0,
+            .height = self.progressBarView.frame.size.height
+        }
+    }];
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {
