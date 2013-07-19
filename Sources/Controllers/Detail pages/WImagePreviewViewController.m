@@ -40,16 +40,12 @@
     UIBarButtonItem *listButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.leftBarButtonItem = listButton;
     
-    NSLog(@"image size: %@", NSStringFromCGSize(self.image.size));
     CGFloat r = self.image.size.width / self.image.size.height;
     CGFloat minScale = MIN((self.scrollView.frame.size.width / self.image.size.width), (self.scrollView.frame.size.height / self.image.size.height));
-    NSLog(@"ratio: %f", r);
-    NSLog(@"minScale: %f", minScale);
     CGSize s = (CGSize) {
         .width = (r > 1) ? self.image.size.width : self.scrollView.frame.size.width / minScale,
         .height = (r < 1) ? self.image.size.height : self.scrollView.frame.size.height / minScale,
     };
-    NSLog(@"image size: %@", NSStringFromCGSize(s));
     [self.scrollView setContentSize:s];
     [self.imageView setImage:self.image];
     [self.imageView setFrame:(CGRect) {
@@ -80,13 +76,24 @@
     return (self.imageView);
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [UIView animateWithDuration:0.3 animations:^{
+        if (self.controlsView.alpha == 1.0) {
+            self.backButton.alpha = 0.0;
+            self.controlsView.alpha = 0.0;
+        }
+    }];
+}
+
 #pragma mark - Action methods
 
 - (IBAction)toggleControls {
     [UIView animateWithDuration:0.3 animations:^{
         if (self.controlsView.alpha == 0.0) {
+            self.backButton.alpha = 1.0;
             self.controlsView.alpha = 1.0;
         } else if (self.controlsView.alpha == 1.0) {
+            self.backButton.alpha = 0.0;
             self.controlsView.alpha = 0.0;
         }
     }];
