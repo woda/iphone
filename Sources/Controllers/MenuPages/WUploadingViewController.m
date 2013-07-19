@@ -173,20 +173,22 @@
     if (notif) {
         NSDictionary *file = notif.userInfo;
         self.uploadingFiles[file[kUploadFileName]] = file;
-    }
-    Boolean allUploaded = YES;
-    NSInteger uploaded = 0;
-    NSInteger progress = 0;
-    for (NSDictionary *file in [self.uploadingFiles allValues]) {
-        allUploaded &= ![file[kUploadNeedsUpload] boolValue];
-        uploaded += ([file[kUploadNeedsUpload] boolValue] ? 0 : 1);
-        progress += [file[kUploadProgress] integerValue];
-    }
-    if (allUploaded) {
-        [self upToDate];
+        [self reloadData];
     } else {
-        progress /= self.uploadingFiles.count;
-        [self uploading:self.uploadingFiles.count completed:uploaded progress:progress];
+        Boolean allUploaded = YES;
+        NSInteger uploaded = 0;
+        NSInteger progress = 0;
+        for (NSDictionary *file in [self.uploadingFiles allValues]) {
+            allUploaded &= ![file[kUploadNeedsUpload] boolValue];
+            uploaded += ([file[kUploadNeedsUpload] boolValue] ? 0 : 1);
+            progress += [file[kUploadProgress] integerValue];
+        }
+        if (allUploaded) {
+            [self upToDate];
+        } else {
+            progress /= self.uploadingFiles.count;
+            [self uploading:self.uploadingFiles.count completed:uploaded progress:progress];
+        }
     }
 }
 
