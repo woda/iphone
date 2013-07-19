@@ -40,6 +40,8 @@
 }
 
 - (void)setFile:(NSDictionary *)file {
+    self.deleteButton.alpha = 0.0;
+    
     self.path = [file objectForKey:@"name"];
     [self.title setText:[file objectForKey:@"name"]];
     [self.star setHidden:![[file objectForKey:@"favorite"] boolValue]];
