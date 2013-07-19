@@ -20,23 +20,25 @@
 #pragma mark -
 #pragma mark Initialization methods
 
+- (void)reload {
+    void (^success)(NSDictionary *) = ^(NSDictionary *json) {
+        self.data = json;
+    };
+    void (^failure)(id) = ^(NSDictionary *error) {
+        DDLogError(@"Failure while listing files: %@", error);
+    };
+    if (_path == nil) {
+        [WRequest listAllFilesWithSuccess:success failure:failure];
+    } else if (self.data == nil) {
+        [WRequest listFilesInDir:_path success:success failure:failure];
+    }
+}
+
 - (id)initWithPath:(NSString *)path andData:(NSDictionary *)data {
     self = [super init];
     if (self) {
         self.path = path;
         self.data = data;
-        
-        void (^success)(NSDictionary *) = ^(NSDictionary *json) {
-            self.data = json;
-        };
-        void (^failure)(id) = ^(NSDictionary *error) {
-            DDLogError(@"Failure while listing files: %@", error);
-        };
-        if (_path == nil) {
-            [WRequest listAllFilesWithSuccess:success failure:failure];
-        } else if (self.data == nil) {
-            [WRequest listFilesInDir:_path success:success failure:failure];
-        }
     }
     return self;
 }
@@ -46,6 +48,16 @@
     
     self.title = NSLocal(@"RootPageTitle");
     self.homeCellIndex = kHomeFoldersCellIndex;
+    
+    [self reload];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:kFileDeletedNotificationName object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad {

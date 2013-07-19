@@ -8,6 +8,8 @@
 
 #import "WRequest.h"
 
+#define kFileDeletedNotificationName    @"kFileDeletedNotificationName"
+
 @interface WRequest (Sync)
 
 + (NSString *)sha256hash:(NSData *)data;

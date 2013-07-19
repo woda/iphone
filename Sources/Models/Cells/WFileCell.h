@@ -23,6 +23,6 @@
 - (void)displaySeparator:(Boolean)display;
 
 - (IBAction)showOptions:(id)sender;
-- (IBAction)delete:(id)sender;
+- (IBAction)deleteFile:(id)sender;
 
 @end
