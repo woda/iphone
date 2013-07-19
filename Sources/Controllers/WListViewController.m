@@ -65,7 +65,7 @@
         [self.loading stopAnimating];
     }
     
-    DDLogWarn(@"data: %@", _data);
+//    DDLogWarn(@"data: %@", _data);
     [self.tableView reloadData];
     
     if (self.tableView.alpha == 0.0) {

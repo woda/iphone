@@ -10,7 +10,7 @@
 #import "NSManagedObjectContext-EasyFetch.h"
 #import "AFHTTPRequestOperation.h"
 #import "WListViewController.h"
-#import "WDetailViewController.h"
+#import "WImagePreviewViewController.h"
 #import "WCell.h"
 
 @interface WMenuPageViewController ()

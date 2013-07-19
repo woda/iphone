@@ -226,9 +226,10 @@
 		A2C6019116304BAF00CB53B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C6017B16304BAF00CB53B3 /* main.m */; };
 		A2C6019216304BAF00CB53B3 /* WAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C6017D16304BAF00CB53B3 /* WAppDelegate.m */; };
 		A2C6019416304BAF00CB53B3 /* Woda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2C6018016304BAF00CB53B3 /* Woda.xcdatamodeld */; };
-		A2C6019616304BAF00CB53B3 /* WDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018516304BAF00CB53B3 /* WDetailView.xib */; };
+		A2C6019616304BAF00CB53B3 /* WImagePreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C6018516304BAF00CB53B3 /* WImagePreviewView.xib */; };
 		A2CAF06C17991B7A002A599D /* WDownloadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2CAF06B17991B7A002A599D /* WDownloadingViewController.m */; };
 		A2CAF07117991BB0002A599D /* WDownloadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CAF07017991BB0002A599D /* WDownloadingView.xib */; };
+		A2CAF074179938F1002A599D /* WImagePreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2CAF073179938F1002A599D /* WImagePreviewViewController.m */; };
 		A2DC44F61630546C00E152A6 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44EF1630546C00E152A6 /* Icon-72.png */; };
 		A2DC44F71630546C00E152A6 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F01630546C00E152A6 /* Icon-Small-50.png */; };
 		A2DC44F81630546C00E152A6 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F11630546C00E152A6 /* Icon-Small.png */; };
@@ -505,10 +506,12 @@
 		A2C6017E16304BAF00CB53B3 /* Woda-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Woda-Info.plist"; sourceTree = "<group>"; };
 		A2C6017F16304BAF00CB53B3 /* Woda-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Woda-Prefix.pch"; sourceTree = "<group>"; };
 		A2C6018116304BAF00CB53B3 /* Woda.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Woda.xcdatamodel; sourceTree = "<group>"; };
-		A2C6018616304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WDetailView.xib; sourceTree = "<group>"; };
+		A2C6018616304BAF00CB53B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WImagePreviewView.xib; sourceTree = "<group>"; };
 		A2CAF06A17991B7A002A599D /* WDownloadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDownloadingViewController.h; path = "Detail pages/WDownloadingViewController.h"; sourceTree = "<group>"; };
 		A2CAF06B17991B7A002A599D /* WDownloadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDownloadingViewController.m; path = "Detail pages/WDownloadingViewController.m"; sourceTree = "<group>"; };
 		A2CAF07017991BB0002A599D /* WDownloadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDownloadingView.xib; sourceTree = "<group>"; };
+		A2CAF072179938F1002A599D /* WImagePreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WImagePreviewViewController.h; path = "Detail pages/WImagePreviewViewController.h"; sourceTree = "<group>"; };
+		A2CAF073179938F1002A599D /* WImagePreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WImagePreviewViewController.m; path = "Detail pages/WImagePreviewViewController.m"; sourceTree = "<group>"; };
 		A2DC44EF1630546C00E152A6 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = SOURCE_ROOT; };
 		A2DC44F01630546C00E152A6 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = SOURCE_ROOT; };
 		A2DC44F11630546C00E152A6 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = SOURCE_ROOT; };
@@ -1070,7 +1073,7 @@
 			isa = PBXGroup;
 			children = (
 				A2677B0D165E125700C1D630 /* WHomeView.xib */,
-				A2C6018516304BAF00CB53B3 /* WDetailView.xib */,
+				A2C6018516304BAF00CB53B3 /* WImagePreviewView.xib */,
 				A2A0669916D48D4900D08D8D /* WUserLoginView.xib */,
 				A2E8C58D1783719100F0BEF0 /* WListView.xib */,
 				A279288E179381A20011CEB5 /* WUploadListView.xib */,
@@ -1089,6 +1092,8 @@
 			children = (
 				A2CAF06A17991B7A002A599D /* WDownloadingViewController.h */,
 				A2CAF06B17991B7A002A599D /* WDownloadingViewController.m */,
+				A2CAF072179938F1002A599D /* WImagePreviewViewController.h */,
+				A2CAF073179938F1002A599D /* WImagePreviewViewController.m */,
 			);
 			name = "Detail pages";
 			sourceTree = "<group>";
@@ -1205,7 +1210,7 @@
 				A2C6018B16304BAF00CB53B3 /* Default-568h@2x.png in Resources */,
 				A2C6018C16304BAF00CB53B3 /* Default.png in Resources */,
 				A2C6018D16304BAF00CB53B3 /* Default@2x.png in Resources */,
-				A2C6019616304BAF00CB53B3 /* WDetailView.xib in Resources */,
+				A2C6019616304BAF00CB53B3 /* WImagePreviewView.xib in Resources */,
 				A2DC44F61630546C00E152A6 /* Icon-72.png in Resources */,
 				A2DC44F71630546C00E152A6 /* Icon-Small-50.png in Resources */,
 				A2DC44F81630546C00E152A6 /* Icon-Small.png in Resources */,
@@ -1452,6 +1457,7 @@
 				A279289217938E190011CEB5 /* WUploadFileCell.m in Sources */,
 				A210269D17974ABB00A17532 /* WUploadSectionHeader.m in Sources */,
 				A2CAF06C17991B7A002A599D /* WDownloadingViewController.m in Sources */,
+				A2CAF074179938F1002A599D /* WImagePreviewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1475,12 +1481,12 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		A2C6018516304BAF00CB53B3 /* WDetailView.xib */ = {
+		A2C6018516304BAF00CB53B3 /* WImagePreviewView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A2C6018616304BAF00CB53B3 /* en */,
 			);
-			name = WDetailView.xib;
+			name = WImagePreviewView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

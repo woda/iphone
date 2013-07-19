@@ -9,6 +9,7 @@
 #import "WRequestSyncTests.h"
 #import "WRequest+User.h"
 #import "WRequest+Sync.h"
+#import "WRequest+List.h"
 
 @implementation WRequestSyncTests
 
@@ -89,7 +90,6 @@
 //    [[AFHTTPRequestOperationLogger sharedLogger] stopLogging];
     [WRequest addFile:filename withData:file success:^(id json) {
         STAssertTrue(([json isKindOfClass:[NSDictionary class]]), @"JSON format invalid: %@", json);
-        _parts = [(NSDictionary *)json objectForKey:@"parts"];
         kStopWait;
     } loading:^(double pourcentage) {
         NSLog(@"Loading \"%@\": %.0f%%", filename, pourcentage * 100);
@@ -111,7 +111,23 @@
     
 //    [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelDebug];
 //    [[AFHTTPRequestOperationLogger sharedLogger] stopLogging];
-    [WRequest getFile:filename parts:_parts success:^(NSData *data) {
+    
+    
+    __block NSNumber *parts = nil;
+    [WRequest listAllFilesWithSuccess:^(NSDictionary *json) {
+        NSDictionary *file = json[@"files"][0];
+        parts = @(([file[@"size"] integerValue] / [file[@"part_size"] integerValue]) + 1);
+        kStopWait;
+    } failure:^(id error) {
+        STFail(@"Error: %@", error);
+        kStopWait;
+    }];
+    
+    kWait;
+    
+    kStartWait;
+    
+    [WRequest getFile:filename parts:parts success:^(NSData *data) {
         
         NSLog(@"+ file (%dBytes): %@...", file.length, [[file description] substringWithRange:NSMakeRange(0, 40)]);
         NSLog(@"  data (%dBytes): %@...", data.length, [[data description] substringWithRange:NSMakeRange(0, 40)]);

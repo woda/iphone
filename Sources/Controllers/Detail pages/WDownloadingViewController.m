@@ -7,6 +7,7 @@
 //
 
 #import "WDownloadingViewController.h"
+#import "WImagePreviewViewController.h"
 #import "WRequest+Sync.h"
 
 @interface WDownloadingViewController ()
@@ -55,11 +56,15 @@
         }
     }];
     [self.loadingLabel setText:[NSString stringWithFormat:@"%@ '%@'", NSLocal(@"LoadingOf"), self.info[@"name"]]];
-    [WRequest getFile:self.info[@"name"] parts:@1 success:^(NSData *file) {
+    
+    NSNumber *parts = @(([self.info[@"size"] integerValue] / [self.info[@"part_size"] integerValue]) + 1);
+    [WRequest getFile:self.info[@"name"] parts:parts success:^(NSData *file) {
         if ([self.navigationController viewControllers].last == self) {
-//            NSMutableArray *stack = [[self.navigationController viewControllers] mutableCopy];
-//            [stack removeLastObject];
-//            [self.navigationController popViewControllerAnimated:YES];
+            NSMutableArray *stack = [[self.navigationController viewControllers] mutableCopy];
+            [stack removeLastObject];
+            WImagePreviewViewController *c = [[WImagePreviewViewController alloc] initWithImage:[UIImage imageWithData:file]];
+            [stack addObject:c];
+            [self.navigationController setViewControllers:stack animated:YES];
         }
     } loading:^(double pourcentage) {
         [self.progressView setFrame:(CGRect) {

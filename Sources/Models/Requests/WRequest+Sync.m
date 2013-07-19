@@ -57,7 +57,7 @@
         } else if ([[json objectForKey:@"success"] boolValue]) {
             DDLogInfo(@"File created");
             if ([[json objectForKey:@"need_upload"] boolValue]) {
-                NSNumber *partSize = [json objectForKey:@"part_size"];
+                NSNumber *partSize = json[@"file"][@"part_size"];
                 if ([partSize integerValue] <= 0) {
                     DDLogWarn(@"Warning: 'part_size' info is missing in json: %@", json);
                     partSize = @(5*1024*1024); // 5ko
