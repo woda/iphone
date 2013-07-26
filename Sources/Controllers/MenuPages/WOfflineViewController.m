@@ -24,6 +24,9 @@
 //    } failure:^(id error) {
 //        DDLogError(@"Failure while listing favorite files: %@", error);
 //    }];
+    
+    [self.noFileLabel setText:@"Not implemented"];
+    self.data = @{};
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -92,7 +92,39 @@
     kInitWait;
     
     [WRequest listFavoriteFilesWithSuccess:^(NSArray *list) {
-        NSLog(@"list: %@", list);
+        NSLog(@"favoris: %@", list);
+        STAssertTrue([list isKindOfClass:[NSArray class]], @"Should return an array");
+        STAssertTrue([list count] == 0, @"Should be empty");
+        kStopWait;
+    } failure:^(id error) {
+        STFail(@"Error: %@", error);
+        kStopWait;
+    }];
+    
+    kWait;
+}
+
+- (void)test04EmptySharedFiles {
+//    kInitWait;
+//    
+//    [WRequest listSharedFilesWithSuccess:^(NSArray *list) {
+//        NSLog(@"shared: %@", list);
+//        STAssertTrue([list isKindOfClass:[NSArray class]], @"Should return an array");
+//        STAssertTrue([list count] == 0, @"Should be empty");
+//        kStopWait;
+//    } failure:^(id error) {
+//        STFail(@"Error: %@", error);
+//        kStopWait;
+//    }];
+//    
+//    kWait;
+}
+
+- (void)test05EmptyPublicFiles {
+    kInitWait;
+    
+    [WRequest listPublicFilesWithSuccess:^(NSArray *list) {
+        NSLog(@"public: %@", list);
         STAssertTrue([list isKindOfClass:[NSArray class]], @"Should return an array");
         STAssertTrue([list count] == 0, @"Should be empty");
         kStopWait;

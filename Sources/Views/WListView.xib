@@ -67,7 +67,6 @@
 						<string key="NSFrame">{{150, 230}, {20, 20}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -116,7 +115,6 @@
 								<string key="NSFrameSize">{320, 30}</string>
 								<reference key="NSSuperview" ref="961048295"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">1</int>
@@ -182,7 +180,6 @@
 								<string key="NSFrameSize">{320, 30}</string>
 								<reference key="NSSuperview" ref="448538568"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">1</int>
@@ -246,7 +243,6 @@
 												<string key="NSFrame">{{0, 11}, {300, 21}}</string>
 												<reference key="NSSuperview" ref="664301694"/>
 												<reference key="NSWindow"/>
-												<reference key="NSNextKeyView"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="IBUIOpaque">NO</bool>
 												<bool key="IBUIClipsSubviews">YES</bool>
@@ -363,7 +359,6 @@
 						<string key="NSFrame">{{0, 20}, {320, 15}}</string>
 						<reference key="NSSuperview" ref="877321507"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -472,6 +467,14 @@
 						<reference key="destination" ref="642242947"/>
 					</object>
 					<int key="connectionID">96</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">noFileLabel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="600684943"/>
+					</object>
+					<int key="connectionID">97</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -1456,7 +1459,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">96</int>
+			<int key="maxID">97</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1505,6 +1508,7 @@
 						<string key="footerView">UIView</string>
 						<string key="loading">UIActivityIndicatorView</string>
 						<string key="noFileCell">UITableViewCell</string>
+						<string key="noFileLabel">UILabel</string>
 						<string key="tableView">UITableView</string>
 						<string key="updatedLabel">UILabel</string>
 					</dictionary>
@@ -1532,6 +1536,10 @@
 						<object class="IBToOneOutletInfo" key="noFileCell">
 							<string key="name">noFileCell</string>
 							<string key="candidateClassName">UITableViewCell</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="noFileLabel">
+							<string key="name">noFileLabel</string>
+							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="tableView">
 							<string key="name">tableView</string>

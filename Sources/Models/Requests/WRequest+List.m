@@ -41,7 +41,8 @@
 + (void)listSharedFilesWithSuccess:(void (^)(id json))success
                            failure:(void (^)(id error))failure
 {
-    
+//    NSString *path = @"/users/shared";
+//    [WRequest requestWithMethod:@"GET" path:path parameters:nil success:success failure:failure];
 }
 
 + (void)listPublicFilesWithSuccess:(void (^)(id json))success

@@ -18,6 +18,7 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell  *foldersHeaderCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell  *filesHeaderCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell  *noFileCell;
+@property (nonatomic, retain) IBOutlet UILabel          *noFileLabel;
 
 @property (nonatomic, retain) IBOutlet UIView           *footerView;
 @property (nonatomic, retain) IBOutlet UILabel          *countLabel;

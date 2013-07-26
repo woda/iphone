@@ -51,6 +51,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    [self.noFileLabel setText:NSLocal(@"NoDataLabel")];
+    
     [self.tableView setTableFooterView:self.footerView];
     [self updateFooter];
     

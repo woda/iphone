@@ -24,6 +24,9 @@
 //    } failure:^(id error) {
 //        DDLogError(@"Failure while listing favorite files: %@", error);
 //    }];
+    
+    [self.noFileLabel setText:@"No webservice available"];
+    self.data = @{};
 }
 
 - (void)viewWillAppear:(BOOL)animated {
