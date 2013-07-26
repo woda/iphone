@@ -77,6 +77,14 @@
             }
         }];
     } failure:^(id error) {
+        [self.progressView setFrame:(CGRect) {
+            .origin = CGPointZero,
+            .size = self.progressBarView.frame.size
+        }];
+        [UIView animateWithDuration:0.7 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
+            self.loadingLabel.alpha = 0.5;
+            self.progressView.alpha = 0.5;
+        } completion:nil];
         if ([self.navigationController viewControllers].last == self) {
             [self.loadingLabel setText:[NSString stringWithFormat:@"%@ '%@'", NSLocal(@"UnableToLoading"), self.info[@"name"]]];
             [self.progressView setBackgroundColor:[UIColor redColor]];
