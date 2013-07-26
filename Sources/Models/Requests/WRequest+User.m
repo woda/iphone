@@ -36,16 +36,9 @@
     [params setValue:password forKey:@"password"];
     [params setValue:email forKey:@"email"];
     
-    [[WRequest client] putPath:[@"/users/{login}" stringByReplacingOccurrencesOfString:@"{login}" withString:login] parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        id json = [WRequest JSONFromData:responseObject];
-        if ([json isKindOfClass:[NSError class]]) {
-            failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else {
-            success(json);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure([WRequest displayError:error forOperation:operation]);
-    }];
+    NSString *path = [@"/users/{login}" stringByReplacingOccurrencesOfString:@"{login}" withString:login];
+    
+    [WRequest requestWithMethod:@"PUT" path:path parameters:params success:success failure:failure];
 }
 
 //Update
@@ -69,16 +62,9 @@
     [params setValue:password forKey:@"password"];
     [params setValue:email forKey:@"email"];
     
-    [[WRequest client] postPath:@"/users" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        id json = [WRequest JSONFromData:responseObject];
-        if ([json isKindOfClass:[NSError class]]) {
-            failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else {
-            success(json);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure([WRequest displayError:error forOperation:operation]);
-    }];
+    NSString *path = @"/users";
+    
+    [WRequest requestWithMethod:@"POST" path:path parameters:params success:success failure:failure];
 }
 
 
@@ -92,16 +78,9 @@
 + (void)userSuccess:(void (^)(id json))success
             failure:(void (^)(id json))failure
 {
-    [[WRequest client] getPath:@"/users" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        id json = [WRequest JSONFromData:responseObject];
-        if ([json isKindOfClass:[NSError class]]) {
-            failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else {
-            success(json);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure([WRequest displayError:error forOperation:operation]);
-    }];
+    NSString *path = @"/users";
+    
+    [WRequest requestWithMethod:@"GET" path:path parameters:nil success:success failure:failure];
 }
 
 
@@ -115,16 +94,9 @@
 + (void)deleteUserSuccess:(void (^)(id json))success
                   failure:(void (^)(id json))failure
 {
-    [[WRequest client] deletePath:@"/users" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        id json = [WRequest JSONFromData:responseObject];
-        if ([json isKindOfClass:[NSError class]]) {
-            failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else {
-            success(json);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure([WRequest displayError:error forOperation:operation]);
-    }];
+    NSString *path = @"/users";
+    
+    [WRequest requestWithMethod:@"DELETE" path:path parameters:nil success:success failure:failure];
 }
 
 
@@ -146,16 +118,9 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:password forKey:@"password"];
     
-    [[WRequest client] postPath:[@"/users/{login}/login" stringByReplacingOccurrencesOfString:@"{login}" withString:login] parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        id json = [WRequest JSONFromData:responseObject];
-        if ([json isKindOfClass:[NSError class]]) {
-            failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else {
-            success(json);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure([WRequest displayError:error forOperation:operation]);
-    }];
+    NSString *path = [@"/users/{login}/login" stringByReplacingOccurrencesOfString:@"{login}" withString:login];
+    
+    [WRequest requestWithMethod:@"POST" path:path parameters:params success:success failure:failure];
 }
 
 
@@ -169,16 +134,9 @@
 + (void)logoutSuccess:(void (^)(id json))success
               failure:(void (^)(id json))failure
 {
-    [[WRequest client] getPath:@"/users/logout" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        id json = [WRequest JSONFromData:responseObject];
-        if ([json isKindOfClass:[NSError class]]) {
-            failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else {
-            success(json);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure([WRequest displayError:error forOperation:operation]);
-    }];
+    NSString *path = @"/users/logout";
+    
+    [WRequest requestWithMethod:@"GET" path:path parameters:nil success:success failure:failure];
 }
 
 @end

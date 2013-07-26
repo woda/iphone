@@ -15,19 +15,7 @@
                failure:(void (^)(id error))failure
 {
     path = [@"/users/files" stringByAppendingString:path];
-    
-    [[WRequest client] getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        id json = [WRequest JSONFromData:responseObject];
-        if ([json isKindOfClass:[NSError class]]) {
-            failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else if ([json isKindOfClass:[NSDictionary class]] && [[json objectForKey:@"success"] boolValue]) {
-            success(json);
-        } else {
-            failure(json);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure([WRequest displayError:error forOperation:operation]);
-    }];
+    [WRequest requestWithMethod:@"GET" path:path parameters:nil success:success failure:failure];
 }
 
 + (void)listAllFilesWithSuccess:(void (^)(id json))success
@@ -39,35 +27,28 @@
 + (void)listUpdatedFilesWithSuccess:(void (^)(id json))success
                             failure:(void (^)(id error))failure
 {
-    [[WRequest client] getPath:@"/users/recents" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        id json = [WRequest JSONFromData:responseObject];
-        if ([json isKindOfClass:[NSError class]]) {
-            failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"error"]) {
-            failure(json);
-        } else {
-            success(json);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure([WRequest displayError:error forOperation:operation]);
-    }];
+    NSString *path = @"/users/recents";
+    [WRequest requestWithMethod:@"GET" path:path parameters:nil success:success failure:failure];
 }
 
 + (void)listFavoriteFilesWithSuccess:(void (^)(id json))success
                              failure:(void (^)(id error))failure
 {
-    [[WRequest client] getPath:@"/users/favorites" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        id json = [WRequest JSONFromData:responseObject];
-        if ([json isKindOfClass:[NSError class]]) {
-            failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"error"]) {
-            failure(json);
-        } else {
-            success(json);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure([WRequest displayError:error forOperation:operation]);
-    }];
+    NSString *path = @"/users/favorites";
+    [WRequest requestWithMethod:@"GET" path:path parameters:nil success:success failure:failure];
+}
+
++ (void)listSharedFilesWithSuccess:(void (^)(id json))success
+                           failure:(void (^)(id error))failure
+{
+    
+}
+
++ (void)listPublicFilesWithSuccess:(void (^)(id json))success
+                           failure:(void (^)(id error))failure
+{
+    NSString *path = @"/users/public_files";
+    [WRequest requestWithMethod:@"GET" path:path parameters:nil success:success failure:failure];
 }
 
 + (void)markFile:(NSNumber *)idNumber
@@ -76,23 +57,8 @@
          failure:(void (^)(id error))failure
 {
     NSString *path = [@"/users/favorites/{id}" stringByReplacingOccurrencesOfString:@"{id}" withString:[idNumber description]];
-    
-    [[WRequest client] postPath:path parameters:@{@"favorite": favorite} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        id json = [WRequest JSONFromData:responseObject];
-        if ([json isKindOfClass:[NSError class]]) {
-            failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else if ([json isKindOfClass:[NSDictionary class]]) {
-            if ([json objectForKey:@"error"]) {
-                failure(json);
-            } else {
-                success(json);
-            }
-        } else {
-            failure(json);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure([WRequest displayError:error forOperation:operation]);
-    }];
+    NSDictionary *params = @{@"favorite": favorite};
+    [WRequest requestWithMethod:@"POST" path:path parameters:params success:success failure:failure];
 }
 
 + (void)markFileAsFavorite:(NSNumber *)idNumber

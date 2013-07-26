@@ -50,35 +50,20 @@
     NSString *path = @"/sync/{filename}";
     path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
     
-    [[WRequest client] putPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        id json = [WRequest JSONFromData:responseObject];
-        if ([json isKindOfClass:[NSError class]]) {
-            failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else if ([[json objectForKey:@"success"] boolValue]) {
-            DDLogInfo(@"File created");
-            if ([[json objectForKey:@"need_upload"] boolValue]) {
-                NSNumber *partSize = json[@"file"][@"part_size"];
-                if ([partSize integerValue] <= 0) {
-                    DDLogWarn(@"Warning: 'part_size' info is missing in json: %@", json);
-                    partSize = @(5*1024*1024); // 5ko
-                }
-                [WRequest uploadFile:filename partSize:partSize withData:data success:^(id json) {
-                    success(json);
-                } loading:^(double pourcentage) {
-                    loading(pourcentage);
-                } failure:^(id error) {
-                    failure(error);
-                }];
-            } else {
-                success(json);
+    [WRequest requestWithMethod:@"PUT" path:path parameters:params success:^(id json) {
+        DDLogInfo(@"File created");
+        if ([[json objectForKey:@"need_upload"] boolValue]) {
+            NSNumber *partSize = json[@"file"][@"part_size"];
+            if ([partSize integerValue] <= 0) {
+                DDLogWarn(@"Warning: 'part_size' info is missing in json: %@", json);
+                partSize = @(5*1024*1024); // 5ko
             }
+            [WRequest uploadFile:filename partSize:partSize withData:data success:success loading:loading failure:failure];
         } else {
-            DDLogInfo(@"File not created: %@", json);
-            failure(json);
+            DDLogInfo(@"File arleady uploaded");
+            success(json);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure([WRequest displayError:error forOperation:operation]);
-    }];
+    } failure:failure];
 }
 
 
@@ -190,23 +175,10 @@
     NSString *path = @"/successsync/{filename}";
     path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
     
-    [[WRequest client] postPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        id json = [WRequest JSONFromData:responseObject];
-        if ([json isKindOfClass:[NSError class]]) {
-            failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else if ([[json objectForKey:@"success"] boolValue]) {
-            DDLogInfo(@"File upload complete: %@", json);
-            success(json);
-        } else {
-//            DDLogError(@"File upload not complete: %@", json);
-//            failure(json);
-            
-            DDLogInfo(@"File upload complete");
-            success(json);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure([WRequest displayError:error forOperation:operation]);
-    }];
+    [WRequest requestWithMethod:@"POST" path:path parameters:nil success:^(id json) {
+        DDLogInfo(@"File upload complete: %@", json);
+        success(json);
+    } failure:failure];
 }
 
 
@@ -224,20 +196,10 @@
     NSString *path = @"/sync/{filename}";
     path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
     
-    [[WRequest client] deletePath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        id json = [WRequest JSONFromData:responseObject];
-        if ([json isKindOfClass:[NSError class]]) {
-            failure([WRequest displayError:json forOperation:operation]);
-        } else if ([[json objectForKey:@"success"] boolValue]) {
-            DDLogInfo(@"File deleted: %@", json);
-            success(json);
-        } else {
-            DDLogError(@"File not deleted: %@", json);
-            failure(json);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure([WRequest displayError:error forOperation:operation]);
-    }];
+    [WRequest requestWithMethod:@"DELETE" path:path parameters:nil success:^(id json) {
+        DDLogInfo(@"File deleted: %@", json);
+        success(json);
+    } failure:failure];
 }
 
 //Changing a file
@@ -259,30 +221,20 @@
     NSString *path = @"/sync/{filename}";
     path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
     
-    [[WRequest client] postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        id json = [WRequest JSONFromData:responseObject];
-        if ([json isKindOfClass:[NSError class]]) {
-            failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else if ([[json objectForKey:@"success"] boolValue]) {
-            DDLogInfo(@"File created: %@", json);
-            if ([[json objectForKey:@"need_upload"] boolValue]) {
-                [WRequest uploadFile:filename partSize:[json objectForKey:@"part_size"] withData:data success:^(id json) {
-                    success(json);
-                } loading:^(double pourcentage) {
-                    loading(pourcentage);
-                } failure:^(id error) {
-                    failure(error);
-                }];
-            } else {
+    [WRequest requestWithMethod:@"POST" path:path parameters:params success:^(id json) {
+        DDLogInfo(@"File created: %@", json);
+        if ([[json objectForKey:@"need_upload"] boolValue]) {
+            [WRequest uploadFile:filename partSize:[json objectForKey:@"part_size"] withData:data success:^(id json) {
                 success(json);
-            }
+            } loading:^(double pourcentage) {
+                loading(pourcentage);
+            } failure:^(id error) {
+                failure(error);
+            }];
         } else {
-            DDLogError(@"File not created: %@", json);
-            failure(json);
+            success(json);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure([WRequest displayError:error forOperation:operation]);
-    }];
+    } failure:failure];
 }
 
 
@@ -332,8 +284,7 @@
     for (int i=0; i<[parts integerValue]; i++) {
         NSOperation *o = [WRequest getFile:filename partNumber:@(i) success:^(NSData *data, NSNumber *partNumber) {
             [file appendData:data];
-//            DDLogInfo(@"File part n.%d downloaded out of %@ parts", [partNumber integerValue]+1, parts);
-//            loading(([partNumber doubleValue] + 1.0) / [parts doubleValue]);
+            DDLogVerbose(@"File part n.%d downloaded out of %@ parts", [partNumber integerValue]+1, parts);
             if ([partNumber integerValue]+1 >= [parts  integerValue]) {
                 success(file);
             }

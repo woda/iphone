@@ -159,8 +159,6 @@
 		A2411B4B16D255D10060EFF7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2411B4A16D255D10060EFF7 /* SystemConfiguration.framework */; };
 		A2411B4F16D259CE0060EFF7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2411B4816D255C70060EFF7 /* MobileCoreServices.framework */; };
 		A2411B5016D259D30060EFF7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2411B4A16D255D10060EFF7 /* SystemConfiguration.framework */; };
-		A2411B5A16D26B460060EFF7 /* WRequest+Amazon.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5316D26B460060EFF7 /* WRequest+Amazon.m */; };
-		A2411B5B16D26B460060EFF7 /* WRequest+Amazon.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5316D26B460060EFF7 /* WRequest+Amazon.m */; };
 		A2411B5C16D26B460060EFF7 /* WRequest+Sync.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5516D26B460060EFF7 /* WRequest+Sync.m */; };
 		A2411B5D16D26B460060EFF7 /* WRequest+Sync.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5516D26B460060EFF7 /* WRequest+Sync.m */; };
 		A2411B5E16D26B460060EFF7 /* WRequest+User.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5716D26B460060EFF7 /* WRequest+User.m */; };
@@ -407,8 +405,6 @@
 		A2411B4A16D255D10060EFF7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A2411B4C16D256FD0060EFF7 /* WRequestUserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRequestUserTests.h; sourceTree = "<group>"; };
 		A2411B4D16D256FD0060EFF7 /* WRequestUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRequestUserTests.m; sourceTree = "<group>"; };
-		A2411B5216D26B460060EFF7 /* WRequest+Amazon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WRequest+Amazon.h"; sourceTree = "<group>"; };
-		A2411B5316D26B460060EFF7 /* WRequest+Amazon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WRequest+Amazon.m"; sourceTree = "<group>"; };
 		A2411B5416D26B460060EFF7 /* WRequest+Sync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WRequest+Sync.h"; sourceTree = "<group>"; };
 		A2411B5516D26B460060EFF7 /* WRequest+Sync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WRequest+Sync.m"; sourceTree = "<group>"; };
 		A2411B5616D26B460060EFF7 /* WRequest+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WRequest+User.h"; sourceTree = "<group>"; };
@@ -827,8 +823,6 @@
 		A2411B5116D26B460060EFF7 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				A2411B5216D26B460060EFF7 /* WRequest+Amazon.h */,
-				A2411B5316D26B460060EFF7 /* WRequest+Amazon.m */,
 				A2411B5416D26B460060EFF7 /* WRequest+Sync.h */,
 				A2411B5516D26B460060EFF7 /* WRequest+Sync.m */,
 				A2411B5616D26B460060EFF7 /* WRequest+User.h */,
@@ -1399,7 +1393,6 @@
 				A2411B4316D2544D0060EFF7 /* AFURLConnectionOperation.m in Sources */,
 				A2411B4516D2544D0060EFF7 /* AFXMLRequestOperation.m in Sources */,
 				A2411B4716D2544D0060EFF7 /* UIImageView+AFNetworking.m in Sources */,
-				A2411B5B16D26B460060EFF7 /* WRequest+Amazon.m in Sources */,
 				A2411B5D16D26B460060EFF7 /* WRequest+Sync.m in Sources */,
 				A2411B5F16D26B460060EFF7 /* WRequest+User.m in Sources */,
 				A2411B6116D26B460060EFF7 /* WRequest.m in Sources */,
@@ -1435,7 +1428,6 @@
 				A2411B4216D2544D0060EFF7 /* AFURLConnectionOperation.m in Sources */,
 				A2411B4416D2544D0060EFF7 /* AFXMLRequestOperation.m in Sources */,
 				A2411B4616D2544D0060EFF7 /* UIImageView+AFNetworking.m in Sources */,
-				A2411B5A16D26B460060EFF7 /* WRequest+Amazon.m in Sources */,
 				A2411B5C16D26B460060EFF7 /* WRequest+Sync.m in Sources */,
 				A2411B5E16D26B460060EFF7 /* WRequest+User.m in Sources */,
 				A2411B6016D26B460060EFF7 /* WRequest.m in Sources */,

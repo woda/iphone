@@ -54,4 +54,26 @@ static AFHTTPClient *client = nil;
     return (nil);
 }
 
++ (void)requestWithMethod:(NSString *)method
+                     path:(NSString *)path
+               parameters:(NSDictionary *)parameters
+                  success:(void (^)(id json))success
+                  failure:(void (^)(id error))failure
+{
+	NSURLRequest *request = [[WRequest client] requestWithMethod:method path:path parameters:parameters];
+    AFHTTPRequestOperation *operation = [[WRequest client] HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        id json = [WRequest JSONFromData:responseObject];
+        if ([json isKindOfClass:[NSError class]]) {
+            failure([WRequest displayError:(NSError *)json forOperation:operation]);
+        } else if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"error"]) {
+            failure(json);
+        } else {
+            success(json);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failure([WRequest displayError:error forOperation:operation]);
+    }];
+    [[WRequest client] enqueueHTTPRequestOperation:operation];
+}
+
 @end

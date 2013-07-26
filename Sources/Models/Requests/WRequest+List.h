@@ -23,6 +23,12 @@
 + (void)listFavoriteFilesWithSuccess:(void (^)(id json))success
                              failure:(void (^)(id error))failure;
 
++ (void)listSharedFilesWithSuccess:(void (^)(id json))success
+                             failure:(void (^)(id error))failure;
+
++ (void)listPublicFilesWithSuccess:(void (^)(id json))success
+                             failure:(void (^)(id error))failure;
+
 + (void)markFileAsFavorite:(NSNumber *)idNumber
                    success:(void (^)(id json))success
                    failure:(void (^)(id error))failure;

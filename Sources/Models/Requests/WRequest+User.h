@@ -8,7 +8,7 @@
 
 #import "WRequest.h"
 
-#define kInvalidEmail   @"email_invalid"
+#define kInvalidEmail   @"db_error"
 
 @interface WRequest (User)
 

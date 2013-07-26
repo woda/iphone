@@ -180,13 +180,14 @@
     
     _email = @"none";
     [WRequest updateUserWithFirstName:nil lastName:nil password:nil email:_email success:^(NSDictionary *json) {
-        STAssertTrue(([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"error"]), @"JSON format invalid: %@", json);
-        if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"login"]) {
-            STAssertEqualObjects(kInvalidEmail, [json objectForKey:@"error"], @"email is supposed to be invalid");
-        }
+        STFail(@"Error (email is supposed to be invalid): %@", json);
         kStopWait;
     } failure:^(id json) {
-        STFail(@"Error: %@", json);
+        if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"error"]) {
+            STAssertEqualObjects(kInvalidEmail, [json objectForKey:@"error"], @"email is supposed to be invalid");
+        } else {
+            STFail(@"Error: %@", json);
+        }
         kStopWait;
     }];
     
