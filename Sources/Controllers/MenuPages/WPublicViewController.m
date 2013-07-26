@@ -18,6 +18,14 @@
 #pragma mark -
 #pragma mark Initialization methods
 
+- (void)reload {
+//    [WRequest listUpdatedFilesWithSuccess:^(id json) {
+//        self.data = json;
+//    } failure:^(id error) {
+//        DDLogError(@"Failure while listing favorite files: %@", error);
+//    }];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     

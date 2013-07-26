@@ -106,7 +106,8 @@ static WUser *current = nil;
             [self setStatus:Connected];
         } failure:^(NSDictionary *json) {
             DDLogError(@"Login error: %@", json);
-            if ([[json objectForKey:@"error"] isEqualToString:@"user_not_found"]
+            if ([json isKindOfClass:[NSDictionary class]]
+                && [[json objectForKey:@"error"] isEqualToString:@"user_not_found"]
                 && [login isEqualToString:@"test1"]
                 && [password isEqualToString:@"password"]) {
                 DDLogWarn(@"Creating test user");
