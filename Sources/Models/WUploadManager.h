@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 #define kUploadList             @"kUploadList"
 #define kUploadListLastUpdate   @"kUploadListLastUpdate"
@@ -27,6 +28,6 @@
 + (WUploadManager *)shared;
 + (NSDictionary *)uploadList;
 
-- (void)uploadFile:(NSData *)file name:(NSString *)name mediaType:(NSString *)mediaType assetURL:(NSURL *)url;
+- (void)uploadFileWihAsset:(ALAsset *)asset;
 
 @end

@@ -98,7 +98,7 @@
 //    }
 }
 
-- (void)imagePickerDismissed:(UIImagePickerController *)picker {
+- (void)imagePickerDismissed:(WSAssetPickerController *)picker {
     [WRequest listAllFilesWithSuccess:^(NSDictionary *json) {
         self.data = json;
         

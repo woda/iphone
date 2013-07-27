@@ -44,7 +44,7 @@
     } else {
         UIButton *button = [[UIButton alloc] init];
         [button setImage:[UIImage imageNamed:@"navbar_left_white_arrow.png"] forState:UIControlStateNormal];
-        [button setBounds:CGRectMake(0, 0, 35, 18)];
+        [button setBounds:CGRectMake(0, 0, 21, 18)];
         [button setImageEdgeInsets:(UIEdgeInsets) {
             .top = 0,
             .left = 10,

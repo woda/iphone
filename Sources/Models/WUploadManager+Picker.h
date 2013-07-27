@@ -7,17 +7,19 @@
 //
 
 #import "WUploadManager.h"
+#import "WPicturePickerViewController.h"
 
 @protocol WUploadManagerPickerDelegate <NSObject>
 
-- (void)imagePickerDismissed:(UIImagePickerController *)picker;
+- (void)imagePickerDismissed:(WSAssetPickerController *)picker;
 
 @end
 
 
-@interface WUploadManager (Picker) <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface WUploadManager (Picker) <WSAssetPickerControllerDelegate>
 
 @property (nonatomic, retain) UIViewController<WUploadManagerPickerDelegate> *delegate;
+@property (nonatomic, retain) ALAssetsLibrary   *assetsLibrary;
 
 + (void)presentPickerInController:(UIViewController *)c;
 

@@ -9,8 +9,8 @@
 #import "AFJSONRequestOperation.h"
 #import "AFHTTPClient.h"
 
-#define kBaseURL    @"https://127.0.0.1:3000"
-//#define kBaseURL    @"https://woda-server.com:3000"
+//#define kBaseURL    @"https://127.0.0.1:3000"
+#define kBaseURL    @"https://woda-server.com:3000"
 //#define kBaseURL    @"https://ec2-54-242-98-168.compute-1.amazonaws.com:3000"
 //#define kBaseURL    @"http://httpbin.org/put"
 

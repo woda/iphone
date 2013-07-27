@@ -7,6 +7,7 @@
 //
 
 #import "WPicturePickerViewController.h"
+#import "WAlbumTableViewController.h"
 
 @interface WPicturePickerViewController ()
 
@@ -14,35 +15,20 @@
 
 @implementation WPicturePickerViewController
 
+#pragma mark - Initialization
 
-#pragma mark -
-#pragma mark Initialization methods
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    self.title = @"Woda";
-    
-    if (self.navigationController.viewControllers.count <= 2) {
-        UIButton *button = [[UIButton alloc] init];
-        [button setImage:[UIImage imageNamed:@"navbar_cross_big.png"] forState:UIControlStateNormal];
-        [button setBounds:CGRectMake(0, 0, 35, 25)];
-        [button setImageEdgeInsets:(UIEdgeInsets) {
-            .top = 0,
-            .left = 10,
-            .bottom = 0,
-            .right = 0
-        }];
-        [button addTarget:self action:@selector(close:) forControlEvents:UIControlEventTouchUpInside];
-        UIBarButtonItem *listButton = [[UIBarButtonItem alloc] initWithCustomView:button];
-        self.navigationItem.leftBarButtonItem = listButton;
+- (id)initWithAssetsLibrary:(ALAssetsLibrary *)assetsLibrary {
+    self = [super initWithAssetsLibrary:assetsLibrary];
+    if (self) {
+        self.navigationBar.barStyle = UIBarStyleBlackOpaque;
+        self.toolbar.barStyle = UIBarStyleBlackOpaque;
+        
+        WAlbumTableViewController *albumTableViewController = [[WAlbumTableViewController alloc] initWithStyle:UITableViewStylePlain];
+        albumTableViewController.assetPickerState = [self performSelector:@selector(assetPickerState)];
+        [self setViewControllers:@[albumTableViewController]];
     }
-}
-
-- (IBAction)close:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
-        // do nothing
-    }];
+    
+    return self;
 }
 
 @end

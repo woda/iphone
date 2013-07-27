@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WSAssetPicker.h"
 
-@interface WPicturePickerViewController : UIViewController
+@interface WPicturePickerViewController : WSAssetPickerController
 
 @end

@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Woda. All rights reserved.
 //
 
-#import <AssetsLibrary/AssetsLibrary.h>
 #import "WUploadManager.h"
 #import "WRequest+Sync.h"
 
@@ -89,60 +88,50 @@ static WUploadManager *shared = nil;
     return (nil);
 }
 
-- (void)uploadFile:(NSData *)file name:(NSString *)name mediaType:(NSString *)mediaType assetURL:(NSURL *)url {
+- (void)uploadFileWihAsset:(ALAsset *)asset {
     __block WUploadManager *blockSelf = self;
-    __block NSString *fileName = name;
-    __block NSString *thumbnail = nil;
-    NSDate *date = [NSDate dateWithTimeInterval:-(24*3600) sinceDate:[NSDate date]];//[NSDate date];
+    NSDate *date = [NSDate date];
     
-    void (^addFile)(ALAsset *) = ^(ALAsset *asset) {
-        DDLogWarn(@"Asset: %@", asset);
-        if (asset) {
-            if (fileName == nil) {
-                fileName = [[asset defaultRepresentation] filename];
-            }
-            thumbnail = [self saveThumbnail:[UIImage imageWithCGImage:[asset thumbnail]]];
-        }
-        if (fileName.length <= 0) {
-            DDLogError(@"Failed uploading file: The filename must contain at least 1 character");
-        } else {
-            NSMutableDictionary *info = [NSMutableDictionary dictionaryWithDictionary:@{
-                                                                      kUploadFileName: fileName,
-                                                                     kUploadMediaType: mediaType,
-                                                                      kUploadAssetURL: [url relativeString],
-                                                                     kUploadThumbnail: thumbnail,
-                                                              kUploadNotificationName: [[NSProcessInfo processInfo] globallyUniqueString],
-                                                                          kUploadDate: date
-                                         }];
-            [blockSelf addFileToUploadList:info];
-            
-            [WRequest addFile:fileName withData:file success:^(id json) {
-                info[kUploadNeedsUpload] = @NO;
-                info[kUploadProgress] = @100;
-                [blockSelf updateFileInUploadList:info];
-                [[NSNotificationCenter defaultCenter] postNotificationName:info[kUploadNotificationName] object:nil userInfo:info];
-            } loading:^(double pourcentage) {
-                if ((int)(pourcentage * 100) != [info[kUploadProgress] integerValue]) {
-                    info[kUploadProgress] = @(pourcentage * 100);
-                    [blockSelf updateFileInUploadList:info];
-                    DDLogInfo(@"Uploading '%@': %@%%", [info objectForKey:kUploadFileName], info[kUploadProgress]);
-                    [[NSNotificationCenter defaultCenter] postNotificationName:info[kUploadNotificationName] object:nil userInfo:info];
-                }
-            } failure:^(id error) {
-                info[kUploadNeedsUpload] = @NO;
-                [blockSelf updateFileInUploadList:info];
-                [[NSNotificationCenter defaultCenter] postNotificationName:info[kUploadNotificationName] object:nil userInfo:info];
-            }];
-        }
-    };
+    DDLogWarn(@"Asset: %@", asset);
+    ALAssetRepresentation *rep = [asset defaultRepresentation];
     
-    if (url) {
-        ALAssetsLibrary* library = [[ALAssetsLibrary alloc] init];
-        [library assetForURL:url resultBlock:addFile failureBlock:^(NSError *error) {
-            DDLogError(@"Failed finding the asset: %@", error);
-        }];
+    Byte *buffer = (Byte*)malloc(rep.size);
+    NSUInteger buffered = [rep getBytes:buffer fromOffset:0.0 length:rep.size error:nil];
+    NSData *file = [NSData dataWithBytesNoCopy:buffer length:buffered freeWhenDone:YES];
+    
+    NSString *fileName = [rep filename];
+    NSString *mediaType = [fileName componentsSeparatedByString:@"."].last;
+    NSString *thumbnail = [self saveThumbnail:[UIImage imageWithCGImage:[asset thumbnail]]];
+    
+    if (fileName.length <= 0) {
+        DDLogError(@"Failed uploading file: The filename must contain at least 1 character");
     } else {
-        addFile(nil);
+        NSMutableDictionary *info = [NSMutableDictionary dictionaryWithDictionary:@{
+                                                                  kUploadFileName: fileName,
+                                                                 kUploadMediaType: mediaType,
+                                                                 kUploadThumbnail: thumbnail,
+                                                          kUploadNotificationName: [[NSProcessInfo processInfo] globallyUniqueString],
+                                                                      kUploadDate: date
+                                     }];
+        [self addFileToUploadList:info];
+        
+        [WRequest addFile:fileName withData:file success:^(id json) {
+            info[kUploadNeedsUpload] = @NO;
+            info[kUploadProgress] = @100;
+            [blockSelf updateFileInUploadList:info];
+            [[NSNotificationCenter defaultCenter] postNotificationName:info[kUploadNotificationName] object:nil userInfo:info];
+        } loading:^(double pourcentage) {
+            if ((int)(pourcentage * 100) != [info[kUploadProgress] integerValue]) {
+                info[kUploadProgress] = @(pourcentage * 100);
+                [blockSelf updateFileInUploadList:info];
+                DDLogInfo(@"Uploading '%@': %@%%", [info objectForKey:kUploadFileName], info[kUploadProgress]);
+                [[NSNotificationCenter defaultCenter] postNotificationName:info[kUploadNotificationName] object:nil userInfo:info];
+            }
+        } failure:^(id error) {
+            info[kUploadNeedsUpload] = @NO;
+            [blockSelf updateFileInUploadList:info];
+            [[NSNotificationCenter defaultCenter] postNotificationName:info[kUploadNotificationName] object:nil userInfo:info];
+        }];
     }
 }
 

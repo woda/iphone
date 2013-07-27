@@ -169,6 +169,18 @@
 		A24FC761165E6DC5002E2C26 /* WListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24FC760165E6DC5002E2C26 /* WListViewController.m */; };
 		A258B28817A33EA800C0D3E9 /* WOfflineFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A258B28717A33EA800C0D3E9 /* WOfflineFileCell.m */; };
 		A258B28A17A3417500C0D3E9 /* WOfflineFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A258B28917A3417500C0D3E9 /* WOfflineFileCell.xib */; };
+		A258B29E17A3647200C0D3E9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A258B28C17A3647100C0D3E9 /* LICENSE */; };
+		A258B29F17A3647200C0D3E9 /* WSAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A258B28F17A3647100C0D3E9 /* WSAlbumTableViewController.m */; };
+		A258B2A017A3647200C0D3E9 /* WSAssetPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A258B29317A3647100C0D3E9 /* WSAssetPickerController.m */; };
+		A258B2A117A3647200C0D3E9 /* WSAssetPickerState.m in Sources */ = {isa = PBXBuildFile; fileRef = A258B29517A3647100C0D3E9 /* WSAssetPickerState.m */; };
+		A258B2A217A3647200C0D3E9 /* WSAssetsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A258B29717A3647200C0D3E9 /* WSAssetsTableViewCell.m */; };
+		A258B2A317A3647200C0D3E9 /* WSAssetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A258B29917A3647200C0D3E9 /* WSAssetTableViewController.m */; };
+		A258B2A417A3647200C0D3E9 /* WSAssetViewColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = A258B29B17A3647200C0D3E9 /* WSAssetViewColumn.m */; };
+		A258B2A517A3647200C0D3E9 /* WSAssetWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A258B29D17A3647200C0D3E9 /* WSAssetWrapper.m */; };
+		A258B2AD17A36A5100C0D3E9 /* WAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A258B2AC17A36A5100C0D3E9 /* WAlbumTableViewController.m */; };
+		A258B2B017A36CC100C0D3E9 /* WAssetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A258B2AF17A36CC100C0D3E9 /* WAssetTableViewController.m */; };
+		A258B2B317A37D2C00C0D3E9 /* WAssetViewColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = A258B2B217A37D2B00C0D3E9 /* WAssetViewColumn.m */; };
+		A258B2B617A37F7F00C0D3E9 /* WAssetsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A258B2B517A37F7E00C0D3E9 /* WAssetsTableViewCell.m */; };
 		A2677B00165E0AE900C1D630 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2677B02165E0AE900C1D630 /* Localizable.strings */; };
 		A2677B08165E0F0200C1D630 /* WHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B07165E0F0200C1D630 /* WHomeViewController.m */; };
 		A2677B0C165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B0B165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m */; };
@@ -418,6 +430,30 @@
 		A258B28617A33EA700C0D3E9 /* WOfflineFileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOfflineFileCell.h; sourceTree = "<group>"; };
 		A258B28717A33EA800C0D3E9 /* WOfflineFileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOfflineFileCell.m; sourceTree = "<group>"; };
 		A258B28917A3417500C0D3E9 /* WOfflineFileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WOfflineFileCell.xib; sourceTree = "<group>"; };
+		A258B28C17A3647100C0D3E9 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		A258B28E17A3647100C0D3E9 /* WSAlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAlbumTableViewController.h; sourceTree = "<group>"; };
+		A258B28F17A3647100C0D3E9 /* WSAlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAlbumTableViewController.m; sourceTree = "<group>"; };
+		A258B29117A3647100C0D3E9 /* WSAssetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAssetPicker.h; sourceTree = "<group>"; };
+		A258B29217A3647100C0D3E9 /* WSAssetPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAssetPickerController.h; sourceTree = "<group>"; };
+		A258B29317A3647100C0D3E9 /* WSAssetPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAssetPickerController.m; sourceTree = "<group>"; };
+		A258B29417A3647100C0D3E9 /* WSAssetPickerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAssetPickerState.h; sourceTree = "<group>"; };
+		A258B29517A3647100C0D3E9 /* WSAssetPickerState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAssetPickerState.m; sourceTree = "<group>"; };
+		A258B29617A3647200C0D3E9 /* WSAssetsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAssetsTableViewCell.h; sourceTree = "<group>"; };
+		A258B29717A3647200C0D3E9 /* WSAssetsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAssetsTableViewCell.m; sourceTree = "<group>"; };
+		A258B29817A3647200C0D3E9 /* WSAssetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAssetTableViewController.h; sourceTree = "<group>"; };
+		A258B29917A3647200C0D3E9 /* WSAssetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAssetTableViewController.m; sourceTree = "<group>"; };
+		A258B29A17A3647200C0D3E9 /* WSAssetViewColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAssetViewColumn.h; sourceTree = "<group>"; };
+		A258B29B17A3647200C0D3E9 /* WSAssetViewColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAssetViewColumn.m; sourceTree = "<group>"; };
+		A258B29C17A3647200C0D3E9 /* WSAssetWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAssetWrapper.h; sourceTree = "<group>"; };
+		A258B29D17A3647200C0D3E9 /* WSAssetWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAssetWrapper.m; sourceTree = "<group>"; };
+		A258B2AB17A36A5100C0D3E9 /* WAlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WAlbumTableViewController.h; path = Picker/WAlbumTableViewController.h; sourceTree = "<group>"; };
+		A258B2AC17A36A5100C0D3E9 /* WAlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WAlbumTableViewController.m; path = Picker/WAlbumTableViewController.m; sourceTree = "<group>"; };
+		A258B2AE17A36CC100C0D3E9 /* WAssetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WAssetTableViewController.h; path = Picker/WAssetTableViewController.h; sourceTree = "<group>"; };
+		A258B2AF17A36CC100C0D3E9 /* WAssetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WAssetTableViewController.m; path = Picker/WAssetTableViewController.m; sourceTree = "<group>"; };
+		A258B2B117A37D2900C0D3E9 /* WAssetViewColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WAssetViewColumn.h; path = Picker/WAssetViewColumn.h; sourceTree = "<group>"; };
+		A258B2B217A37D2B00C0D3E9 /* WAssetViewColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WAssetViewColumn.m; path = Picker/WAssetViewColumn.m; sourceTree = "<group>"; };
+		A258B2B417A37F7D00C0D3E9 /* WAssetsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WAssetsTableViewCell.h; path = Picker/WAssetsTableViewCell.h; sourceTree = "<group>"; };
+		A258B2B517A37F7E00C0D3E9 /* WAssetsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WAssetsTableViewCell.m; path = Picker/WAssetsTableViewCell.m; sourceTree = "<group>"; };
 		A2677B01165E0AE900C1D630 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2677B05165E0B5000C1D630 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2677B06165E0F0200C1D630 /* WHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHomeViewController.h; sourceTree = "<group>"; };
@@ -840,6 +876,54 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
+		A258B28B17A3647100C0D3E9 /* WSAssetPickerController */ = {
+			isa = PBXGroup;
+			children = (
+				A258B28C17A3647100C0D3E9 /* LICENSE */,
+				A258B28D17A3647100C0D3E9 /* src */,
+			);
+			path = WSAssetPickerController;
+			sourceTree = "<group>";
+		};
+		A258B28D17A3647100C0D3E9 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A258B28E17A3647100C0D3E9 /* WSAlbumTableViewController.h */,
+				A258B28F17A3647100C0D3E9 /* WSAlbumTableViewController.m */,
+				A258B29117A3647100C0D3E9 /* WSAssetPicker.h */,
+				A258B29217A3647100C0D3E9 /* WSAssetPickerController.h */,
+				A258B29317A3647100C0D3E9 /* WSAssetPickerController.m */,
+				A258B29417A3647100C0D3E9 /* WSAssetPickerState.h */,
+				A258B29517A3647100C0D3E9 /* WSAssetPickerState.m */,
+				A258B29617A3647200C0D3E9 /* WSAssetsTableViewCell.h */,
+				A258B29717A3647200C0D3E9 /* WSAssetsTableViewCell.m */,
+				A258B29817A3647200C0D3E9 /* WSAssetTableViewController.h */,
+				A258B29917A3647200C0D3E9 /* WSAssetTableViewController.m */,
+				A258B29A17A3647200C0D3E9 /* WSAssetViewColumn.h */,
+				A258B29B17A3647200C0D3E9 /* WSAssetViewColumn.m */,
+				A258B29C17A3647200C0D3E9 /* WSAssetWrapper.h */,
+				A258B29D17A3647200C0D3E9 /* WSAssetWrapper.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A258B2AA17A36A0600C0D3E9 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				A2C170DC1784E04E00EAB93E /* WPicturePickerViewController.h */,
+				A2C170DD1784E04E00EAB93E /* WPicturePickerViewController.m */,
+				A258B2AB17A36A5100C0D3E9 /* WAlbumTableViewController.h */,
+				A258B2AC17A36A5100C0D3E9 /* WAlbumTableViewController.m */,
+				A258B2AE17A36CC100C0D3E9 /* WAssetTableViewController.h */,
+				A258B2AF17A36CC100C0D3E9 /* WAssetTableViewController.m */,
+				A258B2B417A37F7D00C0D3E9 /* WAssetsTableViewCell.h */,
+				A258B2B517A37F7E00C0D3E9 /* WAssetsTableViewCell.m */,
+				A258B2B117A37D2900C0D3E9 /* WAssetViewColumn.h */,
+				A258B2B217A37D2B00C0D3E9 /* WAssetViewColumn.m */,
+			);
+			name = Picker;
+			sourceTree = "<group>";
+		};
 		A2677B09165E100000C1D630 /* coredata-easyfetch */ = {
 			isa = PBXGroup;
 			children = (
@@ -959,8 +1043,7 @@
 				A2C170D61784DEA800EAB93E /* WUploadManager.m */,
 				A2C170D81784E00C00EAB93E /* WUploadManager+Picker.h */,
 				A2C170D91784E00D00EAB93E /* WUploadManager+Picker.m */,
-				A2C170DC1784E04E00EAB93E /* WPicturePickerViewController.h */,
-				A2C170DD1784E04E00EAB93E /* WPicturePickerViewController.m */,
+				A258B2AA17A36A0600C0D3E9 /* Picker */,
 			);
 			name = Upload;
 			sourceTree = "<group>";
@@ -1127,6 +1210,7 @@
 		A2DC4503163064A100E152A6 /* Librairies */ = {
 			isa = PBXGroup;
 			children = (
+				A258B28B17A3647100C0D3E9 /* WSAssetPickerController */,
 				A2C170C017838A1D00EAB93E /* TestFlightSDK */,
 				A299C67B177A4725000B4F88 /* Lumberjack */,
 				A299C66D177A3C35000B4F88 /* AFHTTPRequestOperationLogger */,
@@ -1362,6 +1446,7 @@
 				A21026A31797842C00A17532 /* upload_grey_dot@2x.png in Resources */,
 				A2CAF07117991BB0002A599D /* WDownloadingView.xib in Resources */,
 				A258B28A17A3417500C0D3E9 /* WOfflineFileCell.xib in Resources */,
+				A258B29E17A3647200C0D3E9 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1470,6 +1555,17 @@
 				A2CAF074179938F1002A599D /* WImagePreviewViewController.m in Sources */,
 				A20DBB8E1799575800C25E7D /* WOfflineManager.m in Sources */,
 				A258B28817A33EA800C0D3E9 /* WOfflineFileCell.m in Sources */,
+				A258B29F17A3647200C0D3E9 /* WSAlbumTableViewController.m in Sources */,
+				A258B2A017A3647200C0D3E9 /* WSAssetPickerController.m in Sources */,
+				A258B2A117A3647200C0D3E9 /* WSAssetPickerState.m in Sources */,
+				A258B2A217A3647200C0D3E9 /* WSAssetsTableViewCell.m in Sources */,
+				A258B2A317A3647200C0D3E9 /* WSAssetTableViewController.m in Sources */,
+				A258B2A417A3647200C0D3E9 /* WSAssetViewColumn.m in Sources */,
+				A258B2A517A3647200C0D3E9 /* WSAssetWrapper.m in Sources */,
+				A258B2AD17A36A5100C0D3E9 /* WAlbumTableViewController.m in Sources */,
+				A258B2B017A36CC100C0D3E9 /* WAssetTableViewController.m in Sources */,
+				A258B2B317A37D2C00C0D3E9 /* WAssetViewColumn.m in Sources */,
+				A258B2B617A37F7F00C0D3E9 /* WAssetsTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
