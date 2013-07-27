@@ -23,7 +23,7 @@
 #pragma mark - View lifecycle methods
 
 - (void)updateLabels {
-//    [_serverField setText:nil];
+    [_serverField setText:kBaseURL];
     [_serverField setPlaceholder:NSLocal(@"ServerFieldPlaceholder")];
 //    [_usernameField setText:nil];
     [_usernameField setPlaceholder:NSLocal(@"UsernameFieldPlaceholder")];
@@ -65,7 +65,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    
     [self registerForKeyboardNotifications];
     
     [self updateLabels];
@@ -78,6 +79,8 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kUserStatusChanged object:nil];
     [self unregisterForKeyboardNotifications];
 }
@@ -85,7 +88,6 @@
 - (void)userStatusChanged:(NSNotification *)notification {
     switch ([[WUser current] status]) {
         case Connected: {
-            [self.navigationController setNavigationBarHidden:NO animated:NO];
             WListViewController *folderViewController = [[WFolderViewController alloc] initWithPath:nil andData:nil];
             [self.navigationController pushViewController:folderViewController animated:YES];
             [((WNavigationController *)self.navigationController).homeController setSelected:kHomeFoldersCellIndex];

@@ -55,18 +55,14 @@
     [self.scrollView setMaximumZoomScale:2.0];
     [self.scrollView setMinimumZoomScale:minScale];
     [self.scrollView setZoomScale:minScale];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
     
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 
