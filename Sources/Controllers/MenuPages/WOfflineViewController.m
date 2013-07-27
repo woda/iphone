@@ -7,6 +7,8 @@
 //
 
 #import "WOfflineViewController.h"
+#import "WOfflineManager.h"
+#import "WOfflineFileCell.h"
 
 @interface WOfflineViewController ()
 
@@ -19,14 +21,7 @@
 #pragma mark Initialization methods
 
 - (void)reload {
-//    [WRequest listUpdatedFilesWithSuccess:^(id json) {
-//        self.data = json;
-//    } failure:^(id error) {
-//        DDLogError(@"Failure while listing favorite files: %@", error);
-//    }];
-    
-    [self.noFileLabel setText:@"Not implemented"];
-    self.data = @{};
+    self.data = [[WOfflineManager shared] offlineFiles];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -34,6 +29,25 @@
     
     self.title = NSLocal(@"OfflinePageTitle");
     self.homeCellIndex = kHomeOfflineCellIndex;
+}
+
+- (UITableViewCell *)fileCellForIndex:(NSInteger)idx {
+    if (idx) {
+        idx--;
+        if ([[self.data objectForKey:@"files"] count]) {
+            NSString *reuseIdentifier = [WOfflineFileCell reuseIdentifier];
+            UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+            if (cell == nil) {
+                cell = [UIViewController cellOfClass:[WOfflineFileCell class]];
+            }
+            [(WOfflineFileCell *)cell setFile:[[self.data objectForKey:@"files"] objectAtIndex:idx]];
+            [(WOfflineFileCell *)cell displaySeparator:(idx < ([[self.data objectForKey:@"files"] count] - 1))];
+            return (cell);
+        } else {
+            return (self.noFileCell);
+        }
+    }
+    return (self.filesHeaderCell);
 }
 
 @end

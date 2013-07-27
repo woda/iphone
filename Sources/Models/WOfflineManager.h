@@ -9,14 +9,20 @@
 #import <Foundation/Foundation.h>
 
 #define kOfflineList            @"kOfflineList"
+#define kTemporaryList          @"kTemporaryList"
 #define kOfflineFileId          @"kOfflineFileId"
-#define kOfflineFilePath         @"kOfflineFilePath"
+#define kOfflineFilePath        @"kOfflineFilePath"
+#define kOfflineFileDate        @"kOfflineFileDate"
 
 @interface WOfflineManager : NSObject
 
 + (WOfflineManager *)shared;
 + (NSData *)fileForId:(NSNumber *)idNumber;
++ (void)clearTemporaryFiles;
++ (void)clearAllFiles;
 
-- (void)saveFile:(NSData *)file withType:(NSString *)type forId:(NSNumber *)idNumber;
+- (void)saveFile:(NSData *)data withInfo:(NSDictionary *)info offline:(Boolean)offline;
+- (void)removeFileForId:(NSNumber *)idNumber;
+- (NSDictionary *)offlineFiles;
 
 @end

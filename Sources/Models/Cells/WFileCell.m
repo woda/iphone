@@ -52,11 +52,12 @@
     self.favoriteButton.alpha = 0.0;
     self.deleteButton.alpha = 0.0;
     
-    self.path = [file objectForKey:@"name"];
-    [self.title setText:[file objectForKey:@"name"]];
-    [self.star setHidden:![[file objectForKey:@"favorite"] boolValue]];
+    self.path = file[@"name"];
+    self.idNumber = file[@"id"];
+    [self.title setText:file[@"name"]];
+    [self.star setHidden:![file[@"favorite"] boolValue]];
     
-    NSString *type = [file objectForKey:@"type"];
+    NSString *type = file[@"type"];
     if ([self isFileAnImage:type]) {
         [self.icon setImage:[UIImage imageNamed:@"list_icon_picture.png"]];
     } else if ([self isFileADocument:type]) {
@@ -68,6 +69,9 @@
     } else {
         [self.icon setImage:[UIImage imageNamed:@"list_icon_document.png"]];
     }
+    
+    [self.deleteButton setTitle:NSLocal(@"Delete") forState:UIControlStateNormal];
+    [self.favoriteButton setTitle:NSLocal(@"MarkAsFavorite") forState:UIControlStateNormal];
 }
 
 - (void)displaySeparator:(Boolean)display {

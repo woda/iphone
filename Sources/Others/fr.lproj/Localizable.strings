@@ -28,6 +28,11 @@
 "Files" = "fichiers";
 "File" = "fichier";
 
+// File Cell
+"Delete" = "Supprimer";
+"MarkAsFavorite" = "Favori";
+"OnlineOnly" = "Online mode";
+
 // Folder Page
 "RootPageTitle" = "Woda";
 "NoDataLabel" = "Pas de fichier";

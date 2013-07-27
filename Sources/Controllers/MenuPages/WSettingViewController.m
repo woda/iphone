@@ -7,6 +7,7 @@
 //
 
 #import "WSettingViewController.h"
+#import "WOfflineManager.h"
 #import "WRequest.h"
 #import "WUser.h"
 
@@ -71,17 +72,7 @@
     return _documentsFolderSize;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    self.title = NSLocal(@"SettingsPageTitle");
-    self.homeCellIndex = kHomeSettingsCellIndex;
-    
-    [self.serverLabel setText:[[[WRequest client] baseURL] relativeString]];
-    [self.nameLabel setText:[[[[WUser current] firstName] capitalizedString] stringByAppendingFormat:@" %@", [[[WUser current] lastName] capitalizedString]]];
-    [self.emailLabel setText:[[WUser current] email]];
-    [self.versionLabel setText:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
-    
+- (void)updateStorageUsage {
     double appSize = [self appSize];
     NSString *text = @"Unknown memory use";
     if (appSize > (1024.0*1024.0*1024.0)) {
@@ -94,6 +85,20 @@
         text = [NSString stringWithFormat:@"%.1f Bytes used", appSize];
     }
     [self.memoryLabel setText:text];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.title = NSLocal(@"SettingsPageTitle");
+    self.homeCellIndex = kHomeSettingsCellIndex;
+    
+    [self.serverLabel setText:[[[WRequest client] baseURL] relativeString]];
+    [self.nameLabel setText:[[[[WUser current] firstName] capitalizedString] stringByAppendingFormat:@" %@", [[[WUser current] lastName] capitalizedString]]];
+    [self.emailLabel setText:[[WUser current] email]];
+    [self.versionLabel setText:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
+    
+    [self updateStorageUsage];
 }
 
 
@@ -112,6 +117,8 @@
             return (_feedbackCell);
         case kSettingLegalNoticeCellIndex:
             return (_noticeCell);
+        case kSettingCacheIndex:
+            return (_cacheCell);
         case kSettingLogoutIndex:
             return (_logoutCell);
             
@@ -129,8 +136,13 @@
             break;
         case kSettingLegalNoticeCellIndex:
             break;
+        case kSettingCacheIndex:
+            [WOfflineManager clearTemporaryFiles];
+            [self updateStorageUsage];
+            break;
         case kSettingLogoutIndex: {
             [WUser logout];
+            [WOfflineManager clearAllFiles];
             
             WNavigationController *nav = (WNavigationController *)self.navigationController;
             UIViewController *login = [[nav viewControllers] first];

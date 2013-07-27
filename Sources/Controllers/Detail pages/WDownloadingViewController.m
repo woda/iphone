@@ -67,7 +67,7 @@
             [stack addObject:c];
             [self.navigationController setViewControllers:stack animated:YES];
         }
-        [[WOfflineManager shared] saveFile:file withType:self.info[@"type"] forId:self.info[@"id"]];
+        [[WOfflineManager shared] saveFile:file withInfo:self.info offline:NO];
     } loading:^(double pourcentage) {
         [self.progressView setFrame:(CGRect) {
             .origin = CGPointZero,

@@ -11,6 +11,7 @@
 @interface WFileCell : UITableViewCell <XibViewDelegate>
 
 @property (nonatomic, retain) NSString              *path;
+@property (nonatomic, retain) NSNumber              *idNumber;
 
 @property (nonatomic, retain) IBOutlet UIView       *background;
 @property (nonatomic, retain) IBOutlet UIView       *separator;
