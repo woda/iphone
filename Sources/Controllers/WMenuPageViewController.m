@@ -14,7 +14,7 @@
 #import "WCell.h"
 
 @interface WMenuPageViewController ()
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+
 @end
 
 @implementation WMenuPageViewController

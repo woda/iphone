@@ -7,7 +7,7 @@
 //
 
 #import "WListViewController.h"
-#import "WUploadManager.h"
+#import "WUploadManager+Picker.h"
 
 @interface WFolderViewController : WListViewController <WUploadManagerPickerDelegate>
 

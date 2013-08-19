@@ -1705,7 +1705,6 @@
 				INFOPLIST_FILE = "Sources/Others/Woda-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK1.1\"",
 					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1724,7 +1723,6 @@
 				INFOPLIST_FILE = "Sources/Others/Woda-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK1.1\"",
 					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
