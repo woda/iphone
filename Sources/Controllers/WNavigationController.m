@@ -83,9 +83,7 @@
     [super pushViewController:viewController animated:animated];
 }
 
-- (void)setHomeController:(WHomeViewController *)homeController {
-    _homeController = homeController;
-    
+- (void)updateHomePosition {
     [_homeController.view setFrame:(CGRect) {
         .origin = (CGPoint) {
             .x = 0,
@@ -97,6 +95,15 @@
         }
     }];
     [self.view insertSubview:_homeController.view atIndex:0];
+    
+    NSLog(@"view.frame: %@", NSStringFromCGRect(self.view.frame));
+    NSLog(@"tableView.frame: %@", NSStringFromCGRect(_homeController.tableView.frame));
+}
+
+- (void)setHomeController:(WHomeViewController *)homeController {
+    _homeController = homeController;
+    
+    [self updateHomePosition];
 }
 
 
@@ -120,6 +127,7 @@
 }
 
 - (void)swipeRightWithDuration:(NSTimeInterval)duration {
+    [self updateHomePosition];
     [UIView animateWithDuration:duration animations:^{
         for (int i=1, k=self.view.subviews.count; i<k; i++) {
             UIView *v = self.view.subviews[i];

@@ -102,7 +102,7 @@
     [WRequest listAllFilesWithSuccess:^(NSDictionary *json) {
         self.data = json;
         
-        WHomeViewController *home = [(WNavigationController *)self.navigationController homeController];;
+        WHomeViewController *home = [(WNavigationController *)self.navigationController homeController];
         [home tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:kHomeUploadCellIndex inSection:0]];
     } failure:^(NSDictionary *error) {
         DDLogError(@"Failure while listing files: %@", error);
