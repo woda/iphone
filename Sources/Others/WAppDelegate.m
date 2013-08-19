@@ -37,10 +37,10 @@
     [self.homeController viewWillAppear:NO];
     [self.navigationController setHomeController:self.homeController];
     
-    [TestFlight takeOff:kTestFlightToken];
 #ifdef TESTING
     [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
 #endif
+    [TestFlight takeOff:kTestFlightToken];
     
     [DDLog removeAllLoggers];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
