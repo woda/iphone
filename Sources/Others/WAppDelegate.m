@@ -12,6 +12,7 @@
 //#import "WDetailViewController.h"
 #import "WUserLoginViewController.h"
 #import "AFHTTPRequestOperationLogger.h"
+#import "AFHTTPRequestOperation.h"
 #import "WOfflineManager.h"
 
 @implementation WAppDelegate
@@ -54,6 +55,25 @@
      name:UIApplicationWillTerminateNotification object:app];
 
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    if ([url isFileURL]) {
+        items = @[url];
+        
+        QLPreviewController *c = [[QLPreviewController alloc] init];
+        [c setDataSource:self];
+        [self.navigationController presentViewController:c animated:YES completion:nil];
+    }
+    return YES;
+}
+
+- (NSInteger)numberOfPreviewItemsInPreviewController:(QLPreviewController *)controller {
+    return 1;
+}
+
+- (id <QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index {
+    return items[0];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

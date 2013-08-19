@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuickLook/QuickLook.h>
 #import "NSManagedObjectContext-EasyFetch.h"
 #import "WNavigationController.h"
 #import "WHomeViewController.h"
@@ -42,7 +43,9 @@
 #define TESTING 1
 #define kTestFlightToken    @"9aa51a93-c57b-4aca-8783-75ba5609e739"
 
-@interface WAppDelegate : UIResponder <CoreDataApplicationDelegate>
+@interface WAppDelegate : UIResponder <CoreDataApplicationDelegate, QLPreviewControllerDataSource> {
+    NSArray *items;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
