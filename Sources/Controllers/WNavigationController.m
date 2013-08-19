@@ -15,8 +15,8 @@
 
 @interface WNavigationController ()
 
-- (void)swipeLeftWithDuration:(NSTimeInterval)duration;
-- (void)swipeRightWithDuration:(NSTimeInterval)duration;
+- (void)swipeLeftAnimated:(Boolean)animated;
+- (void)swipeRightAnimated:(Boolean)animated;
 
 @end
 
@@ -60,7 +60,7 @@
     
     UIView *v = [self.view.subviews objectAtIndex:1];
     if (v.frame.origin.x > 0) {
-        [self swipeLeftWithDuration:duration];
+        [self swipeLeftAnimated:YES];
     } else {
         [self.homeController.view setHidden:YES];
     }
@@ -72,12 +72,14 @@
 }
 
 - (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated {
-    [super setViewControllers:viewControllers animated:animated];
+    [self swipeLeftAnimated:YES];
     
-    [self swipeLeftWithDuration:0.3];
+    [super setViewControllers:viewControllers animated:animated];
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    [self swipeLeftAnimated:YES];
+    
     [super pushViewController:viewController animated:animated];
 }
 
@@ -102,64 +104,74 @@
 #pragma mark Swipe methods
 
 - (void)swipeLeftWithDuration:(NSTimeInterval)duration {
-    UIViewController *lastController = [[self viewControllers] last];
-    if (![lastController isKindOfClass:[WUserLoginViewController class]]
-        && [lastController isKindOfClass:[WMenuPageViewController class]]) {
-        [UIView animateWithDuration:duration animations:^{
-            for (int i=1, k=self.view.subviews.count; i<k; i++) {
-                UIView *v = [self.view.subviews objectAtIndex:i];
-                [v setFrame:(CGRect) {
-                    .origin = (CGPoint) {
-                        .x = v.frame.origin.x - ((v.frame.origin.x > 0) ? self.homeController.tableView.frame.size.width : 0),
-                        .y = v.frame.origin.y
-                    },
-                    .size = v.frame.size
-                }];
-            }
-        }];
-    }
+    [UIView animateWithDuration:duration animations:^{
+        for (int i=1, k=self.view.subviews.count; i<k; i++) {
+            UIView *v = self.view.subviews[i];
+//            [v setUserInteractionEnabled:YES];
+            [v setFrame:(CGRect) {
+                .origin = (CGPoint) {
+                    .x = v.frame.origin.x - ((v.frame.origin.x > 0) ? self.homeController.tableView.frame.size.width : 0),
+                    .y = v.frame.origin.y
+                },
+                .size = v.frame.size
+            }];
+        }
+    }];
 }
 
 - (void)swipeRightWithDuration:(NSTimeInterval)duration {
+    [UIView animateWithDuration:duration animations:^{
+        for (int i=1, k=self.view.subviews.count; i<k; i++) {
+            UIView *v = self.view.subviews[i];
+//            [v setUserInteractionEnabled:NO];
+            [v setFrame:(CGRect) {
+                .origin = (CGPoint) {
+                    .x = v.frame.origin.x + ((v.frame.origin.x <= 0) ? self.homeController.tableView.frame.size.width : 0),
+                    .y = v.frame.origin.y
+                },
+                .size = v.frame.size
+            }];
+        }
+    }];
+}
+
+- (void)swipeLeftAnimated:(Boolean)animated {
     UIViewController *lastController = [[self viewControllers] last];
     if (![lastController isKindOfClass:[WUserLoginViewController class]]
         && [lastController isKindOfClass:[WMenuPageViewController class]]) {
-        [UIView animateWithDuration:duration animations:^{
-            for (int i=1, k=self.view.subviews.count; i<k; i++) {
-                UIView *v = [self.view.subviews objectAtIndex:i];
-                [v setFrame:(CGRect) {
-                    .origin = (CGPoint) {
-                        .x = v.frame.origin.x + ((v.frame.origin.x <= 0) ? self.homeController.tableView.frame.size.width : 0),
-                        .y = v.frame.origin.y
-                    },
-                    .size = v.frame.size
-                }];
-            }
-        }];
+        [self swipeLeftWithDuration:(animated ? 0.3 : 0.0)];
+    }
+}
+
+- (void)swipeRightAnimated:(Boolean)animated {
+    UIViewController *lastController = [[self viewControllers] last];
+    if (![lastController isKindOfClass:[WUserLoginViewController class]]
+        && [lastController isKindOfClass:[WMenuPageViewController class]]) {
+        [self swipeRightWithDuration:(animated ? 0.3 : 0.0)];
     }
 }
 
 - (void)swipeLeft:(UISwipeGestureRecognizer *)gesture {
-    [self swipeLeftWithDuration:0.3];
+    [self swipeLeftAnimated:YES];
 }
 
 - (void)swipeRight:(UISwipeGestureRecognizer *)gesture {
-    [self swipeRightWithDuration:0.3];
+    [self swipeRightAnimated:YES];
 }
 
 - (void)swipe {
     UIView *v = [self.view.subviews objectAtIndex:1];
     if (v.frame.origin.x > 0) {
-        [self swipeLeftWithDuration:0.3];
+        [self swipeLeftAnimated:YES];
     } else {
-        [self swipeRightWithDuration:0.3];
+        [self swipeRightAnimated:YES];
     }
 }
 
 - (void)swipeLeft {
     UIView *v = [self.view.subviews objectAtIndex:1];
     if (v.frame.origin.x > 0) {
-        [self swipeLeftWithDuration:0.3];
+        [self swipeLeftAnimated:YES];
     }
 }
 
