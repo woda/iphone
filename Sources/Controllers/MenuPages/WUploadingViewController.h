@@ -7,6 +7,8 @@
 //
 
 #import "WListViewController.h"
+#import "WUploadCollectionHeader.h"
+#import "WUploadCollectionFooter.h"
 
 @interface WUploadingViewController : WMenuPageViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -18,16 +20,8 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell  *filesHeaderCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell  *noFileCell;
 
-@property (nonatomic, retain) IBOutlet UICollectionReusableView *headerView;
-@property (nonatomic, retain) IBOutlet UIImageView      *stateImageView;
-@property (nonatomic, retain) IBOutlet UILabel          *stateLabel;
-@property (nonatomic, retain) IBOutlet UIView           *progressBarView;
-@property (nonatomic, retain) IBOutlet UIView           *progressView;
-@property (nonatomic, retain) IBOutlet UILabel          *firstSectionLabel;
-
-@property (nonatomic, retain) IBOutlet UICollectionReusableView *footerView;
-@property (nonatomic, retain) IBOutlet UILabel          *countLabel;
-@property (nonatomic, retain) IBOutlet UILabel          *updatedLabel;
+@property (nonatomic, retain) WUploadCollectionHeader   *headerView;
+@property (nonatomic, retain) WUploadCollectionFooter   *footerView;
 
 @property (nonatomic, retain) NSMutableArray            *data;
 

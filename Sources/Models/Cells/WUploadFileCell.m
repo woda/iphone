@@ -31,6 +31,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     [super prepareForReuse];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    self.notifName = nil;
     
     [self.thumbnailView setContentMode:UIViewContentModeCenter];
     [self.thumbnailView setImage:[UIImage imageNamed:@"list_icon_picture.png"]];
@@ -113,11 +114,10 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     Boolean uploaded = ![info[kUploadNeedsUpload] boolValue];
     NSInteger progress = [info[kUploadProgress] integerValue];
     NSString *thumbnailPath = info[kUploadThumbnail];
-    NSString *notifName = info[kUploadNotificationName];
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    if (notifName) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(infoChanged:) name:notifName object:nil];
+    if (![self.notifName isEqualToString:info[kUploadNotificationName]]) {
+        self.notifName = info[kUploadNotificationName];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(infoChanged:) name:self.notifName object:nil];
     }
     
     if (thumbnailPath) {

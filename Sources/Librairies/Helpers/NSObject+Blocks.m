@@ -19,4 +19,9 @@
     [self performSelector:@selector(performBlock:) withObject:block_ afterDelay:delay];
 }
 
+- (void)performBlockInBackground:(void (^)())block {
+    void (^block_)() = [block copy];
+    [self performSelectorInBackground:@selector(performBlock:) withObject:block_];
+}
+
 @end

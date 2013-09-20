@@ -42,9 +42,12 @@
     [shadow setImage:[[UIImage imageNamed:@"shadow.png"] stretchableImageWithLeftCapWidth:0 topCapHeight:5]];
     [self.view addSubview:shadow];
     
+    [self.navigationBar setTranslucent:NO];
+    self.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
+    
     UIColor *tintColor = [UIColor colorWithRed:(71.0/255.0) green:(134.0/255.0) blue:(255.0/255.0) alpha:1.0];
-    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setBackgroundColor:tintColor];
+//    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setBarTintColor:tintColor];
     
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeft:)];
     [swipe setDirection:UISwipeGestureRecognizerDirectionLeft];
@@ -95,9 +98,6 @@
         }
     }];
     [self.view insertSubview:_homeController.view atIndex:0];
-    
-    NSLog(@"view.frame: %@", NSStringFromCGRect(self.view.frame));
-    NSLog(@"tableView.frame: %@", NSStringFromCGRect(_homeController.tableView.frame));
 }
 
 - (void)setHomeController:(WHomeViewController *)homeController {

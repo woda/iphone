@@ -23,7 +23,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.window setBackgroundColor:[UIColor blackColor]];
+    UIColor *tintColor = [UIColor colorWithRed:(71.0/255.0) green:(134.0/255.0) blue:(255.0/255.0) alpha:1.0];
+    [self.window setBackgroundColor:tintColor];
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [NSManagedObjectContext shared:self.managedObjectContext];
     
@@ -37,9 +39,9 @@
     [self.homeController viewWillAppear:NO];
     [self.navigationController setHomeController:self.homeController];
     
-#ifdef TESTING
-    [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
-#endif
+//#ifdef TESTING
+//    [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
+//#endif
     [TestFlight takeOff:kTestFlightToken];
     
     [DDLog removeAllLoggers];

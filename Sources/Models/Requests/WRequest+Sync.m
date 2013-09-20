@@ -86,7 +86,7 @@
                     failure:(void (^)(id error))failure
 {
     NSString *partFormated = [[NSString alloc] initWithBytes:part.bytes length:part.length encoding:NSISOLatin1StringEncoding];
-    NSLog(@"partFormated: %@", [partFormated substringWithRange:NSMakeRange(0, 10)]);
+//    NSLog(@"partFormated: %@", [partFormated substringWithRange:NSMakeRange(0, 10)]);
 //    NSData *d = [partFormated dataUsingEncoding:NSISOLatin1StringEncoding];
 //    NSLog(@"        data: %@", [[d description] substringWithRange:NSMakeRange(0, 40)]);
     
