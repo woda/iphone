@@ -18,6 +18,7 @@
 @property (nonatomic, retain) IBOutlet UIView       *progressView;
 
 @property (nonatomic, retain) NSString *notifName;
+@property (nonatomic, retain) NSString *thumbnailPath;
 
 - (void)setInfo:(NSDictionary *)info;
 

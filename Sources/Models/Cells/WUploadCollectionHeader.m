@@ -110,12 +110,12 @@
     
     [self.progressView setFrame:(CGRect) {
         .origin = (CGPoint) {
-            .x = 1,
-            .y = 1
+            .x = 0,
+            .y = 0
         },
         .size = (CGSize) {
-            .width = (self.progressBarView.frame.size.width - 2) * progress / 100,
-            .height = (self.progressBarView.frame.size.height - 2)
+            .width = self.progressBarView.frame.size.width * progress / 100,
+            .height = self.progressBarView.frame.size.height
         }
     }];
 }

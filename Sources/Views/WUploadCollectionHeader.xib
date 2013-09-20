@@ -32,8 +32,8 @@
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <view contentMode="scaleToFill" id="YBM-dw-eDw" userLabel="Progress view">
-                            <rect key="frame" x="0.0" y="37" width="320" height="3"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <rect key="frame" x="0.0" y="37" width="320" height="2"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" id="aFO-oT-RsI">
                                     <rect key="frame" x="0.0" y="0.0" width="124" height="2"/>

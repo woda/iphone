@@ -177,15 +177,19 @@
 #pragma mark - Collection related methods
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return (self.data.count);
+    return MAX(1, self.data.count);
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return (((NSArray *)self.data[section][@"info"]).count);
+    if (self.data.count > 0) {
+        return (((NSArray *)self.data[section][@"info"]).count);
+    }
+    return (0);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     WUploadFileCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:[WUploadFileCell reuseIdentifier] forIndexPath:indexPath];
+    [cell prepareForReuse];
     [cell setInfo:self.data[indexPath.section][@"info"][indexPath.row]];
     return (cell);
 }

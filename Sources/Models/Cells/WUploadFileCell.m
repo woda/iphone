@@ -33,6 +33,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     self.notifName = nil;
     
+    self.thumbnailPath = nil;
     [self.thumbnailView setContentMode:UIViewContentModeCenter];
     [self.thumbnailView setImage:[UIImage imageNamed:@"list_icon_picture.png"]];
     
@@ -109,27 +110,28 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 //}
 
 - (void)setInfo:(NSDictionary *)info {
-    [self prepareForReuse];
-    
     Boolean uploaded = ![info[kUploadNeedsUpload] boolValue];
     NSInteger progress = [info[kUploadProgress] integerValue];
-    NSString *thumbnailPath = info[kUploadThumbnail];
     
     if (![self.notifName isEqualToString:info[kUploadNotificationName]]) {
         self.notifName = info[kUploadNotificationName];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(infoChanged:) name:self.notifName object:nil];
     }
     
-    if (thumbnailPath) {
-        NSData *data = [NSData dataWithContentsOfFile:thumbnailPath];
+    if (self.thumbnailPath == nil || ![self.thumbnailPath isEqualToString:info[kUploadThumbnail]]) {
+        self.thumbnailPath = info[kUploadThumbnail];
+        NSData *data = [NSData dataWithContentsOfFile:self.thumbnailPath];
         UIImage *thumbnail = [UIImage imageWithData:data];
         [self.thumbnailView setContentMode:UIViewContentModeScaleAspectFill];
         [self.thumbnailView setImage:thumbnail];
-    } else {
+    }
+    if (self.thumbnailPath == nil) {
         [self setIcon:info[kUploadMediaType]];
     }
     if (uploaded) {
         [self.checkView setImage:[UIImage imageNamed:@"upload_green_check.png"]];
+        [self.overlayView setHidden:YES];
+        [self.checkView setHidden:NO];
     } else if (progress > 0) {
         [self.progressView setFrame:(CGRect) {
             .origin = CGPointZero,
@@ -144,7 +146,6 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 }
 
 - (void)infoChanged:(NSNotification *)notif {
-    [self prepareForReuse];
     [self setInfo:notif.userInfo];
 }
 
