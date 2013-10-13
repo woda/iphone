@@ -8,6 +8,10 @@
 
 #import "WSAssetViewColumn.h"
 
+#define kVideoIconViewTag   42
+
 @interface WAssetViewColumn : WSAssetViewColumn
+
+- (void)setVideo:(Boolean)video;
 
 @end

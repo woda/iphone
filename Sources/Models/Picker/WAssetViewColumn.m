@@ -33,7 +33,7 @@
         
         // Lazily create the selectedView.
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"list_button_checkbox_unckecked.png"]];
-        imageView.alpha = 0.5;
+//        imageView.alpha = 0.5;
         imageView.hidden = NO;
         [self addSubview:imageView];
         [imageView setFrame:(CGRect) {
@@ -50,6 +50,29 @@
         _selectedView = imageView;
     }
     return _selectedView;
+}
+
+- (void)setVideo:(Boolean)video {
+    UIImageView *v = (UIImageView *)[self viewWithTag:kVideoIconViewTag];
+    if (!v) {
+        
+        // Lazily create the selectedView.
+        v = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"list_icon_movie_white.png"]];
+        v.tag = kVideoIconViewTag;
+        v.alpha = 0.5;
+        [self addSubview:v];
+        [v setFrame:(CGRect) {
+            .origin = (CGPoint) {
+                .x = v.superview.frame.size.width - 20,
+                .y = v.superview.frame.size.height - 20
+            },
+            .size = (CGSize) {
+                .width = 16,
+                .height = 16
+            }
+        }];
+    }
+    v.hidden = !video;
 }
 
 @end

@@ -181,6 +181,8 @@
 		A258B2B017A36CC100C0D3E9 /* WAssetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A258B2AF17A36CC100C0D3E9 /* WAssetTableViewController.m */; };
 		A258B2B317A37D2C00C0D3E9 /* WAssetViewColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = A258B2B217A37D2B00C0D3E9 /* WAssetViewColumn.m */; };
 		A258B2B617A37F7F00C0D3E9 /* WAssetsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A258B2B517A37F7E00C0D3E9 /* WAssetsTableViewCell.m */; };
+		A25D6E0E180B07210049C66B /* list_icon_movie_white.png in Resources */ = {isa = PBXBuildFile; fileRef = A25D6E0C180B07210049C66B /* list_icon_movie_white.png */; };
+		A25D6E0F180B07210049C66B /* list_icon_movie_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A25D6E0D180B07210049C66B /* list_icon_movie_white@2x.png */; };
 		A2677B00165E0AE900C1D630 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2677B02165E0AE900C1D630 /* Localizable.strings */; };
 		A2677B08165E0F0200C1D630 /* WHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B07165E0F0200C1D630 /* WHomeViewController.m */; };
 		A2677B0C165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B0B165E100000C1D630 /* NSManagedObjectContext-EasyFetch.m */; };
@@ -459,6 +461,8 @@
 		A258B2B217A37D2B00C0D3E9 /* WAssetViewColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WAssetViewColumn.m; path = Picker/WAssetViewColumn.m; sourceTree = "<group>"; };
 		A258B2B417A37F7D00C0D3E9 /* WAssetsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WAssetsTableViewCell.h; path = Picker/WAssetsTableViewCell.h; sourceTree = "<group>"; };
 		A258B2B517A37F7E00C0D3E9 /* WAssetsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WAssetsTableViewCell.m; path = Picker/WAssetsTableViewCell.m; sourceTree = "<group>"; };
+		A25D6E0C180B07210049C66B /* list_icon_movie_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_icon_movie_white.png; sourceTree = "<group>"; };
+		A25D6E0D180B07210049C66B /* list_icon_movie_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list_icon_movie_white@2x.png"; sourceTree = "<group>"; };
 		A2677B01165E0AE900C1D630 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2677B05165E0B5000C1D630 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2677B06165E0F0200C1D630 /* WHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHomeViewController.h; sourceTree = "<group>"; };
@@ -706,6 +710,8 @@
 				A23918CD17801F380017264F /* list_icon_folder.png */,
 				A23918CE17801F380017264F /* list_icon_folder@2x.png */,
 				A23918CF17801F380017264F /* list_icon_movie.png */,
+				A25D6E0C180B07210049C66B /* list_icon_movie_white.png */,
+				A25D6E0D180B07210049C66B /* list_icon_movie_white@2x.png */,
 				A23918D017801F380017264F /* list_icon_movie@2x.png */,
 				A23918D117801F380017264F /* list_icon_music.png */,
 				A23918D217801F380017264F /* list_icon_music@2x.png */,
@@ -1428,10 +1434,12 @@
 				A239197017801F380017264F /* navbar_minus.png in Resources */,
 				A239197117801F380017264F /* navbar_minus@2x.png in Resources */,
 				A239197217801F380017264F /* navbar_new_folder.png in Resources */,
+				A25D6E0E180B07210049C66B /* list_icon_movie_white.png in Resources */,
 				A239197317801F380017264F /* navbar_new_folder@2x.png in Resources */,
 				A239197417801F380017264F /* navbar_plus.png in Resources */,
 				A239197517801F380017264F /* navbar_plus@2x.png in Resources */,
 				A239197617801F380017264F /* navbar_white_check.png in Resources */,
+				A25D6E0F180B07210049C66B /* list_icon_movie_white@2x.png in Resources */,
 				A239197717801F380017264F /* navbar_white_check@2x.png in Resources */,
 				A239197817801F380017264F /* navbar_white_menu.png in Resources */,
 				A239197917801F380017264F /* navbar_white_menu@2x.png in Resources */,

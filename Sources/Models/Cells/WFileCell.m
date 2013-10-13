@@ -26,23 +26,31 @@
     return (@"WFileCell");
 }
 
-- (Boolean)isFileAnImage:(NSString *)type {
-    NSArray *types = [@".png,.jpg,.jpeg" componentsSeparatedByString:@","];
++ (Boolean)isFileAnImage:(NSString *)type {
+    if ([type hasPrefix:@"."])
+        type = [type substringFromIndex:1];
+    NSArray *types = [@"png,jpg,jpeg" componentsSeparatedByString:@","];
     return ([types indexOfObject:[type lowercaseString]] != NSNotFound);
 }
 
-- (Boolean)isFileADocument:(NSString *)type {
-    NSArray *types = [@".txt,.doc,.pdf" componentsSeparatedByString:@","];
++ (Boolean)isFileADocument:(NSString *)type {
+    if ([type hasPrefix:@"."])
+        type = [type substringFromIndex:1];
+    NSArray *types = [@"txt,doc,pdf" componentsSeparatedByString:@","];
     return ([types indexOfObject:[type lowercaseString]] != NSNotFound);
 }
 
-- (Boolean)isFileAMusic:(NSString *)type {
-    NSArray *types = [@".mp3" componentsSeparatedByString:@","];
++ (Boolean)isFileAMusic:(NSString *)type {
+    if ([type hasPrefix:@"."])
+        type = [type substringFromIndex:1];
+    NSArray *types = [@"mp3" componentsSeparatedByString:@","];
     return ([types indexOfObject:[type lowercaseString]] != NSNotFound);
 }
 
-- (Boolean)isFileAVideo:(NSString *)type {
-    NSArray *types = [@".mpeg" componentsSeparatedByString:@","];
++ (Boolean)isFileAVideo:(NSString *)type {
+    if ([type hasPrefix:@"."])
+        type = [type substringFromIndex:1];
+    NSArray *types = [@"mpeg,mov,avi,mkv" componentsSeparatedByString:@","];
     return ([types indexOfObject:[type lowercaseString]] != NSNotFound);
 }
 
@@ -58,13 +66,13 @@
     [self.star setHidden:![file[@"favorite"] boolValue]];
     
     NSString *type = file[@"type"];
-    if ([self isFileAnImage:type]) {
+    if ([WFileCell isFileAnImage:type]) {
         [self.icon setImage:[UIImage imageNamed:@"list_icon_picture.png"]];
-    } else if ([self isFileADocument:type]) {
+    } else if ([WFileCell isFileADocument:type]) {
         [self.icon setImage:[UIImage imageNamed:@"list_icon_document.png"]];
-    } else if ([self isFileAMusic:type]) {
+    } else if ([WFileCell isFileAMusic:type]) {
         [self.icon setImage:[UIImage imageNamed:@"list_icon_music.png"]];
-    } else if ([self isFileAVideo:type]) {
+    } else if ([WFileCell isFileAVideo:type]) {
         [self.icon setImage:[UIImage imageNamed:@"list_icon_movie.png"]];
     } else {
         [self.icon setImage:[UIImage imageNamed:@"list_icon_document.png"]];

@@ -9,6 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "WUploadFileCell.h"
 #import "WUploadManager.h"
+#import "WFileCell.h"
 
 static const int ddLogLevel = LOG_LEVEL_INFO;
 
@@ -65,34 +66,14 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 #pragma mark - Data related methods
 
-- (Boolean)isFileAnImage:(NSString *)type {
-    NSArray *types = [@"public.image,.png,.jpg,.jpeg" componentsSeparatedByString:@","];
-    return ([types indexOfObject:[type lowercaseString]] != NSNotFound);
-}
-
-- (Boolean)isFileADocument:(NSString *)type {
-    NSArray *types = [@".txt,.doc,.pdf" componentsSeparatedByString:@","];
-    return ([types indexOfObject:[type lowercaseString]] != NSNotFound);
-}
-
-- (Boolean)isFileAMusic:(NSString *)type {
-    NSArray *types = [@".mp3" componentsSeparatedByString:@","];
-    return ([types indexOfObject:[type lowercaseString]] != NSNotFound);
-}
-
-- (Boolean)isFileAVideo:(NSString *)type {
-    NSArray *types = [@".mpeg" componentsSeparatedByString:@","];
-    return ([types indexOfObject:[type lowercaseString]] != NSNotFound);
-}
-
 - (void)setIcon:(NSString *)type {
-    if ([self isFileAnImage:type]) {
+    if ([WFileCell isFileAnImage:type]) {
         [self.thumbnailView setImage:[UIImage imageNamed:@"list_icon_picture.png"]];
-    } else if ([self isFileADocument:type]) {
+    } else if ([WFileCell isFileADocument:type]) {
         [self.thumbnailView setImage:[UIImage imageNamed:@"list_icon_document.png"]];
-    } else if ([self isFileAMusic:type]) {
+    } else if ([WFileCell isFileAMusic:type]) {
         [self.thumbnailView setImage:[UIImage imageNamed:@"list_icon_music.png"]];
-    } else if ([self isFileAVideo:type]) {
+    } else if ([WFileCell isFileAVideo:type]) {
         [self.thumbnailView setImage:[UIImage imageNamed:@"list_icon_movie.png"]];
     } else {
         [self.thumbnailView setImage:[UIImage imageNamed:@"list_icon_document.png"]];

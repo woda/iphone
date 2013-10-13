@@ -21,6 +21,11 @@
 @property (nonatomic, retain) IBOutlet UIButton     *favoriteButton;
 @property (nonatomic, retain) IBOutlet UIButton     *deleteButton;
 
++ (Boolean)isFileAnImage:(NSString *)type;
++ (Boolean)isFileADocument:(NSString *)type;
++ (Boolean)isFileAMusic:(NSString *)type;
++ (Boolean)isFileAVideo:(NSString *)type;
+
 - (void)setFile:(NSDictionary *)file;
 - (void)displaySeparator:(Boolean)display;
 

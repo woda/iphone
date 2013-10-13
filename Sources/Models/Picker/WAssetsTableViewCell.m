@@ -9,6 +9,7 @@
 #import "WAssetsTableViewCell.h"
 #import "WSAssetWrapper.h"
 #import "WAssetViewColumn.h"
+#import "WFileCell.h"
 
 @implementation WAssetsTableViewCell
 
@@ -26,6 +27,9 @@
         WAssetViewColumn *assetViewColumn = [[WAssetViewColumn alloc] initWithImage:[UIImage imageWithCGImage:assetWrapper.asset.thumbnail]];
         assetViewColumn.column = [assets indexOfObject:assetWrapper];
         assetViewColumn.selected = assetWrapper.isSelected;
+        
+        NSString *fileName = [assetWrapper.asset defaultRepresentation].filename;
+        [assetViewColumn setVideo:[WFileCell isFileAVideo:[fileName componentsSeparatedByString:@"."].last]];
         
         __weak __typeof__(self) weakSelf = self;
         [assetViewColumn setShouldSelectItemBlock:^BOOL(NSInteger column) {
