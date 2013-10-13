@@ -138,9 +138,21 @@ static WUser *current = nil;
 - (void)updateUserInfo:(NSDictionary *)json {
     if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"login"]) {
         [self setLogin:[json objectForKey:@"login"]];
+        if ([json objectForKey:@"login"] == [NSNull null]) {
+            [self setLogin:nil];
+        }
         [self setFirstName:[json objectForKey:@"first_name"]];
+        if ([json objectForKey:@"first_name"] == [NSNull null]) {
+            [self setFirstName:nil];
+        }
         [self setLastName:[json objectForKey:@"last_name"]];
+        if ([json objectForKey:@"last_name"] == [NSNull null]) {
+            [self setLastName:nil];
+        }
         [self setEmail:[json objectForKey:@"email"]];
+        if ([json objectForKey:@"email"] == [NSNull null]) {
+            [self setEmail:nil];
+        }
         
         [[NSNotificationCenter defaultCenter] postNotificationName:kUserStatusChanged object:nil];
     }
