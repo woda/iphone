@@ -10,9 +10,12 @@
 
 @interface WFolderCell : UITableViewCell <XibViewDelegate>
 
-@property (nonatomic, retain) IBOutlet UIView   *background;
-@property (nonatomic, retain) IBOutlet UIView   *separator;
-@property (nonatomic, retain) IBOutlet UILabel  *title;
+@property (nonatomic, retain) IBOutlet UIView       *background;
+@property (nonatomic, retain) IBOutlet UIView       *separator;
+@property (nonatomic, retain) IBOutlet UILabel      *title;
+
+@property (nonatomic, retain) IBOutlet UIImageView   *folderIcon;
+@property (nonatomic, retain) IBOutlet UIImageView   *nextIcon;
 
 - (void)setFolder:(NSDictionary *)folder;
 - (void)displaySeparator:(Boolean)display;

@@ -94,6 +94,8 @@
             </constraints>
             <connections>
                 <outlet property="background" destination="15" id="67"/>
+                <outlet property="folderIcon" destination="34" id="BbS-0f-dEl"/>
+                <outlet property="nextIcon" destination="69" id="5oC-Z6-Mlm"/>
                 <outlet property="separator" destination="23" id="68"/>
                 <outlet property="title" destination="59" id="65"/>
             </connections>

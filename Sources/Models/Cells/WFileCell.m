@@ -13,6 +13,7 @@
 @interface WFileCell ()
 
 @property (nonatomic, retain) NSDictionary  *info;
+@property (nonatomic, retain) NSString      *type;
 
 @end
 
@@ -54,6 +55,19 @@
     return ([types indexOfObject:[type lowercaseString]] != NSNotFound);
 }
 
+- (NSString *)iconForType:(NSString *)type {
+    if ([WFileCell isFileAnImage:type]) {
+        return (@"list_icon_picture");
+    } else if ([WFileCell isFileADocument:type]) {
+        return (@"list_icon_document");
+    } else if ([WFileCell isFileAMusic:type]) {
+        return (@"list_icon_music");
+    } else if ([WFileCell isFileAVideo:type]) {
+        return (@"list_icon_movie");
+    }
+    return (@"list_icon_document");
+}
+
 - (void)setFile:(NSDictionary *)file {
     self.info = file;
     
@@ -65,18 +79,8 @@
     [self.title setText:file[@"name"]];
     [self.star setHidden:![file[@"favorite"] boolValue]];
     
-    NSString *type = file[@"type"];
-    if ([WFileCell isFileAnImage:type]) {
-        [self.icon setImage:[UIImage imageNamed:@"list_icon_picture.png"]];
-    } else if ([WFileCell isFileADocument:type]) {
-        [self.icon setImage:[UIImage imageNamed:@"list_icon_document.png"]];
-    } else if ([WFileCell isFileAMusic:type]) {
-        [self.icon setImage:[UIImage imageNamed:@"list_icon_music.png"]];
-    } else if ([WFileCell isFileAVideo:type]) {
-        [self.icon setImage:[UIImage imageNamed:@"list_icon_movie.png"]];
-    } else {
-        [self.icon setImage:[UIImage imageNamed:@"list_icon_document.png"]];
-    }
+    self.type = file[@"type"];
+    [self.icon setImage:[UIImage imageNamed:[self iconForType:self.type]]];
     
     [self.deleteButton setTitle:NSLocal(@"Delete") forState:UIControlStateNormal];
     [self.favoriteButton setTitle:NSLocal(@"MarkAsFavorite") forState:UIControlStateNormal];
@@ -90,9 +94,13 @@
     [super setSelected:selected animated:animated];
     
     if (selected) {
-        [self.background setBackgroundColor:[UIColor colorWithRed:(71/255.0) green:(134.0/255.0) blue:(244.0/255.0) alpha:1.0]];
+        [self.icon setImage:[UIImage imageNamed:[[self iconForType:self.type] stringByAppendingString:@"_white"]]];
+        [self.background setBackgroundColor:[UIColor colorWithRed:(71.0/255.0) green:(134.0/255.0) blue:(255.0/255.0) alpha:1.0]];
+        [self.title setTextColor:[UIColor whiteColor]];
     } else {
+        [self.icon setImage:[UIImage imageNamed:[self iconForType:self.type]]];
         [self.background setBackgroundColor:[UIColor whiteColor]];
+        [self.title setTextColor:[UIColor blackColor]];
     }
 }
 
@@ -100,9 +108,13 @@
     [super setSelected:highlighted animated:animated];
     
     if (highlighted) {
-        [self.background setBackgroundColor:[UIColor colorWithRed:(71/255.0) green:(134.0/255.0) blue:(244.0/255.0) alpha:1.0]];
+        [self.icon setImage:[UIImage imageNamed:[[self iconForType:self.type] stringByAppendingString:@"_white"]]];
+        [self.background setBackgroundColor:[UIColor colorWithRed:(71.0/255.0) green:(134.0/255.0) blue:(255.0/255.0) alpha:1.0]];
+        [self.title setTextColor:[UIColor whiteColor]];
     } else {
+        [self.icon setImage:[UIImage imageNamed:[self iconForType:self.type]]];
         [self.background setBackgroundColor:[UIColor whiteColor]];
+        [self.title setTextColor:[UIColor blackColor]];
     }
 }
 
