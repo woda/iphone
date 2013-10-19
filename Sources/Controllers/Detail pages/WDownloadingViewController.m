@@ -13,6 +13,7 @@
 
 @interface WDownloadingViewController ()
 
+@property (nonatomic, retain) NSString      *path;
 @property (nonatomic, retain) NSDictionary  *info;
 
 @end
@@ -23,9 +24,10 @@
 #pragma mark -
 #pragma mark Initialization methods
 
-- (id)initWithFile:(NSDictionary *)info {
+- (id)initWithFile:(NSDictionary *)info inFolder:(NSString *)path {
     self = [super initWithNibName:[self xibFullName:@"WDownloadingView"] bundle:nil];
     if (self) {
+        self.path = path;
         self.info = info;
     }
     return self;
@@ -59,7 +61,10 @@
     [self.loadingLabel setText:[NSString stringWithFormat:@"%@ '%@'", NSLocal(@"LoadingOf"), self.info[@"name"]]];
     
     NSNumber *parts = @(([self.info[@"size"] integerValue] / [self.info[@"part_size"] integerValue]) + 1);
-    [WRequest getFile:self.info[@"name"] parts:parts success:^(NSData *file) {
+    NSString *name = self.info[@"name"];
+    if (self.path != nil)
+        name = [NSString stringWithFormat:@"%@%@", self.path, name];
+    [WRequest getFile:name parts:parts success:^(NSData *file) {
         if ([self.navigationController viewControllers].last == self) {
             NSMutableArray *stack = [[self.navigationController viewControllers] mutableCopy];
             [stack removeLastObject];

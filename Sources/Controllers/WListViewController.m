@@ -182,13 +182,24 @@
     return ([self fileCellForIndex:idx]);
 }
 
-- (Boolean)isFileAnImage:(NSString *)type {
-    NSArray *types = [@"public.image,.png,.jpg,.jpeg" componentsSeparatedByString:@","];
-    return ([types indexOfObject:[type lowercaseString]] != NSNotFound);
-}
-
 - (void)openFolder:(NSDictionary *)folder {
     // Do nothing
+}
+
+- (void)openFile:(NSDictionary *)file {
+    if (file[@"size"] && file[@"part_size"]) {
+        NSData *data = [WOfflineManager fileForId:file[@"id"]];
+        if (data) {
+            NSString *type = file[@"type"];
+            if ([WFileCell isFileAnImage:type]) {
+                WImagePreviewViewController *c = [[WImagePreviewViewController alloc] initWithImage:[UIImage imageWithData:data]];
+                [self.navigationController pushViewController:c animated:YES];
+            }
+        } else {
+            WDownloadingViewController *c = [[WDownloadingViewController alloc] initWithFile:file inFolder:nil];
+            [self.navigationController pushViewController:c animated:YES];
+        }
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -207,19 +218,7 @@
         idx--;
         if ([[_data objectForKey:@"files"] count]) {
             NSDictionary *file = [[_data objectForKey:@"files"] objectAtIndex:idx];
-            if (file[@"size"] && file[@"part_size"]) {
-                NSData *data = [WOfflineManager fileForId:file[@"id"]];
-                if (data) {
-                    NSString *type = file[@"type"];
-                    if ([self isFileAnImage:type]) {
-                        WImagePreviewViewController *c = [[WImagePreviewViewController alloc] initWithImage:[UIImage imageWithData:data]];
-                        [self.navigationController pushViewController:c animated:YES];
-                    }
-                } else {
-                    WDownloadingViewController *c = [[WDownloadingViewController alloc] initWithFile:file];
-                    [self.navigationController pushViewController:c animated:YES];
-                }
-            }
+            [self openFile:file];
         }
     }
 }

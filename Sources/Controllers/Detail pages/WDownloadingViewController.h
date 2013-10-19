@@ -14,6 +14,6 @@
 @property (nonatomic, retain) IBOutlet UIView   *progressBarView;
 @property (nonatomic, retain) IBOutlet UIView   *progressView;
 
-- (id)initWithFile:(NSDictionary *)info;
+- (id)initWithFile:(NSDictionary *)info inFolder:(NSString *)path;
 
 @end
