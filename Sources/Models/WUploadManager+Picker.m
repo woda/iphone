@@ -75,7 +75,7 @@ static char const * const assetsLibraryKey = "assetsLibrary";
         [self.delegate imagePickerDismissed:picker];
         NSLog(@"Picker return: %@", assets);
         for (ALAsset *asset in assets) {
-            [self uploadFileWihAsset:asset];
+            [self uploadFileWihAsset:asset inFolder:[self.delegate path]];
         }
         
         picker.delegate = nil;

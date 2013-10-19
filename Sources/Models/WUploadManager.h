@@ -28,6 +28,6 @@
 + (WUploadManager *)shared;
 + (NSDictionary *)uploadList;
 
-- (void)uploadFileWihAsset:(ALAsset *)asset;
+- (void)uploadFileWihAsset:(ALAsset *)asset inFolder:(NSString *)path;
 
 @end

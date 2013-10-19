@@ -26,4 +26,6 @@
 
 @property (nonatomic, retain) NSDictionary    *data;
 
+- (void)openFolder:(NSDictionary *)folder;
+
 @end

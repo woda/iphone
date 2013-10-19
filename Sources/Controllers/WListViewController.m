@@ -13,6 +13,7 @@
 #import "WRequest.h"
 #import "WFolderCell.h"
 #import "WFileCell.h"
+#import "WFolderViewController.h"
 
 @interface WListViewController ()
 
@@ -56,7 +57,7 @@
     [self.tableView setTableFooterView:self.footerView];
     [self updateFooter];
     
-    if (self.data == nil) {
+    if (_data == nil) {
         [self.tableView setAlpha:0.0];
         [self.loading startAnimating];
     }
@@ -81,7 +82,7 @@
     
     [self updateFooter];
     
-    if (self.data) {
+    if (_data) {
         [self.loading stopAnimating];
     }
     
@@ -93,6 +94,10 @@
             [self.tableView setAlpha:1.0];
         }];
     }
+}
+
+- (void)back {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
@@ -182,12 +187,18 @@
     return ([types indexOfObject:[type lowercaseString]] != NSNotFound);
 }
 
+- (void)openFolder:(NSDictionary *)folder {
+    // Do nothing
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSInteger idx = indexPath.row;
     if ([self isThereAnyFolder]) {
         if (idx < [self countFolderCells]) {
+            NSDictionary *folder = [_data objectForKey:@"folders"][idx - 1];
+            [self openFolder:folder];
             return ;
         }
         idx -= [self countFolderCells];

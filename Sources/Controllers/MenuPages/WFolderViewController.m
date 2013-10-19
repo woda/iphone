@@ -27,11 +27,19 @@
     void (^failure)(id) = ^(NSDictionary *error) {
         DDLogError(@"Failure while listing files: %@", error);
     };
-    if (_path == nil) {
+    if (self.path == nil && self.data == nil) {
         [WRequest listAllFilesWithSuccess:success failure:failure];
     } else if (self.data == nil) {
-        [WRequest listFilesInDir:_path success:success failure:failure];
+        [WRequest listFilesInDir:self.path success:success failure:failure];
     }
+}
+
+- (NSString *)path {
+    if (_path == nil)
+        return @"";
+    if (![_path hasSuffix:@"/"])
+        return [_path stringByAppendingString:@"/"];
+    return _path;
 }
 
 - (id)initWithPath:(NSString *)path andData:(NSDictionary *)data {
@@ -46,8 +54,14 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.title = NSLocal(@"RootPageTitle");
+    if (self.data[@"name"] == nil)
+        self.title = NSLocal(@"RootPageTitle");
+    else
+        self.title = self.data[@"name"];
     self.homeCellIndex = kHomeFoldersCellIndex;
+    
+    if (self.data != nil)
+        [self.loading stopAnimating];
 }
 
 - (void)viewDidLoad {
@@ -65,6 +79,12 @@
     [button addTarget:self action:@selector(addFile:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = addButton;
+}
+
+- (void)openFolder:(NSDictionary *)folder {
+    NSString *p = [self.path stringByAppendingFormat:@"%@/", folder[@"name"]];
+    WFolderViewController *c = [[WFolderViewController alloc] initWithPath:p andData:folder];
+    [self.navigationController pushViewController:c animated:YES];
 }
 
 

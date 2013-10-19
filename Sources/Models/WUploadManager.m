@@ -88,7 +88,7 @@ static WUploadManager *shared = nil;
     return (nil);
 }
 
-- (void)uploadFileWihAsset:(ALAsset *)asset {
+- (void)uploadFileWihAsset:(ALAsset *)asset inFolder:(NSString *)path {
     __block WUploadManager *blockSelf = self;
     NSDate *date = [NSDate date];
     
@@ -99,7 +99,7 @@ static WUploadManager *shared = nil;
     NSUInteger buffered = [rep getBytes:buffer fromOffset:0.0 length:rep.size error:nil];
     NSData *file = [NSData dataWithBytesNoCopy:buffer length:buffered freeWhenDone:YES];
     
-    NSString *fileName = [rep filename];
+    NSString *fileName = [path stringByAppendingString:[rep filename]];
     NSString *mediaType = [fileName componentsSeparatedByString:@"."].last;
     NSString *thumbnail = [self saveThumbnail:[UIImage imageWithCGImage:[asset thumbnail]]];
     

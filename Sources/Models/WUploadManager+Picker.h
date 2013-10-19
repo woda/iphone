@@ -11,6 +11,7 @@
 
 @protocol WUploadManagerPickerDelegate <NSObject>
 
+- (NSString *)path;
 - (void)imagePickerDismissed:(WSAssetPickerController *)picker;
 
 @end
