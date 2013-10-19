@@ -266,9 +266,6 @@
 		A2DC44FA1630546C00E152A6 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F31630546C00E152A6 /* Icon.png */; };
 		A2DC44FB1630546C00E152A6 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F41630546C00E152A6 /* Icon@2x.png */; };
 		A2DC44FC1630546C00E152A6 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F51630546C00E152A6 /* iTunesArtwork.png */; };
-		A2DC450016305AEE00E152A6 /* Background-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44FD16305AED00E152A6 /* Background-568h@2x.png */; };
-		A2DC450116305AEE00E152A6 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44FE16305AED00E152A6 /* Background.png */; };
-		A2DC450216305AEE00E152A6 /* Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44FF16305AED00E152A6 /* Background@2x.png */; };
 		A2E8C589178355B500F0BEF0 /* WSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E8C588178355B500F0BEF0 /* WSettingsView.xib */; };
 		A2E8C58C178364DE00F0BEF0 /* NSObject+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E8C58B178364DE00F0BEF0 /* NSObject+Blocks.m */; };
 		A2E8C58E1783719100F0BEF0 /* WListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E8C58D1783719100F0BEF0 /* WListView.xib */; };
@@ -594,9 +591,6 @@
 		A2DC44F31630546C00E152A6 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
 		A2DC44F41630546C00E152A6 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		A2DC44F51630546C00E152A6 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = SOURCE_ROOT; };
-		A2DC44FD16305AED00E152A6 /* Background-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background-568h@2x.png"; sourceTree = "<group>"; };
-		A2DC44FE16305AED00E152A6 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
-		A2DC44FF16305AED00E152A6 /* Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background@2x.png"; sourceTree = "<group>"; };
 		A2E8C588178355B500F0BEF0 /* WSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WSettingsView.xib; sourceTree = "<group>"; };
 		A2E8C58A178364DE00F0BEF0 /* NSObject+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Blocks.h"; sourceTree = "<group>"; };
 		A2E8C58B178364DE00F0BEF0 /* NSObject+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Blocks.m"; sourceTree = "<group>"; };
@@ -1159,9 +1153,6 @@
 				A2C6016D16304BAF00CB53B3 /* Default-568h@2x.png */,
 				A2C6016E16304BAF00CB53B3 /* Default.png */,
 				A2C6016F16304BAF00CB53B3 /* Default@2x.png */,
-				A2DC44FD16305AED00E152A6 /* Background-568h@2x.png */,
-				A2DC44FE16305AED00E152A6 /* Background.png */,
-				A2DC44FF16305AED00E152A6 /* Background@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1376,9 +1367,6 @@
 				A2DC44FA1630546C00E152A6 /* Icon.png in Resources */,
 				A2DC44FB1630546C00E152A6 /* Icon@2x.png in Resources */,
 				A2DC44FC1630546C00E152A6 /* iTunesArtwork.png in Resources */,
-				A2DC450016305AEE00E152A6 /* Background-568h@2x.png in Resources */,
-				A2DC450116305AEE00E152A6 /* Background.png in Resources */,
-				A2DC450216305AEE00E152A6 /* Background@2x.png in Resources */,
 				A2677B00165E0AE900C1D630 /* Localizable.strings in Resources */,
 				A2677B0E165E125700C1D630 /* WHomeView.xib in Resources */,
 				A22D470016636A5D00B4B448 /* shadow.png in Resources */,
