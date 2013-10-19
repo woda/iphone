@@ -115,7 +115,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return ([self countFolderCells] + [self countFolderCells]);
+    return ([self countFolderCells] + [self countFileCells]);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
