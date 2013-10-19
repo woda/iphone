@@ -99,22 +99,32 @@
 #pragma mark -
 #pragma mark TableView methods
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSInteger rows = 0;
+- (NSInteger)countFolderCells {
     if ([[_data objectForKey:@"folders"] count]) {
-        rows += 1 + [[_data objectForKey:@"folders"] count];
+        return (1 + [[_data objectForKey:@"folders"] count]);
     }
-    rows += 1 + MAX(1, [[_data objectForKey:@"files"] count]);
-    return (rows);
+    return (0);
+}
+
+- (NSInteger)countFileCells {
+    return (1 + MAX(1, [[_data objectForKey:@"files"] count]));
+}
+
+- (Boolean)isThereAnyFolder {
+    return ([self countFolderCells] > 0);
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return ([self countFolderCells] + [self countFolderCells]);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger idx = indexPath.row;
-    if ([[_data objectForKey:@"folders"] count]) {
+    if ([self isThereAnyFolder]) {
         if (idx == 0) {
             return (_foldersHeaderCell.frame.size.height);
         }
-        idx -= 1 + [[_data objectForKey:@"folders"] count];
+        idx -= [self countFolderCells];
     }
     if (idx == 0) {
         return (_filesHeaderCell.frame.size.height);
@@ -158,11 +168,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger idx = indexPath.row;
-    if ([[_data objectForKey:@"folders"] count]) {
-        if (idx <= [[_data objectForKey:@"folders"] count]) {
+    if ([self isThereAnyFolder]) {
+        if (idx < [self countFolderCells]) {
             return ([self folderCellForIndex:idx]);
         }
-        idx -= 1 + [[_data objectForKey:@"folders"] count];
+        idx -= [self countFolderCells];
     }
     return ([self fileCellForIndex:idx]);
 }
@@ -176,11 +186,11 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSInteger idx = indexPath.row;
-    if ([[_data objectForKey:@"folders"] count]) {
-        if (idx <= [[_data objectForKey:@"folders"] count]) {
+    if ([self isThereAnyFolder]) {
+        if (idx < [self countFolderCells]) {
             return ;
         }
-        idx -= 1 + [[_data objectForKey:@"folders"] count];
+        idx -= [self countFolderCells];
     }
     if (idx) {
         idx--;
