@@ -35,17 +35,17 @@ static WOfflineManager *shared = nil;
 + (NSString *)directory:(NSString *)dir {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsPath = [paths objectAtIndex:0];
-    NSString *thumbnailsPath = [documentsPath stringByAppendingPathComponent:dir];
+    NSString *p = [documentsPath stringByAppendingPathComponent:dir];
     NSError *error;
     
-    if (![[NSFileManager defaultManager] createDirectoryAtPath:thumbnailsPath
+    if (![[NSFileManager defaultManager] createDirectoryAtPath:p
                                    withIntermediateDirectories:NO
                                                     attributes:nil
                                                          error:&error])
     {
-        NSLog(@"Create directory error: %@", error);
+        DDLogError(@"Create directory error: %@", error);
     }
-    return (thumbnailsPath);
+    return (p);
 }
 
 + (NSString *)offlineDirectory {
