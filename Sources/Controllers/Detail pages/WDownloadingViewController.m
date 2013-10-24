@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 Woda. All rights reserved.
 //
 
+#import <QuickLook/QuickLook.h>
 #import "WDownloadingViewController.h"
+#import "WListViewController.h"
 #import "WImagePreviewViewController.h"
 #import "WOfflineManager.h"
 #import "WRequest+Sync.h"
@@ -15,6 +17,7 @@
 
 @property (nonatomic, retain) NSString      *path;
 @property (nonatomic, retain) NSDictionary  *info;
+@property (nonatomic, retain) NSURL         *fileURL;
 
 @end
 
@@ -65,14 +68,34 @@
     if (self.path != nil)
         name = [NSString stringWithFormat:@"%@%@", self.path, name];
     [WRequest getFile:name parts:parts success:^(NSData *file) {
-        if ([self.navigationController viewControllers].last == self) {
-            NSMutableArray *stack = [[self.navigationController viewControllers] mutableCopy];
-            [stack removeLastObject];
-            WImagePreviewViewController *c = [[WImagePreviewViewController alloc] initWithImage:[UIImage imageWithData:file]];
-            [stack addObject:c];
-            [self.navigationController setViewControllers:stack animated:YES];
-        }
+//        if ([self.navigationController viewControllers].last == self) {
+//            NSMutableArray *stack = [[self.navigationController viewControllers] mutableCopy];
+//            [stack removeLastObject];
+//            WImagePreviewViewController *c = [[WImagePreviewViewController alloc] initWithImage:[UIImage imageWithData:file]];
+//            [stack addObject:c];
+//            [self.navigationController setViewControllers:stack animated:YES];
+//        }
+        
+        DDLogInfo(@"self.info: %@", self.info);
         [[WOfflineManager shared] saveFile:file withInfo:self.info offline:NO];
+        
+        self.fileURL = [WOfflineManager fileURLForId:self.info[@"id"]];
+        DDLogInfo(@"Opening '%@' in QuickLook", [self.fileURL standardizedURL]);
+        if (self.fileURL) {
+            //            NSString *type = file[@"type"];
+            if ([QLPreviewController canPreviewItem:self.fileURL]) {
+                QLPreviewController *c = [[QLPreviewController alloc] init];
+                c.dataSource = (WListViewController *) self.presentingViewController;
+                c.delegate = (WListViewController *) self.presentingViewController;
+                
+                NSMutableArray *stack = [[self.navigationController viewControllers] mutableCopy];
+                [stack removeLastObject];
+                [stack addObject:c];
+                [self.navigationController setViewControllers:stack animated:YES];
+            } else {
+                DDLogError(@"File can't be open in QuickLook");
+            }
+        }
     } loading:^(double pourcentage) {
         [self.progressView setFrame:(CGRect) {
             .origin = CGPointZero,

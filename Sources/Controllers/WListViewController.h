@@ -6,10 +6,11 @@
 //  Copyright (c) 2012 Woda. All rights reserved.
 //
 
+#import <QuickLook/QuickLook.h>
 #import "WMenuPageViewController.h"
 #import "WRequest+List.h"
 
-@interface WListViewController : WMenuPageViewController <UITableViewDataSource, UITableViewDelegate>
+@interface WListViewController : WMenuPageViewController <UITableViewDataSource, UITableViewDelegate, QLPreviewControllerDataSource, QLPreviewControllerDelegate>
 
 @property (nonatomic, retain) IBOutlet UITableView      *tableView;
 

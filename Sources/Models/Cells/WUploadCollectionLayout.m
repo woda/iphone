@@ -76,7 +76,7 @@ NSString *WUploadSectionHeaderKind = @"WUploadSectionHeaderKind";
 #pragma mark - Private
 
 - (CGRect)frameForPictureCellAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger offset = self.collectionHeaderHeight;
+    NSInteger offset = 66 + self.collectionHeaderHeight;
     if (indexPath.section > 0) {
         offset = [self.sectionOffsets[indexPath.section - 1] integerValue];
     }
@@ -101,14 +101,14 @@ NSString *WUploadSectionHeaderKind = @"WUploadSectionHeaderKind";
 
 - (CGRect)frameForCollectionHeaderAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGRect frame = CGRectMake(0, 0, 320, self.collectionHeaderHeight);
+    CGRect frame = CGRectMake(0, 66, 320, self.collectionHeaderHeight);
     
     return frame;
 }
 
 - (CGRect)frameForCollectionFooterAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger offset = self.collectionHeaderHeight;
+    NSInteger offset = 66 + self.collectionHeaderHeight;
     if (self.sectionOffsets.count > 0) {
         offset = [self.sectionOffsets.lastObject integerValue];
     }
@@ -119,7 +119,7 @@ NSString *WUploadSectionHeaderKind = @"WUploadSectionHeaderKind";
 
 - (CGRect)frameForSectionHeaderAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger offset = self.collectionHeaderHeight;
+    NSInteger offset = 66 + self.collectionHeaderHeight;
     if (indexPath.section > 0) {
         offset = [self.sectionOffsets[indexPath.section - 1] integerValue];
     }
