@@ -34,14 +34,12 @@ static WOfflineManager *shared = nil;
 
 + (NSURL *)fileURLForId:(NSNumber *)idNumber {
     NSString *url = [[NSUserDefaults standardUserDefaults] objectForKey:kOfflineList][[idNumber description]][kOfflineFilePath];
-    DDLogInfo(@"kTemporaryList: %@", [[NSUserDefaults standardUserDefaults] objectForKey:kOfflineList]);
     if (url == nil) {
         url = [[NSUserDefaults standardUserDefaults] objectForKey:kTemporaryList][[idNumber description]][kOfflineFilePath];
-        DDLogWarn(@"kTemporaryList: %@", [[NSUserDefaults standardUserDefaults] objectForKey:kTemporaryList]);
     }
-    DDLogInfo(@"url: %@", url);
-    DDLogInfo(@"URL: %@", [[NSURL alloc] initFileURLWithPath:url]);
-    return ([[NSURL alloc] initFileURLWithPath:url]);
+    if (url)
+        return ([[NSURL alloc] initFileURLWithPath:url]);
+    return nil;
 }
 
 + (NSString *)directory:(NSString *)dir {
