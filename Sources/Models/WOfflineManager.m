@@ -105,8 +105,8 @@ static WOfflineManager *shared = nil;
     if (filePath) {
         [data writeToFile:filePath atomically:YES];
         
-//        NSString *listKey = kTemporaryList;
-        NSString *listKey = kOfflineList;
+        NSString *listKey = kTemporaryList;
+//        NSString *listKey = kOfflineList;
         if (offline) {
             listKey = kOfflineList;
         }

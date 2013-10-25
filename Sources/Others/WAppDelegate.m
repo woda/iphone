@@ -23,7 +23,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    UIColor *tintColor = [UIColor colorWithRed:(142.0/255.0) green:(180.0/255.0) blue:(252.0/255.0) alpha:1.0];
+//    UIColor *tintColor = [UIColor colorWithRed:(142.0/255.0) green:(180.0/255.0) blue:(252.0/255.0) alpha:1.0];
+    UIColor *tintColor = [UIColor colorWithRed:(53.0/255.0) green:(73.0/255.0) blue:(94.0/255.0) alpha:1.0];
     [self.window setBackgroundColor:tintColor];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
