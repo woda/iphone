@@ -266,6 +266,7 @@
 		A2DC44FA1630546C00E152A6 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F31630546C00E152A6 /* Icon.png */; };
 		A2DC44FB1630546C00E152A6 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F41630546C00E152A6 /* Icon@2x.png */; };
 		A2DC44FC1630546C00E152A6 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F51630546C00E152A6 /* iTunesArtwork.png */; };
+		A2DE639A181B0A530064A953 /* WFileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DE6399181B0A530064A953 /* WFileItem.m */; };
 		A2E8C589178355B500F0BEF0 /* WSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E8C588178355B500F0BEF0 /* WSettingsView.xib */; };
 		A2E8C58C178364DE00F0BEF0 /* NSObject+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E8C58B178364DE00F0BEF0 /* NSObject+Blocks.m */; };
 		A2E8C58E1783719100F0BEF0 /* WListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E8C58D1783719100F0BEF0 /* WListView.xib */; };
@@ -591,6 +592,8 @@
 		A2DC44F31630546C00E152A6 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
 		A2DC44F41630546C00E152A6 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		A2DC44F51630546C00E152A6 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = SOURCE_ROOT; };
+		A2DE6398181B0A530064A953 /* WFileItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFileItem.h; sourceTree = "<group>"; };
+		A2DE6399181B0A530064A953 /* WFileItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFileItem.m; sourceTree = "<group>"; };
 		A2E8C588178355B500F0BEF0 /* WSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WSettingsView.xib; sourceTree = "<group>"; };
 		A2E8C58A178364DE00F0BEF0 /* NSObject+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Blocks.h"; sourceTree = "<group>"; };
 		A2E8C58B178364DE00F0BEF0 /* NSObject+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Blocks.m"; sourceTree = "<group>"; };
@@ -1188,6 +1191,8 @@
 			children = (
 				A2A0669016D4766900D08D8D /* WUser.h */,
 				A2A0669116D4766900D08D8D /* WUser.m */,
+				A2DE6398181B0A530064A953 /* WFileItem.h */,
+				A2DE6399181B0A530064A953 /* WFileItem.m */,
 				A20DBB8B1799570D00C25E7D /* Offline */,
 				A2C170DB1784E01700EAB93E /* Upload */,
 				A2411B5116D26B460060EFF7 /* Requests */,
@@ -1584,6 +1589,7 @@
 				A2411B4216D2544D0060EFF7 /* AFURLConnectionOperation.m in Sources */,
 				A2411B4416D2544D0060EFF7 /* AFXMLRequestOperation.m in Sources */,
 				A2411B4616D2544D0060EFF7 /* UIImageView+AFNetworking.m in Sources */,
+				A2DE639A181B0A530064A953 /* WFileItem.m in Sources */,
 				A2411B5C16D26B460060EFF7 /* WRequest+Sync.m in Sources */,
 				A2411B5E16D26B460060EFF7 /* WRequest+User.m in Sources */,
 				A2411B6016D26B460060EFF7 /* WRequest.m in Sources */,

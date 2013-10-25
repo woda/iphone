@@ -42,6 +42,14 @@ static WOfflineManager *shared = nil;
     return nil;
 }
 
++ (NSString *)filePathForId:(NSNumber *)idNumber {
+    NSString *url = [[NSUserDefaults standardUserDefaults] objectForKey:kOfflineList][[idNumber description]][kOfflineFilePath];
+    if (url == nil) {
+        url = [[NSUserDefaults standardUserDefaults] objectForKey:kTemporaryList][[idNumber description]][kOfflineFilePath];
+    }
+    return (url);
+}
+
 + (NSString *)directory:(NSString *)dir {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsPath = [paths objectAtIndex:0];

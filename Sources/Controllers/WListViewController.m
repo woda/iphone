@@ -14,6 +14,7 @@
 #import "WFolderCell.h"
 #import "WFileCell.h"
 #import "WFolderViewController.h"
+#import "WFileItem.h"
 
 @interface WListViewController ()
 
@@ -189,11 +190,12 @@
 - (void)openFile:(NSDictionary *)file {
     if (file[@"size"] && file[@"part_size"]) {
 //        NSData *data = [WOfflineManager fileForId:file[@"id"]];
-//        if (data) {
-        self.fileURL = [WOfflineManager fileURLForId:file[@"id"]];
+        //        if (data) {
+        self.fileURL = [WFileItem fileWithInfo:file];
         if (self.fileURL) {
 //            NSString *type = file[@"type"];
             if ([QLPreviewController canPreviewItem:self.fileURL]) {
+                DDLogWarn(@"self.fileURL: %@", self.fileURL);
                 QLPreviewController *c = [[QLPreviewController alloc] init];
                 c.dataSource = self;
                 c.delegate = self;

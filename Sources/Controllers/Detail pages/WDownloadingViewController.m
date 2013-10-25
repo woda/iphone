@@ -12,6 +12,7 @@
 #import "WImagePreviewViewController.h"
 #import "WOfflineManager.h"
 #import "WRequest+Sync.h"
+#import "WFileItem.h"
 
 @interface WDownloadingViewController ()
 
@@ -77,7 +78,7 @@
 //        }
         
         [[WOfflineManager shared] saveFile:file withInfo:self.info offline:NO];
-        self.fileURL = [WOfflineManager fileURLForId:self.info[@"id"]];
+        self.fileURL = [WFileItem fileWithInfo:self.info];
         if (self.fileURL) {
             //            NSString *type = file[@"type"];
             if ([QLPreviewController canPreviewItem:self.fileURL]) {
