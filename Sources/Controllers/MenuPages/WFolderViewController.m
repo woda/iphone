@@ -91,21 +91,21 @@
     [self.navigationController pushViewController:c animated:YES];
 }
 
-- (void)openFile:(NSDictionary *)file {
-    if (file[@"size"] && file[@"part_size"]) {
-        NSData *data = [WOfflineManager fileForId:file[@"id"]];
-        if (data) {
-            NSString *type = file[@"type"];
-            if ([WFileCell isFileAnImage:type]) {
-                WImagePreviewViewController *c = [[WImagePreviewViewController alloc] initWithImage:[UIImage imageWithData:data]];
-                [self.navigationController pushViewController:c animated:YES];
-            }
-        } else {
-            WDownloadingViewController *c = [[WDownloadingViewController alloc] initWithFile:file inFolder:self.path];
-            [self.navigationController pushViewController:c animated:YES];
-        }
-    }
-}
+//- (void)openFile:(NSDictionary *)file {
+//    if (file[@"size"] && file[@"part_size"]) {
+//        NSData *data = [WOfflineManager fileForId:file[@"id"]];
+//        if (data) {
+//            NSString *type = file[@"type"];
+//            if ([WFileCell isFileAnImage:type]) {
+//                WImagePreviewViewController *c = [[WImagePreviewViewController alloc] initWithImage:[UIImage imageWithData:data]];
+//                [self.navigationController pushViewController:c animated:YES];
+//            }
+//        } else {
+//            WDownloadingViewController *c = [[WDownloadingViewController alloc] initWithFile:file inFolder:self.path];
+//            [self.navigationController pushViewController:c animated:YES];
+//        }
+//    }
+//}
 
 
 #pragma mark -

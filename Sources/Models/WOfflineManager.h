@@ -18,6 +18,7 @@
 
 + (WOfflineManager *)shared;
 + (NSData *)fileForId:(NSNumber *)idNumber;
++ (NSURL *)fileURLForId:(NSNumber *)idNumber;
 + (void)clearTemporaryFiles;
 + (void)clearAllFiles;
 

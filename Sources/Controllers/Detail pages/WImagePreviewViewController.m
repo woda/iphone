@@ -28,8 +28,9 @@
     [super viewWillAppear:animated];
     
     UIButton *button = [[UIButton alloc] init];
+    [button setBackgroundColor:[UIColor redColor]];
     [button setImage:[UIImage imageNamed:@"navbar_left_white_arrow.png"] forState:UIControlStateNormal];
-    [button setBounds:CGRectMake(0, 0, 21, 18)];
+    [button setBounds:CGRectMake(0, 0, 40, 40)];
     [button setImageEdgeInsets:(UIEdgeInsets) {
         .top = 0,
         .left = 10,

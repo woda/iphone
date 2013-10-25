@@ -17,6 +17,8 @@
 
 @interface WListViewController ()
 
+@property (nonatomic, retain) NSURL *fileURL;
+
 @end
 
 @implementation WListViewController
@@ -188,13 +190,21 @@
 
 - (void)openFile:(NSDictionary *)file {
     if (file[@"size"] && file[@"part_size"]) {
-        NSData *data = [WOfflineManager fileForId:file[@"id"]];
-        if (data) {
-            NSString *type = file[@"type"];
-            if ([WFileCell isFileAnImage:type]) {
-                WImagePreviewViewController *c = [[WImagePreviewViewController alloc] initWithImage:[UIImage imageWithData:data]];
+//        NSData *data = [WOfflineManager fileForId:file[@"id"]];
+//        if (data) {
+        self.fileURL = [WOfflineManager fileURLForId:file[@"id"]];
+        if (self.fileURL) {
+//            NSString *type = file[@"type"];
+            if ([QLPreviewController canPreviewItem:self.fileURL]) {
+                QLPreviewController *c = [[QLPreviewController alloc] init];
+                c.dataSource = self;
+                c.delegate = self;
                 [self.navigationController pushViewController:c animated:YES];
             }
+//            if ([WFileCell isFileAnImage:type]) {
+//                WImagePreviewViewController *c = [[WImagePreviewViewController alloc] initWithImage:[UIImage imageWithData:data]];
+//                [self.navigationController pushViewController:c animated:YES];
+//            }
         } else {
             WDownloadingViewController *c = [[WDownloadingViewController alloc] initWithFile:file inFolder:nil];
             [self.navigationController pushViewController:c animated:YES];
@@ -221,6 +231,17 @@
             [self openFile:file];
         }
     }
+}
+
+
+#pragma mark -
+
+- (NSInteger) numberOfPreviewItemsInPreviewController:(QLPreviewController *)controller {
+    return (1);
+}
+
+- (id <QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index {
+    return (self.fileURL);
 }
 
 @end
