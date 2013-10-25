@@ -99,8 +99,8 @@ static WOfflineManager *shared = nil;
     if (offline) {
         filePath = [[WOfflineManager offlineDirectory] stringByAppendingPathComponent:identifer];
     } else {
-        filePath = [[WOfflineManager offlineDirectory] stringByAppendingPathComponent:identifer];
-//        [[WOfflineManager temporaryDirectory] stringByAppendingPathComponent:identifer];
+//        filePath = [[WOfflineManager offlineDirectory] stringByAppendingPathComponent:identifer];
+        filePath = [[WOfflineManager temporaryDirectory] stringByAppendingPathComponent:identifer];
     }
     if (filePath) {
         [data writeToFile:filePath atomically:YES];

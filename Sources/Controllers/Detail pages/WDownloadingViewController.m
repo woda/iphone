@@ -80,11 +80,11 @@
         [[WOfflineManager shared] saveFile:file withInfo:self.info offline:NO];
         
         self.fileURL = [WOfflineManager fileURLForId:self.info[@"id"]];
-        DDLogInfo(@"Opening '%@' in QuickLook", [self.fileURL standardizedURL]);
         if (self.fileURL) {
             //            NSString *type = file[@"type"];
             if ([QLPreviewController canPreviewItem:self.fileURL]) {
                 QLPreviewController *c = [[QLPreviewController alloc] init];
+                c.title = self.info[@"name"];
                 c.dataSource = (WListViewController *) self.presentingViewController;
                 c.delegate = (WListViewController *) self.presentingViewController;
                 

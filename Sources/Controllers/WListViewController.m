@@ -197,6 +197,7 @@
 //            NSString *type = file[@"type"];
             if ([QLPreviewController canPreviewItem:self.fileURL]) {
                 QLPreviewController *c = [[QLPreviewController alloc] init];
+                c.title = file[@"name"];
                 c.dataSource = self;
                 c.delegate = self;
                 [self.navigationController pushViewController:c animated:YES];
