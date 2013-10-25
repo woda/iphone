@@ -48,6 +48,7 @@
     UIColor *tintColor = [UIColor colorWithRed:(71.0/255.0) green:(134.0/255.0) blue:(255.0/255.0) alpha:1.0];
 //    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     [self.navigationBar setBarTintColor:tintColor];
+    self.navigationBar.tintColor = [UIColor whiteColor];
     
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeft:)];
     [swipe setDirection:UISwipeGestureRecognizerDirectionLeft];

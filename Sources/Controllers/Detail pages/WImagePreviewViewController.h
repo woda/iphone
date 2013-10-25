@@ -7,18 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuickLook/QuickLook.h>
 
-@interface WImagePreviewViewController : UIViewController <UIScrollViewDelegate>
-
-@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, retain) IBOutlet UIImageView  *imageView;
-
-@property (nonatomic, retain) IBOutlet UIView       *controlsView;
-@property (nonatomic, retain) IBOutlet UIButton     *backButton;
-
-- (id)initWithImage:(UIImage *)image;
-
-- (IBAction)toggleControls;
-- (IBAction)back:(id)sender;
+@interface WImagePreviewViewController : QLPreviewController
 
 @end

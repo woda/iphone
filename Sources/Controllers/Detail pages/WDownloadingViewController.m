@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Woda. All rights reserved.
 //
 
-#import <QuickLook/QuickLook.h>
 #import "WDownloadingViewController.h"
 #import "WListViewController.h"
 #import "WImagePreviewViewController.h"
@@ -81,8 +80,8 @@
         self.fileURL = [WFileItem fileWithInfo:self.info];
         if (self.fileURL) {
             //            NSString *type = file[@"type"];
-            if ([QLPreviewController canPreviewItem:self.fileURL]) {
-                QLPreviewController *c = [[QLPreviewController alloc] init];
+            if ([WImagePreviewViewController canPreviewItem:self.fileURL]) {
+                WImagePreviewViewController *c = [[WImagePreviewViewController alloc] init];
                 
                 NSMutableArray *stack = [[self.navigationController viewControllers] mutableCopy];
                 [stack removeLastObject];

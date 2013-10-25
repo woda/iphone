@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Woda. All rights reserved.
 //
 
-#import <QuickLook/QuickLook.h>
 #import "WMenuPageViewController.h"
+#import "WImagePreviewViewController.h"
 #import "WRequest+List.h"
 
 @interface WListViewController : WMenuPageViewController <UITableViewDataSource, UITableViewDelegate, QLPreviewControllerDataSource, QLPreviewControllerDelegate>

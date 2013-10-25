@@ -8,7 +8,6 @@
 
 #import "WListViewController.h"
 #import "WDownloadingViewController.h"
-#import "WImagePreviewViewController.h"
 #import "WOfflineManager.h"
 #import "WRequest.h"
 #import "WFolderCell.h"
@@ -194,9 +193,9 @@
         self.fileURL = [WFileItem fileWithInfo:file];
         if (self.fileURL) {
 //            NSString *type = file[@"type"];
-            if ([QLPreviewController canPreviewItem:self.fileURL]) {
+            if ([WImagePreviewViewController canPreviewItem:self.fileURL]) {
                 DDLogWarn(@"self.fileURL: %@", self.fileURL);
-                QLPreviewController *c = [[QLPreviewController alloc] init];
+                WImagePreviewViewController *c = [[WImagePreviewViewController alloc] init];
                 c.dataSource = self;
                 c.delegate = self;
                 [self.navigationController pushViewController:c animated:YES];
