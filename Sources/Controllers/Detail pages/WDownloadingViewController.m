@@ -76,20 +76,20 @@
 //            [self.navigationController setViewControllers:stack animated:YES];
 //        }
         
-        DDLogInfo(@"self.info: %@", self.info);
         [[WOfflineManager shared] saveFile:file withInfo:self.info offline:NO];
-        
         self.fileURL = [WOfflineManager fileURLForId:self.info[@"id"]];
         if (self.fileURL) {
             //            NSString *type = file[@"type"];
             if ([QLPreviewController canPreviewItem:self.fileURL]) {
                 QLPreviewController *c = [[QLPreviewController alloc] init];
-                c.title = self.info[@"name"];
-                c.dataSource = (WListViewController *) self.presentingViewController;
-                c.delegate = (WListViewController *) self.presentingViewController;
                 
                 NSMutableArray *stack = [[self.navigationController viewControllers] mutableCopy];
                 [stack removeLastObject];
+                WListViewController *last = (WListViewController *) [stack last];
+                last.fileURL = self.fileURL;
+                c.dataSource = last;
+                c.delegate = last;
+                DDLogWarn(@"last: %@", c.delegate);
                 [stack addObject:c];
                 [self.navigationController setViewControllers:stack animated:YES];
             } else {

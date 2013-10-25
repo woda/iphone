@@ -25,7 +25,8 @@
 @property (nonatomic, retain) IBOutlet UILabel          *countLabel;
 @property (nonatomic, retain) IBOutlet UILabel          *updatedLabel;
 
-@property (nonatomic, retain) NSDictionary    *data;
+@property (nonatomic, retain) NSDictionary              *data;
+@property (nonatomic, retain) NSURL                     *fileURL;
 
 - (void)openFolder:(NSDictionary *)folder;
 
