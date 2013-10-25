@@ -124,7 +124,8 @@ static WOfflineManager *shared = nil;
 }
 
 - (NSDictionary *)offlineFiles {
-    NSDictionary *list = [[NSUserDefaults standardUserDefaults] objectForKey:kOfflineList];
+//    NSDictionary *list = [[NSUserDefaults standardUserDefaults] objectForKey:kOfflineList];
+    NSDictionary *list = [[NSUserDefaults standardUserDefaults] objectForKey:kTemporaryList];
     NSArray *files = [list allValues];
     files = [files sortedArrayUsingComparator:^NSComparisonResult(NSDictionary *file1, NSDictionary *file2) {
         return ([file2[kOfflineFileDate] compare:file1[kOfflineFileDate]]);
