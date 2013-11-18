@@ -27,6 +27,7 @@
 
 + (WUploadManager *)shared;
 + (NSDictionary *)uploadList;
++ (void)cleanUploadList;
 
 - (void)uploadFileWihAsset:(ALAsset *)asset inFolder:(NSString *)path;
 

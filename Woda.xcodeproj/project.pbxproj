@@ -1771,7 +1771,7 @@
 		A2C601691630485A00CB53B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Theo LUBERT (TW5A7XQFXB)";
 				DEPLOYMENT_POSTPROCESSING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sources/Others/Woda-Prefix.pch";
@@ -1781,7 +1781,7 @@
 					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D2737EB1-E20E-41FC-94FE-E3B15C6CF13C";
+				PROVISIONING_PROFILE = "5B104309-5AFE-42E0-8000-2D3A8EC38306";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1789,7 +1789,7 @@
 		A2C6016A1630485A00CB53B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Theo LUBERT (TW5A7XQFXB)";
 				DEPLOYMENT_POSTPROCESSING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sources/Others/Woda-Prefix.pch";
@@ -1799,7 +1799,7 @@
 					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D2737EB1-E20E-41FC-94FE-E3B15C6CF13C";
+				PROVISIONING_PROFILE = "5B104309-5AFE-42E0-8000-2D3A8EC38306";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

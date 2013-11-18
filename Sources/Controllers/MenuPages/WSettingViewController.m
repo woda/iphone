@@ -8,6 +8,7 @@
 
 #import "WSettingViewController.h"
 #import "WOfflineManager.h"
+#import "WUploadManager.h"
 #import "WRequest.h"
 #import "WUser.h"
 
@@ -138,6 +139,7 @@
             break;
         case kSettingCacheIndex:
             [WOfflineManager clearTemporaryFiles];
+            [WUploadManager cleanUploadList];
             [self updateStorageUsage];
             break;
         case kSettingLogoutIndex: {

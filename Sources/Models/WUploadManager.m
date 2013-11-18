@@ -31,6 +31,12 @@ static WUploadManager *shared = nil;
     return ([[NSUserDefaults standardUserDefaults] objectForKey:kUploadList]);
 }
 
++ (void)cleanUploadList {
+    NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
+    [df removeObjectForKey:kUploadList];
+    [df synchronize];
+}
+
 - (id)init {
     self = [super init];
     if (self) {
