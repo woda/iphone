@@ -45,9 +45,10 @@
 //    [self.navigationBar setTranslucent:NO];
     self.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
     
-    UIColor *tintColor = [UIColor colorWithRed:(71.0/255.0) green:(134.0/255.0) blue:(255.0/255.0) alpha:1.0];
+    float n = 1.3;
+    UIColor *tintColor = [UIColor colorWithRed:powf((71.0/255.0), n) green:powf((134.0/255.0), n) blue:powf((255.0/255.0), n) alpha:1.0];
 //    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationBar setBarTintColor:tintColor];
+    [self.navigationBar setBarTintColor:[tintColor colorWithAlphaComponent:(1.0/n)]];
     self.navigationBar.tintColor = [UIColor whiteColor];
     
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeft:)];
