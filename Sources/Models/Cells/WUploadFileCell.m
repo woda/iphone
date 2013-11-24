@@ -7,6 +7,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import "UIImage+ImageEffects.h"
 #import "WUploadFileCell.h"
 #import "WUploadManager.h"
 #import "WFileCell.h"
@@ -91,8 +92,9 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 //}
 
 - (void)setInfo:(NSDictionary *)info {
-    Boolean uploaded = ![info[kUploadNeedsUpload] boolValue];
+    Boolean uploaded = info[kUploadNeedsUpload] && ![info[kUploadNeedsUpload] boolValue];
     NSInteger progress = [info[kUploadProgress] integerValue];
+    UIColor *tintColor = [UIColor colorWithWhite:0.0 alpha:0.1];
     
     if (![self.notifName isEqualToString:info[kUploadNotificationName]]) {
         self.notifName = info[kUploadNotificationName];
@@ -104,12 +106,18 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
         NSData *data = [NSData dataWithContentsOfFile:self.thumbnailPath];
         UIImage *thumbnail = [UIImage imageWithData:data];
         [self.thumbnailView setContentMode:UIViewContentModeScaleAspectFill];
-        [self.thumbnailView setImage:thumbnail];
+//        [self.thumbnailView setImage:thumbnail];
+        [self.thumbnailView setImage:[thumbnail applyBlurWithRadius:10 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil]];
     }
     if (self.thumbnailPath == nil) {
         [self setIcon:info[kUploadMediaType]];
     }
     if (uploaded) {
+        NSData *data = [NSData dataWithContentsOfFile:self.thumbnailPath];
+        UIImage *thumbnail = [UIImage imageWithData:data];
+        [self.thumbnailView setContentMode:UIViewContentModeScaleAspectFill];
+        [self.thumbnailView setImage:thumbnail];
+        
         [self.checkView setImage:[UIImage imageNamed:@"upload_green_check.png"]];
         [self.overlayView setHidden:YES];
         [self.checkView setHidden:NO];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F8B2E9E183BAC8300F44CC9 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8B2E9D183BAC8300F44CC9 /* UIImage+ImageEffects.m */; };
 		A2020D5B165E2D960057FCCD /* WNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D5A165E2D960057FCCD /* WNavigationController.m */; };
 		A2020D67165E41980057FCCD /* WCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2020D66165E41980057FCCD /* WCell.m */; };
 		A20DBB8E1799575800C25E7D /* WOfflineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A20DBB8D1799575800C25E7D /* WOfflineManager.m */; };
@@ -275,6 +276,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F8B2E9C183BAC8300F44CC9 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		6F8B2E9D183BAC8300F44CC9 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		A2020D59165E2D960057FCCD /* WNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNavigationController.h; sourceTree = "<group>"; };
 		A2020D5A165E2D960057FCCD /* WNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNavigationController.m; sourceTree = "<group>"; };
 		A2020D65165E41980057FCCD /* WCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCell.h; sourceTree = "<group>"; };
@@ -988,6 +991,8 @@
 		A2677B0F165E145E00C1D630 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6F8B2E9C183BAC8300F44CC9 /* UIImage+ImageEffects.h */,
+				6F8B2E9D183BAC8300F44CC9 /* UIImage+ImageEffects.m */,
 				A2677B13165E14AB00C1D630 /* Helpers.h */,
 				A2C170D21783B88400EAB93E /* NSDate+Format.h */,
 				A2C170D31783B88500EAB93E /* NSDate+Format.m */,
@@ -1630,6 +1635,7 @@
 				A258B28817A33EA800C0D3E9 /* WOfflineFileCell.m in Sources */,
 				A258B29F17A3647200C0D3E9 /* WSAlbumTableViewController.m in Sources */,
 				A258B2A017A3647200C0D3E9 /* WSAssetPickerController.m in Sources */,
+				6F8B2E9E183BAC8300F44CC9 /* UIImage+ImageEffects.m in Sources */,
 				A258B2A117A3647200C0D3E9 /* WSAssetPickerState.m in Sources */,
 				A258B2A217A3647200C0D3E9 /* WSAssetsTableViewCell.m in Sources */,
 				A258B2A317A3647200C0D3E9 /* WSAssetTableViewController.m in Sources */,
@@ -1771,7 +1777,9 @@
 		A2C601691630485A00CB53B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Theo LUBERT (TW5A7XQFXB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEPLOYMENT_POSTPROCESSING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sources/Others/Woda-Prefix.pch";
@@ -1781,7 +1789,7 @@
 					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5B104309-5AFE-42E0-8000-2D3A8EC38306";
+				PROVISIONING_PROFILE = "F37C4D4B-F495-458E-A624-D9C194781402";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1789,7 +1797,9 @@
 		A2C6016A1630485A00CB53B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Theo LUBERT (TW5A7XQFXB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEPLOYMENT_POSTPROCESSING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sources/Others/Woda-Prefix.pch";
@@ -1799,7 +1809,7 @@
 					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5B104309-5AFE-42E0-8000-2D3A8EC38306";
+				PROVISIONING_PROFILE = "F37C4D4B-F495-458E-A624-D9C194781402";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
