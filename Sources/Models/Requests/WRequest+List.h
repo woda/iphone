@@ -10,31 +10,46 @@
 
 @interface WRequest (List)
 
-+ (void)listFilesInDir:(NSString *)path
-                success:(void (^)(id json))success
-               failure:(void (^)(id error))failure;
++ (void)file:(NSNumber *)fileId
+     success:(void (^)(id json))success
+     failure:(void (^)(id error))failure;
 
 + (void)listAllFilesWithSuccess:(void (^)(id json))success
                         failure:(void (^)(id error))failure;
 
-+ (void)listUpdatedFilesWithSuccess:(void (^)(id json))success
-                            failure:(void (^)(id error))failure;
++ (void)listRecentFilesWithSuccess:(void (^)(id json))success
+                           failure:(void (^)(id error))failure;
 
 + (void)listFavoriteFilesWithSuccess:(void (^)(id json))success
                              failure:(void (^)(id error))failure;
 
-+ (void)listSharedFilesWithSuccess:(void (^)(id json))success
-                             failure:(void (^)(id error))failure;
-
-+ (void)listPublicFilesWithSuccess:(void (^)(id json))success
-                             failure:(void (^)(id error))failure;
-
-+ (void)markFileAsFavorite:(NSNumber *)idNumber
++ (void)markFileAsFavorite:(NSNumber *)fileId
                    success:(void (^)(id json))success
                    failure:(void (^)(id error))failure;
 
-+ (void)unmarkFileAsFavorite:(NSNumber *)idNumber
++ (void)unmarkFileAsFavorite:(NSNumber *)fileId
                      success:(void (^)(id json))success
                      failure:(void (^)(id error))failure;
+
++ (void)listPublicFilesWithSuccess:(void (^)(id json))success
+                           failure:(void (^)(id error))failure;
+
++ (void)markFileAsPublic:(NSNumber *)fileId
+                 success:(void (^)(id json))success
+                 failure:(void (^)(id error))failure;
+
++ (void)unmarkFileAsPublic:(NSNumber *)fileId
+                   success:(void (^)(id json))success
+                   failure:(void (^)(id error))failure;
+
++ (void)listSharedFilesWithSuccess:(void (^)(id json))success
+                           failure:(void (^)(id error))failure;
+
++ (void)directDownloadLinkForFile:(NSNumber *)fileId
+                          success:(void (^)(id json))success
+                          failure:(void (^)(id error))failure;
+
++ (void)listDownloadedFilesWithSuccess:(void (^)(id json))success
+                               failure:(void (^)(id error))failure;
 
 @end
