@@ -11,13 +11,18 @@
 
 //#define kBaseURL    @"https://127.0.0.1:3000"
 //#define kBaseURL    @"https://192.168.2.1:3000"
-#define kBaseURL    @"https://woda-server.com:3000"
+#define kBaseURL    @"https://kobhqlt.fr:3000"
 //#define kBaseURL    @"https://ec2-54-242-98-168.compute-1.amazonaws.com:3000"
 //#define kBaseURL    @"http://httpbin.org/put"
 
 
 #define kFileDeletedNotificationName    @"kFileDeletedNotificationName"
 #define kFileMarkedNotificationName     @"kFileMarkedNotificationName"
+
+#define kGET                            @"GET"
+#define kPUT                            @"PUT"
+#define kPOST                           @"POST"
+#define kDELETE                         @"DELETE"
 
 
 static const int ddLogLevel = LOG_LEVEL_INFO;
@@ -34,5 +39,22 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
                parameters:(NSDictionary *)parameters
                   success:(void (^)(id json))success
                   failure:(void (^)(id error))failure;
+
++ (void)GET:(NSString *)path
+ parameters:(NSDictionary *)parameters
+    success:(void (^)(id json))success
+    failure:(void (^)(id error))failure;
++ (void)PUT:(NSString *)path
+ parameters:(NSDictionary *)parameters
+    success:(void (^)(id json))success
+    failure:(void (^)(id error))failure;
++ (void)POST:(NSString *)path
+  parameters:(NSDictionary *)parameters
+     success:(void (^)(id json))success
+     failure:(void (^)(id error))failure;
++ (void)DELETE:(NSString *)path
+    parameters:(NSDictionary *)parameters
+       success:(void (^)(id json))success
+       failure:(void (^)(id error))failure;
 
 @end

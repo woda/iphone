@@ -7,20 +7,24 @@
 //
 
 #import "WRequest.h"
+#import "NSString+Path.h"
 
 @implementation WRequest (User)
 
-//Create
-//
-//To create a user, use a PUT request to the url:
-//https://{base}:3000/users/{login}
-//With body parameters:
-//first_name={first_name}&
-//last_name={last_name}&
-//password={password}&
-//email={email}
-//
-//This will return a JSON representation of the user. This has the side effect of logging that user in.
+/* Create
+ 
+ Description: method to create and log a new user in.
+ Method type: PUT
+ URL: /users/{login}
+ Body parameters: "password={password}&email={email}"
+ 
+ Return:
+ {
+ "success": true,
+ "user": << User's description >>
+ }
+ 
+ */
 
 + (void)createUser:(NSString *)login
          firstName:(NSString *)first_name
@@ -30,24 +34,31 @@
            success:(void (^)(id json))success
            failure:(void (^)(id json))failure
 {
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setValue:first_name forKey:@"first_name"];
-    [params setValue:last_name forKey:@"last_name"];
-    [params setValue:password forKey:@"password"];
-    [params setValue:email forKey:@"email"];
-    
-    NSString *path = [@"/users/{login}" stringByReplacingOccurrencesOfString:@"{login}" withString:login];
-    
-    [WRequest requestWithMethod:@"PUT" path:path parameters:params success:success failure:failure];
+    [WRequest PUT:[@"/users/{login}" pathWithParams:@{ @"login":login }]
+       parameters:@{ @"first_name": first_name,
+                     @"last_name": last_name,
+                     @"password": password,
+                     @"email": email }
+          success:success
+          failure:failure];
 }
 
-//Update
-//
-//To update yourself (of course you can only update yourself), use a POST request to the url:
-//https://{base}:3000/users
-//With any of the body parameters you can use for creation.
-//
-//This will return a JSON representation of yourself.
+/* Update
+ 
+ Description: method to update the current user
+ Method type: POST
+ URL: /users
+ Body parameters: "password={new_password}&email={new_email}"
+ 
+ Parameters are optional, you can't just send one of these
+ 
+ Return:
+ {
+ "success": true,
+ "user": << User's description >>
+ }
+ 
+ */
 
 + (void)updateUserWithFirstName:(NSString *)first_name
                        lastName:(NSString *)last_name
@@ -56,87 +67,113 @@
                         success:(void (^)(id json))success
                         failure:(void (^)(id json))failure
 {
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setValue:first_name forKey:@"first_name"];
-    [params setValue:last_name forKey:@"last_name"];
-    [params setValue:password forKey:@"password"];
-    [params setValue:email forKey:@"email"];
-    
-    NSString *path = @"/users";
-    
-    [WRequest requestWithMethod:@"POST" path:path parameters:params success:success failure:failure];
+    [WRequest POST:@"/users"
+        parameters:@{ @"first_name": first_name,
+                      @"last_name": last_name,
+                      @"password": password,
+                      @"email": email }
+           success:success
+           failure:failure];
 }
 
 
-//Read
-//
-//To get a JSON representation of yourself, use a GET request to the url:
-//https://{base}:3000/users
-//
-//This will return a JSON representation of yourself.
+/* Read
+ 
+ Description: method to get the information of the current user
+ Method type: GET
+ URL: /users
+ Body parameters: none
+ 
+ Return:
+ {
+ "success": true,
+ "user": << User's description >>
+ }
+ 
+ */
 
 + (void)userSuccess:(void (^)(id json))success
             failure:(void (^)(id json))failure
 {
-    NSString *path = @"/users";
-    
-    [WRequest requestWithMethod:@"GET" path:path parameters:nil success:success failure:failure];
+    [WRequest GET:@"/users"
+       parameters:nil
+          success:success
+          failure:failure];
 }
 
 
-//Delete
-//
-//To delete yourself, use a DELETE request to the url:
-//https://{base}:3000/users
-//
-//This will return {"success": true} if the delete was successful.
+/* Delete
+ 
+ Description: method to delete the current user
+ Method type: DELETE
+ URL: /users
+ Body parameters: none
+ 
+ Return:
+ {
+ "success": true
+ }
+ 
+ */
 
 + (void)deleteUserSuccess:(void (^)(id json))success
                   failure:(void (^)(id json))failure
 {
-    NSString *path = @"/users";
-    
-    [WRequest requestWithMethod:@"DELETE" path:path parameters:nil success:success failure:failure];
+    [WRequest DELETE:@"/users"
+          parameters:nil
+             success:success
+             failure:failure];
 }
 
 
-//Login
-//
-//To login, use a POST request:
-//https://{base}:3000/users/{login}/login
-//With:
-//password={password}
-//as body parameter.
-//
-//This will return a JSON representation of yourself.
+/* Login
+ 
+ Description: method to log a user in
+ Method type: POST
+ URL: /users/{user}/login
+ Body parameters: "password={password}"
+ 
+ Return:
+ {
+ "success": true,
+ "user": << User's description >>
+ }
+ 
+ */
 
 + (void)login:(NSString *)login
      password:(NSString *)password
       success:(void (^)(id json))success
       failure:(void (^)(id json))failure
 {
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setValue:password forKey:@"password"];
-    
-    NSString *path = [@"/users/{login}/login" stringByReplacingOccurrencesOfString:@"{login}" withString:login];
-    
-    [WRequest requestWithMethod:@"POST" path:path parameters:params success:success failure:failure];
+    [WRequest POST:[@"/users/{login}/login" pathWithParams:@{ @"login": login }]
+        parameters:@{ @"password": password }
+           success:success
+           failure:failure];
 }
 
 
-//Logout
-//
-//To logout, use a GET or post request to:
-//https://{base}:3000/users/logout
-//
-//This will return {"success": true}
+/* Logout
+ 
+ Description: method to logout the current user
+ Method type: GET
+ URL: /users/logout
+ Body parameters: none
+ 
+ Return:
+ {
+ "success": true
+ }
+ 
+ */
 
 + (void)logoutSuccess:(void (^)(id json))success
               failure:(void (^)(id json))failure
 {
-    NSString *path = @"/users/logout";
-    
-    [WRequest requestWithMethod:@"GET" path:path parameters:nil success:success failure:failure];
+    [WRequest GET:@"/users/logout"
+       parameters:nil
+          success:success
+          failure:failure];
 }
 
 @end

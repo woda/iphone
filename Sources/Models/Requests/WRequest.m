@@ -26,25 +26,23 @@ static AFHTTPClient *client = nil;
 }
 
 + (id)displayError:(NSError *)error forOperation:(AFHTTPRequestOperation *)operation {
-//    NSLog(@"%@", error);
-    
     id json = [WRequest JSONFromData:[operation responseData]];
     if ([json isKindOfClass:[NSError class]]) {
-        NSLog(@"Error: Json parsing failed");
-//        NSLog(@" Info: %@",[operation responseString]);
+        DDLogError(@"Error: Json parsing failed");
         return ([(NSError *)json localizedDescription]);
+    } else if ([json isKindOfClass:[NSDictionary class]] && json[@"error"]) {
+        DDLogError(@"Error: %@ (%@)", json[@"error"], json[@"message"]);
+        return [NSError errorWithDomain:json[@"error"] code:0 userInfo:json];
+    } else if (json == nil) {
+        DDLogError(@"Error: No json available");
+        return (error);
     }
-    if (json == nil) {
-        NSLog(@"Error: No json available");
-        return ([error localizedDescription]);
-    }
-//    NSLog(@"Error: %@", json);
     return (json);
 }
 
 + (id)JSONFromData:(NSData *)data {
     NSError *error = nil;
-    if ((data) && ([data length] > 0)) {
+    if ([data length] > 0) {
         id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         if (error) {
             return (error);
@@ -65,8 +63,6 @@ static AFHTTPClient *client = nil;
         id json = [WRequest JSONFromData:responseObject];
         if ([json isKindOfClass:[NSError class]]) {
             failure([WRequest displayError:(NSError *)json forOperation:operation]);
-        } else if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"error"]) {
-            failure(json);
         } else {
             success(json);
         }
@@ -74,6 +70,54 @@ static AFHTTPClient *client = nil;
         failure([WRequest displayError:error forOperation:operation]);
     }];
     [[WRequest client] enqueueHTTPRequestOperation:operation];
+}
+
++ (void)GET:(NSString *)path
+ parameters:(NSDictionary *)parameters
+    success:(void (^)(id json))success
+    failure:(void (^)(id error))failure
+{
+    [WRequest requestWithMethod:kGET
+                           path:path
+                     parameters:parameters
+                        success:success
+                        failure:failure];
+}
+
++ (void)PUT:(NSString *)path
+ parameters:(NSDictionary *)parameters
+    success:(void (^)(id json))success
+    failure:(void (^)(id error))failure
+{
+    [WRequest requestWithMethod:kPUT
+                           path:path
+                     parameters:parameters
+                        success:success
+                        failure:failure];
+}
+
++ (void)POST:(NSString *)path
+  parameters:(NSDictionary *)parameters
+     success:(void (^)(id json))success
+     failure:(void (^)(id error))failure
+{
+    [WRequest requestWithMethod:kPOST
+                           path:path
+                     parameters:parameters
+                        success:success
+                        failure:failure];
+}
+
++ (void)DELETE:(NSString *)path
+    parameters:(NSDictionary *)parameters
+       success:(void (^)(id json))success
+       failure:(void (^)(id error))failure
+{
+    [WRequest requestWithMethod:kDELETE
+                           path:path
+                     parameters:parameters
+                        success:success
+                        failure:failure];
 }
 
 @end

@@ -271,6 +271,7 @@
 		A2E8C589178355B500F0BEF0 /* WSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E8C588178355B500F0BEF0 /* WSettingsView.xib */; };
 		A2E8C58C178364DE00F0BEF0 /* NSObject+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E8C58B178364DE00F0BEF0 /* NSObject+Blocks.m */; };
 		A2E8C58E1783719100F0BEF0 /* WListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E8C58D1783719100F0BEF0 /* WListView.xib */; };
+		A2EC7E4E1842C2BE0075FF9A /* NSString+Path.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EC7E4D1842C2BE0075FF9A /* NSString+Path.m */; };
 		A2F62E8116647F8B00F9CB08 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F62E8016647F8B00F9CB08 /* libz.dylib */; };
 		A2F7C620177954C30034D327 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DC44F51630546C00E152A6 /* iTunesArtwork.png */; };
 /* End PBXBuildFile section */
@@ -601,6 +602,8 @@
 		A2E8C58A178364DE00F0BEF0 /* NSObject+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Blocks.h"; sourceTree = "<group>"; };
 		A2E8C58B178364DE00F0BEF0 /* NSObject+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Blocks.m"; sourceTree = "<group>"; };
 		A2E8C58D1783719100F0BEF0 /* WListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WListView.xib; sourceTree = "<group>"; };
+		A2EC7E4C1842C2BE0075FF9A /* NSString+Path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Path.h"; sourceTree = "<group>"; };
+		A2EC7E4D1842C2BE0075FF9A /* NSString+Path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Path.m"; sourceTree = "<group>"; };
 		A2F62E8016647F8B00F9CB08 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A2F7C61D1779431C0034D327 /* WRequestSyncTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRequestSyncTests.h; sourceTree = "<group>"; };
 		A2F7C61E1779431C0034D327 /* WRequestSyncTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRequestSyncTests.m; sourceTree = "<group>"; };
@@ -1002,6 +1005,8 @@
 				A2A0669C16D4CBBF00D08D8D /* NSArray+Shortcuts.m */,
 				A2E8C58A178364DE00F0BEF0 /* NSObject+Blocks.h */,
 				A2E8C58B178364DE00F0BEF0 /* NSObject+Blocks.m */,
+				A2EC7E4C1842C2BE0075FF9A /* NSString+Path.h */,
+				A2EC7E4D1842C2BE0075FF9A /* NSString+Path.m */,
 			);
 			name = Helpers;
 			path = Sources/Librairies/Helpers;
@@ -1632,6 +1637,7 @@
 				A2CAF06C17991B7A002A599D /* WDownloadingViewController.m in Sources */,
 				A2CAF074179938F1002A599D /* WImagePreviewViewController.m in Sources */,
 				A20DBB8E1799575800C25E7D /* WOfflineManager.m in Sources */,
+				A2EC7E4E1842C2BE0075FF9A /* NSString+Path.m in Sources */,
 				A258B28817A33EA800C0D3E9 /* WOfflineFileCell.m in Sources */,
 				A258B29F17A3647200C0D3E9 /* WSAlbumTableViewController.m in Sources */,
 				A258B2A017A3647200C0D3E9 /* WSAssetPickerController.m in Sources */,
