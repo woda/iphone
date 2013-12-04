@@ -8,6 +8,7 @@
 
 #import <CommonCrypto/CommonHMAC.h>
 #import "WRequest+Sync.h"
+#import "NSString+Path.h"
 
 @implementation WRequest (Sync)
 
@@ -24,17 +25,38 @@
     return (hash);
 }
 
-//Adding a file
-//
-//To add a file use a PUT request on:
-//https://{base}:3000/sync/{filename}
-//With filename url-encoded and with the following body parameters:
-//content_hash={SHA256 hash of content}
-//size={size of content (enforced by S3)}
-//
-//This will either return:
-//{"success":true, "need_upload":false, "file": <JSON representation of file>} if the content_hash already exists
-//{"success":true, "need_upload": true", "file": <JSON representation of file>, "part_size": <an integer>}
+
+/* Creating a file Description: method to create a file in database. Call this method to create a file and then upload it.
+ 
+ Method type: PUT
+ URL: /sync
+ Body parameters:
+ filename: path
+ content_hash: SHA256 hash of content
+ size: content size
+ 
+ Return:
+ - If the content_hash already exists:
+ {
+ "success": true,
+ "need_upload": false,
+ "file": {
+ << file's description >>
+ }
+ }
+ - else
+ {
+ "success": true,
+ "need_upload": true,
+ "needed_parts":[0,1,2]
+ "part_size": 5242880
+ "file": {
+ << file's description >>
+ },
+ 
+ }
+ 
+ */
 
 + (void)addFile:(NSString *)filename
        withData:(NSData *)data
@@ -42,62 +64,61 @@
         loading:(void (^)(double pourcentage))loading
         failure:(void (^)(id error))failure
 {
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setValue:[WRequest sha256hash:data] forKey:@"content_hash"];
-    [params setValue:[NSNumber numberWithInteger:[data length]] forKey:@"size"];
-    NSLog(@"params: %@", params);
-    
-    NSString *path = @"/sync/{filename}";
-    path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
-    
-    [WRequest requestWithMethod:@"PUT" path:path parameters:params success:^(id json) {
-        DDLogInfo(@"File created");
-        if ([[json objectForKey:@"need_upload"] boolValue]) {
-            NSNumber *partSize = json[@"file"][@"part_size"];
-            if ([partSize integerValue] <= 0) {
-                DDLogWarn(@"Warning: 'part_size' info is missing in json: %@", json);
-                partSize = @(5*1024*1024); // 5ko
-            }
-            [WRequest uploadFile:filename partSize:partSize withData:data success:success loading:loading failure:failure];
-        } else {
-            DDLogInfo(@"File arleady uploaded");
-            success(json);
-        }
-    } failure:failure];
+    [WRequest PUT:@"/sync"
+       parameters:@{ @"filename": filename,
+                     @"content_hash": [WRequest sha256hash:data],
+                     @"size": @([data length]) }
+          success:^(id json) {
+              DDLogInfo(@"File created");
+              if ([[json objectForKey:@"need_upload"] boolValue]) {
+                  NSNumber *fileId = json[@"file"][@"id"];
+                  NSNumber *partSize = json[@"file"][@"part_size"];
+                  if ([partSize integerValue] <= 0) {
+                      DDLogWarn(@"Warning: 'part_size' info is missing in json: %@", json);
+                      partSize = @(5*1024*1024); // 5Mo
+                  }
+                  [WRequest uploadFile:fileId
+                              partSize:partSize
+                              withData:data
+                               success:success
+                               loading:loading
+                               failure:failure];
+              } else {
+                  DDLogInfo(@"File arleady uploaded");
+                  success(json);
+              }
+          } failure:failure];
 }
 
 
-//Uploading a file
-//To upload a file you need to send parts of size "part_size" (which is given to you when you ask to add a file). The encryption is done on the server side, so just send it unencrypted. Part_size is typically 5 megs, but it could be less or more in the future so don't hardcode it.
-//
-//Do a PUT request on:
-//https://{base}:3000/partsync/{part_number}/{filename}
-//With the following parameter:
-//data={the content of the part of the file}
-//
-//The part number should be a number from 0 to the number of parts needed to store the file.
-///!\ There is no checking done on this right now, so do it well.
+/* Upload a file
+ 
+ Description:
+ Method to upload file's parts. You need to send parts of size "part_size" (which is given to you when you ask to add a file). The encryption is done on the server side, so just send it unencrypted. Part_size is typically 5 megs, but it could change don't hardcode it.
+ The part number should be a number from 0 to the number of parts needed to store the file.
+ Method type: PUT
+ URL: /sync/{file id}/{part number}
+ Body parameters: body: content of the file's part
+ 
+ Return:
+ {
+ "needed_parts": [1,2], # empty if the file has been fully uploaded
+ "uploaded":false, # value indicating if the FILE and not the part has been completely uploaded
+ "success": true
+ }
+ 
+ */
 
-+ (NSOperation *)uploadFile:(NSString *)filename
++ (NSOperation *)uploadFile:(NSNumber *)fileId
                    withPart:(NSData *)part
                      number:(NSNumber *)partNumber
                     success:(void (^)(NSNumber *partNumber))success
                     loading:(void (^)(NSNumber *partNumber, double pourcentage))loading
                     failure:(void (^)(id error))failure
 {
-    NSString *partFormated = [[NSString alloc] initWithBytes:part.bytes length:part.length encoding:NSISOLatin1StringEncoding];
-//    NSLog(@"partFormated: %@", [partFormated substringWithRange:NSMakeRange(0, 10)]);
-//    NSData *d = [partFormated dataUsingEncoding:NSISOLatin1StringEncoding];
-//    NSLog(@"        data: %@", [[d description] substringWithRange:NSMakeRange(0, 40)]);
+    NSString *path = [@"/sync/{file_id}/{part_number}" pathWithParams:@{ @"part_number": [partNumber stringValue], @"file_id": fileId }];
     
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setValue:partFormated forKey:@"data"];
-    
-    NSString *path = @"/partsync/{part_number}/{filename}";
-    path = [path stringByReplacingOccurrencesOfString:@"{part_number}" withString:[partNumber stringValue]];
-    path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
-    
-    NSMutableURLRequest *request = [[WRequest client] requestWithMethod:@"PUT" path:path parameters:nil];
+    NSMutableURLRequest *request = [[WRequest client] requestWithMethod:kPUT path:path parameters:nil];
     [request setValue:@"application/octet-stream" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:part];
     
@@ -122,7 +143,7 @@
     return (op);
 }
 
-+ (void)uploadFile:(NSString *)filename
++ (void)uploadFile:(NSNumber *)fileId
           partSize:(NSNumber *)partSize
           withData:(NSData *)data
            success:(void (^)(id json))success
@@ -135,8 +156,7 @@
     for (int i=0, k=parts; i<k; i++) {
         NSData *d = [data subdataWithRange:NSMakeRange((i * [partSize integerValue]), MIN([partSize integerValue], (data.length - (i * [partSize integerValue]))))];
         
-        NSOperation *o = [WRequest uploadFile:filename withPart:d number:@(i) success:^(NSNumber *partNumber) {
-//            loading(([partNumber doubleValue] + 1.0) / (double)parts);
+        NSOperation *o = [WRequest uploadFile:fileId withPart:d number:@(i) success:^(NSNumber *partNumber) {
         } loading:^(NSNumber *partNumber, double pourcentage) {
             loading(([partNumber doubleValue] + pourcentage) / (double)parts);
         } failure:^(id error) {
@@ -152,7 +172,7 @@
         }
     }
     NSBlockOperation *o = [NSBlockOperation blockOperationWithBlock:^{
-        [WRequest comfirmUpload:filename success:success failure:failure];
+        [WRequest comfirmUpload:fileId success:success failure:failure];
     }];
     if (dependency) {
         [o addDependency:dependency];
@@ -163,96 +183,123 @@
 }
 
 
-//Confirming upload
-//The upload is only confirmed when you do a POST request on
-//https://{base}:3000/successsync/{filename}
-//With no parameters.
+/* Confirm upload
+ 
+ Description: Method to confirm a file upload. Call it when you after sending all parts of a file. This method will return parts that need to be re-uploaded (if any) or just a { success: true }
+ Method type: GET
+ URL: /sync/{file id}
+ Body parameters: none
+ 
+ Return:
+ {
+ "needed_parts": [1,2], # empty if the file has been fully uploaded
+ "uploaded":false, # value indicating if the FILE and not the part has been completely uploaded
+ "success": true
+ }
+ 
+ */
 
-+ (void)comfirmUpload:(NSString *)filename
++ (void)comfirmUpload:(NSNumber *)fileId
               success:(void (^)(id json))success
               failure:(void (^)(id error))failure
 {
-    NSString *path = @"/successsync/{filename}";
-    path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
-    
-    [WRequest requestWithMethod:@"POST" path:path parameters:nil success:^(id json) {
-        DDLogInfo(@"File upload complete: %@", json);
-        success(json);
-    } failure:failure];
+    [WRequest GET:[@"/sync/{file_id}" pathWithParams:@{ @"file_id": fileId }]
+       parameters:nil
+          success:^(id json) {
+              DDLogInfo(@"File upload complete: %@", json);
+              success(json);
+          } failure:failure];
 }
 
 
-//Removing a file
-//
-//To remove a file, use a DELETE request on:
-//https://{base}:3000/sync/{filename}
-//
-//This will return {"success": true}
+/* Delete file/folder
+ 
+ Description: method to delete a file OR a folder.
+ Method type: DELETE
+ URL: /sync/{id}
+ Body parameters: none
+ 
+ Return:
+ {
+ "success": true
+ }
+ 
+ */
 
-+ (void)removeFile:(NSString *)filename
++ (void)removeFile:(NSNumber *)fileId
            success:(void (^)(id json))success
            failure:(void (^)(id error))failure
 {
-    NSString *path = @"/sync/{filename}";
-    path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
-    
-    [WRequest requestWithMethod:@"DELETE" path:path parameters:nil success:^(id json) {
-        DDLogInfo(@"File deleted: %@", json);
-        success(json);
-    } failure:failure];
+    [WRequest DELETE:[@"/sync/{file_id}" pathWithParams:@{ @"file_id": fileId }]
+          parameters:nil
+             success:^(id json) {
+                 DDLogInfo(@"File deleted: %@", json);
+                 success(json);
+             } failure:failure];
 }
 
-//Changing a file
-//To modify a file, use a POST request on:
-//https://{base}:3000/sync/{filename}
-//
-//This is just a delete followed by an add, so it will return the same values as add can, but it can also have the same errors delete can.
+/* Change a file
+ 
+ Description: Method to change file's informations. This is just a delete followed by a create, so it will return the same values as add can, but it can also have the same errors delete can.
+ Method type: POST
+ URL: /sync/({file id}
+ Body parameters: none
+ 
+ Return:
+ {
+ << Same return than the method to create a file into the Database >>
+ }
+ 
+ */
 
-+ (void)updateFile:(NSString *)filename
++ (void)updateFile:(NSNumber *)fileId
+              name:(NSString *)filename
           withData:(NSData *)data
            success:(void (^)(id json))success
            loading:(void (^)(double pourcentage))loading
            failure:(void (^)(id error))failure
 {
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setValue:[WRequest sha256hash:data] forKey:@"content_hash"];
-    [params setValue:[NSNumber numberWithInteger:[data length]] forKey:@"size"];
-    
-    NSString *path = @"/sync/{filename}";
-    path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
-    
-    [WRequest requestWithMethod:@"POST" path:path parameters:params success:^(id json) {
-        DDLogInfo(@"File created: %@", json);
-        if ([[json objectForKey:@"need_upload"] boolValue]) {
-            [WRequest uploadFile:filename partSize:[json objectForKey:@"part_size"] withData:data success:^(id json) {
-                success(json);
-            } loading:^(double pourcentage) {
-                loading(pourcentage);
-            } failure:^(id error) {
-                failure(error);
-            }];
-        } else {
-            success(json);
-        }
-    } failure:failure];
+    [WRequest POST:[@"/sync/{file_id}" pathWithParams:@{ @"file_id": fileId }]
+        parameters:@{ @"filename": filename,
+                      @"content_hash": [WRequest sha256hash:data],
+                      @"size": @([data length]) }
+           success:^(id json) {
+               DDLogInfo(@"File created: %@", json);
+               if ([[json objectForKey:@"need_upload"] boolValue]) {
+                   [WRequest uploadFile:fileId
+                               partSize:[json objectForKey:@"part_size"]
+                               withData:data
+                                success:success
+                                loading:loading
+                                failure:failure];
+               } else {
+                   success(json);
+               }
+           } failure:failure];
 }
 
 
-//Getting a file
-//To get a file, use a GET request on:
-//https://{base}:3000/partsync/{numero_de_partie}/{filename}
-//
-//This will return the unencrypted part of the file.
+/* Download a file
+ 
+ Description: Method to get a file part after part. Returns only the file's DATA.
+ Method type: GET
+ URL: /sync/{file id}/{part number}
+ Body parameters: none
+ 
+ Return:
+ {
+ jerghgjYUGRGigedy......63UFCIUhieFR4FOR4G7RGIYERF
+ }
+ 
+ */
 
-+ (NSOperation *)getFile:(NSString *)filename
++ (NSOperation *)getFile:(NSNumber *)fileId
               partNumber:(NSNumber *)partNumber
                  success:(void (^)(NSData *data, NSNumber *partNumber))success
                  loading:(void (^)(NSNumber *partNumber, double pourcentage))loading
                  failure:(void (^)(id error))failure
 {
-    NSString *path = @"/partsync/{numero_de_partie}/{filename}";
-    path = [path stringByReplacingOccurrencesOfString:@"{filename}" withString:filename];
-    path = [path stringByReplacingOccurrencesOfString:@"{numero_de_partie}" withString:[partNumber stringValue]];
+    NSString *path = [@"/sync/{file_id}/{part_number}" pathWithParams:@{ @"part_number": [partNumber stringValue], @"file_id": fileId }];
     
     NSURLRequest *request = [[WRequest client] requestWithMethod:@"GET" path:path parameters:nil];
     AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -267,7 +314,7 @@
     return (op);
 }
 
-+ (void)getFile:(NSString *)filename
++ (void)getFile:(NSNumber *)fileId
           parts:(NSNumber *)parts
         success:(void (^)(NSData *file))success
         loading:(void (^)(double pourcentage))loading
@@ -282,7 +329,7 @@
     NSOperation *dependency = nil;
     NSMutableData *file = [NSMutableData new];
     for (int i=0; i<[parts integerValue]; i++) {
-        NSOperation *o = [WRequest getFile:filename partNumber:@(i) success:^(NSData *data, NSNumber *partNumber) {
+        NSOperation *o = [WRequest getFile:fileId partNumber:@(i) success:^(NSData *data, NSNumber *partNumber) {
             [file appendData:data];
             DDLogVerbose(@"File part n.%d downloaded out of %@ parts", [partNumber integerValue]+1, parts);
             if ([partNumber integerValue]+1 >= [parts  integerValue]) {

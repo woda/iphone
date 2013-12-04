@@ -11,7 +11,7 @@
 
 //#define kBaseURL    @"https://127.0.0.1:3000"
 //#define kBaseURL    @"https://192.168.2.1:3000"
-#define kBaseURL    @"https://kobhqlt.fr:3000"
+#define kBaseURL    @"http://kobhqlt.fr:3000"
 //#define kBaseURL    @"https://ec2-54-242-98-168.compute-1.amazonaws.com:3000"
 //#define kBaseURL    @"http://httpbin.org/put"
 

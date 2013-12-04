@@ -18,41 +18,42 @@
         loading:(void (^)(double pourcentage))loading
         failure:(void (^)(id error))failure;
 
-+ (NSOperation *)uploadFile:(NSString *)filename
++ (NSOperation *)uploadFile:(NSNumber *)fileId
                    withPart:(NSData *)part
                      number:(NSNumber *)partNumber
                     success:(void (^)(NSNumber *partNumber))success
                     loading:(void (^)(NSNumber *partNumber, double pourcentage))loading
                     failure:(void (^)(id error))failure;
 
-+ (void)uploadFile:(NSString *)filename
++ (void)uploadFile:(NSNumber *)fileId
           partSize:(NSNumber *)partSize
           withData:(NSData *)data
            success:(void (^)(id json))success
            loading:(void (^)(double pourcentage))loading
            failure:(void (^)(id error))failure;
 
-+ (void)comfirmUpload:(NSString *)filename
++ (void)comfirmUpload:(NSNumber *)fileId
               success:(void (^)(id json))success
               failure:(void (^)(id error))failure;
 
-+ (void)removeFile:(NSString *)filename
++ (void)removeFile:(NSNumber *)fileId
            success:(void (^)(id json))success
            failure:(void (^)(id error))failure;
 
-+ (void)updateFile:(NSString *)filename
++ (void)updateFile:(NSNumber *)fileId
+              name:(NSString *)filename
           withData:(NSData *)data
            success:(void (^)(id json))success
            loading:(void (^)(double pourcentage))loading
            failure:(void (^)(id error))failure;
 
-+ (NSOperation *)getFile:(NSString *)filename
++ (NSOperation *)getFile:(NSNumber *)fileId
               partNumber:(NSNumber *)part
                  success:(void (^)(NSData *data, NSNumber *partNumber))success
                  loading:(void (^)(NSNumber *partNumber, double pourcentage))loading
                  failure:(void (^)(id error))failure;
 
-+ (void)getFile:(NSString *)filename
++ (void)getFile:(NSNumber *)fileId
           parts:(NSNumber *)parts
         success:(void (^)(NSData *file))success
         loading:(void (^)(double pourcentage))loading

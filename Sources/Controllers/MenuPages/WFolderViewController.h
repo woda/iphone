@@ -12,7 +12,8 @@
 @interface WFolderViewController : WListViewController <WUploadManagerPickerDelegate>
 
 @property (nonatomic, retain) NSString    *path;
+@property (nonatomic, retain) NSNumber    *folderId;
 
-- (id)initWithPath:(NSString *)path andData:(NSDictionary *)data;
+- (id)initWithId:(NSNumber *)folderId andData:(NSDictionary *)data;
 
 @end

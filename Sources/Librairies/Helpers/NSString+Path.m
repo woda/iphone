@@ -14,7 +14,7 @@
     NSMutableString *path = self.mutableCopy;
     for (NSString *key in params.allKeys) {
         [path replaceOccurrencesOfString:[NSString stringWithFormat:@"{%@}", key]
-                              withString:params[key]
+                              withString:[NSString stringWithFormat:@"%@", params[key]]
                                  options:NSCaseInsensitiveSearch
                                    range:NSMakeRange(0, [path length])];
     }

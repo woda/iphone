@@ -152,7 +152,7 @@
 }
 
 - (IBAction)deleteFile:(id)sender {
-    [WRequest removeFile:self.path success:^(id json) {
+    [WRequest removeFile:self.info[@"id"] success:^(id json) {
         [[NSNotificationCenter defaultCenter] postNotificationName:kFileDeletedNotificationName object:nil];
     } failure:^(id error) {
         DDLogError(@"Failure while removing '%@'", self.path);

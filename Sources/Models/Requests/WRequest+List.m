@@ -100,7 +100,7 @@
 + (void)listRecentFilesWithSuccess:(void (^)(id json))success
                             failure:(void (^)(id error))failure
 {
-    [WRequest GET:@"/users/recents"
+    [WRequest GET:@"/files/recents"
        parameters:nil
           success:success
           failure:failure];
@@ -128,7 +128,7 @@
 + (void)listFavoriteFilesWithSuccess:(void (^)(id json))success
                              failure:(void (^)(id error))failure
 {
-    [WRequest GET:@"/users/favorites"
+    [WRequest GET:@"/files/favorites"
        parameters:nil
           success:success
           failure:failure];
@@ -157,7 +157,7 @@
          success:(void (^)(id json))success
          failure:(void (^)(id error))failure
 {
-    [WRequest POST:[@"/users/favorites/{fileId}" pathWithParams:@{ @"fileId": fileId }]
+    [WRequest POST:[@"/files/favorites/{fileId}" pathWithParams:@{ @"fileId": fileId }]
         parameters:@{@"favorite": (favorite) ? @"true" : @"false" }
            success:success
            failure:failure];
@@ -229,7 +229,7 @@
          success:(void (^)(id json))success
          failure:(void (^)(id error))failure
 {
-    [WRequest POST:[@"/users/public/{fileId}" pathWithParams:@{ @"fileId": fileId }]
+    [WRequest POST:[@"/files/public/{fileId}" pathWithParams:@{ @"fileId": fileId }]
         parameters:@{@"public": (public) ? @"true" : @"false" }
            success:success
            failure:failure];

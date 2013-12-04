@@ -26,7 +26,7 @@
 @property (nonatomic, retain) IBOutlet UILabel          *updatedLabel;
 
 @property (nonatomic, retain) NSDictionary              *data;
-@property (nonatomic, retain) NSURL                     *fileURL;
+@property (nonatomic, strong) id<QLPreviewItem>         item;
 
 - (void)openFolder:(NSDictionary *)folder;
 

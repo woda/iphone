@@ -19,14 +19,14 @@
 #pragma mark Initialization methods
 
 - (void)reload {
-//    [WRequest listUpdatedFilesWithSuccess:^(id json) {
-//        self.data = json;
-//    } failure:^(id error) {
-//        DDLogError(@"Failure while listing favorite files: %@", error);
-//    }];
+    [WRequest listSharedFilesWithSuccess:^(id json) {
+        self.data = json;
+    } failure:^(id error) {
+        DDLogError(@"Failure while listing shared files: %@", error);
+    }];
     
-    [self.noFileLabel setText:@"No webservice available"];
-    self.data = @{};
+//    [self.noFileLabel setText:@"No webservice available"];
+//    self.data = @{};
 }
 
 - (void)viewWillAppear:(BOOL)animated {

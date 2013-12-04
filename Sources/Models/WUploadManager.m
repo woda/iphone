@@ -105,7 +105,7 @@ static WUploadManager *shared = nil;
     NSUInteger buffered = [rep getBytes:buffer fromOffset:0.0 length:rep.size error:nil];
     NSData *file = [NSData dataWithBytesNoCopy:buffer length:buffered freeWhenDone:YES];
     
-    NSString *fileName = [path stringByAppendingString:[rep filename]];
+    NSString *fileName = (path) ? [path stringByAppendingString:[rep filename]] : [rep filename];
     NSString *mediaType = [fileName componentsSeparatedByString:@"."].last;
     NSString *thumbnail = [self saveThumbnail:[UIImage imageWithCGImage:[asset thumbnail]]];
     

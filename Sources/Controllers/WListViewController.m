@@ -78,7 +78,9 @@
     if ([data isKindOfClass:[NSArray class]]) {
         data = [NSDictionary dictionaryWithObject:data forKey:@"files"];
     }
-    _data = data;
+    _data = data[@"folder"];
+    if (_data == nil)
+        _data = data;
     
     [self updateFooter];
     
@@ -190,11 +192,11 @@
     if (file[@"size"] && file[@"part_size"]) {
 //        NSData *data = [WOfflineManager fileForId:file[@"id"]];
         //        if (data) {
-        self.fileURL = [WFileItem fileWithInfo:file];
-        if (self.fileURL) {
+        self.item = [WFileItem fileWithInfo:file];
+        if (self.item) {
 //            NSString *type = file[@"type"];
-            if ([WImagePreviewViewController canPreviewItem:self.fileURL]) {
-                DDLogWarn(@"self.fileURL: %@", self.fileURL);
+            if ([WImagePreviewViewController canPreviewItem:self.item]) {
+                DDLogWarn(@"self.item: %@", [self.item description]);
                 WImagePreviewViewController *c = [[WImagePreviewViewController alloc] init];
                 c.dataSource = self;
                 c.delegate = self;
@@ -240,7 +242,7 @@
 }
 
 - (id <QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index {
-    return (self.fileURL);
+    return (self.item);
 }
 
 @end

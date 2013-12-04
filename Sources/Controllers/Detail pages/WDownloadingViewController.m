@@ -15,9 +15,9 @@
 
 @interface WDownloadingViewController ()
 
-@property (nonatomic, retain) NSString      *path;
-@property (nonatomic, retain) NSDictionary  *info;
-@property (nonatomic, retain) NSURL         *fileURL;
+@property (nonatomic, retain) NSString          *path;
+@property (nonatomic, retain) NSDictionary      *info;
+@property (nonatomic, retain) id<QLPreviewItem> item;
 
 @end
 
@@ -64,10 +64,8 @@
     [self.loadingLabel setText:[NSString stringWithFormat:@"%@ '%@'", NSLocal(@"LoadingOf"), self.info[@"name"]]];
     
     NSNumber *parts = @(([self.info[@"size"] integerValue] / [self.info[@"part_size"] integerValue]) + 1);
-    NSString *name = self.info[@"name"];
-    if (self.path != nil)
-        name = [NSString stringWithFormat:@"%@%@", self.path, name];
-    [WRequest getFile:name parts:parts success:^(NSData *file) {
+    NSNumber *fileId = self.info[@"id"];
+    [WRequest getFile:fileId parts:parts success:^(NSData *file) {
 //        if ([self.navigationController viewControllers].last == self) {
 //            NSMutableArray *stack = [[self.navigationController viewControllers] mutableCopy];
 //            [stack removeLastObject];
@@ -77,16 +75,16 @@
 //        }
         
         [[WOfflineManager shared] saveFile:file withInfo:self.info offline:NO];
-        self.fileURL = [WFileItem fileWithInfo:self.info];
-        if (self.fileURL) {
+        self.item = [WFileItem fileWithInfo:self.info];
+        if (self.item) {
             //            NSString *type = file[@"type"];
-            if ([WImagePreviewViewController canPreviewItem:self.fileURL]) {
+            if ([WImagePreviewViewController canPreviewItem:self.item]) {
                 WImagePreviewViewController *c = [[WImagePreviewViewController alloc] init];
                 
                 NSMutableArray *stack = [[self.navigationController viewControllers] mutableCopy];
                 [stack removeLastObject];
                 WListViewController *last = (WListViewController *) [stack last];
-                last.fileURL = self.fileURL;
+                last.item = self.item;
                 c.dataSource = last;
                 c.delegate = last;
                 DDLogWarn(@"last: %@", c.delegate);

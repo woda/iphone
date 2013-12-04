@@ -31,25 +31,17 @@
     void (^failure)(id) = ^(NSDictionary *error) {
         DDLogError(@"Failure while listing files: %@", error);
     };
-    if (self.path == nil && self.data == nil) {
+    if (self.folderId == nil && self.data == nil) {
         [WRequest listAllFilesWithSuccess:success failure:failure];
     } else if (self.data == nil) {
-        [WRequest listFilesInDir:self.path success:success failure:failure];
+        [WRequest file:self.folderId success:success failure:failure];
     }
 }
 
-- (NSString *)path {
-    if (_path == nil)
-        return @"";
-    if (![_path hasSuffix:@"/"])
-        return [_path stringByAppendingString:@"/"];
-    return _path;
-}
-
-- (id)initWithPath:(NSString *)path andData:(NSDictionary *)data {
+- (id)initWithId:(NSNumber *)folderId andData:(NSDictionary *)data {
     self = [super init];
     if (self) {
-        self.path = path;
+        self.folderId = folderId;
         self.data = data;
     }
     return self;
@@ -58,7 +50,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    if (self.data[@"name"] == nil)
+    if (self.data[@"name"] == nil || [self.data[@"name"] isEqualToString:@"/"])
         self.title = NSLocal(@"RootPageTitle");
     else
         self.title = self.data[@"name"];
@@ -87,7 +79,8 @@
 
 - (void)openFolder:(NSDictionary *)folder {
     NSString *p = [self.path stringByAppendingFormat:@"%@/", folder[@"name"]];
-    WFolderViewController *c = [[WFolderViewController alloc] initWithPath:p andData:folder];
+    WFolderViewController *c = [[WFolderViewController alloc] initWithId:folder[@"id"] andData:folder];
+    c.path = p;
     [self.navigationController pushViewController:c animated:YES];
 }
 

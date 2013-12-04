@@ -88,7 +88,7 @@
 - (void)userStatusChanged:(NSNotification *)notification {
     switch ([[WUser current] status]) {
         case Connected: {
-            WListViewController *folderViewController = [[WFolderViewController alloc] initWithPath:nil andData:nil];
+            WListViewController *folderViewController = [[WFolderViewController alloc] initWithId:nil andData:nil];
             [self.navigationController pushViewController:folderViewController animated:YES];
             [((WNavigationController *)self.navigationController).homeController setSelected:kHomeFoldersCellIndex];
             break;

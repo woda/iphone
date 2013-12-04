@@ -131,7 +131,7 @@
     UIViewController *login = [[_navController viewControllers] first];
     switch (indexPath.row) {
         case kHomeFoldersCellIndex: {
-            UIViewController *c = [[WFolderViewController alloc] initWithPath:nil andData:nil];
+            UIViewController *c = [[WFolderViewController alloc] initWithId:nil andData:nil];
             [_navController setViewControllers:@[login, c] animated:NO];
             break;
         }

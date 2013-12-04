@@ -19,7 +19,7 @@
 #pragma mark Initialization methods
 
 - (void)reload {
-    [WRequest listUpdatedFilesWithSuccess:^(id json) {
+    [WRequest listRecentFilesWithSuccess:^(id json) {
         self.data = json;
     } failure:^(id error) {
         DDLogError(@"Failure while listing favorite files: %@", error);
