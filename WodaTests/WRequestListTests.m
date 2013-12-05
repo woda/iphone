@@ -12,6 +12,7 @@
 #import "WRequest+List.h"
 #import "NSArray+Shortcuts.h"
 
+static NSNumber *fileId = nil;
 
 @implementation WRequestListTests
 
@@ -20,7 +21,7 @@
     
     _firstName = @"unit";
     _lastName = @"test";
-    _email = @"userListTest@woda.com";
+    _email = @"unit_test@woda.com";
     
     [WRequest createUser:_login firstName:_firstName lastName:_lastName password:_password email:_email success:^(NSDictionary *json) {
         kStopWait;
@@ -38,10 +39,8 @@
     _filename = @"Default-568h@2x";
     _fileExtension = @"png";
     
-    _login = @"userListTest"; // Never test1 please (login used for dev)
+    _login = @"unit_test"; // Never test1 please (login used for dev)
     _password = @"password";
-    
-//    [self createUser];
     
     kInitWait;
     
@@ -49,6 +48,8 @@
         kStopWait;
     } failure:^(id error) {
         STFail(@"Error: %@", error);
+        
+//        [self createUser];
         kStopWait;
     }];
     
@@ -75,7 +76,9 @@
 - (void)test02EmptyRecentFiles {
     kInitWait;
     
-    [WRequest listUpdatedFilesWithSuccess:^(NSArray *list) {
+    [WRequest listRecentFilesWithSuccess:^(NSArray *list) {
+        if ([list isKindOfClass:[NSDictionary class]])
+            list = [(NSDictionary *)list objectForKey:@"files"];
         NSLog(@"list: %@", list);
         STAssertTrue([list isKindOfClass:[NSArray class]], @"Should return an array");
         STAssertTrue([list count] == 0, @"Should be empty");
@@ -92,6 +95,8 @@
     kInitWait;
     
     [WRequest listFavoriteFilesWithSuccess:^(NSArray *list) {
+        if ([list isKindOfClass:[NSDictionary class]])
+            list = [(NSDictionary *)list objectForKey:@"files"];
         NSLog(@"favoris: %@", list);
         STAssertTrue([list isKindOfClass:[NSArray class]], @"Should return an array");
         STAssertTrue([list count] == 0, @"Should be empty");
@@ -124,6 +129,8 @@
     kInitWait;
     
     [WRequest listPublicFilesWithSuccess:^(NSArray *list) {
+        if ([list isKindOfClass:[NSDictionary class]])
+            list = [(NSDictionary *)list objectForKey:@"files"];
         NSLog(@"public: %@", list);
         STAssertTrue([list isKindOfClass:[NSArray class]], @"Should return an array");
         STAssertTrue([list count] == 0, @"Should be empty");
@@ -145,6 +152,7 @@
     NSData *file = [NSData dataWithContentsOfFile:filePath];
     
     [WRequest addFile:filename withData:file success:^(id json) {
+        fileId = json[@"file"][@"id"];
         kStopWait;
     } loading:^(double pourcentage) {
         NSLog(@"Loading \"%@\": %.0f%%", filename, pourcentage * 100);
@@ -162,8 +170,8 @@
     
     [WRequest listAllFilesWithSuccess:^(NSDictionary *json) {
         STAssertTrue([json isKindOfClass:[NSDictionary class]], @"Should return an dictionary");
-        NSLog(@"files: %@", [json objectForKey:@"files"]);
-        STAssertTrue([[json objectForKey:@"files"] count] > 0, @"Should contain a file");
+        NSLog(@"files: %@", json[@"folder"][@"files"]);
+        STAssertTrue([json[@"folder"][@"files"] count] > 0, @"Should contain a file");
         kStopWait;
     } failure:^(id error) {
         STFail(@"Error: %@", error);
@@ -190,7 +198,9 @@
 - (void)test06RecentFiles {
     kInitWait;
     
-    [WRequest listUpdatedFilesWithSuccess:^(NSArray *list) {
+    [WRequest listRecentFilesWithSuccess:^(NSArray *list) {
+        if ([list isKindOfClass:[NSDictionary class]])
+            list = [(NSDictionary *)list objectForKey:@"files"];
         NSLog(@"list: %@", list);
         STAssertTrue([list isKindOfClass:[NSArray class]], @"Should return an array");
         STAssertTrue([list count] > 0, @"Should contain a file");
@@ -207,7 +217,8 @@
     kInitWait;
     
     [WRequest listFavoriteFilesWithSuccess:^(NSArray *list) {
-        NSLog(@"list: %@", list);
+        if ([list isKindOfClass:[NSDictionary class]])
+            list = [(NSDictionary *)list objectForKey:@"files"];
         STAssertTrue([list isKindOfClass:[NSArray class]], @"Should return an array");
         STAssertTrue([list count] == 0, @"Should be empty");
         kStopWait;
@@ -222,10 +233,12 @@
 - (void)test08MarkAsFavorite {
     kInitWait;
     
-    [WRequest listUpdatedFilesWithSuccess:^(NSArray *list) {
+    [WRequest listRecentFilesWithSuccess:^(NSArray *list) {
+        if ([list isKindOfClass:[NSDictionary class]])
+            list = [(NSDictionary *)list objectForKey:@"files"];
         NSNumber *idNumber = [[list lastObject] objectForKey:@"id"];
         [WRequest markFileAsFavorite:idNumber success:^(NSDictionary *json) {
-            STAssertTrue([[json objectForKey:@"favorite"] boolValue], @"File should be found in favorites");
+            STAssertTrue([json[@"file"][@"favorite"] boolValue], @"File should be found in favorites");
             kStopWait;
         } failure:^(id error) {
             STFail(@"Error: %@", error);
@@ -243,10 +256,12 @@
 - (void)test09UnmarkAsFavorite {
     kInitWait;
     
-    [WRequest listUpdatedFilesWithSuccess:^(NSArray *list) {
+    [WRequest listRecentFilesWithSuccess:^(NSArray *list) {
+        if ([list isKindOfClass:[NSDictionary class]])
+            list = [(NSDictionary *)list objectForKey:@"files"];
         NSNumber *idNumber = [[list lastObject] objectForKey:@"id"];
         [WRequest unmarkFileAsFavorite:idNumber success:^(NSDictionary *json) {
-            STAssertFalse([[json objectForKey:@"favorite"] boolValue], @"File should not be found in favorites");
+            STAssertFalse([json[@"file"][@"favorite"] boolValue], @"File should not be found in favorites");
             kStopWait;
         } failure:^(id error) {
             STFail(@"Error: %@", error);
@@ -264,14 +279,17 @@
 - (void)test10RemoveFile {
     kInitWait;
     
-    NSString *filename = [_filename stringByAppendingFormat:@".%@", _fileExtension];
-    [WRequest removeFile:filename success:^(id error) {
-        kStopWait;
-    } failure:^(id error) {
-        kStopWait;
-    }];
-    
-    kWait;
+    STAssertNotNil(fileId, @"File id must be set");
+    if (fileId) {
+        [WRequest removeFile:fileId success:^(id error) {
+            kStopWait;
+        } failure:^(id error) {
+            STAssertNil(error, @"Removing file failure");
+            kStopWait;
+        }];
+        
+        kWait;
+    }
 }
 
 

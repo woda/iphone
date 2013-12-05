@@ -69,11 +69,13 @@
                         success:(void (^)(id json))success
                         failure:(void (^)(id json))failure
 {
+    NSMutableDictionary *d = [NSMutableDictionary dictionary];
+//    if (first_name) d[@"first_name"] = first_name;
+//    if (last_name) d[@"last_name"] = last_name;
+    if (password) d[@"password"] = password;
+    if (email) d[@"email"] = email;
     [WRequest POST:@"/users"
-        parameters:@{ @"first_name": first_name,
-                      @"last_name": last_name,
-                      @"password": password,
-                      @"email": email }
+        parameters:d
            success:success
            failure:failure];
 }

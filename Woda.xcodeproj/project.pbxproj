@@ -167,6 +167,11 @@
 		A2411B6016D26B460060EFF7 /* WRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5916D26B460060EFF7 /* WRequest.m */; };
 		A2411B6116D26B460060EFF7 /* WRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2411B5916D26B460060EFF7 /* WRequest.m */; };
 		A245D0AA179363EA0075CB11 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A245D0A9179363EA0075CB11 /* AssetsLibrary.framework */; };
+		A24DD70E184FF21700098750 /* NSDate+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C170D31783B88500EAB93E /* NSDate+Format.m */; };
+		A24DD70F184FF21700098750 /* UIViewController+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A2677B11165E148000C1D630 /* UIViewController+Helpers.m */; };
+		A24DD710184FF21700098750 /* NSArray+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A0669C16D4CBBF00D08D8D /* NSArray+Shortcuts.m */; };
+		A24DD711184FF21700098750 /* NSObject+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E8C58B178364DE00F0BEF0 /* NSObject+Blocks.m */; };
+		A24DD712184FF21700098750 /* NSString+Path.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EC7E4D1842C2BE0075FF9A /* NSString+Path.m */; };
 		A24FC761165E6DC5002E2C26 /* WListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24FC760165E6DC5002E2C26 /* WListViewController.m */; };
 		A258B28817A33EA800C0D3E9 /* WOfflineFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A258B28717A33EA800C0D3E9 /* WOfflineFileCell.m */; };
 		A258B28A17A3417500C0D3E9 /* WOfflineFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A258B28917A3417500C0D3E9 /* WOfflineFileCell.xib */; };
@@ -1329,7 +1334,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = W;
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Woda;
 				TargetAttributes = {
 					A2C601321630485A00CB53B3 = {
@@ -1552,6 +1557,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A24DD70E184FF21700098750 /* NSDate+Format.m in Sources */,
+				A24DD70F184FF21700098750 /* UIViewController+Helpers.m in Sources */,
+				A24DD710184FF21700098750 /* NSArray+Shortcuts.m in Sources */,
+				A24DD711184FF21700098750 /* NSObject+Blocks.m in Sources */,
+				A24DD712184FF21700098750 /* NSString+Path.m in Sources */,
 				A299C695177A4B9A000B4F88 /* DDLog.m in Sources */,
 				A299C697177A4B9A000B4F88 /* DDTTYLogger.m in Sources */,
 				A2411B3716D2544D0060EFF7 /* AFHTTPClient.m in Sources */,
@@ -1699,6 +1709,7 @@
 				GCC_PREFIX_HEADER = "WodaTests/WodaTests-Prefix.pch";
 				INFOPLIST_FILE = "WodaTests/WodaTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -1719,6 +1730,7 @@
 				GCC_PREFIX_HEADER = "WodaTests/WodaTests-Prefix.pch";
 				INFOPLIST_FILE = "WodaTests/WodaTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};

@@ -11,6 +11,8 @@
 #import "WRequest+Sync.h"
 #import "WRequest+List.h"
 
+static NSNumber *fileId = nil;
+
 @implementation WRequestSyncTests
 
 
@@ -19,7 +21,7 @@
     
     _firstName = @"unit";
     _lastName = @"test";
-    _email = @"userSyncTest@woda.com";
+    _email = @"unit_test@woda.com";
     
     [WRequest createUser:_login firstName:_firstName lastName:_lastName password:_password email:_email success:^(NSDictionary *json) {
         kStopWait;
@@ -37,10 +39,8 @@
     _filename = @"Default-568h@2x";
     _fileExtension = @"png";
     
-    _login = @"userSyncTest"; // Never test1 please (login used for dev)
+    _login = @"unit_test"; // Never test1 please (login used for dev)
     _password = @"password";
-    
-//    [self createUser];
     
     kInitWait;
     
@@ -48,6 +48,8 @@
         kStopWait;
     } failure:^(id json) {
         STFail(@"Error: %@", json);
+        
+//        [self createUser];
         kStopWait;
     }];
     
@@ -90,6 +92,7 @@
 //    [[AFHTTPRequestOperationLogger sharedLogger] stopLogging];
     [WRequest addFile:filename withData:file success:^(id json) {
         STAssertTrue(([json isKindOfClass:[NSDictionary class]]), @"JSON format invalid: %@", json);
+        fileId = json[@"file"][@"id"];
         kStopWait;
     } loading:^(double pourcentage) {
         NSLog(@"Loading \"%@\": %.0f%%", filename, pourcentage * 100);
@@ -115,7 +118,7 @@
     
     __block NSNumber *parts = nil;
     [WRequest listAllFilesWithSuccess:^(NSDictionary *json) {
-        NSDictionary *file = json[@"files"][0];
+        NSDictionary *file = json[@"folder"][@"files"][0];
         parts = @(([file[@"size"] integerValue] / [file[@"part_size"] integerValue]) + 1);
         kStopWait;
     } failure:^(id error) {
@@ -127,35 +130,40 @@
     
     kStartWait;
     
-    [WRequest getFile:filename parts:parts success:^(NSData *data) {
+    STAssertNotNil(fileId, @"File id must be set");
+    if (fileId) {
+        [WRequest getFile:fileId parts:parts success:^(NSData *data) {
+            
+            NSLog(@"+ file (%luBytes): %@...", (unsigned long)file.length, [[file description] substringWithRange:NSMakeRange(0, 40)]);
+            NSLog(@"  data (%luBytes): %@...", (unsigned long)data.length, [[data description] substringWithRange:NSMakeRange(0, 40)]);
+            
+            STAssertEqualObjects([WRequest sha256hash:file], [WRequest sha256hash:data], @"Hashes should correspond");
+            kStopWait;
+        } loading:^(double pourcentage) {
+            NSLog(@"Downloading \"%@\": %.0f%%", filename, pourcentage * 100);
+        } failure:^(id error) {
+            STFail(@"Error: %@", error);
+            kStopWait;
+        }];
         
-        NSLog(@"+ file (%dBytes): %@...", file.length, [[file description] substringWithRange:NSMakeRange(0, 40)]);
-        NSLog(@"  data (%dBytes): %@...", data.length, [[data description] substringWithRange:NSMakeRange(0, 40)]);
-        
-        STAssertEqualObjects([WRequest sha256hash:file], [WRequest sha256hash:data], @"Hashes should correspond");
-        kStopWait;
-    } loading:^(double pourcentage) {
-        NSLog(@"Downloading \"%@\": %.0f%%", filename, pourcentage * 100);
-    } failure:^(id error) {
-        STFail(@"Error: %@", error);
-        kStopWait;
-    }];
-    
-    kWait;
+        kWait;
+    }
 }
 
 - (void)test03RemoveFile {
     kInitWait;
     
-    NSString *filename = [_filename stringByAppendingFormat:@".%@", _fileExtension];
-    [WRequest removeFile:filename success:^(id error) {
-        kStopWait;
-    } failure:^(id error) {
-        STFail(@"Error: %@", error);
-        kStopWait;
-    }];
-    
-    kWait;
+    STAssertNotNil(fileId, @"File id must be set");
+    if (fileId) {
+        [WRequest removeFile:fileId success:^(id error) {
+            kStopWait;
+        } failure:^(id error) {
+            STFail(@"Error: %@", error);
+            kStopWait;
+        }];
+        
+        kWait;
+    }
 }
 
 @end

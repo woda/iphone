@@ -14,7 +14,7 @@
 
 + (NSString *)sha256hash:(NSData *)data {
     uint8_t digest[CC_SHA256_DIGEST_LENGTH] = {0};
-    CC_SHA256(data.bytes, data.length, digest);
+    CC_SHA256(data.bytes, (CC_LONG)data.length, digest);
     NSData *sha256 = [NSData dataWithBytes:digest length:CC_SHA256_DIGEST_LENGTH];
     
     NSString *hash = [sha256 description];
@@ -152,7 +152,7 @@
 {
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     NSOperation *dependency = nil;
-    NSInteger parts = 1+(data.length / [partSize integerValue]);
+    int parts = 1+((int)data.length / [partSize intValue]);
     for (int i=0, k=parts; i<k; i++) {
         NSData *d = [data subdataWithRange:NSMakeRange((i * [partSize integerValue]), MIN([partSize integerValue], (data.length - (i * [partSize integerValue]))))];
         
@@ -331,7 +331,7 @@
     for (int i=0; i<[parts integerValue]; i++) {
         NSOperation *o = [WRequest getFile:fileId partNumber:@(i) success:^(NSData *data, NSNumber *partNumber) {
             [file appendData:data];
-            DDLogVerbose(@"File part n.%d downloaded out of %@ parts", [partNumber integerValue]+1, parts);
+            DDLogVerbose(@"File part n.%d downloaded out of %@ parts", [partNumber intValue]+1, parts);
             if ([partNumber integerValue]+1 >= [parts  integerValue]) {
                 success(file);
             }
