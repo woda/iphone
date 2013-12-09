@@ -212,6 +212,43 @@
 }
 
 
+/* Create a new folder
+ 
+ Description: method to create a new folder at the given path. you can create a whole path. If you create a whole hierarchy at once the method will just return the last created folder.
+ Method type: POST
+ URL: /sync_folder
+ Body parameters: filename
+ 
+ Call:
+ curl -k -b cookies -c cookies -XPOST {BASE_URL}/sync_folder -d "filename=folder1/folder2/folder3"
+ Return:
+ {
+ "folder": {
+ "id": 28,
+ "name": "folder3",
+ "public": false,
+ "favorite": false,
+ "last_update": "2013-11-10T13:07:51+01:00"
+ },
+ "success": true
+ }
+ */
+
+- (void)createFolder:(NSString *)folder
+            withData:(NSData *)data
+             success:(void (^)(id json))success
+             loading:(void (^)(double pourcentage))loading
+             failure:(void (^)(id error))failure
+{
+    [WRequest POST:@"/sync_folder"
+        parameters:@{ @"filename": folder }
+           success:^(id json) {
+               DDLogInfo(@"Folder created");
+               success(json);
+           } failure:failure];
+}
+
+
 /* Delete file/folder
  
  Description: method to delete a file OR a folder.
