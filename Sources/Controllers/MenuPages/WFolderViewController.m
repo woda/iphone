@@ -78,7 +78,12 @@
 }
 
 - (void)openFolder:(NSDictionary *)folder {
-    NSString *p = [self.path stringByAppendingFormat:@"%@/", folder[@"name"]];
+    NSString *p = self.path;
+    if (p) {
+        p = [p stringByAppendingPathComponent:folder[@"name"]];
+    } else {
+        p = folder[@"name"];
+    }
     WFolderViewController *c = [[WFolderViewController alloc] initWithId:folder[@"id"] andData:folder];
     c.path = p;
     [self.navigationController pushViewController:c animated:YES];
@@ -105,7 +110,15 @@
 #pragma mark Upload methods
 
 - (void)addFile:(id)sender {
-    [WUploadManager presentPickerInController:self];
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:nil
+                                  delegate:self
+                                  cancelButtonTitle:NSLocal(@"CancelButtonTitle")
+                                  destructiveButtonTitle:NSLocal(@"NewFile")
+                                  otherButtonTitles:NSLocal(@"NewFolder"), nil];
+    [actionSheet showInView:self.view];
+    
     
 //    NSDictionary *file = [[self.data objectForKey:@"files"] first];
 //    if ([[file objectForKey:@"favorite"]  boolValue]) {
@@ -140,6 +153,36 @@
     } failure:^(NSDictionary *error) {
         DDLogError(@"Failure while listing files: %@", error);
     }];
+}
+
+
+#pragma mark - Action sheet delegate methods
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        [WUploadManager presentPickerInController:self];
+    } else if (buttonIndex == 1) {
+        UIAlertView *prompt = [[UIAlertView alloc] initWithTitle:@"New folder"
+                                                         message:nil
+                                                        delegate:self
+                                               cancelButtonTitle:NSLocal(@"CancelButtonTitle")
+                                               otherButtonTitles:NSLocal(@"CreateButtonTitle"), nil];
+        prompt.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [prompt textFieldAtIndex:0].placeholder = @"Folder name";
+        [prompt show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSString *text = [alertView textFieldAtIndex:0].text;
+    if ((buttonIndex == 1) && text.length) {
+        NSString *p = (self.path) ? self.path : @"";
+        [WRequest createFolder:[p stringByAppendingPathComponent:text] success:^(id json) {
+            [self reload];
+        } failure:^(id error) {
+            // Do nothing
+        }];
+    }
 }
 
 @end

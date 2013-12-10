@@ -9,10 +9,10 @@
 #import "WListViewController.h"
 #import "WUploadManager+Picker.h"
 
-@interface WFolderViewController : WListViewController <WUploadManagerPickerDelegate>
+@interface WFolderViewController : WListViewController <WUploadManagerPickerDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
 
-@property (nonatomic, retain) NSString    *path;
-@property (nonatomic, retain) NSNumber    *folderId;
+@property (nonatomic, retain) NSString      *path;
+@property (nonatomic, retain) NSNumber      *folderId;
 
 - (id)initWithId:(NSNumber *)folderId andData:(NSDictionary *)data;
 

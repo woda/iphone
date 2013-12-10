@@ -234,10 +234,8 @@
  }
  */
 
-- (void)createFolder:(NSString *)folder
-            withData:(NSData *)data
++ (void)createFolder:(NSString *)folder
              success:(void (^)(id json))success
-             loading:(void (^)(double pourcentage))loading
              failure:(void (^)(id error))failure
 {
     [WRequest POST:@"/sync_folder"

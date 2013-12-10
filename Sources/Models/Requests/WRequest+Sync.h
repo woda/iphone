@@ -36,6 +36,10 @@
               success:(void (^)(id json))success
               failure:(void (^)(id error))failure;
 
++ (void)createFolder:(NSString *)folder
+             success:(void (^)(id json))success
+             failure:(void (^)(id error))failure;
+
 + (void)removeFile:(NSNumber *)fileId
            success:(void (^)(id json))success
            failure:(void (^)(id error))failure;

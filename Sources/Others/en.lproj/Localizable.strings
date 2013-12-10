@@ -27,6 +27,9 @@
 "LogoutLabel" = "Log out";
 "Files" = "files";
 "File" = "file";
+"NewFile" = "New file";
+"NewFolder" = "Folder";
+"CreateButtonTitle" = "Create";
 
 // File Cell
 "Delete" = "Delete";

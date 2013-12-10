@@ -27,6 +27,9 @@
 "LogoutLabel" = "Se déconnecter";
 "Files" = "fichiers";
 "File" = "fichier";
+"NewFile" = "Nouveau fichier";
+"NewFolder" = "Dossier";
+"CreateButtonTitle" = "Créer";
 
 // File Cell
 "Delete" = "Supprimer";
@@ -53,7 +56,7 @@
 "OfflinePageTitle" = "Fichiers hors-ligne";
 
 // Shared Page
-"SharedPageTitle" = "Fichiers artagés";
+"SharedPageTitle" = "Fichiers partagés";
 
 // Public Page
 "PublicPageTitle" = "Fichiers publics";

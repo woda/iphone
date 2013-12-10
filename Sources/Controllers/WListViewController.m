@@ -78,7 +78,9 @@
     if ([data isKindOfClass:[NSArray class]]) {
         data = [NSDictionary dictionaryWithObject:data forKey:@"files"];
     }
-    _data = data[@"folder"];
+    _data = data;
+    if ([_data[@"folder"] isKindOfClass:[NSDictionary class]])
+        _data = _data[@"folder"];
     if (_data == nil)
         _data = data;
     

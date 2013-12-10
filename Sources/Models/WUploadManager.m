@@ -71,15 +71,10 @@ static WUploadManager *shared = nil;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsPath = [paths objectAtIndex:0];
     NSString *thumbnailsPath = [documentsPath stringByAppendingPathComponent:@"Thumbails"];
-    NSError *error;
-    
-    if (![[NSFileManager defaultManager] createDirectoryAtPath:thumbnailsPath
+    [[NSFileManager defaultManager] createDirectoryAtPath:thumbnailsPath
                                    withIntermediateDirectories:NO
                                                     attributes:nil
-                                                         error:&error])
-    {
-        NSLog(@"Create directory error: %@", error);
-    }
+                                                    error:nil];
     return (thumbnailsPath);
 }
 
@@ -105,7 +100,7 @@ static WUploadManager *shared = nil;
     NSUInteger buffered = [rep getBytes:buffer fromOffset:0.0 length:rep.size error:nil];
     NSData *file = [NSData dataWithBytesNoCopy:buffer length:buffered freeWhenDone:YES];
     
-    NSString *fileName = (path) ? [path stringByAppendingString:[rep filename]] : [rep filename];
+    NSString *fileName = (path) ? [path stringByAppendingPathComponent:[rep filename]] : [rep filename];
     NSString *mediaType = [fileName componentsSeparatedByString:@"."].last;
     NSString *thumbnail = [self saveThumbnail:[UIImage imageWithCGImage:[asset thumbnail]]];
     
