@@ -70,7 +70,7 @@
                      @"size": @([data length]) }
           success:^(id json) {
               DDLogInfo(@"File created");
-              if ([[json objectForKey:@"need_upload"] boolValue]) {
+              if (![[json objectForKey:@"uploaded"] boolValue]) {
                   NSNumber *fileId = json[@"file"][@"id"];
                   NSNumber *partSize = json[@"file"][@"part_size"];
                   if ([partSize integerValue] <= 0) {
@@ -216,7 +216,7 @@
  
  Description: method to create a new folder at the given path. you can create a whole path. If you create a whole hierarchy at once the method will just return the last created folder.
  Method type: POST
- URL: /sync_folder
+ URL: /create_folder
  Body parameters: filename
  
  Call:
@@ -238,7 +238,7 @@
              success:(void (^)(id json))success
              failure:(void (^)(id error))failure
 {
-    [WRequest POST:@"/sync_folder"
+    [WRequest POST:@"/create_folder"
         parameters:@{ @"filename": folder }
            success:^(id json) {
                DDLogInfo(@"Folder created");

@@ -106,13 +106,13 @@ static WUser *current = nil;
             [self setStatus:Connected];
         } failure:^(NSDictionary *json) {
             DDLogError(@"Login error: %@", json);
-            if ([json isKindOfClass:[NSDictionary class]]
-                && [[json objectForKey:@"error"] isEqualToString:@"user_not_found"]
+            if ([json isKindOfClass:[NSError class]]
+                && [[(NSError *)json userInfo][@"error"] isEqualToString:@"user_not_found"]
                 && [login isEqualToString:@"test1"]
-                && [password isEqualToString:@"password"]) {
+                && [password isEqualToString:@"password42"]) {
                 DDLogWarn(@"Creating test user");
-                [WRequest createUser:@"test1" firstName:@"lambda" lastName:@"developer" password:@"password" email:@"developer@woda.com" success:^(NSDictionary *json) {
-                    (void)[[WUser alloc] initWithLogin:@"test1" andPassword:@"password"];
+                [WRequest createUser:@"test1" firstName:@"lambda" lastName:@"developer" password:@"password42" email:@"developer@woda.com" success:^(NSDictionary *json) {
+                    (void)[[WUser alloc] initWithLogin:@"test1" andPassword:@"password42"];
                 } failure:^(id json) {
                     [self setStatus:NotConnected];
                 }];
