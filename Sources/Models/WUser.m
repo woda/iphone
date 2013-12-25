@@ -8,6 +8,8 @@
 
 #import "WUser.h"
 #import "WRequest+User.h"
+#import "WOfflineManager.h"
+#import "WUploadManager.h"
 
 static WUser *current = nil;
 
@@ -99,6 +101,10 @@ static WUser *current = nil;
             NSLog(@"Login successful: %@", json);
             
             NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+            if (![_login isEqualToString:[userDefault objectForKey:kUserLoginKey]]) {
+                [WOfflineManager clearAllFiles];
+                [WUploadManager cleanUploadList];
+            }
             [userDefault setValue:_login forKey:kUserLoginKey];
             [userDefault setValue:password forKey:kUserPasswordKey];
             

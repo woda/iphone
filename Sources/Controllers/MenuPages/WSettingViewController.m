@@ -138,13 +138,14 @@
         case kSettingLegalNoticeCellIndex:
             break;
         case kSettingCacheIndex:
-            [WOfflineManager clearTemporaryFiles];
+            [WOfflineManager clearAllFiles];
             [WUploadManager cleanUploadList];
             [self updateStorageUsage];
             break;
         case kSettingLogoutIndex: {
             [WUser logout];
-            [WOfflineManager clearAllFiles];
+//            [WOfflineManager clearAllFiles];
+//            [WUploadManager cleanUploadList];
             
             WNavigationController *nav = (WNavigationController *)self.navigationController;
             UIViewController *login = [[nav viewControllers] first];
