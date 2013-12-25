@@ -27,13 +27,15 @@
 - (void)reload {
     void (^success)(NSDictionary *) = ^(NSDictionary *json) {
         self.data = json;
+        [self.refreshControl endRefreshing];
     };
     void (^failure)(id) = ^(NSDictionary *error) {
         DDLogError(@"Failure while listing files: %@", error);
+        [self.refreshControl endRefreshing];
     };
     if (self.folderId == nil && self.data == nil) {
         [WRequest listAllFilesWithSuccess:success failure:failure];
-    } else if (self.data == nil) {
+    } else {
         [WRequest file:self.folderId success:success failure:failure];
     }
 }
@@ -55,9 +57,6 @@
     else
         self.title = self.data[@"name"];
     self.homeCellIndex = kHomeFoldersCellIndex;
-    
-    if (self.data != nil)
-        [self.loading stopAnimating];
 }
 
 - (void)viewDidLoad {

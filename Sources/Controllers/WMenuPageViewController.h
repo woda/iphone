@@ -14,13 +14,8 @@
 @class WDetailViewController;
 
 
-@interface WMenuPageViewController : UIViewController {// <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, QLPreviewControllerDataSource, QLPreviewControllerDelegate> {
-}
+@interface WMenuPageViewController : UIViewController
 
 @property (assign) HomeCellIndex    homeCellIndex;
-
-//@property (strong, nonatomic) WDetailViewController *detailViewController;
-//@property (strong, nonatomic) QLPreviewController   *previewController;
-//@property (strong, nonatomic) NSString              *fileUrl;
 
 @end

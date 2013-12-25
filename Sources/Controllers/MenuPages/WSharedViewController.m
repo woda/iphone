@@ -21,8 +21,10 @@
 - (void)reload {
     [WRequest listSharedFilesWithSuccess:^(id json) {
         self.data = json;
+        [self.refreshControl endRefreshing];
     } failure:^(id error) {
         DDLogError(@"Failure while listing shared files: %@", error);
+        [self.refreshControl endRefreshing];
     }];
     
 //    [self.noFileLabel setText:@"No webservice available"];

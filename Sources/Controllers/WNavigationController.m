@@ -10,6 +10,7 @@
 #import "WUserLoginViewController.h"
 #import "WNavigationController.h"
 #import "WMenuPageViewController.h"
+#import "WListViewController.h"
 #import "WHomeViewController.h"
 #import "NSArray+Shortcuts.h"
 
@@ -149,7 +150,8 @@
 - (void)swipeLeftAnimated:(Boolean)animated {
     UIViewController *lastController = [[self viewControllers] last];
     if (![lastController isKindOfClass:[WUserLoginViewController class]]
-        && [lastController isKindOfClass:[WMenuPageViewController class]]) {
+        && ([lastController isKindOfClass:[WMenuPageViewController class]]
+            || [lastController isKindOfClass:[WListViewController class]])) {
         [self swipeLeftWithDuration:(animated ? 0.3 : 0.0)];
     }
 }
@@ -157,7 +159,8 @@
 - (void)swipeRightAnimated:(Boolean)animated {
     UIViewController *lastController = [[self viewControllers] last];
     if (![lastController isKindOfClass:[WUserLoginViewController class]]
-        && [lastController isKindOfClass:[WMenuPageViewController class]]) {
+        && ([lastController isKindOfClass:[WMenuPageViewController class]]
+            || [lastController isKindOfClass:[WListViewController class]])) {
         [self swipeRightWithDuration:(animated ? 0.3 : 0.0)];
     }
 }

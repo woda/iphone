@@ -6,15 +6,11 @@
 //  Copyright (c) 2012 Woda. All rights reserved.
 //
 
-#import "WMenuPageViewController.h"
 #import "WImagePreviewViewController.h"
+#import "WHomeViewController.h"
 #import "WRequest+List.h"
 
-@interface WListViewController : WMenuPageViewController <UITableViewDataSource, UITableViewDelegate, QLPreviewControllerDataSource, QLPreviewControllerDelegate>
-
-@property (nonatomic, retain) IBOutlet UITableView      *tableView;
-
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView  *loading;
+@interface WListViewController : UITableViewController <QLPreviewControllerDataSource, QLPreviewControllerDelegate>
 
 @property (nonatomic, retain) IBOutlet UITableViewCell  *foldersHeaderCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell  *filesHeaderCell;
@@ -25,6 +21,8 @@
 @property (nonatomic, retain) IBOutlet UILabel          *countLabel;
 @property (nonatomic, retain) IBOutlet UILabel          *updatedLabel;
 
+
+@property (assign) HomeCellIndex                        homeCellIndex;
 @property (nonatomic, retain) NSDictionary              *data;
 @property (nonatomic, strong) id<QLPreviewItem>         item;
 

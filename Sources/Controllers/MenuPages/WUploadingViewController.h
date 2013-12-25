@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Woda. All rights reserved.
 //
 
-#import "WListViewController.h"
+#import "WMenuPageViewController.h"
 #import "WUploadCollectionHeader.h"
 #import "WUploadCollectionFooter.h"
 

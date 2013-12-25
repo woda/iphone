@@ -29,6 +29,8 @@
     
     self.title = NSLocal(@"OfflinePageTitle");
     self.homeCellIndex = kHomeOfflineCellIndex;
+    
+    self.refreshControl = nil;
 }
 
 - (UITableViewCell *)fileCellForIndex:(NSInteger)idx {

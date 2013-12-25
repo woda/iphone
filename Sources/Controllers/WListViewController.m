@@ -49,20 +49,62 @@
     }
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(reload)
+                  forControlEvents:UIControlEventValueChanged];
+    
+    [self.tableView reloadData];
+    if (self.data == nil) {
+        [self reload];
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    self.title = @"Woda";
+    self.view.alpha = 1.0;
+    self.view.backgroundColor = [UIColor colorWithWhite:(240.0/255.0) alpha:1.0];
+    
+    if (self.navigationController.viewControllers.count <= 2) {
+        UIButton *button = [[UIButton alloc] init];
+        [button setImage:[UIImage imageNamed:@"navbar_white_menu.png"] forState:UIControlStateNormal];
+        [button setBounds:CGRectMake(0, 0, 35, 18)];
+        [button setImageEdgeInsets:(UIEdgeInsets) {
+            .top = 0,
+            .left = 10,
+            .bottom = 0,
+            .right = 0
+        }];
+        [button addTarget:self.navigationController action:@selector(swipe) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *listButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+        self.navigationItem.leftBarButtonItem = listButton;
+    } else {
+        UIButton *button = [[UIButton alloc] init];
+        [button setImage:[UIImage imageNamed:@"navbar_left_white_arrow.png"] forState:UIControlStateNormal];
+        [button setBounds:CGRectMake(0, 0, 21, 18)];
+        [button setImageEdgeInsets:(UIEdgeInsets) {
+            .top = 0,
+            .left = 10,
+            .bottom = 0,
+            .right = 0
+        }];
+        [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *listButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+        self.navigationItem.leftBarButtonItem = listButton;
+    }
     
     [self.noFileLabel setText:NSLocal(@"NoDataLabel")];
     
     [self.tableView setTableFooterView:self.footerView];
     [self updateFooter];
     
-    if (_data == nil) {
-        [self.tableView setAlpha:0.0];
-        [self.loading startAnimating];
+    if (self.data == nil) {
+        [self.refreshControl beginRefreshing];
     }
-    
-    [self reload];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:kFileMarkedNotificationName object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:kFileDeletedNotificationName object:nil];
@@ -72,6 +114,12 @@
     [super viewWillDisappear:animated];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [((WNavigationController *)self.navigationController).homeController setSelected:self.homeCellIndex];
 }
 
 - (void)setData:(NSDictionary *)data {
@@ -85,10 +133,6 @@
         _data = data;
     
     [self updateFooter];
-    
-    if (_data) {
-        [self.loading stopAnimating];
-    }
     
 //    DDLogWarn(@"data: %@", _data);
     [self.tableView reloadData];

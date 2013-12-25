@@ -21,8 +21,10 @@
 - (void)reload {
     [WRequest listPublicFilesWithSuccess:^(id json) {
         self.data = json;
+        [self.refreshControl endRefreshing];
     } failure:^(id error) {
         DDLogError(@"Failure while listing favorite files: %@", error);
+        [self.refreshControl endRefreshing];
     }];
 }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WListViewController">
@@ -11,44 +11,13 @@
                 <outlet property="filesHeaderCell" destination="21" id="29"/>
                 <outlet property="foldersHeaderCell" destination="16" id="30"/>
                 <outlet property="footerView" destination="67" id="92"/>
-                <outlet property="loading" destination="93" id="96"/>
                 <outlet property="noFileCell" destination="31" id="63"/>
                 <outlet property="noFileLabel" destination="42" id="97"/>
-                <outlet property="tableView" destination="3" id="9"/>
                 <outlet property="updatedLabel" destination="75" id="91"/>
-                <outlet property="view" destination="1" id="8"/>
+                <outlet property="view" destination="crb-dt-kPI" id="ugA-ow-6Xb"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="1">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="10"/>
-                        <outlet property="delegate" destination="-1" id="11"/>
-                    </connections>
-                </tableView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="93">
-                    <rect key="frame" x="150" y="230" width="20" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </activityIndicatorView>
-            </subviews>
-            <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
-            <constraints>
-                <constraint firstItem="3" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="4"/>
-                <constraint firstItem="3" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="5"/>
-                <constraint firstItem="3" firstAttribute="top" secondItem="1" secondAttribute="top" id="6"/>
-                <constraint firstItem="3" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="7"/>
-                <constraint firstItem="93" firstAttribute="centerY" secondItem="3" secondAttribute="centerY" id="94"/>
-                <constraint firstItem="93" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" id="95"/>
-            </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-        </view>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="16">
             <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -185,5 +154,17 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
+        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="crb-dt-kPI">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <color key="separatorColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="sectionIndexTrackingBackgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="dataSource" destination="-1" id="d2X-vg-yqj"/>
+                <outlet property="delegate" destination="-1" id="WhR-9O-at0"/>
+            </connections>
+        </tableView>
     </objects>
 </document>
