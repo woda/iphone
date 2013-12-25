@@ -30,6 +30,7 @@
     self.title = NSLocal(@"OfflinePageTitle");
     self.homeCellIndex = kHomeOfflineCellIndex;
     
+    [self.refreshControl endRefreshing];
     self.refreshControl = nil;
 }
 

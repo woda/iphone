@@ -17,6 +17,8 @@
 
 @interface WListViewController ()
 
+@property (nonatomic, retain) NSDate    *refreshDate;
+
 @end
 
 @implementation WListViewController
@@ -27,6 +29,21 @@
 
 - (void)reload {
     [self doesNotRecognizeSelector:@selector(reload)];
+}
+
+- (void)beginRefreshing {
+    if (!self.refreshControl.refreshing) {
+        self.refreshDate = [NSDate date];
+        [self.refreshControl beginRefreshing];
+    }
+}
+
+- (void)endRefreshing {
+    if (self.refreshControl.refreshing) {
+        [self.refreshControl performSelector:@selector(endRefreshing) withObject:nil
+                                  afterDelay:MAX(0.0, (0.5 - abs([self.refreshDate timeIntervalSinceNow])))];
+//        [self.refreshControl endRefreshing];
+    }
 }
 
 - (id)init {
@@ -52,12 +69,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.refreshDate = [NSDate date];
+    
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(reload)
                   forControlEvents:UIControlEventValueChanged];
     
-    [self.tableView reloadData];
     if (self.data == nil) {
+        [self beginRefreshing];
         [self reload];
     }
 }
@@ -101,10 +120,6 @@
     
     [self.tableView setTableFooterView:self.footerView];
     [self updateFooter];
-    
-    if (self.data == nil) {
-        [self.refreshControl beginRefreshing];
-    }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:kFileMarkedNotificationName object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload) name:kFileDeletedNotificationName object:nil];

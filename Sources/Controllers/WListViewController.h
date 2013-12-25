@@ -26,6 +26,9 @@
 @property (nonatomic, retain) NSDictionary              *data;
 @property (nonatomic, strong) id<QLPreviewItem>         item;
 
+- (void)beginRefreshing;
+- (void)endRefreshing;
+
 - (void)openFolder:(NSDictionary *)folder;
 
 @end

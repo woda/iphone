@@ -27,11 +27,11 @@
 - (void)reload {
     void (^success)(NSDictionary *) = ^(NSDictionary *json) {
         self.data = json;
-        [self.refreshControl endRefreshing];
+        [self endRefreshing];
     };
     void (^failure)(id) = ^(NSDictionary *error) {
         DDLogError(@"Failure while listing files: %@", error);
-        [self.refreshControl endRefreshing];
+        [self endRefreshing];
     };
     if (self.folderId == nil && self.data == nil) {
         [WRequest listAllFilesWithSuccess:success failure:failure];
