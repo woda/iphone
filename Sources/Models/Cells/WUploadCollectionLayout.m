@@ -148,7 +148,7 @@ NSString *WUploadSectionHeaderKind = @"WUploadSectionHeaderKind";
     titleAttributes.frame = [self frameForCollectionHeaderAtIndexPath:indexPath];
     collectionHeaderLayoutInfo[indexPath] = titleAttributes;
     
-    NSInteger offset = 0;
+    NSInteger offset = 66 + self.collectionHeaderHeight;
     for (NSInteger section = 0; section < sectionCount; section++) {
         NSInteger itemCount = [self.collectionView numberOfItemsInSection:section];
         

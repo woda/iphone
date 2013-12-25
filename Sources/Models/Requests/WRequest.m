@@ -40,6 +40,33 @@ static AFHTTPClient *client = nil;
     return (json);
 }
 
++ (NSObject *)safeJSON:(NSObject *)data {
+    if ([data isKindOfClass:[NSNull class]]) {
+        return nil;
+    }
+    if ([data isKindOfClass:[NSArray class]]) {
+        NSMutableArray *a = [NSMutableArray array];
+        for (NSObject *obj in (NSArray *)data) {
+            NSObject *v = [WRequest safeJSON:obj];
+            if (v) {
+                [a addObject:v];
+            }
+        }
+        return a;
+    }
+    if ([data isKindOfClass:[NSDictionary class]]) {
+        NSMutableDictionary *d = [NSMutableDictionary dictionary];
+        for (NSString *key in [(NSDictionary *)data allKeys]) {
+            NSObject *v = [WRequest safeJSON:[(NSDictionary *)data objectForKey:key]];
+            if (v) {
+                d[key] = v;
+            }
+        }
+        return d;
+    }
+    return data;
+}
+
 + (id)JSONFromData:(NSData *)data {
     NSError *error = nil;
     if ([data length] > 0) {
@@ -47,7 +74,7 @@ static AFHTTPClient *client = nil;
         if (error) {
             return (error);
         }
-        return (json);
+        return ([WRequest safeJSON:json]);
     }
     return (nil);
 }
