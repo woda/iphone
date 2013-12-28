@@ -33,7 +33,7 @@
     UIImageView *shadow = [[UIImageView alloc] initWithFrame:(CGRect) {
         .origin = (CGPoint) {
             .x = -3,
-            .y = 20
+            .y = 0
         },
         .size = (CGSize) {
             .width = 5,

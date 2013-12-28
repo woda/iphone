@@ -239,14 +239,14 @@
                  success:(void (^)(id json))success
                  failure:(void (^)(id error))failure
 {
-    [WRequest markFile:fileId asFavorite:YES success:success failure:failure];
+    [WRequest markFile:fileId asPublic:YES success:success failure:failure];
 }
 
 + (void)unmarkFileAsPublic:(NSNumber *)fileId
                    success:(void (^)(id json))success
                    failure:(void (^)(id error))failure
 {
-    [WRequest markFile:fileId asFavorite:NO success:success failure:failure];
+    [WRequest markFile:fileId asPublic:NO success:success failure:failure];
 }
 
 
