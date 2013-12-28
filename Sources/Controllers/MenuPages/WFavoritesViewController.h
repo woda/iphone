@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Woda. All rights reserved.
 //
 
-#import "WListViewController.h"
+#import "WFolderViewController.h"
 
-@interface WFavoritesViewController : WListViewController
+@interface WFavoritesViewController : WFolderViewController
 
 @end

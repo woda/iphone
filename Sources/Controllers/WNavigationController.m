@@ -37,7 +37,7 @@
         },
         .size = (CGSize) {
             .width = 5,
-            .height = self.view.frame.size.height - 20
+            .height = self.view.frame.size.height
         }
     }];
     [shadow setImage:[[UIImage imageNamed:@"shadow.png"] stretchableImageWithLeftCapWidth:0 topCapHeight:5]];

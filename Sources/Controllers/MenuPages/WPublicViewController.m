@@ -33,6 +33,8 @@
     
     self.title = NSLocal(@"PublicPageTitle");
     self.homeCellIndex = kHomePublicCellIndex;
+    
+    self.navigationItem.rightBarButtonItem = nil;
 }
 
 @end

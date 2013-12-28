@@ -33,6 +33,8 @@
     
     self.title = NSLocal(@"FavoritesPageTitle");
     self.homeCellIndex = kHomeFavoritesCellIndex;
+    
+    self.navigationItem.rightBarButtonItem = nil;
 }
 
 @end

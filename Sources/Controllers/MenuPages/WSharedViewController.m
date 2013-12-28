@@ -36,6 +36,8 @@
     
     self.title = NSLocal(@"SharedPageTitle");
     self.homeCellIndex = kHomeSharedCellIndex;
+    
+    self.navigationItem.rightBarButtonItem = nil;
 }
 
 @end

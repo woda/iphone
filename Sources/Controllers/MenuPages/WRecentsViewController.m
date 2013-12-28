@@ -33,6 +33,8 @@
     
     self.title = NSLocal(@"RecentsPageTitle");
     self.homeCellIndex = kHomeRecentsCellIndex;
+    
+    self.navigationItem.rightBarButtonItem = nil;
 }
 
 @end

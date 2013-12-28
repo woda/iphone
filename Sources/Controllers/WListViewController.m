@@ -75,7 +75,7 @@
     [self.refreshControl addTarget:self action:@selector(reload)
                   forControlEvents:UIControlEventValueChanged];
     
-    if (self.data == nil) {
+    if (self.data == nil || self.data[@"files"] == nil || self.data[@"folders"] == nil) {
         [self beginRefreshing];
         [self reload];
     }
@@ -141,11 +141,30 @@
     if ([data isKindOfClass:[NSArray class]]) {
         data = [NSDictionary dictionaryWithObject:data forKey:@"files"];
     }
-    _data = data;
-    if ([_data[@"folder"] isKindOfClass:[NSDictionary class]])
-        _data = _data[@"folder"];
-    if (_data == nil)
-        _data = data;
+    
+    NSMutableDictionary *d = data.mutableCopy;
+    if ([d[@"folder"] isKindOfClass:[NSDictionary class]])
+        d = d[@"folder"];
+    if (d == nil)
+        d = data.mutableCopy;
+    
+    NSMutableArray *files = [NSMutableArray array];
+    NSMutableArray *folders = [NSMutableArray array];
+    if ([d[@"folders"] isKindOfClass:[NSArray class]]) {
+        folders = ((NSArray *)d[@"folders"]).mutableCopy;
+    }
+    if ([d[@"files"] isKindOfClass:[NSArray class]]) {
+        for (NSDictionary *f in d[@"files"]) {
+            if ([f[@"folder"] boolValue]) {
+                [folders addObject:f];
+            } else {
+                [files addObject:f];
+            }
+        }
+        d[@"folders"] = folders;
+        d[@"files"] = files;
+    }
+    _data = d.mutableCopy;
     
     [self updateFooter];
     
