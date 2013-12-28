@@ -60,7 +60,7 @@
     [self.countLabel setText:[NSString stringWithFormat:@"%d files, %d folders", files, folders]];
     
     if ([self.data objectForKey:@"last_update"]) {
-        [self.updatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [NSDate date:[self.data objectForKey:@"last_update"] fromFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ" toFormat:@"MM/dd/yyyy' at 'hh:mm a"]]];
+        [self.updatedLabel setText:[NSString stringWithFormat:@"%@: %@", NSLocal(@"LastUpdate"), [NSDate date:[self.data objectForKey:@"last_update"] fromFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ" toFormat:@"MM/dd/yyyy' at 'hh:mm a"]]];
     } else {
         [self.updatedLabel setText:@""];
     }

@@ -30,6 +30,7 @@
 "NewFile" = "New file";
 "NewFolder" = "Folder";
 "CreateButtonTitle" = "Create";
+"LastUpdate" = "Last update";
 
 // File Cell
 "Delete" = "Delete";

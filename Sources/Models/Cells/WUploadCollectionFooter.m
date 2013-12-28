@@ -33,7 +33,7 @@
     }
     [self.countLabel setText:[NSString stringWithFormat:@"%d files", count]];
     if (count > 0) {
-        [self.updatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [data[0][@"info"][0][kUploadDate] toFormat:@"MM/dd/yyyy' at 'hh:mm a"]]];
+        [self.updatedLabel setText:[NSString stringWithFormat:@"%@: %@", NSLocal(@"LastUpdate"), [data[0][@"info"][0][kUploadDate] toFormat:@"MM/dd/yyyy' at 'hh:mm a"]]];
     } else {
         [self.updatedLabel setText:@""];
     }
