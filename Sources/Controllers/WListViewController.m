@@ -297,7 +297,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSInteger idx = indexPath.row;
-    if ([self isThereAnyFolder]) {
+    if (idx && [self isThereAnyFolder]) {
         if (idx < [self countFolderCells]) {
             NSDictionary *folder = [_data objectForKey:@"folders"][idx - 1];
             [self openFolder:folder];
