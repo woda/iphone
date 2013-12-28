@@ -10,7 +10,9 @@
 #import "WHomeViewController.h"
 #import "WRequest+List.h"
 
-@interface WListViewController : UITableViewController <QLPreviewControllerDataSource, QLPreviewControllerDelegate>
+@interface WListViewController : UITableViewController <QLPreviewControllerDataSource, QLPreviewControllerDelegate, UISearchBarDelegate>
+
+@property (nonatomic, retain) IBOutlet UISearchBar      *searchBar;
 
 @property (nonatomic, retain) IBOutlet UITableViewCell  *foldersHeaderCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell  *filesHeaderCell;
@@ -24,6 +26,7 @@
 
 @property (assign) HomeCellIndex                        homeCellIndex;
 @property (nonatomic, retain) NSDictionary              *data;
+@property (nonatomic, retain) NSDictionary              *originalData;
 @property (nonatomic, strong) id<QLPreviewItem>         item;
 
 - (void)beginRefreshing;

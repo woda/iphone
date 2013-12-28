@@ -79,6 +79,11 @@
         [self beginRefreshing];
         [self reload];
     }
+    
+    self.tableView.contentOffset = (CGPoint) {
+        .x = 0,
+        .y = self.tableView.contentOffset.y + self.searchBar.frame.size.height
+    };
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -164,6 +169,7 @@
         d[@"folders"] = folders;
         d[@"files"] = files;
     }
+    _originalData = d.mutableCopy;
     _data = d.mutableCopy;
     
     [self updateFooter];
@@ -312,6 +318,52 @@
             [self openFile:file];
         }
     }
+}
+
+
+#pragma mark - Search bar delegate methods
+
+- (void)search:(NSString *)text {
+    NSMutableDictionary *d = self.originalData.mutableCopy;
+    
+    if (text.length > 0) {
+        text = [text lowercaseString];
+        NSPredicate *p = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *f, NSDictionary *bindings) {
+            return ([[f[@"name"] lowercaseString] rangeOfString:text].location != NSNotFound);
+        }];
+        if ([d[@"files"] isKindOfClass:[NSArray class]]) {
+            d[@"files"] = [(NSArray *)d[@"files"] filteredArrayUsingPredicate:p];
+        }
+        if ([d[@"folders"] isKindOfClass:[NSArray class]]) {
+            d[@"folders"] = [(NSArray *)d[@"folders"] filteredArrayUsingPredicate:p];
+        }
+    }
+    
+    _data = d;
+    [self.tableView reloadData];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    [self search:searchText];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self search:searchBar.text];
+    
+    [searchBar resignFirstResponder];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.y > 0) {//self.searchBar.frame.size.height) {
+        [self.searchBar resignFirstResponder];
+    }
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.searchBar.text = nil;
+    [self search:nil];
+    
+    [searchBar resignFirstResponder];
 }
 
 

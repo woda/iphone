@@ -13,6 +13,7 @@
                 <outlet property="footerView" destination="67" id="92"/>
                 <outlet property="noFileCell" destination="31" id="63"/>
                 <outlet property="noFileLabel" destination="42" id="97"/>
+                <outlet property="searchBar" destination="AUj-fn-V2o" id="1sR-t6-ez8"/>
                 <outlet property="updatedLabel" destination="75" id="91"/>
                 <outlet property="view" destination="crb-dt-kPI" id="ugA-ow-6Xb"/>
             </connections>
@@ -166,6 +167,14 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <color key="separatorColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
             <color key="sectionIndexTrackingBackgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+            <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Search files and folders" id="AUj-fn-V2o">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                <textInputTraits key="textInputTraits"/>
+                <connections>
+                    <outlet property="delegate" destination="-1" id="eRu-Su-6yO"/>
+                </connections>
+            </searchBar>
             <connections>
                 <outlet property="dataSource" destination="-1" id="d2X-vg-yqj"/>
                 <outlet property="delegate" destination="-1" id="WhR-9O-at0"/>
