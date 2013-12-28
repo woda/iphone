@@ -208,7 +208,7 @@
         if (cell == nil) {
             cell = [UIViewController cellOfClass:[WFolderCell class]];
         }
-        [(WFolderCell *)cell setFolder:[[_data objectForKey:@"folders"] objectAtIndex:idx]];
+        [(WFolderCell *)cell setFile:[[_data objectForKey:@"folders"] objectAtIndex:idx]];
         [(WFolderCell *)cell displaySeparator:(idx < ([[_data objectForKey:@"folders"] count] - 1))];
         return (cell);
     }

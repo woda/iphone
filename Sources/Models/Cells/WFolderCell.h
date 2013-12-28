@@ -7,17 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WFileCell.h"
 
-@interface WFolderCell : UITableViewCell <XibViewDelegate>
+@interface WFolderCell : WFileCell
 
-@property (nonatomic, retain) IBOutlet UIView       *background;
-@property (nonatomic, retain) IBOutlet UIView       *separator;
-@property (nonatomic, retain) IBOutlet UILabel      *title;
-
-@property (nonatomic, retain) IBOutlet UIImageView   *folderIcon;
 @property (nonatomic, retain) IBOutlet UIImageView   *nextIcon;
-
-- (void)setFolder:(NSDictionary *)folder;
-- (void)displaySeparator:(Boolean)display;
 
 @end

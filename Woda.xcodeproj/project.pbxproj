@@ -37,6 +37,7 @@
 		A20B416E186F2965005C5EC0 /* ic_folder.png in Resources */ = {isa = PBXBuildFile; fileRef = A20B4153186F2965005C5EC0 /* ic_folder.png */; };
 		A20B416F186F2965005C5EC0 /* ic_public.png in Resources */ = {isa = PBXBuildFile; fileRef = A20B4154186F2965005C5EC0 /* ic_public.png */; };
 		A20B4170186F2965005C5EC0 /* img_Profil.png in Resources */ = {isa = PBXBuildFile; fileRef = A20B4155186F2965005C5EC0 /* img_Profil.png */; };
+		A20B4172186F3B18005C5EC0 /* WFolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A20B4171186F3B18005C5EC0 /* WFolderCell.xib */; };
 		A20DBB8E1799575800C25E7D /* WOfflineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A20DBB8D1799575800C25E7D /* WOfflineManager.m */; };
 		A210269D17974ABB00A17532 /* WUploadSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A210269C17974ABB00A17532 /* WUploadSectionHeader.m */; };
 		A210269F17976DCD00A17532 /* WUploadSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = A210269E17976DCD00A17532 /* WUploadSectionHeader.xib */; };
@@ -272,7 +273,6 @@
 		A2C170C717838A1D00EAB93E /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = A2C170C317838A1D00EAB93E /* release_notes.md */; };
 		A2C170CA1783A2AF00EAB93E /* WFolderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C170C91783A2AE00EAB93E /* WFolderCell.m */; };
 		A2C170CD1783A2BD00EAB93E /* WFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C170CC1783A2BC00EAB93E /* WFileCell.m */; };
-		A2C170CF1783A66D00EAB93E /* WFolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C170CE1783A66D00EAB93E /* WFolderCell.xib */; };
 		A2C170D11783A67A00EAB93E /* WFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C170D01783A67A00EAB93E /* WFileCell.xib */; };
 		A2C170D41783B88500EAB93E /* NSDate+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C170D31783B88500EAB93E /* NSDate+Format.m */; };
 		A2C170D71784DEA900EAB93E /* WUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C170D61784DEA800EAB93E /* WUploadManager.m */; };
@@ -342,6 +342,7 @@
 		A20B4153186F2965005C5EC0 /* ic_folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_folder.png; sourceTree = "<group>"; };
 		A20B4154186F2965005C5EC0 /* ic_public.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_public.png; sourceTree = "<group>"; };
 		A20B4155186F2965005C5EC0 /* img_Profil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_Profil.png; sourceTree = "<group>"; };
+		A20B4171186F3B18005C5EC0 /* WFolderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WFolderCell.xib; sourceTree = "<group>"; };
 		A20DBB8C1799575800C25E7D /* WOfflineManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOfflineManager.h; sourceTree = "<group>"; };
 		A20DBB8D1799575800C25E7D /* WOfflineManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOfflineManager.m; sourceTree = "<group>"; };
 		A210269B17974ABB00A17532 /* WUploadSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUploadSectionHeader.h; sourceTree = "<group>"; };
@@ -617,7 +618,6 @@
 		A2C170C91783A2AE00EAB93E /* WFolderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFolderCell.m; sourceTree = "<group>"; };
 		A2C170CB1783A2BC00EAB93E /* WFileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFileCell.h; sourceTree = "<group>"; };
 		A2C170CC1783A2BC00EAB93E /* WFileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFileCell.m; sourceTree = "<group>"; };
-		A2C170CE1783A66D00EAB93E /* WFolderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WFolderCell.xib; sourceTree = "<group>"; };
 		A2C170D01783A67A00EAB93E /* WFileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WFileCell.xib; sourceTree = "<group>"; };
 		A2C170D21783B88400EAB93E /* NSDate+Format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Format.h"; sourceTree = "<group>"; };
 		A2C170D31783B88500EAB93E /* NSDate+Format.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Format.m"; sourceTree = "<group>"; };
@@ -1327,7 +1327,7 @@
 				A2E8C58D1783719100F0BEF0 /* WListView.xib */,
 				A279288E179381A20011CEB5 /* WUploadListView.xib */,
 				A2E8C588178355B500F0BEF0 /* WSettingsView.xib */,
-				A2C170CE1783A66D00EAB93E /* WFolderCell.xib */,
+				A20B4171186F3B18005C5EC0 /* WFolderCell.xib */,
 				A2C170D01783A67A00EAB93E /* WFileCell.xib */,
 				A258B28917A3417500C0D3E9 /* WOfflineFileCell.xib */,
 				A279289317938E2B0011CEB5 /* WUploadFileCell.xib */,
@@ -1492,6 +1492,7 @@
 				A239192917801F380017264F /* action_button_delete@2x.png in Resources */,
 				A20B415B186F2965005C5EC0 /* btn_fav_normal.png in Resources */,
 				A28B09D31812DA25005AB789 /* list_button_right_arrow_white.png in Resources */,
+				A20B4172186F3B18005C5EC0 /* WFolderCell.xib in Resources */,
 				A239192A17801F380017264F /* action_button_download.png in Resources */,
 				A239192B17801F380017264F /* action_button_download@2x.png in Resources */,
 				A239192C17801F380017264F /* action_button_empty_star.png in Resources */,
@@ -1631,7 +1632,6 @@
 				A2C170C617838A1D00EAB93E /* README.md in Resources */,
 				A2C170C717838A1D00EAB93E /* release_notes.md in Resources */,
 				A20B4166186F2965005C5EC0 /* btn_publi_highlight.png in Resources */,
-				A2C170CF1783A66D00EAB93E /* WFolderCell.xib in Resources */,
 				A2C170D11783A67A00EAB93E /* WFileCell.xib in Resources */,
 				A20B4164186F2965005C5EC0 /* btn_not_public_highlight.png in Resources */,
 				A279288F179381A20011CEB5 /* WUploadListView.xib in Resources */,

@@ -36,7 +36,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="notes.txt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14">
-                                        <rect key="frame" x="43" y="13" width="209" height="19"/>
+                                        <rect key="frame" x="43" y="13" width="205" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="LDO-j7-QSh"/>
@@ -56,7 +56,7 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="list_icon_yellow_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="62">
-                                        <rect key="frame" x="260" y="13" width="20" height="18"/>
+                                        <rect key="frame" x="256" y="13" width="20" height="18"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="68"/>
@@ -73,10 +73,10 @@
                                     <constraint firstItem="14" firstAttribute="top" secondItem="13" secondAttribute="top" constant="13" id="Gm3-Cw-FvB"/>
                                     <constraint firstItem="vJZ-4H-HYy" firstAttribute="top" secondItem="13" secondAttribute="top" constant="13" id="Ttd-yF-QlS"/>
                                     <constraint firstItem="62" firstAttribute="leading" secondItem="14" secondAttribute="trailing" constant="8" id="XwX-Hr-ybG"/>
-                                    <constraint firstAttribute="trailing" secondItem="62" secondAttribute="trailing" constant="20" id="Z9I-ak-h5X"/>
+                                    <constraint firstAttribute="trailing" secondItem="62" secondAttribute="trailing" constant="24" id="Z9I-ak-h5X"/>
                                     <constraint firstItem="15" firstAttribute="top" secondItem="13" secondAttribute="top" constant="12" id="gci-Ur-Mgx"/>
                                     <constraint firstItem="62" firstAttribute="leading" secondItem="14" secondAttribute="trailing" constant="8" id="lJX-Yg-J6J"/>
-                                    <constraint firstItem="62" firstAttribute="leading" secondItem="vJZ-4H-HYy" secondAttribute="trailing" constant="10" id="ra2-KC-eqX"/>
+                                    <constraint firstItem="62" firstAttribute="leading" secondItem="vJZ-4H-HYy" secondAttribute="trailing" constant="6" id="ra2-KC-eqX"/>
                                     <constraint firstItem="15" firstAttribute="leading" secondItem="13" secondAttribute="leading" constant="15" id="rf8-eW-V0V"/>
                                 </constraints>
                             </view>
