@@ -96,7 +96,7 @@
     
     [self.serverLabel setText:[[[WRequest client] baseURL] relativeString]];
     [self.nameLabel setText:[[[[WUser current] firstName] capitalizedString] stringByAppendingFormat:@" %@", [[[WUser current] lastName] capitalizedString]]];
-    [self.emailLabel setText:[[WUser current] email]];
+    [self.emailLabel setText:[[WUser current] login]];
     [self.versionLabel setText:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
     
     [self updateStorageUsage];

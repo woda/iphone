@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WSettingViewController">
             <connections>
                 <outlet property="cacheCell" destination="389" id="400"/>
+                <outlet property="emailLabel" destination="fg6-0c-eeJ" id="bjm-Dr-utw"/>
                 <outlet property="feedbackCell" destination="256" id="292"/>
                 <outlet property="helpCell" destination="255" id="293"/>
                 <outlet property="logoutCell" destination="258" id="294"/>
@@ -36,6 +37,53 @@
                                 <rect key="frame" x="0.0" y="-3000" width="3000" height="3284"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1176470588" green="0.12941176469999999" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7X-7d-qsf">
+                                <rect key="frame" x="0.0" y="62" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAG-mu-2hi">
+                                        <rect key="frame" x="0.0" y="21" width="25" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="u1C-jm-xcp"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="settings_icon_user.png" translatesAutoresizingMaskIntoConstraints="NO" id="HWx-k8-yW0">
+                                        <rect key="frame" x="25" y="7" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="o50-u2-vau"/>
+                                            <constraint firstAttribute="width" constant="30" id="zjQ-eZ-Fsj"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="lambda.developer@woda.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fg6-0c-eeJ">
+                                        <rect key="frame" x="63" y="12" width="257" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="fLi-1t-DvH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="HWx-k8-yW0" secondAttribute="centerY" id="19s-Ms-IEJ"/>
+                                    <constraint firstItem="UAG-mu-2hi" firstAttribute="top" secondItem="K7X-7d-qsf" secondAttribute="top" constant="21" id="27s-4X-BzV"/>
+                                    <constraint firstItem="fg6-0c-eeJ" firstAttribute="trailing" secondItem="K7X-7d-qsf" secondAttribute="trailing" id="2ZJ-Mx-Nui"/>
+                                    <constraint firstItem="UAG-mu-2hi" firstAttribute="leading" secondItem="K7X-7d-qsf" secondAttribute="leading" id="ANb-QM-Dd0"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="DOP-rO-KY4"/>
+                                    <constraint firstAttribute="centerY" secondItem="UAG-mu-2hi" secondAttribute="centerY" id="GsH-uH-MX9"/>
+                                    <constraint firstAttribute="trailing" secondItem="fg6-0c-eeJ" secondAttribute="trailing" id="OqZ-Pb-sbw"/>
+                                    <constraint firstAttribute="centerY" secondItem="fg6-0c-eeJ" secondAttribute="centerY" id="Zhv-Ne-YI4"/>
+                                    <constraint firstItem="fg6-0c-eeJ" firstAttribute="leading" secondItem="HWx-k8-yW0" secondAttribute="trailing" constant="8" id="dWu-Kx-mKQ"/>
+                                    <constraint firstAttribute="height" constant="44" id="hmz-Km-spC"/>
+                                    <constraint firstItem="fg6-0c-eeJ" firstAttribute="trailing" secondItem="K7X-7d-qsf" secondAttribute="trailing" id="lfc-VL-rRt"/>
+                                    <constraint firstItem="HWx-k8-yW0" firstAttribute="leading" secondItem="K7X-7d-qsf" secondAttribute="leading" constant="25" id="yhx-HM-Wmj"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23">
                                 <rect key="frame" x="0.0" y="114" width="320" height="44"/>
@@ -178,6 +226,8 @@
                             <constraint firstAttribute="trailing" secondItem="337" secondAttribute="trailing" constant="-2680" id="4t6-VK-6Nx"/>
                             <constraint firstItem="148" firstAttribute="top" secondItem="127" secondAttribute="bottom" constant="10" id="56g-dB-Jti"/>
                             <constraint firstItem="23" firstAttribute="leading" secondItem="18" secondAttribute="leading" id="5SO-pA-mTV"/>
+                            <constraint firstAttribute="trailing" secondItem="K7X-7d-qsf" secondAttribute="trailing" id="7am-w2-o4O"/>
+                            <constraint firstItem="K7X-7d-qsf" firstAttribute="leading" secondItem="18" secondAttribute="leading" id="A41-Kj-3Z0"/>
                             <constraint firstAttribute="trailing" secondItem="148" secondAttribute="trailing" id="A93-DJ-5vr"/>
                             <constraint firstItem="337" firstAttribute="leading" secondItem="18" secondAttribute="leading" id="HJP-Id-afU"/>
                             <constraint firstAttribute="bottom" secondItem="337" secondAttribute="bottom" id="QJn-AV-eP9"/>
@@ -186,6 +236,7 @@
                             <constraint firstItem="127" firstAttribute="leading" secondItem="18" secondAttribute="leading" id="VHi-OT-XkQ"/>
                             <constraint firstAttribute="trailing" secondItem="127" secondAttribute="trailing" id="bRd-sG-MAN"/>
                             <constraint firstItem="148" firstAttribute="leading" secondItem="18" secondAttribute="leading" id="cW4-KC-kUV"/>
+                            <constraint firstItem="23" firstAttribute="top" secondItem="K7X-7d-qsf" secondAttribute="bottom" constant="8" id="nj9-g3-H8L"/>
                             <constraint firstAttribute="bottom" secondItem="148" secondAttribute="bottom" constant="20" id="pmp-ph-DSQ"/>
                         </constraints>
                     </view>
@@ -382,5 +433,6 @@
         <image name="settings_icon_app_version.png" width="44" height="44"/>
         <image name="settings_icon_info.png" width="44" height="44"/>
         <image name="settings_icon_network.png" width="44" height="44"/>
+        <image name="settings_icon_user.png" width="44" height="44"/>
     </resources>
 </document>
