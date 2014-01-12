@@ -12,6 +12,8 @@
 
 @property (nonatomic, retain) IBOutlet UIView       *logoView;
 
+@property (nonatomic, retain) IBOutlet UIView       *keyboardBackgroundView;
+
 @property (nonatomic, retain) IBOutlet UIView       *formView;
 @property (nonatomic, retain) IBOutlet UILabel      *titleLabel;
 @property (nonatomic, retain) IBOutlet UITextField  *serverField;

@@ -115,13 +115,17 @@
     NSDictionary* info = [notification userInfo];
     CGSize size = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     NSTimeInterval duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    UIViewAnimationCurve curve = [[info objectForKey:UIKeyboardAnimationCurveUserInfoKey] doubleValue];
     
-    [UIView animateWithDuration:duration animations:^{
+    [UIView setAnimationCurve:[notification.userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue]];
+    [UIView animateWithDuration:duration delay:0 options:curve animations:^{
         [self.view setFrame:(CGRect) {
             .origin.x = 0,
             .origin.y = -size.height,
             .size = self.view.frame.size
         }];
+    } completion:^(BOOL finished) {
+        // do nothing
     }];
 }
 
@@ -130,13 +134,17 @@
     
     NSDictionary* info = [notification userInfo];
     NSTimeInterval duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    UIViewAnimationCurve curve = [[info objectForKey:UIKeyboardAnimationCurveUserInfoKey] doubleValue];
     
-    [UIView animateWithDuration:duration animations:^{
+    [UIView setAnimationCurve:[notification.userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue]];
+    [UIView animateWithDuration:duration delay:0 options:curve animations:^{
         [self.view setFrame:(CGRect) {
             .origin.x = 0,
             .origin.y = 0,
             .size = self.view.frame.size
         }];
+    } completion:^(BOOL finished) {
+        // do nothing
     }];
 }
 
