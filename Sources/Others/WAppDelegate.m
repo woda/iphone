@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Woda. All rights reserved.
 //
 
+#import "Appirater.h"
 #import "WAppDelegate.h"
 #import "WHomeViewController.h"
 //#import "WDirectoryViewController.h"
@@ -44,6 +45,12 @@
 //    [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
 //#endif
     [TestFlight takeOff:kTestFlightToken];
+    
+    [Appirater setAppId:@"552035781"];
+    [Appirater setDaysUntilPrompt:7];
+    [Appirater setUsesUntilPrompt:10];
+    [Appirater setSignificantEventsUntilPrompt:-1];
+    [Appirater setTimeBeforeReminding:2];
     
     [DDLog removeAllLoggers];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];

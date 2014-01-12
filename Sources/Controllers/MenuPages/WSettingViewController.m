@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Woda. All rights reserved.
 //
 
+#import "Appirater.h"
 #import "WSettingViewController.h"
 #import "WOfflineManager.h"
 #import "WUploadManager.h"
@@ -116,8 +117,8 @@
             return (_helpCell);
         case kSettingFeedbackCellIndex:
             return (_feedbackCell);
-        case kSettingLegalNoticeCellIndex:
-            return (_noticeCell);
+        case kSettingRateAppIndex:
+            return (_rateAppCell);
         case kSettingCacheIndex:
             return (_cacheCell);
         case kSettingLogoutIndex:
@@ -132,10 +133,13 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
         case kSettingHelpCellIndex:
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://woda.ws/FAQ.html"]];
             break;
         case kSettingFeedbackCellIndex:
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://woda.ws/contact.html"]];
             break;
-        case kSettingLegalNoticeCellIndex:
+        case kSettingRateAppIndex:
+            [Appirater rateApp];
             break;
         case kSettingCacheIndex:
             [WOfflineManager clearAllFiles];

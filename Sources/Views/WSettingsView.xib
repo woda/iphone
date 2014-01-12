@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WSettingViewController">
@@ -14,6 +14,7 @@
                 <outlet property="logoutCell" destination="258" id="294"/>
                 <outlet property="memoryLabel" destination="128" id="295"/>
                 <outlet property="noticeCell" destination="257" id="297"/>
+                <outlet property="rateAppCell" destination="Us2-lT-byx" id="ujN-lz-hpg"/>
                 <outlet property="serverLabel" destination="70" id="298"/>
                 <outlet property="tableView" destination="13" id="83"/>
                 <outlet property="versionLabel" destination="149" id="299"/>
@@ -357,6 +358,40 @@
                 <constraint firstItem="276" firstAttribute="top" secondItem="257" secondAttribute="top" id="awn-aq-b9e"/>
                 <constraint firstItem="330" firstAttribute="trailing" secondItem="257" secondAttribute="trailing" id="cTg-AM-660"/>
                 <constraint firstItem="330" firstAttribute="top" secondItem="257" secondAttribute="top" constant="43" id="kUH-3R-HsK"/>
+            </constraints>
+        </tableViewCell>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" id="Us2-lT-byx">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Us2-lT-byx" id="NPN-oh-qrG">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jg6-7w-a8d">
+                        <rect key="frame" x="0.0" y="43" width="320" height="1"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.5" colorSpace="calibratedWhite"/>
+                    </view>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rate this application" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVJ-Fh-6ib">
+                        <rect key="frame" x="25" y="0.0" width="295" height="43"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="43" id="XFb-e7-n4Q"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="qVJ-Fh-6ib" firstAttribute="leading" secondItem="Us2-lT-byx" secondAttribute="leading" constant="25" id="7cp-vr-oJ8"/>
+                <constraint firstItem="qVJ-Fh-6ib" firstAttribute="trailing" secondItem="Us2-lT-byx" secondAttribute="trailing" id="M68-0g-QJO"/>
+                <constraint firstItem="jg6-7w-a8d" firstAttribute="bottom" secondItem="Us2-lT-byx" secondAttribute="bottom" id="Q2b-N7-SRx"/>
+                <constraint firstItem="qVJ-Fh-6ib" firstAttribute="top" secondItem="Us2-lT-byx" secondAttribute="top" id="S73-GI-9HQ"/>
+                <constraint firstItem="jg6-7w-a8d" firstAttribute="leading" secondItem="Us2-lT-byx" secondAttribute="leading" id="ltA-iz-y57"/>
+                <constraint firstItem="jg6-7w-a8d" firstAttribute="trailing" secondItem="Us2-lT-byx" secondAttribute="trailing" id="xDc-NR-hqr"/>
+                <constraint firstItem="jg6-7w-a8d" firstAttribute="top" secondItem="Us2-lT-byx" secondAttribute="top" constant="43" id="xJj-1O-XsQ"/>
             </constraints>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" id="389">

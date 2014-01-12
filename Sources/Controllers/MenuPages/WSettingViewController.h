@@ -11,7 +11,7 @@
 typedef enum kSettingCellIndexes {
     kSettingHelpCellIndex = 0,
     kSettingFeedbackCellIndex,
-    kSettingLegalNoticeCellIndex,
+    kSettingRateAppIndex,
     kSettingCacheIndex,
     kSettingLogoutIndex,
     kSettingCellCount
@@ -29,6 +29,7 @@ typedef enum kSettingCellIndexes {
 
 @property (nonatomic, retain) IBOutlet UITableViewCell  *helpCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell  *feedbackCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell  *rateAppCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell  *noticeCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell  *cacheCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell  *logoutCell;
