@@ -236,6 +236,8 @@
 		A27A4B3B1882B94F00358C84 /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A27A4B161882B94F00358C84 /* AppiraterLocalizable.strings */; };
 		A27A4B3C1882B94F00358C84 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = A27A4B191882B94F00358C84 /* CHANGELOG.md */; };
 		A27A4B3D1882B94F00358C84 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A27A4B2E1882B94F00358C84 /* README.md */; };
+		A27A4B411882E1C600358C84 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A27A4B3E1882E1C600358C84 /* Icon-72@2x.png */; };
+		A27A4B421882E1C600358C84 /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = A27A4B3F1882E1C600358C84 /* Icon-120.png */; };
 		A28B09D31812DA25005AB789 /* list_button_right_arrow_white.png in Resources */ = {isa = PBXBuildFile; fileRef = A28B09C91812DA25005AB789 /* list_button_right_arrow_white.png */; };
 		A28B09D41812DA25005AB789 /* list_button_right_arrow_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A28B09CA1812DA25005AB789 /* list_button_right_arrow_white@2x.png */; };
 		A28B09D51812DA25005AB789 /* list_icon_document_white.png in Resources */ = {isa = PBXBuildFile; fileRef = A28B09CB1812DA25005AB789 /* list_icon_document_white.png */; };
@@ -601,6 +603,8 @@
 		A27A4B351882B94F00358C84 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
 		A27A4B361882B94F00358C84 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AppiraterLocalizable.strings"; sourceTree = "<group>"; };
 		A27A4B371882B94F00358C84 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/AppiraterLocalizable.strings"; sourceTree = "<group>"; };
+		A27A4B3E1882E1C600358C84 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		A27A4B3F1882E1C600358C84 /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
 		A28B09C91812DA25005AB789 /* list_button_right_arrow_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_button_right_arrow_white.png; sourceTree = "<group>"; };
 		A28B09CA1812DA25005AB789 /* list_button_right_arrow_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list_button_right_arrow_white@2x.png"; sourceTree = "<group>"; };
 		A28B09CB1812DA25005AB789 /* list_icon_document_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_icon_document_white.png; sourceTree = "<group>"; };
@@ -1412,6 +1416,8 @@
 		A2DC44EE1630545D00E152A6 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				A27A4B3E1882E1C600358C84 /* Icon-72@2x.png */,
+				A27A4B3F1882E1C600358C84 /* Icon-120.png */,
 				A2DC44EF1630546C00E152A6 /* Icon-72.png */,
 				A2DC44F01630546C00E152A6 /* Icon-Small-50.png */,
 				A2DC44F11630546C00E152A6 /* Icon-Small.png */,
@@ -1580,6 +1586,7 @@
 				A239192717801F380017264F /* action_button_background@2x.png in Resources */,
 				A239192817801F380017264F /* action_button_delete.png in Resources */,
 				A239192917801F380017264F /* action_button_delete@2x.png in Resources */,
+				A27A4B411882E1C600358C84 /* Icon-72@2x.png in Resources */,
 				A20B415B186F2965005C5EC0 /* btn_fav_normal.png in Resources */,
 				A28B09D31812DA25005AB789 /* list_button_right_arrow_white.png in Resources */,
 				A20B4172186F3B18005C5EC0 /* WFolderCell.xib in Resources */,
@@ -1686,6 +1693,7 @@
 				A239197617801F380017264F /* navbar_white_check.png in Resources */,
 				A27A4B3D1882B94F00358C84 /* README.md in Resources */,
 				A20B4162186F2965005C5EC0 /* btn_no_fav_highlight.png in Resources */,
+				A27A4B421882E1C600358C84 /* Icon-120.png in Resources */,
 				A25D6E0F180B07210049C66B /* list_icon_movie_white@2x.png in Resources */,
 				A239197717801F380017264F /* navbar_white_check@2x.png in Resources */,
 				A27A4B3C1882B94F00358C84 /* CHANGELOG.md in Resources */,
@@ -2047,8 +2055,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Theo LUBERT (TW5A7XQFXB)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Theo LUBERT (TW5A7XQFXB)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Theo LUBERT (7MB6NZ634B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Theo LUBERT (7MB6NZ634B)";
 				DEPLOYMENT_POSTPROCESSING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sources/Others/Woda-Prefix.pch";
@@ -2058,7 +2066,7 @@
 					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "90163AA9-9A9E-41C4-B360-8A15D5DE614E";
+				PROVISIONING_PROFILE = "74B7F9D6-5844-4C2D-85C3-E9997DF223FF";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2068,8 +2076,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Theo LUBERT (TW5A7XQFXB)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Theo LUBERT (7MB6NZ634B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Theo LUBERT (7MB6NZ634B)";
 				DEPLOYMENT_POSTPROCESSING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sources/Others/Woda-Prefix.pch";
@@ -2079,7 +2087,7 @@
 					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "90163AA9-9A9E-41C4-B360-8A15D5DE614E";
+				PROVISIONING_PROFILE = "74B7F9D6-5844-4C2D-85C3-E9997DF223FF";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

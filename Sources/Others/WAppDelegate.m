@@ -46,7 +46,7 @@
 //#endif
     [TestFlight takeOff:kTestFlightToken];
     
-    [Appirater setAppId:@"552035781"];
+    [Appirater setAppId:@"796080933"];
     [Appirater setDaysUntilPrompt:7];
     [Appirater setUsesUntilPrompt:10];
     [Appirater setSignificantEventsUntilPrompt:-1];
