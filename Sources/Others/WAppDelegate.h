@@ -32,7 +32,7 @@
  *
  * \subsection step3 Step 3: Librairies
  *
- * Nothing to install here. Basically the project use 3 external well famous librairies:
+ * Nothing to install here. Basically the project use 7 external well famous librairies:
  * * Appirater: https://github.com/arashpayan/appirater
  * * WSAssetPickerController: https://github.com/w5mith/WSAssetPickerController
  * * TestFlight: https://testflightapp.com/
