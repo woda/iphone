@@ -2051,8 +2051,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Theo LUBERT (TW5A7XQFXB)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Theo LUBERT (TW5A7XQFXB)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Theo LUBERT (7MB6NZ634B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Theo LUBERT (7MB6NZ634B)";
 				DEPLOYMENT_POSTPROCESSING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sources/Others/Woda-Prefix.pch";
@@ -2062,7 +2062,7 @@
 					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "BBCF2736-D59C-403C-91EB-3EA5A6273BD3";
+				PROVISIONING_PROFILE = "29269252-3555-4DE1-936E-007A0EA58651";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2072,8 +2072,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Theo LUBERT (TW5A7XQFXB)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Theo LUBERT (TW5A7XQFXB)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Theo LUBERT (7MB6NZ634B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Theo LUBERT (7MB6NZ634B)";
 				DEPLOYMENT_POSTPROCESSING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sources/Others/Woda-Prefix.pch";
@@ -2083,7 +2083,7 @@
 					"\"$(SRCROOT)/Sources/Librairies/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "BBCF2736-D59C-403C-91EB-3EA5A6273BD3";
+				PROVISIONING_PROFILE = "29269252-3555-4DE1-936E-007A0EA58651";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

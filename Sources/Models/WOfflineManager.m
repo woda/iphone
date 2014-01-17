@@ -108,6 +108,11 @@ static WOfflineManager *shared = nil;
     if (filePath) {
         [data writeToFile:filePath atomically:YES];
         
+        NSError *error = nil;
+        if (![[NSURL URLWithString:filePath] setResourceValue:[NSNumber numberWithBool:YES] forKey:NSURLIsExcludedFromBackupKey error:&error]) {
+            DDLogError(@"NSURLIsExcludedFromBackupKey: %@", error);
+        }
+        
         NSString *listKey = kTemporaryList;
 //        NSString *listKey = kOfflineList;
         if (offline) {
