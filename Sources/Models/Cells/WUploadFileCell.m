@@ -91,7 +91,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 //    kUploadThumbnail = "/Users/teos/Library/.../Thumbails/3AD2416F-3B5E-4E1D-88A9-05D3A36733ED-3454-00007524A80E10DF.png";
 //}
 
-- (void)setInfo:(NSDictionary *)info {
+- (void)setUpdatedInfo:(NSDictionary *)info {
     Boolean uploaded = info[kUploadNeedsUpload] && ![info[kUploadNeedsUpload] boolValue];
     NSInteger progress = [info[kUploadProgress] integerValue];
     UIColor *tintColor = [UIColor colorWithWhite:0.0 alpha:0.1];
@@ -134,8 +134,13 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     }
 }
 
+- (void)setInfo:(NSDictionary *)info {
+    info = [WUploadManager uploadList][info[kUploadFileName]];
+    [self setUpdatedInfo:info];
+}
+
 - (void)infoChanged:(NSNotification *)notif {
-    [self setInfo:notif.userInfo];
+    [self setUpdatedInfo:notif.userInfo];
 }
 
 @end
