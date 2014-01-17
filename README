@@ -1,8 +1,10 @@
 Introduction
+------
 
 The project is an XCode project, coded in Objective-C. It use WebServices provided by the Woda server, as described at: http://woda-redmine.heroku.com/projects/woda/wiki/Using_the_server
 
 Installation
+------
 
 Be sure to have XCode installed (or download it from the AppleStore.
 
