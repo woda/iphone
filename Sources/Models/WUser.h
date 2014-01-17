@@ -10,6 +10,7 @@
 
 #define kUserLoginKey       @"kUserLoginKey"
 #define kUserPasswordKey    @"kUserPasswordKey"
+#define kUserServerKey      @"kUserServerKey"
 
 #define kUserStatusChanged  @"kUserStatusChanged"
 #define kUserInfoChanged    @"kUserInfoChanged"

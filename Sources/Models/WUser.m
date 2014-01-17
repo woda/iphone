@@ -21,6 +21,9 @@ static WUser *current = nil;
 + (void)logout {
     [WRequest logoutSuccess:^(id json) {
         NSLog(@"Logout successful: %@", json);
+        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+        [userDefault removeObjectForKey:kUserLoginKey];
+        [userDefault removeObjectForKey:kUserPasswordKey];
         [[WUser current] setStatus:NotConnected];
     } failure:^(id json) {
         NSLog(@"Logout error: %@", json);
@@ -107,6 +110,7 @@ static WUser *current = nil;
             }
             [userDefault setValue:_login forKey:kUserLoginKey];
             [userDefault setValue:password forKey:kUserPasswordKey];
+            [userDefault setValue:[WRequest baseUrl] forKey:kUserServerKey];
             
             [self updateUserInfo:json];
             [self setStatus:Connected];

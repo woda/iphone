@@ -18,6 +18,10 @@ static AFHTTPClient *client = nil;
     return (client);
 }
 
++ (NSString *)baseUrl {
+    return ([[client baseURL] absoluteString]);
+}
+
 + (AFHTTPClient *)client {
     if (client == nil) {
         client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:kBaseURL]];

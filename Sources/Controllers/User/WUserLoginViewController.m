@@ -23,12 +23,22 @@
 #pragma mark - View lifecycle methods
 
 - (void)updateLabels {
-    [_serverField setText:kBaseURL];
+//    [_serverField setText:kBaseURL];
     [_serverField setPlaceholder:NSLocal(@"ServerFieldPlaceholder")];
-//    [_usernameField setText:nil];
     [_usernameField setPlaceholder:NSLocal(@"UsernameFieldPlaceholder")];
-//    [_passwordField setText:nil];
     [_passwordField setPlaceholder:NSLocal(@"PasswordFieldPlaceholder")];
+    
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    if ([userDefault valueForKey:kUserServerKey]) {
+        [_serverField setText:[userDefault valueForKey:kUserServerKey]];
+    }
+    if ([userDefault valueForKey:kUserLoginKey]) {
+        [_usernameField setText:[userDefault valueForKey:kUserLoginKey]];
+        [_passwordField setText:[userDefault valueForKey:kUserPasswordKey]];
+    } else {
+        [_usernameField setText:nil];
+        [_passwordField setText:nil];
+    }
     
     [_forgotPasswordButton setTitle:NSLocal(@"ForgotPasswordButtonTitle") forState:UIControlStateNormal];
     [_submitButton setTitle:NSLocal(@"LoginButtonTitle") forState:UIControlStateNormal];
@@ -97,6 +107,7 @@
             [self showConnectingView:YES animated:YES];
             break;
         case NotConnected:
+            [self updateLabels];
             [self showConnectingView:NO animated:YES];
             break;
             
