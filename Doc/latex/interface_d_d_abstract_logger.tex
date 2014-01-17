@@ -1,0 +1,102 @@
+\hypertarget{interface_d_d_abstract_logger}{\section{D\-D\-Abstract\-Logger Class Reference}
+\label{interface_d_d_abstract_logger}\index{D\-D\-Abstract\-Logger@{D\-D\-Abstract\-Logger}}
+}
+
+
+{\ttfamily \#import $<$D\-D\-Log.\-h$>$}
+
+Inheritance diagram for D\-D\-Abstract\-Logger\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.146068cm]{interface_d_d_abstract_logger}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id$<$ \hyperlink{protocol_d_d_log_formatter-p}{D\-D\-Log\-Formatter} $>$) -\/ \hyperlink{interface_d_d_abstract_logger_a4839d52332a328cf00e91225798727c3}{log\-Formatter}
+\item 
+(void) -\/ \hyperlink{interface_d_d_abstract_logger_a66adcff49e28995ce45a470ec41623e1}{set\-Log\-Formatter\-:}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_d_d_abstract_logger_af9a62f02a3605d46174ebc2c26f7a2d7}{is\-On\-Global\-Logging\-Queue}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_d_d_abstract_logger_a955b2f52fc26c0ef9753b0e480ad9465}{is\-On\-Internal\-Logger\-Queue}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+id$<$ \hyperlink{protocol_d_d_log_formatter-p}{D\-D\-Log\-Formatter} $>$ \hyperlink{interface_d_d_abstract_logger_a5272dacaffde3c3ec20255b71ef64707}{formatter}
+\item 
+dispatch\-\_\-queue\-\_\-t \hyperlink{interface_d_d_abstract_logger_a7904f4b279382819f718cf50bdc5478f}{logger\-Queue}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{protocol_d_d_logger-p}{D\-D\-Logger} protocol specifies that an optional formatter can be added to a logger. Most (but not all) loggers will want to support formatters.
+
+However, writting getters and setters in a thread safe manner, while still maintaining maximum speed for the logging process, is a difficult task.
+
+To do it right, the implementation of the getter/setter has strict requiremenets\-:
+\begin{DoxyItemize}
+\item Must N\-O\-T require the log\-Message method to acquire a lock.
+\item Must N\-O\-T require the log\-Message method to access an atomic property (also a lock of sorts).
+\end{DoxyItemize}
+
+To simplify things, an abstract logger is provided that implements the getter and setter.
+
+Logger implementations may simply extend this class, and they can A\-C\-C\-E\-S\-S T\-H\-E F\-O\-R\-M\-A\-T\-T\-E\-R V\-A\-R\-I\-A\-B\-L\-E D\-I\-R\-E\-C\-T\-L\-Y from within their log\-Message method! 
+
+\subsection{Method Documentation}
+\hypertarget{interface_d_d_abstract_logger_af9a62f02a3605d46174ebc2c26f7a2d7}{\index{D\-D\-Abstract\-Logger@{D\-D\-Abstract\-Logger}!is\-On\-Global\-Logging\-Queue@{is\-On\-Global\-Logging\-Queue}}
+\index{is\-On\-Global\-Logging\-Queue@{is\-On\-Global\-Logging\-Queue}!DDAbstractLogger@{D\-D\-Abstract\-Logger}}
+\subsubsection[{is\-On\-Global\-Logging\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) is\-On\-Global\-Logging\-Queue 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_abstract_logger_af9a62f02a3605d46174ebc2c26f7a2d7}
+\hypertarget{interface_d_d_abstract_logger_a955b2f52fc26c0ef9753b0e480ad9465}{\index{D\-D\-Abstract\-Logger@{D\-D\-Abstract\-Logger}!is\-On\-Internal\-Logger\-Queue@{is\-On\-Internal\-Logger\-Queue}}
+\index{is\-On\-Internal\-Logger\-Queue@{is\-On\-Internal\-Logger\-Queue}!DDAbstractLogger@{D\-D\-Abstract\-Logger}}
+\subsubsection[{is\-On\-Internal\-Logger\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) is\-On\-Internal\-Logger\-Queue 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_abstract_logger_a955b2f52fc26c0ef9753b0e480ad9465}
+\hypertarget{interface_d_d_abstract_logger_a4839d52332a328cf00e91225798727c3}{\index{D\-D\-Abstract\-Logger@{D\-D\-Abstract\-Logger}!log\-Formatter@{log\-Formatter}}
+\index{log\-Formatter@{log\-Formatter}!DDAbstractLogger@{D\-D\-Abstract\-Logger}}
+\subsubsection[{log\-Formatter}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<$ {\bf D\-D\-Log\-Formatter} $>$) log\-Formatter 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_abstract_logger_a4839d52332a328cf00e91225798727c3}
+Formatters may optionally be added to any logger.
+
+If no formatter is set, the logger simply logs the message as it is given in log\-Message, or it may use its own built in formatting style. 
+
+Reimplemented from \hyperlink{protocol_d_d_logger-p_a23281a33ff57cddf0bc7e58652b8217e}{$<$\-D\-D\-Logger$>$}.
+
+\hypertarget{interface_d_d_abstract_logger_a66adcff49e28995ce45a470ec41623e1}{\index{D\-D\-Abstract\-Logger@{D\-D\-Abstract\-Logger}!set\-Log\-Formatter\-:@{set\-Log\-Formatter\-:}}
+\index{set\-Log\-Formatter\-:@{set\-Log\-Formatter\-:}!DDAbstractLogger@{D\-D\-Abstract\-Logger}}
+\subsubsection[{set\-Log\-Formatter\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Log\-Formatter\-: 
+\begin{DoxyParamCaption}
+\item[{(id $<${\bf D\-D\-Log\-Formatter}$>$)}]{formatter}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_abstract_logger_a66adcff49e28995ce45a470ec41623e1}
+
+
+Reimplemented from \hyperlink{protocol_d_d_logger-p_af7ecf3d7e7f3f3f1fcdb9d4aba994128}{$<$\-D\-D\-Logger$>$}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_d_d_abstract_logger_a5272dacaffde3c3ec20255b71ef64707}{\index{D\-D\-Abstract\-Logger@{D\-D\-Abstract\-Logger}!formatter@{formatter}}
+\index{formatter@{formatter}!DDAbstractLogger@{D\-D\-Abstract\-Logger}}
+\subsubsection[{formatter}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf D\-D\-Log\-Formatter}$>$) formatter\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_abstract_logger_a5272dacaffde3c3ec20255b71ef64707}
+\hypertarget{interface_d_d_abstract_logger_a7904f4b279382819f718cf50bdc5478f}{\index{D\-D\-Abstract\-Logger@{D\-D\-Abstract\-Logger}!logger\-Queue@{logger\-Queue}}
+\index{logger\-Queue@{logger\-Queue}!DDAbstractLogger@{D\-D\-Abstract\-Logger}}
+\subsubsection[{logger\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (dispatch\-\_\-queue\-\_\-t) logger\-Queue\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_abstract_logger_a7904f4b279382819f718cf50bdc5478f}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_log_8h}{D\-D\-Log.\-h}\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_log_8m}{D\-D\-Log.\-m}\end{DoxyCompactItemize}

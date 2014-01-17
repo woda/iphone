@@ -1,0 +1,107 @@
+\hypertarget{_d_d_t_t_y_logger_8m}{\section{Sources/\-Librairies/\-Lumberjack/\-D\-D\-T\-T\-Y\-Logger.m File Reference}
+\label{_d_d_t_t_y_logger_8m}\index{Sources/\-Librairies/\-Lumberjack/\-D\-D\-T\-T\-Y\-Logger.\-m@{Sources/\-Librairies/\-Lumberjack/\-D\-D\-T\-T\-Y\-Logger.\-m}}
+}
+{\ttfamily \#import \char`\"{}D\-D\-T\-T\-Y\-Logger.\-h\char`\"{}}\\*
+{\ttfamily \#import $<$unistd.\-h$>$}\\*
+{\ttfamily \#import $<$sys/uio.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{interface_d_d_t_t_y_logger_color_profile}{D\-D\-T\-T\-Y\-Logger\-Color\-Profile}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_d_d_t_t_y_logger_8m_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{L\-O\-G\-\_\-\-L\-E\-V\-E\-L}~2
+\item 
+\#define \hyperlink{_d_d_t_t_y_logger_8m_a7ff182aa6ac42a8e39c5e6b7611a5165}{N\-S\-Log\-Error}(frmt,...)~do\{ if(\hyperlink{_d_d_t_t_y_logger_8m_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{L\-O\-G\-\_\-\-L\-E\-V\-E\-L} $>$= 1) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)
+\item 
+\#define \hyperlink{_d_d_t_t_y_logger_8m_a8357e06ccb1070f79ba472067a24a956}{N\-S\-Log\-Warn}(frmt,...)~do\{ if(\hyperlink{_d_d_t_t_y_logger_8m_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{L\-O\-G\-\_\-\-L\-E\-V\-E\-L} $>$= 2) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)
+\item 
+\#define \hyperlink{_d_d_t_t_y_logger_8m_a250be6421e41ba584186836e5825e500}{N\-S\-Log\-Info}(frmt,...)~do\{ if(\hyperlink{_d_d_t_t_y_logger_8m_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{L\-O\-G\-\_\-\-L\-E\-V\-E\-L} $>$= 3) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)
+\item 
+\#define \hyperlink{_d_d_t_t_y_logger_8m_a5fef155eafaad5a84f9a62c379156f14}{N\-S\-Log\-Verbose}(frmt,...)~do\{ if(\hyperlink{_d_d_t_t_y_logger_8m_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{L\-O\-G\-\_\-\-L\-E\-V\-E\-L} $>$= 4) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)
+\item 
+\#define \hyperlink{_d_d_t_t_y_logger_8m_a34f9a86b05f2c53496911975994fa343}{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-E\-S\-C\-A\-P\-E\-\_\-\-S\-E\-Q}~\char`\"{}\textbackslash{}033\mbox{[}\char`\"{}
+\item 
+\#define \hyperlink{_d_d_t_t_y_logger_8m_a59a3edc4777384ddca70853b35f35364}{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T\-\_\-\-F\-G}~\hyperlink{_d_d_t_t_y_logger_8m_a34f9a86b05f2c53496911975994fa343}{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-E\-S\-C\-A\-P\-E\-\_\-\-S\-E\-Q} \char`\"{}fg;\char`\"{}
+\item 
+\#define \hyperlink{_d_d_t_t_y_logger_8m_abc3f583f0f0a5d2b5cd2bf5a0ce3b47b}{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T\-\_\-\-B\-G}~\hyperlink{_d_d_t_t_y_logger_8m_a34f9a86b05f2c53496911975994fa343}{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-E\-S\-C\-A\-P\-E\-\_\-\-S\-E\-Q} \char`\"{}bg;\char`\"{}
+\item 
+\#define \hyperlink{_d_d_t_t_y_logger_8m_a3595120f81edca91ad0106369c8c00a7}{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T}~\hyperlink{_d_d_t_t_y_logger_8m_a34f9a86b05f2c53496911975994fa343}{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-E\-S\-C\-A\-P\-E\-\_\-\-S\-E\-Q} \char`\"{};\char`\"{}
+\item 
+\#define \hyperlink{_d_d_t_t_y_logger_8m_abe01f52cd1b293f0b6e58a42bb5e45a0}{Make\-Color}(r, g, b)~\mbox{[}N\-S\-Color color\-With\-Calibrated\-Red\-:(r/255.\-0f) green\-:(g/255.\-0f) blue\-:(b/255.\-0f) alpha\-:1.\-0f\mbox{]}
+\item 
+\#define \hyperlink{_d_d_t_t_y_logger_8m_af16172ddfbe06e5b88a30b3b5985ac67}{O\-S\-Color}~N\-S\-Color
+\item 
+\#define \hyperlink{_d_d_t_t_y_logger_8m_a4d56191d6015b43fbbb887ca66b5ea82}{M\-A\-P\-\_\-\-T\-O\-\_\-\-T\-E\-R\-M\-I\-N\-A\-L\-\_\-\-A\-P\-P\-\_\-\-C\-O\-L\-O\-R\-S}~1
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_d_d_t_t_y_logger_8m_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{\index{D\-D\-T\-T\-Y\-Logger.\-m@{D\-D\-T\-T\-Y\-Logger.\-m}!L\-O\-G\-\_\-\-L\-E\-V\-E\-L@{L\-O\-G\-\_\-\-L\-E\-V\-E\-L}}
+\index{L\-O\-G\-\_\-\-L\-E\-V\-E\-L@{L\-O\-G\-\_\-\-L\-E\-V\-E\-L}!DDTTYLogger.m@{D\-D\-T\-T\-Y\-Logger.\-m}}
+\subsubsection[{L\-O\-G\-\_\-\-L\-E\-V\-E\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-G\-\_\-\-L\-E\-V\-E\-L~2}}\label{_d_d_t_t_y_logger_8m_a0b87e0d3bf5853bcbb0b66a7c48fdc05}
+Welcome to Cocoa Lumberjack!
+
+The project page has a wealth of documentation if you have any questions. \href{https://github.com/robbiehanson/CocoaLumberjack}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack}
+
+If you're new to the project you may wish to read the \char`\"{}\-Getting Started\char`\"{} wiki. \href{https://github.com/robbiehanson/CocoaLumberjack/wiki/GettingStarted}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack/wiki/\-Getting\-Started} \hypertarget{_d_d_t_t_y_logger_8m_abe01f52cd1b293f0b6e58a42bb5e45a0}{\index{D\-D\-T\-T\-Y\-Logger.\-m@{D\-D\-T\-T\-Y\-Logger.\-m}!Make\-Color@{Make\-Color}}
+\index{Make\-Color@{Make\-Color}!DDTTYLogger.m@{D\-D\-T\-T\-Y\-Logger.\-m}}
+\subsubsection[{Make\-Color}]{\setlength{\rightskip}{0pt plus 5cm}\#define Make\-Color(
+\begin{DoxyParamCaption}
+\item[{}]{r, }
+\item[{}]{g, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~\mbox{[}N\-S\-Color color\-With\-Calibrated\-Red\-:(r/255.\-0f) green\-:(g/255.\-0f) blue\-:(b/255.\-0f) alpha\-:1.\-0f\mbox{]}}}\label{_d_d_t_t_y_logger_8m_abe01f52cd1b293f0b6e58a42bb5e45a0}
+\hypertarget{_d_d_t_t_y_logger_8m_a4d56191d6015b43fbbb887ca66b5ea82}{\index{D\-D\-T\-T\-Y\-Logger.\-m@{D\-D\-T\-T\-Y\-Logger.\-m}!M\-A\-P\-\_\-\-T\-O\-\_\-\-T\-E\-R\-M\-I\-N\-A\-L\-\_\-\-A\-P\-P\-\_\-\-C\-O\-L\-O\-R\-S@{M\-A\-P\-\_\-\-T\-O\-\_\-\-T\-E\-R\-M\-I\-N\-A\-L\-\_\-\-A\-P\-P\-\_\-\-C\-O\-L\-O\-R\-S}}
+\index{M\-A\-P\-\_\-\-T\-O\-\_\-\-T\-E\-R\-M\-I\-N\-A\-L\-\_\-\-A\-P\-P\-\_\-\-C\-O\-L\-O\-R\-S@{M\-A\-P\-\_\-\-T\-O\-\_\-\-T\-E\-R\-M\-I\-N\-A\-L\-\_\-\-A\-P\-P\-\_\-\-C\-O\-L\-O\-R\-S}!DDTTYLogger.m@{D\-D\-T\-T\-Y\-Logger.\-m}}
+\subsubsection[{M\-A\-P\-\_\-\-T\-O\-\_\-\-T\-E\-R\-M\-I\-N\-A\-L\-\_\-\-A\-P\-P\-\_\-\-C\-O\-L\-O\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-P\-\_\-\-T\-O\-\_\-\-T\-E\-R\-M\-I\-N\-A\-L\-\_\-\-A\-P\-P\-\_\-\-C\-O\-L\-O\-R\-S~1}}\label{_d_d_t_t_y_logger_8m_a4d56191d6015b43fbbb887ca66b5ea82}
+\hypertarget{_d_d_t_t_y_logger_8m_a7ff182aa6ac42a8e39c5e6b7611a5165}{\index{D\-D\-T\-T\-Y\-Logger.\-m@{D\-D\-T\-T\-Y\-Logger.\-m}!N\-S\-Log\-Error@{N\-S\-Log\-Error}}
+\index{N\-S\-Log\-Error@{N\-S\-Log\-Error}!DDTTYLogger.m@{D\-D\-T\-T\-Y\-Logger.\-m}}
+\subsubsection[{N\-S\-Log\-Error}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-S\-Log\-Error(
+\begin{DoxyParamCaption}
+\item[{}]{frmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~do\{ if({\bf L\-O\-G\-\_\-\-L\-E\-V\-E\-L} $>$= 1) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)}}\label{_d_d_t_t_y_logger_8m_a7ff182aa6ac42a8e39c5e6b7611a5165}
+\hypertarget{_d_d_t_t_y_logger_8m_a250be6421e41ba584186836e5825e500}{\index{D\-D\-T\-T\-Y\-Logger.\-m@{D\-D\-T\-T\-Y\-Logger.\-m}!N\-S\-Log\-Info@{N\-S\-Log\-Info}}
+\index{N\-S\-Log\-Info@{N\-S\-Log\-Info}!DDTTYLogger.m@{D\-D\-T\-T\-Y\-Logger.\-m}}
+\subsubsection[{N\-S\-Log\-Info}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-S\-Log\-Info(
+\begin{DoxyParamCaption}
+\item[{}]{frmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~do\{ if({\bf L\-O\-G\-\_\-\-L\-E\-V\-E\-L} $>$= 3) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)}}\label{_d_d_t_t_y_logger_8m_a250be6421e41ba584186836e5825e500}
+\hypertarget{_d_d_t_t_y_logger_8m_a5fef155eafaad5a84f9a62c379156f14}{\index{D\-D\-T\-T\-Y\-Logger.\-m@{D\-D\-T\-T\-Y\-Logger.\-m}!N\-S\-Log\-Verbose@{N\-S\-Log\-Verbose}}
+\index{N\-S\-Log\-Verbose@{N\-S\-Log\-Verbose}!DDTTYLogger.m@{D\-D\-T\-T\-Y\-Logger.\-m}}
+\subsubsection[{N\-S\-Log\-Verbose}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-S\-Log\-Verbose(
+\begin{DoxyParamCaption}
+\item[{}]{frmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~do\{ if({\bf L\-O\-G\-\_\-\-L\-E\-V\-E\-L} $>$= 4) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)}}\label{_d_d_t_t_y_logger_8m_a5fef155eafaad5a84f9a62c379156f14}
+\hypertarget{_d_d_t_t_y_logger_8m_a8357e06ccb1070f79ba472067a24a956}{\index{D\-D\-T\-T\-Y\-Logger.\-m@{D\-D\-T\-T\-Y\-Logger.\-m}!N\-S\-Log\-Warn@{N\-S\-Log\-Warn}}
+\index{N\-S\-Log\-Warn@{N\-S\-Log\-Warn}!DDTTYLogger.m@{D\-D\-T\-T\-Y\-Logger.\-m}}
+\subsubsection[{N\-S\-Log\-Warn}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-S\-Log\-Warn(
+\begin{DoxyParamCaption}
+\item[{}]{frmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~do\{ if({\bf L\-O\-G\-\_\-\-L\-E\-V\-E\-L} $>$= 2) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)}}\label{_d_d_t_t_y_logger_8m_a8357e06ccb1070f79ba472067a24a956}
+\hypertarget{_d_d_t_t_y_logger_8m_af16172ddfbe06e5b88a30b3b5985ac67}{\index{D\-D\-T\-T\-Y\-Logger.\-m@{D\-D\-T\-T\-Y\-Logger.\-m}!O\-S\-Color@{O\-S\-Color}}
+\index{O\-S\-Color@{O\-S\-Color}!DDTTYLogger.m@{D\-D\-T\-T\-Y\-Logger.\-m}}
+\subsubsection[{O\-S\-Color}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-S\-Color~N\-S\-Color}}\label{_d_d_t_t_y_logger_8m_af16172ddfbe06e5b88a30b3b5985ac67}
+\hypertarget{_d_d_t_t_y_logger_8m_a34f9a86b05f2c53496911975994fa343}{\index{D\-D\-T\-T\-Y\-Logger.\-m@{D\-D\-T\-T\-Y\-Logger.\-m}!X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-E\-S\-C\-A\-P\-E\-\_\-\-S\-E\-Q@{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-E\-S\-C\-A\-P\-E\-\_\-\-S\-E\-Q}}
+\index{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-E\-S\-C\-A\-P\-E\-\_\-\-S\-E\-Q@{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-E\-S\-C\-A\-P\-E\-\_\-\-S\-E\-Q}!DDTTYLogger.m@{D\-D\-T\-T\-Y\-Logger.\-m}}
+\subsubsection[{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-E\-S\-C\-A\-P\-E\-\_\-\-S\-E\-Q}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-E\-S\-C\-A\-P\-E\-\_\-\-S\-E\-Q~\char`\"{}\textbackslash{}033\mbox{[}\char`\"{}}}\label{_d_d_t_t_y_logger_8m_a34f9a86b05f2c53496911975994fa343}
+\hypertarget{_d_d_t_t_y_logger_8m_a3595120f81edca91ad0106369c8c00a7}{\index{D\-D\-T\-T\-Y\-Logger.\-m@{D\-D\-T\-T\-Y\-Logger.\-m}!X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T@{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T}}
+\index{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T@{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T}!DDTTYLogger.m@{D\-D\-T\-T\-Y\-Logger.\-m}}
+\subsubsection[{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T~{\bf X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-E\-S\-C\-A\-P\-E\-\_\-\-S\-E\-Q} \char`\"{};\char`\"{}}}\label{_d_d_t_t_y_logger_8m_a3595120f81edca91ad0106369c8c00a7}
+\hypertarget{_d_d_t_t_y_logger_8m_abc3f583f0f0a5d2b5cd2bf5a0ce3b47b}{\index{D\-D\-T\-T\-Y\-Logger.\-m@{D\-D\-T\-T\-Y\-Logger.\-m}!X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T\-\_\-\-B\-G@{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T\-\_\-\-B\-G}}
+\index{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T\-\_\-\-B\-G@{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T\-\_\-\-B\-G}!DDTTYLogger.m@{D\-D\-T\-T\-Y\-Logger.\-m}}
+\subsubsection[{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T\-\_\-\-B\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T\-\_\-\-B\-G~{\bf X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-E\-S\-C\-A\-P\-E\-\_\-\-S\-E\-Q} \char`\"{}bg;\char`\"{}}}\label{_d_d_t_t_y_logger_8m_abc3f583f0f0a5d2b5cd2bf5a0ce3b47b}
+\hypertarget{_d_d_t_t_y_logger_8m_a59a3edc4777384ddca70853b35f35364}{\index{D\-D\-T\-T\-Y\-Logger.\-m@{D\-D\-T\-T\-Y\-Logger.\-m}!X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T\-\_\-\-F\-G@{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T\-\_\-\-F\-G}}
+\index{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T\-\_\-\-F\-G@{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T\-\_\-\-F\-G}!DDTTYLogger.m@{D\-D\-T\-T\-Y\-Logger.\-m}}
+\subsubsection[{X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T\-\_\-\-F\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-R\-E\-S\-E\-T\-\_\-\-F\-G~{\bf X\-C\-O\-D\-E\-\_\-\-C\-O\-L\-O\-R\-S\-\_\-\-E\-S\-C\-A\-P\-E\-\_\-\-S\-E\-Q} \char`\"{}fg;\char`\"{}}}\label{_d_d_t_t_y_logger_8m_a59a3edc4777384ddca70853b35f35364}

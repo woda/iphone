@@ -1,0 +1,78 @@
+\hypertarget{interface_context_blacklist_filter_log_formatter}{\section{Context\-Blacklist\-Filter\-Log\-Formatter Class Reference}
+\label{interface_context_blacklist_filter_log_formatter}\index{Context\-Blacklist\-Filter\-Log\-Formatter@{Context\-Blacklist\-Filter\-Log\-Formatter}}
+}
+
+
+{\ttfamily \#import $<$Context\-Filter\-Log\-Formatter.\-h$>$}
+
+Inheritance diagram for Context\-Blacklist\-Filter\-Log\-Formatter\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interface_context_blacklist_filter_log_formatter}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_context_blacklist_filter_log_formatter_a053e7e075cce879287271658010ebdf1}{init}
+\item 
+(void) -\/ \hyperlink{interface_context_blacklist_filter_log_formatter_ae0ff52a0636edf1c84d4298640e17a85}{add\-To\-Blacklist\-:}
+\item 
+(void) -\/ \hyperlink{interface_context_blacklist_filter_log_formatter_aed14ca55dfdaebefa4a46f0c1ce8607d}{remove\-From\-Blacklist\-:}
+\item 
+(N\-S\-Array $\ast$) -\/ \hyperlink{interface_context_blacklist_filter_log_formatter_afeba12ac11f8b3a1323c5ee3569855cf}{blacklist}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_context_blacklist_filter_log_formatter_ac813526d45b6dfab0f0ce597be6c4fdb}{is\-On\-Blacklist\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides a log formatter that filters log statements from a logging context on the blacklist. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_context_blacklist_filter_log_formatter_ae0ff52a0636edf1c84d4298640e17a85}{\index{Context\-Blacklist\-Filter\-Log\-Formatter@{Context\-Blacklist\-Filter\-Log\-Formatter}!add\-To\-Blacklist\-:@{add\-To\-Blacklist\-:}}
+\index{add\-To\-Blacklist\-:@{add\-To\-Blacklist\-:}!ContextBlacklistFilterLogFormatter@{Context\-Blacklist\-Filter\-Log\-Formatter}}
+\subsubsection[{add\-To\-Blacklist\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) add\-To\-Blacklist\-: 
+\begin{DoxyParamCaption}
+\item[{(int)}]{logging\-Context}
+\end{DoxyParamCaption}
+}}\label{interface_context_blacklist_filter_log_formatter_ae0ff52a0636edf1c84d4298640e17a85}
+\hypertarget{interface_context_blacklist_filter_log_formatter_afeba12ac11f8b3a1323c5ee3569855cf}{\index{Context\-Blacklist\-Filter\-Log\-Formatter@{Context\-Blacklist\-Filter\-Log\-Formatter}!blacklist@{blacklist}}
+\index{blacklist@{blacklist}!ContextBlacklistFilterLogFormatter@{Context\-Blacklist\-Filter\-Log\-Formatter}}
+\subsubsection[{blacklist}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Array $\ast$) blacklist 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_context_blacklist_filter_log_formatter_afeba12ac11f8b3a1323c5ee3569855cf}
+\hypertarget{interface_context_blacklist_filter_log_formatter_a053e7e075cce879287271658010ebdf1}{\index{Context\-Blacklist\-Filter\-Log\-Formatter@{Context\-Blacklist\-Filter\-Log\-Formatter}!init@{init}}
+\index{init@{init}!ContextBlacklistFilterLogFormatter@{Context\-Blacklist\-Filter\-Log\-Formatter}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_context_blacklist_filter_log_formatter_a053e7e075cce879287271658010ebdf1}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+\{
+    \hyperlink{interface_logging_context_set}{LoggingContextSet} *contextSet
+\end{DoxyCode}
+\hypertarget{interface_context_blacklist_filter_log_formatter_ac813526d45b6dfab0f0ce597be6c4fdb}{\index{Context\-Blacklist\-Filter\-Log\-Formatter@{Context\-Blacklist\-Filter\-Log\-Formatter}!is\-On\-Blacklist\-:@{is\-On\-Blacklist\-:}}
+\index{is\-On\-Blacklist\-:@{is\-On\-Blacklist\-:}!ContextBlacklistFilterLogFormatter@{Context\-Blacklist\-Filter\-Log\-Formatter}}
+\subsubsection[{is\-On\-Blacklist\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) is\-On\-Blacklist\-: 
+\begin{DoxyParamCaption}
+\item[{(int)}]{logging\-Context}
+\end{DoxyParamCaption}
+}}\label{interface_context_blacklist_filter_log_formatter_ac813526d45b6dfab0f0ce597be6c4fdb}
+\hypertarget{interface_context_blacklist_filter_log_formatter_aed14ca55dfdaebefa4a46f0c1ce8607d}{\index{Context\-Blacklist\-Filter\-Log\-Formatter@{Context\-Blacklist\-Filter\-Log\-Formatter}!remove\-From\-Blacklist\-:@{remove\-From\-Blacklist\-:}}
+\index{remove\-From\-Blacklist\-:@{remove\-From\-Blacklist\-:}!ContextBlacklistFilterLogFormatter@{Context\-Blacklist\-Filter\-Log\-Formatter}}
+\subsubsection[{remove\-From\-Blacklist\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) remove\-From\-Blacklist\-: 
+\begin{DoxyParamCaption}
+\item[{(int)}]{logging\-Context}
+\end{DoxyParamCaption}
+}}\label{interface_context_blacklist_filter_log_formatter_aed14ca55dfdaebefa4a46f0c1ce8607d}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-Lumberjack/\-Extensions/\hyperlink{_context_filter_log_formatter_8h}{Context\-Filter\-Log\-Formatter.\-h}\item 
+Sources/\-Librairies/\-Lumberjack/\-Extensions/\hyperlink{_context_filter_log_formatter_8m}{Context\-Filter\-Log\-Formatter.\-m}\end{DoxyCompactItemize}

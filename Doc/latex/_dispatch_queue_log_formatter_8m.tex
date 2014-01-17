@@ -1,0 +1,41 @@
+\hypertarget{_dispatch_queue_log_formatter_8m}{\section{Sources/\-Librairies/\-Lumberjack/\-Extensions/\-Dispatch\-Queue\-Log\-Formatter.m File Reference}
+\label{_dispatch_queue_log_formatter_8m}\index{Sources/\-Librairies/\-Lumberjack/\-Extensions/\-Dispatch\-Queue\-Log\-Formatter.\-m@{Sources/\-Librairies/\-Lumberjack/\-Extensions/\-Dispatch\-Queue\-Log\-Formatter.\-m}}
+}
+{\ttfamily \#import \char`\"{}Dispatch\-Queue\-Log\-Formatter.\-h\char`\"{}}\\*
+{\ttfamily \#import $<$libkern/\-O\-S\-Atomic.\-h$>$}\\*
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-Date\-Formatter $\ast$ \hyperlink{_dispatch_queue_log_formatter_8m_a1415c57c222df2c2131e6f6d3440aecb}{thread\-Unsafe\-Date\-Formatter}
+\item 
+O\-S\-Spin\-Lock \hyperlink{_dispatch_queue_log_formatter_8m_acda02b2450f7b21940084ed1114d5bb2}{lock}
+\item 
+N\-S\-U\-Integer \hyperlink{_dispatch_queue_log_formatter_8m_a644dd17b889d2f478e332e53adff0b59}{\-\_\-min\-Queue\-Length}
+\item 
+N\-S\-U\-Integer \hyperlink{_dispatch_queue_log_formatter_8m_a19fc18ccd5d3d30808a42150aec9083f}{\-\_\-max\-Queue\-Length}
+\item 
+N\-S\-Mutable\-Dictionary $\ast$ \hyperlink{_dispatch_queue_log_formatter_8m_a8cc8a7ada04ac3f584bbc83de6252120}{\-\_\-replacements}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_dispatch_queue_log_formatter_8m_a19fc18ccd5d3d30808a42150aec9083f}{\index{Dispatch\-Queue\-Log\-Formatter.\-m@{Dispatch\-Queue\-Log\-Formatter.\-m}!\-\_\-max\-Queue\-Length@{\-\_\-max\-Queue\-Length}}
+\index{\-\_\-max\-Queue\-Length@{\-\_\-max\-Queue\-Length}!DispatchQueueLogFormatter.m@{Dispatch\-Queue\-Log\-Formatter.\-m}}
+\subsubsection[{\-\_\-max\-Queue\-Length}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-U\-Integer \-\_\-max\-Queue\-Length}}\label{_dispatch_queue_log_formatter_8m_a19fc18ccd5d3d30808a42150aec9083f}
+\hypertarget{_dispatch_queue_log_formatter_8m_a644dd17b889d2f478e332e53adff0b59}{\index{Dispatch\-Queue\-Log\-Formatter.\-m@{Dispatch\-Queue\-Log\-Formatter.\-m}!\-\_\-min\-Queue\-Length@{\-\_\-min\-Queue\-Length}}
+\index{\-\_\-min\-Queue\-Length@{\-\_\-min\-Queue\-Length}!DispatchQueueLogFormatter.m@{Dispatch\-Queue\-Log\-Formatter.\-m}}
+\subsubsection[{\-\_\-min\-Queue\-Length}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-U\-Integer \-\_\-min\-Queue\-Length}}\label{_dispatch_queue_log_formatter_8m_a644dd17b889d2f478e332e53adff0b59}
+\hypertarget{_dispatch_queue_log_formatter_8m_a8cc8a7ada04ac3f584bbc83de6252120}{\index{Dispatch\-Queue\-Log\-Formatter.\-m@{Dispatch\-Queue\-Log\-Formatter.\-m}!\-\_\-replacements@{\-\_\-replacements}}
+\index{\-\_\-replacements@{\-\_\-replacements}!DispatchQueueLogFormatter.m@{Dispatch\-Queue\-Log\-Formatter.\-m}}
+\subsubsection[{\-\_\-replacements}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-Mutable\-Dictionary$\ast$ \-\_\-replacements}}\label{_dispatch_queue_log_formatter_8m_a8cc8a7ada04ac3f584bbc83de6252120}
+\hypertarget{_dispatch_queue_log_formatter_8m_acda02b2450f7b21940084ed1114d5bb2}{\index{Dispatch\-Queue\-Log\-Formatter.\-m@{Dispatch\-Queue\-Log\-Formatter.\-m}!lock@{lock}}
+\index{lock@{lock}!DispatchQueueLogFormatter.m@{Dispatch\-Queue\-Log\-Formatter.\-m}}
+\subsubsection[{lock}]{\setlength{\rightskip}{0pt plus 5cm}O\-S\-Spin\-Lock lock}}\label{_dispatch_queue_log_formatter_8m_acda02b2450f7b21940084ed1114d5bb2}
+\hypertarget{_dispatch_queue_log_formatter_8m_a1415c57c222df2c2131e6f6d3440aecb}{\index{Dispatch\-Queue\-Log\-Formatter.\-m@{Dispatch\-Queue\-Log\-Formatter.\-m}!thread\-Unsafe\-Date\-Formatter@{thread\-Unsafe\-Date\-Formatter}}
+\index{thread\-Unsafe\-Date\-Formatter@{thread\-Unsafe\-Date\-Formatter}!DispatchQueueLogFormatter.m@{Dispatch\-Queue\-Log\-Formatter.\-m}}
+\subsubsection[{thread\-Unsafe\-Date\-Formatter}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-Date\-Formatter$\ast$ thread\-Unsafe\-Date\-Formatter}}\label{_dispatch_queue_log_formatter_8m_a1415c57c222df2c2131e6f6d3440aecb}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+\{
+    int32\_t atomicLoggerCount
+\end{DoxyCode}

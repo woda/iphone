@@ -1,0 +1,69 @@
+\hypertarget{interface_d_d_log_file_manager_default}{\section{D\-D\-Log\-File\-Manager\-Default Class Reference}
+\label{interface_d_d_log_file_manager_default}\index{D\-D\-Log\-File\-Manager\-Default@{D\-D\-Log\-File\-Manager\-Default}}
+}
+
+
+{\ttfamily \#import $<$D\-D\-File\-Logger.\-h$>$}
+
+Inheritance diagram for D\-D\-Log\-File\-Manager\-Default\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interface_d_d_log_file_manager_default}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_d_d_log_file_manager_default_a3d1dec2c2cab0555358b61ad98f242cd}{init}
+\item 
+(id) -\/ \hyperlink{interface_d_d_log_file_manager_default_a13d56f581bf9f4e5ea6be817d6ff3207}{init\-With\-Logs\-Directory\-:}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-U\-Integer \hyperlink{interface_d_d_log_file_manager_default_a20e06e53bf40c6cc13d6d1222e9cf2a5}{maximum\-Number\-Of\-Log\-Files}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_d_d_log_file_manager_default_a02af3a62b8a34280166f8f8612327c03}{\-\_\-logs\-Directory}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Default log file manager.
+
+All log files are placed inside the logs\-Directory. If a specific logs\-Directory isn't specified, the default directory is used. On Mac, this is in $\sim$/\-Library/\-Logs/$<$\-Application name$>$=\char`\"{}\char`\"{}$>$. On i\-Phone, this is in $\sim$/\-Library/\-Caches/\-Logs.
+
+Log files are named \char`\"{}log-\/$<$uuid$>$.\-txt\char`\"{}, where uuid is a 6 character hexadecimal consisting of the set \mbox{[}0123456789\-A\-B\-C\-D\-E\-F\mbox{]}.
+
+Archived log files are automatically deleted according to the maximum\-Number\-Of\-Log\-Files property. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_d_d_log_file_manager_default_a3d1dec2c2cab0555358b61ad98f242cd}{\index{D\-D\-Log\-File\-Manager\-Default@{D\-D\-Log\-File\-Manager\-Default}!init@{init}}
+\index{init@{init}!DDLogFileManagerDefault@{D\-D\-Log\-File\-Manager\-Default}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_file_manager_default_a3d1dec2c2cab0555358b61ad98f242cd}
+\hypertarget{interface_d_d_log_file_manager_default_a13d56f581bf9f4e5ea6be817d6ff3207}{\index{D\-D\-Log\-File\-Manager\-Default@{D\-D\-Log\-File\-Manager\-Default}!init\-With\-Logs\-Directory\-:@{init\-With\-Logs\-Directory\-:}}
+\index{init\-With\-Logs\-Directory\-:@{init\-With\-Logs\-Directory\-:}!DDLogFileManagerDefault@{D\-D\-Log\-File\-Manager\-Default}}
+\subsubsection[{init\-With\-Logs\-Directory\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init\-With\-Logs\-Directory\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{logs\-Directory}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_file_manager_default_a13d56f581bf9f4e5ea6be817d6ff3207}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_d_d_log_file_manager_default_a02af3a62b8a34280166f8f8612327c03}{\index{D\-D\-Log\-File\-Manager\-Default@{D\-D\-Log\-File\-Manager\-Default}!\-\_\-logs\-Directory@{\-\_\-logs\-Directory}}
+\index{\-\_\-logs\-Directory@{\-\_\-logs\-Directory}!DDLogFileManagerDefault@{D\-D\-Log\-File\-Manager\-Default}}
+\subsubsection[{\-\_\-logs\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) \-\_\-logs\-Directory\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_log_file_manager_default_a02af3a62b8a34280166f8f8612327c03}
+\hypertarget{interface_d_d_log_file_manager_default_a20e06e53bf40c6cc13d6d1222e9cf2a5}{\index{D\-D\-Log\-File\-Manager\-Default@{D\-D\-Log\-File\-Manager\-Default}!maximum\-Number\-Of\-Log\-Files@{maximum\-Number\-Of\-Log\-Files}}
+\index{maximum\-Number\-Of\-Log\-Files@{maximum\-Number\-Of\-Log\-Files}!DDLogFileManagerDefault@{D\-D\-Log\-File\-Manager\-Default}}
+\subsubsection[{maximum\-Number\-Of\-Log\-Files}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-Integer) maximum\-Number\-Of\-Log\-Files\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_log_file_manager_default_a20e06e53bf40c6cc13d6d1222e9cf2a5}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_file_logger_8h}{D\-D\-File\-Logger.\-h}\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_file_logger_8m}{D\-D\-File\-Logger.\-m}\end{DoxyCompactItemize}

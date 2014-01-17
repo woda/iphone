@@ -1,0 +1,46 @@
+\hypertarget{_d_d_log_8m}{\section{Sources/\-Librairies/\-Lumberjack/\-D\-D\-Log.m File Reference}
+\label{_d_d_log_8m}\index{Sources/\-Librairies/\-Lumberjack/\-D\-D\-Log.\-m@{Sources/\-Librairies/\-Lumberjack/\-D\-D\-Log.\-m}}
+}
+{\ttfamily \#import \char`\"{}D\-D\-Log.\-h\char`\"{}}\\*
+{\ttfamily \#import $<$pthread.\-h$>$}\\*
+{\ttfamily \#import $<$objc/runtime.\-h$>$}\\*
+{\ttfamily \#import $<$mach/mach\-\_\-host.\-h$>$}\\*
+{\ttfamily \#import $<$mach/host\-\_\-info.\-h$>$}\\*
+{\ttfamily \#import $<$libkern/\-O\-S\-Atomic.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{interface_d_d_logger_node}{D\-D\-Logger\-Node}
+\item 
+category \hyperlink{category_d_d_log_07_private_a_p_i_08}{D\-D\-Log(\-Private\-A\-P\-I)}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_d_d_log_8m_a0816a07c4b11f01e50bd3fdacefacbd8}{D\-D\-\_\-\-D\-E\-B\-U\-G}~N\-O
+\item 
+\#define \hyperlink{_d_d_log_8m_a9075baab4954529d8c9284d46041d77b}{N\-S\-Log\-Debug}(frmt,...)~do\{ if(\hyperlink{_d_d_log_8m_a0816a07c4b11f01e50bd3fdacefacbd8}{D\-D\-\_\-\-D\-E\-B\-U\-G}) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)
+\item 
+\#define \hyperlink{_d_d_log_8m_af741b1d380f3c0db0318a23c99ef4792}{L\-O\-G\-\_\-\-M\-A\-X\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-S\-I\-Z\-E}~1000
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_d_d_log_8m_a0816a07c4b11f01e50bd3fdacefacbd8}{\index{D\-D\-Log.\-m@{D\-D\-Log.\-m}!D\-D\-\_\-\-D\-E\-B\-U\-G@{D\-D\-\_\-\-D\-E\-B\-U\-G}}
+\index{D\-D\-\_\-\-D\-E\-B\-U\-G@{D\-D\-\_\-\-D\-E\-B\-U\-G}!DDLog.m@{D\-D\-Log.\-m}}
+\subsubsection[{D\-D\-\_\-\-D\-E\-B\-U\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-D\-\_\-\-D\-E\-B\-U\-G~N\-O}}\label{_d_d_log_8m_a0816a07c4b11f01e50bd3fdacefacbd8}
+Welcome to Cocoa Lumberjack!
+
+The project page has a wealth of documentation if you have any questions. \href{https://github.com/robbiehanson/CocoaLumberjack}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack}
+
+If you're new to the project you may wish to read the \char`\"{}\-Getting Started\char`\"{} wiki. \href{https://github.com/robbiehanson/CocoaLumberjack/wiki/GettingStarted}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack/wiki/\-Getting\-Started} \hypertarget{_d_d_log_8m_af741b1d380f3c0db0318a23c99ef4792}{\index{D\-D\-Log.\-m@{D\-D\-Log.\-m}!L\-O\-G\-\_\-\-M\-A\-X\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-S\-I\-Z\-E@{L\-O\-G\-\_\-\-M\-A\-X\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-S\-I\-Z\-E}}
+\index{L\-O\-G\-\_\-\-M\-A\-X\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-S\-I\-Z\-E@{L\-O\-G\-\_\-\-M\-A\-X\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-S\-I\-Z\-E}!DDLog.m@{D\-D\-Log.\-m}}
+\subsubsection[{L\-O\-G\-\_\-\-M\-A\-X\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-G\-\_\-\-M\-A\-X\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-S\-I\-Z\-E~1000}}\label{_d_d_log_8m_af741b1d380f3c0db0318a23c99ef4792}
+\hypertarget{_d_d_log_8m_a9075baab4954529d8c9284d46041d77b}{\index{D\-D\-Log.\-m@{D\-D\-Log.\-m}!N\-S\-Log\-Debug@{N\-S\-Log\-Debug}}
+\index{N\-S\-Log\-Debug@{N\-S\-Log\-Debug}!DDLog.m@{D\-D\-Log.\-m}}
+\subsubsection[{N\-S\-Log\-Debug}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-S\-Log\-Debug(
+\begin{DoxyParamCaption}
+\item[{}]{frmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~do\{ if({\bf D\-D\-\_\-\-D\-E\-B\-U\-G}) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)}}\label{_d_d_log_8m_a9075baab4954529d8c9284d46041d77b}

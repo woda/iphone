@@ -1,0 +1,59 @@
+\hypertarget{interface_d_d_log_file_formatter_default}{\section{D\-D\-Log\-File\-Formatter\-Default Class Reference}
+\label{interface_d_d_log_file_formatter_default}\index{D\-D\-Log\-File\-Formatter\-Default@{D\-D\-Log\-File\-Formatter\-Default}}
+}
+
+
+{\ttfamily \#import $<$D\-D\-File\-Logger.\-h$>$}
+
+Inheritance diagram for D\-D\-Log\-File\-Formatter\-Default\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interface_d_d_log_file_formatter_default}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_d_d_log_file_formatter_default_a7c6499a3fe60c156eac7eef2ca8a4161}{init}
+\item 
+(id) -\/ \hyperlink{interface_d_d_log_file_formatter_default_ab0c50b53471b69fcb9fd18e0fedd6e03}{init\-With\-Date\-Formatter\-:}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-Date\-Formatter $\ast$ \hyperlink{interface_d_d_log_file_formatter_default_a12d1a9a76e3f2b760ea82359664315ac}{date\-Formatter}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Most users will want file log messages to be prepended with the date and time. Rather than forcing the majority of users to write their own formatter, we will supply a logical default formatter. Users can easily replace this formatter with their own by invoking the set\-Log\-Formatter method. It can also be removed by calling set\-Log\-Formatter, and passing a nil parameter.
+
+In addition to the convenience of having a logical default formatter, it will also provide a template that makes it easy for developers to copy and change. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_d_d_log_file_formatter_default_a7c6499a3fe60c156eac7eef2ca8a4161}{\index{D\-D\-Log\-File\-Formatter\-Default@{D\-D\-Log\-File\-Formatter\-Default}!init@{init}}
+\index{init@{init}!DDLogFileFormatterDefault@{D\-D\-Log\-File\-Formatter\-Default}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_file_formatter_default_a7c6499a3fe60c156eac7eef2ca8a4161}
+\hypertarget{interface_d_d_log_file_formatter_default_ab0c50b53471b69fcb9fd18e0fedd6e03}{\index{D\-D\-Log\-File\-Formatter\-Default@{D\-D\-Log\-File\-Formatter\-Default}!init\-With\-Date\-Formatter\-:@{init\-With\-Date\-Formatter\-:}}
+\index{init\-With\-Date\-Formatter\-:@{init\-With\-Date\-Formatter\-:}!DDLogFileFormatterDefault@{D\-D\-Log\-File\-Formatter\-Default}}
+\subsubsection[{init\-With\-Date\-Formatter\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init\-With\-Date\-Formatter\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Date\-Formatter $\ast$)}]{date\-Formatter}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_file_formatter_default_ab0c50b53471b69fcb9fd18e0fedd6e03}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_d_d_log_file_formatter_default_a12d1a9a76e3f2b760ea82359664315ac}{\index{D\-D\-Log\-File\-Formatter\-Default@{D\-D\-Log\-File\-Formatter\-Default}!date\-Formatter@{date\-Formatter}}
+\index{date\-Formatter@{date\-Formatter}!DDLogFileFormatterDefault@{D\-D\-Log\-File\-Formatter\-Default}}
+\subsubsection[{date\-Formatter}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Date\-Formatter$\ast$) date\-Formatter\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_log_file_formatter_default_a12d1a9a76e3f2b760ea82359664315ac}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_file_logger_8h}{D\-D\-File\-Logger.\-h}\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_file_logger_8m}{D\-D\-File\-Logger.\-m}\end{DoxyCompactItemize}

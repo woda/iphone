@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['recentcell',['recentCell',['../interface_w_home_view_controller.html#a12010a5f8c1e84ba4e7deb373cb32901',1,'WHomeViewController']]],
-  ['recentdetailslabel',['recentDetailsLabel',['../interface_w_home_view_controller.html#a65480f491be3be8166019965ceb5535e',1,'WHomeViewController']]],
-  ['recentlabel',['recentLabel',['../interface_w_home_view_controller.html#a77429b9c1a0fa9168c6f4b751ac0deb9',1,'WHomeViewController']]],
+  ['rateappcell',['rateAppCell',['../interface_w_setting_view_controller.html#a63bceb12432b0d8a0ec896170c70a435',1,'WSettingViewController']]],
+  ['ratingalert',['ratingAlert',['../interface_appirater.html#ac3fe15a27afea8fe203cfd7f9f66d686',1,'Appirater']]],
+  ['recentscell',['recentsCell',['../interface_w_home_view_controller.html#aa8715f8c6818e69456234a0e6c286eb7',1,'WHomeViewController']]],
   ['redirectresponse',['redirectResponse',['../category_a_f_u_r_l_connection_operation_07_08.html#a91653021425e07347c28dc02dc650082',1,'AFURLConnectionOperation()']]],
+  ['refreshdate',['refreshDate',['../category_w_list_view_controller_07_08.html#aa382c12c1fa2dc0210c6937ec05648dd',1,'WListViewController()']]],
   ['registeredhttpoperationclassnames',['registeredHTTPOperationClassNames',['../category_a_f_h_t_t_p_client_07_08.html#afa70d79a30e43329c545f47f508e6bf6',1,'AFHTTPClient()']]],
   ['request',['request',['../category_a_f_streaming_multipart_form_data_07_08.html#a2d0be87dd88432deeb33e4dfea850e48',1,'AFStreamingMultipartFormData()::request()'],['../category_a_f_h_t_t_p_request_operation_07_08.html#a811d831afaf93bd84be93c2b87d82cbf',1,'AFHTTPRequestOperation()::request()'],['../interface_a_f_u_r_l_connection_operation.html#a5c453587e9d26f9e3ce3ac1e3c294d61',1,'AFURLConnectionOperation::request()'],['../category_a_f_u_r_l_connection_operation_07_08.html#a8ca07904883feeb654514635c90e8c90',1,'AFURLConnectionOperation()::request()']]],
   ['response',['response',['../interface_a_f_h_t_t_p_request_operation.html#a7a6e0248cffbdfa767d79e864fc1e730',1,'AFHTTPRequestOperation::response()'],['../category_a_f_h_t_t_p_request_operation_07_08.html#a5ad5b807b287afadadefdbec24456ee5',1,'AFHTTPRequestOperation()::response()'],['../interface_a_f_u_r_l_connection_operation.html#ac7d24cbe5ff6720b0d5f330c840cb434',1,'AFURLConnectionOperation::response()'],['../category_a_f_u_r_l_connection_operation_07_08.html#a30c553a8c76e1a6b76dd50046bb4ca4d',1,'AFURLConnectionOperation()::response()']]],
@@ -13,5 +14,6 @@ var searchData=
   ['responsestring',['responseString',['../interface_a_f_u_r_l_connection_operation.html#a152e08b127469e9528f48ff18cb8f383',1,'AFURLConnectionOperation::responseString()'],['../category_a_f_u_r_l_connection_operation_07_08.html#ae6f761b07b09eaeca5d0ef158b494e7e',1,'AFURLConnectionOperation()::responseString()']]],
   ['responsestringencoding',['responseStringEncoding',['../interface_a_f_u_r_l_connection_operation.html#a341868219e52e8f1a2a39f012ee6d6a4',1,'AFURLConnectionOperation::responseStringEncoding()'],['../category_a_f_u_r_l_connection_operation_07_08.html#a4fd7b6c934c563e034e45d34ad77b7c4',1,'AFURLConnectionOperation()::responseStringEncoding()']]],
   ['responsexmlparser',['responseXMLParser',['../interface_a_f_x_m_l_request_operation.html#ac30bf93cf79e7859bd62e480f320af55',1,'AFXMLRequestOperation::responseXMLParser()'],['../category_a_f_x_m_l_request_operation_07_08.html#ab74b1a873fc6d5b3c4f6437a6783d9f6',1,'AFXMLRequestOperation()::responseXMLParser()']]],
+  ['rollingfrequency',['rollingFrequency',['../interface_d_d_file_logger.html#a67cba816078da08aad69f0728b6ea3f9',1,'DDFileLogger']]],
   ['runloopmodes',['runLoopModes',['../interface_a_f_u_r_l_connection_operation.html#ac8a33d7fdd6314e92600318a79d60193',1,'AFURLConnectionOperation']]]
 ];

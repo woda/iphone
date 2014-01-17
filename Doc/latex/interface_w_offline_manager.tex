@@ -1,0 +1,111 @@
+\hypertarget{interface_w_offline_manager}{\section{W\-Offline\-Manager Class Reference}
+\label{interface_w_offline_manager}\index{W\-Offline\-Manager@{W\-Offline\-Manager}}
+}
+
+
+{\ttfamily \#import $<$W\-Offline\-Manager.\-h$>$}
+
+Inheritance diagram for W\-Offline\-Manager\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_w_offline_manager}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_w_offline_manager_ac037f9e5f784ba72b6e3e85cbdcf0f56}{save\-File\-:with\-Info\-:offline\-:}
+\item 
+(void) -\/ \hyperlink{interface_w_offline_manager_a9681c1c8b70f002f544f7a1acf72a3fb}{remove\-File\-For\-Id\-:}
+\item 
+(N\-S\-Dictionary $\ast$) -\/ \hyperlink{interface_w_offline_manager_ae19a74e09536de647f30c3899d259942}{offline\-Files}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_w_offline_manager}{W\-Offline\-Manager} $\ast$) + \hyperlink{interface_w_offline_manager_aea407c39d43f5a2a9429b715cf8dc36c}{shared}
+\item 
+(N\-S\-Data $\ast$) + \hyperlink{interface_w_offline_manager_a2e524e162ac1ca3b3808cb1c35db72cf}{file\-For\-Id\-:}
+\item 
+(N\-S\-U\-R\-L $\ast$) + \hyperlink{interface_w_offline_manager_a0a79cf5ec6a6c68c2ae568c659364c1c}{file\-U\-R\-L\-For\-Id\-:}
+\item 
+(N\-S\-String $\ast$) + \hyperlink{interface_w_offline_manager_a0448088aa44d7ce595d5da5b60de4adf}{file\-Path\-For\-Id\-:}
+\item 
+(void) + \hyperlink{interface_w_offline_manager_ae102ccd2cffe01fe1ada42bf74799f29}{clear\-Temporary\-Files}
+\item 
+(void) + \hyperlink{interface_w_offline_manager_a229eb4c284da7f8c57a03ec2261f6f6c}{clear\-All\-Files}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_w_offline_manager_a229eb4c284da7f8c57a03ec2261f6f6c}{\index{W\-Offline\-Manager@{W\-Offline\-Manager}!clear\-All\-Files@{clear\-All\-Files}}
+\index{clear\-All\-Files@{clear\-All\-Files}!WOfflineManager@{W\-Offline\-Manager}}
+\subsubsection[{clear\-All\-Files}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) clear\-All\-Files 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_w_offline_manager_a229eb4c284da7f8c57a03ec2261f6f6c}
+\hypertarget{interface_w_offline_manager_ae102ccd2cffe01fe1ada42bf74799f29}{\index{W\-Offline\-Manager@{W\-Offline\-Manager}!clear\-Temporary\-Files@{clear\-Temporary\-Files}}
+\index{clear\-Temporary\-Files@{clear\-Temporary\-Files}!WOfflineManager@{W\-Offline\-Manager}}
+\subsubsection[{clear\-Temporary\-Files}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) clear\-Temporary\-Files 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_w_offline_manager_ae102ccd2cffe01fe1ada42bf74799f29}
+\hypertarget{interface_w_offline_manager_a2e524e162ac1ca3b3808cb1c35db72cf}{\index{W\-Offline\-Manager@{W\-Offline\-Manager}!file\-For\-Id\-:@{file\-For\-Id\-:}}
+\index{file\-For\-Id\-:@{file\-For\-Id\-:}!WOfflineManager@{W\-Offline\-Manager}}
+\subsubsection[{file\-For\-Id\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-Data $\ast$) file\-For\-Id\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Number $\ast$)}]{id\-Number}
+\end{DoxyParamCaption}
+}}\label{interface_w_offline_manager_a2e524e162ac1ca3b3808cb1c35db72cf}
+\hypertarget{interface_w_offline_manager_a0448088aa44d7ce595d5da5b60de4adf}{\index{W\-Offline\-Manager@{W\-Offline\-Manager}!file\-Path\-For\-Id\-:@{file\-Path\-For\-Id\-:}}
+\index{file\-Path\-For\-Id\-:@{file\-Path\-For\-Id\-:}!WOfflineManager@{W\-Offline\-Manager}}
+\subsubsection[{file\-Path\-For\-Id\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-String $\ast$) file\-Path\-For\-Id\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Number $\ast$)}]{id\-Number}
+\end{DoxyParamCaption}
+}}\label{interface_w_offline_manager_a0448088aa44d7ce595d5da5b60de4adf}
+\hypertarget{interface_w_offline_manager_a0a79cf5ec6a6c68c2ae568c659364c1c}{\index{W\-Offline\-Manager@{W\-Offline\-Manager}!file\-U\-R\-L\-For\-Id\-:@{file\-U\-R\-L\-For\-Id\-:}}
+\index{file\-U\-R\-L\-For\-Id\-:@{file\-U\-R\-L\-For\-Id\-:}!WOfflineManager@{W\-Offline\-Manager}}
+\subsubsection[{file\-U\-R\-L\-For\-Id\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-U\-R\-L $\ast$) file\-U\-R\-L\-For\-Id\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Number $\ast$)}]{id\-Number}
+\end{DoxyParamCaption}
+}}\label{interface_w_offline_manager_a0a79cf5ec6a6c68c2ae568c659364c1c}
+\hypertarget{interface_w_offline_manager_ae19a74e09536de647f30c3899d259942}{\index{W\-Offline\-Manager@{W\-Offline\-Manager}!offline\-Files@{offline\-Files}}
+\index{offline\-Files@{offline\-Files}!WOfflineManager@{W\-Offline\-Manager}}
+\subsubsection[{offline\-Files}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Dictionary $\ast$) offline\-Files 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_w_offline_manager_ae19a74e09536de647f30c3899d259942}
+\hypertarget{interface_w_offline_manager_a9681c1c8b70f002f544f7a1acf72a3fb}{\index{W\-Offline\-Manager@{W\-Offline\-Manager}!remove\-File\-For\-Id\-:@{remove\-File\-For\-Id\-:}}
+\index{remove\-File\-For\-Id\-:@{remove\-File\-For\-Id\-:}!WOfflineManager@{W\-Offline\-Manager}}
+\subsubsection[{remove\-File\-For\-Id\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) remove\-File\-For\-Id\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Number $\ast$)}]{id\-Number}
+\end{DoxyParamCaption}
+}}\label{interface_w_offline_manager_a9681c1c8b70f002f544f7a1acf72a3fb}
+\hypertarget{interface_w_offline_manager_ac037f9e5f784ba72b6e3e85cbdcf0f56}{\index{W\-Offline\-Manager@{W\-Offline\-Manager}!save\-File\-:with\-Info\-:offline\-:@{save\-File\-:with\-Info\-:offline\-:}}
+\index{save\-File\-:with\-Info\-:offline\-:@{save\-File\-:with\-Info\-:offline\-:}!WOfflineManager@{W\-Offline\-Manager}}
+\subsubsection[{save\-File\-:with\-Info\-:offline\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) save\-File\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Data $\ast$)}]{data}
+\item[{withInfo:(N\-S\-Dictionary $\ast$)}]{info}
+\item[{offline:(Boolean)}]{offline}
+\end{DoxyParamCaption}
+}}\label{interface_w_offline_manager_ac037f9e5f784ba72b6e3e85cbdcf0f56}
+\hypertarget{interface_w_offline_manager_aea407c39d43f5a2a9429b715cf8dc36c}{\index{W\-Offline\-Manager@{W\-Offline\-Manager}!shared@{shared}}
+\index{shared@{shared}!WOfflineManager@{W\-Offline\-Manager}}
+\subsubsection[{shared}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf W\-Offline\-Manager} $\ast$) shared 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_w_offline_manager_aea407c39d43f5a2a9429b715cf8dc36c}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Models/\hyperlink{_w_offline_manager_8h}{W\-Offline\-Manager.\-h}\item 
+Sources/\-Models/\hyperlink{_w_offline_manager_8m}{W\-Offline\-Manager.\-m}\end{DoxyCompactItemize}

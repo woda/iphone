@@ -2,9 +2,18 @@ var searchData=
 [
   ['passcheckpoint_3a',['passCheckpoint:',['../interface_test_flight.html#aa28c2468cdd8d8ba3a1f363f98bd292f',1,'TestFlight']]],
   ['patchpath_3aparameters_3asuccess_3afailure_3a',['patchPath:parameters:success:failure:',['../interface_a_f_h_t_t_p_client.html#ab2ef370382a47e4072d81ca937bec469',1,'AFHTTPClient']]],
+  ['path',['path',['../protocol_w_upload_manager_picker_delegate-p.html#a9202055fdb4b2a43f66e2f5d0af2c260',1,'WUploadManagerPickerDelegate-p']]],
+  ['pathwithparams_3a',['pathWithParams:',['../category_n_s_string_07_path_08.html#a18f718bad6d565903f8081e40d04aad6',1,'NSString(Path)']]],
   ['pause',['pause',['../interface_a_f_u_r_l_connection_operation.html#a7f895d00bdf837f67b959a3bf1bc37a2',1,'AFURLConnectionOperation']]],
+  ['performblock_3aafterdelay_3a',['performBlock:afterDelay:',['../category_n_s_object_07_blocks_08.html#aff0a899470340e12f626c205d85d11c9',1,'NSObject(Blocks)']]],
+  ['performblockinbackground_3a',['performBlockInBackground:',['../category_n_s_object_07_blocks_08.html#a030f996afd41a13394b947ef13ae678c',1,'NSObject(Blocks)']]],
   ['persistentstorecoordinator',['persistentStoreCoordinator',['../protocol_core_data_application_delegate-p.html#a493a7f1a00497bb2ee69a60aed922774',1,'CoreDataApplicationDelegate-p']]],
+  ['post_3aparameters_3asuccess_3afailure_3a',['POST:parameters:success:failure:',['../interface_w_request.html#a17144a2f1f9ba4b2e763a2a0b936073b',1,'WRequest']]],
   ['postpath_3aparameters_3asuccess_3afailure_3a',['postPath:parameters:success:failure:',['../interface_a_f_h_t_t_p_client.html#ab36149260e547f38ef32d21bdd39d18f',1,'AFHTTPClient']]],
+  ['presentpickerincontroller_3a',['presentPickerInController:',['../category_w_upload_manager_07_picker_08.html#ae67580af774da79b22b251d2cc59c6bf',1,'WUploadManager(Picker)::presentPickerInController:()'],['../interface_w_upload_manager.html#ae67580af774da79b22b251d2cc59c6bf',1,'WUploadManager::presentPickerInController:()']]],
   ['propertylistrequestoperationwithrequest_3asuccess_3afailure_3a',['propertyListRequestOperationWithRequest:success:failure:',['../interface_a_f_property_list_request_operation.html#adf02eda1ebd291a389010c3792e23d7f',1,'AFPropertyListRequestOperation']]],
+  ['put_3aparameters_3asuccess_3afailure_3a',['PUT:parameters:success:failure:',['../interface_w_request.html#ada215e2e04baf0486b7e8032f3d9e4c2',1,'WRequest']]],
+  ['putfileinfavorites_3a',['putFileInFavorites:',['../interface_w_file_cell.html#a2c052a47b16099f9d5c27f830e47fb01',1,'WFileCell']]],
+  ['putinpublicfiles_3a',['putInPublicFiles:',['../interface_w_file_cell.html#a25665ea226b5cf9c7f0ed7c68cd5d67c',1,'WFileCell']]],
   ['putpath_3aparameters_3asuccess_3afailure_3a',['putPath:parameters:success:failure:',['../interface_a_f_h_t_t_p_client.html#a1e9b528834603c0113b090f222906674',1,'AFHTTPClient']]]
 ];

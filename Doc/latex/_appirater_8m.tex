@@ -1,0 +1,57 @@
+\hypertarget{_appirater_8m}{\section{Sources/\-Librairies/appirater/\-Appirater.m File Reference}
+\label{_appirater_8m}\index{Sources/\-Librairies/appirater/\-Appirater.\-m@{Sources/\-Librairies/appirater/\-Appirater.\-m}}
+}
+{\ttfamily \#import \char`\"{}Appirater.\-h\char`\"{}}\\*
+{\ttfamily \#import $<$System\-Configuration/\-S\-C\-Network\-Reachability.\-h$>$}\\*
+{\ttfamily \#include $<$netinet/in.\-h$>$}\\*
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-String $\ast$const \hyperlink{_appirater_8m_aec73ba77b493b5c9ce371a5d831bfc41}{k\-Appirater\-First\-Use\-Date} = @\char`\"{}k\-Appirater\-First\-Use\-Date\char`\"{}
+\item 
+N\-S\-String $\ast$const \hyperlink{_appirater_8m_a2608240427b6f2d51adf09d34265eeeb}{k\-Appirater\-Use\-Count} = @\char`\"{}k\-Appirater\-Use\-Count\char`\"{}
+\item 
+N\-S\-String $\ast$const \hyperlink{_appirater_8m_a808c153ada0d58bc4df8c86ca913a28e}{k\-Appirater\-Significant\-Event\-Count} = @\char`\"{}k\-Appirater\-Significant\-Event\-Count\char`\"{}
+\item 
+N\-S\-String $\ast$const \hyperlink{_appirater_8m_a3c064e965c53680b694410f9f504171e}{k\-Appirater\-Current\-Version} = @\char`\"{}k\-Appirater\-Current\-Version\char`\"{}
+\item 
+N\-S\-String $\ast$const \hyperlink{_appirater_8m_adc8ae75faa525a1306df33aa5e746f93}{k\-Appirater\-Rated\-Current\-Version} = @\char`\"{}k\-Appirater\-Rated\-Current\-Version\char`\"{}
+\item 
+N\-S\-String $\ast$const \hyperlink{_appirater_8m_a4623be656a19ab709770706477c2cdac}{k\-Appirater\-Declined\-To\-Rate} = @\char`\"{}k\-Appirater\-Declined\-To\-Rate\char`\"{}
+\item 
+N\-S\-String $\ast$const \hyperlink{_appirater_8m_ae189202f67418967fed759bfe399fe28}{k\-Appirater\-Reminder\-Request\-Date} = @\char`\"{}k\-Appirater\-Reminder\-Request\-Date\char`\"{}
+\item 
+N\-S\-String $\ast$ \hyperlink{_appirater_8m_a78effdd05c1b39d106ac493e17893618}{template\-Review\-U\-R\-L} = @\char`\"{}itms-\/apps\-://ax.\-itunes.\-apple.\-com/Web\-Objects/M\-Z\-Store.\-woa/wa/view\-Contents\-User\-Reviews?type=Purple+Software\&id=A\-P\-P\-\_\-\-I\-D\char`\"{}
+\item 
+N\-S\-String $\ast$ \hyperlink{_appirater_8m_a045e7778ec6ad0df46d1f03a22e07a0f}{template\-Review\-U\-R\-Li\-O\-S7} = @\char`\"{}itms-\/apps\-://itunes.\-apple.\-com/app/id\-A\-P\-P\-\_\-\-I\-D\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_appirater_8m_a3c064e965c53680b694410f9f504171e}{\index{Appirater.\-m@{Appirater.\-m}!k\-Appirater\-Current\-Version@{k\-Appirater\-Current\-Version}}
+\index{k\-Appirater\-Current\-Version@{k\-Appirater\-Current\-Version}!Appirater.m@{Appirater.\-m}}
+\subsubsection[{k\-Appirater\-Current\-Version}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const k\-Appirater\-Current\-Version = @\char`\"{}k\-Appirater\-Current\-Version\char`\"{}}}\label{_appirater_8m_a3c064e965c53680b694410f9f504171e}
+\hypertarget{_appirater_8m_a4623be656a19ab709770706477c2cdac}{\index{Appirater.\-m@{Appirater.\-m}!k\-Appirater\-Declined\-To\-Rate@{k\-Appirater\-Declined\-To\-Rate}}
+\index{k\-Appirater\-Declined\-To\-Rate@{k\-Appirater\-Declined\-To\-Rate}!Appirater.m@{Appirater.\-m}}
+\subsubsection[{k\-Appirater\-Declined\-To\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const k\-Appirater\-Declined\-To\-Rate = @\char`\"{}k\-Appirater\-Declined\-To\-Rate\char`\"{}}}\label{_appirater_8m_a4623be656a19ab709770706477c2cdac}
+\hypertarget{_appirater_8m_aec73ba77b493b5c9ce371a5d831bfc41}{\index{Appirater.\-m@{Appirater.\-m}!k\-Appirater\-First\-Use\-Date@{k\-Appirater\-First\-Use\-Date}}
+\index{k\-Appirater\-First\-Use\-Date@{k\-Appirater\-First\-Use\-Date}!Appirater.m@{Appirater.\-m}}
+\subsubsection[{k\-Appirater\-First\-Use\-Date}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const k\-Appirater\-First\-Use\-Date = @\char`\"{}k\-Appirater\-First\-Use\-Date\char`\"{}}}\label{_appirater_8m_aec73ba77b493b5c9ce371a5d831bfc41}
+\hypertarget{_appirater_8m_adc8ae75faa525a1306df33aa5e746f93}{\index{Appirater.\-m@{Appirater.\-m}!k\-Appirater\-Rated\-Current\-Version@{k\-Appirater\-Rated\-Current\-Version}}
+\index{k\-Appirater\-Rated\-Current\-Version@{k\-Appirater\-Rated\-Current\-Version}!Appirater.m@{Appirater.\-m}}
+\subsubsection[{k\-Appirater\-Rated\-Current\-Version}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const k\-Appirater\-Rated\-Current\-Version = @\char`\"{}k\-Appirater\-Rated\-Current\-Version\char`\"{}}}\label{_appirater_8m_adc8ae75faa525a1306df33aa5e746f93}
+\hypertarget{_appirater_8m_ae189202f67418967fed759bfe399fe28}{\index{Appirater.\-m@{Appirater.\-m}!k\-Appirater\-Reminder\-Request\-Date@{k\-Appirater\-Reminder\-Request\-Date}}
+\index{k\-Appirater\-Reminder\-Request\-Date@{k\-Appirater\-Reminder\-Request\-Date}!Appirater.m@{Appirater.\-m}}
+\subsubsection[{k\-Appirater\-Reminder\-Request\-Date}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const k\-Appirater\-Reminder\-Request\-Date = @\char`\"{}k\-Appirater\-Reminder\-Request\-Date\char`\"{}}}\label{_appirater_8m_ae189202f67418967fed759bfe399fe28}
+\hypertarget{_appirater_8m_a808c153ada0d58bc4df8c86ca913a28e}{\index{Appirater.\-m@{Appirater.\-m}!k\-Appirater\-Significant\-Event\-Count@{k\-Appirater\-Significant\-Event\-Count}}
+\index{k\-Appirater\-Significant\-Event\-Count@{k\-Appirater\-Significant\-Event\-Count}!Appirater.m@{Appirater.\-m}}
+\subsubsection[{k\-Appirater\-Significant\-Event\-Count}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const k\-Appirater\-Significant\-Event\-Count = @\char`\"{}k\-Appirater\-Significant\-Event\-Count\char`\"{}}}\label{_appirater_8m_a808c153ada0d58bc4df8c86ca913a28e}
+\hypertarget{_appirater_8m_a2608240427b6f2d51adf09d34265eeeb}{\index{Appirater.\-m@{Appirater.\-m}!k\-Appirater\-Use\-Count@{k\-Appirater\-Use\-Count}}
+\index{k\-Appirater\-Use\-Count@{k\-Appirater\-Use\-Count}!Appirater.m@{Appirater.\-m}}
+\subsubsection[{k\-Appirater\-Use\-Count}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const k\-Appirater\-Use\-Count = @\char`\"{}k\-Appirater\-Use\-Count\char`\"{}}}\label{_appirater_8m_a2608240427b6f2d51adf09d34265eeeb}
+\hypertarget{_appirater_8m_a78effdd05c1b39d106ac493e17893618}{\index{Appirater.\-m@{Appirater.\-m}!template\-Review\-U\-R\-L@{template\-Review\-U\-R\-L}}
+\index{template\-Review\-U\-R\-L@{template\-Review\-U\-R\-L}!Appirater.m@{Appirater.\-m}}
+\subsubsection[{template\-Review\-U\-R\-L}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ template\-Review\-U\-R\-L = @\char`\"{}itms-\/apps\-://ax.\-itunes.\-apple.\-com/Web\-Objects/M\-Z\-Store.\-woa/wa/view\-Contents\-User\-Reviews?type=Purple+Software\&id=A\-P\-P\-\_\-\-I\-D\char`\"{}}}\label{_appirater_8m_a78effdd05c1b39d106ac493e17893618}
+\hypertarget{_appirater_8m_a045e7778ec6ad0df46d1f03a22e07a0f}{\index{Appirater.\-m@{Appirater.\-m}!template\-Review\-U\-R\-Li\-O\-S7@{template\-Review\-U\-R\-Li\-O\-S7}}
+\index{template\-Review\-U\-R\-Li\-O\-S7@{template\-Review\-U\-R\-Li\-O\-S7}!Appirater.m@{Appirater.\-m}}
+\subsubsection[{template\-Review\-U\-R\-Li\-O\-S7}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ template\-Review\-U\-R\-Li\-O\-S7 = @\char`\"{}itms-\/apps\-://itunes.\-apple.\-com/app/id\-A\-P\-P\-\_\-\-I\-D\char`\"{}}}\label{_appirater_8m_a045e7778ec6ad0df46d1f03a22e07a0f}

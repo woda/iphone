@@ -1,0 +1,184 @@
+\hypertarget{interface_w_file_cell}{\section{W\-File\-Cell Class Reference}
+\label{interface_w_file_cell}\index{W\-File\-Cell@{W\-File\-Cell}}
+}
+
+
+{\ttfamily \#import $<$W\-File\-Cell.\-h$>$}
+
+Inheritance diagram for W\-File\-Cell\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{interface_w_file_cell}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_w_file_cell_afc96c7221a3f20b3b8c4712b1ef7f3a7}{set\-File\-:}
+\item 
+(void) -\/ \hyperlink{interface_w_file_cell_a71970c6faa4edaa4c216cdf15d9d4d5e}{display\-Separator\-:}
+\item 
+(I\-B\-Action) -\/ \hyperlink{interface_w_file_cell_a50567211130e767e158f371803e88d26}{show\-Options\-:}
+\item 
+(I\-B\-Action) -\/ \hyperlink{interface_w_file_cell_a25665ea226b5cf9c7f0ed7c68cd5d67c}{put\-In\-Public\-Files\-:}
+\item 
+(I\-B\-Action) -\/ \hyperlink{interface_w_file_cell_a2c052a47b16099f9d5c27f830e47fb01}{put\-File\-In\-Favorites\-:}
+\item 
+(I\-B\-Action) -\/ \hyperlink{interface_w_file_cell_aa2e95457523f97a05fd75a970167d8a2}{delete\-File\-:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(Boolean) + \hyperlink{interface_w_file_cell_a80fe9d850d25cd700d387e187cc39913}{is\-File\-An\-Image\-:}
+\item 
+(Boolean) + \hyperlink{interface_w_file_cell_a392ce5bd23ad8b68a7029d426ba458de}{is\-File\-A\-Document\-:}
+\item 
+(Boolean) + \hyperlink{interface_w_file_cell_a63cfa5e46ef5475ec9151bb9e5864330}{is\-File\-A\-Music\-:}
+\item 
+(Boolean) + \hyperlink{interface_w_file_cell_ad5f0542928e53032f03e5dd7cad2873d}{is\-File\-A\-Video\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_w_file_cell_a15b4aea27367ab8f92836757ce308012}{path}
+\item 
+N\-S\-Number $\ast$ \hyperlink{interface_w_file_cell_ab32cbabc30e2d1f789a4d7e447bbf6ae}{id\-Number}
+\item 
+I\-B\-Outlet U\-I\-View $\ast$ \hyperlink{interface_w_file_cell_af0550bfeff7310c644d3c990c59da9c9}{background}
+\item 
+I\-B\-Outlet U\-I\-View $\ast$ \hyperlink{interface_w_file_cell_a759d916b6fd09549a2d37f450b1c4b84}{separator}
+\item 
+I\-B\-Outlet U\-I\-Image\-View $\ast$ \hyperlink{interface_w_file_cell_ae573d05e295607950ee5df03a11c698b}{icon}
+\item 
+I\-B\-Outlet U\-I\-Image\-View $\ast$ \hyperlink{interface_w_file_cell_a5eba926c28248e45dd3f0ed980bf05d1}{public\-Icon}
+\item 
+I\-B\-Outlet U\-I\-Image\-View $\ast$ \hyperlink{interface_w_file_cell_a855adca65a5fcae0cf4d42ca2705a5e9}{star}
+\item 
+I\-B\-Outlet U\-I\-Label $\ast$ \hyperlink{interface_w_file_cell_ae4e0948d36065919739b6d6d7943456f}{title}
+\item 
+I\-B\-Outlet U\-I\-Image\-View $\ast$ \hyperlink{interface_w_file_cell_aaf50a6654dff338dbb42451f3e10d100}{blur\-Overlay}
+\item 
+I\-B\-Outlet U\-I\-Button $\ast$ \hyperlink{interface_w_file_cell_a681554e957388c602d06ce9f231960c8}{public\-Button}
+\item 
+I\-B\-Outlet U\-I\-Button $\ast$ \hyperlink{interface_w_file_cell_a8cbcbeb6a24ca5839efc486d1bf18fc2}{favorite\-Button}
+\item 
+I\-B\-Outlet U\-I\-Button $\ast$ \hyperlink{interface_w_file_cell_a365aa2834a8db7287db35b506e9fd763}{delete\-Button}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_w_file_cell_aa2e95457523f97a05fd75a970167d8a2}{\index{W\-File\-Cell@{W\-File\-Cell}!delete\-File\-:@{delete\-File\-:}}
+\index{delete\-File\-:@{delete\-File\-:}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{delete\-File\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Action) delete\-File\-: 
+\begin{DoxyParamCaption}
+\item[{(id)}]{sender}
+\end{DoxyParamCaption}
+}}\label{interface_w_file_cell_aa2e95457523f97a05fd75a970167d8a2}
+\hypertarget{interface_w_file_cell_a71970c6faa4edaa4c216cdf15d9d4d5e}{\index{W\-File\-Cell@{W\-File\-Cell}!display\-Separator\-:@{display\-Separator\-:}}
+\index{display\-Separator\-:@{display\-Separator\-:}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{display\-Separator\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) display\-Separator\-: 
+\begin{DoxyParamCaption}
+\item[{(Boolean)}]{display}
+\end{DoxyParamCaption}
+}}\label{interface_w_file_cell_a71970c6faa4edaa4c216cdf15d9d4d5e}
+\hypertarget{interface_w_file_cell_a392ce5bd23ad8b68a7029d426ba458de}{\index{W\-File\-Cell@{W\-File\-Cell}!is\-File\-A\-Document\-:@{is\-File\-A\-Document\-:}}
+\index{is\-File\-A\-Document\-:@{is\-File\-A\-Document\-:}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{is\-File\-A\-Document\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (Boolean) is\-File\-A\-Document\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{type}
+\end{DoxyParamCaption}
+}}\label{interface_w_file_cell_a392ce5bd23ad8b68a7029d426ba458de}
+\hypertarget{interface_w_file_cell_a63cfa5e46ef5475ec9151bb9e5864330}{\index{W\-File\-Cell@{W\-File\-Cell}!is\-File\-A\-Music\-:@{is\-File\-A\-Music\-:}}
+\index{is\-File\-A\-Music\-:@{is\-File\-A\-Music\-:}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{is\-File\-A\-Music\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (Boolean) is\-File\-A\-Music\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{type}
+\end{DoxyParamCaption}
+}}\label{interface_w_file_cell_a63cfa5e46ef5475ec9151bb9e5864330}
+\hypertarget{interface_w_file_cell_a80fe9d850d25cd700d387e187cc39913}{\index{W\-File\-Cell@{W\-File\-Cell}!is\-File\-An\-Image\-:@{is\-File\-An\-Image\-:}}
+\index{is\-File\-An\-Image\-:@{is\-File\-An\-Image\-:}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{is\-File\-An\-Image\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (Boolean) is\-File\-An\-Image\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{type}
+\end{DoxyParamCaption}
+}}\label{interface_w_file_cell_a80fe9d850d25cd700d387e187cc39913}
+\hypertarget{interface_w_file_cell_ad5f0542928e53032f03e5dd7cad2873d}{\index{W\-File\-Cell@{W\-File\-Cell}!is\-File\-A\-Video\-:@{is\-File\-A\-Video\-:}}
+\index{is\-File\-A\-Video\-:@{is\-File\-A\-Video\-:}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{is\-File\-A\-Video\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (Boolean) is\-File\-A\-Video\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{type}
+\end{DoxyParamCaption}
+}}\label{interface_w_file_cell_ad5f0542928e53032f03e5dd7cad2873d}
+\hypertarget{interface_w_file_cell_a2c052a47b16099f9d5c27f830e47fb01}{\index{W\-File\-Cell@{W\-File\-Cell}!put\-File\-In\-Favorites\-:@{put\-File\-In\-Favorites\-:}}
+\index{put\-File\-In\-Favorites\-:@{put\-File\-In\-Favorites\-:}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{put\-File\-In\-Favorites\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Action) put\-File\-In\-Favorites\-: 
+\begin{DoxyParamCaption}
+\item[{(id)}]{sender}
+\end{DoxyParamCaption}
+}}\label{interface_w_file_cell_a2c052a47b16099f9d5c27f830e47fb01}
+\hypertarget{interface_w_file_cell_a25665ea226b5cf9c7f0ed7c68cd5d67c}{\index{W\-File\-Cell@{W\-File\-Cell}!put\-In\-Public\-Files\-:@{put\-In\-Public\-Files\-:}}
+\index{put\-In\-Public\-Files\-:@{put\-In\-Public\-Files\-:}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{put\-In\-Public\-Files\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Action) put\-In\-Public\-Files\-: 
+\begin{DoxyParamCaption}
+\item[{(id)}]{sender}
+\end{DoxyParamCaption}
+}}\label{interface_w_file_cell_a25665ea226b5cf9c7f0ed7c68cd5d67c}
+\hypertarget{interface_w_file_cell_afc96c7221a3f20b3b8c4712b1ef7f3a7}{\index{W\-File\-Cell@{W\-File\-Cell}!set\-File\-:@{set\-File\-:}}
+\index{set\-File\-:@{set\-File\-:}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{set\-File\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-File\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Dictionary $\ast$)}]{file}
+\end{DoxyParamCaption}
+}}\label{interface_w_file_cell_afc96c7221a3f20b3b8c4712b1ef7f3a7}
+\hypertarget{interface_w_file_cell_a50567211130e767e158f371803e88d26}{\index{W\-File\-Cell@{W\-File\-Cell}!show\-Options\-:@{show\-Options\-:}}
+\index{show\-Options\-:@{show\-Options\-:}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{show\-Options\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Action) show\-Options\-: 
+\begin{DoxyParamCaption}
+\item[{(id)}]{sender}
+\end{DoxyParamCaption}
+}}\label{interface_w_file_cell_a50567211130e767e158f371803e88d26}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_w_file_cell_af0550bfeff7310c644d3c990c59da9c9}{\index{W\-File\-Cell@{W\-File\-Cell}!background@{background}}
+\index{background@{background}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{background}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Outlet U\-I\-View$\ast$) background\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [retain]}}}\label{interface_w_file_cell_af0550bfeff7310c644d3c990c59da9c9}
+\hypertarget{interface_w_file_cell_aaf50a6654dff338dbb42451f3e10d100}{\index{W\-File\-Cell@{W\-File\-Cell}!blur\-Overlay@{blur\-Overlay}}
+\index{blur\-Overlay@{blur\-Overlay}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{blur\-Overlay}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Outlet U\-I\-Image\-View$\ast$) blur\-Overlay\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [retain]}}}\label{interface_w_file_cell_aaf50a6654dff338dbb42451f3e10d100}
+\hypertarget{interface_w_file_cell_a365aa2834a8db7287db35b506e9fd763}{\index{W\-File\-Cell@{W\-File\-Cell}!delete\-Button@{delete\-Button}}
+\index{delete\-Button@{delete\-Button}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{delete\-Button}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Outlet U\-I\-Button$\ast$) delete\-Button\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [retain]}}}\label{interface_w_file_cell_a365aa2834a8db7287db35b506e9fd763}
+\hypertarget{interface_w_file_cell_a8cbcbeb6a24ca5839efc486d1bf18fc2}{\index{W\-File\-Cell@{W\-File\-Cell}!favorite\-Button@{favorite\-Button}}
+\index{favorite\-Button@{favorite\-Button}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{favorite\-Button}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Outlet U\-I\-Button$\ast$) favorite\-Button\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [retain]}}}\label{interface_w_file_cell_a8cbcbeb6a24ca5839efc486d1bf18fc2}
+\hypertarget{interface_w_file_cell_ae573d05e295607950ee5df03a11c698b}{\index{W\-File\-Cell@{W\-File\-Cell}!icon@{icon}}
+\index{icon@{icon}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{icon}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Outlet U\-I\-Image\-View$\ast$) icon\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [retain]}}}\label{interface_w_file_cell_ae573d05e295607950ee5df03a11c698b}
+\hypertarget{interface_w_file_cell_ab32cbabc30e2d1f789a4d7e447bbf6ae}{\index{W\-File\-Cell@{W\-File\-Cell}!id\-Number@{id\-Number}}
+\index{id\-Number@{id\-Number}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{id\-Number}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Number$\ast$) id\-Number\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [retain]}}}\label{interface_w_file_cell_ab32cbabc30e2d1f789a4d7e447bbf6ae}
+\hypertarget{interface_w_file_cell_a15b4aea27367ab8f92836757ce308012}{\index{W\-File\-Cell@{W\-File\-Cell}!path@{path}}
+\index{path@{path}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{path}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) path\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [retain]}}}\label{interface_w_file_cell_a15b4aea27367ab8f92836757ce308012}
+\hypertarget{interface_w_file_cell_a681554e957388c602d06ce9f231960c8}{\index{W\-File\-Cell@{W\-File\-Cell}!public\-Button@{public\-Button}}
+\index{public\-Button@{public\-Button}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{public\-Button}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Outlet U\-I\-Button$\ast$) public\-Button\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [retain]}}}\label{interface_w_file_cell_a681554e957388c602d06ce9f231960c8}
+\hypertarget{interface_w_file_cell_a5eba926c28248e45dd3f0ed980bf05d1}{\index{W\-File\-Cell@{W\-File\-Cell}!public\-Icon@{public\-Icon}}
+\index{public\-Icon@{public\-Icon}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{public\-Icon}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Outlet U\-I\-Image\-View$\ast$) public\-Icon\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [retain]}}}\label{interface_w_file_cell_a5eba926c28248e45dd3f0ed980bf05d1}
+\hypertarget{interface_w_file_cell_a759d916b6fd09549a2d37f450b1c4b84}{\index{W\-File\-Cell@{W\-File\-Cell}!separator@{separator}}
+\index{separator@{separator}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{separator}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Outlet U\-I\-View$\ast$) separator\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [retain]}}}\label{interface_w_file_cell_a759d916b6fd09549a2d37f450b1c4b84}
+\hypertarget{interface_w_file_cell_a855adca65a5fcae0cf4d42ca2705a5e9}{\index{W\-File\-Cell@{W\-File\-Cell}!star@{star}}
+\index{star@{star}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{star}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Outlet U\-I\-Image\-View$\ast$) star\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [retain]}}}\label{interface_w_file_cell_a855adca65a5fcae0cf4d42ca2705a5e9}
+\hypertarget{interface_w_file_cell_ae4e0948d36065919739b6d6d7943456f}{\index{W\-File\-Cell@{W\-File\-Cell}!title@{title}}
+\index{title@{title}!WFileCell@{W\-File\-Cell}}
+\subsubsection[{title}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Outlet U\-I\-Label$\ast$) title\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [retain]}}}\label{interface_w_file_cell_ae4e0948d36065919739b6d6d7943456f}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Models/\-Cells/\hyperlink{_w_file_cell_8h}{W\-File\-Cell.\-h}\item 
+Sources/\-Models/\-Cells/\hyperlink{_w_file_cell_8m}{W\-File\-Cell.\-m}\end{DoxyCompactItemize}

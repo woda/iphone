@@ -1,0 +1,171 @@
+\hypertarget{interface_d_d_log}{\section{D\-D\-Log Class Reference}
+\label{interface_d_d_log}\index{D\-D\-Log@{D\-D\-Log}}
+}
+
+
+{\ttfamily \#import $<$D\-D\-Log.\-h$>$}
+
+Inheritance diagram for D\-D\-Log\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_d_d_log}
+\end{center}
+\end{figure}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(dispatch\-\_\-queue\-\_\-t) + \hyperlink{interface_d_d_log_a8eff5a7031d7532a7b0b7fe0d2e1cc11}{logging\-Queue}
+\item 
+(void) + \hyperlink{interface_d_d_log_a535b56a0cc9c0c4be95f6f221ef05ebd}{log\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:format\-:}
+\item 
+(void) + \hyperlink{interface_d_d_log_a975849e87586b63f2eae80f67cc3bc96}{log\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:format\-:args\-:}
+\item 
+(void) + \hyperlink{interface_d_d_log_a55c377027924a9afa9079bec8a616145}{flush\-Log}
+\item 
+(void) + \hyperlink{interface_d_d_log_a8ef73bdc10ce737fe7bb810b31fb2fb7}{add\-Logger\-:}
+\item 
+(void) + \hyperlink{interface_d_d_log_a5c29863af8e5e8bee60b1c213b5e383c}{remove\-Logger\-:}
+\item 
+(void) + \hyperlink{interface_d_d_log_af2f45435aea37e7132fb6f10a50c5a45}{remove\-All\-Loggers}
+\item 
+(N\-S\-Array $\ast$) + \hyperlink{interface_d_d_log_a183baa489d76c82ab6def69d521ee60b}{registered\-Classes}
+\item 
+(N\-S\-Array $\ast$) + \hyperlink{interface_d_d_log_aea7f5dfba1bc3125d40013706ecae5b0}{registered\-Class\-Names}
+\item 
+(int) + \hyperlink{interface_d_d_log_a77eb6a81906160194a9c8e71f9dec891}{log\-Level\-For\-Class\-:}
+\item 
+(int) + \hyperlink{interface_d_d_log_a346773097e8165b429ce221d562f4efa}{log\-Level\-For\-Class\-With\-Name\-:}
+\item 
+(void) + \hyperlink{interface_d_d_log_a1803937d7c00897026e223fc6a7a6131}{set\-Log\-Level\-:for\-Class\-:}
+\item 
+(void) + \hyperlink{interface_d_d_log_af4e54a953ceda54cfac3552eb86ded12}{set\-Log\-Level\-:for\-Class\-With\-Name\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_d_d_log_a8ef73bdc10ce737fe7bb810b31fb2fb7}{\index{D\-D\-Log@{D\-D\-Log}!add\-Logger\-:@{add\-Logger\-:}}
+\index{add\-Logger\-:@{add\-Logger\-:}!DDLog@{D\-D\-Log}}
+\subsubsection[{add\-Logger\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) add\-Logger\-: 
+\begin{DoxyParamCaption}
+\item[{(id $<${\bf D\-D\-Logger}$>$)}]{logger}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_a8ef73bdc10ce737fe7bb810b31fb2fb7}
+Loggers
+
+If you want your log statements to go somewhere, you should create and add a logger. \hypertarget{interface_d_d_log_a55c377027924a9afa9079bec8a616145}{\index{D\-D\-Log@{D\-D\-Log}!flush\-Log@{flush\-Log}}
+\index{flush\-Log@{flush\-Log}!DDLog@{D\-D\-Log}}
+\subsubsection[{flush\-Log}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) flush\-Log 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_a55c377027924a9afa9079bec8a616145}
+Since logging can be asynchronous, there may be times when you want to flush the logs. The framework invokes this automatically when the application quits. \hypertarget{interface_d_d_log_a535b56a0cc9c0c4be95f6f221ef05ebd}{\index{D\-D\-Log@{D\-D\-Log}!log\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:format\-:@{log\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:format\-:}}
+\index{log\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:format\-:@{log\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:format\-:}!DDLog@{D\-D\-Log}}
+\subsubsection[{log\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:format\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) log\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-O\-O\-L)}]{synchronous}
+\item[{level:(int)}]{level}
+\item[{flag:(int)}]{flag}
+\item[{context:(int)}]{context}
+\item[{file:(const char $\ast$)}]{file}
+\item[{function:(const char $\ast$)}]{function}
+\item[{line:(int)}]{line}
+\item[{tag:(id)}]{tag}
+\item[{format:(N\-S\-String $\ast$)}]{format}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_a535b56a0cc9c0c4be95f6f221ef05ebd}
+Logging Primitive.
+
+This method is used by the macros above. It is suggested you stick with the macros as they're easier to use. \hypertarget{interface_d_d_log_a975849e87586b63f2eae80f67cc3bc96}{\index{D\-D\-Log@{D\-D\-Log}!log\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:format\-:args\-:@{log\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:format\-:args\-:}}
+\index{log\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:format\-:args\-:@{log\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:format\-:args\-:}!DDLog@{D\-D\-Log}}
+\subsubsection[{log\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:format\-:args\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) log\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-O\-O\-L)}]{asynchronous}
+\item[{level:(int)}]{level}
+\item[{flag:(int)}]{flag}
+\item[{context:(int)}]{context}
+\item[{file:(const char $\ast$)}]{file}
+\item[{function:(const char $\ast$)}]{function}
+\item[{line:(int)}]{line}
+\item[{tag:(id)}]{tag}
+\item[{format:(N\-S\-String $\ast$)}]{format}
+\item[{args:(va\-\_\-list)}]{arg\-List}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_a975849e87586b63f2eae80f67cc3bc96}
+Logging Primitive.
+
+This method can be used if you have a prepared va\-\_\-list. \hypertarget{interface_d_d_log_a8eff5a7031d7532a7b0b7fe0d2e1cc11}{\index{D\-D\-Log@{D\-D\-Log}!logging\-Queue@{logging\-Queue}}
+\index{logging\-Queue@{logging\-Queue}!DDLog@{D\-D\-Log}}
+\subsubsection[{logging\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}+ (dispatch\-\_\-queue\-\_\-t) logging\-Queue 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_a8eff5a7031d7532a7b0b7fe0d2e1cc11}
+Provides access to the underlying logging queue. This may be helpful to Logger classes for things like thread synchronization.
+
+Provides access to the logging queue. \hypertarget{interface_d_d_log_a77eb6a81906160194a9c8e71f9dec891}{\index{D\-D\-Log@{D\-D\-Log}!log\-Level\-For\-Class\-:@{log\-Level\-For\-Class\-:}}
+\index{log\-Level\-For\-Class\-:@{log\-Level\-For\-Class\-:}!DDLog@{D\-D\-Log}}
+\subsubsection[{log\-Level\-For\-Class\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (int) log\-Level\-For\-Class\-: 
+\begin{DoxyParamCaption}
+\item[{(Class)}]{a\-Class}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_a77eb6a81906160194a9c8e71f9dec891}
+\hypertarget{interface_d_d_log_a346773097e8165b429ce221d562f4efa}{\index{D\-D\-Log@{D\-D\-Log}!log\-Level\-For\-Class\-With\-Name\-:@{log\-Level\-For\-Class\-With\-Name\-:}}
+\index{log\-Level\-For\-Class\-With\-Name\-:@{log\-Level\-For\-Class\-With\-Name\-:}!DDLog@{D\-D\-Log}}
+\subsubsection[{log\-Level\-For\-Class\-With\-Name\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (int) log\-Level\-For\-Class\-With\-Name\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{a\-Class\-Name}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_a346773097e8165b429ce221d562f4efa}
+\hypertarget{interface_d_d_log_a183baa489d76c82ab6def69d521ee60b}{\index{D\-D\-Log@{D\-D\-Log}!registered\-Classes@{registered\-Classes}}
+\index{registered\-Classes@{registered\-Classes}!DDLog@{D\-D\-Log}}
+\subsubsection[{registered\-Classes}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-Array $\ast$) registered\-Classes 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_a183baa489d76c82ab6def69d521ee60b}
+Registered Dynamic Logging
+
+These methods allow you to obtain a list of classes that are using registered dynamic logging, and also provides methods to get and set their log level during run time. \hypertarget{interface_d_d_log_aea7f5dfba1bc3125d40013706ecae5b0}{\index{D\-D\-Log@{D\-D\-Log}!registered\-Class\-Names@{registered\-Class\-Names}}
+\index{registered\-Class\-Names@{registered\-Class\-Names}!DDLog@{D\-D\-Log}}
+\subsubsection[{registered\-Class\-Names}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-Array $\ast$) registered\-Class\-Names 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_aea7f5dfba1bc3125d40013706ecae5b0}
+\hypertarget{interface_d_d_log_af2f45435aea37e7132fb6f10a50c5a45}{\index{D\-D\-Log@{D\-D\-Log}!remove\-All\-Loggers@{remove\-All\-Loggers}}
+\index{remove\-All\-Loggers@{remove\-All\-Loggers}!DDLog@{D\-D\-Log}}
+\subsubsection[{remove\-All\-Loggers}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) remove\-All\-Loggers 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_af2f45435aea37e7132fb6f10a50c5a45}
+\hypertarget{interface_d_d_log_a5c29863af8e5e8bee60b1c213b5e383c}{\index{D\-D\-Log@{D\-D\-Log}!remove\-Logger\-:@{remove\-Logger\-:}}
+\index{remove\-Logger\-:@{remove\-Logger\-:}!DDLog@{D\-D\-Log}}
+\subsubsection[{remove\-Logger\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) remove\-Logger\-: 
+\begin{DoxyParamCaption}
+\item[{(id $<${\bf D\-D\-Logger}$>$)}]{logger}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_a5c29863af8e5e8bee60b1c213b5e383c}
+\hypertarget{interface_d_d_log_a1803937d7c00897026e223fc6a7a6131}{\index{D\-D\-Log@{D\-D\-Log}!set\-Log\-Level\-:for\-Class\-:@{set\-Log\-Level\-:for\-Class\-:}}
+\index{set\-Log\-Level\-:for\-Class\-:@{set\-Log\-Level\-:for\-Class\-:}!DDLog@{D\-D\-Log}}
+\subsubsection[{set\-Log\-Level\-:for\-Class\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Log\-Level\-: 
+\begin{DoxyParamCaption}
+\item[{(int)}]{log\-Level}
+\item[{forClass:(Class)}]{a\-Class}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_a1803937d7c00897026e223fc6a7a6131}
+\hypertarget{interface_d_d_log_af4e54a953ceda54cfac3552eb86ded12}{\index{D\-D\-Log@{D\-D\-Log}!set\-Log\-Level\-:for\-Class\-With\-Name\-:@{set\-Log\-Level\-:for\-Class\-With\-Name\-:}}
+\index{set\-Log\-Level\-:for\-Class\-With\-Name\-:@{set\-Log\-Level\-:for\-Class\-With\-Name\-:}!DDLog@{D\-D\-Log}}
+\subsubsection[{set\-Log\-Level\-:for\-Class\-With\-Name\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Log\-Level\-: 
+\begin{DoxyParamCaption}
+\item[{(int)}]{log\-Level}
+\item[{forClassWithName:(N\-S\-String $\ast$)}]{a\-Class\-Name}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_af4e54a953ceda54cfac3552eb86ded12}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_log_8h}{D\-D\-Log.\-h}\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_log_8m}{D\-D\-Log.\-m}\end{DoxyCompactItemize}

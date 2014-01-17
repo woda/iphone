@@ -1,0 +1,92 @@
+\hypertarget{interface_context_whitelist_filter_log_formatter}{\section{Context\-Whitelist\-Filter\-Log\-Formatter Class Reference}
+\label{interface_context_whitelist_filter_log_formatter}\index{Context\-Whitelist\-Filter\-Log\-Formatter@{Context\-Whitelist\-Filter\-Log\-Formatter}}
+}
+
+
+{\ttfamily \#import $<$Context\-Filter\-Log\-Formatter.\-h$>$}
+
+Inheritance diagram for Context\-Whitelist\-Filter\-Log\-Formatter\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interface_context_whitelist_filter_log_formatter}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_context_whitelist_filter_log_formatter_a9e4de0486a35878a38118d1e4d82039a}{init}
+\item 
+(void) -\/ \hyperlink{interface_context_whitelist_filter_log_formatter_ae9012af9ee5a0cb907cc81ca2195d377}{add\-To\-Whitelist\-:}
+\item 
+(void) -\/ \hyperlink{interface_context_whitelist_filter_log_formatter_abf48d53a2e4e7e0e780112c80360baf4}{remove\-From\-Whitelist\-:}
+\item 
+(N\-S\-Array $\ast$) -\/ \hyperlink{interface_context_whitelist_filter_log_formatter_ad5e062d7d83b5cd7db6426e4b79e295e}{whitelist}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_context_whitelist_filter_log_formatter_a76f331b90217ff7ecab3b17751a4536f}{is\-On\-Whitelist\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Welcome to Cocoa Lumberjack!
+
+The project page has a wealth of documentation if you have any questions. \href{https://github.com/robbiehanson/CocoaLumberjack}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack}
+
+If you're new to the project you may wish to read the \char`\"{}\-Getting Started\char`\"{} page. \href{https://github.com/robbiehanson/CocoaLumberjack/wiki/GettingStarted}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack/wiki/\-Getting\-Started}
+
+This class provides a log formatter that filters log statements from a logging context not on the whitelist.
+
+A log formatter can be added to any logger to format and/or filter its output. You can learn more about log formatters here\-: \href{https://github.com/robbiehanson/CocoaLumberjack/wiki/CustomFormatters}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack/wiki/\-Custom\-Formatters}
+
+You can learn more about logging context's here\-: \href{https://github.com/robbiehanson/CocoaLumberjack/wiki/CustomContext}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack/wiki/\-Custom\-Context}
+
+But here's a quick overview / refresher\-:
+
+Every log statement has a logging context. These come from the underlying logging macros defined in \hyperlink{_d_d_log_8h}{D\-D\-Log.\-h}. The default logging context is zero. You can define multiple logging context's for use in your application. For example, logically separate parts of your app each have a different logging context. Also 3rd party frameworks that make use of Lumberjack generally use their own dedicated logging context. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_context_whitelist_filter_log_formatter_ae9012af9ee5a0cb907cc81ca2195d377}{\index{Context\-Whitelist\-Filter\-Log\-Formatter@{Context\-Whitelist\-Filter\-Log\-Formatter}!add\-To\-Whitelist\-:@{add\-To\-Whitelist\-:}}
+\index{add\-To\-Whitelist\-:@{add\-To\-Whitelist\-:}!ContextWhitelistFilterLogFormatter@{Context\-Whitelist\-Filter\-Log\-Formatter}}
+\subsubsection[{add\-To\-Whitelist\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) add\-To\-Whitelist\-: 
+\begin{DoxyParamCaption}
+\item[{(int)}]{logging\-Context}
+\end{DoxyParamCaption}
+}}\label{interface_context_whitelist_filter_log_formatter_ae9012af9ee5a0cb907cc81ca2195d377}
+\hypertarget{interface_context_whitelist_filter_log_formatter_a9e4de0486a35878a38118d1e4d82039a}{\index{Context\-Whitelist\-Filter\-Log\-Formatter@{Context\-Whitelist\-Filter\-Log\-Formatter}!init@{init}}
+\index{init@{init}!ContextWhitelistFilterLogFormatter@{Context\-Whitelist\-Filter\-Log\-Formatter}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_context_whitelist_filter_log_formatter_a9e4de0486a35878a38118d1e4d82039a}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+\{
+    \hyperlink{interface_logging_context_set}{LoggingContextSet} *contextSet
+\end{DoxyCode}
+\hypertarget{interface_context_whitelist_filter_log_formatter_a76f331b90217ff7ecab3b17751a4536f}{\index{Context\-Whitelist\-Filter\-Log\-Formatter@{Context\-Whitelist\-Filter\-Log\-Formatter}!is\-On\-Whitelist\-:@{is\-On\-Whitelist\-:}}
+\index{is\-On\-Whitelist\-:@{is\-On\-Whitelist\-:}!ContextWhitelistFilterLogFormatter@{Context\-Whitelist\-Filter\-Log\-Formatter}}
+\subsubsection[{is\-On\-Whitelist\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) is\-On\-Whitelist\-: 
+\begin{DoxyParamCaption}
+\item[{(int)}]{logging\-Context}
+\end{DoxyParamCaption}
+}}\label{interface_context_whitelist_filter_log_formatter_a76f331b90217ff7ecab3b17751a4536f}
+\hypertarget{interface_context_whitelist_filter_log_formatter_abf48d53a2e4e7e0e780112c80360baf4}{\index{Context\-Whitelist\-Filter\-Log\-Formatter@{Context\-Whitelist\-Filter\-Log\-Formatter}!remove\-From\-Whitelist\-:@{remove\-From\-Whitelist\-:}}
+\index{remove\-From\-Whitelist\-:@{remove\-From\-Whitelist\-:}!ContextWhitelistFilterLogFormatter@{Context\-Whitelist\-Filter\-Log\-Formatter}}
+\subsubsection[{remove\-From\-Whitelist\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) remove\-From\-Whitelist\-: 
+\begin{DoxyParamCaption}
+\item[{(int)}]{logging\-Context}
+\end{DoxyParamCaption}
+}}\label{interface_context_whitelist_filter_log_formatter_abf48d53a2e4e7e0e780112c80360baf4}
+\hypertarget{interface_context_whitelist_filter_log_formatter_ad5e062d7d83b5cd7db6426e4b79e295e}{\index{Context\-Whitelist\-Filter\-Log\-Formatter@{Context\-Whitelist\-Filter\-Log\-Formatter}!whitelist@{whitelist}}
+\index{whitelist@{whitelist}!ContextWhitelistFilterLogFormatter@{Context\-Whitelist\-Filter\-Log\-Formatter}}
+\subsubsection[{whitelist}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Array $\ast$) whitelist 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_context_whitelist_filter_log_formatter_ad5e062d7d83b5cd7db6426e4b79e295e}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-Lumberjack/\-Extensions/\hyperlink{_context_filter_log_formatter_8h}{Context\-Filter\-Log\-Formatter.\-h}\item 
+Sources/\-Librairies/\-Lumberjack/\-Extensions/\hyperlink{_context_filter_log_formatter_8m}{Context\-Filter\-Log\-Formatter.\-m}\end{DoxyCompactItemize}

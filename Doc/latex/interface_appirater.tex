@@ -1,0 +1,270 @@
+\hypertarget{interface_appirater}{\section{Appirater Class Reference}
+\label{interface_appirater}\index{Appirater@{Appirater}}
+}
+
+
+{\ttfamily \#import $<$Appirater.\-h$>$}
+
+Inheritance diagram for Appirater\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.447028cm]{interface_appirater}
+\end{center}
+\end{figure}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{interface_appirater_a1c4fbbfab2df2a7df980603928ebb4e7}{app\-Launched\-:}
+\item 
+(void) + \hyperlink{interface_appirater_adfb661a02ea0336dfd4ab5d3564e9a1d}{app\-Entered\-Foreground\-:}
+\item 
+(void) + \hyperlink{interface_appirater_a35e2cb8486a79c90b4bb3f99dfd27b3b}{user\-Did\-Significant\-Event\-:}
+\item 
+(void) + \hyperlink{interface_appirater_a81edf85af1e2379079e484af78af0b37}{show\-Prompt}
+\item 
+(void) + \hyperlink{interface_appirater_ab7744b312ed6e3bc0b466c35a3ffbc95}{rate\-App}
+\item 
+(void) + \hyperlink{interface_appirater_ababdaf499754acf6dab76bffcb963788}{close\-Modal}
+\item 
+(void) + \hyperlink{interface_appirater_afd088b35ecbacb5a668c934257080105}{set\-App\-Id\-:}
+\item 
+(void) + \hyperlink{interface_appirater_a7cb08941166d52b1ea2b3465e5a580e2}{set\-Days\-Until\-Prompt\-:}
+\item 
+(void) + \hyperlink{interface_appirater_a4722d2c18654f6f9dec3ba652eb48c2e}{set\-Uses\-Until\-Prompt\-:}
+\item 
+(void) + \hyperlink{interface_appirater_a6cc24cf2ee76d544906077a85a8905ff}{set\-Significant\-Events\-Until\-Prompt\-:}
+\item 
+(void) + \hyperlink{interface_appirater_af9c75e43b33915db4391ca7cd82c0822}{set\-Time\-Before\-Reminding\-:}
+\item 
+(void) + \hyperlink{interface_appirater_a7f1099968e8814cea5c4447629369f84}{set\-Debug\-:}
+\item 
+(void) + \hyperlink{interface_appirater_a2c80e4f19799e0f1ddfdae30a3ded4d5}{set\-Delegate\-:}
+\item 
+(void) + \hyperlink{interface_appirater_afe8c4f2aef73581e25f26667b1769ae1}{set\-Uses\-Animation\-:}
+\item 
+(void) + \hyperlink{interface_appirater_aac848666b0c8556d39f826f0baee78df}{set\-Open\-In\-App\-Store\-:}
+\item 
+(void) + \hyperlink{interface_appirater_a6678910ac1acec127583334fde49ac20}{set\-Always\-Use\-Main\-Bundle\-:}
+\item 
+((deprecated) + \hyperlink{interface_appirater_a70464a1185265199b8e54fb60c564420}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}
+\item 
+(N\-S\-Bundle $\ast$) + \hyperlink{interface_appirater_a7f20ffc623766d8dca88c982f50b5e97}{bundle}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+U\-I\-Alert\-View $\ast$ \hyperlink{interface_appirater_ac3fe15a27afea8fe203cfd7f9f66d686}{rating\-Alert}
+\item 
+B\-O\-O\-L \hyperlink{interface_appirater_ada11e4951fed6673797426546e6d2b7f}{open\-In\-App\-Store}
+\item 
+N\-S\-Object$<$ \hyperlink{protocol_appirater_delegate-p}{Appirater\-Delegate} $>$ $\ast$ \hyperlink{interface_appirater_abf367524b88d89bafca880595f003087}{delegate}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_appirater_a70464a1185265199b8e54fb60c564420}{\index{Appirater@{Appirater}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!Appirater@{Appirater}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}+ ((deprecated) \-\_\-\-\_\-attribute\-\_\-\-\_\- 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_a70464a1185265199b8e54fb60c564420}
+D\-E\-P\-R\-E\-C\-A\-T\-E\-D\-: While still functional, it's better to use \hyperlink{interface_appirater_a1c4fbbfab2df2a7df980603928ebb4e7}{app\-Launched\-:}can\-Prompt\-For\-Rating instead.
+
+Calls \mbox{[}\hyperlink{interface_appirater}{Appirater} app\-Launched\-:Y\-E\-S\mbox{]}. See app\-Launched\-: for details of functionality. 
+
+Provided by category \hyperlink{category_appirater_07_deprecated_08_a70464a1185265199b8e54fb60c564420}{Appirater(\-Deprecated)}.
+
+\hypertarget{interface_appirater_adfb661a02ea0336dfd4ab5d3564e9a1d}{\index{Appirater@{Appirater}!app\-Entered\-Foreground\-:@{app\-Entered\-Foreground\-:}}
+\index{app\-Entered\-Foreground\-:@{app\-Entered\-Foreground\-:}!Appirater@{Appirater}}
+\subsubsection[{app\-Entered\-Foreground\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) app\-Entered\-Foreground\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-O\-O\-L)}]{can\-Prompt\-For\-Rating}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_adfb661a02ea0336dfd4ab5d3564e9a1d}
+Tells \hyperlink{interface_appirater}{Appirater} that the app was brought to the foreground on multitasking devices. You should call this method from the application delegate's application\-Will\-Enter\-Foreground\-: method.
+
+If the app has been used enough to be rated (and enough significant events), you can suppress the rating alert by passing N\-O for can\-Prompt\-For\-Rating. The rating alert will simply be postponed until it is called again with Y\-E\-S for can\-Prompt\-For\-Rating. The rating alert can also be triggered by app\-Launched\-: and user\-Did\-Significant\-Event\-: (as long as you pass Y\-E\-S for can\-Prompt\-For\-Rating in those methods). \hypertarget{interface_appirater_a1c4fbbfab2df2a7df980603928ebb4e7}{\index{Appirater@{Appirater}!app\-Launched\-:@{app\-Launched\-:}}
+\index{app\-Launched\-:@{app\-Launched\-:}!Appirater@{Appirater}}
+\subsubsection[{app\-Launched\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) app\-Launched\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-O\-O\-L)}]{can\-Prompt\-For\-Rating}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_a1c4fbbfab2df2a7df980603928ebb4e7}
+Tells \hyperlink{interface_appirater}{Appirater} that the app has launched, and on devices that do N\-O\-T support multitasking, the 'uses' count will be incremented. You should call this method at the end of your application delegate's application\-:did\-Finish\-Launching\-With\-Options\-: method.
+
+If the app has been used enough to be rated (and enough significant events), you can suppress the rating alert by passing N\-O for can\-Prompt\-For\-Rating. The rating alert will simply be postponed until it is called again with Y\-E\-S for can\-Prompt\-For\-Rating. The rating alert can also be triggered by app\-Entered\-Foreground\-: and user\-Did\-Significant\-Event\-: (as long as you pass Y\-E\-S for can\-Prompt\-For\-Rating in those methods). \hypertarget{interface_appirater_a7f20ffc623766d8dca88c982f50b5e97}{\index{Appirater@{Appirater}!bundle@{bundle}}
+\index{bundle@{bundle}!Appirater@{Appirater}}
+\subsubsection[{bundle}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-Bundle $\ast$) bundle 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_a7f20ffc623766d8dca88c982f50b5e97}
+The bundle localized strings will be loaded from. 
+
+Provided by category \hyperlink{category_appirater_07_unsafe_08_a7f20ffc623766d8dca88c982f50b5e97}{Appirater(\-Unsafe)}.
+
+\hypertarget{interface_appirater_ababdaf499754acf6dab76bffcb963788}{\index{Appirater@{Appirater}!close\-Modal@{close\-Modal}}
+\index{close\-Modal@{close\-Modal}!Appirater@{Appirater}}
+\subsubsection[{close\-Modal}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) close\-Modal 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_ababdaf499754acf6dab76bffcb963788}
+Tells \hyperlink{interface_appirater}{Appirater} to immediately close any open rating modals (e.\-g. Store\-Kit rating V\-Cs). \hypertarget{interface_appirater_ab7744b312ed6e3bc0b466c35a3ffbc95}{\index{Appirater@{Appirater}!rate\-App@{rate\-App}}
+\index{rate\-App@{rate\-App}!Appirater@{Appirater}}
+\subsubsection[{rate\-App}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) rate\-App 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_ab7744b312ed6e3bc0b466c35a3ffbc95}
+Tells \hyperlink{interface_appirater}{Appirater} to open the App Store page where the user can specify a rating for the app. Also records the fact that this has happened, so the user won't be prompted again to rate the app.
+
+The only case where you should call this directly is if your app has an explicit \char`\"{}\-Rate this app\char`\"{} command somewhere. In all other cases, don't worry about calling this -- instead, just call the other functions listed above, and let \hyperlink{interface_appirater}{Appirater} handle the bookkeeping of deciding when to ask the user whether to rate the app. \hypertarget{interface_appirater_a6678910ac1acec127583334fde49ac20}{\index{Appirater@{Appirater}!set\-Always\-Use\-Main\-Bundle\-:@{set\-Always\-Use\-Main\-Bundle\-:}}
+\index{set\-Always\-Use\-Main\-Bundle\-:@{set\-Always\-Use\-Main\-Bundle\-:}!Appirater@{Appirater}}
+\subsubsection[{set\-Always\-Use\-Main\-Bundle\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Always\-Use\-Main\-Bundle\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-O\-O\-L)}]{use\-Main\-Bundle}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_a6678910ac1acec127583334fde49ac20}
+If set to Y\-E\-S, the main bundle will always be used to load localized strings. Set this to Y\-E\-S if you have provided your own custom localizations in Appirater\-Localizable.\-strings in your main bundle. Default is N\-O. 
+
+Provided by category \hyperlink{category_appirater_07_configuration_08_a6678910ac1acec127583334fde49ac20}{Appirater(\-Configuration)}.
+
+\hypertarget{interface_appirater_afd088b35ecbacb5a668c934257080105}{\index{Appirater@{Appirater}!set\-App\-Id\-:@{set\-App\-Id\-:}}
+\index{set\-App\-Id\-:@{set\-App\-Id\-:}!Appirater@{Appirater}}
+\subsubsection[{set\-App\-Id\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-App\-Id\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{app\-Id}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_afd088b35ecbacb5a668c934257080105}
+Set your Apple generated software id here. 
+
+Provided by category \hyperlink{category_appirater_07_configuration_08_afd088b35ecbacb5a668c934257080105}{Appirater(\-Configuration)}.
+
+\hypertarget{interface_appirater_a7cb08941166d52b1ea2b3465e5a580e2}{\index{Appirater@{Appirater}!set\-Days\-Until\-Prompt\-:@{set\-Days\-Until\-Prompt\-:}}
+\index{set\-Days\-Until\-Prompt\-:@{set\-Days\-Until\-Prompt\-:}!Appirater@{Appirater}}
+\subsubsection[{set\-Days\-Until\-Prompt\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Days\-Until\-Prompt\-: 
+\begin{DoxyParamCaption}
+\item[{(double)}]{value}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_a7cb08941166d52b1ea2b3465e5a580e2}
+Users will need to have the same version of your app installed for this many days before they will be prompted to rate it. 
+
+Provided by category \hyperlink{category_appirater_07_configuration_08_a7cb08941166d52b1ea2b3465e5a580e2}{Appirater(\-Configuration)}.
+
+\hypertarget{interface_appirater_a7f1099968e8814cea5c4447629369f84}{\index{Appirater@{Appirater}!set\-Debug\-:@{set\-Debug\-:}}
+\index{set\-Debug\-:@{set\-Debug\-:}!Appirater@{Appirater}}
+\subsubsection[{set\-Debug\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Debug\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-O\-O\-L)}]{debug}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_a7f1099968e8814cea5c4447629369f84}
+'Y\-E\-S' will show the \hyperlink{interface_appirater}{Appirater} alert everytime. Useful for testing how your message looks and making sure the link to your app's review page works. 
+
+Provided by category \hyperlink{category_appirater_07_configuration_08_a7f1099968e8814cea5c4447629369f84}{Appirater(\-Configuration)}.
+
+\hypertarget{interface_appirater_a2c80e4f19799e0f1ddfdae30a3ded4d5}{\index{Appirater@{Appirater}!set\-Delegate\-:@{set\-Delegate\-:}}
+\index{set\-Delegate\-:@{set\-Delegate\-:}!Appirater@{Appirater}}
+\subsubsection[{set\-Delegate\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Delegate\-: 
+\begin{DoxyParamCaption}
+\item[{(id$<$ {\bf Appirater\-Delegate} $>$)}]{delegate}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_a2c80e4f19799e0f1ddfdae30a3ded4d5}
+Set the delegate if you want to know when \hyperlink{interface_appirater}{Appirater} does something 
+
+Provided by category \hyperlink{category_appirater_07_configuration_08_a2c80e4f19799e0f1ddfdae30a3ded4d5}{Appirater(\-Configuration)}.
+
+\hypertarget{interface_appirater_aac848666b0c8556d39f826f0baee78df}{\index{Appirater@{Appirater}!set\-Open\-In\-App\-Store\-:@{set\-Open\-In\-App\-Store\-:}}
+\index{set\-Open\-In\-App\-Store\-:@{set\-Open\-In\-App\-Store\-:}!Appirater@{Appirater}}
+\subsubsection[{set\-Open\-In\-App\-Store\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Open\-In\-App\-Store\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-O\-O\-L)}]{open\-In\-App\-Store}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_aac848666b0c8556d39f826f0baee78df}
+If set to Y\-E\-S, \hyperlink{interface_appirater}{Appirater} will open App Store link (instead of S\-K\-Store\-Product\-View\-Controller on i\-O\-S 6). Default N\-O. 
+
+Provided by category \hyperlink{category_appirater_07_configuration_08_aac848666b0c8556d39f826f0baee78df}{Appirater(\-Configuration)}.
+
+\hypertarget{interface_appirater_a6cc24cf2ee76d544906077a85a8905ff}{\index{Appirater@{Appirater}!set\-Significant\-Events\-Until\-Prompt\-:@{set\-Significant\-Events\-Until\-Prompt\-:}}
+\index{set\-Significant\-Events\-Until\-Prompt\-:@{set\-Significant\-Events\-Until\-Prompt\-:}!Appirater@{Appirater}}
+\subsubsection[{set\-Significant\-Events\-Until\-Prompt\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Significant\-Events\-Until\-Prompt\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{value}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_a6cc24cf2ee76d544906077a85a8905ff}
+A significant event can be anything you want to be in your app. In a telephone app, a significant event might be placing or receiving a call. In a game, it might be beating a level or a boss. This is just another layer of filtering that can be used to make sure that only the most loyal of your users are being prompted to rate you on the app store. If you leave this at a value of -\/1, then this won't be a criterion used for rating. To tell \hyperlink{interface_appirater}{Appirater} that the user has performed a significant event, call the method\-: \mbox{[}\hyperlink{interface_appirater}{Appirater} user\-Did\-Significant\-Event\-:\mbox{]}; 
+
+Provided by category \hyperlink{category_appirater_07_configuration_08_a6cc24cf2ee76d544906077a85a8905ff}{Appirater(\-Configuration)}.
+
+\hypertarget{interface_appirater_af9c75e43b33915db4391ca7cd82c0822}{\index{Appirater@{Appirater}!set\-Time\-Before\-Reminding\-:@{set\-Time\-Before\-Reminding\-:}}
+\index{set\-Time\-Before\-Reminding\-:@{set\-Time\-Before\-Reminding\-:}!Appirater@{Appirater}}
+\subsubsection[{set\-Time\-Before\-Reminding\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Time\-Before\-Reminding\-: 
+\begin{DoxyParamCaption}
+\item[{(double)}]{value}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_af9c75e43b33915db4391ca7cd82c0822}
+Once the rating alert is presented to the user, they might select 'Remind me later'. This value specifies how long (in days) \hyperlink{interface_appirater}{Appirater} will wait before reminding them. 
+
+Provided by category \hyperlink{category_appirater_07_configuration_08_af9c75e43b33915db4391ca7cd82c0822}{Appirater(\-Configuration)}.
+
+\hypertarget{interface_appirater_afe8c4f2aef73581e25f26667b1769ae1}{\index{Appirater@{Appirater}!set\-Uses\-Animation\-:@{set\-Uses\-Animation\-:}}
+\index{set\-Uses\-Animation\-:@{set\-Uses\-Animation\-:}!Appirater@{Appirater}}
+\subsubsection[{set\-Uses\-Animation\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Uses\-Animation\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-O\-O\-L)}]{animation}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_afe8c4f2aef73581e25f26667b1769ae1}
+Set whether or not \hyperlink{interface_appirater}{Appirater} uses animation (currently respected when pushing modal Store\-Kit rating V\-Cs). 
+
+Provided by category \hyperlink{category_appirater_07_configuration_08_afe8c4f2aef73581e25f26667b1769ae1}{Appirater(\-Configuration)}.
+
+\hypertarget{interface_appirater_a4722d2c18654f6f9dec3ba652eb48c2e}{\index{Appirater@{Appirater}!set\-Uses\-Until\-Prompt\-:@{set\-Uses\-Until\-Prompt\-:}}
+\index{set\-Uses\-Until\-Prompt\-:@{set\-Uses\-Until\-Prompt\-:}!Appirater@{Appirater}}
+\subsubsection[{set\-Uses\-Until\-Prompt\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Uses\-Until\-Prompt\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{value}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_a4722d2c18654f6f9dec3ba652eb48c2e}
+An example of a 'use' would be if the user launched the app. Bringing the app into the foreground (on devices that support it) would also be considered a 'use'. You tell \hyperlink{interface_appirater}{Appirater} about these events using the two methods\-: \mbox{[}\hyperlink{interface_appirater}{Appirater} app\-Launched\-:\mbox{]} \mbox{[}\hyperlink{interface_appirater}{Appirater} app\-Entered\-Foreground\-:\mbox{]}
+
+Users need to 'use' the same version of the app this many times before before they will be prompted to rate it. 
+
+Provided by category \hyperlink{category_appirater_07_configuration_08_a4722d2c18654f6f9dec3ba652eb48c2e}{Appirater(\-Configuration)}.
+
+\hypertarget{interface_appirater_a81edf85af1e2379079e484af78af0b37}{\index{Appirater@{Appirater}!show\-Prompt@{show\-Prompt}}
+\index{show\-Prompt@{show\-Prompt}!Appirater@{Appirater}}
+\subsubsection[{show\-Prompt}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) show\-Prompt 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_a81edf85af1e2379079e484af78af0b37}
+Tells \hyperlink{interface_appirater}{Appirater} to show the prompt (a rating alert). The prompt will be showed if there is connection available, the user hasn't declined to rate or hasn't rated current version.
+
+You could call to show the prompt regardless \hyperlink{interface_appirater}{Appirater} settings, e.\-g., in case of some special event in your app. \hypertarget{interface_appirater_a35e2cb8486a79c90b4bb3f99dfd27b3b}{\index{Appirater@{Appirater}!user\-Did\-Significant\-Event\-:@{user\-Did\-Significant\-Event\-:}}
+\index{user\-Did\-Significant\-Event\-:@{user\-Did\-Significant\-Event\-:}!Appirater@{Appirater}}
+\subsubsection[{user\-Did\-Significant\-Event\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) user\-Did\-Significant\-Event\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-O\-O\-L)}]{can\-Prompt\-For\-Rating}
+\end{DoxyParamCaption}
+}}\label{interface_appirater_a35e2cb8486a79c90b4bb3f99dfd27b3b}
+Tells \hyperlink{interface_appirater}{Appirater} that the user performed a significant event. A significant event is whatever you want it to be. If you're app is used to make Vo\-I\-P calls, then you might want to call this method whenever the user places a call. If it's a game, you might want to call this whenever the user beats a level boss.
+
+If the user has performed enough significant events and used the app enough, you can suppress the rating alert by passing N\-O for can\-Prompt\-For\-Rating. The rating alert will simply be postponed until it is called again with Y\-E\-S for can\-Prompt\-For\-Rating. The rating alert can also be triggered by app\-Launched\-: and app\-Entered\-Foreground\-: (as long as you pass Y\-E\-S for can\-Prompt\-For\-Rating in those methods). 
+
+\subsection{Property Documentation}
+\hypertarget{interface_appirater_abf367524b88d89bafca880595f003087}{\index{Appirater@{Appirater}!delegate@{delegate}}
+\index{delegate@{delegate}!Appirater@{Appirater}}
+\subsubsection[{delegate}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Object$<${\bf Appirater\-Delegate}$>$$\ast$) delegate\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [unsafe_unretained]}}}\label{interface_appirater_abf367524b88d89bafca880595f003087}
+\hypertarget{interface_appirater_ada11e4951fed6673797426546e6d2b7f}{\index{Appirater@{Appirater}!open\-In\-App\-Store@{open\-In\-App\-Store}}
+\index{open\-In\-App\-Store@{open\-In\-App\-Store}!Appirater@{Appirater}}
+\subsubsection[{open\-In\-App\-Store}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) open\-In\-App\-Store\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_appirater_ada11e4951fed6673797426546e6d2b7f}
+\hypertarget{interface_appirater_ac3fe15a27afea8fe203cfd7f9f66d686}{\index{Appirater@{Appirater}!rating\-Alert@{rating\-Alert}}
+\index{rating\-Alert@{rating\-Alert}!Appirater@{Appirater}}
+\subsubsection[{rating\-Alert}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (U\-I\-Alert\-View $\ast$) rating\-Alert\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_appirater_ac3fe15a27afea8fe203cfd7f9f66d686}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/appirater/\hyperlink{_appirater_8h}{Appirater.\-h}\item 
+Sources/\-Librairies/appirater/\hyperlink{_appirater_8m}{Appirater.\-m}\end{DoxyCompactItemize}

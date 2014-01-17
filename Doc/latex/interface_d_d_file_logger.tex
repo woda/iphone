@@ -1,0 +1,118 @@
+\hypertarget{interface_d_d_file_logger}{\section{D\-D\-File\-Logger Class Reference}
+\label{interface_d_d_file_logger}\index{D\-D\-File\-Logger@{D\-D\-File\-Logger}}
+}
+
+
+{\ttfamily \#import $<$D\-D\-File\-Logger.\-h$>$}
+
+Inheritance diagram for D\-D\-File\-Logger\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{interface_d_d_file_logger}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_d_d_file_logger_a50f0c519d884f3c22369e05899db3aa1}{init}
+\item 
+(id) -\/ \hyperlink{interface_d_d_file_logger_a465de50ce0a9cf84d19e319501746aaa}{init\-With\-Log\-File\-Manager\-:}
+\item 
+(void) -\/ \hyperlink{interface_d_d_file_logger_ab0bb4fbddf347c6e5ce250957e68378e}{roll\-Log\-File}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\-\_\-\-\_\-strong id$<$ \hyperlink{protocol_d_d_log_file_manager-p}{D\-D\-Log\-File\-Manager} $>$ \hyperlink{interface_d_d_file_logger_ae69b973e11c50a89793cab1c0dcca5fd}{log\-File\-Manager}
+\item 
+\hyperlink{interface_d_d_log_file_info}{D\-D\-Log\-File\-Info} $\ast$ \hyperlink{interface_d_d_file_logger_a042114b326036e139f1f6ef500683696}{current\-Log\-File\-Info}
+\item 
+N\-S\-File\-Handle $\ast$ \hyperlink{interface_d_d_file_logger_a984d7760af0949c892412e1a0693e4d0}{current\-Log\-File\-Handle}
+\item 
+dispatch\-\_\-source\-\_\-t \hyperlink{interface_d_d_file_logger_ae42a4b7eddcb79f6ae5af833a0e2b55f}{rolling\-Timer}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long long \hyperlink{interface_d_d_file_logger_a55f0ca92857d2a8ba54cba300a97b882}{maximum\-File\-Size}
+\item 
+N\-S\-Time\-Interval \hyperlink{interface_d_d_file_logger_a67cba816078da08aad69f0728b6ea3f9}{rolling\-Frequency}
+\item 
+id$<$ \hyperlink{protocol_d_d_log_file_manager-p}{D\-D\-Log\-File\-Manager} $>$ \hyperlink{interface_d_d_file_logger_a8dc888788d83e877aee47ad73684ce0a}{log\-File\-Manager}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_d_d_file_logger_a50f0c519d884f3c22369e05899db3aa1}{\index{D\-D\-File\-Logger@{D\-D\-File\-Logger}!init@{init}}
+\index{init@{init}!DDFileLogger@{D\-D\-File\-Logger}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_file_logger_a50f0c519d884f3c22369e05899db3aa1}
+\hypertarget{interface_d_d_file_logger_a465de50ce0a9cf84d19e319501746aaa}{\index{D\-D\-File\-Logger@{D\-D\-File\-Logger}!init\-With\-Log\-File\-Manager\-:@{init\-With\-Log\-File\-Manager\-:}}
+\index{init\-With\-Log\-File\-Manager\-:@{init\-With\-Log\-File\-Manager\-:}!DDFileLogger@{D\-D\-File\-Logger}}
+\subsubsection[{init\-With\-Log\-File\-Manager\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init\-With\-Log\-File\-Manager\-: 
+\begin{DoxyParamCaption}
+\item[{(id $<${\bf D\-D\-Log\-File\-Manager}$>$)}]{log\-File\-Manager}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_file_logger_a465de50ce0a9cf84d19e319501746aaa}
+\hypertarget{interface_d_d_file_logger_ab0bb4fbddf347c6e5ce250957e68378e}{\index{D\-D\-File\-Logger@{D\-D\-File\-Logger}!roll\-Log\-File@{roll\-Log\-File}}
+\index{roll\-Log\-File@{roll\-Log\-File}!DDFileLogger@{D\-D\-File\-Logger}}
+\subsubsection[{roll\-Log\-File}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) roll\-Log\-File 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_file_logger_ab0bb4fbddf347c6e5ce250957e68378e}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_d_d_file_logger_a984d7760af0949c892412e1a0693e4d0}{\index{D\-D\-File\-Logger@{D\-D\-File\-Logger}!current\-Log\-File\-Handle@{current\-Log\-File\-Handle}}
+\index{current\-Log\-File\-Handle@{current\-Log\-File\-Handle}!DDFileLogger@{D\-D\-File\-Logger}}
+\subsubsection[{current\-Log\-File\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-File\-Handle$\ast$) current\-Log\-File\-Handle\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_file_logger_a984d7760af0949c892412e1a0693e4d0}
+\hypertarget{interface_d_d_file_logger_a042114b326036e139f1f6ef500683696}{\index{D\-D\-File\-Logger@{D\-D\-File\-Logger}!current\-Log\-File\-Info@{current\-Log\-File\-Info}}
+\index{current\-Log\-File\-Info@{current\-Log\-File\-Info}!DDFileLogger@{D\-D\-File\-Logger}}
+\subsubsection[{current\-Log\-File\-Info}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf D\-D\-Log\-File\-Info}$\ast$) current\-Log\-File\-Info\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_file_logger_a042114b326036e139f1f6ef500683696}
+\hypertarget{interface_d_d_file_logger_ae69b973e11c50a89793cab1c0dcca5fd}{\index{D\-D\-File\-Logger@{D\-D\-File\-Logger}!log\-File\-Manager@{log\-File\-Manager}}
+\index{log\-File\-Manager@{log\-File\-Manager}!DDFileLogger@{D\-D\-File\-Logger}}
+\subsubsection[{log\-File\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (\-\_\-\-\_\-strong id$<${\bf D\-D\-Log\-File\-Manager}$>$) log\-File\-Manager\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_file_logger_ae69b973e11c50a89793cab1c0dcca5fd}
+\hypertarget{interface_d_d_file_logger_ae42a4b7eddcb79f6ae5af833a0e2b55f}{\index{D\-D\-File\-Logger@{D\-D\-File\-Logger}!rolling\-Timer@{rolling\-Timer}}
+\index{rolling\-Timer@{rolling\-Timer}!DDFileLogger@{D\-D\-File\-Logger}}
+\subsubsection[{rolling\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (dispatch\-\_\-source\-\_\-t) rolling\-Timer\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_file_logger_ae42a4b7eddcb79f6ae5af833a0e2b55f}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_d_d_file_logger_a8dc888788d83e877aee47ad73684ce0a}{\index{D\-D\-File\-Logger@{D\-D\-File\-Logger}!log\-File\-Manager@{log\-File\-Manager}}
+\index{log\-File\-Manager@{log\-File\-Manager}!DDFileLogger@{D\-D\-File\-Logger}}
+\subsubsection[{log\-File\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf D\-D\-Log\-File\-Manager}$>$) log\-File\-Manager\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_d_d_file_logger_a8dc888788d83e877aee47ad73684ce0a}
+The \hyperlink{protocol_d_d_log_file_manager-p}{D\-D\-Log\-File\-Manager} instance can be used to retrieve the list of log files, and configure the maximum number of archived log files to keep.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{protocol_d_d_log_file_manager-p_acb282ecd7fa74b5c3ee03bbb7a710dc1}{D\-D\-Log\-File\-Manager.\-maximum\-Number\-Of\-Log\-Files} 
+\end{DoxySeeAlso}
+\hypertarget{interface_d_d_file_logger_a55f0ca92857d2a8ba54cba300a97b882}{\index{D\-D\-File\-Logger@{D\-D\-File\-Logger}!maximum\-File\-Size@{maximum\-File\-Size}}
+\index{maximum\-File\-Size@{maximum\-File\-Size}!DDFileLogger@{D\-D\-File\-Logger}}
+\subsubsection[{maximum\-File\-Size}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (unsigned long long) maximum\-File\-Size\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [assign]}}}\label{interface_d_d_file_logger_a55f0ca92857d2a8ba54cba300a97b882}
+Log File Rolling\-:
+
+maximum\-File\-Size\-: The approximate maximum size to allow log files to grow. If a log file is larger than this value after a log statement is appended, then the log file is rolled.
+
+rolling\-Frequency How often to roll the log file. The frequency is given as an N\-S\-Time\-Interval, which is a double that specifies the interval in seconds. Once the log file gets to be this old, it is rolled.
+
+Both the maximum\-File\-Size and the rolling\-Frequency are used to manage rolling. Whichever occurs first will cause the log file to be rolled.
+
+For example\-: The rolling\-Frequency is 24 hours, but the log file surpasses the maximum\-File\-Size after only 20 hours. The log file will be rolled at that 20 hour mark. A new log file will be created, and the 24 hour timer will be restarted.
+
+You may optionally disable rolling due to filesize by setting maximum\-File\-Size to zero. If you do so, rolling is based solely on rolling\-Frequency.
+
+You may optionally disable rolling due to time by setting rolling\-Frequency to zero (or any non-\/positive number). If you do so, rolling is based solely on maximum\-File\-Size.
+
+If you disable both maximum\-File\-Size and rolling\-Frequency, then the log file won't ever be rolled. This is strongly discouraged. \hypertarget{interface_d_d_file_logger_a67cba816078da08aad69f0728b6ea3f9}{\index{D\-D\-File\-Logger@{D\-D\-File\-Logger}!rolling\-Frequency@{rolling\-Frequency}}
+\index{rolling\-Frequency@{rolling\-Frequency}!DDFileLogger@{D\-D\-File\-Logger}}
+\subsubsection[{rolling\-Frequency}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Time\-Interval) rolling\-Frequency\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [assign]}}}\label{interface_d_d_file_logger_a67cba816078da08aad69f0728b6ea3f9}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_file_logger_8h}{D\-D\-File\-Logger.\-h}\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_file_logger_8m}{D\-D\-File\-Logger.\-m}\end{DoxyCompactItemize}

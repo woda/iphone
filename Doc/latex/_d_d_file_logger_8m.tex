@@ -1,0 +1,75 @@
+\hypertarget{_d_d_file_logger_8m}{\section{Sources/\-Librairies/\-Lumberjack/\-D\-D\-File\-Logger.m File Reference}
+\label{_d_d_file_logger_8m}\index{Sources/\-Librairies/\-Lumberjack/\-D\-D\-File\-Logger.\-m@{Sources/\-Librairies/\-Lumberjack/\-D\-D\-File\-Logger.\-m}}
+}
+{\ttfamily \#import \char`\"{}D\-D\-File\-Logger.\-h\char`\"{}}\\*
+{\ttfamily \#import $<$unistd.\-h$>$}\\*
+{\ttfamily \#import $<$sys/attr.\-h$>$}\\*
+{\ttfamily \#import $<$sys/xattr.\-h$>$}\\*
+{\ttfamily \#import $<$libkern/\-O\-S\-Atomic.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+category \hyperlink{category_d_d_log_file_manager_default_07_private_a_p_i_08}{D\-D\-Log\-File\-Manager\-Default(\-Private\-A\-P\-I)}
+\item 
+category \hyperlink{category_d_d_file_logger_07_private_a_p_i_08}{D\-D\-File\-Logger(\-Private\-A\-P\-I)}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_d_d_file_logger_8m_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{L\-O\-G\-\_\-\-L\-E\-V\-E\-L}~2
+\item 
+\#define \hyperlink{_d_d_file_logger_8m_a7ff182aa6ac42a8e39c5e6b7611a5165}{N\-S\-Log\-Error}(frmt,...)~do\{ if(\hyperlink{_d_d_t_t_y_logger_8m_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{L\-O\-G\-\_\-\-L\-E\-V\-E\-L} $>$= 1) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)
+\item 
+\#define \hyperlink{_d_d_file_logger_8m_a8357e06ccb1070f79ba472067a24a956}{N\-S\-Log\-Warn}(frmt,...)~do\{ if(\hyperlink{_d_d_t_t_y_logger_8m_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{L\-O\-G\-\_\-\-L\-E\-V\-E\-L} $>$= 2) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)
+\item 
+\#define \hyperlink{_d_d_file_logger_8m_a250be6421e41ba584186836e5825e500}{N\-S\-Log\-Info}(frmt,...)~do\{ if(\hyperlink{_d_d_t_t_y_logger_8m_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{L\-O\-G\-\_\-\-L\-E\-V\-E\-L} $>$= 3) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)
+\item 
+\#define \hyperlink{_d_d_file_logger_8m_a5fef155eafaad5a84f9a62c379156f14}{N\-S\-Log\-Verbose}(frmt,...)~do\{ if(\hyperlink{_d_d_t_t_y_logger_8m_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{L\-O\-G\-\_\-\-L\-E\-V\-E\-L} $>$= 4) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)
+\item 
+\#define \hyperlink{_d_d_file_logger_8m_a4cdea0356a71305d32b41be375b36818}{X\-A\-T\-T\-R\-\_\-\-A\-R\-C\-H\-I\-V\-E\-D\-\_\-\-N\-A\-M\-E}~@\char`\"{}lumberjack.\-log.\-archived\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_d_d_file_logger_8m_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{\index{D\-D\-File\-Logger.\-m@{D\-D\-File\-Logger.\-m}!L\-O\-G\-\_\-\-L\-E\-V\-E\-L@{L\-O\-G\-\_\-\-L\-E\-V\-E\-L}}
+\index{L\-O\-G\-\_\-\-L\-E\-V\-E\-L@{L\-O\-G\-\_\-\-L\-E\-V\-E\-L}!DDFileLogger.m@{D\-D\-File\-Logger.\-m}}
+\subsubsection[{L\-O\-G\-\_\-\-L\-E\-V\-E\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-G\-\_\-\-L\-E\-V\-E\-L~2}}\label{_d_d_file_logger_8m_a0b87e0d3bf5853bcbb0b66a7c48fdc05}
+Welcome to Cocoa Lumberjack!
+
+The project page has a wealth of documentation if you have any questions. \href{https://github.com/robbiehanson/CocoaLumberjack}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack}
+
+If you're new to the project you may wish to read the \char`\"{}\-Getting Started\char`\"{} wiki. \href{https://github.com/robbiehanson/CocoaLumberjack/wiki/GettingStarted}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack/wiki/\-Getting\-Started} \hypertarget{_d_d_file_logger_8m_a7ff182aa6ac42a8e39c5e6b7611a5165}{\index{D\-D\-File\-Logger.\-m@{D\-D\-File\-Logger.\-m}!N\-S\-Log\-Error@{N\-S\-Log\-Error}}
+\index{N\-S\-Log\-Error@{N\-S\-Log\-Error}!DDFileLogger.m@{D\-D\-File\-Logger.\-m}}
+\subsubsection[{N\-S\-Log\-Error}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-S\-Log\-Error(
+\begin{DoxyParamCaption}
+\item[{}]{frmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~do\{ if({\bf L\-O\-G\-\_\-\-L\-E\-V\-E\-L} $>$= 1) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)}}\label{_d_d_file_logger_8m_a7ff182aa6ac42a8e39c5e6b7611a5165}
+\hypertarget{_d_d_file_logger_8m_a250be6421e41ba584186836e5825e500}{\index{D\-D\-File\-Logger.\-m@{D\-D\-File\-Logger.\-m}!N\-S\-Log\-Info@{N\-S\-Log\-Info}}
+\index{N\-S\-Log\-Info@{N\-S\-Log\-Info}!DDFileLogger.m@{D\-D\-File\-Logger.\-m}}
+\subsubsection[{N\-S\-Log\-Info}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-S\-Log\-Info(
+\begin{DoxyParamCaption}
+\item[{}]{frmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~do\{ if({\bf L\-O\-G\-\_\-\-L\-E\-V\-E\-L} $>$= 3) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)}}\label{_d_d_file_logger_8m_a250be6421e41ba584186836e5825e500}
+\hypertarget{_d_d_file_logger_8m_a5fef155eafaad5a84f9a62c379156f14}{\index{D\-D\-File\-Logger.\-m@{D\-D\-File\-Logger.\-m}!N\-S\-Log\-Verbose@{N\-S\-Log\-Verbose}}
+\index{N\-S\-Log\-Verbose@{N\-S\-Log\-Verbose}!DDFileLogger.m@{D\-D\-File\-Logger.\-m}}
+\subsubsection[{N\-S\-Log\-Verbose}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-S\-Log\-Verbose(
+\begin{DoxyParamCaption}
+\item[{}]{frmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~do\{ if({\bf L\-O\-G\-\_\-\-L\-E\-V\-E\-L} $>$= 4) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)}}\label{_d_d_file_logger_8m_a5fef155eafaad5a84f9a62c379156f14}
+\hypertarget{_d_d_file_logger_8m_a8357e06ccb1070f79ba472067a24a956}{\index{D\-D\-File\-Logger.\-m@{D\-D\-File\-Logger.\-m}!N\-S\-Log\-Warn@{N\-S\-Log\-Warn}}
+\index{N\-S\-Log\-Warn@{N\-S\-Log\-Warn}!DDFileLogger.m@{D\-D\-File\-Logger.\-m}}
+\subsubsection[{N\-S\-Log\-Warn}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-S\-Log\-Warn(
+\begin{DoxyParamCaption}
+\item[{}]{frmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~do\{ if({\bf L\-O\-G\-\_\-\-L\-E\-V\-E\-L} $>$= 2) N\-S\-Log((frmt), \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-); \} while(0)}}\label{_d_d_file_logger_8m_a8357e06ccb1070f79ba472067a24a956}
+\hypertarget{_d_d_file_logger_8m_a4cdea0356a71305d32b41be375b36818}{\index{D\-D\-File\-Logger.\-m@{D\-D\-File\-Logger.\-m}!X\-A\-T\-T\-R\-\_\-\-A\-R\-C\-H\-I\-V\-E\-D\-\_\-\-N\-A\-M\-E@{X\-A\-T\-T\-R\-\_\-\-A\-R\-C\-H\-I\-V\-E\-D\-\_\-\-N\-A\-M\-E}}
+\index{X\-A\-T\-T\-R\-\_\-\-A\-R\-C\-H\-I\-V\-E\-D\-\_\-\-N\-A\-M\-E@{X\-A\-T\-T\-R\-\_\-\-A\-R\-C\-H\-I\-V\-E\-D\-\_\-\-N\-A\-M\-E}!DDFileLogger.m@{D\-D\-File\-Logger.\-m}}
+\subsubsection[{X\-A\-T\-T\-R\-\_\-\-A\-R\-C\-H\-I\-V\-E\-D\-\_\-\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\-A\-T\-T\-R\-\_\-\-A\-R\-C\-H\-I\-V\-E\-D\-\_\-\-N\-A\-M\-E~@\char`\"{}lumberjack.\-log.\-archived\char`\"{}}}\label{_d_d_file_logger_8m_a4cdea0356a71305d32b41be375b36818}

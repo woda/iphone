@@ -33,8 +33,12 @@
  * \subsection step3 Step 3: Librairies
  *
  * Nothing to install here. Basically the project use 3 external well famous librairies:
- * * AFNetworking: https://github.com/AFNetworking/AFNetworking
+ * * Appirater: https://github.com/arashpayan/appirater
+ * * WSAssetPickerController: https://github.com/w5mith/WSAssetPickerController
  * * TestFlight: https://testflightapp.com/
+ * * Lumberjack: https://github.com/CocoaLumberjack/CocoaLumberjack
+ * * AFHTTPRequestOperationLogger: https://github.com/AFNetworking/AFHTTPRequestOperationLogger
+ * * AFNetworking: https://github.com/AFNetworking/AFNetworking
  * * Coredata-easyfetch: https://github.com/halostatue/coredata-easyfetch
  *
  */

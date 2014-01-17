@@ -1,0 +1,114 @@
+\hypertarget{_appirater_8h}{\section{Sources/\-Librairies/appirater/\-Appirater.h File Reference}
+\label{_appirater_8h}\index{Sources/\-Librairies/appirater/\-Appirater.\-h@{Sources/\-Librairies/appirater/\-Appirater.\-h}}
+}
+{\ttfamily \#import $<$Foundation/\-Foundation.\-h$>$}\\*
+{\ttfamily \#import \char`\"{}Appirater\-Delegate.\-h\char`\"{}}\\*
+{\ttfamily \#import $<$Store\-Kit/\-Store\-Kit.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{interface_appirater}{Appirater}
+\item 
+category \hyperlink{category_appirater_07_configuration_08}{Appirater(\-Configuration)}
+\item 
+category \hyperlink{category_appirater_07_unsafe_08}{Appirater(\-Unsafe)}
+\item 
+category \hyperlink{category_appirater_07_deprecated_08}{Appirater(\-Deprecated)}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_appirater_8h_ab1bc5b2e3c18f7a3a8d40aae41beef44}{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E}~\mbox{[}\mbox{[}\mbox{[}N\-S\-Bundle main\-Bundle\mbox{]} localized\-Info\-Dictionary\mbox{]} object\-For\-Key\-:@\char`\"{}C\-F\-Bundle\-Display\-Name\char`\"{}\mbox{]}
+\item 
+\#define \hyperlink{_appirater_8h_a346d32524857e966a6d1216094f0c6dc}{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E}~\hyperlink{_appirater_8h_ab1bc5b2e3c18f7a3a8d40aae41beef44}{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E} ? \hyperlink{_appirater_8h_ab1bc5b2e3c18f7a3a8d40aae41beef44}{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E} \-: \mbox{[}\mbox{[}\mbox{[}N\-S\-Bundle main\-Bundle\mbox{]} info\-Dictionary\mbox{]} object\-For\-Key\-:@\char`\"{}C\-F\-Bundle\-Display\-Name\char`\"{}\mbox{]}
+\item 
+\#define \hyperlink{_appirater_8h_a61773edcc6535f8c7b1b3db795e5d43a}{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E}~N\-S\-Localized\-String\-From\-Table\-In\-Bundle(@\char`\"{}If you enjoy using \%@, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!\char`\"{}, @\char`\"{}Appirater\-Localizable\char`\"{}, \mbox{[}Appirater bundle\mbox{]}, nil)
+\item 
+\#define \hyperlink{_appirater_8h_ae713b6e963a615fad02b7aeb1003d366}{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-M\-E\-S\-S\-A\-G\-E}~\mbox{[}N\-S\-String string\-With\-Format\-:\-A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E, \hyperlink{_appirater_8h_a346d32524857e966a6d1216094f0c6dc}{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E}\mbox{]}
+\item 
+\#define \hyperlink{_appirater_8h_afffbe61a57e45f7cb0940b0d42cc2886}{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-T\-I\-T\-L\-E}~N\-S\-Localized\-String\-From\-Table\-In\-Bundle(@\char`\"{}Rate \%@\char`\"{}, @\char`\"{}Appirater\-Localizable\char`\"{}, \mbox{[}Appirater bundle\mbox{]}, nil)
+\item 
+\#define \hyperlink{_appirater_8h_a3828257964cd40bef5180731ac3535ac}{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-T\-I\-T\-L\-E}~\mbox{[}N\-S\-String string\-With\-Format\-:\-A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-T\-I\-T\-L\-E, \hyperlink{_appirater_8h_a346d32524857e966a6d1216094f0c6dc}{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E}\mbox{]}
+\item 
+\#define \hyperlink{_appirater_8h_a04deffc16feda26f90918d006baa2462}{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-C\-A\-N\-C\-E\-L\-\_\-\-B\-U\-T\-T\-O\-N}~N\-S\-Localized\-String\-From\-Table\-In\-Bundle(@\char`\"{}No, Thanks\char`\"{}, @\char`\"{}Appirater\-Localizable\char`\"{}, \mbox{[}Appirater bundle\mbox{]}, nil)
+\item 
+\#define \hyperlink{_appirater_8h_a5bdb0e0a09898a394204b0eacf7b9d86}{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-R\-A\-T\-E\-\_\-\-B\-U\-T\-T\-O\-N}~N\-S\-Localized\-String\-From\-Table\-In\-Bundle(@\char`\"{}Rate \%@\char`\"{}, @\char`\"{}Appirater\-Localizable\char`\"{}, \mbox{[}Appirater bundle\mbox{]}, nil)
+\item 
+\#define \hyperlink{_appirater_8h_ad193453a01fbd8703d1ab6d28c2bd740}{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-R\-A\-T\-E\-\_\-\-B\-U\-T\-T\-O\-N}~\mbox{[}N\-S\-String string\-With\-Format\-:\-A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-R\-A\-T\-E\-\_\-\-B\-U\-T\-T\-O\-N, \hyperlink{_appirater_8h_a346d32524857e966a6d1216094f0c6dc}{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E}\mbox{]}
+\item 
+\#define \hyperlink{_appirater_8h_a9940d35d0a52e709ca97698f813af355}{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-R\-A\-T\-E\-\_\-\-L\-A\-T\-E\-R}~N\-S\-Localized\-String\-From\-Table\-In\-Bundle(@\char`\"{}Remind me later\char`\"{}, @\char`\"{}Appirater\-Localizable\char`\"{}, \mbox{[}Appirater bundle\mbox{]}, nil)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-String $\ast$const \hyperlink{_appirater_8h_aec73ba77b493b5c9ce371a5d831bfc41}{k\-Appirater\-First\-Use\-Date}
+\item 
+N\-S\-String $\ast$const \hyperlink{_appirater_8h_a2608240427b6f2d51adf09d34265eeeb}{k\-Appirater\-Use\-Count}
+\item 
+N\-S\-String $\ast$const \hyperlink{_appirater_8h_a808c153ada0d58bc4df8c86ca913a28e}{k\-Appirater\-Significant\-Event\-Count}
+\item 
+N\-S\-String $\ast$const \hyperlink{_appirater_8h_a3c064e965c53680b694410f9f504171e}{k\-Appirater\-Current\-Version}
+\item 
+N\-S\-String $\ast$const \hyperlink{_appirater_8h_adc8ae75faa525a1306df33aa5e746f93}{k\-Appirater\-Rated\-Current\-Version}
+\item 
+N\-S\-String $\ast$const \hyperlink{_appirater_8h_a4623be656a19ab709770706477c2cdac}{k\-Appirater\-Declined\-To\-Rate}
+\item 
+N\-S\-String $\ast$const \hyperlink{_appirater_8h_ae189202f67418967fed759bfe399fe28}{k\-Appirater\-Reminder\-Request\-Date}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_appirater_8h_a346d32524857e966a6d1216094f0c6dc}{\index{Appirater.\-h@{Appirater.\-h}!A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E}}
+\index{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E~{\bf A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E} ? {\bf A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E} \-: \mbox{[}\mbox{[}\mbox{[}N\-S\-Bundle main\-Bundle\mbox{]} info\-Dictionary\mbox{]} object\-For\-Key\-:@\char`\"{}C\-F\-Bundle\-Display\-Name\char`\"{}\mbox{]}}}\label{_appirater_8h_a346d32524857e966a6d1216094f0c6dc}
+Your app's name. \hypertarget{_appirater_8h_a04deffc16feda26f90918d006baa2462}{\index{Appirater.\-h@{Appirater.\-h}!A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-C\-A\-N\-C\-E\-L\-\_\-\-B\-U\-T\-T\-O\-N@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-C\-A\-N\-C\-E\-L\-\_\-\-B\-U\-T\-T\-O\-N}}
+\index{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-C\-A\-N\-C\-E\-L\-\_\-\-B\-U\-T\-T\-O\-N@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-C\-A\-N\-C\-E\-L\-\_\-\-B\-U\-T\-T\-O\-N}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-C\-A\-N\-C\-E\-L\-\_\-\-B\-U\-T\-T\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-C\-A\-N\-C\-E\-L\-\_\-\-B\-U\-T\-T\-O\-N~N\-S\-Localized\-String\-From\-Table\-In\-Bundle(@\char`\"{}No, Thanks\char`\"{}, @\char`\"{}Appirater\-Localizable\char`\"{}, \mbox{[}Appirater bundle\mbox{]}, nil)}}\label{_appirater_8h_a04deffc16feda26f90918d006baa2462}
+The text of the button that rejects reviewing the app. \hypertarget{_appirater_8h_ab1bc5b2e3c18f7a3a8d40aae41beef44}{\index{Appirater.\-h@{Appirater.\-h}!A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E}}
+\index{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E~\mbox{[}\mbox{[}\mbox{[}N\-S\-Bundle main\-Bundle\mbox{]} localized\-Info\-Dictionary\mbox{]} object\-For\-Key\-:@\char`\"{}C\-F\-Bundle\-Display\-Name\char`\"{}\mbox{]}}}\label{_appirater_8h_ab1bc5b2e3c18f7a3a8d40aae41beef44}
+Your localized app's name. \hypertarget{_appirater_8h_a61773edcc6535f8c7b1b3db795e5d43a}{\index{Appirater.\-h@{Appirater.\-h}!A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E}}
+\index{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E~N\-S\-Localized\-String\-From\-Table\-In\-Bundle(@\char`\"{}If you enjoy using \%@, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!\char`\"{}, @\char`\"{}Appirater\-Localizable\char`\"{}, \mbox{[}Appirater bundle\mbox{]}, nil)}}\label{_appirater_8h_a61773edcc6535f8c7b1b3db795e5d43a}
+This is the message your users will see once they've passed the day+launches threshold. \hypertarget{_appirater_8h_afffbe61a57e45f7cb0940b0d42cc2886}{\index{Appirater.\-h@{Appirater.\-h}!A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-T\-I\-T\-L\-E@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-T\-I\-T\-L\-E}}
+\index{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-T\-I\-T\-L\-E@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-T\-I\-T\-L\-E}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-T\-I\-T\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-T\-I\-T\-L\-E~N\-S\-Localized\-String\-From\-Table\-In\-Bundle(@\char`\"{}Rate \%@\char`\"{}, @\char`\"{}Appirater\-Localizable\char`\"{}, \mbox{[}Appirater bundle\mbox{]}, nil)}}\label{_appirater_8h_afffbe61a57e45f7cb0940b0d42cc2886}
+This is the title of the message alert that users will see. \hypertarget{_appirater_8h_a5bdb0e0a09898a394204b0eacf7b9d86}{\index{Appirater.\-h@{Appirater.\-h}!A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-R\-A\-T\-E\-\_\-\-B\-U\-T\-T\-O\-N@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-R\-A\-T\-E\-\_\-\-B\-U\-T\-T\-O\-N}}
+\index{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-R\-A\-T\-E\-\_\-\-B\-U\-T\-T\-O\-N@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-R\-A\-T\-E\-\_\-\-B\-U\-T\-T\-O\-N}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-R\-A\-T\-E\-\_\-\-B\-U\-T\-T\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-R\-A\-T\-E\-\_\-\-B\-U\-T\-T\-O\-N~N\-S\-Localized\-String\-From\-Table\-In\-Bundle(@\char`\"{}Rate \%@\char`\"{}, @\char`\"{}Appirater\-Localizable\char`\"{}, \mbox{[}Appirater bundle\mbox{]}, nil)}}\label{_appirater_8h_a5bdb0e0a09898a394204b0eacf7b9d86}
+Text of button that will send user to app review page. \hypertarget{_appirater_8h_ae713b6e963a615fad02b7aeb1003d366}{\index{Appirater.\-h@{Appirater.\-h}!A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-M\-E\-S\-S\-A\-G\-E@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-M\-E\-S\-S\-A\-G\-E}}
+\index{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-M\-E\-S\-S\-A\-G\-E@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-M\-E\-S\-S\-A\-G\-E}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-M\-E\-S\-S\-A\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-M\-E\-S\-S\-A\-G\-E~\mbox{[}N\-S\-String string\-With\-Format\-:\-A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E, {\bf A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E}\mbox{]}}}\label{_appirater_8h_ae713b6e963a615fad02b7aeb1003d366}
+\hypertarget{_appirater_8h_a3828257964cd40bef5180731ac3535ac}{\index{Appirater.\-h@{Appirater.\-h}!A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-T\-I\-T\-L\-E@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-T\-I\-T\-L\-E}}
+\index{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-T\-I\-T\-L\-E@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-T\-I\-T\-L\-E}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-T\-I\-T\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-T\-I\-T\-L\-E~\mbox{[}N\-S\-String string\-With\-Format\-:\-A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-M\-E\-S\-S\-A\-G\-E\-\_\-\-T\-I\-T\-L\-E, {\bf A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E}\mbox{]}}}\label{_appirater_8h_a3828257964cd40bef5180731ac3535ac}
+\hypertarget{_appirater_8h_ad193453a01fbd8703d1ab6d28c2bd740}{\index{Appirater.\-h@{Appirater.\-h}!A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-R\-A\-T\-E\-\_\-\-B\-U\-T\-T\-O\-N@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-R\-A\-T\-E\-\_\-\-B\-U\-T\-T\-O\-N}}
+\index{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-R\-A\-T\-E\-\_\-\-B\-U\-T\-T\-O\-N@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-R\-A\-T\-E\-\_\-\-B\-U\-T\-T\-O\-N}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-R\-A\-T\-E\-\_\-\-B\-U\-T\-T\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-R\-A\-T\-E\-\_\-\-B\-U\-T\-T\-O\-N~\mbox{[}N\-S\-String string\-With\-Format\-:\-A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-L\-O\-C\-A\-L\-I\-Z\-E\-D\-\_\-\-R\-A\-T\-E\-\_\-\-B\-U\-T\-T\-O\-N, {\bf A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-A\-P\-P\-\_\-\-N\-A\-M\-E}\mbox{]}}}\label{_appirater_8h_ad193453a01fbd8703d1ab6d28c2bd740}
+\hypertarget{_appirater_8h_a9940d35d0a52e709ca97698f813af355}{\index{Appirater.\-h@{Appirater.\-h}!A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-R\-A\-T\-E\-\_\-\-L\-A\-T\-E\-R@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-R\-A\-T\-E\-\_\-\-L\-A\-T\-E\-R}}
+\index{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-R\-A\-T\-E\-\_\-\-L\-A\-T\-E\-R@{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-R\-A\-T\-E\-\_\-\-L\-A\-T\-E\-R}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-R\-A\-T\-E\-\_\-\-L\-A\-T\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-P\-P\-I\-R\-A\-T\-E\-R\-\_\-\-R\-A\-T\-E\-\_\-\-L\-A\-T\-E\-R~N\-S\-Localized\-String\-From\-Table\-In\-Bundle(@\char`\"{}Remind me later\char`\"{}, @\char`\"{}Appirater\-Localizable\char`\"{}, \mbox{[}Appirater bundle\mbox{]}, nil)}}\label{_appirater_8h_a9940d35d0a52e709ca97698f813af355}
+Text for button to remind the user to review later. 
+
+\subsection{Variable Documentation}
+\hypertarget{_appirater_8h_a3c064e965c53680b694410f9f504171e}{\index{Appirater.\-h@{Appirater.\-h}!k\-Appirater\-Current\-Version@{k\-Appirater\-Current\-Version}}
+\index{k\-Appirater\-Current\-Version@{k\-Appirater\-Current\-Version}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{k\-Appirater\-Current\-Version}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const k\-Appirater\-Current\-Version}}\label{_appirater_8h_a3c064e965c53680b694410f9f504171e}
+\hypertarget{_appirater_8h_a4623be656a19ab709770706477c2cdac}{\index{Appirater.\-h@{Appirater.\-h}!k\-Appirater\-Declined\-To\-Rate@{k\-Appirater\-Declined\-To\-Rate}}
+\index{k\-Appirater\-Declined\-To\-Rate@{k\-Appirater\-Declined\-To\-Rate}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{k\-Appirater\-Declined\-To\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const k\-Appirater\-Declined\-To\-Rate}}\label{_appirater_8h_a4623be656a19ab709770706477c2cdac}
+\hypertarget{_appirater_8h_aec73ba77b493b5c9ce371a5d831bfc41}{\index{Appirater.\-h@{Appirater.\-h}!k\-Appirater\-First\-Use\-Date@{k\-Appirater\-First\-Use\-Date}}
+\index{k\-Appirater\-First\-Use\-Date@{k\-Appirater\-First\-Use\-Date}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{k\-Appirater\-First\-Use\-Date}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const k\-Appirater\-First\-Use\-Date}}\label{_appirater_8h_aec73ba77b493b5c9ce371a5d831bfc41}
+\hypertarget{_appirater_8h_adc8ae75faa525a1306df33aa5e746f93}{\index{Appirater.\-h@{Appirater.\-h}!k\-Appirater\-Rated\-Current\-Version@{k\-Appirater\-Rated\-Current\-Version}}
+\index{k\-Appirater\-Rated\-Current\-Version@{k\-Appirater\-Rated\-Current\-Version}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{k\-Appirater\-Rated\-Current\-Version}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const k\-Appirater\-Rated\-Current\-Version}}\label{_appirater_8h_adc8ae75faa525a1306df33aa5e746f93}
+\hypertarget{_appirater_8h_ae189202f67418967fed759bfe399fe28}{\index{Appirater.\-h@{Appirater.\-h}!k\-Appirater\-Reminder\-Request\-Date@{k\-Appirater\-Reminder\-Request\-Date}}
+\index{k\-Appirater\-Reminder\-Request\-Date@{k\-Appirater\-Reminder\-Request\-Date}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{k\-Appirater\-Reminder\-Request\-Date}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const k\-Appirater\-Reminder\-Request\-Date}}\label{_appirater_8h_ae189202f67418967fed759bfe399fe28}
+\hypertarget{_appirater_8h_a808c153ada0d58bc4df8c86ca913a28e}{\index{Appirater.\-h@{Appirater.\-h}!k\-Appirater\-Significant\-Event\-Count@{k\-Appirater\-Significant\-Event\-Count}}
+\index{k\-Appirater\-Significant\-Event\-Count@{k\-Appirater\-Significant\-Event\-Count}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{k\-Appirater\-Significant\-Event\-Count}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const k\-Appirater\-Significant\-Event\-Count}}\label{_appirater_8h_a808c153ada0d58bc4df8c86ca913a28e}
+\hypertarget{_appirater_8h_a2608240427b6f2d51adf09d34265eeeb}{\index{Appirater.\-h@{Appirater.\-h}!k\-Appirater\-Use\-Count@{k\-Appirater\-Use\-Count}}
+\index{k\-Appirater\-Use\-Count@{k\-Appirater\-Use\-Count}!Appirater.h@{Appirater.\-h}}
+\subsubsection[{k\-Appirater\-Use\-Count}]{\setlength{\rightskip}{0pt plus 5cm}N\-S\-String$\ast$ const k\-Appirater\-Use\-Count}}\label{_appirater_8h_a2608240427b6f2d51adf09d34265eeeb}

@@ -1,0 +1,144 @@
+\hypertarget{interface_d_d_log_message}{\section{D\-D\-Log\-Message Class Reference}
+\label{interface_d_d_log_message}\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}}
+}
+
+
+{\ttfamily \#import $<$D\-D\-Log.\-h$>$}
+
+Inheritance diagram for D\-D\-Log\-Message\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_d_d_log_message}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_d_d_log_message_a5433e86d148fb414ebb7789643157185}{init\-With\-Log\-Msg\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:options\-:}
+\item 
+(N\-S\-String $\ast$) -\/ \hyperlink{interface_d_d_log_message_afed8f3af48724153b1e32a8636db9e01}{thread\-I\-D}
+\item 
+(N\-S\-String $\ast$) -\/ \hyperlink{interface_d_d_log_message_a9336f172bf69f18271e46da8040dbada}{file\-Name}
+\item 
+(N\-S\-String $\ast$) -\/ \hyperlink{interface_d_d_log_message_a4696a5d9c7f939de4c765d1dd4452a98}{method\-Name}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{interface_d_d_log_message_a48c533fab0c670c60f4dbea0a76a3fee}{log\-Level}
+\item 
+int \hyperlink{interface_d_d_log_message_a92ea97658b57ae4149935acebeab7a24}{log\-Flag}
+\item 
+int \hyperlink{interface_d_d_log_message_a73dcbc9ddf49e9d958c3b29ec3810375}{log\-Context}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_d_d_log_message_aab40334def9cb6d13044e538e66198c2}{log\-Msg}
+\item 
+N\-S\-Date $\ast$ \hyperlink{interface_d_d_log_message_a405819fd179c0816e2c7a061168429a6}{timestamp}
+\item 
+char $\ast$ \hyperlink{interface_d_d_log_message_afa29219e2ccb7ca1eefcef23c7743666}{file}
+\item 
+char $\ast$ \hyperlink{interface_d_d_log_message_a06aa077ba446916d291c2ad2a957b911}{function}
+\item 
+int \hyperlink{interface_d_d_log_message_a0c059538008557787ae00d93baeb4a41}{line\-Number}
+\item 
+mach\-\_\-port\-\_\-t \hyperlink{interface_d_d_log_message_a931cbffc35006e3cb25310cb474d5a24}{mach\-Thread\-I\-D}
+\item 
+char $\ast$ \hyperlink{interface_d_d_log_message_a9bb7f190fe0298be8090708f665c15cf}{queue\-Label}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_d_d_log_message_a5b666ceeda61a575e35e52e22a68436c}{thread\-Name}
+\item 
+id \hyperlink{interface_d_d_log_message_ad3a1f2556f02542c6456d50a690800f1}{tag}
+\item 
+\hyperlink{_d_d_log_8h_a210ac32524cf9cfeb43d4a361e9bbddc}{D\-D\-Log\-Message\-Options} \hyperlink{interface_d_d_log_message_a9d3b8afd83b3808d7d5d55a05c624ca1}{options}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_d_d_log_message_a9336f172bf69f18271e46da8040dbada}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!file\-Name@{file\-Name}}
+\index{file\-Name@{file\-Name}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{file\-Name}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String $\ast$) file\-Name 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_message_a9336f172bf69f18271e46da8040dbada}
+Convenience property to get just the file name, as the file variable is generally the full file path. This method does not include the file extension, which is generally unwanted for logging purposes. \hypertarget{interface_d_d_log_message_a5433e86d148fb414ebb7789643157185}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!init\-With\-Log\-Msg\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:options\-:@{init\-With\-Log\-Msg\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:options\-:}}
+\index{init\-With\-Log\-Msg\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:options\-:@{init\-With\-Log\-Msg\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:options\-:}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{init\-With\-Log\-Msg\-:level\-:flag\-:context\-:file\-:function\-:line\-:tag\-:options\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init\-With\-Log\-Msg\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{log\-Msg}
+\item[{level:(int)}]{log\-Level}
+\item[{flag:(int)}]{log\-Flag}
+\item[{context:(int)}]{log\-Context}
+\item[{file:(const char $\ast$)}]{file}
+\item[{function:(const char $\ast$)}]{function}
+\item[{line:(int)}]{line}
+\item[{tag:(id)}]{tag}
+\item[{options:({\bf D\-D\-Log\-Message\-Options})}]{options\-Mask}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_message_a5433e86d148fb414ebb7789643157185}
+Standard init method for a log message object. Used by the logging primitives. (And the macros use the logging primitives.)
+
+If you find need to manually create log\-Message objects, there is one thing you should be aware of\-:
+
+If no flags are passed, the method expects the file and function parameters to be string literals. That is, it expects the given strings to exist for the duration of the object's lifetime, and it expects the given strings to be immutable. In other words, it does not copy these strings, it simply points to them. This is due to the fact that {\bfseries F\-I\-L\-E} and {\bfseries F\-U\-N\-C\-T\-I\-O\-N} are usually used to specify these parameters, so it makes sense to optimize and skip the unnecessary allocations. However, if you need them to be copied you may use the options parameter to specify this. Options is a bitmask which supports D\-D\-Log\-Message\-Copy\-File and D\-D\-Log\-Message\-Copy\-Function. \hypertarget{interface_d_d_log_message_a4696a5d9c7f939de4c765d1dd4452a98}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!method\-Name@{method\-Name}}
+\index{method\-Name@{method\-Name}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{method\-Name}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String $\ast$) method\-Name 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_message_a4696a5d9c7f939de4c765d1dd4452a98}
+Returns the function variable in N\-S\-String form. \hypertarget{interface_d_d_log_message_afed8f3af48724153b1e32a8636db9e01}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!thread\-I\-D@{thread\-I\-D}}
+\index{thread\-I\-D@{thread\-I\-D}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{thread\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String $\ast$) thread\-I\-D 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_message_afed8f3af48724153b1e32a8636db9e01}
+Returns the thread\-I\-D as it appears in N\-S\-Log. That is, it is a hexadecimal value which is calculated from the mach\-Thread\-I\-D. 
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_d_d_log_message_afa29219e2ccb7ca1eefcef23c7743666}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!file@{file}}
+\index{file@{file}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{file}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (char$\ast$) file}}\label{interface_d_d_log_message_afa29219e2ccb7ca1eefcef23c7743666}
+\hypertarget{interface_d_d_log_message_a06aa077ba446916d291c2ad2a957b911}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!function@{function}}
+\index{function@{function}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{function}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (char$\ast$) function}}\label{interface_d_d_log_message_a06aa077ba446916d291c2ad2a957b911}
+\hypertarget{interface_d_d_log_message_a0c059538008557787ae00d93baeb4a41}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!line\-Number@{line\-Number}}
+\index{line\-Number@{line\-Number}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{line\-Number}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (int) line\-Number}}\label{interface_d_d_log_message_a0c059538008557787ae00d93baeb4a41}
+\hypertarget{interface_d_d_log_message_a73dcbc9ddf49e9d958c3b29ec3810375}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!log\-Context@{log\-Context}}
+\index{log\-Context@{log\-Context}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{log\-Context}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (int) log\-Context}}\label{interface_d_d_log_message_a73dcbc9ddf49e9d958c3b29ec3810375}
+\hypertarget{interface_d_d_log_message_a92ea97658b57ae4149935acebeab7a24}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!log\-Flag@{log\-Flag}}
+\index{log\-Flag@{log\-Flag}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{log\-Flag}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (int) log\-Flag}}\label{interface_d_d_log_message_a92ea97658b57ae4149935acebeab7a24}
+\hypertarget{interface_d_d_log_message_a48c533fab0c670c60f4dbea0a76a3fee}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!log\-Level@{log\-Level}}
+\index{log\-Level@{log\-Level}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{log\-Level}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (int) log\-Level}}\label{interface_d_d_log_message_a48c533fab0c670c60f4dbea0a76a3fee}
+\hypertarget{interface_d_d_log_message_aab40334def9cb6d13044e538e66198c2}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!log\-Msg@{log\-Msg}}
+\index{log\-Msg@{log\-Msg}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{log\-Msg}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) log\-Msg}}\label{interface_d_d_log_message_aab40334def9cb6d13044e538e66198c2}
+\hypertarget{interface_d_d_log_message_a931cbffc35006e3cb25310cb474d5a24}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!mach\-Thread\-I\-D@{mach\-Thread\-I\-D}}
+\index{mach\-Thread\-I\-D@{mach\-Thread\-I\-D}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{mach\-Thread\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (mach\-\_\-port\-\_\-t) mach\-Thread\-I\-D}}\label{interface_d_d_log_message_a931cbffc35006e3cb25310cb474d5a24}
+\hypertarget{interface_d_d_log_message_a9d3b8afd83b3808d7d5d55a05c624ca1}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!options@{options}}
+\index{options@{options}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{options}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf D\-D\-Log\-Message\-Options}) options}}\label{interface_d_d_log_message_a9d3b8afd83b3808d7d5d55a05c624ca1}
+\hypertarget{interface_d_d_log_message_a9bb7f190fe0298be8090708f665c15cf}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!queue\-Label@{queue\-Label}}
+\index{queue\-Label@{queue\-Label}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{queue\-Label}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (char$\ast$) queue\-Label}}\label{interface_d_d_log_message_a9bb7f190fe0298be8090708f665c15cf}
+\hypertarget{interface_d_d_log_message_ad3a1f2556f02542c6456d50a690800f1}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!tag@{tag}}
+\index{tag@{tag}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{tag}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) tag}}\label{interface_d_d_log_message_ad3a1f2556f02542c6456d50a690800f1}
+\hypertarget{interface_d_d_log_message_a5b666ceeda61a575e35e52e22a68436c}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!thread\-Name@{thread\-Name}}
+\index{thread\-Name@{thread\-Name}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{thread\-Name}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) thread\-Name}}\label{interface_d_d_log_message_a5b666ceeda61a575e35e52e22a68436c}
+\hypertarget{interface_d_d_log_message_a405819fd179c0816e2c7a061168429a6}{\index{D\-D\-Log\-Message@{D\-D\-Log\-Message}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!DDLogMessage@{D\-D\-Log\-Message}}
+\subsubsection[{timestamp}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Date$\ast$) timestamp}}\label{interface_d_d_log_message_a405819fd179c0816e2c7a061168429a6}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_log_8h}{D\-D\-Log.\-h}\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_log_8m}{D\-D\-Log.\-m}\end{DoxyCompactItemize}

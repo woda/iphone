@@ -1,0 +1,402 @@
+Improvements
+
+
+\begin{DoxyItemize}
+\item A\-R\-C
+\item All public \hyperlink{interface_test_flight}{Test\-Flight} methods may be called from any thread or dispatch\-\_\-queue
+\item All public \hyperlink{interface_test_flight}{Test\-Flight} methods (except for {\ttfamily T\-F\-Log} and {\ttfamily take\-Off\-:}) are asynchronous, so there is never a wait on them
+\item \hyperlink{interface_test_flight}{Test\-Flight} never uses more than 1 network connection at a time
+\item All network traffic is grouped together, sent at once, and transferred in Message\-Pack. This results in using less bandwidth and less network calls.
+\item All network traffic if server is not reachable
+\item Size of S\-D\-K reduced by 70\%
+\item New In App Update U\-I in an alert with landscape support. Should work for all different types of apps.
+\item Manual Sessions\-: You can manually control session start and end. See {\ttfamily Test\-Flight+\-Manual\-Sessions.h} for more information
+\item Combining of back to back sessions. If a session starts less than 30 seconds from the last session which ended, the previous session is continued. You may change the time limit (or turn this off) using the {\ttfamily T\-F\-Option\-Session\-Keep\-Alive\-Timeout} option key.
+\item No longer automatically starts a session on {\ttfamily +take\-Off\-:} in order to support new background modes that might launch an app in the background.
+\item {\ttfamily T\-F\-Option\-Report\-Crashes} option to not install crash handlers
+\item Remove all calls to {\ttfamily dispatch\-\_\-get\-\_\-current\-\_\-queue}, it is deprecated
+\end{DoxyItemize}
+
+Changes
+
+
+\begin{DoxyItemize}
+\item Removed all access to mac address
+\item Added Ad\-Support.\-framework requirement (as a replacement for mac address to get accurate user counts)
+\item Add format attribute to T\-F\-Log to show warnings for wrong format specifiers or not using a format string
+\item Removed Questions
+\item Removed Feedback View (along with backtrace option)
+\end{DoxyItemize}
+
+Bug Fixes
+
+
+\begin{DoxyItemize}
+\item Fixed addrinfo memory leak
+\item Fixed possible {\ttfamily -\/\mbox{[}T\-F\-Air\-Traffic\-Controller get\-Number\-Or\-Nil\-From\-:with\-Key\-:\mbox{]}} crash when bad data is received.
+\item Core\-Telephony crash work around\-: this is a workaround of a i\-O\-S bug that causes deallocated instances of {\ttfamily C\-T\-Telephony\-Network\-Info} to receive notifications which causes crashes. Core Telephony is used to retrieve the device's mobile carrier.
+\item Fix bug with crash reporting in i\-O\-S 7
+\end{DoxyItemize}
+
+\subsection*{1.\-2.\-4 -\/ February 19, 2013}
+
+
+\begin{DoxyItemize}
+\item Fixed bug that caused crash reports to sometimes not send immediately (they would be resent later)
+\end{DoxyItemize}
+
+\subsection*{1.\-2.\-3 -\/ January 8, 2013}
+
+
+\begin{DoxyItemize}
+\item Fixed typos in readme
+\item Fixed bug where logs not sent on crash
+\item Fixed bug where empty crash files were created (but not sent)
+\item Cache path to T\-F's directory so it does not need to be regenerated every time
+\item Use consts for {\ttfamily set\-Options\-:}
+\item Updated {\ttfamily set\-Device\-Identifier\-:} comments to make them clearer
+\item Remove potentially conflicting function name {\ttfamily U\-I\-Color\-From\-R\-G\-B}
+\item Fixed crash on bad in app update data
+\end{DoxyItemize}
+
+\subsection*{1.\-2.\-2 -\/ December 26, 2012}
+
+
+\begin{DoxyItemize}
+\item Fix typo in app token error message
+\end{DoxyItemize}
+
+\subsection*{1.\-2.\-1 -\/ December 26, 2012}
+
+
+\begin{DoxyItemize}
+\item The max number of concurrent network connections has been reduced from 4 to 2.
+\end{DoxyItemize}
+
+\subsection*{1.\-2 -\/ November 12, 2012}
+
+
+\begin{DoxyItemize}
+\item Removed Team Token support. As of version 1.\-2 take\-Off must be called with the Application Token, \href{https://testflightapp.com/dashboard/applications/,}{\tt https\-://testflightapp.\-com/dashboard/applications/,} choose your application, select S\-D\-K, get the Token for this Application.
+\end{DoxyItemize}
+
+\subsection*{1.\-2 B\-E\-T\-A 3 -\/ October 11, 2012}
+
+
+\begin{DoxyItemize}
+\item Added application token support. Application Tokens are currently optional if you do not have one you do not need one
+\end{DoxyItemize}
+
+\subsection*{1.\-2 B\-E\-T\-A 2 -\/ October 9, 2012}
+
+
+\begin{DoxyItemize}
+\item Resolved an instance of close\-\_\-file being called on a bad file descriptor
+\end{DoxyItemize}
+
+\subsection*{1.\-2 B\-E\-T\-A 1 -\/ October 1, 2012}
+
+
+\begin{DoxyItemize}
+\item Removed support for armv6
+\item Exception handler now returns instead of raising a S\-I\-G\-T\-R\-A\-P
+\end{DoxyItemize}
+
+\subsection*{1.\-1 -\/ September 13, 2012}
+
+
+\begin{DoxyItemize}
+\item armv7s and i\-O\-S 6 support
+\item Updated for general release
+\end{DoxyItemize}
+
+\subsection*{1.\-1 B\-E\-T\-A 3 -\/ September 12, 2012}
+
+
+\begin{DoxyItemize}
+\item armv7s slice added to library
+\item fixed typo for in application updates, in\-App\-Udates changed to in\-App\-Updates
+\end{DoxyItemize}
+
+\subsection*{1.\-1 B\-E\-T\-A 2 -\/ September 6, 2012}
+
+
+\begin{DoxyItemize}
+\item Re-\/enabled armv6 support
+\item Added option to disable in application updates
+\end{DoxyItemize}
+
+\subsection*{1.\-1 B\-E\-T\-A 1 -\/ July 13, 2012}
+
+
+\begin{DoxyItemize}
+\item Added T\-F\-Logv to allow for log customizations. Check the R\-E\-A\-D\-M\-E or online docs for more information.
+\item Added option attach\-Backtrace\-To\-Feedback, which attaches a backtrace to feedback sent from the S\-D\-K. For users who use feedback in more than one location in the application.
+\item Resolved issue where other exception handlers would not be called during an exception.
+\item S\-D\-K now sends the device language for a session.
+\item Documentation fixes.
+\item Stability fixes.
+\end{DoxyItemize}
+
+\subsubsection*{1.\-0 -\/ March 29, 2012}
+
+
+\begin{DoxyItemize}
+\item Resolved occurrences of exceptions with the message \char`\"{}\-No background task exists with identifier 0\char`\"{}
+\end{DoxyItemize}
+
+\subsubsection*{1.\-0 B\-E\-T\-A 1 -\/ March 23, 2012}
+
+
+\begin{DoxyItemize}
+\item Privacy Updates
+\item U\-D\-I\-D is no longer collected by the S\-D\-K. During testing please use {\ttfamily \mbox{[}\hyperlink{interface_test_flight}{Test\-Flight} set\-Device\-Identifier\-:\mbox{[}\mbox{[}U\-I\-Device current\-Device\mbox{]} unique\-Identifier\mbox{]}\mbox{]};} to send the U\-D\-I\-D so you can identify your testers. For release do not set {\ttfamily +set\-Device\-Identifier}. See Beta Testing and Release Differentiation in the R\-E\-A\-D\-M\-E or online at \href{http://testflightapp.com/sdk/doc/1.0beta1/}{\tt https\-://testflightapp.\-com/sdk/doc/1.\-0beta1/}
+\end{DoxyItemize}
+
+\subsubsection*{0.\-8.\-3 -\/ February 14, 2012}
+
+
+\begin{DoxyItemize}
+\item Rolled previous beta code into release builds
+\item No longer allow in application updates to occur in applications that were obtained from the app store.
+\end{DoxyItemize}
+
+{\bfseries Tested compiled library with\-:}
+
+
+\begin{DoxyItemize}
+\item Xcode 4.\-3
+\item Xcode 4.\-2
+\item Xcode 4.\-1
+\item Xcode 3.\-2.\-6
+\end{DoxyItemize}
+
+\subsubsection*{0.\-8.\-3 B\-E\-T\-A 5 -\/ February 10, 2012}
+
+
+\begin{DoxyItemize}
+\item Changed logging from asynchronous to synchronous.
+\item Resolved crash when looking for a log path failed.
+\item Added submit\-Feedback to the \hyperlink{interface_test_flight}{Test\-Flight} class to allow for custom feedback forms.
+\end{DoxyItemize}
+
+\subsubsection*{0.\-8.\-3 B\-E\-T\-A 4 -\/ January 20, 2012}
+
+
+\begin{DoxyItemize}
+\item Resolved an issue that occured when an application was upgraded from 0.\-8.\-3 B\-E\-T\-A 1 to 0.\-8.\-3 B\-E\-T\-A 3+ with unsent data from 0.\-8.\-3 B\-E\-T\-A 1
+\end{DoxyItemize}
+
+\subsubsection*{0.\-8.\-3 B\-E\-T\-A 3 -\/ January 19, 2012}
+
+
+\begin{DoxyItemize}
+\item On crash log files over 64k will not be sent until next launch.
+\end{DoxyItemize}
+
+{\bfseries Known Issues\-:}
+
+
+\begin{DoxyItemize}
+\item Logging massive amounts of data at the end of a session may prevent the application from launching in time on next launch
+\end{DoxyItemize}
+
+\subsubsection*{0.\-8.\-3 B\-E\-T\-A 2 -\/ January 13, 2012}
+
+
+\begin{DoxyItemize}
+\item libz.\-dylib is now required to be added to your \char`\"{}\-Link Binary with Libraries\char`\"{} build phase
+\item Log file compression, The compression is done on an as needed basis rather than before sending
+\item Changed all outgoing data from J\-S\-O\-N to Message\-Pack
+\item Added option {\ttfamily log\-To\-S\-T\-D\-E\-R\-R} to disable the {\ttfamily S\-T\-D\-E\-R\-R} logger
+\end{DoxyItemize}
+
+\subsubsection*{0.\-8.\-3 B\-E\-T\-A 1 -\/ December 29, 2011}
+
+
+\begin{DoxyItemize}
+\item In rare occurrences old session data that had not been sent to our server may have been discarded or attached to the wrong build. It is now no longer discarded
+\item Made sending of Session End events more robust
+\item Network queuing system does better bursting of unsent data
+\item Log files that are larger than 64\-K are now sent sometime after the next launch
+\item Log files that are larger than 16\-M\-B are no longer supported and will be replaced with a message indicating the log file was too large
+\item Fixed crashes while resuming from background
+\end{DoxyItemize}
+
+\subsubsection*{0.\-8.\-2 -\/ December 20, 2011}
+
+
+\begin{DoxyItemize}
+\item Promoted 0.\-8.\-2 B\-E\-T\-A 4 to stable
+\end{DoxyItemize}
+
+{\bfseries Known Issues\-:}
+
+
+\begin{DoxyItemize}
+\item Under some circumstances Session End events may not be sent until the next launch.
+\item With large log files Session End events may take a long time to show up.
+\end{DoxyItemize}
+
+{\bfseries Tested compiled library with\-:}
+
+
+\begin{DoxyItemize}
+\item Xcode 4.\-3
+\item Xcode 4.\-2
+\item Xcode 4.\-1
+\item Xcode 3.\-2.\-6
+\end{DoxyItemize}
+
+\subsubsection*{0.\-8.\-2 B\-E\-T\-A 4 -\/ December 12, 2011}
+
+
+\begin{DoxyItemize}
+\item Prevented \char`\"{}\-The string argument is N\-U\-L\-L\char`\"{} from occuring during finished\-Handshake in rare cases
+\item Resolved issue where data recorded while offline may not be sent
+\end{DoxyItemize}
+
+\subsubsection*{0.\-8.\-2 B\-E\-T\-A 3 -\/ December 8, 2011}
+
+
+\begin{DoxyItemize}
+\item Added auto-\/release pools to background setup and tear down
+\end{DoxyItemize}
+
+\subsubsection*{0.\-8.\-2 B\-E\-T\-A 2 -\/ December 5, 2011}
+
+
+\begin{DoxyItemize}
+\item Fixed the \char`\"{}pointer being freed was not allocated\char`\"{} bug
+\end{DoxyItemize}
+
+\subsubsection*{0.\-8.\-1 -\/ November 18, 2011}
+
+
+\begin{DoxyItemize}
+\item Implemented T\-F\-Log logging system, see R\-E\-A\-D\-M\-E for more information
+\item Fixed an issue where Session End events may not be sent until next launch
+\item Fixed an issue where duplicate events could be sent
+\item Fixed an issue with Session End events not being sent from some i\-Pod touch models
+\end{DoxyItemize}
+
+{\bfseries Tested compiled library with\-:}
+
+
+\begin{DoxyItemize}
+\item Xcode 4.\-2
+\item Xcode 4.\-1
+\item Xcode 3.\-2.\-6
+\end{DoxyItemize}
+
+\subsubsection*{0.\-8 -\/ November 8, 2011}
+
+
+\begin{DoxyItemize}
+\item Added {\ttfamily S\-I\-G\-T\-R\-A\-P} as a signal type that we catch
+\item Removed all Objective-\/c from crash reporting
+\item Removed the use of non signal safe functions from signal handling
+\item Created a signal safe way to get symbols from a stack trace
+\item Changed the keyboard\-Type for Long Answer Questions and Feedback to allow for international character input
+\item Changed {\ttfamily T\-E\-S\-T\-F\-L\-I\-G\-H\-T\-\_\-\-S\-D\-K\-\_\-\-V\-E\-R\-S\-I\-O\-N} string to be an {\ttfamily N\-S\-String}
+\item Changed cache folder from Library/\-Caches/\-Test\-Flight to Library/\-Caches/com.\-testflight.\-testflightsdk
+\item Fixed issue with saving data when device is offline
+\item Fixed compability issues with i\-O\-S 3
+\item Added calling into the root\-View\-Controller should\-Autorotate\-To\-Interface\-Orientation if a root\-View\-Controller is set
+\item Made the comments in \hyperlink{_test_flight_8h}{Test\-Flight.\-h} compatible with Appledoc
+\end{DoxyItemize}
+
+Tested compiled library with\-:
+
+
+\begin{DoxyItemize}
+\item Xcode 4.\-2
+\item Xcode 4.\-1
+\item Xcode 3.\-2
+\end{DoxyItemize}
+
+\subsubsection*{0.\-7.\-2 -\/ September 29, 2011}
+
+
+\begin{DoxyItemize}
+\item Changed {\ttfamily T\-E\-S\-T\-F\-L\-I\-G\-H\-T\-\_\-\-S\-D\-K\-\_\-\-V\-E\-R\-S\-I\-O\-N} string to be an {\ttfamily N\-S\-String}
+\item Fixed an issue where exiting an application while the S\-D\-K is active caused modal views to be dismissed
+\end{DoxyItemize}
+
+\subsubsection*{0.\-7.\-1 -\/ September 22, 2011}
+
+
+\begin{DoxyItemize}
+\item Internal release
+\item Refactoring
+\end{DoxyItemize}
+
+\subsubsection*{0.\-7 -\/ September 21, 2011}
+
+
+\begin{DoxyItemize}
+\item Moved \hyperlink{interface_test_flight}{Test\-Flight} images and data to the Library/\-Caches folder
+\item Resolved an issue where sometimes the root\-View\-Controller could not be found and feedback, questions and upgrade views would not be displayed
+\item In application upgrade changed to allow skipping until the next version is installed and allows upgrades to be forced
+\item Fixed a memory leak when launching questions
+\end{DoxyItemize}
+
+\subsubsection*{0.\-6 -\/ September 2, 2011}
+
+
+\begin{DoxyItemize}
+\item Renamed base64\-\_\-encode to testflight\-\_\-base64\-\_\-encode to remove a conflict with other third party libraries
+\item Added ability to reinstall crash handlers when they are overwritten using the set\-Options A\-P\-I
+\item Fixed an issue where crash reports might not get sent under certain circumstances
+\item Fixed a deadlock when the application is put in the background and then resumed before all information can be sent
+\item Fixed an issue when attempting to un-\/install all signal handlers during a signal
+\item Added support for landscape mode on the i\-Pad to the Questions and Feedback views
+\item Crash reporting now works in versions of Xcode earlier than 4.\-2
+\item Fixed a memory leak during handshake
+\end{DoxyItemize}
+
+\subsubsection*{0.\-5 -\/ August 19, 2011}
+
+
+\begin{DoxyItemize}
+\item Feedback that is not attached to a checkpoint \mbox{[}\hyperlink{interface_test_flight}{Test\-Flight} open\-Feedback\-View\mbox{]}
+\item Usability changes to question views
+\item Removed pause and resume sessions, replaced with sessions being stopped and started
+\item Added text auto correction to the Long Answer question type
+\item Crash reports now send on crash instead of next launch
+\end{DoxyItemize}
+
+\subsubsection*{0.\-4 -\/ August 15, 2011}
+
+
+\begin{DoxyItemize}
+\item In Application Feedback with Questions
+\item In application updates
+\item Custom Environment Information added
+\item Networking stack reimplementation
+\item Exception handling fixes
+\end{DoxyItemize}
+
+\subsubsection*{0.\-3 -\/ June 15, 2011}
+
+
+\begin{DoxyItemize}
+\item Removed all mention of J\-S\-O\-N\-Kit from the R\-E\-A\-D\-M\-E
+\item Added support for using both the Bundle Version and the Bundle Short Version string
+\end{DoxyItemize}
+
+\subsubsection*{0.\-2 -\/ June 14, 2011}
+
+
+\begin{DoxyItemize}
+\item Removed all categories this allows users to use the S\-D\-K without having to set -\/\-Obj\-C and -\/load\-\_\-all
+\item Prefixed J\-S\-O\-N\-Kit for use in \hyperlink{interface_test_flight}{Test\-Flight} to remove reported issues where some users were already using J\-S\-O\-N\-Kit
+\item Added support for armv6 again
+\end{DoxyItemize}
+
+\subsubsection*{0.\-1 -\/ June 11, 2011}
+
+
+\begin{DoxyItemize}
+\item Initial Version 
+\end{DoxyItemize}

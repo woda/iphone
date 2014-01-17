@@ -1,0 +1,32 @@
+\hyperlink{interface_a_f_h_t_t_p_request_operation_logger}{A\-F\-H\-T\-T\-P\-Request\-Operation\-Logger} is an extension for \href{http://github.com/AFNetworking/AFNetworking/}{\tt A\-F\-Networking} that logs H\-T\-T\-P requests as they are sent and received.
+
+This is still in early stages of development, so proceed with caution when using this in a production application. Any bug reports, feature requests, or general feedback at this point would be greatly appreciated.
+
+\subsection*{Example Usage}
+
+Add the following code to {\ttfamily App\-Delegate.\-m -\/application\-:did\-Finish\-Launching\-With\-Options\-:}\-:
+
+``` objective-\/c \mbox{[}\mbox{[}\hyperlink{interface_a_f_h_t_t_p_request_operation_logger}{A\-F\-H\-T\-T\-P\-Request\-Operation\-Logger} shared\-Logger\mbox{]} start\-Logging\mbox{]}; ```
+
+Now all {\ttfamily \hyperlink{interface_a_f_h_t_t_p_request_operation}{A\-F\-H\-T\-T\-P\-Request\-Operation}} will have their request and response logged to the console, a la\-:
+
+``` G\-E\-T \href{http://example.com/foo/bar.json}{\tt http\-://example.\-com/foo/bar.\-json} 200 \href{http://example.com/foo/bar.json}{\tt http\-://example.\-com/foo/bar.\-json} ```
+
+If the default logging level is too verbose—say, if you only want to know when requests fail, then changing it is as simple as\-:
+
+``` objective-\/c \mbox{[}\mbox{[}\hyperlink{interface_a_f_h_t_t_p_request_operation_logger}{A\-F\-H\-T\-T\-P\-Request\-Operation\-Logger} shared\-Logger\mbox{]} set\-Level\-:A\-F\-Logger\-Level\-Error\mbox{]}; ```
+
+\subsection*{Contact}
+
+Mattt Thompson
+
+
+\begin{DoxyItemize}
+\item \href{http://github.com/mattt}{\tt http\-://github.\-com/mattt}
+\item \href{http://twitter.com/mattt}{\tt http\-://twitter.\-com/mattt}
+\item \href{mailto:m@mattt.me}{\tt m@mattt.\-me}
+\end{DoxyItemize}
+
+\subsection*{License}
+
+\hyperlink{interface_a_f_h_t_t_p_request_operation_logger}{A\-F\-H\-T\-T\-P\-Request\-Operation\-Logger} is available under the M\-I\-T license. See the L\-I\-C\-E\-N\-S\-E file for more info. 

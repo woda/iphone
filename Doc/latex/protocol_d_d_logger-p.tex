@@ -1,0 +1,118 @@
+\hypertarget{protocol_d_d_logger-p}{\section{$<$D\-D\-Logger$>$ Protocol Reference}
+\label{protocol_d_d_logger-p}\index{$<$\-D\-D\-Logger$>$@{$<$\-D\-D\-Logger$>$}}
+}
+
+
+{\ttfamily \#import $<$D\-D\-Log.\-h$>$}
+
+Inheritance diagram for $<$D\-D\-Logger$>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.097378cm]{protocol_d_d_logger-p}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_d_d_logger-p_aa1c104584f8b5cd3c6840c93e537647e}{log\-Message\-:}
+\item 
+(id$<$ \hyperlink{protocol_d_d_log_formatter-p}{D\-D\-Log\-Formatter} $>$) -\/ \hyperlink{protocol_d_d_logger-p_a23281a33ff57cddf0bc7e58652b8217e}{log\-Formatter}
+\item 
+(void) -\/ \hyperlink{protocol_d_d_logger-p_af7ecf3d7e7f3f3f1fcdb9d4aba994128}{set\-Log\-Formatter\-:}
+\item 
+(void) -\/ \hyperlink{protocol_d_d_logger-p_a08ed6b9f325b85bb57578d86714a55df}{did\-Add\-Logger}
+\item 
+(void) -\/ \hyperlink{protocol_d_d_logger-p_a77000c17e64056fcb626efa85b7f7d61}{will\-Remove\-Logger}
+\item 
+(void) -\/ \hyperlink{protocol_d_d_logger-p_addbeafa905ae0e48ff20cdf6894676a1}{flush}
+\item 
+(dispatch\-\_\-queue\-\_\-t) -\/ \hyperlink{protocol_d_d_logger-p_ae5f2e2ba2d79e85d8df62e034151d4dd}{logger\-Queue}
+\item 
+(N\-S\-String $\ast$) -\/ \hyperlink{protocol_d_d_logger-p_ab3b082cd9feffe63baf3b240445004a2}{logger\-Name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{protocol_d_d_logger-p_a08ed6b9f325b85bb57578d86714a55df}{\index{D\-D\-Logger-\/p@{D\-D\-Logger-\/p}!did\-Add\-Logger@{did\-Add\-Logger}}
+\index{did\-Add\-Logger@{did\-Add\-Logger}!DDLogger-p@{D\-D\-Logger-\/p}}
+\subsubsection[{did\-Add\-Logger}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) did\-Add\-Logger 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_d_d_logger-p_a08ed6b9f325b85bb57578d86714a55df}
+Since logging is asynchronous, adding and removing loggers is also asynchronous. In other words, the loggers are added and removed at appropriate times with regards to log messages.
+
+
+\begin{DoxyItemize}
+\item Loggers will not receive log messages that were executed prior to when they were added.
+\item Loggers will not receive log messages that were executed after they were removed.
+\end{DoxyItemize}
+
+These methods are executed in the logging thread/queue. This is the same thread/queue that will execute every log\-Message\-: invocation. Loggers may use these methods for thread synchronization or other setup/teardown tasks. \hypertarget{protocol_d_d_logger-p_addbeafa905ae0e48ff20cdf6894676a1}{\index{D\-D\-Logger-\/p@{D\-D\-Logger-\/p}!flush@{flush}}
+\index{flush@{flush}!DDLogger-p@{D\-D\-Logger-\/p}}
+\subsubsection[{flush}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) flush 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_d_d_logger-p_addbeafa905ae0e48ff20cdf6894676a1}
+Some loggers may buffer I\-O for optimization purposes. For example, a database logger may only save occasionaly as the disk I\-O is slow. In such loggers, this method should be implemented to flush any pending I\-O.
+
+This allows invocations of \hyperlink{interface_d_d_log}{D\-D\-Log}'s flush\-Log method to be propogated to loggers that need it.
+
+Note that \hyperlink{interface_d_d_log}{D\-D\-Log}'s flush\-Log method is invoked automatically when the application quits, and it may be also invoked manually by the developer prior to application crashes, or other such reasons. \hypertarget{protocol_d_d_logger-p_a23281a33ff57cddf0bc7e58652b8217e}{\index{D\-D\-Logger-\/p@{D\-D\-Logger-\/p}!log\-Formatter@{log\-Formatter}}
+\index{log\-Formatter@{log\-Formatter}!DDLogger-p@{D\-D\-Logger-\/p}}
+\subsubsection[{log\-Formatter}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id $<${\bf D\-D\-Log\-Formatter}$>$) log\-Formatter 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [required]}}}\label{protocol_d_d_logger-p_a23281a33ff57cddf0bc7e58652b8217e}
+Formatters may optionally be added to any logger.
+
+If no formatter is set, the logger simply logs the message as it is given in log\-Message, or it may use its own built in formatting style. 
+
+Reimplemented in \hyperlink{interface_d_d_abstract_logger_a4839d52332a328cf00e91225798727c3}{D\-D\-Abstract\-Logger}.
+
+\hypertarget{protocol_d_d_logger-p_ab3b082cd9feffe63baf3b240445004a2}{\index{D\-D\-Logger-\/p@{D\-D\-Logger-\/p}!logger\-Name@{logger\-Name}}
+\index{logger\-Name@{logger\-Name}!DDLogger-p@{D\-D\-Logger-\/p}}
+\subsubsection[{logger\-Name}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String $\ast$) logger\-Name 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_d_d_logger-p_ab3b082cd9feffe63baf3b240445004a2}
+If the logger implementation does not choose to provide its own queue, one will automatically be created for it. The created queue will receive its name from this method. This may be helpful for debugging or profiling reasons. \hypertarget{protocol_d_d_logger-p_ae5f2e2ba2d79e85d8df62e034151d4dd}{\index{D\-D\-Logger-\/p@{D\-D\-Logger-\/p}!logger\-Queue@{logger\-Queue}}
+\index{logger\-Queue@{logger\-Queue}!DDLogger-p@{D\-D\-Logger-\/p}}
+\subsubsection[{logger\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (dispatch\-\_\-queue\-\_\-t) logger\-Queue 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_d_d_logger-p_ae5f2e2ba2d79e85d8df62e034151d4dd}
+Each logger is executed concurrently with respect to the other loggers. Thus, a dedicated dispatch queue is used for each logger. Logger implementations may optionally choose to provide their own dispatch queue. \hypertarget{protocol_d_d_logger-p_aa1c104584f8b5cd3c6840c93e537647e}{\index{D\-D\-Logger-\/p@{D\-D\-Logger-\/p}!log\-Message\-:@{log\-Message\-:}}
+\index{log\-Message\-:@{log\-Message\-:}!DDLogger-p@{D\-D\-Logger-\/p}}
+\subsubsection[{log\-Message\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) log\-Message\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf D\-D\-Log\-Message} $\ast$)}]{log\-Message}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [required]}}}\label{protocol_d_d_logger-p_aa1c104584f8b5cd3c6840c93e537647e}
+\hypertarget{protocol_d_d_logger-p_af7ecf3d7e7f3f3f1fcdb9d4aba994128}{\index{D\-D\-Logger-\/p@{D\-D\-Logger-\/p}!set\-Log\-Formatter\-:@{set\-Log\-Formatter\-:}}
+\index{set\-Log\-Formatter\-:@{set\-Log\-Formatter\-:}!DDLogger-p@{D\-D\-Logger-\/p}}
+\subsubsection[{set\-Log\-Formatter\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Log\-Formatter\-: 
+\begin{DoxyParamCaption}
+\item[{(id$<$ {\bf D\-D\-Log\-Formatter} $>$)}]{formatter}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [required]}}}\label{protocol_d_d_logger-p_af7ecf3d7e7f3f3f1fcdb9d4aba994128}
+
+
+Reimplemented in \hyperlink{interface_d_d_abstract_logger_a66adcff49e28995ce45a470ec41623e1}{D\-D\-Abstract\-Logger}.
+
+\hypertarget{protocol_d_d_logger-p_a77000c17e64056fcb626efa85b7f7d61}{\index{D\-D\-Logger-\/p@{D\-D\-Logger-\/p}!will\-Remove\-Logger@{will\-Remove\-Logger}}
+\index{will\-Remove\-Logger@{will\-Remove\-Logger}!DDLogger-p@{D\-D\-Logger-\/p}}
+\subsubsection[{will\-Remove\-Logger}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) will\-Remove\-Logger 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_d_d_logger-p_a77000c17e64056fcb626efa85b7f7d61}
+
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_log_8h}{D\-D\-Log.\-h}\end{DoxyCompactItemize}

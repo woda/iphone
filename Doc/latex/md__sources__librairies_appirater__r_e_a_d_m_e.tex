@@ -1,0 +1,77 @@
+\hyperlink{interface_appirater}{Appirater} is a class that you can drop into any i\-Phone app (i\-O\-S 4.\-0 or later) that will help remind your users to review your app on the App Store. The code is released under the M\-I\-T/\-X11, so feel free to modify and share your changes with the world. Read on below for how to get started. If you need any help using, the library check out the \href{http://groups.google.com/group/appirater}{\tt Appirater group}.
+
+\subsection*{Getting Started }
+
+\subsubsection*{Cocoapods}
+
+If you're new to Cocoapods \href{http://nsscreencast.com/episodes/5-cocoapods}{\tt watch this}. To add \hyperlink{interface_appirater}{Appirater} to your app, add {\ttfamily pod \char`\"{}\-Appirater\char`\"{}} to your Podfile.
+
+Cocoapods support is still experimental, and might not work in all use cases. If you experience problems, open an issue and install via Git submodule
+
+\subsubsection*{Git submodule}
+
+
+\begin{DoxyEnumerate}
+\item Add the \hyperlink{interface_appirater}{Appirater} code into your project.
+\item If your project doesn't use A\-R\-C, add the {\ttfamily -\/fobjc-\/arc} compiler flag to {\ttfamily \hyperlink{_appirater_8m}{Appirater.\-m}} in your target's Build Phases » Compile Sources section.
+\item Add the {\ttfamily C\-F\-Network}, {\ttfamily System\-Configuration}, and {\ttfamily Store\-Kit} frameworks to your project. Be sure to {\bfseries change Required to Optional} for Store\-Kit in your target's Build Phases » Link Binary with Libraries section.
+\end{DoxyEnumerate}
+
+\subsection*{Configuration }
+
+
+\begin{DoxyEnumerate}
+\item \hyperlink{interface_appirater}{Appirater} provides class methods to configure its behavior. See \href{https://github.com/arashpayan/appirater/blob/master/Appirater.h}{\tt `\-Appirater.h`} for more information.
+\end{DoxyEnumerate}
+
+```objc \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-App\-Id\-:"552035781"\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Days\-Until\-Prompt\-:1\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Uses\-Until\-Prompt\-:10\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Significant\-Events\-Until\-Prompt\-:-\/1\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Time\-Before\-Reminding\-:2\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Debug\-:Y\-E\-S\mbox{]}; ```
+
+
+\begin{DoxyEnumerate}
+\item Call {\ttfamily \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-App\-Id\-:@\char`\"{}your\-App\-Id\char`\"{}\mbox{]}} with the app id provided by Apple. A good place to do this is at the beginning of your app delegate's {\ttfamily application\-:did\-Finish\-Launching\-With\-Options\-:} method.
+\item Call {\ttfamily \mbox{[}\hyperlink{interface_appirater}{Appirater} app\-Launched\-:Y\-E\-S\mbox{]}} at the end of your app delegate's {\ttfamily application\-:did\-Finish\-Launching\-With\-Options\-:} method.
+\item Call {\ttfamily \mbox{[}\hyperlink{interface_appirater}{Appirater} app\-Entered\-Foreground\-:Y\-E\-S\mbox{]}} in your app delegate's {\ttfamily application\-Will\-Enter\-Foreground\-:} method.
+\item (O\-P\-T\-I\-O\-N\-A\-L) Call {\ttfamily \mbox{[}\hyperlink{interface_appirater}{Appirater} user\-Did\-Significant\-Event\-:Y\-E\-S\mbox{]}} when the user does something 'significant' in the app.
+\end{DoxyEnumerate}
+
+\subsubsection*{Development}
+
+Setting {\ttfamily \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Debug\-:Y\-E\-S\mbox{]}} will ensure that the rating request is shown each time the app is launched.
+
+\subsubsection*{Production}
+
+Make sure you set {\ttfamily \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Debug\-:N\-O\mbox{]}} to ensure the request is not shown every time the app is launched. Also make sure that each of these components are set in the {\ttfamily application\-:did\-Finish\-Launching\-With\-Options\-:} method.
+
+This example states that the rating request is only shown when the app has been launched 5 times {\bfseries and} after 7 days.
+
+```objc \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-App\-Id\-:"770699556"\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Days\-Until\-Prompt\-:7\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Uses\-Until\-Prompt\-:5\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Significant\-Events\-Until\-Prompt\-:-\/1\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Time\-Before\-Reminding\-:2\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Debug\-:N\-O\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} app\-Launched\-:Y\-E\-S\mbox{]}; ```
+
+If you wanted to show the request after 5 days only you can set the following\-:
+
+```objc \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-App\-Id\-:"770699556"\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Days\-Until\-Prompt\-:-\/1\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Uses\-Until\-Prompt\-:5\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Significant\-Events\-Until\-Prompt\-:-\/1\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Time\-Before\-Reminding\-:2\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} set\-Debug\-:N\-O\mbox{]}; \mbox{[}\hyperlink{interface_appirater}{Appirater} app\-Launched\-:Y\-E\-S\mbox{]}; ```
+
+\subsection*{Help and Support Group }
+
+Requests for help, questions about usage, suggestions and other relevant topics should be posted at the \href{http://groups.google.com/group/appirater}{\tt Appirater group}. As much as I'd like to help everyone who emails me, I can't respond to private emails, but I'll respond to posts on the group where others can benefit from the Q\&As.
+
+\subsection*{License }
+
+Copyright 2013. \href{http://arashpayan.com}{\tt Arash Payan}. This library is distributed under the terms of the M\-I\-T/\-X11.
+
+While not required, I greatly encourage and appreciate any improvements that you make to this library be contributed back for the benefit of all who use \hyperlink{interface_appirater}{Appirater}.
+
+\subsection*{Tips }
+
+Bitcoin tips are welcome\-: 1\-Px\-Vtrz\-R4o\-H\-E\-K\-Poj\-Vx41\-J\-Jn\-W\-Gu\-P\-Lgg\-Y\-D\-Qy
+
+\subsection*{Ports for other S\-D\-Ks }
+
+A few people have ported \hyperlink{interface_appirater}{Appirater} to other S\-D\-Ks. The ports are listed here in hopes that they may assist developers of those S\-D\-Ks. I don't know how closesly (if at all) they track the Objective-\/\-C version of \hyperlink{interface_appirater}{Appirater}. If you need support for any of the libraries, please contact the maintainer of the port.
+
+
+\begin{DoxyItemize}
+\item Mono\-Touch Port (using C\#). \href{https://github.com/chebum/Appirater-for-MonoTouch}{\tt Github}
+\item Mono\-Touch Binding (using native \hyperlink{interface_appirater}{Appirater}). \href{https://github.com/theonlylawislove/MonoTouch.Appirater}{\tt Github}
+\item Corona S\-D\-K. \href{https://github.com/aliasgar84/Appirater}{\tt Github}
+\item Titanium S\-D\-K. \href{https://github.com/mpociot/TiAppirater}{\tt Github} 
+\end{DoxyItemize}

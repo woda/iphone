@@ -1,0 +1,153 @@
+\hypertarget{interface_d_d_abstract_database_logger}{\section{D\-D\-Abstract\-Database\-Logger Class Reference}
+\label{interface_d_d_abstract_database_logger}\index{D\-D\-Abstract\-Database\-Logger@{D\-D\-Abstract\-Database\-Logger}}
+}
+
+
+{\ttfamily \#import $<$D\-D\-Abstract\-Database\-Logger.\-h$>$}
+
+Inheritance diagram for D\-D\-Abstract\-Database\-Logger\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{interface_d_d_abstract_database_logger}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_d_d_abstract_database_logger_aaeb05a38ed741dc600b2d9a2fe508caf}{save\-Pending\-Log\-Entries}
+\item 
+(void) -\/ \hyperlink{interface_d_d_abstract_database_logger_aae5b9fa0ac538ab0d03dca012ff26001}{delete\-Old\-Log\-Entries}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+B\-O\-O\-L \hyperlink{interface_d_d_abstract_database_logger_ab32407a62b4aa0e3ee5008613b4e62a6}{save\-Timer\-Suspended}
+\item 
+N\-S\-U\-Integer \hyperlink{interface_d_d_abstract_database_logger_a121327bc349a8f298853f136ccb1e487}{unsaved\-Count}
+\item 
+dispatch\-\_\-time\-\_\-t \hyperlink{interface_d_d_abstract_database_logger_a67eec7235264678ca755027f731afcd4}{unsaved\-Time}
+\item 
+dispatch\-\_\-source\-\_\-t \hyperlink{interface_d_d_abstract_database_logger_a89bac726725c8ee3c52cbf1ebe0c2893}{save\-Timer}
+\item 
+dispatch\-\_\-time\-\_\-t \hyperlink{interface_d_d_abstract_database_logger_a36b383ca4e0009b019d2eb7be34339be}{last\-Delete\-Time}
+\item 
+dispatch\-\_\-source\-\_\-t \hyperlink{interface_d_d_abstract_database_logger_a8803148510f94049709971b07a80165f}{delete\-Timer}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-U\-Integer \hyperlink{interface_d_d_abstract_database_logger_a0f72f6042f001e34d18489e3c3864cec}{save\-Threshold}
+\item 
+N\-S\-Time\-Interval \hyperlink{interface_d_d_abstract_database_logger_ad9d79d66d716e4965fec5e7c137f729e}{save\-Interval}
+\item 
+N\-S\-Time\-Interval \hyperlink{interface_d_d_abstract_database_logger_a48793e11870e3dce07bbb4ca9ea3a302}{max\-Age}
+\item 
+N\-S\-Time\-Interval \hyperlink{interface_d_d_abstract_database_logger_a6ae601d281eea50ffcb0f27c50ec3700}{delete\-Interval}
+\item 
+B\-O\-O\-L \hyperlink{interface_d_d_abstract_database_logger_abc644d3087912778b30bc9e68945a5bf}{delete\-On\-Every\-Save}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Welcome to Cocoa Lumberjack!
+
+The project page has a wealth of documentation if you have any questions. \href{https://github.com/robbiehanson/CocoaLumberjack}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack}
+
+If you're new to the project you may wish to read the \char`\"{}\-Getting Started\char`\"{} wiki. \href{https://github.com/robbiehanson/CocoaLumberjack/wiki/GettingStarted}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack/wiki/\-Getting\-Started}
+
+This class provides an abstract implementation of a database logger.
+
+That is, it provides the base implementation for a database logger to build atop of. All that is needed for a concrete database logger is to extend this class and override the methods in the implementation file that are prefixed with \char`\"{}db\-\_\-\char`\"{}. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_d_d_abstract_database_logger_aae5b9fa0ac538ab0d03dca012ff26001}{\index{D\-D\-Abstract\-Database\-Logger@{D\-D\-Abstract\-Database\-Logger}!delete\-Old\-Log\-Entries@{delete\-Old\-Log\-Entries}}
+\index{delete\-Old\-Log\-Entries@{delete\-Old\-Log\-Entries}!DDAbstractDatabaseLogger@{D\-D\-Abstract\-Database\-Logger}}
+\subsubsection[{delete\-Old\-Log\-Entries}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) delete\-Old\-Log\-Entries 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_abstract_database_logger_aae5b9fa0ac538ab0d03dca012ff26001}
+Removes any log entries that are older than max\-Age. \hypertarget{interface_d_d_abstract_database_logger_aaeb05a38ed741dc600b2d9a2fe508caf}{\index{D\-D\-Abstract\-Database\-Logger@{D\-D\-Abstract\-Database\-Logger}!save\-Pending\-Log\-Entries@{save\-Pending\-Log\-Entries}}
+\index{save\-Pending\-Log\-Entries@{save\-Pending\-Log\-Entries}!DDAbstractDatabaseLogger@{D\-D\-Abstract\-Database\-Logger}}
+\subsubsection[{save\-Pending\-Log\-Entries}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) save\-Pending\-Log\-Entries 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_abstract_database_logger_aaeb05a38ed741dc600b2d9a2fe508caf}
+Forces a save of any pending log entries (flushes log entries to disk). 
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_d_d_abstract_database_logger_a8803148510f94049709971b07a80165f}{\index{D\-D\-Abstract\-Database\-Logger@{D\-D\-Abstract\-Database\-Logger}!delete\-Timer@{delete\-Timer}}
+\index{delete\-Timer@{delete\-Timer}!DDAbstractDatabaseLogger@{D\-D\-Abstract\-Database\-Logger}}
+\subsubsection[{delete\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (dispatch\-\_\-source\-\_\-t) delete\-Timer\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_abstract_database_logger_a8803148510f94049709971b07a80165f}
+\hypertarget{interface_d_d_abstract_database_logger_a36b383ca4e0009b019d2eb7be34339be}{\index{D\-D\-Abstract\-Database\-Logger@{D\-D\-Abstract\-Database\-Logger}!last\-Delete\-Time@{last\-Delete\-Time}}
+\index{last\-Delete\-Time@{last\-Delete\-Time}!DDAbstractDatabaseLogger@{D\-D\-Abstract\-Database\-Logger}}
+\subsubsection[{last\-Delete\-Time}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (dispatch\-\_\-time\-\_\-t) last\-Delete\-Time\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_abstract_database_logger_a36b383ca4e0009b019d2eb7be34339be}
+\hypertarget{interface_d_d_abstract_database_logger_a89bac726725c8ee3c52cbf1ebe0c2893}{\index{D\-D\-Abstract\-Database\-Logger@{D\-D\-Abstract\-Database\-Logger}!save\-Timer@{save\-Timer}}
+\index{save\-Timer@{save\-Timer}!DDAbstractDatabaseLogger@{D\-D\-Abstract\-Database\-Logger}}
+\subsubsection[{save\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (dispatch\-\_\-source\-\_\-t) save\-Timer\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_abstract_database_logger_a89bac726725c8ee3c52cbf1ebe0c2893}
+\hypertarget{interface_d_d_abstract_database_logger_ab32407a62b4aa0e3ee5008613b4e62a6}{\index{D\-D\-Abstract\-Database\-Logger@{D\-D\-Abstract\-Database\-Logger}!save\-Timer\-Suspended@{save\-Timer\-Suspended}}
+\index{save\-Timer\-Suspended@{save\-Timer\-Suspended}!DDAbstractDatabaseLogger@{D\-D\-Abstract\-Database\-Logger}}
+\subsubsection[{save\-Timer\-Suspended}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) save\-Timer\-Suspended\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_abstract_database_logger_ab32407a62b4aa0e3ee5008613b4e62a6}
+\hypertarget{interface_d_d_abstract_database_logger_a121327bc349a8f298853f136ccb1e487}{\index{D\-D\-Abstract\-Database\-Logger@{D\-D\-Abstract\-Database\-Logger}!unsaved\-Count@{unsaved\-Count}}
+\index{unsaved\-Count@{unsaved\-Count}!DDAbstractDatabaseLogger@{D\-D\-Abstract\-Database\-Logger}}
+\subsubsection[{unsaved\-Count}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-Integer) unsaved\-Count\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_abstract_database_logger_a121327bc349a8f298853f136ccb1e487}
+\hypertarget{interface_d_d_abstract_database_logger_a67eec7235264678ca755027f731afcd4}{\index{D\-D\-Abstract\-Database\-Logger@{D\-D\-Abstract\-Database\-Logger}!unsaved\-Time@{unsaved\-Time}}
+\index{unsaved\-Time@{unsaved\-Time}!DDAbstractDatabaseLogger@{D\-D\-Abstract\-Database\-Logger}}
+\subsubsection[{unsaved\-Time}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (dispatch\-\_\-time\-\_\-t) unsaved\-Time\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_abstract_database_logger_a67eec7235264678ca755027f731afcd4}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_d_d_abstract_database_logger_a6ae601d281eea50ffcb0f27c50ec3700}{\index{D\-D\-Abstract\-Database\-Logger@{D\-D\-Abstract\-Database\-Logger}!delete\-Interval@{delete\-Interval}}
+\index{delete\-Interval@{delete\-Interval}!DDAbstractDatabaseLogger@{D\-D\-Abstract\-Database\-Logger}}
+\subsubsection[{delete\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Time\-Interval) delete\-Interval\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [assign]}}}\label{interface_d_d_abstract_database_logger_a6ae601d281eea50ffcb0f27c50ec3700}
+\hypertarget{interface_d_d_abstract_database_logger_abc644d3087912778b30bc9e68945a5bf}{\index{D\-D\-Abstract\-Database\-Logger@{D\-D\-Abstract\-Database\-Logger}!delete\-On\-Every\-Save@{delete\-On\-Every\-Save}}
+\index{delete\-On\-Every\-Save@{delete\-On\-Every\-Save}!DDAbstractDatabaseLogger@{D\-D\-Abstract\-Database\-Logger}}
+\subsubsection[{delete\-On\-Every\-Save}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) delete\-On\-Every\-Save\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [assign]}}}\label{interface_d_d_abstract_database_logger_abc644d3087912778b30bc9e68945a5bf}
+\hypertarget{interface_d_d_abstract_database_logger_a48793e11870e3dce07bbb4ca9ea3a302}{\index{D\-D\-Abstract\-Database\-Logger@{D\-D\-Abstract\-Database\-Logger}!max\-Age@{max\-Age}}
+\index{max\-Age@{max\-Age}!DDAbstractDatabaseLogger@{D\-D\-Abstract\-Database\-Logger}}
+\subsubsection[{max\-Age}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Time\-Interval) max\-Age\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [assign]}}}\label{interface_d_d_abstract_database_logger_a48793e11870e3dce07bbb4ca9ea3a302}
+It is likely you don't want the log entries to persist forever. Doing so would allow the database to grow infinitely large over time.
+
+The max\-Age property provides a way to specify how old a log statement can get before it should get deleted from the database.
+
+The delete\-Interval specifies how often to sweep for old log entries. Since deleting is an expensive operation (disk io) is is done on a fixed interval.
+
+An alternative to the delete\-Interval is the delete\-On\-Every\-Save option. This specifies that old log entries should be deleted during every save operation.
+
+You can optionally disable the max\-Age by setting it to zero (or a negative value). If you disable the max\-Age then old log statements are not deleted.
+
+You can optionally disable the delete\-Interval by setting it to zero (or a negative value).
+
+If you disable both delete\-Interval and delete\-On\-Every\-Save then old log statements are not deleted.
+
+It's not wise to enable both delete\-Interval and delete\-On\-Every\-Save.
+
+The default max\-Age is 7 days. The default delete\-Interval is 5 minutes. The default delete\-On\-Every\-Save is N\-O. \hypertarget{interface_d_d_abstract_database_logger_ad9d79d66d716e4965fec5e7c137f729e}{\index{D\-D\-Abstract\-Database\-Logger@{D\-D\-Abstract\-Database\-Logger}!save\-Interval@{save\-Interval}}
+\index{save\-Interval@{save\-Interval}!DDAbstractDatabaseLogger@{D\-D\-Abstract\-Database\-Logger}}
+\subsubsection[{save\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Time\-Interval) save\-Interval\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [assign]}}}\label{interface_d_d_abstract_database_logger_ad9d79d66d716e4965fec5e7c137f729e}
+\hypertarget{interface_d_d_abstract_database_logger_a0f72f6042f001e34d18489e3c3864cec}{\index{D\-D\-Abstract\-Database\-Logger@{D\-D\-Abstract\-Database\-Logger}!save\-Threshold@{save\-Threshold}}
+\index{save\-Threshold@{save\-Threshold}!DDAbstractDatabaseLogger@{D\-D\-Abstract\-Database\-Logger}}
+\subsubsection[{save\-Threshold}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-Integer) save\-Threshold\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [assign]}}}\label{interface_d_d_abstract_database_logger_a0f72f6042f001e34d18489e3c3864cec}
+Specifies how often to save the data to disk. Since saving is an expensive operation (disk io) it is not done after every log statement. These properties allow you to configure how/when the logger saves to disk.
+
+A save is done when either (whichever happens first)\-:
+
+
+\begin{DoxyItemize}
+\item The number of unsaved log entries reaches save\-Threshold
+\item The amount of time since the oldest unsaved log entry was created reaches save\-Interval
+\end{DoxyItemize}
+
+You can optionally disable the save\-Threshold by setting it to zero. If you disable the save\-Threshold you are entirely dependent on the save\-Interval.
+
+You can optionally disable the save\-Interval by setting it to zero (or a negative value). If you disable the save\-Interval you are entirely dependent on the save\-Threshold.
+
+It's not wise to disable both save\-Threshold and save\-Interval.
+
+The default save\-Threshold is 500. The default save\-Interval is 60 seconds. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_abstract_database_logger_8h}{D\-D\-Abstract\-Database\-Logger.\-h}\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_abstract_database_logger_8m}{D\-D\-Abstract\-Database\-Logger.\-m}\end{DoxyCompactItemize}

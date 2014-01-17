@@ -1,0 +1,48 @@
+\hypertarget{protocol_d_d_registered_dynamic_logging-p}{\section{$<$D\-D\-Registered\-Dynamic\-Logging$>$ Protocol Reference}
+\label{protocol_d_d_registered_dynamic_logging-p}\index{$<$\-D\-D\-Registered\-Dynamic\-Logging$>$@{$<$\-D\-D\-Registered\-Dynamic\-Logging$>$}}
+}
+
+
+{\ttfamily \#import $<$D\-D\-Log.\-h$>$}
+
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(int) + \hyperlink{protocol_d_d_registered_dynamic_logging-p_ad26f8e0c6c5899c67c829dfdb6d4cc9e}{dd\-Log\-Level}
+\item 
+(void) + \hyperlink{protocol_d_d_registered_dynamic_logging-p_a7be2b93ed6c3bd2697493361670f10eb}{dd\-Set\-Log\-Level\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{protocol_d_d_registered_dynamic_logging-p_ad26f8e0c6c5899c67c829dfdb6d4cc9e}{\index{D\-D\-Registered\-Dynamic\-Logging-\/p@{D\-D\-Registered\-Dynamic\-Logging-\/p}!dd\-Log\-Level@{dd\-Log\-Level}}
+\index{dd\-Log\-Level@{dd\-Log\-Level}!DDRegisteredDynamicLogging-p@{D\-D\-Registered\-Dynamic\-Logging-\/p}}
+\subsubsection[{dd\-Log\-Level}]{\setlength{\rightskip}{0pt plus 5cm}+ (int) dd\-Log\-Level 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{protocol_d_d_registered_dynamic_logging-p_ad26f8e0c6c5899c67c829dfdb6d4cc9e}
+Implement these methods to allow a file's log level to be managed from a central location.
+
+This is useful if you'd like to be able to change log levels for various parts of your code from within the running application.
+
+Imagine pulling up the settings for your application, and being able to configure the logging level on a per file basis.
+
+The implementation can be very straight-\/forward\-:
+
+
+\begin{DoxyItemize}
+\item (int)dd\-Log\-Level \{ return dd\-Log\-Level; \}
+\item (void)\hyperlink{protocol_d_d_registered_dynamic_logging-p_a7be2b93ed6c3bd2697493361670f10eb}{dd\-Set\-Log\-Level\-:}log\-Level \{ dd\-Log\-Level = log\-Level; \} 
+\end{DoxyItemize}\hypertarget{protocol_d_d_registered_dynamic_logging-p_a7be2b93ed6c3bd2697493361670f10eb}{\index{D\-D\-Registered\-Dynamic\-Logging-\/p@{D\-D\-Registered\-Dynamic\-Logging-\/p}!dd\-Set\-Log\-Level\-:@{dd\-Set\-Log\-Level\-:}}
+\index{dd\-Set\-Log\-Level\-:@{dd\-Set\-Log\-Level\-:}!DDRegisteredDynamicLogging-p@{D\-D\-Registered\-Dynamic\-Logging-\/p}}
+\subsubsection[{dd\-Set\-Log\-Level\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) dd\-Set\-Log\-Level\-: 
+\begin{DoxyParamCaption}
+\item[{(int)}]{log\-Level}
+\end{DoxyParamCaption}
+}}\label{protocol_d_d_registered_dynamic_logging-p_a7be2b93ed6c3bd2697493361670f10eb}
+
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_log_8h}{D\-D\-Log.\-h}\end{DoxyCompactItemize}

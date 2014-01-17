@@ -1,0 +1,127 @@
+\hypertarget{protocol_d_d_log_file_manager-p}{\section{$<$D\-D\-Log\-File\-Manager$>$ Protocol Reference}
+\label{protocol_d_d_log_file_manager-p}\index{$<$\-D\-D\-Log\-File\-Manager$>$@{$<$\-D\-D\-Log\-File\-Manager$>$}}
+}
+
+
+{\ttfamily \#import $<$D\-D\-File\-Logger.\-h$>$}
+
+Inheritance diagram for $<$D\-D\-Log\-File\-Manager$>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{protocol_d_d_log_file_manager-p}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(N\-S\-String $\ast$) -\/ \hyperlink{protocol_d_d_log_file_manager-p_a1d5de02082978f3e21f95641c1d04dfc}{logs\-Directory}
+\item 
+(N\-S\-Array $\ast$) -\/ \hyperlink{protocol_d_d_log_file_manager-p_a63ecb0df541333c8b2ac4bdeae831213}{unsorted\-Log\-File\-Paths}
+\item 
+(N\-S\-Array $\ast$) -\/ \hyperlink{protocol_d_d_log_file_manager-p_a0ab5171a1c93b77f95a5c62f14e3bb81}{unsorted\-Log\-File\-Names}
+\item 
+(N\-S\-Array $\ast$) -\/ \hyperlink{protocol_d_d_log_file_manager-p_a30671150308cc41efc842cfb6d676c3f}{unsorted\-Log\-File\-Infos}
+\item 
+(N\-S\-Array $\ast$) -\/ \hyperlink{protocol_d_d_log_file_manager-p_a5c306b5749dcb2560197b82252fa602e}{sorted\-Log\-File\-Paths}
+\item 
+(N\-S\-Array $\ast$) -\/ \hyperlink{protocol_d_d_log_file_manager-p_acbea9ad69a93c9f90d52a3e827071b02}{sorted\-Log\-File\-Names}
+\item 
+(N\-S\-Array $\ast$) -\/ \hyperlink{protocol_d_d_log_file_manager-p_aa546aa0de2f32598659b0263cad191ce}{sorted\-Log\-File\-Infos}
+\item 
+(N\-S\-String $\ast$) -\/ \hyperlink{protocol_d_d_log_file_manager-p_a4764396987eee9020fc42502e9a469e9}{create\-New\-Log\-File}
+\item 
+(void) -\/ \hyperlink{protocol_d_d_log_file_manager-p_a11052c4bfb0aeb3ebf5a7eb68ba5a5f0}{did\-Archive\-Log\-File\-:}
+\item 
+(void) -\/ \hyperlink{protocol_d_d_log_file_manager-p_ab436eeac96a13dc2896a44a1cb2cffb1}{did\-Roll\-And\-Archive\-Log\-File\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-U\-Integer \hyperlink{protocol_d_d_log_file_manager-p_acb282ecd7fa74b5c3ee03bbb7a710dc1}{maximum\-Number\-Of\-Log\-Files}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{protocol_d_d_log_file_manager-p_a4764396987eee9020fc42502e9a469e9}{\index{D\-D\-Log\-File\-Manager-\/p@{D\-D\-Log\-File\-Manager-\/p}!create\-New\-Log\-File@{create\-New\-Log\-File}}
+\index{create\-New\-Log\-File@{create\-New\-Log\-File}!DDLogFileManager-p@{D\-D\-Log\-File\-Manager-\/p}}
+\subsubsection[{create\-New\-Log\-File}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String $\ast$) create\-New\-Log\-File 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{protocol_d_d_log_file_manager-p_a4764396987eee9020fc42502e9a469e9}
+\hypertarget{protocol_d_d_log_file_manager-p_a11052c4bfb0aeb3ebf5a7eb68ba5a5f0}{\index{D\-D\-Log\-File\-Manager-\/p@{D\-D\-Log\-File\-Manager-\/p}!did\-Archive\-Log\-File\-:@{did\-Archive\-Log\-File\-:}}
+\index{did\-Archive\-Log\-File\-:@{did\-Archive\-Log\-File\-:}!DDLogFileManager-p@{D\-D\-Log\-File\-Manager-\/p}}
+\subsubsection[{did\-Archive\-Log\-File\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) did\-Archive\-Log\-File\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{log\-File\-Path}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_d_d_log_file_manager-p_a11052c4bfb0aeb3ebf5a7eb68ba5a5f0}
+\hypertarget{protocol_d_d_log_file_manager-p_ab436eeac96a13dc2896a44a1cb2cffb1}{\index{D\-D\-Log\-File\-Manager-\/p@{D\-D\-Log\-File\-Manager-\/p}!did\-Roll\-And\-Archive\-Log\-File\-:@{did\-Roll\-And\-Archive\-Log\-File\-:}}
+\index{did\-Roll\-And\-Archive\-Log\-File\-:@{did\-Roll\-And\-Archive\-Log\-File\-:}!DDLogFileManager-p@{D\-D\-Log\-File\-Manager-\/p}}
+\subsubsection[{did\-Roll\-And\-Archive\-Log\-File\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) did\-Roll\-And\-Archive\-Log\-File\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{log\-File\-Path}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_d_d_log_file_manager-p_ab436eeac96a13dc2896a44a1cb2cffb1}
+\hypertarget{protocol_d_d_log_file_manager-p_a1d5de02082978f3e21f95641c1d04dfc}{\index{D\-D\-Log\-File\-Manager-\/p@{D\-D\-Log\-File\-Manager-\/p}!logs\-Directory@{logs\-Directory}}
+\index{logs\-Directory@{logs\-Directory}!DDLogFileManager-p@{D\-D\-Log\-File\-Manager-\/p}}
+\subsubsection[{logs\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String $\ast$) logs\-Directory 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{protocol_d_d_log_file_manager-p_a1d5de02082978f3e21f95641c1d04dfc}
+\hypertarget{protocol_d_d_log_file_manager-p_aa546aa0de2f32598659b0263cad191ce}{\index{D\-D\-Log\-File\-Manager-\/p@{D\-D\-Log\-File\-Manager-\/p}!sorted\-Log\-File\-Infos@{sorted\-Log\-File\-Infos}}
+\index{sorted\-Log\-File\-Infos@{sorted\-Log\-File\-Infos}!DDLogFileManager-p@{D\-D\-Log\-File\-Manager-\/p}}
+\subsubsection[{sorted\-Log\-File\-Infos}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Array $\ast$) sorted\-Log\-File\-Infos 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{protocol_d_d_log_file_manager-p_aa546aa0de2f32598659b0263cad191ce}
+\hypertarget{protocol_d_d_log_file_manager-p_acbea9ad69a93c9f90d52a3e827071b02}{\index{D\-D\-Log\-File\-Manager-\/p@{D\-D\-Log\-File\-Manager-\/p}!sorted\-Log\-File\-Names@{sorted\-Log\-File\-Names}}
+\index{sorted\-Log\-File\-Names@{sorted\-Log\-File\-Names}!DDLogFileManager-p@{D\-D\-Log\-File\-Manager-\/p}}
+\subsubsection[{sorted\-Log\-File\-Names}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Array $\ast$) sorted\-Log\-File\-Names 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{protocol_d_d_log_file_manager-p_acbea9ad69a93c9f90d52a3e827071b02}
+\hypertarget{protocol_d_d_log_file_manager-p_a5c306b5749dcb2560197b82252fa602e}{\index{D\-D\-Log\-File\-Manager-\/p@{D\-D\-Log\-File\-Manager-\/p}!sorted\-Log\-File\-Paths@{sorted\-Log\-File\-Paths}}
+\index{sorted\-Log\-File\-Paths@{sorted\-Log\-File\-Paths}!DDLogFileManager-p@{D\-D\-Log\-File\-Manager-\/p}}
+\subsubsection[{sorted\-Log\-File\-Paths}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Array $\ast$) sorted\-Log\-File\-Paths 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{protocol_d_d_log_file_manager-p_a5c306b5749dcb2560197b82252fa602e}
+\hypertarget{protocol_d_d_log_file_manager-p_a30671150308cc41efc842cfb6d676c3f}{\index{D\-D\-Log\-File\-Manager-\/p@{D\-D\-Log\-File\-Manager-\/p}!unsorted\-Log\-File\-Infos@{unsorted\-Log\-File\-Infos}}
+\index{unsorted\-Log\-File\-Infos@{unsorted\-Log\-File\-Infos}!DDLogFileManager-p@{D\-D\-Log\-File\-Manager-\/p}}
+\subsubsection[{unsorted\-Log\-File\-Infos}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Array $\ast$) unsorted\-Log\-File\-Infos 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{protocol_d_d_log_file_manager-p_a30671150308cc41efc842cfb6d676c3f}
+\hypertarget{protocol_d_d_log_file_manager-p_a0ab5171a1c93b77f95a5c62f14e3bb81}{\index{D\-D\-Log\-File\-Manager-\/p@{D\-D\-Log\-File\-Manager-\/p}!unsorted\-Log\-File\-Names@{unsorted\-Log\-File\-Names}}
+\index{unsorted\-Log\-File\-Names@{unsorted\-Log\-File\-Names}!DDLogFileManager-p@{D\-D\-Log\-File\-Manager-\/p}}
+\subsubsection[{unsorted\-Log\-File\-Names}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Array $\ast$) unsorted\-Log\-File\-Names 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{protocol_d_d_log_file_manager-p_a0ab5171a1c93b77f95a5c62f14e3bb81}
+\hypertarget{protocol_d_d_log_file_manager-p_a63ecb0df541333c8b2ac4bdeae831213}{\index{D\-D\-Log\-File\-Manager-\/p@{D\-D\-Log\-File\-Manager-\/p}!unsorted\-Log\-File\-Paths@{unsorted\-Log\-File\-Paths}}
+\index{unsorted\-Log\-File\-Paths@{unsorted\-Log\-File\-Paths}!DDLogFileManager-p@{D\-D\-Log\-File\-Manager-\/p}}
+\subsubsection[{unsorted\-Log\-File\-Paths}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Array $\ast$) unsorted\-Log\-File\-Paths 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{protocol_d_d_log_file_manager-p_a63ecb0df541333c8b2ac4bdeae831213}
+
+
+\subsection{Property Documentation}
+\hypertarget{protocol_d_d_log_file_manager-p_acb282ecd7fa74b5c3ee03bbb7a710dc1}{\index{D\-D\-Log\-File\-Manager-\/p@{D\-D\-Log\-File\-Manager-\/p}!maximum\-Number\-Of\-Log\-Files@{maximum\-Number\-Of\-Log\-Files}}
+\index{maximum\-Number\-Of\-Log\-Files@{maximum\-Number\-Of\-Log\-Files}!DDLogFileManager-p@{D\-D\-Log\-File\-Manager-\/p}}
+\subsubsection[{maximum\-Number\-Of\-Log\-Files}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-Integer) maximum\-Number\-Of\-Log\-Files\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [required]}, {\ttfamily [atomic]}, {\ttfamily [assign]}}}\label{protocol_d_d_log_file_manager-p_acb282ecd7fa74b5c3ee03bbb7a710dc1}
+The maximum number of archived log files to keep on disk. For example, if this property is set to 3, then the Log\-File\-Manager will only keep 3 archived log files (plus the current active log file) on disk. Once the active log file is rolled/archived, then the oldest of the existing 3 rolled/archived log files is deleted.
+
+You may optionally disable deleting old/rolled/archived log files by setting this property to zero. 
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_file_logger_8h}{D\-D\-File\-Logger.\-h}\end{DoxyCompactItemize}

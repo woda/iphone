@@ -8,66 +8,175 @@
 \subsection*{Class Methods}
 \begin{DoxyCompactItemize}
 \item 
-(void) + \hyperlink{category_w_request_07_sync_08_aba737df426a4c675193abeef2f8aca91}{add\-File\-:with\-Data\-:}
+(N\-S\-String $\ast$) + \hyperlink{category_w_request_07_sync_08_a8d50844ae308c8a072c93e7cc90dddf5}{sha256hash\-:}
 \item 
-(void) + \hyperlink{category_w_request_07_sync_08_a273228af7e52c73d0201e3a9fb161b76}{remove\-File\-:}
+(void) + \hyperlink{category_w_request_07_sync_08_aa269c4d286ffed82b8aa6948d5b3faaf}{add\-File\-:with\-Data\-:success\-:loading\-:failure\-:}
 \item 
-(void) + \hyperlink{category_w_request_07_sync_08_a5a9316b6ca67b92fffca5e47d283fc49}{update\-File\-:with\-Data\-:}
+(N\-S\-Operation $\ast$) + \hyperlink{category_w_request_07_sync_08_a4a1398a9ef7ce9afcc3e02cdb85322c9}{upload\-File\-:with\-Part\-:number\-:success\-:loading\-:failure\-:}
 \item 
-(void) + \hyperlink{category_w_request_07_sync_08_acf1a3b70bd96ea54cc9db905bbbc4c2e}{get\-File\-:}
+(void) + \hyperlink{category_w_request_07_sync_08_ad103b9a44caafada269a1515488de693}{upload\-File\-:part\-Size\-:with\-Data\-:success\-:loading\-:failure\-:}
+\item 
+(void) + \hyperlink{category_w_request_07_sync_08_a9ab925f4aa518f084cf36d37795f1b23}{comfirm\-Upload\-:success\-:failure\-:}
+\item 
+(void) + \hyperlink{category_w_request_07_sync_08_a4ad4daa5d27da579425efb47515cd807}{create\-Folder\-:success\-:failure\-:}
+\item 
+(void) + \hyperlink{category_w_request_07_sync_08_a84de9f68ca5074a44141f5b8942bd03e}{remove\-File\-:success\-:failure\-:}
+\item 
+(void) + \hyperlink{category_w_request_07_sync_08_a76d4e0568f55ca784a4ee4ddd5b685c4}{update\-File\-:name\-:with\-Data\-:success\-:loading\-:failure\-:}
+\item 
+(N\-S\-Operation $\ast$) + \hyperlink{category_w_request_07_sync_08_a3630aff6c0169d1d2ffc783d333ce42d}{get\-File\-:part\-Number\-:success\-:loading\-:failure\-:}
+\item 
+(void) + \hyperlink{category_w_request_07_sync_08_acf6b8b63f4c6d4fbe8c29eebe0ccdd0c}{get\-File\-:parts\-:success\-:loading\-:failure\-:}
 \end{DoxyCompactItemize}
 
 
 \subsection{Method Documentation}
-\hypertarget{category_w_request_07_sync_08_aba737df426a4c675193abeef2f8aca91}{\index{W\-Request(\-Sync)@{W\-Request(\-Sync)}!add\-File\-:with\-Data\-:@{add\-File\-:with\-Data\-:}}
-\index{add\-File\-:with\-Data\-:@{add\-File\-:with\-Data\-:}!WRequest(Sync)@{W\-Request(\-Sync)}}
-\subsubsection[{add\-File\-:with\-Data\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) add\-File\-: 
+\hypertarget{category_w_request_07_sync_08_aa269c4d286ffed82b8aa6948d5b3faaf}{\index{W\-Request(\-Sync)@{W\-Request(\-Sync)}!add\-File\-:with\-Data\-:success\-:loading\-:failure\-:@{add\-File\-:with\-Data\-:success\-:loading\-:failure\-:}}
+\index{add\-File\-:with\-Data\-:success\-:loading\-:failure\-:@{add\-File\-:with\-Data\-:success\-:loading\-:failure\-:}!WRequest(Sync)@{W\-Request(\-Sync)}}
+\subsubsection[{add\-File\-:with\-Data\-:success\-:loading\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) add\-File\-: 
 \begin{DoxyParamCaption}
 \item[{(N\-S\-String $\ast$)}]{filename}
 \item[{withData:(N\-S\-Data $\ast$)}]{data}
+\item[{success:(id json)}]{success}
+\item[{loading:(double pourcentage)}]{loading}
+\item[{failure:(id error)}]{failure}
 \end{DoxyParamCaption}
-}}\label{category_w_request_07_sync_08_aba737df426a4c675193abeef2f8aca91}
+}}\label{category_w_request_07_sync_08_aa269c4d286ffed82b8aa6948d5b3faaf}
 
 
-Extends class \hyperlink{interface_w_request_aba737df426a4c675193abeef2f8aca91}{W\-Request}.
+Extends class \hyperlink{interface_w_request_aa269c4d286ffed82b8aa6948d5b3faaf}{W\-Request}.
 
-\hypertarget{category_w_request_07_sync_08_acf1a3b70bd96ea54cc9db905bbbc4c2e}{\index{W\-Request(\-Sync)@{W\-Request(\-Sync)}!get\-File\-:@{get\-File\-:}}
-\index{get\-File\-:@{get\-File\-:}!WRequest(Sync)@{W\-Request(\-Sync)}}
-\subsubsection[{get\-File\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) get\-File\-: 
+\hypertarget{category_w_request_07_sync_08_a9ab925f4aa518f084cf36d37795f1b23}{\index{W\-Request(\-Sync)@{W\-Request(\-Sync)}!comfirm\-Upload\-:success\-:failure\-:@{comfirm\-Upload\-:success\-:failure\-:}}
+\index{comfirm\-Upload\-:success\-:failure\-:@{comfirm\-Upload\-:success\-:failure\-:}!WRequest(Sync)@{W\-Request(\-Sync)}}
+\subsubsection[{comfirm\-Upload\-:success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) comfirm\-Upload\-: 
 \begin{DoxyParamCaption}
-\item[{(N\-S\-String $\ast$)}]{filename}
+\item[{(N\-S\-Number $\ast$)}]{file\-Id}
+\item[{success:(id json)}]{success}
+\item[{failure:(id error)}]{failure}
 \end{DoxyParamCaption}
-}}\label{category_w_request_07_sync_08_acf1a3b70bd96ea54cc9db905bbbc4c2e}
+}}\label{category_w_request_07_sync_08_a9ab925f4aa518f084cf36d37795f1b23}
 
 
-Extends class \hyperlink{interface_w_request_acf1a3b70bd96ea54cc9db905bbbc4c2e}{W\-Request}.
+Extends class \hyperlink{interface_w_request_a9ab925f4aa518f084cf36d37795f1b23}{W\-Request}.
 
-\hypertarget{category_w_request_07_sync_08_a273228af7e52c73d0201e3a9fb161b76}{\index{W\-Request(\-Sync)@{W\-Request(\-Sync)}!remove\-File\-:@{remove\-File\-:}}
-\index{remove\-File\-:@{remove\-File\-:}!WRequest(Sync)@{W\-Request(\-Sync)}}
-\subsubsection[{remove\-File\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) remove\-File\-: 
+\hypertarget{category_w_request_07_sync_08_a4ad4daa5d27da579425efb47515cd807}{\index{W\-Request(\-Sync)@{W\-Request(\-Sync)}!create\-Folder\-:success\-:failure\-:@{create\-Folder\-:success\-:failure\-:}}
+\index{create\-Folder\-:success\-:failure\-:@{create\-Folder\-:success\-:failure\-:}!WRequest(Sync)@{W\-Request(\-Sync)}}
+\subsubsection[{create\-Folder\-:success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) create\-Folder\-: 
 \begin{DoxyParamCaption}
-\item[{(N\-S\-String $\ast$)}]{filename}
+\item[{(N\-S\-String $\ast$)}]{folder}
+\item[{success:(id json)}]{success}
+\item[{failure:(id error)}]{failure}
 \end{DoxyParamCaption}
-}}\label{category_w_request_07_sync_08_a273228af7e52c73d0201e3a9fb161b76}
+}}\label{category_w_request_07_sync_08_a4ad4daa5d27da579425efb47515cd807}
 
 
-Extends class \hyperlink{interface_w_request_a273228af7e52c73d0201e3a9fb161b76}{W\-Request}.
+Extends class \hyperlink{interface_w_request_a4ad4daa5d27da579425efb47515cd807}{W\-Request}.
 
-\hypertarget{category_w_request_07_sync_08_a5a9316b6ca67b92fffca5e47d283fc49}{\index{W\-Request(\-Sync)@{W\-Request(\-Sync)}!update\-File\-:with\-Data\-:@{update\-File\-:with\-Data\-:}}
-\index{update\-File\-:with\-Data\-:@{update\-File\-:with\-Data\-:}!WRequest(Sync)@{W\-Request(\-Sync)}}
-\subsubsection[{update\-File\-:with\-Data\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) update\-File\-: 
+\hypertarget{category_w_request_07_sync_08_a3630aff6c0169d1d2ffc783d333ce42d}{\index{W\-Request(\-Sync)@{W\-Request(\-Sync)}!get\-File\-:part\-Number\-:success\-:loading\-:failure\-:@{get\-File\-:part\-Number\-:success\-:loading\-:failure\-:}}
+\index{get\-File\-:part\-Number\-:success\-:loading\-:failure\-:@{get\-File\-:part\-Number\-:success\-:loading\-:failure\-:}!WRequest(Sync)@{W\-Request(\-Sync)}}
+\subsubsection[{get\-File\-:part\-Number\-:success\-:loading\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-Operation $\ast$) get\-File\-: 
 \begin{DoxyParamCaption}
-\item[{(N\-S\-String $\ast$)}]{filename}
+\item[{(N\-S\-Number $\ast$)}]{file\-Id}
+\item[{partNumber:(N\-S\-Number $\ast$)}]{part}
+\item[{success:(N\-S\-Data $\ast$data, N\-S\-Number $\ast$part\-Number)}]{success}
+\item[{loading:(N\-S\-Number $\ast$part\-Number, double pourcentage)}]{loading}
+\item[{failure:(id error)}]{failure}
+\end{DoxyParamCaption}
+}}\label{category_w_request_07_sync_08_a3630aff6c0169d1d2ffc783d333ce42d}
+
+
+Extends class \hyperlink{interface_w_request_a3630aff6c0169d1d2ffc783d333ce42d}{W\-Request}.
+
+\hypertarget{category_w_request_07_sync_08_acf6b8b63f4c6d4fbe8c29eebe0ccdd0c}{\index{W\-Request(\-Sync)@{W\-Request(\-Sync)}!get\-File\-:parts\-:success\-:loading\-:failure\-:@{get\-File\-:parts\-:success\-:loading\-:failure\-:}}
+\index{get\-File\-:parts\-:success\-:loading\-:failure\-:@{get\-File\-:parts\-:success\-:loading\-:failure\-:}!WRequest(Sync)@{W\-Request(\-Sync)}}
+\subsubsection[{get\-File\-:parts\-:success\-:loading\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) get\-File\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Number $\ast$)}]{file\-Id}
+\item[{parts:(N\-S\-Number $\ast$)}]{parts}
+\item[{success:(N\-S\-Data $\ast$file)}]{success}
+\item[{loading:(double pourcentage)}]{loading}
+\item[{failure:(id error)}]{failure}
+\end{DoxyParamCaption}
+}}\label{category_w_request_07_sync_08_acf6b8b63f4c6d4fbe8c29eebe0ccdd0c}
+
+
+Extends class \hyperlink{interface_w_request_acf6b8b63f4c6d4fbe8c29eebe0ccdd0c}{W\-Request}.
+
+\hypertarget{category_w_request_07_sync_08_a84de9f68ca5074a44141f5b8942bd03e}{\index{W\-Request(\-Sync)@{W\-Request(\-Sync)}!remove\-File\-:success\-:failure\-:@{remove\-File\-:success\-:failure\-:}}
+\index{remove\-File\-:success\-:failure\-:@{remove\-File\-:success\-:failure\-:}!WRequest(Sync)@{W\-Request(\-Sync)}}
+\subsubsection[{remove\-File\-:success\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) remove\-File\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Number $\ast$)}]{file\-Id}
+\item[{success:(id json)}]{success}
+\item[{failure:(id error)}]{failure}
+\end{DoxyParamCaption}
+}}\label{category_w_request_07_sync_08_a84de9f68ca5074a44141f5b8942bd03e}
+
+
+Extends class \hyperlink{interface_w_request_a84de9f68ca5074a44141f5b8942bd03e}{W\-Request}.
+
+\hypertarget{category_w_request_07_sync_08_a8d50844ae308c8a072c93e7cc90dddf5}{\index{W\-Request(\-Sync)@{W\-Request(\-Sync)}!sha256hash\-:@{sha256hash\-:}}
+\index{sha256hash\-:@{sha256hash\-:}!WRequest(Sync)@{W\-Request(\-Sync)}}
+\subsubsection[{sha256hash\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-String $\ast$) sha256hash\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Data $\ast$)}]{data}
+\end{DoxyParamCaption}
+}}\label{category_w_request_07_sync_08_a8d50844ae308c8a072c93e7cc90dddf5}
+
+
+Extends class \hyperlink{interface_w_request_a8d50844ae308c8a072c93e7cc90dddf5}{W\-Request}.
+
+\hypertarget{category_w_request_07_sync_08_a76d4e0568f55ca784a4ee4ddd5b685c4}{\index{W\-Request(\-Sync)@{W\-Request(\-Sync)}!update\-File\-:name\-:with\-Data\-:success\-:loading\-:failure\-:@{update\-File\-:name\-:with\-Data\-:success\-:loading\-:failure\-:}}
+\index{update\-File\-:name\-:with\-Data\-:success\-:loading\-:failure\-:@{update\-File\-:name\-:with\-Data\-:success\-:loading\-:failure\-:}!WRequest(Sync)@{W\-Request(\-Sync)}}
+\subsubsection[{update\-File\-:name\-:with\-Data\-:success\-:loading\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) update\-File\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Number $\ast$)}]{file\-Id}
+\item[{name:(N\-S\-String $\ast$)}]{filename}
 \item[{withData:(N\-S\-Data $\ast$)}]{data}
+\item[{success:(id json)}]{success}
+\item[{loading:(double pourcentage)}]{loading}
+\item[{failure:(id error)}]{failure}
 \end{DoxyParamCaption}
-}}\label{category_w_request_07_sync_08_a5a9316b6ca67b92fffca5e47d283fc49}
+}}\label{category_w_request_07_sync_08_a76d4e0568f55ca784a4ee4ddd5b685c4}
 
 
-Extends class \hyperlink{interface_w_request_a5a9316b6ca67b92fffca5e47d283fc49}{W\-Request}.
+Extends class \hyperlink{interface_w_request_a76d4e0568f55ca784a4ee4ddd5b685c4}{W\-Request}.
+
+\hypertarget{category_w_request_07_sync_08_ad103b9a44caafada269a1515488de693}{\index{W\-Request(\-Sync)@{W\-Request(\-Sync)}!upload\-File\-:part\-Size\-:with\-Data\-:success\-:loading\-:failure\-:@{upload\-File\-:part\-Size\-:with\-Data\-:success\-:loading\-:failure\-:}}
+\index{upload\-File\-:part\-Size\-:with\-Data\-:success\-:loading\-:failure\-:@{upload\-File\-:part\-Size\-:with\-Data\-:success\-:loading\-:failure\-:}!WRequest(Sync)@{W\-Request(\-Sync)}}
+\subsubsection[{upload\-File\-:part\-Size\-:with\-Data\-:success\-:loading\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) upload\-File\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Number $\ast$)}]{file\-Id}
+\item[{partSize:(N\-S\-Number $\ast$)}]{part\-Size}
+\item[{withData:(N\-S\-Data $\ast$)}]{data}
+\item[{success:(id json)}]{success}
+\item[{loading:(double pourcentage)}]{loading}
+\item[{failure:(id error)}]{failure}
+\end{DoxyParamCaption}
+}}\label{category_w_request_07_sync_08_ad103b9a44caafada269a1515488de693}
+
+
+Extends class \hyperlink{interface_w_request_ad103b9a44caafada269a1515488de693}{W\-Request}.
+
+\hypertarget{category_w_request_07_sync_08_a4a1398a9ef7ce9afcc3e02cdb85322c9}{\index{W\-Request(\-Sync)@{W\-Request(\-Sync)}!upload\-File\-:with\-Part\-:number\-:success\-:loading\-:failure\-:@{upload\-File\-:with\-Part\-:number\-:success\-:loading\-:failure\-:}}
+\index{upload\-File\-:with\-Part\-:number\-:success\-:loading\-:failure\-:@{upload\-File\-:with\-Part\-:number\-:success\-:loading\-:failure\-:}!WRequest(Sync)@{W\-Request(\-Sync)}}
+\subsubsection[{upload\-File\-:with\-Part\-:number\-:success\-:loading\-:failure\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-Operation $\ast$) upload\-File\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Number $\ast$)}]{file\-Id}
+\item[{withPart:(N\-S\-Data $\ast$)}]{part}
+\item[{number:(N\-S\-Number $\ast$)}]{part\-Number}
+\item[{success:(N\-S\-Number $\ast$part\-Number)}]{success}
+\item[{loading:(N\-S\-Number $\ast$part\-Number, double pourcentage)}]{loading}
+\item[{failure:(id error)}]{failure}
+\end{DoxyParamCaption}
+}}\label{category_w_request_07_sync_08_a4a1398a9ef7ce9afcc3e02cdb85322c9}
+
+
+Extends class \hyperlink{interface_w_request_a4a1398a9ef7ce9afcc3e02cdb85322c9}{W\-Request}.
 
 
 
 The documentation for this category was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Models/\-Requests/\hyperlink{_w_request_09_sync_8h}{W\-Request+\-Sync.\-h}\item 
-/\-Volumes/\-User\-Data/\-Dev/woda-\/iphone/\-Sources/\-Models/\-Requests/\hyperlink{_w_request_09_sync_8m}{W\-Request+\-Sync.\-m}\end{DoxyCompactItemize}
+Sources/\-Models/\-Requests/\hyperlink{_w_request_09_sync_8h}{W\-Request+\-Sync.\-h}\item 
+Sources/\-Models/\-Requests/\hyperlink{_w_request_09_sync_8m}{W\-Request+\-Sync.\-m}\end{DoxyCompactItemize}

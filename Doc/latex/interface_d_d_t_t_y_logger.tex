@@ -1,0 +1,254 @@
+\hypertarget{interface_d_d_t_t_y_logger}{\section{D\-D\-T\-T\-Y\-Logger Class Reference}
+\label{interface_d_d_t_t_y_logger}\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}}
+}
+
+
+{\ttfamily \#import $<$D\-D\-T\-T\-Y\-Logger.\-h$>$}
+
+Inheritance diagram for D\-D\-T\-T\-Y\-Logger\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{interface_d_d_t_t_y_logger}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_d_d_t_t_y_logger_a8cc7b90b379c24c16deb915bb66edd2c}{set\-Foreground\-Color\-:background\-Color\-:for\-Flag\-:}
+\item 
+(void) -\/ \hyperlink{interface_d_d_t_t_y_logger_a027da91f6f5cf24b801a2a30ebdfa7fb}{set\-Foreground\-Color\-:background\-Color\-:for\-Flag\-:context\-:}
+\item 
+(void) -\/ \hyperlink{interface_d_d_t_t_y_logger_a3bd75b42477758e7e779fae61057584c}{set\-Foreground\-Color\-:background\-Color\-:for\-Tag\-:}
+\item 
+(void) -\/ \hyperlink{interface_d_d_t_t_y_logger_acf10b74c6b9ab7b5a4fbbec695b743f4}{clear\-Colors\-For\-Flag\-:}
+\item 
+(void) -\/ \hyperlink{interface_d_d_t_t_y_logger_a1dccacc79bb52b97daf96361052ac882}{clear\-Colors\-For\-Flag\-:context\-:}
+\item 
+(void) -\/ \hyperlink{interface_d_d_t_t_y_logger_a51e2825041252ae2c4dfb42e6c30b065}{clear\-Colors\-For\-Tag\-:}
+\item 
+(void) -\/ \hyperlink{interface_d_d_t_t_y_logger_a53437ad5e9d4aa6b4da4471b33252ea7}{clear\-Colors\-For\-All\-Flags}
+\item 
+(void) -\/ \hyperlink{interface_d_d_t_t_y_logger_ab85aba750ff9fbbb0a070d9ed655e37c}{clear\-Colors\-For\-All\-Tags}
+\item 
+(void) -\/ \hyperlink{interface_d_d_t_t_y_logger_a4512bc72f873d7f1ad690ae40ca6b9ca}{clear\-All\-Colors}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_d_d_t_t_y_logger}{D\-D\-T\-T\-Y\-Logger} $\ast$) + \hyperlink{interface_d_d_t_t_y_logger_abcb0224cccf6a4515ae22f1c79c0c9d5}{shared\-Instance}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-Calendar $\ast$ \hyperlink{interface_d_d_t_t_y_logger_a4ee6e8d3042ae5d175a768a4e5c53c09}{calendar}
+\item 
+N\-S\-U\-Integer \hyperlink{interface_d_d_t_t_y_logger_a056843aff6a644ca5cec90806bccd3b4}{calendar\-Unit\-Flags}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_d_d_t_t_y_logger_a9f54836505cd04fe3205fc4b0419fd4d}{app\-Name}
+\item 
+char $\ast$ \hyperlink{interface_d_d_t_t_y_logger_aea8969e6e0fc04b775c1212139c669ea}{app}
+\item 
+size\-\_\-t \hyperlink{interface_d_d_t_t_y_logger_a1f9410c4ec61277fb56f5a85c57a4474}{app\-Len}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_d_d_t_t_y_logger_a43d53c81250bb1910fec950b80f2ade1}{process\-I\-D}
+\item 
+char $\ast$ \hyperlink{interface_d_d_t_t_y_logger_af2d379faf865a0459888f1fe9174df68}{pid}
+\item 
+size\-\_\-t \hyperlink{interface_d_d_t_t_y_logger_a7585c0c145ea2043d0048339afae9e2a}{pid\-Len}
+\item 
+N\-S\-Mutable\-Array $\ast$ \hyperlink{interface_d_d_t_t_y_logger_a1168b3a024ac486de6f278e1dc7e0702}{color\-Profiles\-Array}
+\item 
+N\-S\-Mutable\-Dictionary $\ast$ \hyperlink{interface_d_d_t_t_y_logger_ad3534f05cc5b4e630276bc38626a8e63}{color\-Profiles\-Dict}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+B\-O\-O\-L \hyperlink{interface_d_d_t_t_y_logger_a4d0b3f3f5bb3b8d220568b7e8b1fb9d8}{colors\-Enabled}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Welcome to Cocoa Lumberjack!
+
+The project page has a wealth of documentation if you have any questions. \href{https://github.com/robbiehanson/CocoaLumberjack}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack}
+
+If you're new to the project you may wish to read the \char`\"{}\-Getting Started\char`\"{} wiki. \href{https://github.com/robbiehanson/CocoaLumberjack/wiki/GettingStarted}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack/wiki/\-Getting\-Started}
+
+This class provides a logger for Terminal output or Xcode console output, depending on where you are running your code.
+
+As described in the \char`\"{}\-Getting Started\char`\"{} page, the traditional N\-S\-Log() function directs it's output to two places\-:
+
+
+\begin{DoxyItemize}
+\item Apple System Log (so it shows up in Console.\-app)
+\item Std\-Err (if stderr is a T\-T\-Y, so log statements show up in Xcode console)
+\end{DoxyItemize}
+
+To duplicate N\-S\-Log() functionality you can simply add this logger and an asl logger. However, if you instead choose to use file logging (for faster performance), you may choose to use only a file logger and a tty logger. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_d_d_t_t_y_logger_a4512bc72f873d7f1ad690ae40ca6b9ca}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!clear\-All\-Colors@{clear\-All\-Colors}}
+\index{clear\-All\-Colors@{clear\-All\-Colors}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{clear\-All\-Colors}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) clear\-All\-Colors 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_t_t_y_logger_a4512bc72f873d7f1ad690ae40ca6b9ca}
+\hypertarget{interface_d_d_t_t_y_logger_a53437ad5e9d4aa6b4da4471b33252ea7}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!clear\-Colors\-For\-All\-Flags@{clear\-Colors\-For\-All\-Flags}}
+\index{clear\-Colors\-For\-All\-Flags@{clear\-Colors\-For\-All\-Flags}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{clear\-Colors\-For\-All\-Flags}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) clear\-Colors\-For\-All\-Flags 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_t_t_y_logger_a53437ad5e9d4aa6b4da4471b33252ea7}
+\hypertarget{interface_d_d_t_t_y_logger_ab85aba750ff9fbbb0a070d9ed655e37c}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!clear\-Colors\-For\-All\-Tags@{clear\-Colors\-For\-All\-Tags}}
+\index{clear\-Colors\-For\-All\-Tags@{clear\-Colors\-For\-All\-Tags}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{clear\-Colors\-For\-All\-Tags}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) clear\-Colors\-For\-All\-Tags 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_t_t_y_logger_ab85aba750ff9fbbb0a070d9ed655e37c}
+\hypertarget{interface_d_d_t_t_y_logger_acf10b74c6b9ab7b5a4fbbec695b743f4}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!clear\-Colors\-For\-Flag\-:@{clear\-Colors\-For\-Flag\-:}}
+\index{clear\-Colors\-For\-Flag\-:@{clear\-Colors\-For\-Flag\-:}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{clear\-Colors\-For\-Flag\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) clear\-Colors\-For\-Flag\-: 
+\begin{DoxyParamCaption}
+\item[{(int)}]{mask}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_t_t_y_logger_acf10b74c6b9ab7b5a4fbbec695b743f4}
+Clearing color profiles. \hypertarget{interface_d_d_t_t_y_logger_a1dccacc79bb52b97daf96361052ac882}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!clear\-Colors\-For\-Flag\-:context\-:@{clear\-Colors\-For\-Flag\-:context\-:}}
+\index{clear\-Colors\-For\-Flag\-:context\-:@{clear\-Colors\-For\-Flag\-:context\-:}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{clear\-Colors\-For\-Flag\-:context\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) {\bf clear\-Colors\-For\-Flag\-:} 
+\begin{DoxyParamCaption}
+\item[{(int)}]{mask}
+\item[{context:(int)}]{context}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_t_t_y_logger_a1dccacc79bb52b97daf96361052ac882}
+\hypertarget{interface_d_d_t_t_y_logger_a51e2825041252ae2c4dfb42e6c30b065}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!clear\-Colors\-For\-Tag\-:@{clear\-Colors\-For\-Tag\-:}}
+\index{clear\-Colors\-For\-Tag\-:@{clear\-Colors\-For\-Tag\-:}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{clear\-Colors\-For\-Tag\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) clear\-Colors\-For\-Tag\-: 
+\begin{DoxyParamCaption}
+\item[{(id $<$N\-S\-Copying$>$)}]{tag}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_t_t_y_logger_a51e2825041252ae2c4dfb42e6c30b065}
+\hypertarget{interface_d_d_t_t_y_logger_a8cc7b90b379c24c16deb915bb66edd2c}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!set\-Foreground\-Color\-:background\-Color\-:for\-Flag\-:@{set\-Foreground\-Color\-:background\-Color\-:for\-Flag\-:}}
+\index{set\-Foreground\-Color\-:background\-Color\-:for\-Flag\-:@{set\-Foreground\-Color\-:background\-Color\-:for\-Flag\-:}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{set\-Foreground\-Color\-:background\-Color\-:for\-Flag\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Foreground\-Color\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Color $\ast$)}]{txt\-Color}
+\item[{backgroundColor:(N\-S\-Color $\ast$)}]{bg\-Color}
+\item[{forFlag:(int)}]{mask}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_t_t_y_logger_a8cc7b90b379c24c16deb915bb66edd2c}
+The default color set (foreground\-Color, background\-Color) is\-:
+
+
+\begin{DoxyItemize}
+\item L\-O\-G\-\_\-\-F\-L\-A\-G\-\_\-\-E\-R\-R\-O\-R = (red, nil)
+\item L\-O\-G\-\_\-\-F\-L\-A\-G\-\_\-\-W\-A\-R\-N = (orange, nil)
+\end{DoxyItemize}
+
+You can customize the colors however you see fit. Please note that you are passing a flag, N\-O\-T a level.
+
+G\-O\-O\-D \-: \mbox{[}tty\-Logger set\-Foreground\-Color\-:pink background\-Color\-:nil for\-Flag\-:L\-O\-G\-\_\-\-F\-L\-A\-G\-\_\-\-I\-N\-F\-O\mbox{]}; // $<$-\/ Good \-:) B\-A\-D \-: \mbox{[}tty\-Logger set\-Foreground\-Color\-:pink background\-Color\-:nil for\-Flag\-:L\-O\-G\-\_\-\-L\-E\-V\-E\-L\-\_\-\-I\-N\-F\-O\mbox{]}; // $<$-\/ B\-A\-D! \-:(
+
+L\-O\-G\-\_\-\-F\-L\-A\-G\-\_\-\-I\-N\-F\-O = 0...00100 L\-O\-G\-\_\-\-L\-E\-V\-E\-L\-\_\-\-I\-N\-F\-O = 0...00111 $<$-\/ Would match L\-O\-G\-\_\-\-F\-L\-A\-G\-\_\-\-I\-N\-F\-O and L\-O\-G\-\_\-\-F\-L\-A\-G\-\_\-\-W\-A\-R\-N and L\-O\-G\-\_\-\-F\-L\-A\-G\-\_\-\-E\-R\-R\-O\-R
+
+If you run the application within Xcode, then the Xcode\-Colors plugin is required.
+
+If you run the application from a shell, then \hyperlink{interface_d_d_t_t_y_logger}{D\-D\-T\-T\-Y\-Logger} will automatically map the given color to the closest available color. (xterm-\/256color or xterm-\/color which have 256 and 16 supported colors respectively.)
+
+This method invokes set\-Foreground\-Color\-:background\-Color\-:for\-Flag\-:context\-: and passes the default context (0). \hypertarget{interface_d_d_t_t_y_logger_a027da91f6f5cf24b801a2a30ebdfa7fb}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!set\-Foreground\-Color\-:background\-Color\-:for\-Flag\-:context\-:@{set\-Foreground\-Color\-:background\-Color\-:for\-Flag\-:context\-:}}
+\index{set\-Foreground\-Color\-:background\-Color\-:for\-Flag\-:context\-:@{set\-Foreground\-Color\-:background\-Color\-:for\-Flag\-:context\-:}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{set\-Foreground\-Color\-:background\-Color\-:for\-Flag\-:context\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Foreground\-Color\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Color $\ast$)}]{txt\-Color}
+\item[{backgroundColor:(N\-S\-Color $\ast$)}]{bg\-Color}
+\item[{forFlag:(int)}]{mask}
+\item[{context:(int)}]{ctxt}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_t_t_y_logger_a027da91f6f5cf24b801a2a30ebdfa7fb}
+Just like set\-Foreground\-Color\-:background\-Color\-:flag, but allows you to specify a particular logging context.
+
+A logging context is often used to identify log messages coming from a 3rd party framework, although logging context's can be used for many different functions.
+
+Logging context's are explained in further detail here\-: \href{https://github.com/robbiehanson/CocoaLumberjack/wiki/CustomContext}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack/wiki/\-Custom\-Context} \hypertarget{interface_d_d_t_t_y_logger_a3bd75b42477758e7e779fae61057584c}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!set\-Foreground\-Color\-:background\-Color\-:for\-Tag\-:@{set\-Foreground\-Color\-:background\-Color\-:for\-Tag\-:}}
+\index{set\-Foreground\-Color\-:background\-Color\-:for\-Tag\-:@{set\-Foreground\-Color\-:background\-Color\-:for\-Tag\-:}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{set\-Foreground\-Color\-:background\-Color\-:for\-Tag\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Foreground\-Color\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Color $\ast$)}]{txt\-Color}
+\item[{backgroundColor:(N\-S\-Color $\ast$)}]{bg\-Color}
+\item[{forTag:(id$<$ N\-S\-Copying $>$)}]{tag}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_t_t_y_logger_a3bd75b42477758e7e779fae61057584c}
+Similar to the methods above, but allows you to map D\-D\-Log\-Message-\/$>$tag to a particular color profile. For example, you could do something like this\-:
+
+static N\-S\-String $\ast$const Purple\-Tag = "Purple\-Tag";
+
+\#define D\-D\-Log\-Purple(frmt, ...) L\-O\-G\-\_\-\-O\-B\-J\-C\-\_\-\-T\-A\-G\-\_\-\-M\-A\-C\-R\-O(N\-O, 0, 0, 0, Purple\-Tag, frmt, \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)
+
+And then in your application\-Did\-Finish\-Launching, or wherever you configure Lumberjack\-:
+
+\#if T\-A\-R\-G\-E\-T\-\_\-\-O\-S\-\_\-\-I\-P\-H\-O\-N\-E U\-I\-Color $\ast$purple = \mbox{[}U\-I\-Color color\-With\-Red\-:(64/255.\-0) green\-:(0/255.\-0) blue\-:(128/255.\-0) alpha\-:1.\-0\mbox{]}; \#else N\-S\-Color $\ast$purple = \mbox{[}N\-S\-Color color\-With\-Calibrated\-Red\-:(64/255.\-0) green\-:(0/255.\-0) blue\-:(128/255.\-0) alpha\-:1.\-0\mbox{]};
+
+\mbox{[}\mbox{[}\hyperlink{interface_d_d_t_t_y_logger}{D\-D\-T\-T\-Y\-Logger} shared\-Instance\mbox{]} set\-Foreground\-Color\-:purple background\-Color\-:nil for\-Tag\-:Purple\-Tag\mbox{]}; \mbox{[}\hyperlink{interface_d_d_log}{D\-D\-Log} add\-Logger\-:\mbox{[}\hyperlink{interface_d_d_t_t_y_logger}{D\-D\-T\-T\-Y\-Logger} shared\-Instance\mbox{]}\mbox{]};
+
+This would essentially give you a straight N\-S\-Log replacement that prints in purple\-:
+
+D\-D\-Log\-Purple("I'm a purple log message!"); \hypertarget{interface_d_d_t_t_y_logger_abcb0224cccf6a4515ae22f1c79c0c9d5}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!shared\-Instance@{shared\-Instance}}
+\index{shared\-Instance@{shared\-Instance}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{shared\-Instance}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf D\-D\-T\-T\-Y\-Logger} $\ast$) shared\-Instance 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_t_t_y_logger_abcb0224cccf6a4515ae22f1c79c0c9d5}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_d_d_t_t_y_logger_aea8969e6e0fc04b775c1212139c669ea}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!app@{app}}
+\index{app@{app}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{app}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (char$\ast$) app\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_t_t_y_logger_aea8969e6e0fc04b775c1212139c669ea}
+\hypertarget{interface_d_d_t_t_y_logger_a1f9410c4ec61277fb56f5a85c57a4474}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!app\-Len@{app\-Len}}
+\index{app\-Len@{app\-Len}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{app\-Len}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (size\-\_\-t) app\-Len\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_t_t_y_logger_a1f9410c4ec61277fb56f5a85c57a4474}
+\hypertarget{interface_d_d_t_t_y_logger_a9f54836505cd04fe3205fc4b0419fd4d}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!app\-Name@{app\-Name}}
+\index{app\-Name@{app\-Name}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{app\-Name}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) app\-Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_t_t_y_logger_a9f54836505cd04fe3205fc4b0419fd4d}
+\hypertarget{interface_d_d_t_t_y_logger_a4ee6e8d3042ae5d175a768a4e5c53c09}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!calendar@{calendar}}
+\index{calendar@{calendar}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{calendar}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Calendar$\ast$) calendar\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_t_t_y_logger_a4ee6e8d3042ae5d175a768a4e5c53c09}
+\hypertarget{interface_d_d_t_t_y_logger_a056843aff6a644ca5cec90806bccd3b4}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!calendar\-Unit\-Flags@{calendar\-Unit\-Flags}}
+\index{calendar\-Unit\-Flags@{calendar\-Unit\-Flags}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{calendar\-Unit\-Flags}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-Integer) calendar\-Unit\-Flags\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_t_t_y_logger_a056843aff6a644ca5cec90806bccd3b4}
+\hypertarget{interface_d_d_t_t_y_logger_a1168b3a024ac486de6f278e1dc7e0702}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!color\-Profiles\-Array@{color\-Profiles\-Array}}
+\index{color\-Profiles\-Array@{color\-Profiles\-Array}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{color\-Profiles\-Array}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Mutable\-Array$\ast$) color\-Profiles\-Array\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_t_t_y_logger_a1168b3a024ac486de6f278e1dc7e0702}
+\hypertarget{interface_d_d_t_t_y_logger_ad3534f05cc5b4e630276bc38626a8e63}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!color\-Profiles\-Dict@{color\-Profiles\-Dict}}
+\index{color\-Profiles\-Dict@{color\-Profiles\-Dict}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{color\-Profiles\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Mutable\-Dictionary$\ast$) color\-Profiles\-Dict\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_t_t_y_logger_ad3534f05cc5b4e630276bc38626a8e63}
+\hypertarget{interface_d_d_t_t_y_logger_af2d379faf865a0459888f1fe9174df68}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!pid@{pid}}
+\index{pid@{pid}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{pid}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (char$\ast$) pid\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_t_t_y_logger_af2d379faf865a0459888f1fe9174df68}
+\hypertarget{interface_d_d_t_t_y_logger_a7585c0c145ea2043d0048339afae9e2a}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!pid\-Len@{pid\-Len}}
+\index{pid\-Len@{pid\-Len}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{pid\-Len}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (size\-\_\-t) pid\-Len\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_t_t_y_logger_a7585c0c145ea2043d0048339afae9e2a}
+\hypertarget{interface_d_d_t_t_y_logger_a43d53c81250bb1910fec950b80f2ade1}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!process\-I\-D@{process\-I\-D}}
+\index{process\-I\-D@{process\-I\-D}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{process\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) process\-I\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_t_t_y_logger_a43d53c81250bb1910fec950b80f2ade1}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_d_d_t_t_y_logger_a4d0b3f3f5bb3b8d220568b7e8b1fb9d8}{\index{D\-D\-T\-T\-Y\-Logger@{D\-D\-T\-T\-Y\-Logger}!colors\-Enabled@{colors\-Enabled}}
+\index{colors\-Enabled@{colors\-Enabled}!DDTTYLogger@{D\-D\-T\-T\-Y\-Logger}}
+\subsubsection[{colors\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) colors\-Enabled\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [assign]}}}\label{interface_d_d_t_t_y_logger_a4d0b3f3f5bb3b8d220568b7e8b1fb9d8}
+Want to use different colors for different log levels? Enable this property.
+
+If you run the application via the Terminal (not Xcode), the logger will map colors to xterm-\/256color or xterm-\/color (if available).
+
+Xcode does N\-O\-T natively support colors in the Xcode debugging console. You'll need to install the Xcode\-Colors plugin to see colors in the Xcode console. \href{https://github.com/robbiehanson/XcodeColors}{\tt https\-://github.\-com/robbiehanson/\-Xcode\-Colors}
+
+The default value if N\-O. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_t_t_y_logger_8h}{D\-D\-T\-T\-Y\-Logger.\-h}\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_t_t_y_logger_8m}{D\-D\-T\-T\-Y\-Logger.\-m}\end{DoxyCompactItemize}

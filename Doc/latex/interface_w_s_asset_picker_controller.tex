@@ -1,0 +1,87 @@
+\hypertarget{interface_w_s_asset_picker_controller}{\section{W\-S\-Asset\-Picker\-Controller Class Reference}
+\label{interface_w_s_asset_picker_controller}\index{W\-S\-Asset\-Picker\-Controller@{W\-S\-Asset\-Picker\-Controller}}
+}
+
+
+{\ttfamily \#import $<$W\-S\-Asset\-Picker\-Controller.\-h$>$}
+
+Inheritance diagram for W\-S\-Asset\-Picker\-Controller\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interface_w_s_asset_picker_controller}
+\end{center}
+\end{figure}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+id\\*
+$<$ U\-I\-Navigation\-Controller\-Delegate, \\*
+W\-S\-Asset\-Picker\-Controller\-Delegate $>$ \hyperlink{interface_w_s_asset_picker_controller_a357974ec00d4a177eb2b53117d834371}{delegate}
+\item 
+N\-S\-Array $\ast$ \hyperlink{interface_w_s_asset_picker_controller_a58fba39c716463bf32238bc097dbd24f}{selected\-Assets}
+\item 
+N\-S\-U\-Integer \hyperlink{interface_w_s_asset_picker_controller_a8305dd6e54b82c02c0c62f180a50f767}{selected\-Count}
+\item 
+N\-S\-Integer \hyperlink{interface_w_s_asset_picker_controller_a3dca8005a42c04f30d500fa91b7a6837}{selection\-Limit}
+\item 
+(id) -\/ \hyperlink{interface_w_s_asset_picker_controller_a85dd3e1da34cb38f5c82ba024fa3d4f2}{init\-With\-Assets\-Library\-:}
+\item 
+(id) -\/ \hyperlink{interface_w_s_asset_picker_controller_aadba8c35856f3df07aa3fa8768986877}{init\-With\-Delegate\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_w_s_asset_picker_controller_a85dd3e1da34cb38f5c82ba024fa3d4f2}{\index{W\-S\-Asset\-Picker\-Controller@{W\-S\-Asset\-Picker\-Controller}!init\-With\-Assets\-Library\-:@{init\-With\-Assets\-Library\-:}}
+\index{init\-With\-Assets\-Library\-:@{init\-With\-Assets\-Library\-:}!WSAssetPickerController@{W\-S\-Asset\-Picker\-Controller}}
+\subsubsection[{init\-With\-Assets\-Library\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init\-With\-Assets\-Library\-: 
+\begin{DoxyParamCaption}
+\item[{(A\-L\-Assets\-Library $\ast$)}]{assets\-Library}
+\end{DoxyParamCaption}
+}}\label{interface_w_s_asset_picker_controller_a85dd3e1da34cb38f5c82ba024fa3d4f2}
+Initializes an instance of {\ttfamily asset\-Picker\-View\-Controller}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em assets\-Library} & An instance of {\ttfamily A\-L\-Assets\-Library} for the picker to access media for selection {\bfseries required}.\\
+\hline
+\end{DoxyParams}
+This is the designated initializer. Keep in mind that The lifetimes of objects you get back from the picker are tied to the lifetime of the library instance. It is your responsibility to maintain a strong reference to the library until you are finished with the selected {\ttfamily A\-L\-Asset} objects. This is the designated initializer. \hypertarget{interface_w_s_asset_picker_controller_aadba8c35856f3df07aa3fa8768986877}{\index{W\-S\-Asset\-Picker\-Controller@{W\-S\-Asset\-Picker\-Controller}!init\-With\-Delegate\-:@{init\-With\-Delegate\-:}}
+\index{init\-With\-Delegate\-:@{init\-With\-Delegate\-:}!WSAssetPickerController@{W\-S\-Asset\-Picker\-Controller}}
+\subsubsection[{init\-With\-Delegate\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init\-With\-Delegate\-: 
+\begin{DoxyParamCaption}
+\item[{(id $<$W\-S\-Asset\-Picker\-Controller\-Delegate$>$)}]{delegate}
+\end{DoxyParamCaption}
+}}\label{interface_w_s_asset_picker_controller_aadba8c35856f3df07aa3fa8768986877}
+Initializes an instance of {\ttfamily asset\-Picker\-View\-Controller}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delegate} & An object conforming to the {\ttfamily \hyperlink{class_w_s_asset_picker_controller_delegate-p}{W\-S\-Asset\-Picker\-Controller\-Delegate}} protocol.\\
+\hline
+\end{DoxyParams}
+This method is deprecated. \begin{DoxySeeAlso}{See Also}
+{\ttfamily \hyperlink{interface_w_s_asset_picker_controller_a85dd3e1da34cb38f5c82ba024fa3d4f2}{-\/ init\-With\-Assets\-Library\-:}}. 
+\end{DoxySeeAlso}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_w_s_asset_picker_controller_a357974ec00d4a177eb2b53117d834371}{\index{W\-S\-Asset\-Picker\-Controller@{W\-S\-Asset\-Picker\-Controller}!delegate@{delegate}}
+\index{delegate@{delegate}!WSAssetPickerController@{W\-S\-Asset\-Picker\-Controller}}
+\subsubsection[{delegate}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<$U\-I\-Navigation\-Controller\-Delegate, W\-S\-Asset\-Picker\-Controller\-Delegate$>$) delegate\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [weak]}}}\label{interface_w_s_asset_picker_controller_a357974ec00d4a177eb2b53117d834371}
+The asset picker's delegate object.
+
+The delegate receives notifications when the user picks assets, or exits the picker interface. The delegate also decides when to dismiss the picker interface, so you must provide a delegate to use a picker. For information about the methods you can implement for your delegate object, see \hyperlink{class_w_s_asset_picker_controller_delegate-p}{W\-S\-Asset\-Picker\-Controller\-Delegate} Protocol Reference. \hypertarget{interface_w_s_asset_picker_controller_a58fba39c716463bf32238bc097dbd24f}{\index{W\-S\-Asset\-Picker\-Controller@{W\-S\-Asset\-Picker\-Controller}!selected\-Assets@{selected\-Assets}}
+\index{selected\-Assets@{selected\-Assets}!WSAssetPickerController@{W\-S\-Asset\-Picker\-Controller}}
+\subsubsection[{selected\-Assets}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Array $\ast$) selected\-Assets\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_w_s_asset_picker_controller_a58fba39c716463bf32238bc097dbd24f}
+The assets that are selected in the picker view. \hypertarget{interface_w_s_asset_picker_controller_a8305dd6e54b82c02c0c62f180a50f767}{\index{W\-S\-Asset\-Picker\-Controller@{W\-S\-Asset\-Picker\-Controller}!selected\-Count@{selected\-Count}}
+\index{selected\-Count@{selected\-Count}!WSAssetPickerController@{W\-S\-Asset\-Picker\-Controller}}
+\subsubsection[{selected\-Count}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-Integer) selected\-Count\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_w_s_asset_picker_controller_a8305dd6e54b82c02c0c62f180a50f767}
+A count of the selected assets. This can be observed via K\-V\-O. \hypertarget{interface_w_s_asset_picker_controller_a3dca8005a42c04f30d500fa91b7a6837}{\index{W\-S\-Asset\-Picker\-Controller@{W\-S\-Asset\-Picker\-Controller}!selection\-Limit@{selection\-Limit}}
+\index{selection\-Limit@{selection\-Limit}!WSAssetPickerController@{W\-S\-Asset\-Picker\-Controller}}
+\subsubsection[{selection\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) selection\-Limit\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_w_s_asset_picker_controller_a3dca8005a42c04f30d500fa91b7a6837}
+Limits the number of assets that can be selected in the picker view. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-W\-S\-Asset\-Picker\-Controller/src/\hyperlink{_w_s_asset_picker_controller_8h}{W\-S\-Asset\-Picker\-Controller.\-h}\item 
+Sources/\-Librairies/\-W\-S\-Asset\-Picker\-Controller/src/\hyperlink{_w_s_asset_picker_controller_8m}{W\-S\-Asset\-Picker\-Controller.\-m}\end{DoxyCompactItemize}

@@ -1,0 +1,195 @@
+\hypertarget{interface_d_d_log_file_info}{\section{D\-D\-Log\-File\-Info Class Reference}
+\label{interface_d_d_log_file_info}\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}}
+}
+
+
+{\ttfamily \#import $<$D\-D\-File\-Logger.\-h$>$}
+
+Inheritance diagram for D\-D\-Log\-File\-Info\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_d_d_log_file_info}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_d_d_log_file_info_a666e85ad296bffbdc7664218cbd5cc39}{init\-With\-File\-Path\-:}
+\item 
+(void) -\/ \hyperlink{interface_d_d_log_file_info_ad79ccc84e66ee6c8c0c4e9257100aa9c}{reset}
+\item 
+(void) -\/ \hyperlink{interface_d_d_log_file_info_af1a4adde6bb938bad3f106b475874cc5}{rename\-File\-:}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_d_d_log_file_info_a42cdbf5862a180e583eb8aec911a3cc3}{has\-Extended\-Attribute\-With\-Name\-:}
+\item 
+(void) -\/ \hyperlink{interface_d_d_log_file_info_a7d08e4eb256d725bf09386429e66f0e4}{add\-Extended\-Attribute\-With\-Name\-:}
+\item 
+(void) -\/ \hyperlink{interface_d_d_log_file_info_a6a24e724c304a7cbef313719246bfed0}{remove\-Extended\-Attribute\-With\-Name\-:}
+\item 
+(N\-S\-Comparison\-Result) -\/ \hyperlink{interface_d_d_log_file_info_ac5cc1dd100bd1d6e441a4f0d29337b7b}{reverse\-Compare\-By\-Creation\-Date\-:}
+\item 
+(N\-S\-Comparison\-Result) -\/ \hyperlink{interface_d_d_log_file_info_aaf303c6da71fd94050e3d37918d3863c}{reverse\-Compare\-By\-Modification\-Date\-:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) + \hyperlink{interface_d_d_log_file_info_aff0e31bcc40a4ce6c76572a06c0fe36b}{log\-File\-With\-Path\-:}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\-\_\-\-\_\-strong N\-S\-String $\ast$ \hyperlink{interface_d_d_log_file_info_a645c6828b8e17494603ac78cbae539ea}{file\-Path}
+\item 
+\-\_\-\-\_\-strong N\-S\-String $\ast$ \hyperlink{interface_d_d_log_file_info_a87b064e197bcd8b828697220ef7bf671}{file\-Name}
+\item 
+\-\_\-\-\_\-strong N\-S\-Dictionary $\ast$ \hyperlink{interface_d_d_log_file_info_aacfb5972d3e5b709e7ba428ec6dba888}{file\-Attributes}
+\item 
+\-\_\-\-\_\-strong N\-S\-Date $\ast$ \hyperlink{interface_d_d_log_file_info_a1d23d99413a1bc3a8e67b97cc6ed0355}{creation\-Date}
+\item 
+\-\_\-\-\_\-strong N\-S\-Date $\ast$ \hyperlink{interface_d_d_log_file_info_a5ccaf2bb1e330d206323eb0e89f32bf3}{modification\-Date}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_d_d_log_file_info_a560ae240bab6235f7e577ced2f027a89}{file\-Path}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_d_d_log_file_info_a0477a32511d71b0117f8a2a61295a555}{file\-Name}
+\item 
+N\-S\-Dictionary $\ast$ \hyperlink{interface_d_d_log_file_info_ade04f79d49d9c9cdee83d418b413b3f4}{file\-Attributes}
+\item 
+N\-S\-Date $\ast$ \hyperlink{interface_d_d_log_file_info_a5174798812e67485161ac1c14ff45889}{creation\-Date}
+\item 
+N\-S\-Date $\ast$ \hyperlink{interface_d_d_log_file_info_a2e22c1315c04069c65ad59a083e6e8c8}{modification\-Date}
+\item 
+unsigned long long \hyperlink{interface_d_d_log_file_info_afb6644d12ab6c19ae5fa621a2d47dba4}{file\-Size}
+\item 
+N\-S\-Time\-Interval \hyperlink{interface_d_d_log_file_info_ad1a0d9eef7ba877f9fed50ec123d307f}{age}
+\item 
+B\-O\-O\-L \hyperlink{interface_d_d_log_file_info_ae1eaeab42cc10fe4a0069189b009278a}{is\-Archived}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{interface_d_d_log_file_info}{D\-D\-Log\-File\-Info} is a simple class that provides access to various file attributes. It provides good performance as it only fetches the information if requested, and it caches the information to prevent duplicate fetches.
+
+It was designed to provide quick snapshots of the current state of log files, and to help sort log files in an array.
+
+This class does not monitor the files, or update it's cached attribute values if the file changes on disk. This is not what the class was designed for.
+
+If you absolutely must get updated values, you can invoke the reset method which will clear the cache. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_d_d_log_file_info_a7d08e4eb256d725bf09386429e66f0e4}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!add\-Extended\-Attribute\-With\-Name\-:@{add\-Extended\-Attribute\-With\-Name\-:}}
+\index{add\-Extended\-Attribute\-With\-Name\-:@{add\-Extended\-Attribute\-With\-Name\-:}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{add\-Extended\-Attribute\-With\-Name\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) add\-Extended\-Attribute\-With\-Name\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{attr\-Name}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_file_info_a7d08e4eb256d725bf09386429e66f0e4}
+\hypertarget{interface_d_d_log_file_info_a42cdbf5862a180e583eb8aec911a3cc3}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!has\-Extended\-Attribute\-With\-Name\-:@{has\-Extended\-Attribute\-With\-Name\-:}}
+\index{has\-Extended\-Attribute\-With\-Name\-:@{has\-Extended\-Attribute\-With\-Name\-:}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{has\-Extended\-Attribute\-With\-Name\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) has\-Extended\-Attribute\-With\-Name\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{attr\-Name}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_file_info_a42cdbf5862a180e583eb8aec911a3cc3}
+\hypertarget{interface_d_d_log_file_info_a666e85ad296bffbdc7664218cbd5cc39}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!init\-With\-File\-Path\-:@{init\-With\-File\-Path\-:}}
+\index{init\-With\-File\-Path\-:@{init\-With\-File\-Path\-:}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{init\-With\-File\-Path\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init\-With\-File\-Path\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{file\-Path}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_file_info_a666e85ad296bffbdc7664218cbd5cc39}
+\hypertarget{interface_d_d_log_file_info_aff0e31bcc40a4ce6c76572a06c0fe36b}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!log\-File\-With\-Path\-:@{log\-File\-With\-Path\-:}}
+\index{log\-File\-With\-Path\-:@{log\-File\-With\-Path\-:}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{log\-File\-With\-Path\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (id) log\-File\-With\-Path\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{file\-Path}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_file_info_aff0e31bcc40a4ce6c76572a06c0fe36b}
+\hypertarget{interface_d_d_log_file_info_a6a24e724c304a7cbef313719246bfed0}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!remove\-Extended\-Attribute\-With\-Name\-:@{remove\-Extended\-Attribute\-With\-Name\-:}}
+\index{remove\-Extended\-Attribute\-With\-Name\-:@{remove\-Extended\-Attribute\-With\-Name\-:}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{remove\-Extended\-Attribute\-With\-Name\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) remove\-Extended\-Attribute\-With\-Name\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{attr\-Name}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_file_info_a6a24e724c304a7cbef313719246bfed0}
+\hypertarget{interface_d_d_log_file_info_af1a4adde6bb938bad3f106b475874cc5}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!rename\-File\-:@{rename\-File\-:}}
+\index{rename\-File\-:@{rename\-File\-:}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{rename\-File\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) rename\-File\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{new\-File\-Name}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_file_info_af1a4adde6bb938bad3f106b475874cc5}
+\hypertarget{interface_d_d_log_file_info_ad79ccc84e66ee6c8c0c4e9257100aa9c}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!reset@{reset}}
+\index{reset@{reset}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) reset 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_file_info_ad79ccc84e66ee6c8c0c4e9257100aa9c}
+\hypertarget{interface_d_d_log_file_info_ac5cc1dd100bd1d6e441a4f0d29337b7b}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!reverse\-Compare\-By\-Creation\-Date\-:@{reverse\-Compare\-By\-Creation\-Date\-:}}
+\index{reverse\-Compare\-By\-Creation\-Date\-:@{reverse\-Compare\-By\-Creation\-Date\-:}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{reverse\-Compare\-By\-Creation\-Date\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Comparison\-Result) reverse\-Compare\-By\-Creation\-Date\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf D\-D\-Log\-File\-Info} $\ast$)}]{another}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_file_info_ac5cc1dd100bd1d6e441a4f0d29337b7b}
+\hypertarget{interface_d_d_log_file_info_aaf303c6da71fd94050e3d37918d3863c}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!reverse\-Compare\-By\-Modification\-Date\-:@{reverse\-Compare\-By\-Modification\-Date\-:}}
+\index{reverse\-Compare\-By\-Modification\-Date\-:@{reverse\-Compare\-By\-Modification\-Date\-:}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{reverse\-Compare\-By\-Modification\-Date\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Comparison\-Result) reverse\-Compare\-By\-Modification\-Date\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf D\-D\-Log\-File\-Info} $\ast$)}]{another}
+\end{DoxyParamCaption}
+}}\label{interface_d_d_log_file_info_aaf303c6da71fd94050e3d37918d3863c}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_d_d_log_file_info_a1d23d99413a1bc3a8e67b97cc6ed0355}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!creation\-Date@{creation\-Date}}
+\index{creation\-Date@{creation\-Date}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{creation\-Date}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (\-\_\-\-\_\-strong N\-S\-Date$\ast$) creation\-Date\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_log_file_info_a1d23d99413a1bc3a8e67b97cc6ed0355}
+\hypertarget{interface_d_d_log_file_info_aacfb5972d3e5b709e7ba428ec6dba888}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!file\-Attributes@{file\-Attributes}}
+\index{file\-Attributes@{file\-Attributes}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{file\-Attributes}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (\-\_\-\-\_\-strong N\-S\-Dictionary$\ast$) file\-Attributes\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_log_file_info_aacfb5972d3e5b709e7ba428ec6dba888}
+\hypertarget{interface_d_d_log_file_info_a87b064e197bcd8b828697220ef7bf671}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!file\-Name@{file\-Name}}
+\index{file\-Name@{file\-Name}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{file\-Name}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (\-\_\-\-\_\-strong N\-S\-String$\ast$) file\-Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_log_file_info_a87b064e197bcd8b828697220ef7bf671}
+\hypertarget{interface_d_d_log_file_info_a645c6828b8e17494603ac78cbae539ea}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!file\-Path@{file\-Path}}
+\index{file\-Path@{file\-Path}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{file\-Path}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (\-\_\-\-\_\-strong N\-S\-String$\ast$) file\-Path\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_log_file_info_a645c6828b8e17494603ac78cbae539ea}
+\hypertarget{interface_d_d_log_file_info_a5ccaf2bb1e330d206323eb0e89f32bf3}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!modification\-Date@{modification\-Date}}
+\index{modification\-Date@{modification\-Date}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{modification\-Date}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (\-\_\-\-\_\-strong N\-S\-Date$\ast$) modification\-Date\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_d_d_log_file_info_a5ccaf2bb1e330d206323eb0e89f32bf3}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_d_d_log_file_info_ad1a0d9eef7ba877f9fed50ec123d307f}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!age@{age}}
+\index{age@{age}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{age}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Time\-Interval) age\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_d_d_log_file_info_ad1a0d9eef7ba877f9fed50ec123d307f}
+\hypertarget{interface_d_d_log_file_info_a5174798812e67485161ac1c14ff45889}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!creation\-Date@{creation\-Date}}
+\index{creation\-Date@{creation\-Date}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{creation\-Date}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Date $\ast$) creation\-Date\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_d_d_log_file_info_a5174798812e67485161ac1c14ff45889}
+\hypertarget{interface_d_d_log_file_info_ade04f79d49d9c9cdee83d418b413b3f4}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!file\-Attributes@{file\-Attributes}}
+\index{file\-Attributes@{file\-Attributes}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{file\-Attributes}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Dictionary $\ast$) file\-Attributes\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_d_d_log_file_info_ade04f79d49d9c9cdee83d418b413b3f4}
+\hypertarget{interface_d_d_log_file_info_a0477a32511d71b0117f8a2a61295a555}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!file\-Name@{file\-Name}}
+\index{file\-Name@{file\-Name}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{file\-Name}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String $\ast$) file\-Name\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_d_d_log_file_info_a0477a32511d71b0117f8a2a61295a555}
+\hypertarget{interface_d_d_log_file_info_a560ae240bab6235f7e577ced2f027a89}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!file\-Path@{file\-Path}}
+\index{file\-Path@{file\-Path}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{file\-Path}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) file\-Path\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_d_d_log_file_info_a560ae240bab6235f7e577ced2f027a89}
+\hypertarget{interface_d_d_log_file_info_afb6644d12ab6c19ae5fa621a2d47dba4}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!file\-Size@{file\-Size}}
+\index{file\-Size@{file\-Size}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{file\-Size}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (unsigned long long) file\-Size\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_d_d_log_file_info_afb6644d12ab6c19ae5fa621a2d47dba4}
+\hypertarget{interface_d_d_log_file_info_ae1eaeab42cc10fe4a0069189b009278a}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!is\-Archived@{is\-Archived}}
+\index{is\-Archived@{is\-Archived}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{is\-Archived}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) is\-Archived\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_d_d_log_file_info_ae1eaeab42cc10fe4a0069189b009278a}
+\hypertarget{interface_d_d_log_file_info_a2e22c1315c04069c65ad59a083e6e8c8}{\index{D\-D\-Log\-File\-Info@{D\-D\-Log\-File\-Info}!modification\-Date@{modification\-Date}}
+\index{modification\-Date@{modification\-Date}!DDLogFileInfo@{D\-D\-Log\-File\-Info}}
+\subsubsection[{modification\-Date}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Date $\ast$) modification\-Date\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_d_d_log_file_info_a2e22c1315c04069c65ad59a083e6e8c8}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_file_logger_8h}{D\-D\-File\-Logger.\-h}\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_file_logger_8m}{D\-D\-File\-Logger.\-m}\end{DoxyCompactItemize}

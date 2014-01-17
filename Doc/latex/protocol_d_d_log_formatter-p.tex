@@ -1,0 +1,57 @@
+\hypertarget{protocol_d_d_log_formatter-p}{\section{$<$D\-D\-Log\-Formatter$>$ Protocol Reference}
+\label{protocol_d_d_log_formatter-p}\index{$<$\-D\-D\-Log\-Formatter$>$@{$<$\-D\-D\-Log\-Formatter$>$}}
+}
+
+
+{\ttfamily \#import $<$D\-D\-Log.\-h$>$}
+
+Inheritance diagram for $<$D\-D\-Log\-Formatter$>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.981132cm]{protocol_d_d_log_formatter-p}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(N\-S\-String $\ast$) -\/ \hyperlink{protocol_d_d_log_formatter-p_aa322c850974cc859de49f5bd28583f3d}{format\-Log\-Message\-:}
+\item 
+(void) -\/ \hyperlink{protocol_d_d_log_formatter-p_a1894526eeb112c99ec7d918773064cc1}{did\-Add\-To\-Logger\-:}
+\item 
+(void) -\/ \hyperlink{protocol_d_d_log_formatter-p_a5748bc3d53693df5c1f4f2d26075fa32}{will\-Remove\-From\-Logger\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{protocol_d_d_log_formatter-p_a1894526eeb112c99ec7d918773064cc1}{\index{D\-D\-Log\-Formatter-\/p@{D\-D\-Log\-Formatter-\/p}!did\-Add\-To\-Logger\-:@{did\-Add\-To\-Logger\-:}}
+\index{did\-Add\-To\-Logger\-:@{did\-Add\-To\-Logger\-:}!DDLogFormatter-p@{D\-D\-Log\-Formatter-\/p}}
+\subsubsection[{did\-Add\-To\-Logger\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) did\-Add\-To\-Logger\-: 
+\begin{DoxyParamCaption}
+\item[{(id$<$ {\bf D\-D\-Logger} $>$)}]{logger}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_d_d_log_formatter-p_a1894526eeb112c99ec7d918773064cc1}
+A single formatter instance can be added to multiple loggers. These methods provides hooks to notify the formatter of when it's added/removed.
+
+This is primarily for thread-\/safety. If a formatter is explicitly not thread-\/safe, it may wish to throw an exception if added to multiple loggers. Or if a formatter has potentially thread-\/unsafe code (e.\-g. N\-S\-Date\-Formatter), it could possibly use these hooks to switch to thread-\/safe versions of the code. \hypertarget{protocol_d_d_log_formatter-p_aa322c850974cc859de49f5bd28583f3d}{\index{D\-D\-Log\-Formatter-\/p@{D\-D\-Log\-Formatter-\/p}!format\-Log\-Message\-:@{format\-Log\-Message\-:}}
+\index{format\-Log\-Message\-:@{format\-Log\-Message\-:}!DDLogFormatter-p@{D\-D\-Log\-Formatter-\/p}}
+\subsubsection[{format\-Log\-Message\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String $\ast$) format\-Log\-Message\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf D\-D\-Log\-Message} $\ast$)}]{log\-Message}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [required]}}}\label{protocol_d_d_log_formatter-p_aa322c850974cc859de49f5bd28583f3d}
+Formatters may optionally be added to any logger. This allows for increased flexibility in the logging environment. For example, log messages for log files may be formatted differently than log messages for the console.
+
+For more information about formatters, see the \char`\"{}\-Custom Formatters\char`\"{} page\-: \href{https://github.com/robbiehanson/CocoaLumberjack/wiki/CustomFormatters}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack/wiki/\-Custom\-Formatters}
+
+The formatter may also optionally filter the log message by returning nil, in which case the logger will not log the message. \hypertarget{protocol_d_d_log_formatter-p_a5748bc3d53693df5c1f4f2d26075fa32}{\index{D\-D\-Log\-Formatter-\/p@{D\-D\-Log\-Formatter-\/p}!will\-Remove\-From\-Logger\-:@{will\-Remove\-From\-Logger\-:}}
+\index{will\-Remove\-From\-Logger\-:@{will\-Remove\-From\-Logger\-:}!DDLogFormatter-p@{D\-D\-Log\-Formatter-\/p}}
+\subsubsection[{will\-Remove\-From\-Logger\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) will\-Remove\-From\-Logger\-: 
+\begin{DoxyParamCaption}
+\item[{(id$<$ {\bf D\-D\-Logger} $>$)}]{logger}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_d_d_log_formatter-p_a5748bc3d53693df5c1f4f2d26075fa32}
+
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-Lumberjack/\hyperlink{_d_d_log_8h}{D\-D\-Log.\-h}\end{DoxyCompactItemize}

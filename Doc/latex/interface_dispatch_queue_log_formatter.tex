@@ -1,0 +1,139 @@
+\hypertarget{interface_dispatch_queue_log_formatter}{\section{Dispatch\-Queue\-Log\-Formatter Class Reference}
+\label{interface_dispatch_queue_log_formatter}\index{Dispatch\-Queue\-Log\-Formatter@{Dispatch\-Queue\-Log\-Formatter}}
+}
+
+
+{\ttfamily \#import $<$Dispatch\-Queue\-Log\-Formatter.\-h$>$}
+
+Inheritance diagram for Dispatch\-Queue\-Log\-Formatter\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interface_dispatch_queue_log_formatter}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_dispatch_queue_log_formatter_aec0754074cbb898976e8c74a438ee8d4}{init}
+\item 
+(N\-S\-String $\ast$) -\/ \hyperlink{interface_dispatch_queue_log_formatter_ae4f3fb1b9094e811f66ddbf4bfeb68ff}{replacement\-String\-For\-Queue\-Label\-:}
+\item 
+(void) -\/ \hyperlink{interface_dispatch_queue_log_formatter_a6e77546201cf0916ce0b61814ab3a0ee}{set\-Replacement\-String\-:for\-Queue\-Label\-:}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_dispatch_queue_log_formatter_ada1bc008577500edefe9429448004da9}{date\-Format\-String}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-U\-Integer \hyperlink{interface_dispatch_queue_log_formatter_a8c5f43add80afe358b5728c2b5f3fa8a}{min\-Queue\-Length}
+\item 
+N\-S\-U\-Integer \hyperlink{interface_dispatch_queue_log_formatter_a1e1ab3c930af717004b7cc9bd318895c}{max\-Queue\-Length}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Welcome to Cocoa Lumberjack!
+
+The project page has a wealth of documentation if you have any questions. \href{https://github.com/robbiehanson/CocoaLumberjack}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack}
+
+If you're new to the project you may wish to read the \char`\"{}\-Getting Started\char`\"{} page. \href{https://github.com/robbiehanson/CocoaLumberjack/wiki/GettingStarted}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack/wiki/\-Getting\-Started}
+
+This class provides a log formatter that prints the dispatch\-\_\-queue label instead of the mach\-\_\-thread\-\_\-id.
+
+A log formatter can be added to any logger to format and/or filter its output. You can learn more about log formatters here\-: \href{https://github.com/robbiehanson/CocoaLumberjack/wiki/CustomFormatters}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack/wiki/\-Custom\-Formatters}
+
+A typical N\-S\-Log (or \hyperlink{interface_d_d_t_t_y_logger}{D\-D\-T\-T\-Y\-Logger}) prints detailed info as \mbox{[}$<$process\-\_\-id$>$\-:$<$thread\-\_\-id$>$\mbox{]}. For example\-:
+
+2011-\/10-\/17 20\-:21\-:45.\-435 App\-Name\mbox{[}19928\-:5207\mbox{]} Your log message here
+
+Where\-:
+\begin{DoxyItemize}
+\item 19928 = process id
+\item 5207 = thread id (mach\-\_\-thread\-\_\-id printed in hex)
+\end{DoxyItemize}
+
+When using grand central dispatch (G\-C\-D), this information is less useful. This is because a single serial dispatch queue may be run on any thread from an internally managed thread pool. For example\-:
+
+2011-\/10-\/17 20\-:32\-:31.\-111 App\-Name\mbox{[}19954\-:4d07\mbox{]} Message from my\-\_\-serial\-\_\-dispatch\-\_\-queue 2011-\/10-\/17 20\-:32\-:31.\-112 App\-Name\mbox{[}19954\-:5207\mbox{]} Message from my\-\_\-serial\-\_\-dispatch\-\_\-queue 2011-\/10-\/17 20\-:32\-:31.\-113 App\-Name\mbox{[}19954\-:2c55\mbox{]} Message from my\-\_\-serial\-\_\-dispatch\-\_\-queue
+
+This formatter allows you to replace the standard \mbox{[}box\-:info\mbox{]} with the dispatch\-\_\-queue name. For example\-:
+
+2011-\/10-\/17 20\-:32\-:31.\-111 App\-Name\mbox{[}img-\/scaling\mbox{]} Message from my\-\_\-serial\-\_\-dispatch\-\_\-queue 2011-\/10-\/17 20\-:32\-:31.\-112 App\-Name\mbox{[}img-\/scaling\mbox{]} Message from my\-\_\-serial\-\_\-dispatch\-\_\-queue 2011-\/10-\/17 20\-:32\-:31.\-113 App\-Name\mbox{[}img-\/scaling\mbox{]} Message from my\-\_\-serial\-\_\-dispatch\-\_\-queue
+
+If the dispatch\-\_\-queue doesn't have a set name, then it falls back to the thread name. If the current thread doesn't have a set name, then it falls back to the mach\-\_\-thread\-\_\-id in hex (like normal).
+
+Note\-: If manually creating your own background threads (via N\-S\-Thread/alloc/init or N\-S\-Thread/detach\-Ne\-Thread), you can use \mbox{[}\mbox{[}N\-S\-Thread current\-Thread\mbox{]} set\-Name\-:(\-N\-S\-String $\ast$)\mbox{]}.
+
+Welcome to Cocoa Lumberjack!
+
+The project page has a wealth of documentation if you have any questions. \href{https://github.com/robbiehanson/CocoaLumberjack}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack}
+
+If you're new to the project you may wish to read the \char`\"{}\-Getting Started\char`\"{} wiki. \href{https://github.com/robbiehanson/CocoaLumberjack/wiki/GettingStarted}{\tt https\-://github.\-com/robbiehanson/\-Cocoa\-Lumberjack/wiki/\-Getting\-Started} 
+
+\subsection{Method Documentation}
+\hypertarget{interface_dispatch_queue_log_formatter_aec0754074cbb898976e8c74a438ee8d4}{\index{Dispatch\-Queue\-Log\-Formatter@{Dispatch\-Queue\-Log\-Formatter}!init@{init}}
+\index{init@{init}!DispatchQueueLogFormatter@{Dispatch\-Queue\-Log\-Formatter}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_dispatch_queue_log_formatter_aec0754074cbb898976e8c74a438ee8d4}
+Standard init method. Configure using properties as desired. \hypertarget{interface_dispatch_queue_log_formatter_ae4f3fb1b9094e811f66ddbf4bfeb68ff}{\index{Dispatch\-Queue\-Log\-Formatter@{Dispatch\-Queue\-Log\-Formatter}!replacement\-String\-For\-Queue\-Label\-:@{replacement\-String\-For\-Queue\-Label\-:}}
+\index{replacement\-String\-For\-Queue\-Label\-:@{replacement\-String\-For\-Queue\-Label\-:}!DispatchQueueLogFormatter@{Dispatch\-Queue\-Log\-Formatter}}
+\subsubsection[{replacement\-String\-For\-Queue\-Label\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String $\ast$) replacement\-String\-For\-Queue\-Label\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{long\-Label}
+\end{DoxyParamCaption}
+}}\label{interface_dispatch_queue_log_formatter_ae4f3fb1b9094e811f66ddbf4bfeb68ff}
+Sometimes queue labels have long names like \char`\"{}com.\-apple.\-main-\/queue\char`\"{}, but you'd prefer something shorter like simply \char`\"{}main\char`\"{}.
+
+This method allows you to set such preferred replacements. The above example is set by default.
+
+To remove/undo a previous replacement, invoke this method with nil for the 'short\-Label' parameter. \hypertarget{interface_dispatch_queue_log_formatter_a6e77546201cf0916ce0b61814ab3a0ee}{\index{Dispatch\-Queue\-Log\-Formatter@{Dispatch\-Queue\-Log\-Formatter}!set\-Replacement\-String\-:for\-Queue\-Label\-:@{set\-Replacement\-String\-:for\-Queue\-Label\-:}}
+\index{set\-Replacement\-String\-:for\-Queue\-Label\-:@{set\-Replacement\-String\-:for\-Queue\-Label\-:}!DispatchQueueLogFormatter@{Dispatch\-Queue\-Log\-Formatter}}
+\subsubsection[{set\-Replacement\-String\-:for\-Queue\-Label\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Replacement\-String\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{short\-Label}
+\item[{forQueueLabel:(N\-S\-String $\ast$)}]{long\-Label}
+\end{DoxyParamCaption}
+}}\label{interface_dispatch_queue_log_formatter_a6e77546201cf0916ce0b61814ab3a0ee}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_dispatch_queue_log_formatter_ada1bc008577500edefe9429448004da9}{\index{Dispatch\-Queue\-Log\-Formatter@{Dispatch\-Queue\-Log\-Formatter}!date\-Format\-String@{date\-Format\-String}}
+\index{date\-Format\-String@{date\-Format\-String}!DispatchQueueLogFormatter@{Dispatch\-Queue\-Log\-Formatter}}
+\subsubsection[{date\-Format\-String}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) date\-Format\-String\hspace{0.3cm}{\ttfamily [protected]}}}\label{interface_dispatch_queue_log_formatter_ada1bc008577500edefe9429448004da9}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_dispatch_queue_log_formatter_a1e1ab3c930af717004b7cc9bd318895c}{\index{Dispatch\-Queue\-Log\-Formatter@{Dispatch\-Queue\-Log\-Formatter}!max\-Queue\-Length@{max\-Queue\-Length}}
+\index{max\-Queue\-Length@{max\-Queue\-Length}!DispatchQueueLogFormatter@{Dispatch\-Queue\-Log\-Formatter}}
+\subsubsection[{max\-Queue\-Length}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-Integer) max\-Queue\-Length\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [assign]}}}\label{interface_dispatch_queue_log_formatter_a1e1ab3c930af717004b7cc9bd318895c}
+The max\-Queue\-Length restricts the number of characters that will be inside the \mbox{[}detail box\mbox{]}. If the max\-Queue\-Length is 0, there is no restriction.
+
+For example, say a dispatch\-\_\-queue has a label of \char`\"{}disk\-I\-O\char`\"{}\-:
+
+If the max\-Queue\-Length is 0\-: \mbox{[}disk\-I\-O\mbox{]} If the max\-Queue\-Length is 4\-: \mbox{[}disk\mbox{]} If the max\-Queue\-Length is 5\-: \mbox{[}disk\-I\mbox{]} If the max\-Queue\-Length is 6\-: \mbox{[}disk\-I\-O\mbox{]} If the max\-Queue\-Length is 7\-: \mbox{[}disk\-I\-O\mbox{]} If the max\-Queue\-Length is 8\-: \mbox{[}disk\-I\-O\mbox{]}
+
+The default max\-Queue\-Length is 0 (no maximum, so \mbox{[}detail box\mbox{]} won't be truncated).
+
+If you want every \mbox{[}detail box\mbox{]} to have the exact same width, set both min\-Queue\-Length and max\-Queue\-Length to the same value. \hypertarget{interface_dispatch_queue_log_formatter_a8c5f43add80afe358b5728c2b5f3fa8a}{\index{Dispatch\-Queue\-Log\-Formatter@{Dispatch\-Queue\-Log\-Formatter}!min\-Queue\-Length@{min\-Queue\-Length}}
+\index{min\-Queue\-Length@{min\-Queue\-Length}!DispatchQueueLogFormatter@{Dispatch\-Queue\-Log\-Formatter}}
+\subsubsection[{min\-Queue\-Length}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-Integer) min\-Queue\-Length\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}, {\ttfamily [assign]}}}\label{interface_dispatch_queue_log_formatter_a8c5f43add80afe358b5728c2b5f3fa8a}
+The min\-Queue\-Length restricts the minimum size of the \mbox{[}detail box\mbox{]}. If the min\-Queue\-Length is set to 0, there is no restriction.
+
+For example, say a dispatch\-\_\-queue has a label of \char`\"{}disk\-I\-O\char`\"{}\-:
+
+If the min\-Queue\-Length is 0\-: \mbox{[}disk\-I\-O\mbox{]} If the min\-Queue\-Length is 4\-: \mbox{[}disk\-I\-O\mbox{]} If the min\-Queue\-Length is 5\-: \mbox{[}disk\-I\-O\mbox{]} If the min\-Queue\-Length is 6\-: \mbox{[}disk\-I\-O\mbox{]} If the min\-Queue\-Length is 7\-: \mbox{[}disk\-I\-O \mbox{]} If the min\-Queue\-Length is 8\-: \mbox{[}disk\-I\-O \mbox{]}
+
+The default min\-Queue\-Length is 0 (no minimum, so \mbox{[}detail box\mbox{]} won't be padded).
+
+If you want every \mbox{[}detail box\mbox{]} to have the exact same width, set both min\-Queue\-Length and max\-Queue\-Length to the same value. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Sources/\-Librairies/\-Lumberjack/\-Extensions/\hyperlink{_dispatch_queue_log_formatter_8h}{Dispatch\-Queue\-Log\-Formatter.\-h}\item 
+Sources/\-Librairies/\-Lumberjack/\-Extensions/\hyperlink{_dispatch_queue_log_formatter_8m}{Dispatch\-Queue\-Log\-Formatter.\-m}\end{DoxyCompactItemize}
