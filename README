@@ -1,0 +1,27 @@
+Introduction
+
+The project is an XCode project, coded in Objective-C. It use WebServices provided by the Woda server, as described at: http://woda-redmine.heroku.com/projects/woda/wiki/Using_the_server
+
+Installation
+
+Be sure to have XCode installed (or download it from the AppleStore.
+
+Step 1: Set up Git
+
+Follow instructions at: https://help.github.com/articles/set-up-git
+
+Step 2: Clone the git project
+
+sh> git clone git@github.com:woda/iphone.git
+
+Step 3: Librairies
+
+Nothing to install here. Basically the project use 7 external well famous librairies:
+
+Appirater: https://github.com/arashpayan/appirater
+WSAssetPickerController: https://github.com/w5mith/WSAssetPickerController
+TestFlight: https://testflightapp.com/
+Lumberjack: https://github.com/CocoaLumberjack/CocoaLumberjack
+AFHTTPRequestOperationLogger: https://github.com/AFNetworking/AFHTTPRequestOperationLogger
+AFNetworking: https://github.com/AFNetworking/AFNetworking
+Coredata-easyfetch: https://github.com/halostatue/coredata-easyfetch
